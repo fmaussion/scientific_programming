@@ -11767,6 +11767,38 @@ div#notebook {
     });
     </script>
     <!-- End of mathjax configuration --></head>
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://rawgit.com/ipython-contrib/jupyter_contrib_nbextensions/master/src/jupyter_contrib_nbextensions/nbextensions/toc2/main.css">
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://rawgit.com/ipython-contrib/jupyter_contrib_nbextensions/master/src/jupyter_contrib_nbextensions/nbextensions/toc2/toc2.js"></script>
+
+<script>
+$( document ).ready(function(){
+
+            var cfg={'threshold':3,     // depth of toc (number of levels)
+             'number_sections': true,  // sections numbering
+             'toc_cell': false,          // useless here
+             'toc_window_display': true, // display the toc window
+             "toc_section_display": "block", // display toc contents in the window
+             'markTocItemOnScroll': false, 
+             'sideBar':true,             // sidebar or floating window
+             'navigate_menu':false,       // navigation menu (only in liveNotebook -- do not change)
+              title_cell: 'Table of Contents',
+              title_sidebar: 'Contents',
+            }
+
+            // fire the main function with these parameters
+            require(['nbextensions/toc2/toc2'], function (toc2) {
+                toc2.table_of_contents(cfg);
+            });
+    });
+</script>
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
@@ -11794,7 +11826,7 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc" style="margin-top: 1em;"><ul class="toc-item"><li><span><a href="#A-very-short-introduction-to-Linux" data-toc-modified-id="A-very-short-introduction-to-Linux-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>A very short introduction to Linux</a></span><ul class="toc-item"><li><span><a href="#What-is-Linux?" data-toc-modified-id="What-is-Linux?-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>What is Linux?</a></span></li><li><span><a href="#Should-I-use-it?" data-toc-modified-id="Should-I-use-it?-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Should I use it?</a></span></li><li><span><a href="#Testing-(and-embracing?)-Linux" data-toc-modified-id="Testing-(and-embracing?)-Linux-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Testing (and embracing?) Linux</a></span><ul class="toc-item"><li><span><a href="#At-the-University-of-Innsbruck-(and-other-universities-as-well)" data-toc-modified-id="At-the-University-of-Innsbruck-(and-other-universities-as-well)-1.3.1"><span class="toc-item-num">1.3.1&nbsp;&nbsp;</span>At the University of Innsbruck (and other universities as well)</a></span></li><li><span><a href="#On-your-laptop-in-a-virtual-machine" data-toc-modified-id="On-your-laptop-in-a-virtual-machine-1.3.2"><span class="toc-item-num">1.3.2&nbsp;&nbsp;</span>On your laptop in a virtual machine</a></span></li><li><span><a href="#On-your-laptop-alongside-Windows" data-toc-modified-id="On-your-laptop-alongside-Windows-1.3.3"><span class="toc-item-num">1.3.3&nbsp;&nbsp;</span>On your laptop alongside Windows</a></span></li><li><span><a href="#On-your-laptop-without-Windows" data-toc-modified-id="On-your-laptop-without-Windows-1.3.4"><span class="toc-item-num">1.3.4&nbsp;&nbsp;</span>On your laptop without Windows</a></span></li></ul></li><li><span><a href="#The-linux-command-line" data-toc-modified-id="The-linux-command-line-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>The linux command line</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
+<div class="toc" style="margin-top: 1em;"><ul class="toc-item"><li><span><a href="#What-is-Linux?" data-toc-modified-id="What-is-Linux?-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>What is Linux?</a></span></li><li><span><a href="#Should-I-use-it?" data-toc-modified-id="Should-I-use-it?-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Should I use it?</a></span></li><li><span><a href="#Testing-Linux" data-toc-modified-id="Testing-Linux-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Testing Linux</a></span></li><li><span><a href="#The-linux-command-line" data-toc-modified-id="The-linux-command-line-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>The linux command line</a></span><ul class="toc-item"><li><span><a href="#Listing-files-and-directories" data-toc-modified-id="Listing-files-and-directories-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Listing files and directories</a></span></li><li><span><a href="#The-directory-structure" data-toc-modified-id="The-directory-structure-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>The directory structure</a></span></li><li><span><a href="#Making-Directories" data-toc-modified-id="Making-Directories-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Making Directories</a></span></li><li><span><a href="#Changing-to-a-different-directory" data-toc-modified-id="Changing-to-a-different-directory-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Changing to a different directory</a></span></li><li><span><a href="#The-directories-.-and-.." data-toc-modified-id="The-directories-.-and-..-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>The directories . and ..</a></span></li><li><span><a href="#Copying-files" data-toc-modified-id="Copying-files-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>Copying files</a></span></li><li><span><a href="#Moving-files" data-toc-modified-id="Moving-files-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>Moving files</a></span></li><li><span><a href="#Removing-files-and-directories" data-toc-modified-id="Removing-files-and-directories-4.8"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>Removing files and directories</a></span></li><li><span><a href="#Displaying-the-contents-of-a-file-on-the-screen" data-toc-modified-id="Displaying-the-contents-of-a-file-on-the-screen-4.9"><span class="toc-item-num">4.9&nbsp;&nbsp;</span>Displaying the contents of a file on the screen</a></span></li><li><span><a href="#Searching-the-contents-of-a-file" data-toc-modified-id="Searching-the-contents-of-a-file-4.10"><span class="toc-item-num">4.10&nbsp;&nbsp;</span>Searching the contents of a file</a></span></li><li><span><a href="#Take-home-points:-Linux-command-line" data-toc-modified-id="Take-home-points:-Linux-command-line-4.11"><span class="toc-item-num">4.11&nbsp;&nbsp;</span>Take home points: Linux command line</a></span></li></ul></li><li><span><a href="#Programs-and-executables-in-Linux" data-toc-modified-id="Programs-and-executables-in-Linux-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Programs and executables in Linux</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>What's next?</a></span></li></ul></div>
 </div>
 </div>
 </div>
@@ -11827,17 +11859,17 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>My very personal answer is a clear: <strong>yes</strong>! I can't force you though, and most of the exercises of this lecture can be done on a Windows computer too. If you are running Mac OSX then you have access to most Linux commands anyway, and you can ignore my recommendation (even if I don't like Apple for several other reasons - totally subjective opinion again ;).</p>
+<p>My very personal answer is a clear: <strong>yes</strong>! I can't force you to it though, and most of the exercises of this lecture can be done on a Windows computer too. If you are running Mac OS X then you have access to a linux terminal anyway and you can ignore my recommendation (even if I don't like Apple for several other reasons - totally subjective opinion again ;).</p>
 <p>Linux has always been an environment for programmers and has the reputation of being "geeky" and "complicated". This is less true today, with many Linux distributions becoming mainstream and easy to use (my personal favorite is <a href="http://linuxmint.com">Linux Mint</a>, but you probably mostly heard of <a href="http://ubuntugnome.org/">Ubuntu</a> which I also recommend).</p>
 <p>I believe that Linux is <em>much</em> more user-friendly than Windows: once some of the particularities of Linux are understood (which can be frustrating in the beginning since it works <em>quite</em> differently than windows), it appears that there is much less "hidden" in Linux than in Windows (especially when it comes to installing/deinstalling softwares, using the command line, or protecting yourself from viruses and intruders).</p>
 <p><strong>As a scientist and programmer</strong> there are many reasons to prefer Linux (or Mac OSX) to Windows. Let me list some reasons here:</p>
 <ul>
-<li><strong>Linux comes with a lot of tools for scientists and programmers</strong>. For historical reasons, Linux and it's command line tools have been used by scientists and programmers since decades. It is not a surprise then that Linux comes with many (many) useful utilities to make programming and working with data easier.</li>
-<li><strong>Linux is fast and reliable</strong>. Linux is extremely stable, and more lightweight than Windows. I've never seen a Linux distribution becoming <em>slower</em> with time, as I was used to see in my time using Windows (I have to admit: it was more than 10 years ago).</li>
-<li><strong>Linux is the operating system of the huge majority of the super computers and web servers worldwide</strong>. Because of it's speed, security, and multiple user management tools, Linux has taken over the web: <a href="https://en.wikipedia.org/wiki/Linux_adoption#Supercomputers">99.4%</a> of the super computers and <a href="https://en.wikipedia.org/wiki/Linux_adoption#Servers">67.5%</a> of the web servers run Linux, <a href="https://en.wikipedia.org/wiki/Linux_adoption#Mobile_devices">79.3%</a> of the mobile devices run Linux via Android.</li>
+<li><strong>Linux comes many tools for scientists and programmers</strong> ("batteries included"). For historical reasons, Linux and it's command line tools have been used by scientists and programmers since decades. It is not a surprise then that Linux comes with many (many) useful utilities to make programming and working with data easier.</li>
+<li><strong>Linux is fast and reliable</strong>. Linux is extremely stable and more lightweight than Windows. I've never seen a Linux distribution becoming <em>slower</em> with time, as I was used to see in my time using Windows (I have to admit: it was more than 10 years ago).</li>
+<li><strong>Linux is the operating system of the huge majority of the super computers and web servers worldwide</strong>. Because of its efficiency, security, and multiple user management tools, Linux has taken over the web: <a href="https://en.wikipedia.org/wiki/Linux_adoption#Supercomputers">99.4%</a> of the super computers and <a href="https://en.wikipedia.org/wiki/Linux_adoption#Servers">67.5%</a> of the web servers run Linux, while <a href="https://en.wikipedia.org/wiki/Linux_adoption#Mobile_devices">79.3%</a> of the mobile devices run Linux via Android.</li>
 <li><strong>Linux is at the heart of the open-source philosophy</strong>. Linux is free and open-source, and it is not surprising that people who embraced the open-source philosophy also prefer Linux to Windows or Mac. </li>
 </ul>
-<p>There are also some reasons <strong>not</strong> to use Linux of course. For one, Linux can be surprising at first and it needs time to get used to it. Also, it doesn't come pre-installed on most computers and you'll have to do it yourself (although this is changing fast, with several retailers now selling Ubuntu laptops to students). It is possible that some of your hardware will not be compatible with Linux (nowadays this is now more the exception than the norm). Finally, some software simply aren't available on Linux: Microsoft Office, the Adobe Suite, and most games are the most prominent examples. The free and open-source alternatives (LibreOffice and GIMP) are good, but not <em>as</em> good as their commercial counterpart. I used Linux exclusively for more than 10 years now, and I never regretted it. Recently I had to install Windows in a virtual machine in order to use the MS Office software provided by the University, and it works perfectly.</p>
+<p>There are also some reasons <strong>not</strong> to use Linux of course. For one, Linux can be surprising at first and you'll need some time to get used to it. Also, it doesn't come pre-installed on most computers and you'll have to do it yourself (this is going to change: several retailers are already selling cheaper Ubuntu laptops to students). It is possible (but unlikely) that some of your hardware will not be compatible with Linux. Finally, some software simply aren't available on Linux: Microsoft Office, the Adobe Suite, and most games are the most prominent examples. The free and open-source alternatives (LibreOffice and GIMP) are good, but not <em>as</em> good as their commercial counterpart. I used Linux exclusively for more than 10 years now, and I never regretted it. Recently I had to install Windows in a virtual machine in order to use the MS Office software provided by the University, and it works perfectly.</p>
 
 </div>
 </div>
@@ -11846,7 +11878,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Testing-(and-embracing?)-Linux">Testing (and embracing?) Linux<a class="anchor-link" href="#Testing-(and-embracing?)-Linux">&#182;</a></h2>
+<h2 id="Testing-Linux">Testing Linux<a class="anchor-link" href="#Testing-Linux">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -11855,76 +11887,12 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here are a few ways you can use Linux and make an idea by yourself:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="At-the-University-of-Innsbruck-(and-other-universities-as-well)">At the University of Innsbruck (and other universities as well)<a class="anchor-link" href="#At-the-University-of-Innsbruck-(and-other-universities-as-well)">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In order to use Linux in the computer room you have to register for an account <a href="http://orawww.uibk.ac.at/public_prod/owa/uvw$web$10.p001">here</a>. After an hour or so you will be able to connect to any computer using your username and password. 
-The Linux <a href="https://en.wikipedia.org/wiki/Linux_distribution">distribution</a> used at the university is <a href="https://www.centos.org/">CentOS</a>. These details are not very important, since you will see that most of the applications we will use are similar to those in windows. For example, you will recognize the Firefox icon in the task bar.</p>
-<p>If you are a student of another university, it is likely that they provide access to Linux environments, too.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="On-your-laptop-in-a-virtual-machine">On your laptop in a virtual machine<a class="anchor-link" href="#On-your-laptop-in-a-virtual-machine">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This is a very easy and non-destructive way to try Linux. There are tons of tutorials online, <a href="https://helpdeskgeek.com/linux-tips/how-to-install-ubuntu-in-virtualbox/">this one</a> seems OK.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="On-your-laptop-alongside-Windows">On your laptop alongside Windows<a class="anchor-link" href="#On-your-laptop-alongside-Windows">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This is a bit more dangerous, but the best way if you want to use both operating systems at full capacity. See <a href="https://help.ubuntu.com/community/WindowsDualBoot">here</a> for the official instructions. Be careful however: it is possible that things get a bit complicated going this way: secure your data first, and be prepared fore some unexpected events.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="On-your-laptop-without-Windows">On your laptop without Windows<a class="anchor-link" href="#On-your-laptop-without-Windows">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Congratulations, this is the best solution! Please check that your hardware is <a href="https://certification.ubuntu.com/desktop/">compatible</a> first, and follow the install instructions of your chosen OS. If you want to use Windows afterwards you can still re-install it or install it in a virtual machine.</p>
+<ul>
+<li><strong>At the University of Innsbruck</strong>: In order to use Linux in the computer room you have to register for an account <a href="http://orawww.uibk.ac.at/public_prod/owa/uvw$web$10.p001">here</a>. After an hour or so you will be able to connect to any computer using your username and password. The Linux distribution used at the university is <a href="https://www.centos.org/">CentOS</a> (not my favorite I have to admit). If you are a student of another university, it is likely that you have access to Linux environments, too.</li>
+<li><strong>On your laptop, in a virtual machine</strong>: This is a very easy and non-destructive way to try Linux. There are tons of tutorials online, <a href="https://helpdeskgeek.com/linux-tips/how-to-install-ubuntu-in-virtualbox/">this one</a> seems OK.</li>
+<li><strong>On your laptop, alongside Windows (dual boot)</strong>: this is a bit more engaged, but the best way if you want to use both operating systems at full capacity. See <a href="https://help.ubuntu.com/community/WindowsDualBoot">here</a> for the official instructions. Be careful however: it is possible that things get a bit complicated going this way: secure your data first, and be prepared fore some unexpected events. </li>
+<li><strong>On your laptop, without Windows</strong>: Congratulations, this is the best solution! Please check that your hardware is <a href="https://certification.ubuntu.com/desktop/">compatible</a> first, and follow the install instructions of your chosen OS. If you want to use Windows afterwards you can still re-install it or install it in a virtual machine. </li>
+</ul>
 
 </div>
 </div>
@@ -11934,6 +11902,373 @@ The Linux <a href="https://en.wikipedia.org/wiki/Linux_distribution">distributio
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="The-linux-command-line">The linux command line<a class="anchor-link" href="#The-linux-command-line">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Copyright notice: this section was largely inspired from the first parts of Michael Stonebank's <a href="http://www.ee.surrey.ac.uk/Teaching/Unix/index.html">UNIX tutorial</a></em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To open a terminal window, click on the "Terminal" icon from the <code>Applications/System Tools</code> menu. You can add an icon to your "quick launch" taskbar simply by dragging the icon to it.</p>
+<p>A terminal window should appear with a <code>$</code> prompt, waiting for you to start entering commands.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Listing-files-and-directories">Listing files and directories<a class="anchor-link" href="#Listing-files-and-directories">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>ls (list)</strong></p>
+<p>When you first login, your current working directory is your home directory. Your home directory has the same name as your username, for example, c7071047, and it is where your personal files and subdirectories are saved.</p>
+<p>To find out what is in your home directory, type:</p>
+
+<pre><code>$ ls</code></pre>
+<p>The <code>ls</code> command lists the contents of your current working directory.</p>
+<p><code>ls</code> does not, in fact, cause all the files in your home directory to be listed, but only those ones whose name does not begin with a dot (.) Files beginning with a dot (.) are known as hidden files and usually contain important program configuration information. They are hidden because you should not change them unless you know what you do.</p>
+<p>To list all files in your home directory including those whose names begin with a dot, type:</p>
+
+<pre><code>$ ls -a</code></pre>
+<p>As you can see, <code>ls -a</code> lists files that are normally hidden.</p>
+<p><code>ls</code> is an example of a command which can take options: <code>-a</code> is an example of an option. The options change the behaviour of the command. There are online manual pages that tell you which options a particular command can take, and how each option modifies the behaviour of the command. <code>ls -lh</code> is an other way tow call <code>ls</code> with two options, <code>l</code> for "listing format" and <code>h</code> for "human readable".</p>
+<p><strong>Note:</strong> linux file names and commands are <em>case sensitive</em>, i.e. <code>Test.txt</code> is different from <code>test.txt</code>, and both names could coexist in the same directory.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-directory-structure">The directory structure<a class="anchor-link" href="#The-directory-structure">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>All the files are grouped together in the directory structure. The file-system is arranged in a hierarchical structure, like an inverted tree. The top of the hierarchy is traditionally called root (written as a slash <code>/</code> )</p>
+<p><img src="http://www.ee.surrey.ac.uk/Teaching/Unix/media/unix-tree.png" alt="image"></p>
+<p>When loging in we are automatically located in our personal <code>home</code> directory, which is aptly named because:</p>
+<ul>
+<li>we won't need to leave <code>home</code> during our excercises</li>
+<li>we are allowed to do whatever we want in our <code>home</code>, while we are not allowed to write, delete or change things in the other directories.</li>
+</ul>
+<p>To know where we are in the directory structure, there is a useful command:</p>
+
+<pre><code>$ pwd</code></pre>
+<p>which prints the name of the current working directory.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Making-Directories">Making Directories<a class="anchor-link" href="#Making-Directories">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>mkdir (make directory)</strong></p>
+<p>We will now make a subdirectory in your home directory to hold the files you will be creating and using in the course of this tutorial. To make a subdirectory called <code>unixstuff</code> in your current working directory type:</p>
+
+<pre><code>$ mkdir unixstuff</code></pre>
+<p>To see the directory you have just created, type:</p>
+
+<pre><code>$ ls</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Changing-to-a-different-directory">Changing to a different directory<a class="anchor-link" href="#Changing-to-a-different-directory">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>cd (change directory)</strong></p>
+<p>The command <code>cd directory</code> means change the current working directory to "directory". The current working directory may be thought of as the directory you are in, i.e. your current position in the file-system tree.</p>
+<p>To change to the directory you have just made, type:</p>
+
+<pre><code>$ cd unixstuff</code></pre>
+<p>Type <code>ls</code> to see the contents (which should be empty)</p>
+<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: make a directory called <code>backup</code> in the <code>unixstuff</code> directory</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-directories-.-and-..">The directories . and ..<a class="anchor-link" href="#The-directories-.-and-..">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Still in the <code>unixstuff</code> directory, type:</p>
+
+<pre><code>$ ls -a</code></pre>
+<p>As you can see, in the unixstuff directory (and in all other directories), there are two special directories called (.) and (..)</p>
+<p><strong>The current directory (.)</strong></p>
+<p>In linux, (.) means the current directory, so typing:</p>
+
+<pre><code>$ cd .</code></pre>
+<p>means "stay where you are" (the unixstuff directory).</p>
+<p>This may not seem very useful at first, but using (.) as the name of the current directory will save a lot of typing, as we shall see.</p>
+<p><strong>The parent directory (..)</strong></p>
+<p>(..) means the parent of the current directory, so typing:</p>
+
+<pre><code>$ cd ..</code></pre>
+<p>will take you one directory up the hierarchy (back to your home directory). Try it now.</p>
+<p><strong>Note</strong>: typing cd with no argument always returns you to your home directory. This is very useful if you are lost in the file system.</p>
+<p><strong>~ (your home directory)</strong></p>
+<p>Home directories can also be referred to by the tilde <code>~</code> character. It can be used to specify paths starting at your home directory. So typing:</p>
+
+<pre><code>  $ ls ~/unixstuff</code></pre>
+<p>will list the contents of your unixstuff directory, no matter where you currently are in the file system.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Copying-files">Copying files<a class="anchor-link" href="#Copying-files">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>cp (copy)</strong></p>
+<p><code>cp file1 file2</code> is the command which makes a copy of <code>file1</code> in the current working directory and calls it <code>file2</code></p>
+<p>What we are going to do now, is to take a file stored in an open access area of the file system, and use the <code>cp</code> command to copy it to your unixstuff directory.</p>
+<p>First, <code>cd</code> to your unixstuff directory:</p>
+
+<pre><code>$ cd ~/unixstuff</code></pre>
+<p>Then type:</p>
+
+<pre><code>$ cp /scratch/c707/c7071047/tuto/science.txt .</code></pre>
+<p><strong>Note</strong>: Don't forget the dot . at the end. Remember, in linux, the dot means the current directory.</p>
+<p>The above command means "copy the file science.txt to the current directory, keeping the name the same".</p>
+<p><strong>Note</strong>: The directory <code>/scratch/c707/c7071047/tuto</code> is an area to which everyone in the University has read and copy access. If you are from outside the University, you can grab a copy of the file from the internet. For this, you can use another very useful command, <code>wget</code>:</p>
+
+<pre><code>$ wget http://www.ee.surrey.ac.uk/Teaching/Unix/science.txt</code></pre>
+<p>This will download the file <code>science.txt</code> to your current directory</p>
+<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: Create a backup of your <code>science.txt</code> file by copying it to a file called <code>science.bak</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Moving-files">Moving files<a class="anchor-link" href="#Moving-files">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>mv (move)</strong></p>
+<p><code>mv file1 file2</code> moves (or renames) <code>file1</code> to <code>file2</code></p>
+<p>To move a file from one place to another, use the <code>mv</code> command. This has the effect of moving rather than copying the file, so you end up with only one file rather than two.</p>
+<p>It can also be used to rename a file, by moving the file to the same directory, but giving it a different name.</p>
+<p>We are now going to move the file <code>science.bak</code> to your <code>backup</code> directory.</p>
+<p>First, change directories to your <code>unixstuff</code> directory. Then type:</p>
+
+<pre><code>$ mv science.bak backup/.</code></pre>
+<p>Type <code>ls</code> and <code>ls backup</code> to see if it has worked.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Removing-files-and-directories">Removing files and directories<a class="anchor-link" href="#Removing-files-and-directories">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>rm (remove), rmdir (remove directory)</strong></p>
+<p>To delete (remove) a file, use the <code>rm</code> command. As an example, we are going to create a copy of the <code>science.txt</code> file and then delete it.</p>
+<p>Inside your <code>unixstuff</code> directory, type:</p>
+
+<pre><code>$ cp science.txt tempfile.txt 
+$ ls
+$ rm tempfile.txt
+$ ls</code></pre>
+<p>You can use the <code>rmdir</code> command to remove a directory (make sure it is empty first). Try to remove the <code>backup</code> directory. You will not be able to since linux will not let you remove a non-empty directory. To delete a non-empty directory with all its subdirectories you can use the option <code>-r</code> (r for recursive):</p>
+
+<pre><code>$ rm -r /path/to/some/directory</code></pre>
+<p>This command will then ask you confirmation for certain files judged important. If you are very sure of what you do, you can add a <code>-f</code> to the command (f for force):</p>
+
+<pre><code>$ rm -rf /path/to/some/directory/that/i/am/very/sure/to/delete</code></pre>
+<p><strong>Note:</strong> directories deleted with <code>rm</code> are lost <em>forever</em>. They don't go to the trash, they are just deleted.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Displaying-the-contents-of-a-file-on-the-screen">Displaying the contents of a file on the screen<a class="anchor-link" href="#Displaying-the-contents-of-a-file-on-the-screen">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>clear (clear screen)</strong></p>
+<p>Before you start the next section, you may like to clear the terminal window of the previous commands so the output of the following commands can be clearly understood.</p>
+<p>At the prompt, type:</p>
+
+<pre><code>$ clear</code></pre>
+<p>This will clear all text and leave you with the <code>$</code> prompt at the top of the window.</p>
+<p><strong>cat (concatenate)</strong></p>
+<p>The command <code>cat</code> can be used to display the contents of a file on the screen. Type:</p>
+
+<pre><code>$ cat science.txt</code></pre>
+<p>As you can see, the file is longer than than the size of the window. You can scroll back but this is not very useful.</p>
+<p><strong>less</strong></p>
+<p>The command <code>less</code> writes the contents of a file onto the screen a page at a time. Type:</p>
+
+<pre><code>$ less science.txt</code></pre>
+<p>Press the <code>[space-bar]</code> if you want to see another page, and type <code>[q]</code> if you want to quit reading. As you can see, <code>less</code> is used in preference to <code>cat</code> for long files.</p>
+<p><strong>head</strong></p>
+<p>The <code>head</code> command writes the first ten lines of a file to the screen.</p>
+<p>First clear the screen then type:</p>
+
+<pre><code>$ head science.txt</code></pre>
+<p>Then type:</p>
+
+<pre><code>$ head -5 science.txt</code></pre>
+<p>What difference did the <code>-5</code> do to the head command?</p>
+<p><strong>tail</strong></p>
+<p>The tail command writes the last ten lines of a file to the screen.</p>
+<p>Clear the screen and type:</p>
+
+<pre><code>$ tail science.txt</code></pre>
+<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: How can you view the last 15 lines of the file?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Searching-the-contents-of-a-file">Searching the contents of a file<a class="anchor-link" href="#Searching-the-contents-of-a-file">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Simple searching using <code>less</code></strong></p>
+<p>Using <code>less</code>, you can search though a text file for a keyword (pattern). For example, to search through <code>science.txt</code> for the word "science", type:</p>
+
+<pre><code>$ less science.txt</code></pre>
+<p>then, still in <code>less</code>, type a forward slash <code>[/]</code> followed by the word to search:</p>
+
+<pre><code>/science</code></pre>
+<p>And tape <code>[enter]</code>. Type <code>[n]</code> to search for the next occurrence of the word.</p>
+<p><strong>grep</strong></p>
+<p><code>grep</code> is one of many standard linux utilities. It searches files for specified words or patterns. First clear the screen, then type:</p>
+
+<pre><code>$ grep science science.txt</code></pre>
+<p>As you can see, <code>grep</code> has printed out each line containg the word science.</p>
+<p>Or has it ????</p>
+<p>Try typing:</p>
+
+<pre><code>$ grep Science science.txt</code></pre>
+<p>The <code>grep</code> command is case sensitive; it distinguishes between Science and science.</p>
+<p>To ignore upper/lower case distinctions, use the <code>-i</code> option, i.e. type:</p>
+
+<pre><code>$ grep -i science science.txt</code></pre>
+<p>To search for a phrase or pattern, you must enclose it in single quotes (the apostrophe symbol). For example to search for spinning top, type:</p>
+
+<pre><code>$ grep -i 'spinning top' science.txt</code></pre>
+<p>Some of the other options of <code>grep</code> are:</p>
+<ul>
+<li><code>-v</code> display those lines that do NOT match</li>
+<li><code>-n</code> precede each matching line with the line number</li>
+<li><code>-c</code> print only the total count of matched lines</li>
+</ul>
+<p>Try some of them and see the different results. Don't forget, you can use more than one option at a time. For example, the number of lines without the words science or Science is:</p>
+
+<pre><code>$ grep -ivc science science.txt</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Take-home-points:-Linux-command-line">Take home points: Linux command line<a class="anchor-link" href="#Take-home-points:-Linux-command-line">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We have only shown some examples of how to navigate in the linux directory structure and use some simple commands. This is by far not sufficient to demonstrate its usefulness: the <code>grep</code> command for example is extremely powerful to help you find files that you thought you had lost, and <code>wget</code> a file to a current directory is often much faster than downloading it in firefox and copy it afterwards. For the time being, this short tutorial should help get you started.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Programs-and-executables-in-Linux">Programs and executables in Linux<a class="anchor-link" href="#Programs-and-executables-in-Linux">&#182;</a></h2>
 </div>
 </div>
 </div>
