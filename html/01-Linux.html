@@ -11775,7 +11775,182 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Linux-basics">Linux basics<a class="anchor-link" href="#Linux-basics">&#182;</a></h1>
+<h1 id="A-very-short-introduction-to-Linux">A very short introduction to Linux<a class="anchor-link" href="#A-very-short-introduction-to-Linux">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This lecture is about programming, but it would be a big mistake to omit talking about Linux here, at least a little bit.</p>
+<p>I think that every student in (geo-)sciences should know about the existence of Linux and know the basics of it. Atmospheric Sciences students in particular will have to use it sooner or later, since most of the the tools and data they are using are running or have been created on Linux systems.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
+<div class="toc" style="margin-top: 1em;"><ul class="toc-item"><li><span><a href="#A-very-short-introduction-to-Linux" data-toc-modified-id="A-very-short-introduction-to-Linux-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>A very short introduction to Linux</a></span><ul class="toc-item"><li><span><a href="#What-is-Linux?" data-toc-modified-id="What-is-Linux?-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>What is Linux?</a></span></li><li><span><a href="#Should-I-use-it?" data-toc-modified-id="Should-I-use-it?-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Should I use it?</a></span></li><li><span><a href="#Testing-(and-embracing?)-Linux" data-toc-modified-id="Testing-(and-embracing?)-Linux-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Testing (and embracing?) Linux</a></span><ul class="toc-item"><li><span><a href="#At-the-University-of-Innsbruck-(and-other-universities-as-well)" data-toc-modified-id="At-the-University-of-Innsbruck-(and-other-universities-as-well)-1.3.1"><span class="toc-item-num">1.3.1&nbsp;&nbsp;</span>At the University of Innsbruck (and other universities as well)</a></span></li><li><span><a href="#On-your-laptop-in-a-virtual-machine" data-toc-modified-id="On-your-laptop-in-a-virtual-machine-1.3.2"><span class="toc-item-num">1.3.2&nbsp;&nbsp;</span>On your laptop in a virtual machine</a></span></li><li><span><a href="#On-your-laptop-alongside-Windows" data-toc-modified-id="On-your-laptop-alongside-Windows-1.3.3"><span class="toc-item-num">1.3.3&nbsp;&nbsp;</span>On your laptop alongside Windows</a></span></li><li><span><a href="#On-your-laptop-without-Windows" data-toc-modified-id="On-your-laptop-without-Windows-1.3.4"><span class="toc-item-num">1.3.4&nbsp;&nbsp;</span>On your laptop without Windows</a></span></li></ul></li><li><span><a href="#The-linux-command-line" data-toc-modified-id="The-linux-command-line-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>The linux command line</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-is-Linux?">What is Linux?<a class="anchor-link" href="#What-is-Linux?">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <a href="https://www.google.co.uk/search?q=What+is+Linux">web</a> is going to give a better answer than me to this question.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Should-I-use-it?">Should I use it?<a class="anchor-link" href="#Should-I-use-it?">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>My very personal answer is a clear: <strong>yes</strong>! I can't force you though, and most of the exercises of this lecture can be done on a Windows computer too. If you are running Mac OSX then you have access to most Linux commands anyway, and you can ignore my recommendation (even if I don't like Apple for several other reasons - totally subjective opinion again ;).</p>
+<p>Linux has always been an environment for programmers and has the reputation of being "geeky" and "complicated". This is less true today, with many Linux distributions becoming mainstream and easy to use (my personal favorite is <a href="http://linuxmint.com">Linux Mint</a>, but you probably mostly heard of <a href="http://ubuntugnome.org/">Ubuntu</a> which I also recommend).</p>
+<p>I believe that Linux is <em>much</em> more user-friendly than Windows: once some of the particularities of Linux are understood (which can be frustrating in the beginning since it works <em>quite</em> differently than windows), it appears that there is much less "hidden" in Linux than in Windows (especially when it comes to installing/deinstalling softwares, using the command line, or protecting yourself from viruses and intruders).</p>
+<p><strong>As a scientist and programmer</strong> there are many reasons to prefer Linux (or Mac OSX) to Windows. Let me list some reasons here:</p>
+<ul>
+<li><strong>Linux comes with a lot of tools for scientists and programmers</strong>. For historical reasons, Linux and it's command line tools have been used by scientists and programmers since decades. It is not a surprise then that Linux comes with many (many) useful utilities to make programming and working with data easier.</li>
+<li><strong>Linux is fast and reliable</strong>. Linux is extremely stable, and more lightweight than Windows. I've never seen a Linux distribution becoming <em>slower</em> with time, as I was used to see in my time using Windows (I have to admit: it was more than 10 years ago).</li>
+<li><strong>Linux is the operating system of the huge majority of the super computers and web servers worldwide</strong>. Because of it's speed, security, and multiple user management tools, Linux has taken over the web: <a href="https://en.wikipedia.org/wiki/Linux_adoption#Supercomputers">99.4%</a> of the super computers and <a href="https://en.wikipedia.org/wiki/Linux_adoption#Servers">67.5%</a> of the web servers run Linux, <a href="https://en.wikipedia.org/wiki/Linux_adoption#Mobile_devices">79.3%</a> of the mobile devices run Linux via Android.</li>
+<li><strong>Linux is at the heart of the open-source philosophy</strong>. Linux is free and open-source, and it is not surprising that people who embraced the open-source philosophy also prefer Linux to Windows or Mac. </li>
+</ul>
+<p>There are also some reasons <strong>not</strong> to use Linux of course. For one, Linux can be surprising at first and it needs time to get used to it. Also, it doesn't come pre-installed on most computers and you'll have to do it yourself (although this is changing fast, with several retailers now selling Ubuntu laptops to students). It is possible that some of your hardware will not be compatible with Linux (nowadays this is now more the exception than the norm). Finally, some software simply aren't available on Linux: Microsoft Office, the Adobe Suite, and most games are the most prominent examples. The free and open-source alternatives (LibreOffice and GIMP) are good, but not <em>as</em> good as their commercial counterpart. I used Linux exclusively for more than 10 years now, and I never regretted it. Recently I had to install Windows in a virtual machine in order to use the MS Office software provided by the University, and it works perfectly.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Testing-(and-embracing?)-Linux">Testing (and embracing?) Linux<a class="anchor-link" href="#Testing-(and-embracing?)-Linux">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here are a few ways you can use Linux and make an idea by yourself:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="At-the-University-of-Innsbruck-(and-other-universities-as-well)">At the University of Innsbruck (and other universities as well)<a class="anchor-link" href="#At-the-University-of-Innsbruck-(and-other-universities-as-well)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In order to use Linux in the computer room you have to register for an account <a href="http://orawww.uibk.ac.at/public_prod/owa/uvw$web$10.p001">here</a>. After an hour or so you will be able to connect to any computer using your username and password. 
+The Linux <a href="https://en.wikipedia.org/wiki/Linux_distribution">distribution</a> used at the university is <a href="https://www.centos.org/">CentOS</a>. These details are not very important, since you will see that most of the applications we will use are similar to those in windows. For example, you will recognize the Firefox icon in the task bar.</p>
+<p>If you are a student of another university, it is likely that they provide access to Linux environments, too.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="On-your-laptop-in-a-virtual-machine">On your laptop in a virtual machine<a class="anchor-link" href="#On-your-laptop-in-a-virtual-machine">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is a very easy and non-destructive way to try Linux. There are tons of tutorials online, <a href="https://helpdeskgeek.com/linux-tips/how-to-install-ubuntu-in-virtualbox/">this one</a> seems OK.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="On-your-laptop-alongside-Windows">On your laptop alongside Windows<a class="anchor-link" href="#On-your-laptop-alongside-Windows">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is a bit more dangerous, but the best way if you want to use both operating systems at full capacity. See <a href="https://help.ubuntu.com/community/WindowsDualBoot">here</a> for the official instructions. Be careful however: it is possible that things get a bit complicated going this way: secure your data first, and be prepared fore some unexpected events.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="On-your-laptop-without-Windows">On your laptop without Windows<a class="anchor-link" href="#On-your-laptop-without-Windows">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Congratulations, this is the best solution! Please check that your hardware is <a href="https://certification.ubuntu.com/desktop/">compatible</a> first, and follow the install instructions of your chosen OS. If you want to use Windows afterwards you can still re-install it or install it in a virtual machine.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-linux-command-line">The linux command line<a class="anchor-link" href="#The-linux-command-line">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What's-next?">What's next?<a class="anchor-link" href="#What's-next?">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Back to the <a href="00-Introduction.html#toc">Table of Contents</a>, or <a href="02-Installation.html">jump to the next chapter</a>.</p>
+
 </div>
 </div>
 </div>
