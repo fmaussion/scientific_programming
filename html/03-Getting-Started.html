@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>00-Introduction</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>03-Getting-Started</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11807,7 +11807,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Scientific-Programming">Scientific Programming<a class="anchor-link" href="#Scientific-Programming">&#182;</a></h1>
+<h1 id="Getting-started-with-Python">Getting started with Python<a class="anchor-link" href="#Getting-started-with-Python">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11815,8 +11815,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Fabien Maussion</strong></p>
-
+<h2 id="What's-next?">What's next?<a class="anchor-link" href="#What's-next?">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -11824,247 +11823,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Lecture notes of the master lecture <a href="https://orawww.uibk.ac.at/public/lfuonline_lv.details?sem_id_in=18S&amp;lvnr_id_in=707716">707716 - Scientific Programming</a>, given for the first time in the summer term 2018.</p>
-<p>If you're not here for the first time, jump to:</p>
-<ul>
-<li><a href="#ctoc">the table of contents</a></li>
-<li><a href="#howto">how to use this book</a></li>
-<li><a href="#refs">external resources</a></li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/00_messing_python.png">
-<em>Adapted from <a href="https://xkcd.com/519/">xkcd</a>. The xkcd author Randall Munroe <a href="https://xkcd.com/353/">would most certainly agree</a> with my changes.</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Preface">Preface<a class="anchor-link" href="#Preface">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There are plenty of excellent resources to learn python available (see <a href="#refs">references</a> below). So why writing this "book"? Well, for one, because none of them is organized to fit <em>exactly</em> the 15 week semester of Austrian universities. Therefore I had to make some choices regarding (i) what to teach and (ii) how to teach it. However, there is no need in reinventing the wheel and rewriting what much better teachers wrote before me: as you will see, I will rely heavily on external resources, all openly available. Following the open source philosophy, these lecture notes are also freely available.</p>
-<p>These notes are written on the go, as this course advances. I am trying to write them in such a way that they are understandable without actually <em>attending</em> the course, but this takes time and if I'm getting late on schedule I might revisit this goal. In that case I'll have to come back to them later ;-).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Learning-outcomes-of-this-course">Learning outcomes of this course<a class="anchor-link" href="#Learning-outcomes-of-this-course">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This class aims at learning <strong>modern programming techniques</strong> for (geo-)scientists. After finishing the class, attendees should understand how numbers are handled by computers and be aware of numerical accuracy errors. They should be able to program in a structured, extendable and reproducible manner. In the process of this class students will get acquainted with various programming tools (IDEs, debugger, unit testing, object oriented programming, version control, open development practices).</p>
-<p>The targeted audience for this lecture are (geo-)sience <strong>students at the master level with previous experience in programming</strong>. No prior knowledge of python is required, but I'll assume that you are familiar with a similar language (Matplab, IDL, R, Julia...). This is <em>not</em> an introductory course, although we will shortly revisit the basics in order to learn the python syntax.</p>
-<p>The course encompasses the following topics, which are developed by means of concrete examples in the Python programming language:</p>
-<ul>
-<li>Introduction to Linux</li>
-<li>Semantics: revisiting and formalizing the basic programming structures (loops, functions, conditional blocks...)</li>
-<li>General programming concepts, differences between compiled and interpreted languages</li>
-<li>Numerics: floating point numbers, N-dimensional arrays</li>
-<li>Software structure: packages, modules, functions, scripts</li>
-<li>Object oriented programming: fundamentals, usage, and basic design patterns</li>
-<li>Code testing and version control</li>
-<li>Real world applications!</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Frequently-Asked--Questions">Frequently Asked  Questions<a class="anchor-link" href="#Frequently-Asked--Questions">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="What-is-&quot;Scientific-Programming&quot;?">What is "Scientific Programming"?<a class="anchor-link" href="#What-is-&quot;Scientific-Programming&quot;?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Scientific programming</strong> targets to solve scientific problems with the help of computers. It is sometimes used as synonym for <a href="https://en.wikipedia.org/wiki/Computational_science">computational science</a>, but in my opinion these are not entirely the same. "Scientific programming" is not really a discipline, and therefore cannot be taught.</p>
-<p>What are we doing here then? Well, we are going to learn <strong>programing</strong> first, and then <strong>programming as a tool to do science</strong>. We are going to apply our new skills to scientific problems, but not only. Within the time given to us (14 units) we won't be able to learn <em>everything</em> about programming of course. My hope is that at the end of the lecture you'll have sufficient background and tools at your disposition to solve your own problems, and (this is the most important bit) that you'll know <em>where</em> to find solutions to the problems you encounter.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why-should-I-learn-programming?">Why should I learn programming?<a class="anchor-link" href="#Why-should-I-learn-programming?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As a scientist you are going to either <em>produce</em> or <em>analyze</em> data, most of the time you'll do both. For a long time, scientist have seen programming as a "tool", a menial task to accomplish in order to answer the questions they were asking. Nowadays programming has taken a prominent place in a scientist's work, for several reasons:</p>
-<ul>
-<li><strong>the amount of data we have to handle increases together with computational power and our capacity to store it</strong>. I would even argue that the bottleneck in model based scientific discovery isn't the computational effort anymore, but our capacity to comprehend and analyze these huge amounts of data.</li>
-<li><strong>the questions we are asking are getting complexer, and so are the tools we are using to answer them</strong>. The times when scientists could make discoveries with the help of a piece of paper and a pen are long gone, at least for most of us in the geosciences. We rely heavily on computer models, and these models are developed by us scientists, <em>not</em> by programmers.</li>
-<li><strong>science faces a credibility crisis</strong>, and part of the mistrust towards scientists comes from the fact that their research happens behind closed doors, using closed source tools and based on protected data. Opening our computers and demonstrating that our code can be trusted is necessary to re-engage confidence in our results.</li>
-<li>some argue that in the <a href="http://www.rushkoff.com/books/program-or-be-programmed/">"digital age, programming is the new literacy"</a>: understanding the tools that govern our digital world is a strong asset for many aspects of our life and citizenship.</li>
-</ul>
-<p>In simple words, we have to become better programmers to be faster and better at what we do: science.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why-Python?">Why Python?<a class="anchor-link" href="#Why-Python?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We will use the <a href="https://www.python.org/">Python programming language</a> in this course. In case you are wondering why this language and not any other like <code>&lt;name your favorite language here&gt;</code>, let me stop you right away: this course is not about "learning Python", it is about learning the general concepts of programming: algorithmic, numerics, program structure, object oriented programming, testing, etc. Python is just the tool I chose to use for this purpose.</p>
-<p>We could indeed have taken any other language, but there are several advantages in using Python. A quick web search will give you <a href="https://www.google.co.uk/search?dcr=0&amp;ei=Wo2OWtKHNY7fwAKv1KbIDQ&amp;q=Why+should+I+learn+python">millions of reasons</a>, but let me pick some of my favorites here:</p>
-<ul>
-<li><strong>Python is a general purpose programming language and, as such, well suited to learn general programming concepts</strong>. It is therefore better suited than, for example, <a href="https://www.r-project.org/">R</a> which was developed for statistics and has certain particularities regarding object oriented programming in particular.</li>
-<li><strong>Python can be used for many purposes</strong>, from data preprocessing to numerical modeling and plotting. Unless you have a very compelling reason to change, you are likely to be able to use Python for all programming tasks you'll have in the near future.</li>
-<li><strong>Python is one of the <a href="https://stackoverflow.blog/2017/09/06/incredible-growth-python/">fastest growing language for data science</a></strong>. There is a very active community developing new and exiting packages every day, and joining this community is surely a good bet on the future.</li>
-<li><strong>Python is free and open-source</strong>. No license fee, the code is available for everyone to see.</li>
-</ul>
-<p>There are many other reasons to use Python (and some arguments <em>against</em> Python as well of course), but I don't think it's relevant to list them here. My argument is following: for a good a diversified programmer, switching language is not a very big deal. It's not easy of course, but it's possible - becoming a good programmer is the hard bit, and is a never ending process.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Course-contents">Course contents<a class="anchor-link" href="#Course-contents">&#182;</a></h2><p><a id='ctoc'></a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><strong>Week 01</strong>:<ul>
-<li><a href="01-Linux.html">01 - A very short introduction to Linux</a></li>
-<li><a href="02-Installation.html">02 - Installing Python</a></li>
-<li><a href="03-Getting-Started.html">03 - Getting started with Python</a></li>
-<li><a href="04-Assignment-01">04 - Assignment #01: a simple script</a></li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-to-use-these-notes">How to use these notes<a class="anchor-link" href="#How-to-use-these-notes">&#182;</a></h2><p><a id='howto'></a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>These notes are written as a companion to the lectures. During the lectures I will go through the major concepts (using slides, the good old way), and the notes are here to help you learn at home. In an ideal world the notes should be usable without me paraphrasing them out loud, but this will depend on my time.</p>
-<p>The notes are a mix of examples and small exercises. The exercises can happen in between the examples and are marked with a question mark logo. At the end of each unit there will be an <strong>assignment</strong>. These can be worked through alone or in groups. Each week, I will ask <strong>one group</strong> to present their results to the rest of the class.</p>
-<p>When you will be going through the examples of these notes, some sentences are marked in <strong>bold</strong>: this underlines their importance for the course. When <strong>single words</strong> are <strong>bold</strong>  this symbolizes new concepts or new definitions: they need to be understood (and <em>googled</em> if needed).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="External-resources">External resources<a class="anchor-link" href="#External-resources">&#182;</a></h2><p><a id='refs'></a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Resources used (and linked) in these lecture notes (will be updated when the notes get written further):</p>
-<p><strong>Linux and bash scripting:</strong></p>
-<ul>
-<li><a href="https://ryanstutorials.net/">Ryan's Tutorials</a> for the linux command line and bash scripting are entertaining and well designed.</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="License">License<a class="anchor-link" href="#License">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
-  <img align="left" src="http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.eu.svg"/>
-</a></p>
-<p><br>
-<br></p>
-<p>These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
-<p>Feel free to use / adapt them, but don't sell them, and share them under the same licence.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="http://acinn.uibk.ac.at/" target="_blank">
-  <img align="left" src="../img/logo_acinn_small.jpg"/>
-</a></p>
+<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="04-Assignment-01.html">jump to the next chapter</a>.</p>
 
 </div>
 </div>

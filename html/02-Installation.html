@@ -11815,8 +11815,17 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://www.python.org/static/community_logos/python-logo.png" align="left"> This chapter contains some instructions about how to install Python on your university account (mandatory exercise for the UIBK students) and some advice on how to install it on your personal computer. Python is free, so download it and try it at home!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc" style="margin-top: 1em;"><ul class="toc-item"><li><span><a href="#On-linux" data-toc-modified-id="On-linux-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>On linux</a></span></li><li><span><a href="#On-windows" data-toc-modified-id="On-windows-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>On windows</a></span></li><li><span><a href="#Etc" data-toc-modified-id="Etc-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Etc</a></span></li></ul></div>
+<div class="toc" style="margin-top: 1em;"><ul class="toc-item"><li><span><a href="#Which-Python-version?" data-toc-modified-id="Which-Python-version?-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Which Python version?</a></span><ul class="toc-item"><li><span><a href="#Short-answer" data-toc-modified-id="Short-answer-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Short answer</a></span></li><li><span><a href="#Long-answer" data-toc-modified-id="Long-answer-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Long answer</a></span></li></ul></li><li><span><a href="#Installation-at-the-University-of-Innsbruck" data-toc-modified-id="Installation-at-the-University-of-Innsbruck-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Installation at the University of Innsbruck</a></span><ul class="toc-item"><li><span><a href="#The-default--python-on-linux-systems" data-toc-modified-id="The-default--python-on-linux-systems-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>The default  python on linux systems</a></span></li><li><span><a href="#Using-a-custom-(pre-installed)-python" data-toc-modified-id="Using-a-custom-(pre-installed)-python-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Using a custom (pre-installed) python</a></span></li><li><span><a href="#Making-this-change-&quot;permanent&quot;" data-toc-modified-id="Making-this-change-&quot;permanent&quot;-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Making this change "permanent"</a></span></li></ul></li><li><span><a href="#Installing-Python-on-your-PC" data-toc-modified-id="Installing-Python-on-your-PC-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Installing Python on your PC</a></span><ul class="toc-item"><li><span><a href="#Install-Miniconda" data-toc-modified-id="Install-Miniconda-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Install Miniconda</a></span></li><li><span><a href="#Optional:-make-a-new-environment-called-&quot;py3&quot;" data-toc-modified-id="Optional:-make-a-new-environment-called-&quot;py3&quot;-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Optional: make a new environment called "py3"</a></span></li><li><span><a href="#Install-the-packages" data-toc-modified-id="Install-the-packages-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Install the packages</a></span></li><li><span><a href="#Optional:-update-the-packages" data-toc-modified-id="Optional:-update-the-packages-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Optional: update the packages</a></span></li></ul></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Take home points</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>What's next?</a></span></li></ul></div>
 </div>
 </div>
 </div>
@@ -11824,7 +11833,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="On-linux">On linux<a class="anchor-link" href="#On-linux">&#182;</a></h2>
+<h2 id="Which-Python-version?">Which Python version?<a class="anchor-link" href="#Which-Python-version?">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -11832,7 +11841,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="On-windows">On windows<a class="anchor-link" href="#On-windows">&#182;</a></h2>
+<h3 id="Short-answer">Short answer<a class="anchor-link" href="#Short-answer">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -11840,7 +11849,343 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Etc">Etc<a class="anchor-link" href="#Etc">&#182;</a></h2>
+<p>The latest stable major release of Python is <a href="https://docs.python.org/3/">Python version 3.6</a>. Like for many other software, installing the latest stable version is often the best thing to do and what we are going to do as well.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Long-answer">Long answer<a class="anchor-link" href="#Long-answer">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you did some research about Python you probably stumbled upon some discussion about the <em>Py2 vs Py3 conundrum</em>. About 10 years ago, an evolution of the python language introduced changed which were not <strong>backwards compatible</strong>. This means that code that used to work in Python 2.7 may not work in Python 3. This change was necessary to get rid of old baggage and inconsistent syntax according to the Python developers, but it was also considered by many as a "treason". Indeed, backwards compatibility is an important aspect of software development for large projects like python: it is a "contract" between developers and users stipulating that the code that users write will continue to work in subsequent releases. This contract was broken once, but this shouldn't happen again.</p>
+<p>Since updating code requires time and money, many people and companies continued to use Python 2 internally. Five years ago, I would maybe have been reluctant to teach you Python 3 because the future of the language was uncertain and many tools existed only in Python 2. Today the wide adoption of Python 3 is finally accomplished and the future is looking good. All major scientific python tools are supporting Python 3, and major players <a href="http://python3statement.org/">announced that they will stop to support Python 2</a> before of shortly after the end-of-life date of Python 2 (by 2020).</p>
+<p>In this lecture we might talk about the differences between Python 2 and Python 3 at some point, but only to get you used to them. You can safely concentrate on learning Python 3 only.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Installation-at-the-University-of-Innsbruck">Installation at the University of Innsbruck<a class="anchor-link" href="#Installation-at-the-University-of-Innsbruck">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this section we use the powerful linux PATH variable to "install" the same Python program in your personal Linux account. This is done in a couple of easy steps.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-default--python-on-linux-systems">The default  python on linux systems<a class="anchor-link" href="#The-default--python-on-linux-systems">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Open a terminal and type:</p>
+
+<pre><code>$ python</code></pre>
+<p>This should have started the python command line, looking like this:</p>
+
+<pre><code>Python 2.7.12 (default, Dec  4 2017, 14:50:18) 
+[GCC 5.4.0 20160609] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt;</code></pre>
+<p>The <code>&gt;&gt;&gt;</code> is a <strong>prompt</strong>, waiting for you to type python commands. Type <code>[CTRL+D]</code> to exit.</p>
+<p>Python is available per default on virtually <em>any</em> linux system, for the simple reason that many programs actually <em>use</em> python internally. However, as you can see, it runs python version 2. We can also run python 3 with a simple:</p>
+
+<pre><code>$ python3</code></pre>
+<p>Now, shouldn't this python program be enough? For simple usages like today's examples, yes it would suffice. But as we are going to see, python alone isn't really useful for us scientists: we need so-called <strong>third party packages</strong>, tools developed with and for python, but not available per default. While some of them are so important that they are available as linux packages, it is much easier (and safer) to use our own python installation for installing those. This is the primary purpose of a personalized python installation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Using-a-custom-(pre-installed)-python">Using a custom (pre-installed) python<a class="anchor-link" href="#Using-a-custom-(pre-installed)-python">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It turns out I have "installed" a more recent python version (and some additional packages) on a shared repository available to everyone with a UIBK account. I wrote "installed" with quotation marks because, in linux, the definition of "installed" is subjective. Let's say that I've put the python executables somewhere where everybody can see them. Let's try it:</p>
+
+<pre><code>$ /scratch/c707/c7071047/miniconda3/bin/python
+Python 3.6.4 |Anaconda, Inc.| (default, Jan 16 2018, 18:10:19) 
+[GCC 7.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt;</code></pre>
+<p>You should have been able to launch a new python interpreter: this version is more recent and provided by <code>Anaconda, Inc.</code> <strong>This is the python I'd like you to use from now on</strong> (when at the University - for your PC see the next section).</p>
+<p><strong>Note:</strong> the <code>/scratch</code> folder is a shared folder. I don't know where the device is located <em>physically</em>, but it definitely isn't in the computer room. This is yet another powerful feature of linux systems: shared folders look just like normal folders. Quite practical, huh? Now this may have one simple drawback: launching this python might be a bit slow sometimes (especially if all of you try to open it at the same time). Most of the time this shouldn't be a big problem, though.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Making-this-change-&quot;permanent&quot;">Making this change "permanent"<a class="anchor-link" href="#Making-this-change-&quot;permanent&quot;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Nobody wants to write such a long command to start python. So what we are going to do is to add the <code>/scratch/c707/c7071047/miniconda3/bin/</code> folder to our <code>PATH</code>, and in such a way that it is remembered for your later sessions.</p>
+<p>We are going to edit a special file in your <code>HOME</code>, <code>~/.bashrc</code>. This file contains a list of commands which is executed automatically each time you open a terminal. How practical! Let's open this file and add the following two lines at the end of it:</p>
+
+<pre><code># added for the python course:
+export PATH="/scratch/c707/c7071047/miniconda3/bin:$PATH"</code></pre>
+<p>What did we just do? We added a folder to the <code>PATH</code> (remember what this is?) and added it at the <em>beginning</em> of it. This is important because linux is going to look for programs in order: if a <code>python</code> executable is found in the first folder, no need to look for another one (i.e. ignore the default linux program).</p>
+<p><strong>Note:</strong>  for this change to take effect, close your terminal an open a new one! <code>~/.bashrc</code> is executed only once, at the opening of a new terminal.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If everything worked fine, after typing <code>python</code> in the command line you should be given the most recent version I prepared for you.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Installing-Python-on-your-PC">Installing Python on your PC<a class="anchor-link" href="#Installing-Python-on-your-PC">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Note:</strong> if you don't want to install python on your PC or want to do it later, skip this section.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Unlike Matlab or IDL, Python's scientific track is not installed
+"out of the box" with a single installation file.</p>
+<p>Fortunately, there are very useful tools out there to help us out.
+The most useful is <a href="http://conda.pydata.org/miniconda.html">Miniconda</a>,
+which will help us to install <strong>both</strong> Python <strong>and</strong> the packages we need
+within a couple of minutes. The first installation step is platform specific (Windows, Linux, or Mac) while the other steps are the 
+same on all platforms.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Install-Miniconda">Install Miniconda<a class="anchor-link" href="#Install-Miniconda">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Got to the miniconda <a href="http://conda.pydata.org/miniconda.html">website</a> and
+download the latest <strong>python 3.X</strong> installer for your platform (be careful to
+check whether you need a 64- or 32-bit version).</p>
+<p>The installation is really easy and described
+<a href="http://conda.pydata.org/docs/install/quick.html">here</a>. Choose an 
+installation directory where you have enough space available
+(conda installations can quickly grow larger than a few GB).</p>
+<p>To see if everything worked well, open a terminal window (on Windows, a
+<a href="http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt-window&gt;">command prompt</a>)
+, and type in:</p>
+
+<pre><code>conda update conda</code></pre>
+<p>If you type:</p>
+
+<pre><code>python</code></pre>
+<p>A new python prompt should appear, with something like:</p>
+
+<pre><code>Python X.X.X |Continuum Analytics, Inc.| (default, Oct 19 2015, 21:52:17) 
+xxxx
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt;</code></pre>
+<p>You can type <code>exit()</code> or <code>[CTRL+D]</code> to get out of the python prompt.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Optional:-make-a-new-environment-called-&quot;py3&quot;">Optional: make a new environment called "py3"<a class="anchor-link" href="#Optional:-make-a-new-environment-called-&quot;py3&quot;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Conda also helps us to define so-called "environments". A conda environment is
+a directory that contains a specific collection of packages that you have
+installed.</p>
+<p>Environments are not necessary, but helpful on the long term. If this is 
+your first installation you probably want to skip this part and go directly
+to <a href="#packs">Install the packages</a>. Please have a short look at the conda introduction
+<a href="http://conda.pydata.org/docs/intro.html">here</a> before going on.</p>
+<p>In the terminal, type::</p>
+
+<pre><code>conda create -n py3 python=3.6
+
+</code></pre>
+<p>This created a new environment called "py3" which has python V3.6 as
+default interpreter. This environment can be activated with one command:</p>
+
+<pre><code>source activate py3</code></pre>
+<p>or on windows:</p>
+
+<pre><code>activate py3</code></pre>
+<p>Note that after activation, the prompt changed to something like
+<code>[py3]xxx&gt;</code>. Once in a specific environment, all the packages we
+install will be available in this environment only. This is very useful
+if you need different versions of python for different projects for example.</p>
+<p><strong>Don't forget to activate this environment</strong> every time you want to work on
+the exercises or when you want to install a new package. You can deactivate
+the current environment with:</p>
+
+<pre><code>source deactivate</code></pre>
+<p>or on windows:</p>
+
+<pre><code>deactivate</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Install-the-packages">Install the packages<a class="anchor-link" href="#Install-the-packages">&#182;</a></h3><p><a id='packs'></a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>First we are going to tell conda where to look for packages to install:</p>
+
+<pre><code>conda config --add channels conda-forge</code></pre>
+<p>This has to be done only once. <a href="http://conda-forge.github.io">conda-forge</a> 
+is a package repository, once you have set it up as default you don't 
+have to worry about it any more.</p>
+<p>There are a couple of packages that you will always need, whatever you are
+working on. These are: <a href="http://ipython.org/">ipython</a>,
+<a href="https://jupyter.org/">Jupyter</a>, <a href="http://www.numpy.org/">numpy</a>,
+<a href="https://www.scipy.org/">scipy</a>, <a href="http://matplotlib.org">matplotlib</a>.</p>
+<p>To install them, type:</p>
+
+<pre><code>conda install numpy scipy matplotlib ipython jupyter</code></pre>
+<p>This will download the packages and install them, as well as their
+dependencies. This can take a while! If successful, you should now be able to
+start <code>ipython</code> for example:</p>
+
+<pre><code>ipython</code></pre>
+<p>Use <code>[CTRL+D]</code> to close the interpreter and get back to the prompt.</p>
+<p>We will need some other packages later on, but this will get you started.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Optional:-update-the-packages">Optional: update the packages<a class="anchor-link" href="#Optional:-update-the-packages">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After a while, it might be useful to update the packages you are using (careful! this is <em>most of the times</em> a good idea, but not <em>always</em>).</p>
+<p>If not already done before, set the conda-forge default channel:</p>
+
+<pre><code>conda config --add channels conda-forge</code></pre>
+<p>And then simply update them all:</p>
+
+<pre><code>conda update --all</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Take-home-points">Take home points<a class="anchor-link" href="#Take-home-points">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Python is available on virtually any linux distribution (not on windows). This is useful for scripting or simple tasks, but for real-world data analysis workflows you probably want to install python (and related packages) on your own. The best tool to do so is <a href="https://conda.io/docs/">conda</a>, installed via <a href="https://conda.io/miniconda.html">miniconda</a>.</p>
+<p>On linux, a python "installation" is simply a link to a new python executable.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What's-next?">What's next?<a class="anchor-link" href="#What's-next?">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="03-Getting-Started.html">jump to the next chapter</a>.</p>
+
 </div>
 </div>
 </div>
