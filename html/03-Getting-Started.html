@@ -11782,7 +11782,7 @@ div#notebook {
 $( document ).ready(function(){
 
             var cfg={'threshold':3,     // depth of toc (number of levels)
-             'number_sections': false,  // sections numbering
+             'number_sections': true,  // sections numbering
              'toc_cell': false,          // useless here
              'toc_window_display': true, // display the toc window
              "toc_section_display": "block", // display toc contents in the window
@@ -11808,6 +11808,210 @@ $( document ).ready(function(){
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Getting-started-with-Python">Getting started with Python<a class="anchor-link" href="#Getting-started-with-Python">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this chapter we are getting used to the python command line, and we are going to write our first small program.</p>
+<p><strong>Prerequisites</strong>: you have a working python (v3.6) and ipython, a described in the <a href="02-Installation.html">previous chapter</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Getting-started-with-Python" data-toc-modified-id="Getting-started-with-Python-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Getting started with Python</a></span><ul class="toc-item"><li><span><a href="#The-standard-command-line-interpreter" data-toc-modified-id="The-standard-command-line-interpreter-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>The standard command-line interpreter</a></span></li><li><span><a href="#ipython:-interactive-python" data-toc-modified-id="ipython:-interactive-python-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>ipython: interactive python</a></span><ul class="toc-item"><li><span><a href="#Automatic-code-completion" data-toc-modified-id="Automatic-code-completion-3.2.1"><span class="toc-item-num">3.2.1&nbsp;&nbsp;</span>Automatic code completion</a></span></li><li><span><a href="#Getting-help" data-toc-modified-id="Getting-help-3.2.2"><span class="toc-item-num">3.2.2&nbsp;&nbsp;</span>Getting help</a></span></li><li><span><a href="#Copy-paste" data-toc-modified-id="Copy-paste-3.2.3"><span class="toc-item-num">3.2.3&nbsp;&nbsp;</span>Copy paste</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-3.2.4"><span class="toc-item-num">3.2.4&nbsp;&nbsp;</span>Take home points</a></span></li></ul></li><li><span><a href="#Modules-and-scripts" data-toc-modified-id="Modules-and-scripts-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Modules and scripts</a></span></li><li><span><a href="#What-is-the-python-&quot;interpreter&quot;?" data-toc-modified-id="What-is-the-python-&quot;interpreter&quot;?-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>What is the python "interpreter"?</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-standard-command-line-interpreter">The standard command-line interpreter<a class="anchor-link" href="#The-standard-command-line-interpreter">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's open a python interpreter and type in some commands:</p>
+
+<pre><code>$ python
+Python 3.6.4 | packaged by conda-forge | (default, Dec 23 2017, 16:31:06) 
+[GCC 4.8.2 20140120 (Red Hat 4.8.2-15)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt; a = 2
+&gt;&gt;&gt; b = 3
+&gt;&gt;&gt; print(a+b)
+5
+&gt;&gt;&gt; a*b
+6
+&gt;&gt;&gt; a**3
+8</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This should look quite familiar to you, whatever language you learned before. We defined variables, and did arithmetic with them. On line 3 we used the <code>print()</code> function to display the output of our computations, but as it turns out it is not necessary: the command line shell will print the output anyway. This functionality is called <a href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">REPL</a>, and it's a feature, of modern interpreted languages. We'll come back to this later.</p>
+<p>The default command-line interpreter comes with some functionality (for example, if you use the up and down arrows you can navigate in your previous commands) but this functionality is very sparse. Some important functionalities are missing: some are cosmetic (like colors), some are very useful (like <strong>automatic code completion</strong> with <code>[TAB]</code> or the possibility to paste several lines of code at once). For all these reasons, the default python command-line interpreter is only used for very small tasks like testing a command or two, or starting bigger modules. We are far from what scientists need when analysis their data: this is why <code>ipython</code> was created.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="ipython:-interactive-python">ipython: interactive python<a class="anchor-link" href="#ipython:-interactive-python">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="http://ipython.readthedocs.io/en/stable/index.html">ipython</a> is a standard command-line interpreter, but enhanced with many interactive features. Let's open it:</p>
+
+<pre><code>$ ipython
+Python 3.6.4 | packaged by conda-forge | (default, Dec 23 2017, 16:31:06) 
+Type 'copyright', 'credits' or 'license' for more information
+IPython 6.2.1 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: a = 2
+
+In [2]: b = 3
+
+In [3]: print(a + b)
+5
+
+In [4]: a*b
+Out[4]: 6</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What are the differences? The <code>&gt;&gt;&gt;</code> prompt has been replaced by <code>In [1]:</code>. Now there <em>is</em> a slight difference between a line with or without <code>print()</code> (can you find it?). At first sight the differences are small, but it's in the everyday interactive coding that <code>ipython</code> becomes useful.</p>
+<p><strong>From now on, we will use the ipython command-line interpreter.</strong></p>
+<p>It follows a sample of its most useful functionalities.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Automatic-code-completion">Automatic code completion<a class="anchor-link" href="#Automatic-code-completion">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In ipython, type <code>s</code> and then <code>[TAB]</code>. The tool will give you a list of suggestions to choose from (useful when you forgot how a function was called exactly!). Now type <code>so</code> and <code>[TAB]</code>. Here the only solution will be selected automatically.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Getting-help">Getting help<a class="anchor-link" href="#Getting-help">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Type <code>sorted?</code>. A text help should be printed, telling you what this function is about.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Copy-paste">Copy paste<a class="anchor-link" href="#Copy-paste">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Copy the following lines and paste them in your ipython interpreter:</p>
+
+<pre><code>s = 'the jungle book'
+print(s)
+l = sorted(s)
+print(l)
+l = ''.join(l)
+print(l)</code></pre>
+<p>(note that <code>[CTRL-V]</code> doesn't work in a terminal - you'll have to use right click -&gt; paste)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Take-home-points">Take home points<a class="anchor-link" href="#Take-home-points">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>ipython</code> is an "interactive python". It's basically the same thing, but with more features. From now on we will use ipython only: you will learn more of it's features as we go.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Modules-and-scripts">Modules and scripts<a class="anchor-link" href="#Modules-and-scripts">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Of course, the command-line interpreter is only useful for small scripts or data exploration. Most of the time, you will want to write <strong>scripts</strong> (a collection of commands executed in order to reach a certain goal) or more complex <strong>programs</strong> (the difference between "scripts" and "programs" is fuzzy, but for now let's call a "program" a tool which involves writing several functions and/or several files).</p>
+<p>The best way to do is</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-is-the-python-&quot;interpreter&quot;?">What is the python "interpreter"?<a class="anchor-link" href="#What-is-the-python-&quot;interpreter&quot;?">&#182;</a></h2>
 </div>
 </div>
 </div>
