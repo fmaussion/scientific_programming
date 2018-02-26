@@ -11866,7 +11866,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If you did some research about Python you probably stumbled upon some discussion about the Py2 vs Py3 conundrum. About 10 years ago, an evolution of the python language introduced changed which were not <strong>backwards compatible</strong>. This means that code that used to work in Python 2.7 may not work in Python 3. According to the Python developers this change was necessary to get rid of old baggage and inconsistent syntax, but it was also considered by many as a "treason". Indeed, backwards compatibility is an important aspect of software development for large projects like python: it is a contract between developers and users stipulating that the code that users write will continue to work in subsequent releases. This contract was broken once, but this shouldn't happen again.</p>
+<p>If you did some research about Python you probably stumbled upon some discussion about the Py2 vs Py3 conundrum. About 10 years ago, an evolution of the python language introduced changes which were not <strong>backwards compatible</strong>. This means that code that used to work in Python 2.7 may not work in Python 3. According to the Python developers this change was necessary to get rid of old baggage and inconsistent syntax, but it was also considered by many as a "treason". Indeed, backwards compatibility is an important aspect of software development for large projects like python: it is a contract between developers and users stipulating that the code that users write will continue to work in subsequent releases. This contract was broken once, but this shouldn't happen again.</p>
 <p>Since updating code requires time and money, many people and companies continued to use Python 2 internally. Five years ago, I would maybe have been reluctant to teach you Python 3 because the future of the language was uncertain and many tools existed only in Python 2. Today the wide adoption of Python 3 is finally accomplished and the future is looking good. All major scientific python tools are supporting Python 3, and major libraries <a href="http://python3statement.org/">announced that they will stop to support Python 2</a> before of shortly after the end-of-life date of Python 2 (by 2020).</p>
 <p>In this lecture we might talk about the differences between Python 2 and Python 3 at some point, but only to get you used to them. You can safely concentrate on learning Python 3 only.</p>
 
@@ -11958,12 +11958,12 @@ Type "help", "copyright", "credits" or "license" for more information.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Nobody wants to write such a long command to start python. So what we are going to do is to add the <code>/scratch/c707/c7071047/miniconda3/bin/</code> folder to our <code>PATH</code>, and in such a way that it is remembered for your later sessions.</p>
-<p>We are going to edit a special file in your <code>HOME</code>, <code>~/.bashrc</code>. This file contains a list of commands which is executed automatically each time you open a terminal. How practical! Let's open this file and add the following two lines at the end of it:</p>
+<p>We are going to edit a special file in your <code>HOME</code>, <code>~/.bashrc</code>. This file contains a list of commands which are executed automatically each time you open a terminal. How practical! Let's open this file and add the following two lines at the end of it:</p>
 
 <pre><code># added for the python course:
 export PATH="/scratch/c707/c7071047/miniconda3/bin:$PATH"</code></pre>
 <p>What did we just do? We added a folder to the <code>PATH</code> (remember what this is?) and added it at the <em>beginning</em> of it. This is important because linux is going to look for programs in order: if a <code>python</code> executable is found in the first folder, no need to look for another one (i.e. ignore the default linux program).</p>
-<p><strong>Note:</strong>  for this change to take effect, close your terminal an open a new one! <code>~/.bashrc</code> is executed only once, at the opening of a new terminal.</p>
+<p><strong>Note:</strong>  for this change to take effect, close your terminal and open a new one! <code>~/.bashrc</code> is executed only once, at the opening of a new terminal.</p>
 
 </div>
 </div>
@@ -12062,11 +12062,11 @@ Type "help", "copyright", "credits" or "license" for more information.
 <p>Conda also helps us to define so-called "environments". A conda environment is
 a directory that contains a specific collection of packages that you have
 installed.</p>
-<p>Environments are not necessary, but helpful on the long term. If this is 
+<p>Environments are not necessary, but helpful on the long term (helpful e.g. if some packages are in conflict with each other). If this is 
 your first installation you probably want to skip this part and go directly
 to <a href="#packs">Install the packages</a>. Please have a short look at the conda introduction
 <a href="http://conda.pydata.org/docs/intro.html">here</a> before going on.</p>
-<p>In the terminal, type::</p>
+<p>In the terminal, type:</p>
 
 <pre><code>conda create -n py3 python=3.6
 
@@ -12143,13 +12143,14 @@ start <code>ipython</code> for example:</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>After a while, it might be useful to update the packages you are using (careful! this is <em>most of the times</em> a good idea, but not <em>always</em>).</p>
+<p>After a while, it might be useful to update the packages you are using (careful! this is <em>most of the times</em> a good idea, but not always*).</p>
 <p>If not already done before, set the conda-forge default channel:</p>
 
 <pre><code>conda config --add channels conda-forge</code></pre>
 <p>And then simply update them all:</p>
 
 <pre><code>conda update --all</code></pre>
+<p>*: <em>some updates might include changes which change the way functions are called, or -even worse- change your results. This is usually not the case for large, well-known software packages, but it can happen. The best way to ensure consistency are tests - as we are going to learn - and getting information about the package updates.</em></p>
 
 </div>
 </div>

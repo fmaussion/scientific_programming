@@ -11816,7 +11816,7 @@ $( document ).ready(function(){
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In this chapter we are getting used to the python command line, and we are going to write our first small program.</p>
-<p><strong>Prerequisites</strong>: you have a working python (v3.6) and ipython, a described in the <a href="02-Installation.html">previous chapter</a>.</p>
+<p><strong>Prerequisites</strong>: you have a working python (v3.6) and ipython, as described in the <a href="02-Installation.html">previous chapter</a>.</p>
 
 </div>
 </div>
@@ -11864,7 +11864,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This should look quite familiar to you, whatever language you learned before. We defined variables, and did arithmetic with them. On line 3 we used the <code>print()</code> function to display the output of our computations, but as it turns out it is not necessary: the command line shell will print the output anyway. This functionality is called <a href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">REPL</a>, and it's a feature, of modern interpreted languages. We'll come back to this later.</p>
+<p>This should look quite familiar to you, whatever language you learned before. We defined variables, and did some arithmetics with them. On line 3 we used the <code>print()</code> function to display the output of our computations, but as it turns out it is not necessary: the command line shell will print the output anyway. This functionality is called <a href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">REPL</a>, and it's a feature, of modern interpreted languages. We'll come back to this later.</p>
 <p>The default command-line interpreter comes with some functionality (for example, if you use the up and down arrows you can navigate in your previous commands) but this functionality is very sparse. Some important functionalities are missing: some are cosmetic (like colors), some are very useful (like <strong>automatic code completion</strong> with <code>[TAB]</code> or the possibility to paste several lines of code at once). For all these reasons, the default python command-line interpreter is only used for very small tasks like testing a command or two. Scientists need more interactivity when analysis their data: this is why <code>ipython</code> was created.</p>
 
 </div>
@@ -12001,7 +12001,7 @@ print(l)</code></pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Python scripts are simple text files. Per convention we like to give them a suffix: <code>.py</code>. This suffix is required for python modules but not mandatory for scripts with a shebang. In general it's a good idea to use the <code>.py</code> suffix though.</p>
-<p>Let's create a new file, <code>my_python_script.py</code>, and add these few lines of code to it:</p>
+<p>Let's create a new file, <code>my_python_script.py</code> (e.g using gedit), and add these few lines of code to it:</p>
 
 <pre><code>a = 3
 b = 6
@@ -12066,7 +12066,7 @@ print('The product of {} and {} is {}'.format(a, b, c))</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>(remember the <code>[TAB]</code> functionality in ipython? You can use it on files as well). Running a script this way is different from running a script in the terminal. Indeed, after running the script, the variables defined it it are still available in the current session. Try computing <code>a + b</code> to check it out:</p>
+<p>(remember the <code>[TAB]</code> functionality in ipython? You can use it on files as well). Running a script this way is different from running a script in the terminal. Indeed, after running the script, the variables defined in it are still available in the current session. Try computing <code>a + b</code> to check it out:</p>
 
 </div>
 </div>
@@ -12248,7 +12248,7 @@ print('The product of {} and {} is {}'.format(a, b, c))</code></pre>
 <ul>
 <li><code>ipython</code> is short for "interactive python". It's basically the same thing as the default interpreter, but with more features. From now on we will use ipython only: you will learn more of it's features as we go.</li>
 <li>python scripts are text files ending with <code>.py</code>. They can be run from the terminal (<code>python my_file.py</code>) or from the <code>ipython</code> interpreter (<code>%run my_file.py</code>).</li>
-<li>the <code>import</code> mechanism also "runs" a file, but the way it does so is fundamentally different. We are going to use <code>import</code> later, when using external modules </li>
+<li>the <code>import</code> mechanism also "runs" a file, but the way it does so is fundamentally different. We are going to explain the <code>import</code> mechanism in more detail soon. </li>
 </ul>
 
 </div>
