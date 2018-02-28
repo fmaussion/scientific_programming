@@ -11781,17 +11781,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg={'threshold':3,     // depth of toc (number of levels)
-             'number_sections': true,  // sections numbering
-             'toc_cell': false,          // useless here
-             'toc_window_display': true, // display the toc window
-             "toc_section_display": "block", // display toc contents in the window
-             'markTocItemOnScroll': false, 
-             'sideBar':true,             // sidebar or floating window
-             'navigate_menu':false,       // navigation menu (only in liveNotebook -- do not change)
-              title_cell: 'Table of Contents',
-              title_sidebar: 'Contents',
-            }
+            var cfg = {"base_numbering": 3, "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {}, "toc_section_display": "block", "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -11959,13 +11949,13 @@ Out[4]: 6</code></pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Copy the following lines and paste them in your ipython interpreter:</p>
-
-<pre><code>s = 'the jungle book'
-print(s)
-l = sorted(s)
-print(l)
-l = ''.join(l)
-print(l)</code></pre>
+<div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;the jungle book&#39;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">l</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="n">l</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
 <p>(note that <code>[CTRL-V]</code> doesn't work in a linux terminal - you'll have to use right click -&gt; paste to do so or - even better - use the magical linux middle mouse button)</p>
 
 </div>
@@ -12002,11 +11992,11 @@ print(l)</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Python scripts are simple text files. Per convention we like to give them a suffix: <code>.py</code>. This suffix is required for python modules but not mandatory for scripts with a shebang. In general it's a good idea to use the <code>.py</code> suffix though.</p>
 <p>Let's create a new file, <code>my_python_script.py</code> (e.g using gedit), and add these few lines of code to it:</p>
-
-<pre><code>a = 3
-b = 6
-c = a * b
-print('The product of {} and {} is {}'.format(a, b, c))</code></pre>
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;The product of {} and {} is {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+</pre></div>
 <p>Now you should be able to run the script by calling python in a terminal:</p>
 
 <pre><code>$ python my_python_script.py</code></pre>

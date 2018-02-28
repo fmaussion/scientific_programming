@@ -11781,17 +11781,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg={'threshold':3,     // depth of toc (number of levels)
-             'number_sections': false,  // sections numbering
-             'toc_cell': false,          // useless here
-             'toc_window_display': true, // display the toc window
-             "toc_section_display": "block", // display toc contents in the window
-             'markTocItemOnScroll': false, 
-             'sideBar':true,             // sidebar or floating window
-             'navigate_menu':false,       // navigation menu (only in liveNotebook -- do not change)
-              title_cell: 'Table of Contents',
-              title_sidebar: 'Contents',
-            }
+            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": false, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {}, "toc_section_display": "block", "toc_window_display": false};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
