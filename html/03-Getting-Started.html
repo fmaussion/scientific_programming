@@ -12205,23 +12205,35 @@ Out[4]: 6</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Definition from <a href="https://techterms.com/definition/interpreter">The Tech Terms Dictionary</a></p>
+<p>Start with reading the definition from <a href="https://techterms.com/definition/interpreter">the Tech Terms Dictionary</a>.</p>
+<p>Put simple, the python interpreter is a program executing python programs or commands. It reads the programs you write and execute the instructions they contain.</p>
+<p>Interestingly, there are <em>more than one</em> implementation of a Python interpreter: indeed, since the python language is well specified (meaning that there are clear rules about which command is supposed to do what), anyone (very) motivated can write a program able to execute a python program. In practice, there aren't that many alternative implementations of the python language, but let's name a few of them:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/CPython">Cpython</a>: the reference implementation of the language (and the one you are using), written in C</li>
+<li><a href="http://www.jython.org/">Jython</a>: a Java implementation, useful to run programs written in both languages</li>
+<li><a href="https://pypy.org/">PyPy</a>: another implementation aiming at speeding the execution of your programs in certain circumstances.</li>
+</ul>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: use the python book for this </span>
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Question</strong>: would it be possible to write a Python interpreter in Python? If yes, what could it be useful for?</p>
 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We will look into the Cpython interpreter in a little more detail later in the semester, when we will talk about compiled and interpreted languages.</p>
 
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
