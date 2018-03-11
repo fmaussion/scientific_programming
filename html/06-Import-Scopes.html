@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>00-Introduction</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>06-Import-Scopes</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11781,7 +11781,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": false, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {}, "toc_section_display": "block", "toc_window_display": true};
+            var cfg = {"base_numbering": "6", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "384px"}, "toc_section_display": "block", "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -11797,7 +11797,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Scientific-Programming">Scientific Programming<a class="anchor-link" href="#Scientific-Programming">&#182;</a></h1>
+<h1 id="Modules,-import-mechanism,-namespaces,-scope(s)">Modules, import mechanism, namespaces, scope(s)<a class="anchor-link" href="#Modules,-import-mechanism,-namespaces,-scope(s)">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11805,7 +11805,8 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Fabien Maussion</strong></p>
+<p>In this chapter we will dive into one of the best features of python: the <code>import</code> mechanism. But before we go on, I ask you to go through the <a href="https://docs.python.org/3/tutorial/modules.html">python tutorial section 6</a>.</p>
+<p><strong>Prerequisites</strong>: you have read the <a href="https://docs.python.org/3/tutorial/">python tutorial</a>, sections 3 to 6.</p>
 
 </div>
 </div>
@@ -11814,12 +11815,687 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Lecture notes of the master lecture <a href="https://orawww.uibk.ac.at/public/lfuonline_lv.details?sem_id_in=18S&amp;lvnr_id_in=707716">707716 - Scientific Programming</a>, given for the first time in the summer term 2018.</p>
-<p>If you're not here for the first time, jump to:</p>
+<p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Modules,-import-mechanism,-namespaces,-scope(s)" data-toc-modified-id="Modules,-import-mechanism,-namespaces,-scope(s)-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Modules, import mechanism, namespaces, scope(s)</a></span><ul class="toc-item"><li><span><a href="#Variables-scopes" data-toc-modified-id="Variables-scopes-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>Variables scopes</a></span></li><li><span><a href="#Namespaces" data-toc-modified-id="Namespaces-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>Namespaces</a></span></li><li><span><a href="#PYTHONPATH" data-toc-modified-id="PYTHONPATH-6.3"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>PYTHONPATH</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-6.4"><span class="toc-item-num">6.4&nbsp;&nbsp;</span>Take home points</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-6.5"><span class="toc-item-num">6.5&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Variables-scopes">Variables scopes<a class="anchor-link" href="#Variables-scopes">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <strong>scope</strong> of a variable is the region of the program where the variable is valid: where the variable name can be used to refer to the entity. Let's consider this first example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;in foo()&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;global&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-1-0dfefe1d7f39&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span>     print<span class="ansi-blue-fg">(</span>i<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;in foo()&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> 
+<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>i<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;global&#39;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;i&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It doesn't work because the name <code>i</code> is defined in the function which we defined but never called (nothing is printed), so the function's statements were actually never run. Let's see if the following example works better:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;in foo()&#39;</span><span class="p">)</span>
+
+<span class="n">foo</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;global&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>5 in foo()
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-2-afc465d69bd4&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> foo<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      6</span> 
+<span class="ansi-green-fg">----&gt; 7</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>i<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;global&#39;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;i&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here, the function is called and <code>i</code> is defined and equal to 5. However, the <em>scope</em> of i is the block defined by the function <code>foo</code>: outside of this scope the variable doesn't exist anymore. If this is understood, the following example might now be clearer?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;in foo()&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;global before foo()&#39;</span><span class="p">)</span>
+
+<span class="n">foo</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;global after foo()&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1 global before foo()
+5 in foo()
+1 global after foo()
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>global scope</strong> refers to the highest scope level (the module or, in interactive mode, the interpreter. The function's scope in turn is called <strong>local scope</strong>. One says that the global scope prevails because what is possible in one direction isn't possible in the other:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s1">&#39;is there a k in foo()?&#39;</span><span class="p">)</span>
+
+<span class="n">foo</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2 is there a k in foo()?
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Yes, there is. Global variables are available in the <em>nested</em> local scopes. They can be overridden locally (like in the example above), but this change won't be visible at the global scope level.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: do you think there is a way to really overwrite the value of a global variable from a local scope? If yes, can you find it?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Namespaces">Namespaces<a class="anchor-link" href="#Namespaces">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Global variables are useful, but they should be used with care. Indeed, since they are available in the entire script or module, the <strong>namespace</strong> can quickly become "polluted", i.e it is hard to keep track of which variable is available where, and in which order. This can become even more complicated when new modules with their own new variables and functions are used.</p>
+<p>Fortunately, the global scope is constrained to the current script or module, and using external modules is unlikely to cause confusion thanks to the <code>import</code> mechanism:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;module &#39;math&#39; (built-in)&gt;
+3.14 3.141592653589793
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>By importing the <code>math</code> module (available in python's <strong>standard library</strong>), we have access to new variables and functions. What are they?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[11]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;__doc__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__spec__&#39;,
+ &#39;acos&#39;,
+ &#39;acosh&#39;,
+ &#39;asin&#39;,
+ &#39;asinh&#39;,
+ &#39;atan&#39;,
+ &#39;atan2&#39;,
+ &#39;atanh&#39;,
+ &#39;ceil&#39;,
+ &#39;copysign&#39;,
+ &#39;cos&#39;,
+ &#39;cosh&#39;,
+ &#39;degrees&#39;,
+ &#39;e&#39;,
+ &#39;erf&#39;,
+ &#39;erfc&#39;,
+ &#39;exp&#39;,
+ &#39;expm1&#39;,
+ &#39;fabs&#39;,
+ &#39;factorial&#39;,
+ &#39;floor&#39;,
+ &#39;fmod&#39;,
+ &#39;frexp&#39;,
+ &#39;fsum&#39;,
+ &#39;gamma&#39;,
+ &#39;gcd&#39;,
+ &#39;hypot&#39;,
+ &#39;inf&#39;,
+ &#39;isclose&#39;,
+ &#39;isfinite&#39;,
+ &#39;isinf&#39;,
+ &#39;isnan&#39;,
+ &#39;ldexp&#39;,
+ &#39;lgamma&#39;,
+ &#39;log&#39;,
+ &#39;log10&#39;,
+ &#39;log1p&#39;,
+ &#39;log2&#39;,
+ &#39;modf&#39;,
+ &#39;nan&#39;,
+ &#39;pi&#39;,
+ &#39;pow&#39;,
+ &#39;radians&#39;,
+ &#39;sin&#39;,
+ &#39;sinh&#39;,
+ &#39;sqrt&#39;,
+ &#39;tan&#39;,
+ &#39;tanh&#39;,
+ &#39;trunc&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: now ask the documentation what <code>dir</code> does (remember how? Simply type <code>? dir</code> in the ipython interpreter, or use g00gle).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the documentation we encountered a new concept (again!): <strong>attributes</strong>. We'll get back to them soon, but for now let's just observe that the list above contains the modules functions (like <code>math.radians</code>) as well as variables (<code>math.nan</code>). Some of the attributes have a prefix of two underscores <code>__</code>. We'll get back to them soon.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As you have learned in the tutorial, the four following pieces of code are equivalent:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># A</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[19]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># B</span>
+<span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">ma</span>
+<span class="n">ma</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ma</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[20]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># C</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">pi</span>
+<span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[22]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># D</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="o">*</span>
+<span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[23]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, which one to use? It is up to you, but there are some implicit rules (conventions) which are widely accepted:</p>
+<ol>
+<li>in case of doubt, use option A. It is the most readable and the most <em>explicit</em></li>
+<li>the exception to rule 1 is when the library your are using has a naming convention for its acronym. A good example is numpy, which <a href="https://docs.scipy.org/doc/scipy/reference/tutorial/general.html">recommends</a> to use <code>import numpy as np</code></li>
+<li>option C might be useful if the names you are importing are very explicit, and if you expect to use them often in your script. Otherwise, it is not recommended</li>
+<li>option D is bad. Don't use it.</li>
+<li>if you really want to, use option D. It happens to me too. But keep it for yourself or for the command line (in interactive mode), and don't give your code to other people.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: try to find arguments as to why is option D a bad idea.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="PYTHONPATH">PYTHONPATH<a class="anchor-link" href="#PYTHONPATH">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>But how does python know where to look for modules when you type in <code>import mymodule</code>? Well, it relies on a mechanism very similar to linux's <code>PATH</code> environment variable. Remember this one? Within python, you can ask in which directories the interpreter will look for modules with <a href="https://docs.python.org/2/library/sys.html#sys.path">sys.path</a>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span>
+
+<span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;/scratch/c707/c7071047/miniconda3/bin&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;/scratch/c707/c7071047/miniconda3/lib/python36.zip&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;/scratch/c707/c7071047/miniconda3/lib/python3.6&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;/scratch/c707/c7071047/miniconda3/lib/python3.6/lib-dynload&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;/scratch/c707/c7071047/miniconda3/lib/python3.6/site-packages&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;/scratch/c707/c7071047/miniconda3/lib/python3.6/site-packages/cycler-0.10.0-py3.6.egg&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;/scratch/c707/c7071047/miniconda3/lib/python3.6/site-packages/IPython/extensions&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;/home/c7071047/.ipython&#39;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Similar to the linux <code>PATH</code> mechanism, python will look into each of these directories <em>in order</em>. The first directory is always the current working directory, the rest of the list may vary depending on your environment. When a file called <code>mymodule.py</code> is found, it is imported once (and only once) and added to the <code>sys.modules</code> variable, effectively telling python that the module has already been imported. This means that if you change the file and import it again, nothing will change. Fortunately, there are ways to avoid this behavior (see the next chapter).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As you can see, there are many folders related to <code>miniconda</code>, the tool we used to install python. This makes sense, because we want python to look for modules related to <em>our</em> installation of python. In particular, the <code>site-packages</code> folder is of interest to us. If you look into this folder (remember how?) you'll find the many packages we already installed together last week.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: let's mess around with <code>sys.path</code> a little: create a fake module called <code>matplotlib.py</code> in your current working directory. Open a python interpreter and <code>import matplotlib</code>. Which of the modules (the official or the fake one) is loaded?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Because of this "feature", it is important to find meaningful (and unique) names for your own modules (don't forget to delete the fake <code>matplotlib</code> module!).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Note: the "trick" above does not work with modules of the standard library, because built-in modules are imported as part of the interpreter's startup process.</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Take-home-points">Take home points<a class="anchor-link" href="#Take-home-points">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href="#ctoc">the table of contents</a></li>
-<li><a href="#howto">how to use these notes</a></li>
-<li><a href="#refs">external resources</a></li>
+<li>we learned that variables are defined in a <strong>scope</strong>, and we learned about two of them: <strong>local</strong> and <strong>global</strong> scope. There are certain rules as to how each scope can interact with the other.</li>
+<li>the import mechanism is useful to avoid <strong>namespace pollution</strong>. Modules come with there own namespace, and it is recommended to keep each module's namespace clean (i.e. no <code>from XYZ import *</code>)</li>
+<li>python borrowed the <code>PATH</code> mechanism from linux and uses a similar logic to look for modules and packages. Installing a new module is therefore super easy: just put a <code>mymodule.py</code> at the right place. (and don't mess with the existing modules!)</li>
 </ul>
 
 </div>
@@ -11829,9 +12505,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/00_messing_python.png">
-<em>Adapted from <a href="https://xkcd.com/519/">xkcd</a>. The xkcd author Randall Munroe <a href="https://xkcd.com/353/">would most certainly agree</a> with my changes.</em></p>
-
+<h2 id="What's-next?">What's next?<a class="anchor-link" href="#What's-next?">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -11839,240 +12513,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Preface">Preface<a class="anchor-link" href="#Preface">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There are plenty of excellent resources to learn python available (see <a href="#refs">references</a> below). So why writing this "book"? Well, for one, because none of them is organized to fit <em>exactly</em> the 15 week semester of Austrian universities. Therefore I had to make some choices regarding (i) what to teach and (ii) how to teach it. However, there is no need in reinventing the wheel and rewriting what much better teachers wrote before me: as you will see, I will rely heavily on external resources, all openly available. Following the open source philosophy, these lecture notes are also freely available.</p>
-<p>These notes are written on the go, as this course advances. I am trying to write them in such a way that they are understandable without actually <em>attending</em> the course, but this takes time and if I'm getting late on schedule I might revisit this goal. In that case I'll have to come back to them later ;-).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Learning-outcomes-of-this-course">Learning outcomes of this course<a class="anchor-link" href="#Learning-outcomes-of-this-course">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This class aims at learning <strong>modern programming techniques</strong> for (geo-)scientists. After finishing the class, attendees should understand how numbers are handled by computers and be aware of numerical accuracy errors. They should be able to program in a structured, extendable and reproducible manner. In the process of this class students will get acquainted with various programming tools (IDEs, debugger, unit testing, object oriented programming, version control, open development practices).</p>
-<p>The targeted audience for this lecture are (geo-)sience <strong>students at the master level with previous experience in programming</strong>. No prior knowledge of python is required, but I'll assume that you are familiar with a similar language (Matlab, IDL, R...). This is <em>not</em> an introductory course, although we will shortly revisit the basics in order to learn the python syntax.</p>
-<p>The course encompasses the following topics, which are developed by means of concrete examples in the Python programming language:</p>
-<ul>
-<li>Introduction to Linux</li>
-<li>Semantics: revisiting and formalizing the basic programming structures (loops, functions, conditional blocks...)</li>
-<li>General programming concepts, differences between compiled and interpreted languages</li>
-<li>Numerics: floating point numbers, N-dimensional arrays</li>
-<li>Software structure: packages, modules, functions, scripts</li>
-<li>Object oriented programming: fundamentals, usage, and basic design patterns</li>
-<li>Code testing and version control</li>
-<li>Real world applications!</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Frequently-Asked--Questions">Frequently Asked  Questions<a class="anchor-link" href="#Frequently-Asked--Questions">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="What-is-&quot;Scientific-Programming&quot;?">What is "Scientific Programming"?<a class="anchor-link" href="#What-is-&quot;Scientific-Programming&quot;?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Scientific programming</strong> targets to solve scientific problems with the help of computers. It is sometimes used as synonym for <a href="https://en.wikipedia.org/wiki/Computational_science">computational science</a>, but in my opinion these are not entirely the same. "Scientific programming" is not really a discipline, and therefore cannot be taught.</p>
-<p>What are we doing here then? Well, we are going to learn <strong>programming</strong> first, and then <strong>programming as a tool to do science</strong>. We are going to apply our new skills to scientific problems, but not only. Within the time given to us (14 units) we won't be able to learn <em>everything</em> about programming of course. My hope is that at the end of the lecture you'll have sufficient background and tools at your disposition to solve your own problems, and (this is the most important bit) that you'll know <em>where</em> to find solutions to the problems you encounter.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why-should-I-learn-programming?">Why should I learn programming?<a class="anchor-link" href="#Why-should-I-learn-programming?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As a scientist you are going to either <em>produce</em> or <em>analyze</em> data, most of the time you'll do both. For a long time, scientists have seen programming as a "tool", a menial task to accomplish in order to answer the questions they were asking. Nowadays programming has taken a prominent place in a scientist's work, for several reasons:</p>
-<ul>
-<li><strong>the amount of data we have to handle increases together with computational power and our capacity to store it</strong>. I would even argue that the bottleneck in model based scientific discovery isn't the computational effort anymore, but our capacity to comprehend and analyze these huge amounts of data.</li>
-<li><strong>the questions we are asking are getting more complex, and so are the tools we are using to answer them</strong>. The times when scientists could make discoveries with the help of a piece of paper and a pen are long gone, at least for most of us in the geosciences. We rely heavily on computer models, and these models are developed by us scientists, not only by programmers.</li>
-<li><strong>science faces a credibility crisis</strong>, and part of the mistrust towards scientists comes from the fact that their research happens behind closed doors, using closed source tools and based on protected data. Opening our computers and demonstrating that our code can be trusted is necessary to re-engage confidence in our results.</li>
-<li>on a more general note: a better understanding of the tools that govern our digital world is a strong asset for many aspects of our everyday life and citizenship.</li>
-</ul>
-<p>In simple words, we have to become better programmers to be faster and better at what we do: science.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why-Python?">Why Python?<a class="anchor-link" href="#Why-Python?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We will use the <a href="https://www.python.org/">Python programming language</a> in this course. In case you are wondering why this language and not any other like <code>&lt;name your favorite language here&gt;</code>, let me stop you right away: this course is not about "learning Python", it is about learning the general concepts of programming: algorithmic, numerics, program structure, object oriented programming, testing, etc. Python is just the tool I chose to use for this purpose.</p>
-<p>We could indeed have taken any other language, but there are several advantages in using Python. A quick web search will give you <a href="https://www.google.co.uk/search?dcr=0&amp;ei=Wo2OWtKHNY7fwAKv1KbIDQ&amp;q=Why+should+I+learn+python">millions of reasons</a>, but let me pick some of my favorites here:</p>
-<ul>
-<li><strong>Python is a general purpose programming language and, as such, well suited to learn general programming concepts</strong>. It is therefore better suited than, for example, <a href="https://www.r-project.org/">R</a> which was developed for statistics and has certain particularities regarding object oriented programming in particular.</li>
-<li><strong>Python can be used for many purposes</strong>, from data preprocessing to numerical modeling and plotting. Unless you have a very compelling reason to change, you are likely to be able to use Python for all programming tasks you'll have in the near future.</li>
-<li><strong>Python is one of the <a href="https://stackoverflow.blog/2017/09/06/incredible-growth-python/">fastest growing languages for data science</a></strong>. There is a very active community developing new and exiting packages every day, and joining this community is surely a good bet on the future.</li>
-<li><strong>Python is free and open-source</strong>. No license fee, the code is available for everyone to see.</li>
-</ul>
-<p>There are many other reasons to use Python (and some arguments <em>against</em> Python as well of course), but I don't think it's relevant to list them here. My argument is following: for a good programmer, switching language is not a very big deal. It's not easy of course, but it's possible - becoming a good programmer is the hard bit, and is a never ending process.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Course-contents">Course contents<a class="anchor-link" href="#Course-contents">&#182;</a></h2><p><a id='ctoc'></a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><strong>Week 01: Introduction, Install Python, Getting Started</strong>:<ul>
-<li><a href="01-Linux.html">01 - A very short introduction to Linux</a></li>
-<li><a href="02-Installation.html">02 - Installing Python</a></li>
-<li><a href="03-Getting-Started.html">03 - Getting started with Python</a></li>
-<li><a href="04-Assignment-01.html">04 - Assignment #01: gaining speed with Python</a></li>
-<li><a href="http://fabienmaussion.info/scipro_w01/">Slides for week 01</a></li>
-</ul>
-</li>
-<li><strong>Week 01: Introduction, Install Python, Getting Started</strong>:<ul>
-<li><a href="05-Language-Basics.html">05 - Language Basics</a></li>
-<li><a href="06-Import-Scopes.html">06 - Modules, import mechanism, namespaces, scopes</a></li>
-<li><a href="07-Tips-and-Tricks.html">07 - Tips and tricks</a></li>
-<li><a href="08-Assignment-02.html">08 - Assignment #02: using the standard library</a></li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-to-use-these-notes">How to use these notes<a class="anchor-link" href="#How-to-use-these-notes">&#182;</a></h2><p><a id='howto'></a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>These notes are written as a companion to the lectures. During the lectures I will go through the major concepts (using slides, the good old way), and the notes are here to help you learn at home. In an ideal world the notes should be usable without me paraphrasing them out loud, but this will depend on the time I have to write them along the way.</p>
-<p>The notes are a mix of examples and small exercises. The exercises can happen in between the examples and are marked with a question mark logo. At the end of each unit there will be an <strong>assignment</strong>. These can be worked through alone or in groups. Each week, I will ask <strong>one group</strong> to present their results to the rest of the class.</p>
-<p>The class grants you 4 ECTS if successfully passed: <a href="https://en.wikipedia.org/wiki/European_Credit_Transfer_and_Accumulation_System">in theory</a>, this represents about 6 hours work per week (not including holidays). For this course it is expected that you spend at least as much time doing homework than sitting in class.</p>
-<p>When you will be going through the examples of these notes, some sentences are marked in <strong>bold</strong>: this underlines their importance for the course. When <strong>single words</strong> are <strong>bold</strong>  this symbolizes new concepts or new definitions: they need to be understood (and <em>googled</em> if needed).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="External-resources">External resources<a class="anchor-link" href="#External-resources">&#182;</a></h2><p><a id='refs'></a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Resources used (and linked) in these lecture notes (will be updated when the notes get written further):</p>
-<p><strong>Linux and bash scripting:</strong></p>
-<ul>
-<li><a href="https://ryanstutorials.net/">Ryan's Tutorials</a> for the linux command line and bash scripting are entertaining and well designed.</li>
-</ul>
-<p><strong>Python tutorials:</strong></p>
-<ul>
-<li>the <a href="https://docs.python.org/3/tutorial/index.html">official tutorial</a>, always a good place to start.</li>
-<li>the <a href="https://www.scipy-lectures.org/index.html">scipy lecture notes</a>, a good overview of the scientific python stack for scientists with previous programming experience.</li>
-</ul>
-<p><strong>Python reference:</strong></p>
-<ul>
-<li>the <a href="https://docs.python.org">python documentation</a> is your best reference for any question related to the language and the standard library.</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="License">License<a class="anchor-link" href="#License">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
-  <img align="left" src="http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.eu.svg"/>
-</a></p>
-<p><br>
-<br></p>
-<p>These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
-<p>Feel free to use / adapt them, but don't sell them, and share them under the same licence.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="http://acinn.uibk.ac.at/" target="_blank">
-  <img align="left" src="../img/logo_acinn_small.jpg"/>
-</a></p>
+<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="07-Tips-and-Tricks.html">jump to the next chapter</a>.</p>
 
 </div>
 </div>

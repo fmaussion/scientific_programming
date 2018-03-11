@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>00-Introduction</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>07-Tips-and-Tricks</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11781,7 +11781,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": false, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {}, "toc_section_display": "block", "toc_window_display": true};
+            var cfg = {"base_numbering": "7", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "384px"}, "toc_section_display": "block", "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -11797,7 +11797,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Scientific-Programming">Scientific Programming<a class="anchor-link" href="#Scientific-Programming">&#182;</a></h1>
+<h1 id="Tips-and-tricks">Tips and tricks<a class="anchor-link" href="#Tips-and-tricks">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11805,7 +11805,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Fabien Maussion</strong></p>
+<p>At this stage of the lecture, you are now equipped to write more complex scripts and algorithms. You know everything you need to know about the syntax (almost ;-)), but you might be a little lost in all the possibilities the language is now offering to you. <em>Which tool should I use to do this and that? How was this function signature again?</em> This chapter will briefly give you some tips to help you out during your assignments.</p>
 
 </div>
 </div>
@@ -11814,12 +11814,64 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Lecture notes of the master lecture <a href="https://orawww.uibk.ac.at/public/lfuonline_lv.details?sem_id_in=18S&amp;lvnr_id_in=707716">707716 - Scientific Programming</a>, given for the first time in the summer term 2018.</p>
-<p>If you're not here for the first time, jump to:</p>
+<p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Tips-and-tricks" data-toc-modified-id="Tips-and-tricks-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Tips and tricks</a></span><ul class="toc-item"><li><span><a href="#Batteries-included" data-toc-modified-id="Batteries-included-7.1"><span class="toc-item-num">7.1&nbsp;&nbsp;</span>Batteries included</a></span></li><li><span><a href="#Getting-help" data-toc-modified-id="Getting-help-7.2"><span class="toc-item-num">7.2&nbsp;&nbsp;</span>Getting help</a></span><ul class="toc-item"><li><span><a href="#Online-resources" data-toc-modified-id="Online-resources-7.2.1"><span class="toc-item-num">7.2.1&nbsp;&nbsp;</span>Online resources</a></span></li><li><span><a href="#Ask-questions-the-smart-way" data-toc-modified-id="Ask-questions-the-smart-way-7.2.2"><span class="toc-item-num">7.2.2&nbsp;&nbsp;</span>Ask questions the smart way</a></span></li><li><span><a href="#Getting-help-VS-learning" data-toc-modified-id="Getting-help-VS-learning-7.2.3"><span class="toc-item-num">7.2.3&nbsp;&nbsp;</span>Getting help VS learning</a></span></li></ul></li><li><span><a href="#Python-IDEs" data-toc-modified-id="Python-IDEs-7.3"><span class="toc-item-num">7.3&nbsp;&nbsp;</span>Python IDEs</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-7.4"><span class="toc-item-num">7.4&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Batteries-included">Batteries included<a class="anchor-link" href="#Batteries-included">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You may have read this expression ("batteries included") during your research about the Python language. It is widely used to indicate that if you choose python, it's not only for it's syntax: it is for all the tools that come with it. And there are PLENTY.</p>
+<p>Spend a minute or two to scroll through the list of tools available in the <a href="https://docs.python.org/3/library/index.html">standard library</a>. The <strong>standard library</strong> is available per default with any python installation. It is very robust and provides the core functionality of the language.</p>
+<p>As you will see, there is not much for us scientists in this list though. This is why <strong>third party packages</strong> were developed. And there are so many of them that one can easily be overwhelmed: for this week's assignment we will use the standard library only.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Getting-help">Getting help<a class="anchor-link" href="#Getting-help">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In order to become a good programmer, <strong>nothing is more important than being able to find help</strong>, either online or with your friends and colleagues.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Online-resources">Online resources<a class="anchor-link" href="#Online-resources">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Fortunately, getting help has become quite easy nowadays. Here are some resources to get you started:</p>
 <ul>
-<li><a href="#ctoc">the table of contents</a></li>
-<li><a href="#howto">how to use these notes</a></li>
-<li><a href="#refs">external resources</a></li>
+<li>the <a href="https://docs.python.org/3/">official python documentation</a> is definitely the best place to look for everything related to the standard library. It is also THE reference, and as such can sometimes be too detailed or complex. If this fails, then you'll have to refer to </li>
+<li><strong>your favorite search engine</strong>. Ask your question as precisely as possible! With some experience you'll learn to detect the sources you can trust, and learn to filter out outdated information (e.g. related to python 2). Very often your web search will lead you to</li>
+<li><a href="https://stackoverflow.com/">Stackoverflow</a>. In recent years, the Stack Exchange community of sites has emerged as a major resource for answering technical and other questions and is even the preferred forum for many open-source projects. Their system of rewards for well formulated questions and correct answers clearly makes finding the right solution easier than in many other forums.</li>
 </ul>
 
 </div>
@@ -11829,55 +11881,12 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/00_messing_python.png">
-<em>Adapted from <a href="https://xkcd.com/519/">xkcd</a>. The xkcd author Randall Munroe <a href="https://xkcd.com/353/">would most certainly agree</a> with my changes.</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Preface">Preface<a class="anchor-link" href="#Preface">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There are plenty of excellent resources to learn python available (see <a href="#refs">references</a> below). So why writing this "book"? Well, for one, because none of them is organized to fit <em>exactly</em> the 15 week semester of Austrian universities. Therefore I had to make some choices regarding (i) what to teach and (ii) how to teach it. However, there is no need in reinventing the wheel and rewriting what much better teachers wrote before me: as you will see, I will rely heavily on external resources, all openly available. Following the open source philosophy, these lecture notes are also freely available.</p>
-<p>These notes are written on the go, as this course advances. I am trying to write them in such a way that they are understandable without actually <em>attending</em> the course, but this takes time and if I'm getting late on schedule I might revisit this goal. In that case I'll have to come back to them later ;-).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Learning-outcomes-of-this-course">Learning outcomes of this course<a class="anchor-link" href="#Learning-outcomes-of-this-course">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This class aims at learning <strong>modern programming techniques</strong> for (geo-)scientists. After finishing the class, attendees should understand how numbers are handled by computers and be aware of numerical accuracy errors. They should be able to program in a structured, extendable and reproducible manner. In the process of this class students will get acquainted with various programming tools (IDEs, debugger, unit testing, object oriented programming, version control, open development practices).</p>
-<p>The targeted audience for this lecture are (geo-)sience <strong>students at the master level with previous experience in programming</strong>. No prior knowledge of python is required, but I'll assume that you are familiar with a similar language (Matlab, IDL, R...). This is <em>not</em> an introductory course, although we will shortly revisit the basics in order to learn the python syntax.</p>
-<p>The course encompasses the following topics, which are developed by means of concrete examples in the Python programming language:</p>
+<p>Here is a general rule. When you encounter a problem, ask yourself the following question: <strong>is it likely that someone else had this problem before me?</strong> In a large majority of the cases, the answer will be "yes" (believe me on this one). The trick is to find the answer to your question: use as few words as possible, but put in all the keywords that makes your question unambiguous. Here is the example outcome of two google searches:</p>
 <ul>
-<li>Introduction to Linux</li>
-<li>Semantics: revisiting and formalizing the basic programming structures (loops, functions, conditional blocks...)</li>
-<li>General programming concepts, differences between compiled and interpreted languages</li>
-<li>Numerics: floating point numbers, N-dimensional arrays</li>
-<li>Software structure: packages, modules, functions, scripts</li>
-<li>Object oriented programming: fundamentals, usage, and basic design patterns</li>
-<li>Code testing and version control</li>
-<li>Real world applications!</li>
+<li><a href="https://www.google.at/search?q=how+to+download+a+file+python">how to download a file python</a></li>
+<li><a href="https://www.google.at/search?q=how+to+download+a+file+python3">how to download a file python3</a></li>
 </ul>
+<p>The latter is the one you want and will lead you to the right answer. With time, you are going to get used to using the search engine more efficiently, but if everything else fails, then you might have to as ask a question yourself.</p>
 
 </div>
 </div>
@@ -11886,7 +11895,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Frequently-Asked--Questions">Frequently Asked  Questions<a class="anchor-link" href="#Frequently-Asked--Questions">&#182;</a></h2>
+<h3 id="Ask-questions-the-smart-way">Ask questions the smart way<a class="anchor-link" href="#Ask-questions-the-smart-way">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -11894,16 +11903,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="What-is-&quot;Scientific-Programming&quot;?">What is "Scientific Programming"?<a class="anchor-link" href="#What-is-&quot;Scientific-Programming&quot;?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Scientific programming</strong> targets to solve scientific problems with the help of computers. It is sometimes used as synonym for <a href="https://en.wikipedia.org/wiki/Computational_science">computational science</a>, but in my opinion these are not entirely the same. "Scientific programming" is not really a discipline, and therefore cannot be taught.</p>
-<p>What are we doing here then? Well, we are going to learn <strong>programming</strong> first, and then <strong>programming as a tool to do science</strong>. We are going to apply our new skills to scientific problems, but not only. Within the time given to us (14 units) we won't be able to learn <em>everything</em> about programming of course. My hope is that at the end of the lecture you'll have sufficient background and tools at your disposition to solve your own problems, and (this is the most important bit) that you'll know <em>where</em> to find solutions to the problems you encounter.</p>
+<p>If you want to ask a question on stackoverflow or somewhere else (e.g. by sending an email at your teacher), please spend some time reading <a href="http://www.catb.org/esr/faqs/smart-questions.html">this resource</a>. Believe me, this will help you to get better answers!</p>
 
 </div>
 </div>
@@ -11912,7 +11912,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why-should-I-learn-programming?">Why should I learn programming?<a class="anchor-link" href="#Why-should-I-learn-programming?">&#182;</a></h3>
+<h3 id="Getting-help-VS-learning">Getting help VS learning<a class="anchor-link" href="#Getting-help-VS-learning">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -11920,72 +11920,41 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As a scientist you are going to either <em>produce</em> or <em>analyze</em> data, most of the time you'll do both. For a long time, scientists have seen programming as a "tool", a menial task to accomplish in order to answer the questions they were asking. Nowadays programming has taken a prominent place in a scientist's work, for several reasons:</p>
+<p>I'll make a confession: without an internet connection, I am a very bad python programmer. And I don't expect you to learn all the python commands by heart and solve the assignments without online help. However, there is a difference between "getting help to find how to realize a specific task" and "asking for someone to do my homework for me". The border between the two might be subtle, but I'm sure you'll know when you cross it: at the moment you stopped to use your brain and simply copy/pasted code from one site to your assignment script, you crossed it.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Python-IDEs">Python IDEs<a class="anchor-link" href="#Python-IDEs">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>While it is possible to write python programs using a basic text editor, the majority of you will find it useful to use an <a href="https://en.wikipedia.org/wiki/Integrated_development_environment">integrated development environment</a> (short: IDE) instead. The advantages of IDEs is that they ship with tools that make your life easier when programming. Here is a non-exhaustive list of the tools a good IDE should have:</p>
 <ul>
-<li><strong>the amount of data we have to handle increases together with computational power and our capacity to store it</strong>. I would even argue that the bottleneck in model based scientific discovery isn't the computational effort anymore, but our capacity to comprehend and analyze these huge amounts of data.</li>
-<li><strong>the questions we are asking are getting more complex, and so are the tools we are using to answer them</strong>. The times when scientists could make discoveries with the help of a piece of paper and a pen are long gone, at least for most of us in the geosciences. We rely heavily on computer models, and these models are developed by us scientists, not only by programmers.</li>
-<li><strong>science faces a credibility crisis</strong>, and part of the mistrust towards scientists comes from the fact that their research happens behind closed doors, using closed source tools and based on protected data. Opening our computers and demonstrating that our code can be trusted is necessary to re-engage confidence in our results.</li>
-<li>on a more general note: a better understanding of the tools that govern our digital world is a strong asset for many aspects of our everyday life and citizenship.</li>
+<li><a href="https://en.wikipedia.org/wiki/Lint_(software%29">linter</a>: automatic detection of syntax errors and style violations</li>
+<li><a href="https://en.wikipedia.org/wiki/Debugger">debugger</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Intelligent_code_completion">Intelligent code completion</a></li>
+<li>project explorer and code exploration tools</li>
+<li>for interactive languages: a command line and variables </li>
+<li>version control tools</li>
+<li>automated build and testing tools</li>
+<li>appealing colors and graphics</li>
+<li>... </li>
 </ul>
-<p>In simple words, we have to become better programmers to be faster and better at what we do: science.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why-Python?">Why Python?<a class="anchor-link" href="#Why-Python?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We will use the <a href="https://www.python.org/">Python programming language</a> in this course. In case you are wondering why this language and not any other like <code>&lt;name your favorite language here&gt;</code>, let me stop you right away: this course is not about "learning Python", it is about learning the general concepts of programming: algorithmic, numerics, program structure, object oriented programming, testing, etc. Python is just the tool I chose to use for this purpose.</p>
-<p>We could indeed have taken any other language, but there are several advantages in using Python. A quick web search will give you <a href="https://www.google.co.uk/search?dcr=0&amp;ei=Wo2OWtKHNY7fwAKv1KbIDQ&amp;q=Why+should+I+learn+python">millions of reasons</a>, but let me pick some of my favorites here:</p>
+<p>There are many Python IDEs, but here are some of the ones that come up most often as recommendations on forums or blogposts:</p>
 <ul>
-<li><strong>Python is a general purpose programming language and, as such, well suited to learn general programming concepts</strong>. It is therefore better suited than, for example, <a href="https://www.r-project.org/">R</a> which was developed for statistics and has certain particularities regarding object oriented programming in particular.</li>
-<li><strong>Python can be used for many purposes</strong>, from data preprocessing to numerical modeling and plotting. Unless you have a very compelling reason to change, you are likely to be able to use Python for all programming tasks you'll have in the near future.</li>
-<li><strong>Python is one of the <a href="https://stackoverflow.blog/2017/09/06/incredible-growth-python/">fastest growing languages for data science</a></strong>. There is a very active community developing new and exiting packages every day, and joining this community is surely a good bet on the future.</li>
-<li><strong>Python is free and open-source</strong>. No license fee, the code is available for everyone to see.</li>
-</ul>
-<p>There are many other reasons to use Python (and some arguments <em>against</em> Python as well of course), but I don't think it's relevant to list them here. My argument is following: for a good programmer, switching language is not a very big deal. It's not easy of course, but it's possible - becoming a good programmer is the hard bit, and is a never ending process.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Course-contents">Course contents<a class="anchor-link" href="#Course-contents">&#182;</a></h2><p><a id='ctoc'></a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><strong>Week 01: Introduction, Install Python, Getting Started</strong>:<ul>
-<li><a href="01-Linux.html">01 - A very short introduction to Linux</a></li>
-<li><a href="02-Installation.html">02 - Installing Python</a></li>
-<li><a href="03-Getting-Started.html">03 - Getting started with Python</a></li>
-<li><a href="04-Assignment-01.html">04 - Assignment #01: gaining speed with Python</a></li>
-<li><a href="http://fabienmaussion.info/scipro_w01/">Slides for week 01</a></li>
-</ul>
-</li>
-<li><strong>Week 01: Introduction, Install Python, Getting Started</strong>:<ul>
-<li><a href="05-Language-Basics.html">05 - Language Basics</a></li>
-<li><a href="06-Import-Scopes.html">06 - Modules, import mechanism, namespaces, scopes</a></li>
-<li><a href="07-Tips-and-Tricks.html">07 - Tips and tricks</a></li>
-<li><a href="08-Assignment-02.html">08 - Assignment #02: using the standard library</a></li>
-</ul>
-</li>
+<li><a href="https://pythonhosted.org/spyder/">Spyder</a>: the IDE made by and for scientists. It resembles the Matlab IDE and has many nice features such as variable exploration and an integrated ipython console. It is very easy to install with conda, and is therefore available on linux at the university (<code>$ spyder &amp;</code>). <strong>It is my recommended IDE for this semester's course</strong>.</li>
+<li><a href="https://www.jetbrains.com/pycharm/">PyCharm</a>: this is my personal favorite. It is however quite heavyweight and not recommended for beginners.</li>
+<li><a href="https://atom.io/">Atom</a>: a modern, very nice looking editor. Useful if you program in more than one language, but it must be tuned a bit to become a real IDE</li>
+<li><a href="https://www.vim.org/">vim</a> or <a href="https://www.gnu.org/software/emacs/">emacs</a>: for people allergic to the mouse. Not recommended for most of us, but the people who learned to use them are allegedly the fastest programmers ever.</li>
 </ul>
 
 </div>
@@ -11995,8 +11964,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-to-use-these-notes">How to use these notes<a class="anchor-link" href="#How-to-use-these-notes">&#182;</a></h2><p><a id='howto'></a></p>
-
+<h2 id="What's-next?">What's next?<a class="anchor-link" href="#What's-next?">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -12004,75 +11972,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>These notes are written as a companion to the lectures. During the lectures I will go through the major concepts (using slides, the good old way), and the notes are here to help you learn at home. In an ideal world the notes should be usable without me paraphrasing them out loud, but this will depend on the time I have to write them along the way.</p>
-<p>The notes are a mix of examples and small exercises. The exercises can happen in between the examples and are marked with a question mark logo. At the end of each unit there will be an <strong>assignment</strong>. These can be worked through alone or in groups. Each week, I will ask <strong>one group</strong> to present their results to the rest of the class.</p>
-<p>The class grants you 4 ECTS if successfully passed: <a href="https://en.wikipedia.org/wiki/European_Credit_Transfer_and_Accumulation_System">in theory</a>, this represents about 6 hours work per week (not including holidays). For this course it is expected that you spend at least as much time doing homework than sitting in class.</p>
-<p>When you will be going through the examples of these notes, some sentences are marked in <strong>bold</strong>: this underlines their importance for the course. When <strong>single words</strong> are <strong>bold</strong>  this symbolizes new concepts or new definitions: they need to be understood (and <em>googled</em> if needed).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="External-resources">External resources<a class="anchor-link" href="#External-resources">&#182;</a></h2><p><a id='refs'></a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Resources used (and linked) in these lecture notes (will be updated when the notes get written further):</p>
-<p><strong>Linux and bash scripting:</strong></p>
-<ul>
-<li><a href="https://ryanstutorials.net/">Ryan's Tutorials</a> for the linux command line and bash scripting are entertaining and well designed.</li>
-</ul>
-<p><strong>Python tutorials:</strong></p>
-<ul>
-<li>the <a href="https://docs.python.org/3/tutorial/index.html">official tutorial</a>, always a good place to start.</li>
-<li>the <a href="https://www.scipy-lectures.org/index.html">scipy lecture notes</a>, a good overview of the scientific python stack for scientists with previous programming experience.</li>
-</ul>
-<p><strong>Python reference:</strong></p>
-<ul>
-<li>the <a href="https://docs.python.org">python documentation</a> is your best reference for any question related to the language and the standard library.</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="License">License<a class="anchor-link" href="#License">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
-  <img align="left" src="http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.eu.svg"/>
-</a></p>
-<p><br>
-<br></p>
-<p>These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
-<p>Feel free to use / adapt them, but don't sell them, and share them under the same licence.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="http://acinn.uibk.ac.at/" target="_blank">
-  <img align="left" src="../img/logo_acinn_small.jpg"/>
-</a></p>
+<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="08-Assignment-02.html">jump to this week's assignment</a>.</p>
 
 </div>
 </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>00-Introduction</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>05-Language-Basics</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11781,7 +11781,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": false, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {}, "toc_section_display": "block", "toc_window_display": true};
+            var cfg = {"base_numbering": "5", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "384px"}, "toc_section_display": "block", "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -11797,7 +11797,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Scientific-Programming">Scientific Programming<a class="anchor-link" href="#Scientific-Programming">&#182;</a></h1>
+<h1 id="Language-basics">Language basics<a class="anchor-link" href="#Language-basics">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11805,7 +11805,9 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Fabien Maussion</strong></p>
+<p>In this chapter we are revisiting the things you learned during the tutorial, and give some example of applications for each of the new concepts that were introduced.</p>
+<p><strong>Learning outcomes</strong>: fundamentals of the python syntax. New semantics: data type, literal, sequences, mapping, keyword and positional arguments...</p>
+<p><strong>Prerequisites</strong>: you have read the <a href="https://docs.python.org/3/tutorial/">python tutorial</a>, sections 3 to 5.</p>
 
 </div>
 </div>
@@ -11814,12 +11816,1563 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Lecture notes of the master lecture <a href="https://orawww.uibk.ac.at/public/lfuonline_lv.details?sem_id_in=18S&amp;lvnr_id_in=707716">707716 - Scientific Programming</a>, given for the first time in the summer term 2018.</p>
-<p>If you're not here for the first time, jump to:</p>
+<p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Language-basics" data-toc-modified-id="Language-basics-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Language basics</a></span><ul class="toc-item"><li><span><a href="#Basic-data-types" data-toc-modified-id="Basic-data-types-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Basic data types</a></span><ul class="toc-item"><li><span><a href="#Asking-for-the-type-of-an-object" data-toc-modified-id="Asking-for-the-type-of-an-object-5.1.1"><span class="toc-item-num">5.1.1&nbsp;&nbsp;</span>Asking for the type of an object</a></span></li><li><span><a href="#Numeric-types" data-toc-modified-id="Numeric-types-5.1.2"><span class="toc-item-num">5.1.2&nbsp;&nbsp;</span>Numeric types</a></span></li><li><span><a href="#Booleans" data-toc-modified-id="Booleans-5.1.3"><span class="toc-item-num">5.1.3&nbsp;&nbsp;</span>Booleans</a></span></li><li><span><a href="#Text" data-toc-modified-id="Text-5.1.4"><span class="toc-item-num">5.1.4&nbsp;&nbsp;</span>Text</a></span></li><li><span><a href="#Sequence-types---list,-tuple,-range" data-toc-modified-id="Sequence-types---list,-tuple,-range-5.1.5"><span class="toc-item-num">5.1.5&nbsp;&nbsp;</span>Sequence types - list, tuple, range</a></span></li><li><span><a href="#Sets" data-toc-modified-id="Sets-5.1.6"><span class="toc-item-num">5.1.6&nbsp;&nbsp;</span>Sets</a></span></li><li><span><a href="#Mapping-types---dict" data-toc-modified-id="Mapping-types---dict-5.1.7"><span class="toc-item-num">5.1.7&nbsp;&nbsp;</span>Mapping types - dict</a></span></li><li><span><a href="#Semantics-parenthesis:-&quot;literals&quot;" data-toc-modified-id="Semantics-parenthesis:-&quot;literals&quot;-5.1.8"><span class="toc-item-num">5.1.8&nbsp;&nbsp;</span>Semantics parenthesis: "literals"</a></span></li></ul></li><li><span><a href="#Control-flow" data-toc-modified-id="Control-flow-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Control flow</a></span><ul class="toc-item"><li><span><a href="#In-python,-one-iterates-over-sequences,-not-indexes" data-toc-modified-id="In-python,-one-iterates-over-sequences,-not-indexes-5.2.1"><span class="toc-item-num">5.2.1&nbsp;&nbsp;</span>In python, one iterates over sequences, not indexes</a></span></li><li><span><a href="#In-python,-indentation-matters" data-toc-modified-id="In-python,-indentation-matters-5.2.2"><span class="toc-item-num">5.2.2&nbsp;&nbsp;</span>In python, indentation matters</a></span></li><li><span><a href="#In-python,-functions-have-two-types-of-arguments" data-toc-modified-id="In-python,-functions-have-two-types-of-arguments-5.2.3"><span class="toc-item-num">5.2.3&nbsp;&nbsp;</span>In python, functions have two types of arguments</a></span></li></ul></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Take home points</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Basic-data-types">Basic data types<a class="anchor-link" href="#Basic-data-types">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>An informal way to describe a programming language is to say that it "does things with stuff". These "stuff" are often formally called <a href="https://en.wikipedia.org/wiki/Data_type">Data Types</a> in computer science. In python, these data are called "objects": these can be described much more formally, but for now we will just mention that <em>everything is an object in python</em>.</p>
+<p>Therefore, <strong>data types</strong> are sometimes called <strong>object types</strong> in some python textbooks. It doesn't make a difference and you can choose both terminologies. In sections 3 and 4 of the tutorial you used exclusively <a href="https://docs.python.org/3/library/stdtypes.html">built-in</a> types. <strong>Built-in data types</strong> are directly available in the interpreter, as opposed to other data types which maybe obtained either by importing them (eg <code>from collections import OrderedDict</code>) or by creating them yourselves.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Asking-for-the-type-of-an-object">Asking for the type of an object<a class="anchor-link" href="#Asking-for-the-type-of-an-object">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[1]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>int</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>str</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: add a <code>print</code> call in the statement above to see the difference with ipython's simplified print. What is the type of <code>type</code>, by the way?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Numeric-types">Numeric types<a class="anchor-link" href="#Numeric-types">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are three distinct numeric types: <strong>integers</strong> (<code>int</code>), <strong>floating point numbers</strong> (<code>float</code>), and <strong>complex numbers</strong> (<code>complex</code>). We will talk about these in more details in the numerics chapter.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Booleans">Booleans<a class="anchor-link" href="#Booleans">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There is a built-in boolean data type (<code>bool</code>) useful to test for truth value. Examples:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(bool, bool)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[4]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>bool</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">5</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that there are other rules about testing for truth in python. This is quite convenient if you want to avoid doing operation on invalid or empty containers:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This should not happen&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Refer to the <a href="https://docs.python.org/3/library/stdtypes.html#truth-value-testing">docs</a> for an exhaustive list of boolean operations and comparison operators.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Text">Text<a class="anchor-link" href="#Text">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In python (and many other languages) text sequences are named <strong>strings</strong> (<code>str</code>), which can be of any length:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;Français&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>str</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Unlike some languages, there is no special type for characters:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="s1">&#39;string&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">char</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>s &lt;class &#39;str&#39;&gt;
+t &lt;class &#39;str&#39;&gt;
+r &lt;class &#39;str&#39;&gt;
+i &lt;class &#39;str&#39;&gt;
+n &lt;class &#39;str&#39;&gt;
+g &lt;class &#39;str&#39;&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Since strings behave like <strong>lists</strong> in many ways, they are often classified together with the <strong>sequence</strong> types, as seen below.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Sequence-types---list,-tuple,-range">Sequence types - list, tuple, range<a class="anchor-link" href="#Sequence-types---list,-tuple,-range">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sequence types support a <a href="https://docs.python.org/3/library/stdtypes.html#common-sequence-operations">common set of operations</a> and are therefore very similar:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span> <span class="ow">in</span> <span class="n">l</span><span class="p">,</span> <span class="mi">1</span> <span class="ow">in</span> <span class="n">t</span><span class="p">,</span> <span class="mi">1</span> <span class="ow">in</span> <span class="n">r</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(True, True, True)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(3, 3, 3)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">l</span> <span class="o">+</span> <span class="n">l</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[0, 1, 2, 0, 1, 2]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">t</span> <span class="o">+</span> <span class="n">t</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(0, 1, 2, 0, 1, 2)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>But this won't make much sense for the range type though. Ranges are a little different:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">r</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[16]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>range(0, 10)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[17]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>They are usually used for loops or to generate other sequences. Ranges have a strong advantage over lists and tuples: their elements are given upon request, and ranges have therefore a very low memory consumption. See the following:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[18]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>range(0, 1267650600228229401496703205376)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">100</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">OverflowError</span>                             Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-19-e76816f49c68&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>list<span class="ansi-blue-fg">(</span>range<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">**</span><span class="ansi-cyan-fg">100</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">OverflowError</span>: Python int too large to convert to C ssize_t</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>An <code>OverflowError</code> tells me that I'm trying to do something not very recommendable.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As mentioned earlier, strings also have much in common with lists:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;gg&#39;</span> <span class="ow">in</span> <span class="s1">&#39;eggs&#39;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[20]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>"Tuple" is probably a new concept for you. It is a type quite specific to python. It is <em>almost</em> like a list, but it is <strong>immutable</strong>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;ha!&#39;</span>
+<span class="n">l</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[21]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[0, &#39;ha!&#39;, 2]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;ha?&#39;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-22-7f5185aad900&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>t<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">&#39;ha?&#39;</span>
+
+<span class="ansi-red-fg">TypeError</span>: &#39;tuple&#39; object does not support item assignment</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It is exactly this property which makes tuples useful, but this is not really obvious at the first sight. We'll leave it her for now.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Sets">Sets<a class="anchor-link" href="#Sets">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sets are an unordered collection of <strong>distinct</strong> objects:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;why&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">}</span>
+<span class="n">s</span><span class="o">.</span><span class="n">union</span><span class="p">({</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;not&#39;</span><span class="p">})</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[23]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{1, 9, &#39;not&#39;, &#39;why&#39;}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sets are useful for realising operations such as intersection, union, difference, and symmetric difference.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Mapping-types---dict">Mapping types - dict<a class="anchor-link" href="#Mapping-types---dict">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A <strong>mapping object</strong> maps values (<strong>keys</strong>) to arbitrary objects (<strong>values</strong>). It is a collection of (key, value) pairs:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="s1">&#39;b&#39;</span><span class="p">}</span>
+<span class="n">d</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[24]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{2: &#39;b&#39;, &#39;a&#39;: 1}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">2</span> <span class="ow">in</span> <span class="n">d</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[25]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span> <span class="ow">in</span> <span class="n">d</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[26]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[27]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Dictionary are (together with lists) the <strong>container</strong> type you will use the most often.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: can you think of examples of application of a <code>dict</code>? Describe a couple of them!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Semantics-parenthesis:-&quot;literals&quot;">Semantics parenthesis: "literals"<a class="anchor-link" href="#Semantics-parenthesis:-&quot;literals&quot;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Literals</strong> are the fixed values of a programming language ("notations"). Some of them are pretty universal, like numbers or strings (<code>9</code>, <code>3.14</code>, <code>"Hi!"</code>, all literals) some are more language specific and belong to the language's syntax. Curly brackets <code>{}</code> for example are the literal representation of a <code>set</code>. This syntax has been added for convenience only:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">s1</span> <span class="o">==</span> <span class="n">s2</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[28]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d1</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">bird</span><span class="o">=</span><span class="s1">&#39;parrot&#39;</span><span class="p">,</span> <span class="n">plant</span><span class="o">=</span><span class="s1">&#39;crocus&#39;</span><span class="p">)</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;bird&#39;</span><span class="p">:</span><span class="s1">&#39;parrot&#39;</span><span class="p">,</span> <span class="s1">&#39;plant&#39;</span><span class="p">:</span><span class="s1">&#39;crocus&#39;</span><span class="p">}</span>
+<span class="n">d1</span> <span class="o">==</span> <span class="n">d2</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[29]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using one or the other way to construct your containers is a matter of taste, but in practice you will see the literal version more often.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Control-flow">Control flow<a class="anchor-link" href="#Control-flow">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the tutorial you've learned about <code>for</code> and <code>while</code> loops (the latter being much less frequent). I'll just summarize the most important information here:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="In-python,-one-iterates-over-sequences,-not-indexes">In python, one iterates over sequences, not indexes<a class="anchor-link" href="#In-python,-one-iterates-over-sequences,-not-indexes">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is the major difference with loops you might have known from other languages (and this is one of the best things in python):</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Unpythonic:</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;This&#39;</span><span class="p">,</span> <span class="s1">&#39;is&#39;</span><span class="p">,</span> <span class="s1">&#39;very&#39;</span><span class="p">,</span> <span class="s1">&#39;unpythonic&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>This
+is
+very
+unpythonic
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Pythonic</strong>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">seq</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;pythonic&#39;</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>This
+is
+very
+pythonic
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>for i in range(xx)</code> is almost never what you want to do in python. If you have several sequences you want to <strong>iterate</strong> over, then do:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lis</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">lis</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1 This
+2 is
+3 very
+5 pythonic
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="In-python,-indentation-matters">In python, indentation matters<a class="anchor-link" href="#In-python,-indentation-matters">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Blocks are defined via their <strong>indentation</strong>, and not via brackets or <code>begin .. end</code> statements. Hate it or love it, this is how it is ;-). I learned to like this style a lot.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="In-python,-functions-have-two-types-of-arguments">In python, functions have two types of arguments<a class="anchor-link" href="#In-python,-functions-have-two-types-of-arguments">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>These are the <strong>positional arguments</strong> and <strong>keyword arguments</strong>.</p>
+<p><strong>keyword arguments</strong> are preceded by an identifier (e.g. <code>name=</code>) and are attributed a default value. They are therefore <em>optional</em> and the order in which they are given to the function does not matter:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">kwarg1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">kwarg2</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">kwarg1</span><span class="p">,</span> <span class="n">kwarg2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">kwarg2</span><span class="o">=</span><span class="s1">&#39;Yes&#39;</span><span class="p">,</span> <span class="n">kwarg1</span><span class="o">=</span><span class="mf">3.14</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1 2 3.14 Yes
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">,</span> <span class="s1">&#39;No&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1 2 Yes No
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I am not a big fan of this feature because it reduces the clarity of the code and recommend to always use the <code>kwarg=</code> syntax. I am not alone in this case, and therefore python implemented a syntax to make calls like above illegal:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">kwarg1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">kwarg2</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">kwarg1</span><span class="p">,</span> <span class="n">kwarg2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">,</span> <span class="s1">&#39;No&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-37-affff2e98955&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>f<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;Yes&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;No&#39;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">TypeError</span>: f() takes 2 positional arguments but 4 were given</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>positional arguments</strong> are named this because their position matters, and unlike keyword arguments they don't have a default value and are mandatory. Forgetting to set them results in an error:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-38-281ab0a37d7d&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>f<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">TypeError</span>: f() missing 1 required positional argument: &#39;arg2&#39;</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Take-home-points">Take home points<a class="anchor-link" href="#Take-home-points">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href="#ctoc">the table of contents</a></li>
-<li><a href="#howto">how to use these notes</a></li>
-<li><a href="#refs">external resources</a></li>
+<li>we learned the basic elements of the python syntax. To become fluent in this language you will have to master all of the elements presented above.</li>
+<li>we introduced new concepts: data type, literal, sequences, mapping, keyword and positional arguments.</li>
 </ul>
 
 </div>
@@ -11829,9 +13382,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/00_messing_python.png">
-<em>Adapted from <a href="https://xkcd.com/519/">xkcd</a>. The xkcd author Randall Munroe <a href="https://xkcd.com/353/">would most certainly agree</a> with my changes.</em></p>
-
+<h2 id="What's-next?">What's next?<a class="anchor-link" href="#What's-next?">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -11839,240 +13390,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Preface">Preface<a class="anchor-link" href="#Preface">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There are plenty of excellent resources to learn python available (see <a href="#refs">references</a> below). So why writing this "book"? Well, for one, because none of them is organized to fit <em>exactly</em> the 15 week semester of Austrian universities. Therefore I had to make some choices regarding (i) what to teach and (ii) how to teach it. However, there is no need in reinventing the wheel and rewriting what much better teachers wrote before me: as you will see, I will rely heavily on external resources, all openly available. Following the open source philosophy, these lecture notes are also freely available.</p>
-<p>These notes are written on the go, as this course advances. I am trying to write them in such a way that they are understandable without actually <em>attending</em> the course, but this takes time and if I'm getting late on schedule I might revisit this goal. In that case I'll have to come back to them later ;-).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Learning-outcomes-of-this-course">Learning outcomes of this course<a class="anchor-link" href="#Learning-outcomes-of-this-course">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This class aims at learning <strong>modern programming techniques</strong> for (geo-)scientists. After finishing the class, attendees should understand how numbers are handled by computers and be aware of numerical accuracy errors. They should be able to program in a structured, extendable and reproducible manner. In the process of this class students will get acquainted with various programming tools (IDEs, debugger, unit testing, object oriented programming, version control, open development practices).</p>
-<p>The targeted audience for this lecture are (geo-)sience <strong>students at the master level with previous experience in programming</strong>. No prior knowledge of python is required, but I'll assume that you are familiar with a similar language (Matlab, IDL, R...). This is <em>not</em> an introductory course, although we will shortly revisit the basics in order to learn the python syntax.</p>
-<p>The course encompasses the following topics, which are developed by means of concrete examples in the Python programming language:</p>
-<ul>
-<li>Introduction to Linux</li>
-<li>Semantics: revisiting and formalizing the basic programming structures (loops, functions, conditional blocks...)</li>
-<li>General programming concepts, differences between compiled and interpreted languages</li>
-<li>Numerics: floating point numbers, N-dimensional arrays</li>
-<li>Software structure: packages, modules, functions, scripts</li>
-<li>Object oriented programming: fundamentals, usage, and basic design patterns</li>
-<li>Code testing and version control</li>
-<li>Real world applications!</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Frequently-Asked--Questions">Frequently Asked  Questions<a class="anchor-link" href="#Frequently-Asked--Questions">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="What-is-&quot;Scientific-Programming&quot;?">What is "Scientific Programming"?<a class="anchor-link" href="#What-is-&quot;Scientific-Programming&quot;?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Scientific programming</strong> targets to solve scientific problems with the help of computers. It is sometimes used as synonym for <a href="https://en.wikipedia.org/wiki/Computational_science">computational science</a>, but in my opinion these are not entirely the same. "Scientific programming" is not really a discipline, and therefore cannot be taught.</p>
-<p>What are we doing here then? Well, we are going to learn <strong>programming</strong> first, and then <strong>programming as a tool to do science</strong>. We are going to apply our new skills to scientific problems, but not only. Within the time given to us (14 units) we won't be able to learn <em>everything</em> about programming of course. My hope is that at the end of the lecture you'll have sufficient background and tools at your disposition to solve your own problems, and (this is the most important bit) that you'll know <em>where</em> to find solutions to the problems you encounter.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why-should-I-learn-programming?">Why should I learn programming?<a class="anchor-link" href="#Why-should-I-learn-programming?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As a scientist you are going to either <em>produce</em> or <em>analyze</em> data, most of the time you'll do both. For a long time, scientists have seen programming as a "tool", a menial task to accomplish in order to answer the questions they were asking. Nowadays programming has taken a prominent place in a scientist's work, for several reasons:</p>
-<ul>
-<li><strong>the amount of data we have to handle increases together with computational power and our capacity to store it</strong>. I would even argue that the bottleneck in model based scientific discovery isn't the computational effort anymore, but our capacity to comprehend and analyze these huge amounts of data.</li>
-<li><strong>the questions we are asking are getting more complex, and so are the tools we are using to answer them</strong>. The times when scientists could make discoveries with the help of a piece of paper and a pen are long gone, at least for most of us in the geosciences. We rely heavily on computer models, and these models are developed by us scientists, not only by programmers.</li>
-<li><strong>science faces a credibility crisis</strong>, and part of the mistrust towards scientists comes from the fact that their research happens behind closed doors, using closed source tools and based on protected data. Opening our computers and demonstrating that our code can be trusted is necessary to re-engage confidence in our results.</li>
-<li>on a more general note: a better understanding of the tools that govern our digital world is a strong asset for many aspects of our everyday life and citizenship.</li>
-</ul>
-<p>In simple words, we have to become better programmers to be faster and better at what we do: science.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why-Python?">Why Python?<a class="anchor-link" href="#Why-Python?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We will use the <a href="https://www.python.org/">Python programming language</a> in this course. In case you are wondering why this language and not any other like <code>&lt;name your favorite language here&gt;</code>, let me stop you right away: this course is not about "learning Python", it is about learning the general concepts of programming: algorithmic, numerics, program structure, object oriented programming, testing, etc. Python is just the tool I chose to use for this purpose.</p>
-<p>We could indeed have taken any other language, but there are several advantages in using Python. A quick web search will give you <a href="https://www.google.co.uk/search?dcr=0&amp;ei=Wo2OWtKHNY7fwAKv1KbIDQ&amp;q=Why+should+I+learn+python">millions of reasons</a>, but let me pick some of my favorites here:</p>
-<ul>
-<li><strong>Python is a general purpose programming language and, as such, well suited to learn general programming concepts</strong>. It is therefore better suited than, for example, <a href="https://www.r-project.org/">R</a> which was developed for statistics and has certain particularities regarding object oriented programming in particular.</li>
-<li><strong>Python can be used for many purposes</strong>, from data preprocessing to numerical modeling and plotting. Unless you have a very compelling reason to change, you are likely to be able to use Python for all programming tasks you'll have in the near future.</li>
-<li><strong>Python is one of the <a href="https://stackoverflow.blog/2017/09/06/incredible-growth-python/">fastest growing languages for data science</a></strong>. There is a very active community developing new and exiting packages every day, and joining this community is surely a good bet on the future.</li>
-<li><strong>Python is free and open-source</strong>. No license fee, the code is available for everyone to see.</li>
-</ul>
-<p>There are many other reasons to use Python (and some arguments <em>against</em> Python as well of course), but I don't think it's relevant to list them here. My argument is following: for a good programmer, switching language is not a very big deal. It's not easy of course, but it's possible - becoming a good programmer is the hard bit, and is a never ending process.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Course-contents">Course contents<a class="anchor-link" href="#Course-contents">&#182;</a></h2><p><a id='ctoc'></a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><strong>Week 01: Introduction, Install Python, Getting Started</strong>:<ul>
-<li><a href="01-Linux.html">01 - A very short introduction to Linux</a></li>
-<li><a href="02-Installation.html">02 - Installing Python</a></li>
-<li><a href="03-Getting-Started.html">03 - Getting started with Python</a></li>
-<li><a href="04-Assignment-01.html">04 - Assignment #01: gaining speed with Python</a></li>
-<li><a href="http://fabienmaussion.info/scipro_w01/">Slides for week 01</a></li>
-</ul>
-</li>
-<li><strong>Week 01: Introduction, Install Python, Getting Started</strong>:<ul>
-<li><a href="05-Language-Basics.html">05 - Language Basics</a></li>
-<li><a href="06-Import-Scopes.html">06 - Modules, import mechanism, namespaces, scopes</a></li>
-<li><a href="07-Tips-and-Tricks.html">07 - Tips and tricks</a></li>
-<li><a href="08-Assignment-02.html">08 - Assignment #02: using the standard library</a></li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-to-use-these-notes">How to use these notes<a class="anchor-link" href="#How-to-use-these-notes">&#182;</a></h2><p><a id='howto'></a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>These notes are written as a companion to the lectures. During the lectures I will go through the major concepts (using slides, the good old way), and the notes are here to help you learn at home. In an ideal world the notes should be usable without me paraphrasing them out loud, but this will depend on the time I have to write them along the way.</p>
-<p>The notes are a mix of examples and small exercises. The exercises can happen in between the examples and are marked with a question mark logo. At the end of each unit there will be an <strong>assignment</strong>. These can be worked through alone or in groups. Each week, I will ask <strong>one group</strong> to present their results to the rest of the class.</p>
-<p>The class grants you 4 ECTS if successfully passed: <a href="https://en.wikipedia.org/wiki/European_Credit_Transfer_and_Accumulation_System">in theory</a>, this represents about 6 hours work per week (not including holidays). For this course it is expected that you spend at least as much time doing homework than sitting in class.</p>
-<p>When you will be going through the examples of these notes, some sentences are marked in <strong>bold</strong>: this underlines their importance for the course. When <strong>single words</strong> are <strong>bold</strong>  this symbolizes new concepts or new definitions: they need to be understood (and <em>googled</em> if needed).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="External-resources">External resources<a class="anchor-link" href="#External-resources">&#182;</a></h2><p><a id='refs'></a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Resources used (and linked) in these lecture notes (will be updated when the notes get written further):</p>
-<p><strong>Linux and bash scripting:</strong></p>
-<ul>
-<li><a href="https://ryanstutorials.net/">Ryan's Tutorials</a> for the linux command line and bash scripting are entertaining and well designed.</li>
-</ul>
-<p><strong>Python tutorials:</strong></p>
-<ul>
-<li>the <a href="https://docs.python.org/3/tutorial/index.html">official tutorial</a>, always a good place to start.</li>
-<li>the <a href="https://www.scipy-lectures.org/index.html">scipy lecture notes</a>, a good overview of the scientific python stack for scientists with previous programming experience.</li>
-</ul>
-<p><strong>Python reference:</strong></p>
-<ul>
-<li>the <a href="https://docs.python.org">python documentation</a> is your best reference for any question related to the language and the standard library.</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="License">License<a class="anchor-link" href="#License">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
-  <img align="left" src="http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.eu.svg"/>
-</a></p>
-<p><br>
-<br></p>
-<p>These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
-<p>Feel free to use / adapt them, but don't sell them, and share them under the same licence.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="http://acinn.uibk.ac.at/" target="_blank">
-  <img align="left" src="../img/logo_acinn_small.jpg"/>
-</a></p>
+<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="06-Import-Scopes.html">jump to the next chapter</a>.</p>
 
 </div>
 </div>
