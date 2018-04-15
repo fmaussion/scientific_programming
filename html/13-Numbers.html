@@ -9,7 +9,7 @@ gtag('js', new Date());
 gtag('config', 'UA-88391345-1');
 </script>
 <meta charset="utf-8" />
-<title>01-Linux</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>13-Numbers</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11789,7 +11789,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {}, "toc_section_display": "block", "toc_window_display": true};
+            var cfg = {"base_numbering": "13", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "384px"}, "toc_section_display": "block", "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -11805,7 +11805,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="A-very-short-introduction-to-Linux">A very short introduction to Linux<a class="anchor-link" href="#A-very-short-introduction-to-Linux">&#182;</a></h1>
+<h1 id="Number-representation-in-computers">Number representation in computers<a class="anchor-link" href="#Number-representation-in-computers">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11813,8 +11813,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This lecture is about programming, but it would be a big mistake to forget to talk about Linux here, at least a short introduction.</p>
-<p>Every student in (geo-)sciences should know about the existence of Linux and know the basics of it. Atmospheric Sciences students in particular will have to use it sooner or later, since most of the tools and data they are using are running or have been created on Linux systems.</p>
+<p>In this chapter we are going to give elements of understanding of how numbers are represented in today's computers. We won't have time to go into the details (which are perhaps not so relevant for non informaticians), however it is extremely important to understand the pitfalls of the so-called "floating-point arithmetics", because soon or late one of these pitfalls will hit you (I promise).</p>
 
 </div>
 </div>
@@ -11824,7 +11823,7 @@ $( document ).ready(function(){
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#A-very-short-introduction-to-Linux" data-toc-modified-id="A-very-short-introduction-to-Linux-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>A very short introduction to Linux</a></span><ul class="toc-item"><li><span><a href="#What-is-Linux?" data-toc-modified-id="What-is-Linux?-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>What is Linux?</a></span></li><li><span><a href="#Should-I-use-it?" data-toc-modified-id="Should-I-use-it?-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Should I use it?</a></span></li><li><span><a href="#Testing-Linux" data-toc-modified-id="Testing-Linux-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Testing Linux</a></span></li><li><span><a href="#The-linux-command-line" data-toc-modified-id="The-linux-command-line-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>The linux command line</a></span><ul class="toc-item"><li><span><a href="#Listing-files-and-directories" data-toc-modified-id="Listing-files-and-directories-1.4.1"><span class="toc-item-num">1.4.1&nbsp;&nbsp;</span>Listing files and directories</a></span></li><li><span><a href="#The-directory-structure" data-toc-modified-id="The-directory-structure-1.4.2"><span class="toc-item-num">1.4.2&nbsp;&nbsp;</span>The directory structure</a></span></li><li><span><a href="#Making-Directories" data-toc-modified-id="Making-Directories-1.4.3"><span class="toc-item-num">1.4.3&nbsp;&nbsp;</span>Making Directories</a></span></li><li><span><a href="#Changing-to-a-different-directory" data-toc-modified-id="Changing-to-a-different-directory-1.4.4"><span class="toc-item-num">1.4.4&nbsp;&nbsp;</span>Changing to a different directory</a></span></li><li><span><a href="#The-directories-.-and-.." data-toc-modified-id="The-directories-.-and-..-1.4.5"><span class="toc-item-num">1.4.5&nbsp;&nbsp;</span>The directories . and ..</a></span></li><li><span><a href="#Copying-files" data-toc-modified-id="Copying-files-1.4.6"><span class="toc-item-num">1.4.6&nbsp;&nbsp;</span>Copying files</a></span></li><li><span><a href="#Using-[TAB]" data-toc-modified-id="Using-[TAB]-1.4.7"><span class="toc-item-num">1.4.7&nbsp;&nbsp;</span>Using [TAB]</a></span></li><li><span><a href="#Moving-files" data-toc-modified-id="Moving-files-1.4.8"><span class="toc-item-num">1.4.8&nbsp;&nbsp;</span>Moving files</a></span></li><li><span><a href="#Removing-files-and-directories" data-toc-modified-id="Removing-files-and-directories-1.4.9"><span class="toc-item-num">1.4.9&nbsp;&nbsp;</span>Removing files and directories</a></span></li><li><span><a href="#Displaying-the-contents-of-a-file-on-the-screen" data-toc-modified-id="Displaying-the-contents-of-a-file-on-the-screen-1.4.10"><span class="toc-item-num">1.4.10&nbsp;&nbsp;</span>Displaying the contents of a file on the screen</a></span></li><li><span><a href="#Searching-the-contents-of-a-file" data-toc-modified-id="Searching-the-contents-of-a-file-1.4.11"><span class="toc-item-num">1.4.11&nbsp;&nbsp;</span>Searching the contents of a file</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-1.4.12"><span class="toc-item-num">1.4.12&nbsp;&nbsp;</span>Take home points</a></span></li></ul></li><li><span><a href="#Executable-scripts" data-toc-modified-id="Executable-scripts-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Executable scripts</a></span><ul class="toc-item"><li><span><a href="#A-simple-script" data-toc-modified-id="A-simple-script-1.5.1"><span class="toc-item-num">1.5.1&nbsp;&nbsp;</span>A simple script</a></span></li><li><span><a href="#Make-a-file-executable" data-toc-modified-id="Make-a-file-executable-1.5.2"><span class="toc-item-num">1.5.2&nbsp;&nbsp;</span>Make a file executable</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-1.5.3"><span class="toc-item-num">1.5.3&nbsp;&nbsp;</span>Take home points</a></span></li></ul></li><li><span><a href="#The-linux-PATH" data-toc-modified-id="The-linux-PATH-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>The linux PATH</a></span><ul class="toc-item"><li><span><a href="#Locate-linux-programs" data-toc-modified-id="Locate-linux-programs-1.6.1"><span class="toc-item-num">1.6.1&nbsp;&nbsp;</span>Locate linux programs</a></span></li><li><span><a href="#The-PATH-variable" data-toc-modified-id="The-PATH-variable-1.6.2"><span class="toc-item-num">1.6.2&nbsp;&nbsp;</span>The PATH variable</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-1.6.3"><span class="toc-item-num">1.6.3&nbsp;&nbsp;</span>Take home points</a></span></li></ul></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Number-representation-in-computers" data-toc-modified-id="Number-representation-in-computers-13"><span class="toc-item-num">13&nbsp;&nbsp;</span>Number representation in computers</a></span><ul class="toc-item"><li><span><a href="#Binary-representation-of-integers" data-toc-modified-id="Binary-representation-of-integers-13.1"><span class="toc-item-num">13.1&nbsp;&nbsp;</span>Binary representation of integers</a></span><ul class="toc-item"><li><span><a href="#Basics" data-toc-modified-id="Basics-13.1.1"><span class="toc-item-num">13.1.1&nbsp;&nbsp;</span>Basics</a></span></li><li><span><a href="#Overflow" data-toc-modified-id="Overflow-13.1.2"><span class="toc-item-num">13.1.2&nbsp;&nbsp;</span>Overflow</a></span></li><li><span><a href="#Extending-the-binary-representation-to-non-integers:-fixed-point-notation" data-toc-modified-id="Extending-the-binary-representation-to-non-integers:-fixed-point-notation-13.1.3"><span class="toc-item-num">13.1.3&nbsp;&nbsp;</span>Extending the binary representation to non-integers: fixed-point notation</a></span></li></ul></li><li><span><a href="#Floating-point-numbers" data-toc-modified-id="Floating-point-numbers-13.2"><span class="toc-item-num">13.2&nbsp;&nbsp;</span>Floating point numbers</a></span><ul class="toc-item"><li><span><a href="#Introduction" data-toc-modified-id="Introduction-13.2.1"><span class="toc-item-num">13.2.1&nbsp;&nbsp;</span>Introduction</a></span></li><li><span><a href="#Scientific-(exponential)-notation-in-base-b" data-toc-modified-id="Scientific-(exponential)-notation-in-base-b-13.2.2"><span class="toc-item-num">13.2.2&nbsp;&nbsp;</span>Scientific (exponential) notation in base b</a></span></li><li><span><a href="#IEEE-754" data-toc-modified-id="IEEE-754-13.2.3"><span class="toc-item-num">13.2.3&nbsp;&nbsp;</span>IEEE 754</a></span></li><li><span><a href="#Overflow" data-toc-modified-id="Overflow-13.2.4"><span class="toc-item-num">13.2.4&nbsp;&nbsp;</span>Overflow</a></span></li></ul></li><li><span><a href="#What-to-do-from-here?" data-toc-modified-id="What-to-do-from-here?-13.3"><span class="toc-item-num">13.3&nbsp;&nbsp;</span>What to do from here?</a></span><ul class="toc-item"><li><span><a href="#Alternative-data-types" data-toc-modified-id="Alternative-data-types-13.3.1"><span class="toc-item-num">13.3.1&nbsp;&nbsp;</span>Alternative data types</a></span></li><li><span><a href="#Symbolic-computations" data-toc-modified-id="Symbolic-computations-13.3.2"><span class="toc-item-num">13.3.2&nbsp;&nbsp;</span>Symbolic computations</a></span></li><li><span><a href="#Deal-with-it" data-toc-modified-id="Deal-with-it-13.3.3"><span class="toc-item-num">13.3.3&nbsp;&nbsp;</span>Deal with it</a></span><ul class="toc-item"><li><span><a href="#Awareness" data-toc-modified-id="Awareness-13.3.3.1"><span class="toc-item-num">13.3.3.1&nbsp;&nbsp;</span>Awareness</a></span></li><li><span><a href="#Error-propagation" data-toc-modified-id="Error-propagation-13.3.3.2"><span class="toc-item-num">13.3.3.2&nbsp;&nbsp;</span>Error propagation</a></span></li><li><span><a href="#Safer-tests" data-toc-modified-id="Safer-tests-13.3.3.3"><span class="toc-item-num">13.3.3.3&nbsp;&nbsp;</span>Safer tests</a></span></li></ul></li></ul></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-13.4"><span class="toc-item-num">13.4&nbsp;&nbsp;</span>Take home points</a></span></li><li><span><a href="#Further-reading" data-toc-modified-id="Further-reading-13.5"><span class="toc-item-num">13.5&nbsp;&nbsp;</span>Further reading</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-13.6"><span class="toc-item-num">13.6&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
 </div>
 </div>
 </div>
@@ -11832,7 +11831,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What-is-Linux?">What is Linux?<a class="anchor-link" href="#What-is-Linux?">&#182;</a></h2>
+<h2 id="Binary-representation-of-integers">Binary representation of integers<a class="anchor-link" href="#Binary-representation-of-integers">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -11840,7 +11839,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <a href="https://www.google.co.uk/search?q=What+is+Linux">web</a> is going to give a better answer than me to this question.</p>
+<p>Nearly all modern processors represent numbers in binary form, with each digit being represented by a two-valued physical quantity such as a "low" or "high" voltage: 0s and 1s. These binary digits are called <strong>bits</strong>, and are the basis of the <strong>binary representation of numbers</strong>.</p>
 
 </div>
 </div>
@@ -11849,7 +11848,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Should-I-use-it?">Should I use it?<a class="anchor-link" href="#Should-I-use-it?">&#182;</a></h2>
+<h3 id="Basics">Basics<a class="anchor-link" href="#Basics">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -11857,17 +11856,961 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>My very personal answer is a clear: <strong>yes</strong>! I can't force you to it though, and most of the exercises of this lecture can be done on a Windows computer too. If you are running Mac OS X then you have access to a linux terminal anyway and you can ignore my recommendation (even if I don't like Apple for several other reasons - totally subjective opinion again).</p>
-<p>Linux has always been an environment for programmers and has the reputation of being "geeky" and "complicated". This is less true today, with many Linux distributions becoming mainstream and easy to use (my personal favorite is <a href="http://linuxmint.com">Linux Mint</a>, but you probably mostly heard of <a href="http://ubuntugnome.org/">Ubuntu</a> which I also recommend).</p>
-<p>I believe that Linux is <em>much</em> more user-friendly than Windows: once some of the particularities of Linux are understood (which can be frustrating in the beginning since it works <em>quite</em> differently than windows), it appears that there is much less "hidden" in Linux than in Windows (especially when it comes to installing/deinstalling software, using the command line, or protecting yourself from viruses and intruders).</p>
-<p><strong>As a scientist and programmer</strong> there are many reasons to prefer Linux (or Mac OS X) to Windows. Let me list some reasons here:</p>
+<p>With only 0s and 1s available the most efficient way to represent numbers is as a sum of 2s to the power of i, with i going from 0 to N-1. It is best shown with an example, here with N=4 digits:</p>
+
+<pre><code>0101
+
+</code></pre>
+<p>Here our number will be $0\times2^3 + 1\times2^2 + 0\times2^1 + 1\times2^0 = 5$. In this convention, the leftmost digit is called the <strong>most significant bit</strong> and the rightmost the <strong>least significant bit</strong>. If all the elements from the left are zeros, the convention is to omit them when writing. This is for example what the built-in <a href="https://docs.python.org/3/library/functions.html#bin">bin</a> function chooses to do:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">bin</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[46]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;0b101&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>which converts an integer number to a binary string prefixed with <code>0b</code>. Now it appears quite clear that the number of different integers that a computer can represent with this system depends on the size N of the binary sequence. A <em>positive</em> integer represented with a <strong>byte</strong> (8 bits are called a <strong>byte</strong>) can thus be as large as:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sum</span><span class="p">([</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[47]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>255</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>but not larger. Unless specified otherwise, the first bit is often used to give the <em>sign</em> of the integer it represents. Therefore, the actual range of numbers that a byte can represent is $[-2^7; 2^7-1]= [-128; 127]$. If you are sure that you only want to do arithmetics with positive number you can spare this one bit and specify your binary number as being of <strong>unsigned integer type</strong>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So how many bits does our computer use to represent integers? Well, it depends on the platform and programming language you are using. Many older languages (including old python versions) made the distinction between short (32 bits) and long (64 bits) integers.</p>
+<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: what is the largest number that a 64-bit integer can represent? The smallest? And a 32-bit unsigned integer?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, what is the default length of binary integers in python 3? Let's try to find out:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sys</span> <span class="k">import</span> <span class="n">getsizeof</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">getsizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[48]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>28</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So 28 bytes? That's a lot of bits. This is because the <a href="https://docs.python.org/3/library/sys.html#sys.getsizeof">getsizeof</a> function returns the <strong>memory consumption</strong> of the <em>object</em> <code>int(10)</code>. What does that mean? Well, in python numbers are not only numbers, they are also "things" (<strong>objects</strong>). And these things come with services, like for example the <code>bit_length</code> method:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">bit_length</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[49]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>4</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: what does <code>bit_length()</code> do? What is the bit length of 5? of 127?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>These services have a memory cost (an "overhead"), and are required no matter how big our number is:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">size_int</span> <span class="o">=</span> <span class="n">getsizeof</span><span class="p">(</span><span class="nb">int</span><span class="p">())</span>
+<span class="n">size_int</span>  <span class="c1"># size of an empty integer object</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[50]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>24</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_int_bitsize</span><span class="p">(</span><span class="n">integer</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns the actual memory consumption of an integer (in bits) without the object overhead.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">integer</span><span class="p">)</span> <span class="o">-</span> <span class="n">size_int</span><span class="p">)</span> <span class="o">*</span> <span class="mi">8</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_int_bitsize</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[52]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>32</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Ha! This looks more reasonable. So python must use C-shorts internally to store integers? But then, the largest number it can manipulate must be very small? Let's see:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="mi">68</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[53]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>295147905179352825856</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_int_bitsize</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">18</span><span class="p">),</span> <span class="n">get_int_bitsize</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">68</span><span class="p">),</span> <span class="n">get_int_bitsize</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">100000</span><span class="p">)</span>  
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[54]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(32, 96, 106688)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As shown above, it turns out that modern python versions have <strong>no limitations</strong> on the size of integers (other than the total memory available on your computer). The memory slot used to store your number simply depends on how large it is.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_int_bitsize</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">100000</span><span class="p">)</span> <span class="o">/</span> <span class="mi">8</span> <span class="o">/</span> <span class="mi">1024</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[55]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>13.0234375</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So the <code>2**100000</code> number requires about 13 KB (<strong>Kilobytes</strong>) of memory.</p>
+<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: print <code>2**100000</code> on screen, just for "fun".</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Overflow">Overflow<a class="anchor-link" href="#Overflow">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This dynamic resizing of integers in python means that they cannot <strong>overflow</strong>. <strong>Overflow</strong> is a common pitfall of many numerical languages though, and to illustrate what it is we can either use floats (unlike python integers, python floats can overflow), or numpy, which uses integer types of fixed length:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">(</span><span class="mi">127</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">dtype</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[56]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>dtype(&#39;int8&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[57]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>127</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/home/mowglie/.pyvirtualenvs/py3/lib/python3.5/site-packages/ipykernel_launcher.py:1: RuntimeWarning: overflow encountered in byte_scalars
+  &#34;&#34;&#34;Entry point for launching an IPython kernel.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[58]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>-128</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What happened here? To understand this we need to understand how binary numbers are added together first. Please read the <a href="https://en.wikipedia.org/wiki/Binary_number#Addition">addition chapter</a> of the Wikipedia article on binary numbers before going on.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Basically, we added 1 (binary <code>00000001</code>) to 127 (binary <code>01111111</code>) which gives us the binary number <code>10000000</code>, i.e. -128 in <a href="https://en.wikipedia.org/wiki/Two%27s_complement">two's complement</a> representation, which is the most common method of representing signed integers on computers. At least, python warned us that we are doing something wrong here. But be aware that this is not always the case:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="mi">2147483648</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[59]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>-2147483648</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">18</span><span class="p">])</span>
+<span class="n">a</span><span class="o">**</span><span class="n">a</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[60]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([-497033925936021504])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>These are examples of <strong>silent</strong> overflows. Silent means that they do not warn you about the probable mistake and could happen in your code without you noticing that this happens.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Extending-the-binary-representation-to-non-integers:-fixed-point-notation">Extending the binary representation to non-integers: fixed-point notation<a class="anchor-link" href="#Extending-the-binary-representation-to-non-integers:-fixed-point-notation">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A more general definition of the binary representation for integers is to use negative exponents as well. Any real number a can be represented as:</p>
+<p>$$a = \pm \sum_{i=-\infty}^{n} z_i b^i$$ with $b &gt; 1$ (base) and $0 \le z_i \le b-1$, all integers.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the notation, a fixed point separates digits of positive powers of the base, from those of negative powers. In <strong>base 2</strong> (binary), the number $10000.1_2$ is equal to $16.5_{10}$ in base 10.</p>
+<p>Indeed:</p>
+<p>$$1\times2^4 + 0\times2^3 + 0\times2^2 + 0\times2^1 + 0\times2^0 + 1\times2^{-1} = 16.5_{10}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Although this representation is convenient, the representable value range is heavily limited by the number of bits available to represent the number (see this week's assignments). Therefore, most computers today are relying on the <strong>floating point notation</strong> to represent real numbers.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Floating-point-numbers">Floating point numbers<a class="anchor-link" href="#Floating-point-numbers">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Because computers have a <em>finite</em> number of storage units available, they can only represent a <em>finite</em> number of differentiable values. In fact, a memory slot with $N$ available bits cannot represent more then $2^N$ differentiable values. The range of real (or complex) numbers is of course infinite, and therefore it becomes clear that in the computer representation of numbers <strong>there will always be a trade-off between the range of numbers one would like to represent and their relative accuracy</strong> (i.e. the absolute difference between two consecutive representable numbers).</p>
+<p>Taking the <strong>decimal representation</strong> of the number 1/3 as an example: it can be written as <code>0.33</code>, <code>0.333</code>, <code>0.3333</code>, etc. Depending on the numbers of digits available, the precision of the number will increase but never reach the exact value, which will never be exact in this decimal representation.</p>
+<p>This fundamental limitation is the explanation for unexpected results of certain arithmetic operations. For example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span>  <span class="c1"># so far so good</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[61]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.2</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.2</span>  <span class="c1"># wtf?</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[62]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.30000000000000004</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is a typical <strong>rounding error</strong> due to the fact that most computers do not represent numbers as decimal fractions, but as binary. Without going too much into details (which can be tricky), this chapter will give you some elements of understanding in order to prepare you for the most common pitfalls of floating point arithmetics.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Scientific-(exponential)-notation-in-base-b">Scientific (exponential) notation in base b<a class="anchor-link" href="#Scientific-(exponential)-notation-in-base-b">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the exponential notation, a number is represented approximately to a fixed number of significant digits (the significand) and scaled using an exponent in some fixed base; the base for the scaling is normally two, ten, or sixteen. A number that can be represented exactly is of the following form:</p>
+<p>$$number = significand \times base ^{exponent}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For example, in base 10:</p>
+<p>$$1.234 = 1234 \times 10^{-3}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The number <code>1.234</code> can easily be represented exactly in base 10, but the number 1/3 cannot. However, in base 3 the latter can be represented exactly by $1 \times 3^{-1}$.</p>
+<p>To approximate the number 1/3 in base 10, the rule of "the more bits you have, the more precise you can be" that we learned with integers continues to hold true here: $33 \times 10^{-2}$ and $33333333333333 \times 10^{-14}$ are two ways to approximate the number, the later being more expensive in terms of storage requirements but more accurate.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The exponential notation is the most common way to represent real numbers in computers and is the basis of the floating-point number representation. A floating point number in base 2, 10, or N will store the two attributes: the significand (including its sign) and the exponent.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="IEEE-754">IEEE 754<a class="anchor-link" href="#IEEE-754">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This precision/size trade-off raises many challenges: memory and computer time must be optimized while still allowing programs to realize computations on a <em>wide</em> range of numbers in the same program. A good example is provided with atmospheric models, which realize computations on specific humidity values ($kg kg^{-1}$) with typical values of 10$^{-5}$ or smaller up to values of several order of magnitude larger. Using different standards for each sets of numbers would be impracticable. This lead to the development of the <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE Standard for Floating-Point Arithmetic (IEEE 754)</a>.</p>
+<p>The standard defines five basic formats that are named for their numeric base and the number of bits used in their encoding, as listed in <a href="https://en.wikipedia.org/wiki/IEEE_754#Basic_and_interchange_formats">this table</a>. For example, <code>binary64</code> is the famous "double precision" format, called <code>float64</code> in numpy and simply <code>float</code> in the python standard library. In this format, 53 bits are used for the significand, and the remaining 11 for the exponent. Remember:</p>
 <ul>
-<li><strong>Linux comes with many tools for scientists and programmers</strong> ("batteries included"). For historical reasons, Linux and its command line tools have been used by scientists and programmers since decades. It is not a surprise then that Linux comes with many (many) useful utilities to make programming and working with data easier.</li>
-<li><strong>Linux is fast and reliable</strong>. Linux is extremely stable and more lightweight than Windows. I've never seen a Linux machine becoming <em>slower</em> with time, as I was used to see in my time using Windows (I have to admit: it was more than 10 years ago).</li>
-<li><strong>Linux is the operating system of the huge majority of the super computers and web servers worldwide</strong>. Because of its efficiency, security, and multiple user management tools, Linux has taken over the web: <a href="https://en.wikipedia.org/wiki/Linux_adoption#Supercomputers">99.4%</a> of the super computers and <a href="https://en.wikipedia.org/wiki/Linux_adoption#Servers">67.5%</a> of the web servers run Linux, while <a href="https://en.wikipedia.org/wiki/Linux_adoption#Mobile_devices">79.3%</a> of the mobile devices run Linux via Android.</li>
-<li><strong>Linux is at the heart of the open-source philosophy</strong>. Linux is free and open-source, and it is not surprising that people who embraced the open-source philosophy also prefer Linux to Windows or Mac. </li>
+<li>the significand determines the <strong>precision</strong> of the representation (significant digits)</li>
+<li>the exponent determines the <strong>magnitude</strong> of the represented number</li>
 </ul>
-<p>There are also some reasons <strong>not</strong> to use Linux of course. For one, Linux can be surprising at first and you'll need some time to get used to it. Also, it doesn't come pre-installed on most computers and you'll have to do it yourself (this is going to change: several retailers are already selling cheaper Ubuntu laptops to students). It is possible (but unlikely) that some of your hardware will not be compatible with Linux. Finally, some programs simply aren't available on Linux: Microsoft Office, the Adobe Suite, and games are the most prominent examples. The free and open-source alternatives (LibreOffice and GIMP) are good, but not <em>as</em> good as their commercial counterpart. I used Linux exclusively for more than 10 years now, and I never regretted it. Recently I had to install Windows in a virtual machine in order to use the MS Office software provided by the University, and it works perfectly. Another option is to use <a href="https://www.winehq.org/">wine</a>.</p>
+<p>This has the important consequence that <em>small</em> numbers have a larger absolute precision than <em>large</em> numbers. See this example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">.</span><span class="mi">99</span> <span class="o">==</span> <span class="o">.</span><span class="mi">98</span>  <span class="c1"># so far so good</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[63]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mf">999999999999999.99</span> <span class="o">==</span> <span class="mf">999999999999999.98</span>  <span class="c1"># wtf?</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[64]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mf">999999999999999.99</span>  <span class="c1"># wtf?</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[65]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1000000000000000.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Fortunately, it is possible to compute the approximate precision of IEEE754 floating point numbers according to their value:</p>
 
 </div>
 </div>
@@ -11876,7 +12819,9 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Testing-Linux">Testing Linux<a class="anchor-link" href="#Testing-Linux">&#182;</a></h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/IEEE754.png/550px-IEEE754.png" alt="img">
+Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
+
 </div>
 </div>
 </div>
@@ -11884,14 +12829,441 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Here are a few ways you can use Linux and make an idea by yourself:</p>
+<h3 id="Overflow">Overflow<a class="anchor-link" href="#Overflow">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Like integers, floating point numbers can overflow:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">(</span><span class="mi">65510</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/home/mowglie/.pyvirtualenvs/py3/lib/python3.5/site-packages/ipykernel_launcher.py:1: RuntimeWarning: overflow encountered in half_scalars
+  &#34;&#34;&#34;Entry point for launching an IPython kernel.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[66]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>inf</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Fortunately, the IEEE 754 standard defines two new numbers (-inf and +inf) which are more informative (and less dangerous) than the negative reset of integer numbers.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-to-do-from-here?">What to do from here?<a class="anchor-link" href="#What-to-do-from-here?">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As we've learned, errors in floating-point numbers are unavoidable. Even if they are very small, simple calculations on them can contain pitfalls that increase the error in the result way beyond just having the individual errors "add up".</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Alternative-data-types">Alternative data types<a class="anchor-link" href="#Alternative-data-types">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In certain cases where perfect decimal accuracy is needed (for example when dealing with currencies and money), it is possible to use a decimal floating point representation instead of the default binary one:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span><span class="o">/</span><span class="mi">10</span><span class="o">*</span><span class="mi">3</span>  <span class="c1"># not precise</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[67]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.30000000000000004</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">decimal</span> <span class="k">import</span> <span class="n">Decimal</span>
+<span class="n">Decimal</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">Decimal</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span>  <span class="c1"># precise</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[68]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Decimal(&#39;0.3&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>With limited-precision decimals there are no unexpected rounding errors. In practice, however, alternative datatypes are used rarely because the precision gain comes with a performance overhead: computers work best with 0s and 1s, not with numbers humans can read.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Symbolic-computations">Symbolic computations<a class="anchor-link" href="#Symbolic-computations">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Symbolic computations are realized <em>literally</em> (like in mathematics), not approximately. <a href="http://www.sympy.org">SymPy</a> is the most famous python library for symbolic mathematics:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">sympify</span><span class="p">(</span><span class="s1">&#39;1 / 3&#39;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">+</span> <span class="n">a</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[69]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2/3</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Seams like the perfect solution, right? It probably is if you are a mathematician, but for actual numerical computations SymPy will be way too slow to use. Also, symbolic mathematics can only be used for problems where analytical solutions are known, which is almost always not the case in numerical models.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Deal-with-it">Deal with it<a class="anchor-link" href="#Deal-with-it">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are no simple answers to numerical rounding errors. Be aware that they occur, try to prevent them to happen, or as least try to mitigate their effect.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Awareness">Awareness<a class="anchor-link" href="#Awareness">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Awareness</em> is mostly hindered by the "human readable" representation of floating point numbers. In practice:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mf">0.1</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[73]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">format</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;.16g&#39;</span><span class="p">)</span>  <span class="c1"># give 16 significant digits</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[74]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;0.1&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">format</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;.30g&#39;</span><span class="p">)</span>  <span class="c1"># give 30 significant digits</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[75]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;0.100000000000000005551115123126&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The default <code>0.1</code> print is therefore a "lie", but it is a useful one: in most cases you don't want to know about these insignificant digits at the end. The <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.finfo.html">numpy.finfo</a> is a useful function informing you about the machine limits for floating point types:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">info</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+<span class="n">info</span><span class="o">.</span><span class="n">bits</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">precision</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">max</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[86]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(64, 15, 1.7976931348623157e+308)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Error-propagation">Error propagation<a class="anchor-link" href="#Error-propagation">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Preventing rounding errors to happen is not always easy, but there are a few general rules:</p>
 <ul>
-<li><strong>At the University of Innsbruck</strong>: In order to use Linux in the computer room you have to register for an account <a href="http://orawww.uibk.ac.at/public_prod/owa/uvw$web$10.p001">here</a>. After an hour or so you will be able to connect to any computer using your username and password. The Linux distribution used at the university is <a href="https://www.centos.org/">CentOS</a> (not my favorite I have to admit). If you are a student of another university, it is likely that you have access to Linux environments, too.</li>
-<li><strong>On your laptop, with a live CD (or USB)</strong>: this is the <a href="https://tutorials.ubuntu.com/tutorial/try-ubuntu-before-you-install#0">best way to try it at no risk</a> and get a feeling for the general usage of a linux distribution. This is not permanent though.  </li>
-<li><strong>On your laptop, in a virtual machine</strong>: This is a relatively easy and non-destructive way to try Linux. There are tons of tutorials online, <a href="https://helpdeskgeek.com/linux-tips/how-to-install-ubuntu-in-virtualbox/">this one</a> seems OK.</li>
-<li><strong>On your laptop, alongside Windows (dual boot)</strong>: this is a bit more engaged, but the best way if you want to use both operating systems at full capacity. See <a href="https://help.ubuntu.com/community/WindowsDualBoot">here</a> for the official instructions. Be careful however: it is possible that things get a bit complicated going this way: secure your data first, and be prepared for some unexpected events. </li>
-<li><strong>On your laptop, without Windows</strong>: Congratulations, this is the best solution! Please check that your hardware is <a href="https://certification.ubuntu.com/desktop/">compatible</a> first, and follow the install instructions of your chosen OS. If you want to use Windows afterwards you can still re-install it or install it in a virtual machine. </li>
+<li>Multiplication and division are "safer" operations</li>
+<li>Addition and subtraction are dangerous, because when numbers of different magnitudes are involved, digits of the smaller-magnitude number are lost.</li>
+<li>This loss of digits can be inevitable and benign (when the lost digits also insignificant for the final result) or catastrophic (when the loss is magnified and distorts the result strongly).</li>
+<li>The more calculations are done (especially when they form an iterative algorithm) the more important it is to consider this kind of problem.</li>
+<li>A method of calculation can be stable (meaning that it tends to reduce rounding errors) or unstable (meaning that rounding errors are magnified). Very often, there are both stable and unstable solutions for a problem.</li>
 </ul>
+<p>(list taken from from <a href="http://floating-point-gui.de/errors/propagation/">the floating point guide</a>)</p>
 
 </div>
 </div>
@@ -11900,15 +13272,155 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-linux-command-line">The linux command line<a class="anchor-link" href="#The-linux-command-line">&#182;</a></h2>
+<p>As illustration for the difference between addition and multiplication, see the following example:</p>
+
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[96]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="mf">0.1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span>
+<span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[96]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[97]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[97]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(1.0, 0.9999999999999999)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Copyright notice: this section was largely inspired from the first parts of Michael Stonebank's <a href="http://www.ee.surrey.ac.uk/Teaching/Unix/index.html">UNIX tutorial</a></em></p>
+<p><strong>Safer computations</strong> therefore include always wondering at which stage the most precision is going to be lost: this is most often the case when adding numbers of very different magnitudes. When building numerical models, this should always be something you consider: is a formula is bringing you to to dangerous additions, then reformulate it and/or use other units for your variables (e.g. $g kg^{-1}$ instead of $kg kg^{-1}$ for specific humidity). Consider the following example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[111]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">1e-16</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[112]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="n">c</span> <span class="o">*</span> <span class="n">b</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[113]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c1</span> <span class="o">==</span> <span class="n">c2</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[113]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>c * (a + b)</code> and <code>c * a + c * b</code> are mathematically equivalent, and the first is computationally less expensive (two operations instead of three). However, the second is less prone to rounding errors!</p>
 
 </div>
 </div>
@@ -11917,9 +13429,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To open a terminal window, click on the "Terminal" icon from the <code>Applications/System Tools</code> menu. You can add an icon to your "quick launch" taskbar simply by dragging the icon to it.</p>
-<p>A terminal window should appear with a <code>$</code> prompt, waiting for you to start entering commands. The command line has a very important role in linux (as compared to windows where nobody uses it) since many tasks can be done much more efficiently with simple commands.</p>
-
+<h4 id="Safer-tests">Safer tests<a class="anchor-link" href="#Safer-tests">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -11927,7 +13437,49 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Listing-files-and-directories">Listing files and directories<a class="anchor-link" href="#Listing-files-and-directories">&#182;</a></h3>
+<p>Fortunately, rounding errors are often left unnoticed, meaning that your computations are probably OK! In our field in particular, we often do not care if the forecasted temperature is numerically precise at 0.001° since the model accuracy is much lower anyway. However, this can still lead to surprises when comparing arrays for equality (e.g. when testing that a temperature is equal to zero, or for matching coordinates like longitude or latitude). In these cases, prefer to use numpy's specialized functions:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[117]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">)</span>  <span class="c1"># OK is you don&#39;t care about small numerical errors</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[117]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Take-home-points">Take home points<a class="anchor-link" href="#Take-home-points">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -11935,46 +13487,13 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>ls (list)</strong></p>
-<p>When you first login, your current working directory is your home directory. Your home directory has the same name as your username, for example, c7071047, and it is where your personal files and subdirectories are saved.</p>
-<p>To find out what is in your home directory, type:</p>
-
-<pre><code>$ ls</code></pre>
-<p>The <code>ls</code> command lists the contents of your current working directory.</p>
-<p><code>ls</code> does not, in fact, cause all the files in your home directory to be listed, but only those ones whose name does not begin with a dot (.) Files beginning with a dot (.) are known as hidden files and usually contain important program configuration information. They are hidden because you should not change them unless you know what you do.</p>
-<p>To list all files in your home directory including those whose names begin with a dot, type:</p>
-
-<pre><code>$ ls -a</code></pre>
-<p>As you can see, <code>ls -a</code> lists files that are normally hidden.</p>
-<p><code>ls</code> is an example of a command which can take options: <code>-a</code> is an example of an option. The options change the behaviour of the command. There are online manual pages that tell you which options a particular command can take, and how each option modifies the behaviour of the command. <code>ls -lh</code> is an other way to call <code>ls</code> with two options, <code>l</code> for "listing format" and <code>h</code> for "human readable".</p>
-<p><strong>Note:</strong> linux file names and commands are <em>case sensitive</em>, i.e. <code>Test.txt</code> is different from <code>test.txt</code>, and both names could coexist in the same directory.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-directory-structure">The directory structure<a class="anchor-link" href="#The-directory-structure">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>All the files are grouped together in the directory structure. The file-system is arranged in a hierarchical structure, like an inverted tree. The top of the hierarchy is traditionally called root (written as a slash <code>/</code> )</p>
-<p><img src="http://www.ee.surrey.ac.uk/Teaching/Unix/media/unix-tree.png" alt="image"></p>
-<p>When loging in we are automatically located in our personal <code>home</code> directory, which is aptly named because:</p>
 <ul>
-<li>we won't need to leave <code>home</code> during our exercises</li>
-<li>we are allowed to do whatever we want in our <code>home</code>, while we are not allowed to write, delete or change things in the other directories.</li>
+<li>computers can only represent a finite number of differentiable values.</li>
+<li>the range of possible numbers depends on the size of memory allocated to store it. There is practically no limit to the size of integers in python, but there is a limit for floats. Numpy implements several types of variables named after their size in bits (e.g. <code>np.float32</code>, <code>np.float64</code>, <code>np.float128</code>).</li>
+<li>there are many different ways to represent numbers on computers, all with different strengths and weaknesses. The vast majority of systems use the <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE 754</a> standard for floating points, which is a good compromise between range and accuracy. Most systems are binary (base 2) per default, but there are other bases available: base 10 (decimal) and base 16 (hexadecimal) are frequent as well.</li>
+<li>rounding errors happen because of these limitations. They always happen, even for the simplest arithmetics, and you <strong>shall not ignore them</strong>.</li>
+<li>however, there are ways to avoid or mitigate these rounding errors. This includes the use of more precise datatypes (e.g. float64 instead of float32), alternative representations (decimal instead of binary), and the use of more conservative operations (e.g. multiplication before of addition)</li>
 </ul>
-<p>To know where we are in the directory structure, there is a useful command:</p>
-
-<pre><code>$ pwd</code></pre>
-<p>which prints the path of the current working directory.</p>
 
 </div>
 </div>
@@ -11983,7 +13502,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Making-Directories">Making Directories<a class="anchor-link" href="#Making-Directories">&#182;</a></h3>
+<h2 id="Further-reading">Further reading<a class="anchor-link" href="#Further-reading">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -11991,485 +13510,12 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>mkdir (make directory)</strong></p>
-<p>We will now make a subdirectory in your home directory to hold the files you will be creating and using in the course of this tutorial. To make a subdirectory called <code>unixstuff</code> in your current working directory type:</p>
-
-<pre><code>$ mkdir unixstuff</code></pre>
-<p>To see the directory you have just created, type:</p>
-
-<pre><code>$ ls</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Changing-to-a-different-directory">Changing to a different directory<a class="anchor-link" href="#Changing-to-a-different-directory">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>cd (change directory)</strong></p>
-<p>The command <code>cd directory</code> means change the current working directory to "directory". The current working directory may be thought of as the directory you are in, i.e. your current position in the file-system tree.</p>
-<p>To change to the directory you have just made, type:</p>
-
-<pre><code>$ cd unixstuff</code></pre>
-<p>Type <code>ls</code> to see the contents (which should be empty)</p>
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: make a directory called <code>backup</code> in the <code>unixstuff</code> directory</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-directories-.-and-..">The directories . and ..<a class="anchor-link" href="#The-directories-.-and-..">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Still in the <code>unixstuff</code> directory, type:</p>
-
-<pre><code>$ ls -a</code></pre>
-<p>As you can see, in the unixstuff directory (and in all other directories), there are two special directories called (.) and (..)</p>
-<p><strong>The current directory (.)</strong></p>
-<p>In linux, (.) means the current directory, so typing:</p>
-
-<pre><code>$ cd .</code></pre>
-<p>means "stay where you are" (the unixstuff directory).</p>
-<p>This may not seem very useful at first, but using (.) as the name of the current directory will save a lot of typing, as we shall see.</p>
-<p><strong>The parent directory (..)</strong></p>
-<p>(..) means the parent of the current directory, so typing:</p>
-
-<pre><code>$ cd ..</code></pre>
-<p>will take you one directory up the hierarchy (back to your home directory). Try it now.</p>
-<p><strong>Note</strong>: typing cd with no argument always returns you to your home directory. This is very useful if you are lost in the file system.</p>
-<p><strong>~ (your home directory)</strong></p>
-<p>Home directories can also be referred to by the tilde <code>~</code> character. It can be used to specify paths starting at your home directory. So typing:</p>
-
-<pre><code>  $ ls ~/unixstuff</code></pre>
-<p>will list the contents of your unixstuff directory, no matter where you currently are in the file system.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Copying-files">Copying files<a class="anchor-link" href="#Copying-files">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>cp (copy)</strong></p>
-<p><code>cp file1 file2</code> is the command which makes a copy of <code>file1</code> in the current working directory and calls it <code>file2</code></p>
-<p>What we are going to do now, is to take a file stored in an open access area of the file system, and use the <code>cp</code> command to copy it to your unixstuff directory.</p>
-<p>First, <code>cd</code> to your unixstuff directory:</p>
-
-<pre><code>$ cd ~/unixstuff</code></pre>
-<p>Then type:</p>
-
-<pre><code>$ cp /scratch/c707/c7071047/tuto/science.txt .</code></pre>
-<p><strong>Note</strong>: Don't forget the dot . at the end. Remember, in linux, the dot means the current directory.</p>
-<p>The above command means "copy the file science.txt to the current directory, keeping the name the same".</p>
-<p><strong>Note</strong>: The directory <code>/scratch/c707/c7071047/tuto</code> is an area to which everyone in the University has read and copy access. If you are from outside the University, you can grab a copy of the file from the internet. For this, you can use another very useful command, <code>wget</code>:</p>
-
-<pre><code>$ wget http://www.ee.surrey.ac.uk/Teaching/Unix/science.txt</code></pre>
-<p>This will download the file <code>science.txt</code> to your current directory</p>
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: Create a backup of your <code>science.txt</code> file by copying it to a file called <code>science.bak</code></p>
-<p><strong>Note:</strong>  directories can also be copied with the <code>-r</code> option added to <code>cp</code>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Using-[TAB]">Using [TAB]<a class="anchor-link" href="#Using-[TAB]">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><code>[TAB]</code> is very useful in the Linux (and other) command line: it use an automated completion algorithm to complete the commands you are typing. For example, try to type <code>$ cd ~/uni</code> and then <code>TAB</code>. This is also going to make suggestions in case of multiple choices, or for commands.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Moving-files">Moving files<a class="anchor-link" href="#Moving-files">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>mv (move)</strong></p>
-<p><code>mv file1 file2</code> moves (or renames) <code>file1</code> to <code>file2</code></p>
-<p>To move a file from one place to another, use the <code>mv</code> command. This has the effect of moving rather than copying the file, so you end up with only one file rather than two.</p>
-<p>It can also be used to rename a file, by moving the file to the same directory, but giving it a different name.</p>
-<p>We are now going to move the file <code>science.bak</code> to your <code>backup</code> directory.</p>
-<p>First, change directories to your <code>unixstuff</code> directory. Then type:</p>
-
-<pre><code>$ mv science.bak backup/</code></pre>
-<p>Type <code>ls</code> and <code>ls backup</code> to see if it has worked.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Removing-files-and-directories">Removing files and directories<a class="anchor-link" href="#Removing-files-and-directories">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>rm (remove), rmdir (remove directory)</strong></p>
-<p>To delete (remove) a file, use the <code>rm</code> command. As an example, we are going to create a copy of the <code>science.txt</code> file and then delete it.</p>
-<p>Inside your <code>unixstuff</code> directory, type:</p>
-
-<pre><code>$ cp science.txt tempfile.txt 
-$ ls
-$ rm tempfile.txt
-$ ls</code></pre>
-<p>You can use the <code>rmdir</code> command to remove a directory (make sure it is empty first). Try to remove the <code>backup</code> directory. You will not be able to since linux will not let you remove a non-empty directory. To delete a non-empty directory with all its subdirectories you can use the option <code>-r</code> (r for recursive):</p>
-
-<pre><code>$ rm -r /path/to/some/directory</code></pre>
-<p>This command will then ask you confirmation for certain files judged important. If you are very sure of what you do, you can add a <code>-f</code> to the command (f for force):</p>
-
-<pre><code>$ rm -rf /path/to/some/directory/that/i/am/very/sure/to/delete</code></pre>
-<p><strong>Note:</strong> directories deleted with <code>rm</code> are lost <em>forever</em>. They don't go to the trash, they are just deleted.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Displaying-the-contents-of-a-file-on-the-screen">Displaying the contents of a file on the screen<a class="anchor-link" href="#Displaying-the-contents-of-a-file-on-the-screen">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>clear (clear screen)</strong></p>
-<p>Before you start the next section, you may like to clear the terminal window of the previous commands so the output of the following commands can be clearly understood.</p>
-<p>At the prompt, type:</p>
-
-<pre><code>$ clear</code></pre>
-<p>This will clear all text and leave you with the <code>$</code> prompt at the top of the window.</p>
-<p><strong>cat (concatenate)</strong></p>
-<p>The command <code>cat</code> can be used to display the contents of a file on the screen. Type:</p>
-
-<pre><code>$ cat science.txt</code></pre>
-<p>As you can see, the file is longer than than the size of the window. You can scroll back but this is not very useful.</p>
-<p><strong>less</strong></p>
-<p>The command <code>less</code> writes the contents of a file onto the screen a page at a time. Type:</p>
-
-<pre><code>$ less science.txt</code></pre>
-<p>Press the <code>[space-bar]</code> if you want to see another page, and type <code>[q]</code> if you want to quit reading. As you can see, <code>less</code> is used in preference to <code>cat</code> for long files.</p>
-<p><strong>head</strong></p>
-<p>The <code>head</code> command writes the first ten lines of a file to the screen.</p>
-<p>First clear the screen then type:</p>
-
-<pre><code>$ head science.txt</code></pre>
-<p>Then type:</p>
-
-<pre><code>$ head -5 science.txt</code></pre>
-<p>What difference did the <code>-5</code> do to the head command?</p>
-<p><strong>tail</strong></p>
-<p>The tail command writes the last ten lines of a file to the screen.</p>
-<p>Clear the screen and type:</p>
-
-<pre><code>$ tail science.txt</code></pre>
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: How can you view the last 15 lines of the file?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Searching-the-contents-of-a-file">Searching the contents of a file<a class="anchor-link" href="#Searching-the-contents-of-a-file">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Simple searching using <code>less</code></strong></p>
-<p>Using <code>less</code>, you can search though a text file for a keyword (pattern). For example, to search through <code>science.txt</code> for the word "science", type:</p>
-
-<pre><code>$ less science.txt</code></pre>
-<p>then, still in <code>less</code>, type a forward slash <code>[/]</code> followed by the word to search:</p>
-
-<pre><code>/science</code></pre>
-<p>And tape <code>[enter]</code>. Type <code>[n]</code> to search for the next occurrence of the word.</p>
-<p><strong>grep</strong></p>
-<p><code>grep</code> is one of many standard linux utilities. It searches files for specified words or patterns. First clear the screen, then type:</p>
-
-<pre><code>$ grep science science.txt</code></pre>
-<p>As you can see, <code>grep</code> has printed out each line containg the word science.</p>
-<p>Or has it ????</p>
-<p>Try typing:</p>
-
-<pre><code>$ grep Science science.txt</code></pre>
-<p>The <code>grep</code> command is case sensitive; it distinguishes between Science and science.</p>
-<p>To ignore upper/lower case distinctions, use the <code>-i</code> option, i.e. type:</p>
-
-<pre><code>$ grep -i science science.txt</code></pre>
-<p>To search for a phrase or pattern, you must enclose it in single quotes (the apostrophe symbol). For example to search for spinning top, type:</p>
-
-<pre><code>$ grep -i 'spinning top' science.txt</code></pre>
-<p>Some of the other options of <code>grep</code> are:</p>
+<p>Because of the importance of floating point computations you will find many resources online. I <strong>highly recommend</strong> to go through the short <a href="http://floating-point-gui.de/">floating point guide</a> website, which explains the problem to non specialists. It will give you another point of view on the topic.</p>
+<p>Other resources:</p>
 <ul>
-<li><code>-v</code> display those lines that do NOT match</li>
-<li><code>-n</code> precede each matching line with the line number</li>
-<li><code>-c</code> print only the total count of matched lines</li>
+<li><a href="https://docs.python.org/3/tutorial/floatingpoint.html">Python's documentation</a> on floating point arithmetic</li>
+<li><a href="https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html">What Every Computer Scientist Should Know About Floating-Point Arithmetic</a>: kind of heavy, but a reference text</li>
 </ul>
-<p>Try some of them and see the different results. Don't forget, you can use more than one option at a time. For example, the number of lines without the words science or Science is:</p>
-
-<pre><code>$ grep -ivc science science.txt</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Take-home-points">Take home points<a class="anchor-link" href="#Take-home-points">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We have only shown some examples of how to navigate in the linux directory structure and use some simple commands. This is by far not sufficient to demonstrate its usefulness: the <code>grep</code> command for example is extremely powerful to help you find files that you thought you had lost, and <code>wget</code> a file to a current directory is often much faster than downloading it in firefox and copy it afterwards. For the time being, this short tutorial should help get you started.</p>
-<p><strong>To go further</strong>, I recommend to follow <a href="https://ryanstutorials.net/linuxtutorial/">Ryan's linux tutorials</a>, they are excellent!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Executable-scripts">Executable scripts<a class="anchor-link" href="#Executable-scripts">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now that you are familiar with the command line, you must have noticed that linux commands have some similarities with the <strong>statements</strong> you used in your bachelor programming course: by typing them in, the computer does things for you and gives you information back (often printed on screen, but not always). When you want to <strong>automate</strong> a series of commands you just typed in (for example renaming and moving files), a natural thing would be to write a <strong>script</strong> to do so.</p>
-<p>Scripts are the simplest type of program one can write, and this can be seen as your first programming experience in this course. We are going to write a <strong>bash script</strong> and execute it: why we want to do this in a python scientific programming course may be not clear right now, but it will make more sense later I promise.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="A-simple-script">A simple script<a class="anchor-link" href="#A-simple-script">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In your <code>unixstuff</code> directory, create a new file name <code>myscript.sh</code>. You can do this using the default (graphical) text editor in linux, <code>gedit</code>. At the command line:</p>
-
-<pre><code>`
-$ gedit myscript.sh</code></pre>
-<p>Just type one simple line in the file:</p>
-
-<pre><code>echo Hello World!</code></pre>
-<p>Quit your editor and go back to the command line again. You can execute your script with the following command:</p>
-
-<pre><code>$ bash myscript.sh</code></pre>
-<p><strong>Bash</strong> is a so-called "interpreter". It reads your file and understands how to execute the commands in it.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Make-a-file-executable">Make a file executable<a class="anchor-link" href="#Make-a-file-executable">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>List the files in your directory, but whith the option <code>-l</code> for more information. Here is how it looks like on my computer:</p>
-
-<pre><code>mowglie@flappi-top ~/Documents/unixstuff $ ls -l
-total 28
-drwxrwxr-x 2 mowglie mowglie 4096 Feb 22 18:05 backup
--rw-rw-r-- 1 mowglie mowglie   19 Feb 22 18:44 myscipt.sh
--rw-rw-r-- 1 mowglie mowglie 7767 Sep  1  2000 science.txt</code></pre>
-<p>The first list of characters indicate the file's <strong>permissions</strong>. Now read the first section of <a href="https://ryanstutorials.net/linuxtutorial/permissions.php">Ryan's tutorial about permissions</a>. So what do we learn from the above? That the file's owner (myself) is allowed to read and write the <code>myscript.sh</code> file, but not to execute it. Let's change this:</p>
-
-<pre><code>$ chmod a+x myscipt.sh</code></pre>
-<p>Now everybody (including me) is allowed to execute this file. It is a quite harmless script, so I'm not too worried. Now we can execute it:</p>
-
-<pre><code>$ ./myscript.sh</code></pre>
-<p>Nice! We could add much more commands to our script (possibly making it more useful), but this was enough to illustrate the point I wanted to make: files can be executable in Linux, and a whole new world opens to us.</p>
-<p><strong>Note:</strong> Most often, it is recommended to add a specific first line to your script, called a <strong>shebang</strong>. This line tells the computer which interpreter should be used to run the file. In our case it is the default interpreter (bash), but this may not always be the case. To be entirely explicit, we recommend to always add a shebang to your script. In this case, we should add <code>#!/bin/bash</code> to our script:</p>
-
-<pre><code>#!/bin/bash
-# Maybe some comment line about the purpose of this script
-
-echo Hello World!</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Take-home-points">Take home points<a class="anchor-link" href="#Take-home-points">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>It is possible to write simple programs in linux called "scripts". These scripts can be executed by the default interpreter, and be made "executable" very easily. If you want to know more about bash scripts, read <a href="https://ryanstutorials.net/bash-scripting-tutorial/">Ryan's tutorial about the subject</a>!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-linux-PATH">The linux PATH<a class="anchor-link" href="#The-linux-PATH">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Locate-linux-programs">Locate linux programs<a class="anchor-link" href="#Locate-linux-programs">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>You may have asked yourself: how does the linux command line know about the commands we are using? Where do I find them? A nice program helping us to find out is <strong>which</strong>. Let's use it:</p>
-
-<pre><code>$ which less
-/usr/bin/less</code></pre>
-<p>Now we can use another command, <strong>whatis</strong>, to tell us what we just did:</p>
-
-<pre><code>$ whatis which</code></pre>
-<p>The <code>which</code> command tells us that the <code>less</code> program is located in <code>/usr/bin</code>. We can also ask <code>which</code> where to find <code>which</code>:</p>
-
-<pre><code>$ which which
-/usr/bin/which
-$ ls -l /usr/bin/which
-lrwxrwxrwx 1 root root 10 Nov 19 14:42 /usr/bin/which -&gt; /bin/which</code></pre>
-<p>As expected, <code>which</code> is an executable file. Some executables are binary files (i.e. not human readable), but in this case <code>which</code> is actually a script:</p>
-
-<pre><code>$ less which</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: scroll through the script. Can you locate the shebang line? How does the code look like to you: easily understandable, or rather cryptic?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-PATH-variable">The PATH variable<a class="anchor-link" href="#The-PATH-variable">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The linux command line knows so-called <strong>environmental variables</strong>. The <code>echo</code> command can display their value:</p>
-
-<pre><code>$ echo $PATH</code></pre>
-<p>(the <code>$</code> tells echo to display the value of the variable PATH rather than its name). The <a href="http://www.linfo.org/path_env_var.html">PATH</a> variable contains a list of paths, separated by semicolons. It is an extremely important variable: it tells linux <em>where</em> to look for executables and programs. Each time you type a command, linux will look in the PATH and see if it finds it. This is an extremely flexible and powerful system, as we are going to see in the next chapter (Installing Python).</p>
-<p>The PATH can be extended to contain any other directory you find useful to add. Let's do it:</p>
-
-<pre><code>$ mkdir ~/myprograms
-$ export PATH=$PATH:~/myprograms</code></pre>
-<p><code>export</code> creates a new variable called PATH (in this case, it overwrites the existing PATH).</p>
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: now move your executable script <code>myscript.sh</code> in the <code>myprograms</code> directory. Verify that you can now execute the <code>myscript.sh</code> program from any directory.</p>
-<p><strong>Note:</strong> we have extended the <code>PATH</code> variable in <em>this session</em> only. If you close and reopen the terminal the changes will be lost. There are ways to make these changes permanent, we will learn them in the next chapter.</p>
-<p><strong>Note:</strong> if a program is listed in several path directories, linux takes the first instance. Directories can be prepended and appended, as we will see in the next chapter.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Take-home-points">Take home points<a class="anchor-link" href="#Take-home-points">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>PATH</code> variable tells linux where to look for programs and scripts. This is a very simple and powerful way to customize linux with your own scripts and programs. We are going to use this feature to install Python in the next chapter.</p>
 
 </div>
 </div>
@@ -12486,7 +13532,7 @@ $ export PATH=$PATH:~/myprograms</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="02-Installation.html">jump to the next chapter</a>.</p>
+<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="14-Assignment-04.html">jump to this week's assignment</a>.</p>
 
 </div>
 </div>

@@ -9,7 +9,7 @@ gtag('js', new Date());
 gtag('config', 'UA-88391345-1');
 </script>
 <meta charset="utf-8" />
-<title>01-Linux</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>14-Assignment-04</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11789,7 +11789,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {}, "toc_section_display": "block", "toc_window_display": true};
+            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": false, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {}, "toc_section_display": "block", "toc_window_display": false};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -11805,7 +11805,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="A-very-short-introduction-to-Linux">A very short introduction to Linux<a class="anchor-link" href="#A-very-short-introduction-to-Linux">&#182;</a></h1>
+<h1 id="Assignment-#04:-rounding-errors">Assignment #04: rounding errors<a class="anchor-link" href="#Assignment-#04:-rounding-errors">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11813,8 +11813,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This lecture is about programming, but it would be a big mistake to forget to talk about Linux here, at least a short introduction.</p>
-<p>Every student in (geo-)sciences should know about the existence of Linux and know the basics of it. Atmospheric Sciences students in particular will have to use it sooner or later, since most of the tools and data they are using are running or have been created on Linux systems.</p>
+<p>Today's exercises deal with the pitfalls of floating point arithmetics.</p>
 
 </div>
 </div>
@@ -11823,8 +11822,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#A-very-short-introduction-to-Linux" data-toc-modified-id="A-very-short-introduction-to-Linux-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>A very short introduction to Linux</a></span><ul class="toc-item"><li><span><a href="#What-is-Linux?" data-toc-modified-id="What-is-Linux?-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>What is Linux?</a></span></li><li><span><a href="#Should-I-use-it?" data-toc-modified-id="Should-I-use-it?-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Should I use it?</a></span></li><li><span><a href="#Testing-Linux" data-toc-modified-id="Testing-Linux-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Testing Linux</a></span></li><li><span><a href="#The-linux-command-line" data-toc-modified-id="The-linux-command-line-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>The linux command line</a></span><ul class="toc-item"><li><span><a href="#Listing-files-and-directories" data-toc-modified-id="Listing-files-and-directories-1.4.1"><span class="toc-item-num">1.4.1&nbsp;&nbsp;</span>Listing files and directories</a></span></li><li><span><a href="#The-directory-structure" data-toc-modified-id="The-directory-structure-1.4.2"><span class="toc-item-num">1.4.2&nbsp;&nbsp;</span>The directory structure</a></span></li><li><span><a href="#Making-Directories" data-toc-modified-id="Making-Directories-1.4.3"><span class="toc-item-num">1.4.3&nbsp;&nbsp;</span>Making Directories</a></span></li><li><span><a href="#Changing-to-a-different-directory" data-toc-modified-id="Changing-to-a-different-directory-1.4.4"><span class="toc-item-num">1.4.4&nbsp;&nbsp;</span>Changing to a different directory</a></span></li><li><span><a href="#The-directories-.-and-.." data-toc-modified-id="The-directories-.-and-..-1.4.5"><span class="toc-item-num">1.4.5&nbsp;&nbsp;</span>The directories . and ..</a></span></li><li><span><a href="#Copying-files" data-toc-modified-id="Copying-files-1.4.6"><span class="toc-item-num">1.4.6&nbsp;&nbsp;</span>Copying files</a></span></li><li><span><a href="#Using-[TAB]" data-toc-modified-id="Using-[TAB]-1.4.7"><span class="toc-item-num">1.4.7&nbsp;&nbsp;</span>Using [TAB]</a></span></li><li><span><a href="#Moving-files" data-toc-modified-id="Moving-files-1.4.8"><span class="toc-item-num">1.4.8&nbsp;&nbsp;</span>Moving files</a></span></li><li><span><a href="#Removing-files-and-directories" data-toc-modified-id="Removing-files-and-directories-1.4.9"><span class="toc-item-num">1.4.9&nbsp;&nbsp;</span>Removing files and directories</a></span></li><li><span><a href="#Displaying-the-contents-of-a-file-on-the-screen" data-toc-modified-id="Displaying-the-contents-of-a-file-on-the-screen-1.4.10"><span class="toc-item-num">1.4.10&nbsp;&nbsp;</span>Displaying the contents of a file on the screen</a></span></li><li><span><a href="#Searching-the-contents-of-a-file" data-toc-modified-id="Searching-the-contents-of-a-file-1.4.11"><span class="toc-item-num">1.4.11&nbsp;&nbsp;</span>Searching the contents of a file</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-1.4.12"><span class="toc-item-num">1.4.12&nbsp;&nbsp;</span>Take home points</a></span></li></ul></li><li><span><a href="#Executable-scripts" data-toc-modified-id="Executable-scripts-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Executable scripts</a></span><ul class="toc-item"><li><span><a href="#A-simple-script" data-toc-modified-id="A-simple-script-1.5.1"><span class="toc-item-num">1.5.1&nbsp;&nbsp;</span>A simple script</a></span></li><li><span><a href="#Make-a-file-executable" data-toc-modified-id="Make-a-file-executable-1.5.2"><span class="toc-item-num">1.5.2&nbsp;&nbsp;</span>Make a file executable</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-1.5.3"><span class="toc-item-num">1.5.3&nbsp;&nbsp;</span>Take home points</a></span></li></ul></li><li><span><a href="#The-linux-PATH" data-toc-modified-id="The-linux-PATH-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>The linux PATH</a></span><ul class="toc-item"><li><span><a href="#Locate-linux-programs" data-toc-modified-id="Locate-linux-programs-1.6.1"><span class="toc-item-num">1.6.1&nbsp;&nbsp;</span>Locate linux programs</a></span></li><li><span><a href="#The-PATH-variable" data-toc-modified-id="The-PATH-variable-1.6.2"><span class="toc-item-num">1.6.2&nbsp;&nbsp;</span>The PATH variable</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-1.6.3"><span class="toc-item-num">1.6.3&nbsp;&nbsp;</span>Take home points</a></span></li></ul></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
+<h2 id="Exercise-#04-01:-fixed-point-binary-numbers">Exercise #04-01: fixed point binary numbers<a class="anchor-link" href="#Exercise-#04-01:-fixed-point-binary-numbers">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -11832,65 +11830,11 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What-is-Linux?">What is Linux?<a class="anchor-link" href="#What-is-Linux?">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <a href="https://www.google.co.uk/search?q=What+is+Linux">web</a> is going to give a better answer than me to this question.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Should-I-use-it?">Should I use it?<a class="anchor-link" href="#Should-I-use-it?">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>My very personal answer is a clear: <strong>yes</strong>! I can't force you to it though, and most of the exercises of this lecture can be done on a Windows computer too. If you are running Mac OS X then you have access to a linux terminal anyway and you can ignore my recommendation (even if I don't like Apple for several other reasons - totally subjective opinion again).</p>
-<p>Linux has always been an environment for programmers and has the reputation of being "geeky" and "complicated". This is less true today, with many Linux distributions becoming mainstream and easy to use (my personal favorite is <a href="http://linuxmint.com">Linux Mint</a>, but you probably mostly heard of <a href="http://ubuntugnome.org/">Ubuntu</a> which I also recommend).</p>
-<p>I believe that Linux is <em>much</em> more user-friendly than Windows: once some of the particularities of Linux are understood (which can be frustrating in the beginning since it works <em>quite</em> differently than windows), it appears that there is much less "hidden" in Linux than in Windows (especially when it comes to installing/deinstalling software, using the command line, or protecting yourself from viruses and intruders).</p>
-<p><strong>As a scientist and programmer</strong> there are many reasons to prefer Linux (or Mac OS X) to Windows. Let me list some reasons here:</p>
+<p>Write a function which converts binary strings to decimal numbers. The function should handle positive numbers only. Examples:</p>
 <ul>
-<li><strong>Linux comes with many tools for scientists and programmers</strong> ("batteries included"). For historical reasons, Linux and its command line tools have been used by scientists and programmers since decades. It is not a surprise then that Linux comes with many (many) useful utilities to make programming and working with data easier.</li>
-<li><strong>Linux is fast and reliable</strong>. Linux is extremely stable and more lightweight than Windows. I've never seen a Linux machine becoming <em>slower</em> with time, as I was used to see in my time using Windows (I have to admit: it was more than 10 years ago).</li>
-<li><strong>Linux is the operating system of the huge majority of the super computers and web servers worldwide</strong>. Because of its efficiency, security, and multiple user management tools, Linux has taken over the web: <a href="https://en.wikipedia.org/wiki/Linux_adoption#Supercomputers">99.4%</a> of the super computers and <a href="https://en.wikipedia.org/wiki/Linux_adoption#Servers">67.5%</a> of the web servers run Linux, while <a href="https://en.wikipedia.org/wiki/Linux_adoption#Mobile_devices">79.3%</a> of the mobile devices run Linux via Android.</li>
-<li><strong>Linux is at the heart of the open-source philosophy</strong>. Linux is free and open-source, and it is not surprising that people who embraced the open-source philosophy also prefer Linux to Windows or Mac. </li>
-</ul>
-<p>There are also some reasons <strong>not</strong> to use Linux of course. For one, Linux can be surprising at first and you'll need some time to get used to it. Also, it doesn't come pre-installed on most computers and you'll have to do it yourself (this is going to change: several retailers are already selling cheaper Ubuntu laptops to students). It is possible (but unlikely) that some of your hardware will not be compatible with Linux. Finally, some programs simply aren't available on Linux: Microsoft Office, the Adobe Suite, and games are the most prominent examples. The free and open-source alternatives (LibreOffice and GIMP) are good, but not <em>as</em> good as their commercial counterpart. I used Linux exclusively for more than 10 years now, and I never regretted it. Recently I had to install Windows in a virtual machine in order to use the MS Office software provided by the University, and it works perfectly. Another option is to use <a href="https://www.winehq.org/">wine</a>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Testing-Linux">Testing Linux<a class="anchor-link" href="#Testing-Linux">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Here are a few ways you can use Linux and make an idea by yourself:</p>
-<ul>
-<li><strong>At the University of Innsbruck</strong>: In order to use Linux in the computer room you have to register for an account <a href="http://orawww.uibk.ac.at/public_prod/owa/uvw$web$10.p001">here</a>. After an hour or so you will be able to connect to any computer using your username and password. The Linux distribution used at the university is <a href="https://www.centos.org/">CentOS</a> (not my favorite I have to admit). If you are a student of another university, it is likely that you have access to Linux environments, too.</li>
-<li><strong>On your laptop, with a live CD (or USB)</strong>: this is the <a href="https://tutorials.ubuntu.com/tutorial/try-ubuntu-before-you-install#0">best way to try it at no risk</a> and get a feeling for the general usage of a linux distribution. This is not permanent though.  </li>
-<li><strong>On your laptop, in a virtual machine</strong>: This is a relatively easy and non-destructive way to try Linux. There are tons of tutorials online, <a href="https://helpdeskgeek.com/linux-tips/how-to-install-ubuntu-in-virtualbox/">this one</a> seems OK.</li>
-<li><strong>On your laptop, alongside Windows (dual boot)</strong>: this is a bit more engaged, but the best way if you want to use both operating systems at full capacity. See <a href="https://help.ubuntu.com/community/WindowsDualBoot">here</a> for the official instructions. Be careful however: it is possible that things get a bit complicated going this way: secure your data first, and be prepared for some unexpected events. </li>
-<li><strong>On your laptop, without Windows</strong>: Congratulations, this is the best solution! Please check that your hardware is <a href="https://certification.ubuntu.com/desktop/">compatible</a> first, and follow the install instructions of your chosen OS. If you want to use Windows afterwards you can still re-install it or install it in a virtual machine. </li>
+<li><code>'101010'</code> $\rightarrow$ <code>42</code></li>
+<li><code>'10000.1'</code> $\rightarrow$ <code>16.5</code></li>
+<li><code>'1011101101.10101011'</code> $\rightarrow$ <code>749.66796875</code></li>
 </ul>
 
 </div>
@@ -11900,81 +11844,10 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-linux-command-line">The linux command line<a class="anchor-link" href="#The-linux-command-line">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Copyright notice: this section was largely inspired from the first parts of Michael Stonebank's <a href="http://www.ee.surrey.ac.uk/Teaching/Unix/index.html">UNIX tutorial</a></em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To open a terminal window, click on the "Terminal" icon from the <code>Applications/System Tools</code> menu. You can add an icon to your "quick launch" taskbar simply by dragging the icon to it.</p>
-<p>A terminal window should appear with a <code>$</code> prompt, waiting for you to start entering commands. The command line has a very important role in linux (as compared to windows where nobody uses it) since many tasks can be done much more efficiently with simple commands.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Listing-files-and-directories">Listing files and directories<a class="anchor-link" href="#Listing-files-and-directories">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>ls (list)</strong></p>
-<p>When you first login, your current working directory is your home directory. Your home directory has the same name as your username, for example, c7071047, and it is where your personal files and subdirectories are saved.</p>
-<p>To find out what is in your home directory, type:</p>
-
-<pre><code>$ ls</code></pre>
-<p>The <code>ls</code> command lists the contents of your current working directory.</p>
-<p><code>ls</code> does not, in fact, cause all the files in your home directory to be listed, but only those ones whose name does not begin with a dot (.) Files beginning with a dot (.) are known as hidden files and usually contain important program configuration information. They are hidden because you should not change them unless you know what you do.</p>
-<p>To list all files in your home directory including those whose names begin with a dot, type:</p>
-
-<pre><code>$ ls -a</code></pre>
-<p>As you can see, <code>ls -a</code> lists files that are normally hidden.</p>
-<p><code>ls</code> is an example of a command which can take options: <code>-a</code> is an example of an option. The options change the behaviour of the command. There are online manual pages that tell you which options a particular command can take, and how each option modifies the behaviour of the command. <code>ls -lh</code> is an other way to call <code>ls</code> with two options, <code>l</code> for "listing format" and <code>h</code> for "human readable".</p>
-<p><strong>Note:</strong> linux file names and commands are <em>case sensitive</em>, i.e. <code>Test.txt</code> is different from <code>test.txt</code>, and both names could coexist in the same directory.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-directory-structure">The directory structure<a class="anchor-link" href="#The-directory-structure">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>All the files are grouped together in the directory structure. The file-system is arranged in a hierarchical structure, like an inverted tree. The top of the hierarchy is traditionally called root (written as a slash <code>/</code> )</p>
-<p><img src="http://www.ee.surrey.ac.uk/Teaching/Unix/media/unix-tree.png" alt="image"></p>
-<p>When loging in we are automatically located in our personal <code>home</code> directory, which is aptly named because:</p>
+<p>Now let's develop a new standard based on this representation. Dots cannot be represented by 0s and 1s, so that if we want the position of the dot to be flexible we need an additional memory slot to store this position. Let's define our new format as a 32 bits long sequence of bits, the first 5 bits being used to give the position of the dot, and the remaining 27 bits used to represent the number. Example:</p>
 <ul>
-<li>we won't need to leave <code>home</code> during our exercises</li>
-<li>we are allowed to do whatever we want in our <code>home</code>, while we are not allowed to write, delete or change things in the other directories.</li>
+<li><code>'10101010101010101010101010101010'</code> $\rightarrow$ <code>699050.65625</code></li>
 </ul>
-<p>To know where we are in the directory structure, there is a useful command:</p>
-
-<pre><code>$ pwd</code></pre>
-<p>which prints the path of the current working directory.</p>
 
 </div>
 </div>
@@ -11983,283 +11856,15 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Making-Directories">Making Directories<a class="anchor-link" href="#Making-Directories">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>mkdir (make directory)</strong></p>
-<p>We will now make a subdirectory in your home directory to hold the files you will be creating and using in the course of this tutorial. To make a subdirectory called <code>unixstuff</code> in your current working directory type:</p>
-
-<pre><code>$ mkdir unixstuff</code></pre>
-<p>To see the directory you have just created, type:</p>
-
-<pre><code>$ ls</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Changing-to-a-different-directory">Changing to a different directory<a class="anchor-link" href="#Changing-to-a-different-directory">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>cd (change directory)</strong></p>
-<p>The command <code>cd directory</code> means change the current working directory to "directory". The current working directory may be thought of as the directory you are in, i.e. your current position in the file-system tree.</p>
-<p>To change to the directory you have just made, type:</p>
-
-<pre><code>$ cd unixstuff</code></pre>
-<p>Type <code>ls</code> to see the contents (which should be empty)</p>
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: make a directory called <code>backup</code> in the <code>unixstuff</code> directory</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-directories-.-and-..">The directories . and ..<a class="anchor-link" href="#The-directories-.-and-..">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Still in the <code>unixstuff</code> directory, type:</p>
-
-<pre><code>$ ls -a</code></pre>
-<p>As you can see, in the unixstuff directory (and in all other directories), there are two special directories called (.) and (..)</p>
-<p><strong>The current directory (.)</strong></p>
-<p>In linux, (.) means the current directory, so typing:</p>
-
-<pre><code>$ cd .</code></pre>
-<p>means "stay where you are" (the unixstuff directory).</p>
-<p>This may not seem very useful at first, but using (.) as the name of the current directory will save a lot of typing, as we shall see.</p>
-<p><strong>The parent directory (..)</strong></p>
-<p>(..) means the parent of the current directory, so typing:</p>
-
-<pre><code>$ cd ..</code></pre>
-<p>will take you one directory up the hierarchy (back to your home directory). Try it now.</p>
-<p><strong>Note</strong>: typing cd with no argument always returns you to your home directory. This is very useful if you are lost in the file system.</p>
-<p><strong>~ (your home directory)</strong></p>
-<p>Home directories can also be referred to by the tilde <code>~</code> character. It can be used to specify paths starting at your home directory. So typing:</p>
-
-<pre><code>  $ ls ~/unixstuff</code></pre>
-<p>will list the contents of your unixstuff directory, no matter where you currently are in the file system.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Copying-files">Copying files<a class="anchor-link" href="#Copying-files">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>cp (copy)</strong></p>
-<p><code>cp file1 file2</code> is the command which makes a copy of <code>file1</code> in the current working directory and calls it <code>file2</code></p>
-<p>What we are going to do now, is to take a file stored in an open access area of the file system, and use the <code>cp</code> command to copy it to your unixstuff directory.</p>
-<p>First, <code>cd</code> to your unixstuff directory:</p>
-
-<pre><code>$ cd ~/unixstuff</code></pre>
-<p>Then type:</p>
-
-<pre><code>$ cp /scratch/c707/c7071047/tuto/science.txt .</code></pre>
-<p><strong>Note</strong>: Don't forget the dot . at the end. Remember, in linux, the dot means the current directory.</p>
-<p>The above command means "copy the file science.txt to the current directory, keeping the name the same".</p>
-<p><strong>Note</strong>: The directory <code>/scratch/c707/c7071047/tuto</code> is an area to which everyone in the University has read and copy access. If you are from outside the University, you can grab a copy of the file from the internet. For this, you can use another very useful command, <code>wget</code>:</p>
-
-<pre><code>$ wget http://www.ee.surrey.ac.uk/Teaching/Unix/science.txt</code></pre>
-<p>This will download the file <code>science.txt</code> to your current directory</p>
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: Create a backup of your <code>science.txt</code> file by copying it to a file called <code>science.bak</code></p>
-<p><strong>Note:</strong>  directories can also be copied with the <code>-r</code> option added to <code>cp</code>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Using-[TAB]">Using [TAB]<a class="anchor-link" href="#Using-[TAB]">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><code>[TAB]</code> is very useful in the Linux (and other) command line: it use an automated completion algorithm to complete the commands you are typing. For example, try to type <code>$ cd ~/uni</code> and then <code>TAB</code>. This is also going to make suggestions in case of multiple choices, or for commands.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Moving-files">Moving files<a class="anchor-link" href="#Moving-files">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>mv (move)</strong></p>
-<p><code>mv file1 file2</code> moves (or renames) <code>file1</code> to <code>file2</code></p>
-<p>To move a file from one place to another, use the <code>mv</code> command. This has the effect of moving rather than copying the file, so you end up with only one file rather than two.</p>
-<p>It can also be used to rename a file, by moving the file to the same directory, but giving it a different name.</p>
-<p>We are now going to move the file <code>science.bak</code> to your <code>backup</code> directory.</p>
-<p>First, change directories to your <code>unixstuff</code> directory. Then type:</p>
-
-<pre><code>$ mv science.bak backup/</code></pre>
-<p>Type <code>ls</code> and <code>ls backup</code> to see if it has worked.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Removing-files-and-directories">Removing files and directories<a class="anchor-link" href="#Removing-files-and-directories">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>rm (remove), rmdir (remove directory)</strong></p>
-<p>To delete (remove) a file, use the <code>rm</code> command. As an example, we are going to create a copy of the <code>science.txt</code> file and then delete it.</p>
-<p>Inside your <code>unixstuff</code> directory, type:</p>
-
-<pre><code>$ cp science.txt tempfile.txt 
-$ ls
-$ rm tempfile.txt
-$ ls</code></pre>
-<p>You can use the <code>rmdir</code> command to remove a directory (make sure it is empty first). Try to remove the <code>backup</code> directory. You will not be able to since linux will not let you remove a non-empty directory. To delete a non-empty directory with all its subdirectories you can use the option <code>-r</code> (r for recursive):</p>
-
-<pre><code>$ rm -r /path/to/some/directory</code></pre>
-<p>This command will then ask you confirmation for certain files judged important. If you are very sure of what you do, you can add a <code>-f</code> to the command (f for force):</p>
-
-<pre><code>$ rm -rf /path/to/some/directory/that/i/am/very/sure/to/delete</code></pre>
-<p><strong>Note:</strong> directories deleted with <code>rm</code> are lost <em>forever</em>. They don't go to the trash, they are just deleted.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Displaying-the-contents-of-a-file-on-the-screen">Displaying the contents of a file on the screen<a class="anchor-link" href="#Displaying-the-contents-of-a-file-on-the-screen">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>clear (clear screen)</strong></p>
-<p>Before you start the next section, you may like to clear the terminal window of the previous commands so the output of the following commands can be clearly understood.</p>
-<p>At the prompt, type:</p>
-
-<pre><code>$ clear</code></pre>
-<p>This will clear all text and leave you with the <code>$</code> prompt at the top of the window.</p>
-<p><strong>cat (concatenate)</strong></p>
-<p>The command <code>cat</code> can be used to display the contents of a file on the screen. Type:</p>
-
-<pre><code>$ cat science.txt</code></pre>
-<p>As you can see, the file is longer than than the size of the window. You can scroll back but this is not very useful.</p>
-<p><strong>less</strong></p>
-<p>The command <code>less</code> writes the contents of a file onto the screen a page at a time. Type:</p>
-
-<pre><code>$ less science.txt</code></pre>
-<p>Press the <code>[space-bar]</code> if you want to see another page, and type <code>[q]</code> if you want to quit reading. As you can see, <code>less</code> is used in preference to <code>cat</code> for long files.</p>
-<p><strong>head</strong></p>
-<p>The <code>head</code> command writes the first ten lines of a file to the screen.</p>
-<p>First clear the screen then type:</p>
-
-<pre><code>$ head science.txt</code></pre>
-<p>Then type:</p>
-
-<pre><code>$ head -5 science.txt</code></pre>
-<p>What difference did the <code>-5</code> do to the head command?</p>
-<p><strong>tail</strong></p>
-<p>The tail command writes the last ten lines of a file to the screen.</p>
-<p>Clear the screen and type:</p>
-
-<pre><code>$ tail science.txt</code></pre>
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: How can you view the last 15 lines of the file?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Searching-the-contents-of-a-file">Searching the contents of a file<a class="anchor-link" href="#Searching-the-contents-of-a-file">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Simple searching using <code>less</code></strong></p>
-<p>Using <code>less</code>, you can search though a text file for a keyword (pattern). For example, to search through <code>science.txt</code> for the word "science", type:</p>
-
-<pre><code>$ less science.txt</code></pre>
-<p>then, still in <code>less</code>, type a forward slash <code>[/]</code> followed by the word to search:</p>
-
-<pre><code>/science</code></pre>
-<p>And tape <code>[enter]</code>. Type <code>[n]</code> to search for the next occurrence of the word.</p>
-<p><strong>grep</strong></p>
-<p><code>grep</code> is one of many standard linux utilities. It searches files for specified words or patterns. First clear the screen, then type:</p>
-
-<pre><code>$ grep science science.txt</code></pre>
-<p>As you can see, <code>grep</code> has printed out each line containg the word science.</p>
-<p>Or has it ????</p>
-<p>Try typing:</p>
-
-<pre><code>$ grep Science science.txt</code></pre>
-<p>The <code>grep</code> command is case sensitive; it distinguishes between Science and science.</p>
-<p>To ignore upper/lower case distinctions, use the <code>-i</code> option, i.e. type:</p>
-
-<pre><code>$ grep -i science science.txt</code></pre>
-<p>To search for a phrase or pattern, you must enclose it in single quotes (the apostrophe symbol). For example to search for spinning top, type:</p>
-
-<pre><code>$ grep -i 'spinning top' science.txt</code></pre>
-<p>Some of the other options of <code>grep</code> are:</p>
+<p>Let's name this standard "BSE" (for "best standard ever"), and try to convince the <em>Institute of Electrical and Electronics Engineers</em> to adopt it in place of the old IEEE 754 standard. We have to answer the following questions:</p>
 <ul>
-<li><code>-v</code> display those lines that do NOT match</li>
-<li><code>-n</code> precede each matching line with the line number</li>
-<li><code>-c</code> print only the total count of matched lines</li>
+<li>what is the smallest number the BSE can represent? The largest?</li>
+<li>what is the maximal accuracy of the BSE? (in other words, what is the difference between the smallest positive number and zero?)</li>
+<li>what is the lowest accuracy of our standard? (in other words, what is the difference between the largest number we can represent and the second largest?)</li>
+<li>does the accuracy change when the dot position doesn't?</li>
+<li>try to produce a precision plot similar to the <a href="https://en.wikipedia.org/wiki/IEEE_754#Basic_and_interchange_formats">wikipedia page on IEEE 754</a>, for the range of possible values of the BSE (you can also use a log-log plot for it). </li>
 </ul>
-<p>Try some of them and see the different results. Don't forget, you can use more than one option at a time. For example, the number of lines without the words science or Science is:</p>
-
-<pre><code>$ grep -ivc science science.txt</code></pre>
+<p>Finally, how does our format compare with the IEEE754 <code>binary32</code> format (or its numpy equivalent <code>np.float32</code>)? Do you think we should try to convince them and <a href="https://xkcd.com/541/">present them our results</a>?</p>
 
 </div>
 </div>
@@ -12268,7 +11873,7 @@ $ ls</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Take-home-points">Take home points<a class="anchor-link" href="#Take-home-points">&#182;</a></h3>
+<h2 id="Exercise-#04-02:-exponential-error-growth">Exercise #04-02: exponential error growth<a class="anchor-link" href="#Exercise-#04-02:-exponential-error-growth">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -12276,26 +11881,8 @@ $ ls</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We have only shown some examples of how to navigate in the linux directory structure and use some simple commands. This is by far not sufficient to demonstrate its usefulness: the <code>grep</code> command for example is extremely powerful to help you find files that you thought you had lost, and <code>wget</code> a file to a current directory is often much faster than downloading it in firefox and copy it afterwards. For the time being, this short tutorial should help get you started.</p>
-<p><strong>To go further</strong>, I recommend to follow <a href="https://ryanstutorials.net/linuxtutorial/">Ryan's linux tutorials</a>, they are excellent!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Executable-scripts">Executable scripts<a class="anchor-link" href="#Executable-scripts">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now that you are familiar with the command line, you must have noticed that linux commands have some similarities with the <strong>statements</strong> you used in your bachelor programming course: by typing them in, the computer does things for you and gives you information back (often printed on screen, but not always). When you want to <strong>automate</strong> a series of commands you just typed in (for example renaming and moving files), a natural thing would be to write a <strong>script</strong> to do so.</p>
-<p>Scripts are the simplest type of program one can write, and this can be seen as your first programming experience in this course. We are going to write a <strong>bash script</strong> and execute it: why we want to do this in a python scientific programming course may be not clear right now, but it will make more sense later I promise.</p>
+<p>The number <code>e</code> can be calculated as the sum of the infinite series:</p>
+<p>$$e = \sum_{n=0}^{\infty} \frac{1}{n!}$$</p>
 
 </div>
 </div>
@@ -12304,155 +11891,147 @@ $ ls</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="A-simple-script">A simple script<a class="anchor-link" href="#A-simple-script">&#182;</a></h3>
+<p>We are going to approximate this number by computing it with python. We use the <strong>standard library</strong> and it's math module:</p>
+
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[291]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[292]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">e1</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="mi">1</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+<span class="n">e1</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2.7182818284590455
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In your <code>unixstuff</code> directory, create a new file name <code>myscript.sh</code>. You can do this using the default (graphical) text editor in linux, <code>gedit</code>. At the command line:</p>
-
-<pre><code>`
-$ gedit myscript.sh</code></pre>
-<p>Just type one simple line in the file:</p>
-
-<pre><code>echo Hello World!</code></pre>
-<p>Quit your editor and go back to the command line again. You can execute your script with the following command:</p>
-
-<pre><code>$ bash myscript.sh</code></pre>
-<p><strong>Bash</strong> is a so-called "interpreter". It reads your file and understands how to execute the commands in it.</p>
+<p>Close enough! Now let's compute it with the same values, but summed from n=100 to n=1:</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[296]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">e2</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="mi">1</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)][::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">e2</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[296]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2.718281828459045</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Make-a-file-executable">Make a file executable<a class="anchor-link" href="#Make-a-file-executable">&#182;</a></h3>
+<p>Seems reasonable too! Are they different?</p>
+
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[297]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">e1</span> <span class="o">-</span> <span class="n">e2</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[297]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>4.440892098500626e-16</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>List the files in your directory, but whith the option <code>-l</code> for more information. Here is how it looks like on my computer:</p>
-
-<pre><code>mowglie@flappi-top ~/Documents/unixstuff $ ls -l
-total 28
-drwxrwxr-x 2 mowglie mowglie 4096 Feb 22 18:05 backup
--rw-rw-r-- 1 mowglie mowglie   19 Feb 22 18:44 myscipt.sh
--rw-rw-r-- 1 mowglie mowglie 7767 Sep  1  2000 science.txt</code></pre>
-<p>The first list of characters indicate the file's <strong>permissions</strong>. Now read the first section of <a href="https://ryanstutorials.net/linuxtutorial/permissions.php">Ryan's tutorial about permissions</a>. So what do we learn from the above? That the file's owner (myself) is allowed to read and write the <code>myscript.sh</code> file, but not to execute it. Let's change this:</p>
-
-<pre><code>$ chmod a+x myscipt.sh</code></pre>
-<p>Now everybody (including me) is allowed to execute this file. It is a quite harmless script, so I'm not too worried. Now we can execute it:</p>
-
-<pre><code>$ ./myscript.sh</code></pre>
-<p>Nice! We could add much more commands to our script (possibly making it more useful), but this was enough to illustrate the point I wanted to make: files can be executable in Linux, and a whole new world opens to us.</p>
-<p><strong>Note:</strong> Most often, it is recommended to add a specific first line to your script, called a <strong>shebang</strong>. This line tells the computer which interpreter should be used to run the file. In our case it is the default interpreter (bash), but this may not always be the case. To be entirely explicit, we recommend to always add a shebang to your script. In this case, we should add <code>#!/bin/bash</code> to our script:</p>
-
-<pre><code>#!/bin/bash
-# Maybe some comment line about the purpose of this script
-
-echo Hello World!</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Take-home-points">Take home points<a class="anchor-link" href="#Take-home-points">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>It is possible to write simple programs in linux called "scripts". These scripts can be executed by the default interpreter, and be made "executable" very easily. If you want to know more about bash scripts, read <a href="https://ryanstutorials.net/bash-scripting-tutorial/">Ryan's tutorial about the subject</a>!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-linux-PATH">The linux PATH<a class="anchor-link" href="#The-linux-PATH">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Locate-linux-programs">Locate linux programs<a class="anchor-link" href="#Locate-linux-programs">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>You may have asked yourself: how does the linux command line know about the commands we are using? Where do I find them? A nice program helping us to find out is <strong>which</strong>. Let's use it:</p>
-
-<pre><code>$ which less
-/usr/bin/less</code></pre>
-<p>Now we can use another command, <strong>whatis</strong>, to tell us what we just did:</p>
-
-<pre><code>$ whatis which</code></pre>
-<p>The <code>which</code> command tells us that the <code>less</code> program is located in <code>/usr/bin</code>. We can also ask <code>which</code> where to find <code>which</code>:</p>
-
-<pre><code>$ which which
-/usr/bin/which
-$ ls -l /usr/bin/which
-lrwxrwxrwx 1 root root 10 Nov 19 14:42 /usr/bin/which -&gt; /bin/which</code></pre>
-<p>As expected, <code>which</code> is an executable file. Some executables are binary files (i.e. not human readable), but in this case <code>which</code> is actually a script:</p>
-
-<pre><code>$ less which</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: scroll through the script. Can you locate the shebang line? How does the code look like to you: easily understandable, or rather cryptic?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-PATH-variable">The PATH variable<a class="anchor-link" href="#The-PATH-variable">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The linux command line knows so-called <strong>environmental variables</strong>. The <code>echo</code> command can display their value:</p>
-
-<pre><code>$ echo $PATH</code></pre>
-<p>(the <code>$</code> tells echo to display the value of the variable PATH rather than its name). The <a href="http://www.linfo.org/path_env_var.html">PATH</a> variable contains a list of paths, separated by semicolons. It is an extremely important variable: it tells linux <em>where</em> to look for executables and programs. Each time you type a command, linux will look in the PATH and see if it finds it. This is an extremely flexible and powerful system, as we are going to see in the next chapter (Installing Python).</p>
-<p>The PATH can be extended to contain any other directory you find useful to add. Let's do it:</p>
-
-<pre><code>$ mkdir ~/myprograms
-$ export PATH=$PATH:~/myprograms</code></pre>
-<p><code>export</code> creates a new variable called PATH (in this case, it overwrites the existing PATH).</p>
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: now move your executable script <code>myscript.sh</code> in the <code>myprograms</code> directory. Verify that you can now execute the <code>myscript.sh</code> program from any directory.</p>
-<p><strong>Note:</strong> we have extended the <code>PATH</code> variable in <em>this session</em> only. If you close and reopen the terminal the changes will be lost. There are ways to make these changes permanent, we will learn them in the next chapter.</p>
-<p><strong>Note:</strong> if a program is listed in several path directories, linux takes the first instance. Directories can be prepended and appended, as we will see in the next chapter.</p>
+<p><strong>Which of the two values are the closest to the actual e? Explain why this occurs, and what we can learn from this experiment.</strong></p>
 
 </div>
 </div>
@@ -12461,32 +12040,7 @@ $ export PATH=$PATH:~/myprograms</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Take-home-points">Take home points<a class="anchor-link" href="#Take-home-points">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>PATH</code> variable tells linux where to look for programs and scripts. This is a very simple and powerful way to customize linux with your own scripts and programs. We are going to use this feature to install Python in the next chapter.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What's-next?">What's next?<a class="anchor-link" href="#What's-next?">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="02-Installation.html">jump to the next chapter</a>.</p>
+<p><em>Back to the <a href="00-Introduction.html#ctoc">table of contents</a></em></p>
 
 </div>
 </div>
