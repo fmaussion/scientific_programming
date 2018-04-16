@@ -11830,7 +11830,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Write a function which converts binary strings to decimal numbers. The function should handle positive numbers only. Examples:</p>
+<p>Write a function which converts binary strings to decimal numbers. The function should handle unsigned (positive) numbers only. Examples:</p>
 <ul>
 <li><code>'101010'</code> $\rightarrow$ <code>42</code></li>
 <li><code>'10000.1'</code> $\rightarrow$ <code>16.5</code></li>
@@ -11844,10 +11844,12 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now let's develop a new standard based on this representation. Dots cannot be represented by 0s and 1s, so that if we want the position of the dot to be flexible we need an additional memory slot to store this position. Let's define our new format as a 32 bits long sequence of bits, the first 5 bits being used to give the position of the dot, and the remaining 27 bits used to represent the number. Example:</p>
+<p>Now let's develop a new standard based on this representation. Dots cannot be represented by 0s and 1s, so that if we want the position of the dot to be flexible we need an additional memory slot to store this position. Let's define our new format as a 32 bits long sequence of bits, the first 5 bits (starting from the left) being used to give the position of the dot, and the remaining 27 bits used to represent the number. Examples:</p>
 <ul>
-<li><code>'10101010101010101010101010101010'</code> $\rightarrow$ <code>699050.65625</code></li>
+<li><code>'10101010101010101010101010101010'</code> $\rightarrow$ <code>699050.65625</code>. </li>
+<li><code>'00000001100110011001100110011001'</code> $\rightarrow$ <code>0.19999999552965164</code>. </li>
 </ul>
+<p>Explanation for example 1: the first five digits are <code>'10101'</code> which gives the number 21. The second part of the string therefore becomes a dot at position 21: <code>'010101010101010101010.101010'</code>. This binary number is then converted to decimal.</p>
 
 </div>
 </div>
@@ -11861,7 +11863,7 @@ $( document ).ready(function(){
 <li>what is the smallest number the BSE can represent? The largest?</li>
 <li>what is the maximal accuracy of the BSE? (in other words, what is the difference between the smallest positive number and zero?)</li>
 <li>what is the lowest accuracy of our standard? (in other words, what is the difference between the largest number we can represent and the second largest?)</li>
-<li>does the accuracy change when the dot position doesn't?</li>
+<li>does the difference between two nearest representable change, when the dot position doesn't?</li>
 <li>try to produce a precision plot similar to the <a href="https://en.wikipedia.org/wiki/IEEE_754#Basic_and_interchange_formats">wikipedia page on IEEE 754</a>, for the range of possible values of the BSE (you can also use a log-log plot for it). </li>
 </ul>
 <p>Finally, how does our format compare with the IEEE754 <code>binary32</code> format (or its numpy equivalent <code>np.float32</code>)? Do you think we should try to convince them and <a href="https://xkcd.com/541/">present them our results</a>?</p>
@@ -11881,7 +11883,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The number <code>e</code> can be calculated as the sum of the infinite series:</p>
+<p>The number <code>e</code> can be defined as the sum of the infinite series:</p>
 <p>$$e = \sum_{n=0}^{\infty} \frac{1}{n!}$$</p>
 
 </div>
@@ -11891,7 +11893,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We are going to approximate this number by computing it with python. We use the <strong>standard library</strong> and it's math module:</p>
+<p>We are going to approximate this number by truncating the sum to a finite value. We use the <strong>standard library</strong> and it's math module:</p>
 
 </div>
 </div>
@@ -11915,7 +11917,7 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">e1</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="mi">1</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">e1</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
 <span class="n">e1</span>
 </pre></div>
 
@@ -11958,7 +11960,7 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">e2</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="mi">1</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)][::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">e2</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)][::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">e2</span>
 </pre></div>
 
@@ -12033,7 +12035,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Which of the two values are the closest to the actual e? Explain why this occurs, and what we can learn from this experiment.</strong></p>
+<p><strong>Which of the two values is closest to the actual e? Explain why this occurs, and what we can learn from this experiment.</strong></p>
 
 </div>
 </div>

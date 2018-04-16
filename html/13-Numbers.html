@@ -11813,7 +11813,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this chapter we are going to give elements of understanding of how numbers are represented in today's computers. We won't have time to go into the details (which are perhaps not so relevant for non informaticians), however it is extremely important to understand the pitfalls of the so-called "floating-point arithmetics", because soon or late one of these pitfalls will hit you (I promise).</p>
+<p>In this chapter we are going to give elements of understanding of how numbers are represented in today's computers. We won't have time to go into the details (which are perhaps not so relevant for non informaticians), however it is extremely important to understand the pitfalls of the so-called "floating-point arithmetics", because sooner or later one of these pitfalls will hit you (I promise).</p>
 
 </div>
 </div>
@@ -11839,7 +11839,16 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Nearly all modern processors represent numbers in binary form, with each digit being represented by a two-valued physical quantity such as a "low" or "high" voltage: 0s and 1s. These binary digits are called <strong>bits</strong>, and are the basis of the <strong>binary representation of numbers</strong>.</p>
+<p>Traditional arithmetics and mathematics rely on the <strong>decimal</strong> system. Every number can be decomposed in a sum of products such as: $908.2 = 9\times10^2 + 0\times10^1 + 8\times10^{0} + 2\times10^{-1}$. This system is called decimal because the factors can take the values $[0 - 9]$ while the <strong>fixed base</strong> (the number which is scaled by an exponent) is 10.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Nearly all modern processors however represent numbers in binary form, with each digit being represented by a two-valued physical quantity such as a "low" or "high" voltage: 0s and 1s. These binary digits are called <strong>bits</strong>, and are the basis of the <strong>binary representation of numbers</strong>.</p>
 
 </div>
 </div>
@@ -11861,7 +11870,7 @@ $( document ).ready(function(){
 <pre><code>0101
 
 </code></pre>
-<p>Here our number will be $0\times2^3 + 1\times2^2 + 0\times2^1 + 1\times2^0 = 5$. In this convention, the leftmost digit is called the <strong>most significant bit</strong> and the rightmost the <strong>least significant bit</strong>. If all the elements from the left are zeros, the convention is to omit them when writing. This is for example what the built-in <a href="https://docs.python.org/3/library/functions.html#bin">bin</a> function chooses to do:</p>
+<p>To convert our number to a decimal representation we compute $0\times2^3 + 1\times2^2 + 0\times2^1 + 1\times2^0 = 5$. In this convention, the leftmost digit is called the <strong>most significant bit</strong> and the rightmost the <strong>least significant bit</strong>. If all the elements from the left are zeros, the convention is to omit them when writing. This is for example what the built-in <a href="https://docs.python.org/3/library/functions.html#bin">bin</a> function chooses to do:</p>
 
 </div>
 </div>
@@ -11945,7 +11954,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>but not larger. Unless specified otherwise, the first bit is often used to give the <em>sign</em> of the integer it represents. Therefore, the actual range of numbers that a byte can represent is $[-2^7; 2^7-1]= [-128; 127]$. If you are sure that you only want to do arithmetics with positive number you can spare this one bit and specify your binary number as being of <strong>unsigned integer type</strong>.</p>
+<p>but not larger. Unless specified otherwise, the first bit is often used to give the <em>sign</em> of the integer it represents. Therefore, the actual range of numbers that a byte can represent is $[-2^7; 2^7-1]= [-128; 127]$ (the reason for this asymmetry is a matter of definition, as we will see later). If you are sure that you only want to do arithmetics with positive number you can spare this one bit and specify your binary number as being of <strong>unsigned integer type</strong>.</p>
 
 </div>
 </div>
@@ -12105,7 +12114,7 @@ $( document ).ready(function(){
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_int_bitsize</span><span class="p">(</span><span class="n">integer</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Returns the actual memory consumption of an integer (in bits) without the object overhead.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">integer</span><span class="p">)</span> <span class="o">-</span> <span class="n">size_int</span><span class="p">)</span> <span class="o">*</span> <span class="mi">8</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">integer</span><span class="p">)</span> <span class="o">-</span> <span class="n">getsizeof</span><span class="p">(</span><span class="nb">int</span><span class="p">()))</span> <span class="o">*</span> <span class="mi">8</span>
 </pre></div>
 
 </div>
@@ -12150,7 +12159,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Ha! This looks more reasonable. So python must use C-shorts internally to store integers? But then, the largest number it can manipulate must be very small? Let's see:</p>
+<p>Ha! This looks more reasonable. So python uses 32 bits to store integers? But then, the largest number it can manipulate must be very small? Let's see if we can create a number larger than <code>2**32-1</code>:</p>
 
 </div>
 </div>
@@ -12160,7 +12169,7 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="mi">68</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">12</span><span class="o">**</span><span class="mi">68</span>
 </pre></div>
 
 </div>
@@ -12179,7 +12188,7 @@ $( document ).ready(function(){
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>295147905179352825856</pre>
+<pre>24228399786958997352779519807679893609907752382877715390869269071681028096</pre>
 </div>
 
 </div>
@@ -12509,8 +12518,8 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A more general definition of the binary representation for integers is to use negative exponents as well. Any real number a can be represented as:</p>
-<p>$$a = \pm \sum_{i=-\infty}^{n} z_i b^i$$ with $b &gt; 1$ (base) and $0 \le z_i \le b-1$, all integers.</p>
+<p>A more general definition of the binary representation for integers is to use negative exponents as well. Any rational number a can be approximated by:</p>
+<p>$$a = \pm \sum_{i=-j}^{k} z_i b^i$$ with $b &gt; 1$ (base) and $0 \le z_i \le b-1$, $j$ and $k$ all positive integers. The precision depends on the size of $j$ while the maximum range depends on the size of $k$.</p>
 
 </div>
 </div>
@@ -12555,8 +12564,8 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Because computers have a <em>finite</em> number of storage units available, they can only represent a <em>finite</em> number of differentiable values. In fact, a memory slot with $N$ available bits cannot represent more then $2^N$ differentiable values. The range of real (or complex) numbers is of course infinite, and therefore it becomes clear that in the computer representation of numbers <strong>there will always be a trade-off between the range of numbers one would like to represent and their relative accuracy</strong> (i.e. the absolute difference between two consecutive representable numbers).</p>
-<p>Taking the <strong>decimal representation</strong> of the number 1/3 as an example: it can be written as <code>0.33</code>, <code>0.333</code>, <code>0.3333</code>, etc. Depending on the numbers of digits available, the precision of the number will increase but never reach the exact value, which will never be exact in this decimal representation.</p>
+<p>Because computers have a <em>finite</em> number of storage units available, they can only represent a <em>finite</em> number of distinguishable values. In fact, a memory slot with $N$ available bits cannot represent more then $2^N$ distinguishable values. The range of real (or complex) numbers is of course infinite, and therefore it becomes clear that in the computer representation of numbers <strong>there will always be a trade-off between the range of numbers one would like to represent and their relative accuracy</strong> (i.e. the absolute difference between two consecutive representable numbers).</p>
+<p>Taking the <strong>decimal representation</strong> of the number 1/3 as an example: it can be written as <code>0.33</code>, <code>0.333</code>, <code>0.3333</code>, etc. Depending on the numbers of digits available, the precision of the number will increase but never reach the exact value, at least in the decimal representation.</p>
 <p>This fundamental limitation is the explanation for unexpected results of certain arithmetic operations. For example:</p>
 
 </div>
@@ -12632,7 +12641,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is a typical <strong>rounding error</strong> due to the fact that most computers do not represent numbers as decimal fractions, but as binary. Without going too much into details (which can be tricky), this chapter will give you some elements of understanding in order to prepare you for the most common pitfalls of floating point arithmetics.</p>
+<p>This is a typical <strong>rounding error</strong>, happening because most computers do not represent numbers as decimal fractions, but as binary. Without going too much into details (which can be tricky), this chapter will give you some elements of understanding in order to prepare you for the most common pitfalls of floating point arithmetics.</p>
 
 </div>
 </div>
@@ -12649,8 +12658,8 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In the exponential notation, a number is represented approximately to a fixed number of significant digits (the significand) and scaled using an exponent in some fixed base; the base for the scaling is normally two, ten, or sixteen. A number that can be represented exactly is of the following form:</p>
-<p>$$number = significand \times base ^{exponent}$$</p>
+<p>In the exponential notation, a number is approximated with a fixed number of significant digits (the significand) and scaled using an exponent in some fixed base; the base for the scaling is normally two, ten, or sixteen. A number that can be represented exactly is of the following form:</p>
+<p>$\mathrm{number} = \mathrm{significand} \times \mathrm{base} ^{\mathrm{exponent}}$</p>
 
 </div>
 </div>
@@ -12670,7 +12679,7 @@ $( document ).ready(function(){
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The number <code>1.234</code> can easily be represented exactly in base 10, but the number 1/3 cannot. However, in base 3 the latter can be represented exactly by $1 \times 3^{-1}$.</p>
-<p>To approximate the number 1/3 in base 10, the rule of "the more bits you have, the more precise you can be" that we learned with integers continues to hold true here: $33 \times 10^{-2}$ and $33333333333333 \times 10^{-14}$ are two ways to approximate the number, the later being more expensive in terms of storage requirements but more accurate.</p>
+<p>To approximate the number 1/3 in base 10, the rule of "the more bits you have, the more precise you can be" that we learned with integers continues to hold true: $33 \times 10^{-2}$ and $33333333333333 \times 10^{-14}$ are two ways to approximate the number, the later being more expensive in terms of storage requirements but more accurate.</p>
 
 </div>
 </div>
@@ -12696,7 +12705,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This precision/size trade-off raises many challenges: memory and computer time must be optimized while still allowing programs to realize computations on a <em>wide</em> range of numbers in the same program. A good example is provided with atmospheric models, which realize computations on specific humidity values ($kg kg^{-1}$) with typical values of 10$^{-5}$ or smaller up to values of several order of magnitude larger. Using different standards for each sets of numbers would be impracticable. This lead to the development of the <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE Standard for Floating-Point Arithmetic (IEEE 754)</a>.</p>
+<p>This precision/size trade-off raises many challenges: memory and computer time must be optimized while still allowing programs to realize computations on a <em>wide</em> range of numbers in the same program. A good example is provided with atmospheric models, which realize computations on specific humidity values ($\mathrm{kg}\,\mathrm{kg}^{-1}$) with typical values of 10$^{-5}$ or smaller up to values of several order of magnitude larger. Using different standards for each set of numbers would be impracticable. This lead to the development of the <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE Standard for Floating-Point Arithmetic (IEEE 754)</a>.</p>
 <p>The standard defines five basic formats that are named for their numeric base and the number of bits used in their encoding, as listed in <a href="https://en.wikipedia.org/wiki/IEEE_754#Basic_and_interchange_formats">this table</a>. For example, <code>binary64</code> is the famous "double precision" format, called <code>float64</code> in numpy and simply <code>float</code> in the python standard library. In this format, 53 bits are used for the significand, and the remaining 11 for the exponent. Remember:</p>
 <ul>
 <li>the significand determines the <strong>precision</strong> of the representation (significant digits)</li>
@@ -12837,7 +12846,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Like integers, floating point numbers can overflow:</p>
+<p>Like numpy integers, floating point numbers can overflow:</p>
 
 </div>
 </div>
@@ -12891,10 +12900,43 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Fortunately, the IEEE 754 standard defines two new numbers (-inf and +inf) which are more informative (and less dangerous) than the negative reset of integer numbers.</p>
+<p>Fortunately, the IEEE 754 standard defines two new numbers (-inf and +inf) which are more informative (and less dangerous) than the negative reset of integer numbers. IEEE 754 also defines "Not A Number" (abbreviated NaN), which propagates through computations:</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">NaN</span> <span class="o">*</span> <span class="mi">10</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[22]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>nan</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -12908,7 +12950,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As we've learned, errors in floating-point numbers are unavoidable. Even if they are very small, simple calculations on them can contain pitfalls that increase the error in the result way beyond just having the individual errors "add up".</p>
+<p>As we've learned, errors in floating-point numbers are unavoidable. Even if these errors are very small, simple calculations on approximated numbers can contain pitfalls that increase the error in the result way beyond just having the individual errors "add up".</p>
 
 </div>
 </div>
@@ -12932,7 +12974,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span><span class="o">/</span><span class="mi">10</span><span class="o">*</span><span class="mi">3</span>  <span class="c1"># not precise</span>
@@ -12948,7 +12990,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[22]:</div>
+<div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -12965,7 +13007,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">decimal</span> <span class="k">import</span> <span class="n">Decimal</span>
@@ -12982,7 +13024,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[23]:</div>
+<div class="prompt output_prompt">Out[24]:</div>
 
 
 
@@ -13025,88 +13067,12 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">sympify</span><span class="p">(</span><span class="s1">&#39;1 / 3&#39;</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">+</span> <span class="n">a</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[24]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>2/3</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Seams like the perfect solution, right? It probably is if you are a mathematician, but for actual numerical computations SymPy will be way too slow to use. Also, symbolic mathematics can only be used for problems where analytical solutions are known, which is almost always not the case in numerical models.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Deal-with-it">Deal with it<a class="anchor-link" href="#Deal-with-it">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There are no simple answers to numerical rounding errors. Be aware that they occur, try to prevent them to happen, or as least try to mitigate their effect.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Awareness">Awareness<a class="anchor-link" href="#Awareness">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Awareness</em> is mostly hindered by the "human readable" representation of floating point numbers. In practice:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mf">0.1</span>
 </pre></div>
 
 </div>
@@ -13125,7 +13091,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.1</pre>
+<pre>2/3</pre>
 </div>
 
 </div>
@@ -13133,13 +13099,56 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Seams like the perfect solution, right? It probably is if you are a mathematician, but for actual numerical computations SymPy will be way too slow to use. Symbolic mathematics can only be used for problems where analytical solutions are known. Unfortunately, this is not always the case (take numerical models of the atmosphere for example).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Deal-with-it">Deal with it<a class="anchor-link" href="#Deal-with-it">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are no simple answers to numerical rounding errors. Be aware that they occur and try to mitigate their effect.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Awareness">Awareness<a class="anchor-link" href="#Awareness">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Awareness</em> is mostly hindered by the string representation of floating point numbers. In practice:</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">format</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;.16g&#39;</span><span class="p">)</span>  <span class="c1"># give 16 significant digits</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mf">0.1</span>
 </pre></div>
 
 </div>
@@ -13158,7 +13167,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;0.1&#39;</pre>
+<pre>0.1</pre>
 </div>
 
 </div>
@@ -13170,6 +13179,39 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">format</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;.16g&#39;</span><span class="p">)</span>  <span class="c1"># give 16 significant digits</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[27]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;0.1&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">format</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;.30g&#39;</span><span class="p">)</span>  <span class="c1"># give 30 significant digits</span>
@@ -13185,7 +13227,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[27]:</div>
+<div class="prompt output_prompt">Out[28]:</div>
 
 
 
@@ -13211,7 +13253,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">info</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
@@ -13228,7 +13270,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[28]:</div>
+<div class="prompt output_prompt">Out[29]:</div>
 
 
 
@@ -13255,11 +13297,11 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Preventing rounding errors to happen is not always easy, but there are a few general rules:</p>
+<p>Preventing rounding errors to happen is not possible, but there are a few general rules:</p>
 <ul>
 <li>Multiplication and division are "safer" operations</li>
 <li>Addition and subtraction are dangerous, because when numbers of different magnitudes are involved, digits of the smaller-magnitude number are lost.</li>
-<li>This loss of digits can be inevitable and benign (when the lost digits also insignificant for the final result) or catastrophic (when the loss is magnified and distorts the result strongly).</li>
+<li>This loss of digits can be inevitable and benign (when the lost digits are also insignificant for the final result) or catastrophic (when the loss is magnified and distorts the result strongly).</li>
 <li>The more calculations are done (especially when they form an iterative algorithm) the more important it is to consider this kind of problem.</li>
 <li>A method of calculation can be stable (meaning that it tends to reduce rounding errors) or unstable (meaning that rounding errors are magnified). Very often, there are both stable and unstable solutions for a problem.</li>
 </ul>
@@ -13279,45 +13321,12 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="mf">0.1</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span>
 <span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[29]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>False</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span>
 </pre></div>
 
 </div>
@@ -13336,6 +13345,39 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 
 <div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[31]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
 <pre>(1.0, 0.9999999999999999)</pre>
 </div>
 
@@ -13349,14 +13391,14 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Safer computations</strong> therefore include always wondering at which stage the most precision is going to be lost: this is most often the case when adding numbers of very different magnitudes. When building numerical models, this should always be something you consider: is a formula is bringing you to to dangerous additions, then reformulate it and/or use other units for your variables (e.g. $g kg^{-1}$ instead of $kg kg^{-1}$ for specific humidity). Consider the following example:</p>
+<p>Realize <strong>safer computations</strong> therefore involves asking yourself at which stage the most precision is going to be lost: this is most often the case when adding numbers of very different magnitudes. When building numerical models, this should always be something you consider: is a formula leading to dangerous additions, then reformulate it and/or use other units for your variables (e.g. $\mathrm{g}\,\mathrm{kg}^{-1}$ instead of $\mathrm{kg}\,\mathrm{kg}^{-1}$ for specific humidity). Consider the following example:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
@@ -13371,7 +13413,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
@@ -13385,7 +13427,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">c1</span> <span class="o">==</span> <span class="n">c2</span>
@@ -13401,7 +13443,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[33]:</div>
+<div class="prompt output_prompt">Out[34]:</div>
 
 
 
@@ -13437,14 +13479,14 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Fortunately, rounding errors are often left unnoticed, meaning that your computations are probably OK! In our field in particular, we often do not care if the forecasted temperature is numerically precise at 0.001° since the model accuracy is much lower anyway. However, this can still lead to surprises when comparing arrays for equality (e.g. when testing that a temperature is equal to zero, or for matching coordinates like longitude or latitude). In these cases, prefer to use numpy's specialized functions:</p>
+<p>Fortunately, rounding errors often remain unnoticed, meaning that your computations are probably OK! In our field in particular, we often do not care if the post-processed temperature forecast is numerically precise at 0.001° since the forecast accuracy is much lower anyway. However, this can still lead to surprises when comparing arrays for equality (e.g. when testing that a temperature is equal to zero, or for matching coordinates like longitude or latitude). In these cases, prefer to use numpy's specialized functions:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">)</span>  <span class="c1"># OK is you don&#39;t care about small numerical errors</span>
@@ -13460,7 +13502,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[34]:</div>
+<div class="prompt output_prompt">Out[35]:</div>
 
 
 
@@ -13488,11 +13530,12 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>computers can only represent a finite number of differentiable values.</li>
-<li>the range of possible numbers depends on the size of memory allocated to store it. There is practically no limit to the size of integers in python, but there is a limit for floats. Numpy implements several types of variables named after their size in bits (e.g. <code>np.float32</code>, <code>np.float64</code>, <code>np.float128</code>).</li>
+<li>computers can only represent a finite number of distinguishable values.</li>
+<li>the range of representable numbers depends on the size of memory allocated to store it. There is practically no limit to the size of integers in python, but there is a limit for floats. Numpy implements several types of variables named after their size in bits (e.g. <code>np.float32</code>, <code>np.float64</code>, <code>np.float128</code>).</li>
 <li>there are many different ways to represent numbers on computers, all with different strengths and weaknesses. The vast majority of systems use the <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE 754</a> standard for floating points, which is a good compromise between range and accuracy. Most systems are binary (base 2) per default, but there are other bases available: base 10 (decimal) and base 16 (hexadecimal) are frequent as well.</li>
 <li>rounding errors happen because of these limitations. They always happen, even for the simplest arithmetics, and you <strong>shall not ignore them</strong>.</li>
-<li>however, there are ways to avoid or mitigate these rounding errors. This includes the use of more precise datatypes (e.g. float64 instead of float32), alternative representations (decimal instead of binary), and the use of more conservative operations (e.g. multiplication before of addition)</li>
+<li>however, there are ways to mitigate the impact of these rounding errors. This includes the use of more precise datatypes (e.g. float64 instead of float32), alternative representations (decimal instead of binary), and the use of more conservative operations (e.g. multiplication before addition when dealing with numbers of different magnitude)</li>
+<li>floating point errors have dramatic consequences in chaotic systems. A scary example is given in <a href="https://journals.ametsoc.org/doi/pdf/10.1175/MWR-D-12-00352.1">this paper</a> about the influence of floating point computations on numerical weather forecasts.</li>
 </ul>
 
 </div>
