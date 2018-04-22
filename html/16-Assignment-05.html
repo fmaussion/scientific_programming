@@ -9,7 +9,7 @@ gtag('js', new Date());
 gtag('config', 'UA-88391345-1');
 </script>
 <meta charset="utf-8" />
-<title>14-Assignment-04</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>16-Assignment-05</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11805,7 +11805,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Assignment-#04:-rounding-errors">Assignment #04: rounding errors<a class="anchor-link" href="#Assignment-#04:-rounding-errors">&#182;</a></h1>
+<h1 id="Assignment-#05:-C-and-numpy">Assignment #05: C and numpy<a class="anchor-link" href="#Assignment-#05:-C-and-numpy">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11813,7 +11813,27 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Today's exercises deal with the pitfalls of floating point arithmetics.</p>
+<h2 id="Exercise-#05-01:-a-glimpse-in-the-C-language">Exercise #05-01: a glimpse in the C language<a class="anchor-link" href="#Exercise-#05-01:-a-glimpse-in-the-C-language">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This exercise has to be done on a linux machine! You can use the university workstations for this.</p>
+<p>Here is the C code sample from the lecture:</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt; </span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+    <span class="n">printf</span> <span class="p">(</span><span class="s">&quot;Sum of two numbers : %d </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p><strong>Write this code in a C code file, compile and run it.</strong></p>
+<p><strong>Now, replace the line <code>int b = 3</code> with <code>char b = 't'</code>. Compile and run the program again. Does the output match your expectations? Can you explain what happens? Compare this behavior to python's, and try to explain why this behavior is linked to faster execution times.</strong></p>
 
 </div>
 </div>
@@ -11822,7 +11842,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exercise-#04-01:-fixed-point-binary-numbers">Exercise #04-01: fixed point binary numbers<a class="anchor-link" href="#Exercise-#04-01:-fixed-point-binary-numbers">&#182;</a></h2>
+<h2 id="Exercise-#05-02:-Monte-Carlo-estimation-of-$\pi$">Exercise #05-02: Monte-Carlo estimation of $\pi$<a class="anchor-link" href="#Exercise-#05-02:-Monte-Carlo-estimation-of-$\pi$">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -11830,12 +11850,10 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Write a function which converts binary strings to decimal numbers. The function should handle unsigned (positive) numbers only. Examples:</p>
-<ul>
-<li><code>'101010'</code> $\rightarrow$ <code>42</code></li>
-<li><code>'10000.1'</code> $\rightarrow$ <code>16.5</code></li>
-<li><code>'1011101101.10101011'</code> $\rightarrow$ <code>749.66796875</code></li>
-</ul>
+<p>A simple way to estimate $\pi$ using a computer is based on a <a href="https://en.wikipedia.org/wiki/Monte_Carlo_method">Monte-Carlo</a> method. By drawing a sample of N points with random 2D coordinates (x, y) in the <code>[0, 1[</code> range, the ratio of points that fall within the unit circle divided by the total number of points (N) gives an estimate of $\pi / 4$.</p>
+<p><strong>Provide two implementations of the monte-carlo estimation of $\pi$: a pure python version (standard library) and a vectorized version using numpy (no for-loop). Time their execution for N = [1e2, 1e3, ..., 1e8]. Plot the numpy speed-up as a function of N.</strong></p>
+<p><em>Tip: you can try to mimic <code>%timeit</code> in your code by running each function at least three times and taking the fastest execution of all three.</em></p>
+<p><em>Optional: try the numpy version with N=1e9 and above. Make conclusions about a new trade-off happening for large values of N.</em></p>
 
 </div>
 </div>
@@ -11844,13 +11862,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now let's develop a new standard based on this representation. Dots cannot be represented by 0s and 1s, so that if we want the position of the dot to be flexible we need an additional memory slot to store this position. Let's define our new format as a 32 bits long sequence of bits, the first 5 bits (starting from the left) being used to give the position of the dot, and the remaining 27 bits used to represent the number. Examples:</p>
-<ul>
-<li><code>'10101010101010101010101010101010'</code> $\rightarrow$ <code>699050.65625</code>. </li>
-<li><code>'00000001100110011001100110011001'</code> $\rightarrow$ <code>0.19999999552965164</code>. </li>
-</ul>
-<p>Explanation for example 1: the first five digits are <code>'10101'</code> which gives the number 21. The second part of the string therefore becomes a dot at position 21: <code>'010101010101010101010.101010'</code>. This binary number is then converted to decimal.</p>
-
+<h2 id="Exercise-#05-03:-numpy-cycles">Exercise #05-03: numpy cycles<a class="anchor-link" href="#Exercise-#05-03:-numpy-cycles">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -11858,42 +11870,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's name this standard "BSE" (for "best standard ever"), and try to convince the <em>Institute of Electrical and Electronics Engineers</em> to adopt it in place of the old IEEE 754 standard. We have to answer the following questions:</p>
-<ul>
-<li>what is the smallest number the BSE can represent? The largest?</li>
-<li>what is the maximal accuracy of the BSE? (in other words, what is the difference between the smallest positive number and zero?)</li>
-<li>what is the lowest accuracy of our standard? (in other words, what is the difference between the largest number we can represent and the second largest?)</li>
-<li>does the difference between two nearest representable change, when the dot position doesn't?</li>
-<li>try to produce a precision plot similar to the <a href="https://en.wikipedia.org/wiki/IEEE_754#Basic_and_interchange_formats">wikipedia page on IEEE 754</a>, for the range of possible values of the BSE (you can also use a log-log plot for it). </li>
-</ul>
-<p>Finally, how does our format compare with the IEEE754 <code>binary32</code> format (or its numpy equivalent <code>np.float32</code>)? Do you think we should try to convince them and <a href="https://xkcd.com/541/">present them our results</a>?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exercise-#04-02:-exponential-error-growth">Exercise #04-02: exponential error growth<a class="anchor-link" href="#Exercise-#04-02:-exponential-error-growth">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The number <code>e</code> can be defined as the sum of the infinite series:</p>
-<p>$$e = \sum_{n=0}^{\infty} \frac{1}{n!}$$</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We are going to approximate this number by truncating the sum to a finite value. We use the <strong>standard library</strong> and it's math module:</p>
+<p>Monthly averages of temperature data at Innsbruck can be downloaded from this lecture's github via:</p>
 
 </div>
 </div>
@@ -11903,45 +11880,17 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="k">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">urlopen</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="c1"># Parse the given url</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/fmaussion/scientific_programming/master/data/innsbruck_temp.json&#39;</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">))</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="c1"># Read the data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">e1</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
-<span class="n">e1</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[2]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>2.7182818284590455</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -11950,92 +11899,16 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Close enough! Now let's compute it with the same values, but summed from n=100 to n=0:</p>
+<p><em>(original data obtained from NOAA's <a href="https://catalog.data.gov/dataset/global-surface-summary-of-the-day-gsod">Global Surface Summary of the Day</a>)</em></p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">e2</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)][::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">e2</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[3]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>2.718281828459045</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Seems reasonable too! Are they different?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">e1</span> <span class="o">-</span> <span class="n">e2</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[4]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>4.440892098500626e-16</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Which of the two values is closest to the actual e? Explain why this occurs, and what we can learn from this experiment.</strong></p>
+<p><strong>Using numpy only, compute and plot the mean monthly annual cycle for 1981-2010 and the mean annual temperature timeseries for 1977-2017. Compute the linear trend of the average annual temperature over 1977-2017. Repeat with winter (DJF) and summer (JJA) trends.</strong></p>
 
 </div>
 </div>
