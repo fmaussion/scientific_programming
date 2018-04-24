@@ -11840,7 +11840,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Last week, we've learned that the memory consumption of a python <code>int</code> is larger than the size of the data (number) it stores. This overhead in memory consumption is due to the nature of python data types, which are all <strong>objects</strong>. We've already learned that these objects come with certain "services", for example:</p>
+<p>Last week, we've learned that the memory consumption of a python <code>int</code> is larger than the memory needed to store the binary number alone. This overhead in memory consumption is due to the nature of python data types, which are all <strong>objects</strong>. We've already learned that these objects come with certain "services", for example:</p>
 
 </div>
 </div>
@@ -11894,7 +11894,7 @@ $( document ).ready(function(){
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">useful_function</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;This function adds to objects together.</span>
+    <span class="sd">&quot;&quot;&quot;This function adds two objects together.</span>
 <span class="sd">    </span>
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -11968,7 +11968,7 @@ $( document ).ready(function(){
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>This function adds to objects together.
+<pre>This function adds two objects together.
     
     Parameters
     ----------
@@ -11992,7 +11992,7 @@ $( document ).ready(function(){
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Functions are objects of type <code>function</code>, and one of their attributes (<code>__doc__</code>) gives us access to their <strong>docstring</strong>. During the course of the semester you are going to learn how to use more and more of these object features, and hopefully you are going to like them more and more (at least this is what happened to me).</p>
-<p>Now, why does this make python "slow"? Well, in simple words, these "services" tend to increase the complexity and the number of operations an interpreter has to realize when running a program.  More specialized languages will be less flexible than python, but will be faster at running specialized operations and be less memory hungry.</p>
+<p>Now, why does this make python "slow"? Well, in simple words, these "services" tend to increase the complexity and the number of operations an interpreter has to perform when running a program.  More specialized languages will be less flexible than python, but will be faster at running specialized operations and be less memory hungry.</p>
 <p>Python's high-level of abstraction (i.e. python's flexibility) makes it slower than its lower-level counterparts like C or FORTRAN. But, why is that so?</p>
 
 </div>
@@ -12126,7 +12126,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The variable type definition is part of the C syntax. This applies to the variables themselves, but also to the output of computations. This is a fundamental difference with python, and comes with several advantages. Static typing usually results in code that executes faster: since the program knows the exact data types that are in use, it can predict the memory consumption of operations beforehand and produce optimized machine code. Another advantage is code documentation: the statement <code>int c = a + b</code> makes it clear that we are adding two numbers while the python equivalent <code>c = a + b</code> could produce a number, a string, a list, etc.</p>
+<p>The variable type definition is part of the C syntax. This applies to the variables themselves, but also to the output of computations. This is a fundamental difference to python, and comes with several advantages. Static typing usually results in code that executes faster: since the program knows the exact data types that are in use, it can predict the memory consumption of operations beforehand and produce optimized machine code. Another advantage is code documentation: the statement <code>int c = a + b</code> makes it clear that we are adding two numbers while the python equivalent <code>c = a + b</code> could produce a number, a string, a list, etc.</p>
 
 </div>
 </div>
@@ -12154,7 +12154,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Interpreters</strong> do not require compilation: they analyze the code at run time. This is why it is perfectly legal to write:</p>
+<p><strong>Interpreters</strong> do not require compilation: they analyze the code at run time. The following code for example is syntactically correct:</p>
 
 </div>
 </div>
@@ -12179,7 +12179,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>while the execution of this code results in a TypeError:</p>
+<p>but its execution of this code results in a TypeError:</p>
 
 </div>
 </div>
@@ -12224,6 +12224,15 @@ $( document ).ready(function(){
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The interpreter cannot detect these errors before runtime.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -12427,7 +12436,7 @@ $( document ).ready(function(){
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2.06 µs ± 56 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<pre>1.97 µs ± 14.5 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre>
 </div>
 </div>
@@ -12458,7 +12467,7 @@ $( document ).ready(function(){
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>420 ns ± 12.6 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<pre>384 ns ± 4.28 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 </pre>
 </div>
 </div>
@@ -12491,15 +12500,15 @@ $( document ).ready(function(){
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Why is numpy so much faster than pure python? One of the major reasons is <strong>vectorization</strong>, which is the process of applying mathematical operations to <em>all</em> elements of an array ("vector") at once instead of looping through them like we would do in pure python. "for loops" in python are slow because for each addition, python has to:</p>
 <ul>
-<li>access to the elements a and b in the list A and B</li>
+<li>access the elements a and b in the list A and B</li>
 <li>check the type of both a and b</li>
 <li>apply the <code>+</code> operator on the data they store</li>
 <li>store the result.</li>
 </ul>
 <p>Numpy skips the first two steps and does them only once before the actual operation. What does numpy know about the addition operation that the pure python version can't infer?</p>
 <ul>
-<li>the type of all numbers to add (floats)</li>
-<li>the type of the output (also floats)</li>
+<li>the type of all numbers to add</li>
+<li>the type of the output</li>
 <li>the size of the output array (same as input)</li>
 </ul>
 <p>Numpy can use this information to optimize the computation, but this isn't possible without trade-offs. See the following for example:</p>
@@ -12621,7 +12630,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>N-dimensional <a href="https://docs.scipy.org/doc/numpy/reference/arrays.ndarray.html#arrays-ndarray">ndarray</a>'s are the core structure of the numpy library. It is a multidimensional container of items of the same type and size. The number of dimensions and items in an array is defined by its shape, which is a tuple of N positive integers that specify the sizes of each dimension. The type of items in the array is specified by a separate data-type object (dtype), one of which is associated with each ndarray.</p>
+<p>N-dimensional <a href="https://docs.scipy.org/doc/numpy/reference/arrays.ndarray.html#arrays-ndarray">ndarray</a>'s are the core structure of the numpy library. It is a multidimensional container of items of the same type and size. The number of dimensions and items in an array is defined by its shape, which is a tuple of N positive integers that specify the number of items in each dimension. The type of items in the array is specified by a separate data-type object (dtype), one of which is associated with each ndarray.</p>
 <p>All ndarrays are homogenous: every item takes up the same size block of memory, and all blocks are interpreted in exactly the same way.</p>
 <p>An item extracted from an array, e.g., by indexing, is represented by a Python object whose type is one of the array scalar types built in NumPy.</p>
 
@@ -12650,7 +12659,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This contiguous one-dimensional segment of computer memory owned by the array is combined with an indexing scheme that maps N-dimensional indexes into the location of an item in the block. Concretely, this means that there is no difference in the memory layout of these two arrays:</p>
+<p>This contiguous one-dimensional segment of computer memory stored by the array is combined with an indexing scheme that maps N-dimensional indexes into the location of an item in the block. Concretely, this means that there is no difference in the memory layout of these two arrays:</p>
 
 </div>
 </div>
