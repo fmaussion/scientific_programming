@@ -11824,7 +11824,7 @@ $( document ).ready(function(){
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Numpy,-part-II:-indexing,-ufuncs,-broadcasting" data-toc-modified-id="Numpy,-part-II:-indexing,-ufuncs,-broadcasting-17"><span class="toc-item-num">17&nbsp;&nbsp;</span>Numpy, part II: indexing, ufuncs, broadcasting</a></span><ul class="toc-item"><li><span><a href="#Revision:-numpy-ndarrays" data-toc-modified-id="Revision:-numpy-ndarrays-17.1"><span class="toc-item-num">17.1&nbsp;&nbsp;</span>Revision: numpy ndarrays</a></span></li><li><span><a href="#Creating-ndarrays" data-toc-modified-id="Creating-ndarrays-17.2"><span class="toc-item-num">17.2&nbsp;&nbsp;</span>Creating ndarrays</a></span><ul class="toc-item"><li><span><a href="#np.emtpy,-np.zeros,-np.ones" data-toc-modified-id="np.emtpy,-np.zeros,-np.ones-17.2.1"><span class="toc-item-num">17.2.1&nbsp;&nbsp;</span><code>np.emtpy</code>, <code>np.zeros</code>, <code>np.ones</code></a></span></li><li><span><a href="#np.array" data-toc-modified-id="np.array-17.2.2"><span class="toc-item-num">17.2.2&nbsp;&nbsp;</span><code>np.array</code></a></span></li><li><span><a href="#np.copy" data-toc-modified-id="np.copy-17.2.3"><span class="toc-item-num">17.2.3&nbsp;&nbsp;</span><code>np.copy</code></a></span></li></ul></li><li><span><a href="#The-shape-of-ndarrays" data-toc-modified-id="The-shape-of-ndarrays-17.3"><span class="toc-item-num">17.3&nbsp;&nbsp;</span>The shape of ndarrays</a></span></li><li><span><a href="#Indexing" data-toc-modified-id="Indexing-17.4"><span class="toc-item-num">17.4&nbsp;&nbsp;</span>Indexing</a></span><ul class="toc-item"><li><span><a href="#Slicing" data-toc-modified-id="Slicing-17.4.1"><span class="toc-item-num">17.4.1&nbsp;&nbsp;</span>Slicing</a></span></li><li><span><a href="#Basic-vs-Advanced-indexing" data-toc-modified-id="Basic-vs-Advanced-indexing-17.4.2"><span class="toc-item-num">17.4.2&nbsp;&nbsp;</span>Basic vs Advanced indexing</a></span></li><li><span><a href="#Integer-indexing" data-toc-modified-id="Integer-indexing-17.4.3"><span class="toc-item-num">17.4.3&nbsp;&nbsp;</span>Integer indexing</a></span></li><li><span><a href="#Boolean-indexing:-indexing-based-on-a-condition" data-toc-modified-id="Boolean-indexing:-indexing-based-on-a-condition-17.4.4"><span class="toc-item-num">17.4.4&nbsp;&nbsp;</span>Boolean indexing: indexing based on a condition</a></span></li></ul></li><li><span><a href="#Universal-functions" data-toc-modified-id="Universal-functions-17.5"><span class="toc-item-num">17.5&nbsp;&nbsp;</span>Universal functions</a></span></li><li><span><a href="#Broadcasting" data-toc-modified-id="Broadcasting-17.6"><span class="toc-item-num">17.6&nbsp;&nbsp;</span>Broadcasting</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-17.7"><span class="toc-item-num">17.7&nbsp;&nbsp;</span>Take home points</a></span></li><li><span><a href="#Addendum:-numpy-versus-other-scientific-languages" data-toc-modified-id="Addendum:-numpy-versus-other-scientific-languages-17.8"><span class="toc-item-num">17.8&nbsp;&nbsp;</span>Addendum: numpy versus other scientific languages</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-17.9"><span class="toc-item-num">17.9&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Numpy,-part-II:-indexing,-ufuncs,-broadcasting" data-toc-modified-id="Numpy,-part-II:-indexing,-ufuncs,-broadcasting-17"><span class="toc-item-num">17&nbsp;&nbsp;</span>Numpy, part II: indexing, ufuncs, broadcasting</a></span><ul class="toc-item"><li><span><a href="#Revision:-numpy-ndarrays" data-toc-modified-id="Revision:-numpy-ndarrays-17.1"><span class="toc-item-num">17.1&nbsp;&nbsp;</span>Revision: numpy ndarrays</a></span></li><li><span><a href="#Creating-ndarrays" data-toc-modified-id="Creating-ndarrays-17.2"><span class="toc-item-num">17.2&nbsp;&nbsp;</span>Creating ndarrays</a></span><ul class="toc-item"><li><span><a href="#np.emtpy,-np.zeros,-np.ones,-np.full" data-toc-modified-id="np.emtpy,-np.zeros,-np.ones,-np.full-17.2.1"><span class="toc-item-num">17.2.1&nbsp;&nbsp;</span><code>np.emtpy</code>, <code>np.zeros</code>, <code>np.ones</code>, <code>np.full</code></a></span></li><li><span><a href="#np.array" data-toc-modified-id="np.array-17.2.2"><span class="toc-item-num">17.2.2&nbsp;&nbsp;</span><code>np.array</code></a></span></li><li><span><a href="#np.copy" data-toc-modified-id="np.copy-17.2.3"><span class="toc-item-num">17.2.3&nbsp;&nbsp;</span><code>np.copy</code></a></span></li><li><span><a href="#np.arange" data-toc-modified-id="np.arange-17.2.4"><span class="toc-item-num">17.2.4&nbsp;&nbsp;</span><code>np.arange</code></a></span></li><li><span><a href="#np.linspace" data-toc-modified-id="np.linspace-17.2.5"><span class="toc-item-num">17.2.5&nbsp;&nbsp;</span><code>np.linspace</code></a></span></li></ul></li><li><span><a href="#The-shape-of-ndarrays" data-toc-modified-id="The-shape-of-ndarrays-17.3"><span class="toc-item-num">17.3&nbsp;&nbsp;</span>The shape of ndarrays</a></span></li><li><span><a href="#Indexing" data-toc-modified-id="Indexing-17.4"><span class="toc-item-num">17.4&nbsp;&nbsp;</span>Indexing</a></span><ul class="toc-item"><li><span><a href="#Slicing" data-toc-modified-id="Slicing-17.4.1"><span class="toc-item-num">17.4.1&nbsp;&nbsp;</span>Slicing</a></span></li><li><span><a href="#Basic-vs-Advanced-indexing" data-toc-modified-id="Basic-vs-Advanced-indexing-17.4.2"><span class="toc-item-num">17.4.2&nbsp;&nbsp;</span>Basic vs Advanced indexing</a></span></li><li><span><a href="#Integer-indexing" data-toc-modified-id="Integer-indexing-17.4.3"><span class="toc-item-num">17.4.3&nbsp;&nbsp;</span>Integer indexing</a></span></li><li><span><a href="#Boolean-indexing:-indexing-based-on-a-condition" data-toc-modified-id="Boolean-indexing:-indexing-based-on-a-condition-17.4.4"><span class="toc-item-num">17.4.4&nbsp;&nbsp;</span>Boolean indexing: indexing based on a condition</a></span></li></ul></li><li><span><a href="#Universal-functions" data-toc-modified-id="Universal-functions-17.5"><span class="toc-item-num">17.5&nbsp;&nbsp;</span>Universal functions</a></span></li><li><span><a href="#Broadcasting" data-toc-modified-id="Broadcasting-17.6"><span class="toc-item-num">17.6&nbsp;&nbsp;</span>Broadcasting</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-17.7"><span class="toc-item-num">17.7&nbsp;&nbsp;</span>Take home points</a></span></li><li><span><a href="#Addendum:-numpy-versus-other-scientific-languages" data-toc-modified-id="Addendum:-numpy-versus-other-scientific-languages-17.8"><span class="toc-item-num">17.8&nbsp;&nbsp;</span>Addendum: numpy versus other scientific languages</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-17.9"><span class="toc-item-num">17.9&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
 </div>
 </div>
 </div>
@@ -12004,7 +12004,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Numpy was created to work with numbers, and large arrays of numbers with the same type. Some of <code>ndarray</code>'s attributes gives us information about the memory they need:</p>
+<p>Numpy was created to work with numbers, and large arrays of numbers with the same type. Some of <code>ndarray</code>'s attributes give us information about the memory they need:</p>
 
 </div>
 </div>
@@ -12063,7 +12063,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="np.emtpy,-np.zeros,-np.ones"><code>np.emtpy</code>, <code>np.zeros</code>, <code>np.ones</code><a class="anchor-link" href="#np.emtpy,-np.zeros,-np.ones">&#182;</a></h3>
+<h3 id="np.emtpy,-np.zeros,-np.ones,-np.full"><code>np.emtpy</code>, <code>np.zeros</code>, <code>np.ones</code>, <code>np.full</code><a class="anchor-link" href="#np.emtpy,-np.zeros,-np.ones,-np.full">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -12267,7 +12267,7 @@ $( document ).ready(function(){
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>520 ns ± 13.6 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<pre>555 ns ± 24.3 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 </pre>
 </div>
 </div>
@@ -12298,7 +12298,7 @@ $( document ).ready(function(){
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>7.21 µs ± 38.2 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<pre>7.6 µs ± 94.8 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre>
 </div>
 </div>
@@ -12311,10 +12311,44 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So at least a factor 10 faster on my laptop. If you know that your are going to use your array as data storage and fill it later on, it might be a good idea to use <code>np.empty</code></p>
+<p>So at least a factor 10 faster on my laptop. If you know that your are going to use your array as data storage and fill it later on, it <em>might</em> be a good idea to use <code>np.empty</code>. In practice, however, performance doesn't matter that much and avoiding bugs is more important: initialize your arrays with NaNs in order to easily find out if all values were actually set:</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[nan, nan, nan],
+       [nan, nan, nan]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -12328,14 +12362,14 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>np.array</code> converts existing data into a ndarray:</p>
+<p><code>np.array</code> converts existing data to a ndarray:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]],</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
@@ -12351,7 +12385,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[13]:</div>
+<div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -12371,14 +12405,14 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>But be aware that it doesn't behaves like the python equivalent <code>list</code>!</p>
+<p>But be aware that it doesn't behave like the python equivalent <code>list</code>!</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;abcd&#39;</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s1">&#39;abcd&#39;</span><span class="p">)</span>
@@ -12394,7 +12428,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[14]:</div>
+<div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -12428,7 +12462,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -12447,7 +12481,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[15]:</div>
+<div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -12482,7 +12516,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -12501,7 +12535,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[16]:</div>
+<div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -12520,14 +12554,13 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><code>np.arange</code></strong></p>
-
+<h3 id="np.arange"><code>np.arange</code><a class="anchor-link" href="#np.arange">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -12543,7 +12576,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[17]:</div>
+<div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -12569,43 +12602,10 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[18]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>array([ 3,  6,  9, 12])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">15.00000001</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> 
 </pre></div>
 
 </div>
@@ -12624,6 +12624,39 @@ $( document ).ready(function(){
 
 
 <div class="output_text output_subarea output_execute_result">
+<pre>array([ 3,  6,  9, 12])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">15.00000001</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[20]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
 <pre>array([ 3.,  6.,  9., 12., 15.])</pre>
 </div>
 
@@ -12637,8 +12670,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><code>np.linspace</code></strong></p>
-
+<h3 id="np.linspace"><code>np.linspace</code><a class="anchor-link" href="#np.linspace">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -12653,7 +12685,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
@@ -12669,7 +12701,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[20]:</div>
+<div class="prompt output_prompt">Out[21]:</div>
 
 
 
@@ -12704,7 +12736,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> 
@@ -12722,7 +12754,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[21]:</div>
+<div class="prompt output_prompt">Out[22]:</div>
 
 
 
@@ -12749,7 +12781,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
@@ -12765,7 +12797,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[22]:</div>
+<div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -12785,7 +12817,7 @@ $( document ).ready(function(){
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is different from some other languages like FORTRAN, Matlab, R, or IDL. In my opinion though, most of the time it doesn't matter much to remember whether it is row- or column-major, as long as you remember which dimension is what. Still, this can be a source of confusion at first, especially if you come from one of these column-major languages.</p>
-<p>My personal way to deal with this confusion when I started using numpy is that I always thought of numpy being in the "wrong" order. If you have an array representing four dimensions (x, y, z, and time in the "intuitive" order), then it is stored in numpy with the shape (t, z, y, x), which is obviously the "wrong" order.</p>
+<p>My personal way to deal with this confusion when I started using numpy is that I always thought of numpy being in the "wrong" order. If you have data defined in four dimensions (x, y, z, t in the "intuitive", mathematical order), then it is often stored in numpy with the shape (t, z, y, x).</p>
 <p>Remember the 4D arrays that we used a lot in the climate lecture: they were stored on disk as netCDF files, and their description read:</p>
 
 <pre><code>    double t(month, level, latitude, longitude) ;
@@ -12799,7 +12831,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">netCDF4</span>
@@ -12818,25 +12850,15 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt"></div>
+<div class="prompt output_prompt">Out[24]:</div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-23-38b012ac7d88&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">import</span> netCDF4
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">with</span> netCDF4<span class="ansi-blue-fg">.</span>Dataset<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;ERA-Int-MonthlyAvg-4D-T.nc&#39;</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> nc<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span>     temp <span class="ansi-blue-fg">=</span> nc<span class="ansi-blue-fg">.</span>variables<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;t&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> temp<span class="ansi-blue-fg">.</span>shape
 
-<span class="ansi-green-fg">netCDF4/_netCDF4.pyx</span> in <span class="ansi-cyan-fg">netCDF4._netCDF4.Dataset.__init__</span><span class="ansi-blue-fg">()</span>
 
-<span class="ansi-green-fg">netCDF4/_netCDF4.pyx</span> in <span class="ansi-cyan-fg">netCDF4._netCDF4._ensure_nc_success</span><span class="ansi-blue-fg">()</span>
-
-<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: b&#39;ERA-Int-MonthlyAvg-4D-T.nc&#39;</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>(12, 15, 241, 480)</pre>
 </div>
+
 </div>
 
 </div>
@@ -12847,14 +12869,15 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I found this order confusing at first, but I got used to it and you will, too. It has some great advantages, like the possibility to loop over arrays. Looping over time and z (which happens more often than looping over x or y) is as easy as:</p>
+<p>This order might be different in other languages. It's just a convention!</p>
+<p>Looping over time and z (which happens more often than looping over x or y) is as easy as:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">time_slice</span> <span class="ow">in</span> <span class="n">temp</span><span class="p">:</span>
@@ -12864,32 +12887,6 @@ $( document ).ready(function(){
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-24-5eeae9d46e41&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">for</span> time_slice <span class="ansi-green-fg">in</span> temp<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span>     <span class="ansi-green-fg">for</span> z_slice <span class="ansi-green-fg">in</span> time_slice<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span>         <span class="ansi-red-fg"># Do something useful with your 2d spatial slice</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span>         <span class="ansi-green-fg">assert</span> z_slice<span class="ansi-blue-fg">.</span>shape <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">241</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">480</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;temp&#39; is not defined</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -12905,7 +12902,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">misc</span>
@@ -12944,7 +12941,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">img</span><span class="o">.</span><span class="n">shape</span>
@@ -12960,7 +12957,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[26]:</div>
+<div class="prompt output_prompt">Out[27]:</div>
 
 
 
@@ -12979,14 +12976,14 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>img</code> is in RGB space, and (in my humble opinion) the third dimension (the channel) <em>should</em> be at the first place in order to be consistent with the z, y, x order of the temperature variable above. Because of this strange order, if you want to unpack (or loop over) each color channel you'll have to do the very intuitive (<code>sarcasm: on</code>):</p>
+<p><code>img</code> is in RGB space, and (in my humble opinion) the third dimension (the channel) <em>should</em> be at the first place in order to be consistent with the z, y, x order of the temperature variable above. Because of this strange order, if you want to unpack (or loop over) each color channel you'll have to do the counter intuitive:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">numpy_ordered_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rollaxis</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -13026,8 +13023,8 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I guess there must be (historical™) reasons for this choice</p>
-<p>Anyways, with some experience you'll see that there is <em>always</em> a way to get numpy arrays in the shape you want them. It is almost always going to be confusing and you are going to need some serious googling skills (like the <code>np.rollaxis</code> trick from above), but you'll manage. All the tools at your disposition for theses purposes are listed in the <a href="https://docs.scipy.org/doc/numpy-1.14.0/reference/routines.array-manipulation.html">array manipulation</a> documentation page.</p>
+<p>I guess there must be historical reasons for this choice</p>
+<p>Anyways, with some experience you'll see that there is <em>always</em> a way to get numpy arrays in the shape you want them. It is sometimes going to be confusing and you are going to need some googling skills (like the <code>np.rollaxis</code> trick from above), but you'll manage. All the tools at your disposition for theses purposes are listed in the <a href="https://docs.scipy.org/doc/numpy-1.14.0/reference/routines.array-manipulation.html">array manipulation</a> documentation page.</p>
 
 </div>
 </div>
@@ -13043,54 +13040,12 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> 
               <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
 <span class="n">a</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[28]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>array([1, 4, 2, 5, 3, 6])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>I <strong>don't</strong> recommend to take this path unless really necessary: soon or late you are going to regret it (and the people who read your code will hate you). If you really need to flatten an array this way, I recommend the more numpy-like:</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -13122,6 +13077,48 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><em>I <strong>don't</strong> recommend to take this path unless really necessary: sooner or later you are going to regret it. If you really need to flatten an array this way, I recommend the more numpy-like:</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[30]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([1, 4, 2, 5, 3, 6])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Indexing">Indexing<a class="anchor-link" href="#Indexing">&#182;</a></h2>
 </div>
 </div>
@@ -13131,7 +13128,7 @@ $( document ).ready(function(){
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Indexing</strong> refers to the act of accessing values in an array by their <strong>index</strong>, i.e. their position in the array.</p>
-<p>There are many ways to index arrays, and the <a href="https://docs.scipy.org/doc/numpy-1.14.0/reference/arrays.indexing.html">numpy documentation</a> about the subject is excellent. Here we will just revise some of the most important aspects of the subject.</p>
+<p>There are many ways to index arrays, and the <a href="https://docs.scipy.org/doc/numpy-1.14.0/reference/arrays.indexing.html">numpy documentation</a> about the subject is excellent. Here we will just revise some of the most important aspects of it.</p>
 
 </div>
 </div>
@@ -13155,53 +13152,11 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
 <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[30]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>array([1, 3, 5])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>start:stop:step</code> syntax is actually creating a python <code>slice</code> object. The statement above is therefore the <strong>literal version</strong> of the less succinct:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
 </pre></div>
 
 </div>
@@ -13233,7 +13188,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>step</code> can be used to reverse (flip) the order of elements in an array:</p>
+<p>The <code>start:stop:step</code> syntax is actually creating a python <code>slice</code> object. The statement above is therefore the <strong>literal version</strong> of the less concise:</p>
 
 </div>
 </div>
@@ -13241,6 +13196,48 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[32]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([1, 3, 5])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>step</code> can be used to reverse (flip) the order of elements in an array:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -13256,7 +13253,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[32]:</div>
+<div class="prompt output_prompt">Out[33]:</div>
 
 
 
@@ -13282,7 +13279,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> x[::-1]
@@ -13302,7 +13299,7 @@ $( document ).ready(function(){
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>130 ns ± 1.02 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+<pre>137 ns ± 2.94 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
 </pre>
 </div>
 </div>
@@ -13313,7 +13310,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> x[:] = 9
@@ -13333,7 +13330,7 @@ $( document ).ready(function(){
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>258 ns ± 1.26 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<pre>276 ns ± 6.65 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 </pre>
 </div>
 </div>
@@ -13353,7 +13350,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
@@ -13372,7 +13369,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[35]:</div>
+<div class="prompt output_prompt">Out[36]:</div>
 
 
 
@@ -13428,54 +13425,12 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
               <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
 <span class="n">x</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">::</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">base</span> <span class="ow">is</span> <span class="n">x</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[36]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Indexing with an integer is basic</strong> and returns a view:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">base</span> <span class="ow">is</span> <span class="n">x</span>
 </pre></div>
 
 </div>
@@ -13503,9 +13458,51 @@ $( document ).ready(function(){
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Indexing with an integer is basic</strong> and returns a view:</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">base</span> <span class="ow">is</span> <span class="n">x</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[38]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[(</span><span class="nb">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">2</span><span class="p">)]</span><span class="o">.</span><span class="n">base</span> <span class="ow">is</span> <span class="n">x</span>
@@ -13521,7 +13518,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[38]:</div>
+<div class="prompt output_prompt">Out[39]:</div>
 
 
 
@@ -13556,7 +13553,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">base</span> <span class="ow">is</span> <span class="n">x</span>
@@ -13572,7 +13569,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[39]:</div>
+<div class="prompt output_prompt">Out[40]:</div>
 
 
 
@@ -13591,7 +13588,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Advanced indexing</strong> is triggered when the selection occurs over an <code>ndarray</code>. There are two types of advanced indexing: integer and Boolean.</p>
+<p><strong>Advanced indexing</strong> is triggered when the selection occurs over an <code>ndarray</code> (as opposed to basic indexing where selection happens with slices and/or integers). There are two types of advanced indexing: integer and boolean.</p>
 
 </div>
 </div>
@@ -13608,14 +13605,14 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Integer indexing</strong> happens when selecting data points out based on their coordinates:</p>
+<p><strong>Integer indexing</strong> happens when selecting data points based on their coordinates:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
@@ -13631,7 +13628,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[40]:</div>
+<div class="prompt output_prompt">Out[41]:</div>
 
 
 
@@ -13666,7 +13663,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">],</span>
@@ -13682,10 +13679,12 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ycoords</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">xcoords</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">x</span><span class="p">[</span><span class="n">ycoords</span><span class="p">,</span> <span class="n">xcoords</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -13698,7 +13697,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[42]:</div>
+<div class="prompt output_prompt">Out[43]:</div>
 
 
 
@@ -13717,17 +13716,22 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A useful feature of advanced indexing is that the shape of the indexers gets conserved by the output:</p>
+<p>It may be easier for you to see the indexing command as such: we are indexing the the array at 4 locations: <code>(0, 0)</code>, <code>(0, 2)</code>, <code>(3, 0)</code> and <code>(3, 2)</code>. Therefore, the output arrays is of length 4 and keeps the order of the coordinate points of course.</p>
+<p>A useful feature of advanced indexing is that the shape of the indexers is conserved by the output:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]]]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ycoords</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="p">,</span>  <span class="mi">0</span><span class="p">],</span> 
+           <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">xcoords</span> <span class="o">=</span> <span class="p">[[</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> 
+           <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">x</span><span class="p">[</span><span class="n">ycoords</span><span class="p">,</span> <span class="n">xcoords</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -13740,7 +13744,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[43]:</div>
+<div class="prompt output_prompt">Out[44]:</div>
 
 
 
@@ -13760,59 +13764,19 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It is important to understand why the number of elements in the indexers is the same as the output: we are now selecting by point coordinates, not by range.</p>
+<p>Unlike basic indexing, integer indexing doesn't return a view. We have two ways to test if this is the case:</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The definition of advanced indexing means that <code>x[(1,2,3),]</code> is fundamentally different than <code>x[(1,2,3)]</code>. The latter is equivalent to <code>x[1,2,3]</code> which will trigger basic selection while the former will trigger advanced indexing. Example:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>  <span class="c1"># is equivalent to x[0, 2] and returns the element at position y=0, x=2</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[44]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>2</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>  <span class="c1"># is equivalent to x[[0, 2], :]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="n">y</span><span class="o">.</span><span class="n">base</span> <span class="ow">is</span> <span class="n">x</span>  <span class="c1"># y doesn&#39;t share memory with x</span>
 </pre></div>
 
 </div>
@@ -13831,8 +13795,41 @@ $( document ).ready(function(){
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[0, 1, 2],
-       [6, 7, 8]])</pre>
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">999</span>  <span class="c1"># changing y doesn&#39;t alter x</span>
+<span class="n">x</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[46]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([1, 2, 3, 4])</pre>
 </div>
 
 </div>
@@ -13860,7 +13857,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
@@ -13877,7 +13874,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[46]:</div>
+<div class="prompt output_prompt">Out[47]:</div>
 
 
 
@@ -13912,7 +13909,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">],</span>
@@ -13932,7 +13929,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[47]:</div>
+<div class="prompt output_prompt">Out[48]:</div>
 
 
 
@@ -13960,7 +13957,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As you can see, boolean indexing in this case return a 1D array of the same length as the number of <code>True</code>s in the indexer.</p>
+<p>As you can see, boolean indexing in this case returns a 1D array of the same length as the number of <code>True</code> in the indexer.</p>
 
 </div>
 </div>
@@ -13976,7 +13973,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">nz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">8</span><span class="p">)</span>
@@ -13993,7 +13990,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[48]:</div>
+<div class="prompt output_prompt">Out[49]:</div>
 
 
 
@@ -14019,7 +14016,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="n">nz</span><span class="p">]</span>
@@ -14035,7 +14032,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[49]:</div>
+<div class="prompt output_prompt">Out[50]:</div>
 
 
 
@@ -14054,7 +14051,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In practice there is no difference between <code>x[x &gt;= 8]</code> and <code>x[np.nonzero(x &gt;= 8)]</code>, but the former is faster in most cases. <code>np.nonzero</code> is still very useful if you want to get access to the <em>location</em> of where certain conditions are met in an array.</p>
+<p>In practice there is no difference between <code>x[x &gt;= 8]</code> and <code>x[np.nonzero(x &gt;= 8)]</code>, but the former is faster in most cases. <code>np.nonzero</code> is still very useful if you want to get access to the <em>location</em> of where certain conditions are met in an array. Both are using advanced indexing, thus returning a copy of the array.</p>
 
 </div>
 </div>
@@ -14071,8 +14068,8 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A universal function (or <code>ufunc</code> for short) is a function that operates on <code>ndarrays</code> in an element-by-element fashion. They are a core element of the numpy library, and you already used them without noticing: arithmetic operations like multiplication or addition are <code>ufuncs</code>, and trigonometric operations like <code>np.sin</code> or <code>np.cos</code> are too.</p>
-<p>Numpy <code>ufuncs</code> are coded in C, which means that they can apply repeated operations to array elements much faster than their python equivalent. Numpy users use <code>ufuncs</code> to <strong>vectorize</strong> their code. Exercise <a href="16-Assignment-05.html#vector">#05-02</a> was an example of such a vectorization process: there were two possible solutions to the problem of estimating $\pi$: one of them use a for-loop, while the vectorized solution didn't require any loop.</p>
+<p>A universal function (or <code>ufunc</code> for short) is a function that operates on <code>ndarrays</code> in an element-by-element fashion. <code>ufuncs</code> are a core element of the numpy library, and you already used them without noticing: arithmetic operations like multiplication or addition are <code>ufuncs</code>, and trigonometric operations like <code>np.sin</code> or <code>np.cos</code> are <code>ufuncs</code> as well.</p>
+<p>Numpy <code>ufuncs</code> are coded in C, which means that they can apply repeated operations on array elements much faster than their python equivalent. Numpy users use <code>ufuncs</code> to <strong>vectorize</strong> their code. Exercise <a href="16-Assignment-05.html#vector">#05-02</a> was an example of such a vectorization process: there were two possible solutions to the problem of estimating $\pi$: one of them contains a for-loop, while the vectorized solution didn't require any loop.</p>
 <p>Note that some <code>ufuncs</code> are hidden from you: calling <code>a + b</code> on <code>ndarrays</code> is actually calling <code>np.add</code> internally. How it is possible for numpy to mess around with the Python syntax in such a way is going to be the topic of another lecture.</p>
 
 </div>
@@ -14115,7 +14112,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
@@ -14138,7 +14135,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">])</span>
@@ -14163,7 +14160,7 @@ $( document ).ready(function(){
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-51-cec5b7244703&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">&lt;ipython-input-52-cec5b7244703&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-intense-fg ansi-bold">      1</span> a <span class="ansi-blue-fg">=</span> np<span class="ansi-blue-fg">.</span>array<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0.0</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">10.0</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">20.0</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">30.0</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">      2</span> b <span class="ansi-blue-fg">=</span> np<span class="ansi-blue-fg">.</span>array<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1.0</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">2.0</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">3.0</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>a <span class="ansi-blue-fg">+</span> b
@@ -14188,7 +14185,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
@@ -14206,7 +14203,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[52]:</div>
+<div class="prompt output_prompt">Out[53]:</div>
 
 
 
@@ -14245,14 +14242,14 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For example, let's multiply an array of shape(4, 3) with an array of shape (3, ):</p>
+<p>For example, let's multiply an array of shape(4, 3) with an array of shape (3) (both trailing axes are of length 3):</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span>  <span class="mi">0</span><span class="p">],</span>
@@ -14273,7 +14270,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[53]:</div>
+<div class="prompt output_prompt">Out[54]:</div>
 
 
 
@@ -14312,7 +14309,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">10</span><span class="p">,</span>  <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
@@ -14330,7 +14327,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[54]:</div>
+<div class="prompt output_prompt">Out[55]:</div>
 
 
 
@@ -14377,7 +14374,43 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[56]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 0],
+       [10],
+       [20],
+       [30]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
@@ -14393,7 +14426,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[55]:</div>
+<div class="prompt output_prompt">Out[57]:</div>
 
 
 
@@ -14421,7 +14454,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Broadcasting is quite useful when writing vectorized functions that apply on vectors and matrices, and you will often encounter it you work with statistical or physical models dealing with high-dimensional arrays.</p>
+<p>Broadcasting is quite useful when writing vectorized functions that apply on vectors and matrices. You will often encounter when working with statistical or physical models dealing with high-dimensional arrays.</p>
 
 </div>
 </div>

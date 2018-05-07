@@ -103,3 +103,7 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# Specific
+notebooks/ERA-Int-MonthlyAvg-4D-T.nc
+
