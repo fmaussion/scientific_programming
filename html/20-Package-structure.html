@@ -11840,7 +11840,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Python <a href="https://docs.python.org/3/tutorial/modules.html">modules</a> simply are a <code>.py</code> file. They can contain executable statements as well as function definitions, in any order.</p>
+<p>Python <a href="https://docs.python.org/3/tutorial/modules.html">modules</a> simply are <code>*.py</code> files. They can contain executable statements as well as function definitions, in any order.</p>
 <p>For example, a module called <code>mymodule.py</code> could look like:</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
@@ -11993,7 +11993,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So what is the difference with the first example? We just added a line <em>below</em> the one that used to work before. Here, the python interpreter detects that a variable <code>N</code> <em>is</em> defined in the local function scope, but too late to be printed: it raises an error at execution, which has nothing to do with the global variable <code>N</code>.</p>
+<p>So what is the difference to the first example? We just added a line <em>below</em> the one that used to work before. So now there is a variable <code>N</code> in the function, and it overrides the module-level one. The python interpreter detects that variable and raises an error at execution, independent to whether or not there is a global variable <code>N</code> available.</p>
 
 </div>
 </div>
@@ -12002,14 +12002,14 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This rather unconventional way to write modules is not recommended though. The generally accepted convention is:</p>
+<p>This rather unconventional way to write modules is not recommended though. The recommended order is:</p>
 <ul>
 <li>import statements</li>
 <li>module level variable definitions</li>
 <li>functions</li>
 <li>if necessary (rare, see below): one or more function calls</li>
 </ul>
-<p>But if module functions can read variables at the module level, can they change them too? Here is another example messing around with <strong>global</strong> and <strong>local</strong> variables:</p>
+<p>But if module functions can read variables at the module level, can they also change them? Here is another example messing around with <strong>global</strong> and <strong>local</strong> variables:</p>
 
 </div>
 </div>
@@ -12062,7 +12062,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>What can we learn from this example? That the local (function) scope variable <code>x</code> has nothing to to with the global scope variable <code>x</code>. For the python interpreter, both are unrelated and their name is irrelevant. What is relevant though is to which scope they are attached to (if you are interested to know which variables are currently available in your scope, check the built-in functions <a href="https://docs.python.org/3/library/functions.html#dir">dir()</a>, <a href="https://docs.python.org/3/library/functions.html#globals">globals()</a> and <a href="https://docs.python.org/3/library/functions.html#locals">locals()</a>).</p>
+<p>What can we learn from this example? That the local (function) scope variable <code>x</code> has nothing to do with the global scope variable <code>x</code>. For the python interpreter, both are unrelated and their name is irrelevant. What is relevant though is to which scope they are attached to (if you are interested to know which variables are currently available in your scope, check the built-in functions <a href="https://docs.python.org/3/library/functions.html#dir">dir()</a>, <a href="https://docs.python.org/3/library/functions.html#globals">globals()</a> and <a href="https://docs.python.org/3/library/functions.html#locals">locals()</a>).</p>
 
 </div>
 </div>
@@ -12079,7 +12079,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In special cases, it might be useful for a function to change the value of a global variable. Examples include package level parameter sets such as options and model parameters which will change the behavior of the package after being changes. For example, see numpy's <a href="https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.set_printoptions.html">set_printoptions</a> function:</p>
+<p>In special cases, it might be useful for a function to change the value of a global variable. Examples include package level parameter sets such as options and model parameters which will change the behavior of the package after being set. For example, see numpy's <a href="https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.set_printoptions.html">set_printoptions</a> function:</p>
 
 </div>
 </div>
@@ -12313,10 +12313,10 @@ $( document ).ready(function(){
 <p><strong>Directory root (<code>./</code>)</strong></p>
 <ul>
 <li><code>.gitignore</code>: for git users only</li>
-<li><code>LICENSE.txt</code>: <a href="https://help.github.com/articles/licensing-a-repository/">allways</a> 
+<li><code>LICENSE.txt</code>: <a href="https://help.github.com/articles/licensing-a-repository/">always</a> 
 license your code</li>
 <li><code>README.md</code>: this page</li>
-<li><code>setup.py</code>: this is what makes your package insallable by <code>pip</code>. It contains 
+<li><code>setup.py</code>: this is what makes your package installable by <code>pip</code>. It contains 
 a set of simple instructions regarding e.g. the name of the package, it's version
 number, or where to find command line scripts</li>
 </ul>
@@ -12330,7 +12330,7 @@ we added some entry points to the package's API and the version string.</li>
 <li><code>cfg.py</code>: container module for the package parameters and constants</li>
 </ul>
 <p><strong>The tests (<code>./scispack/tests</code>)</strong></p>
-<p>One test file pro module. Their name has to start with <code>test_</code> in order to be 
+<p>One test file per module. Their name has to start with <code>test_</code> in order to be 
 detected by pytest.</p>
 
 </div>
@@ -12348,7 +12348,7 @@ detected by pytest.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>By starting your python interpreter from the root directory of a package (for example the template package) you will have access to the familiar syntax (e.g. <code>from scispack.utils import area_of_circle</code>). But is you start an interpreter from anywhere else the package won't be available.</p>
+<p>By starting your python interpreter from the root directory of a package (for example the template package) you will have access to the familiar syntax (e.g. <code>from scispack.utils import area_of_circle</code>). But if you start an interpreter from anywhere else the package won't be available.</p>
 <p>Remember what we wrote about the <a href="06-Import-Scopes.html#path">python PATH</a> a couple of weeks ago? In order to "install" the package we have two options:</p>
 <ol>
 <li>we add the path to the package directory to the python PATH</li>
@@ -12402,7 +12402,7 @@ detected by pytest.</p>
 <pre><code>$ pip install -e .
 
 </code></pre>
-<p>The <code>pip install</code> command will look for a <code>setup.py</code> file and if found, use it to determine the package's name and other installation options. The <code>-e</code> optional argument installs the package in "editable" or "development" mode. OIn simple terms, this option will create a <a href="https://en.wikipedia.org/wiki/Symbolic_link">symbolic link</a> to the package directory instead of copying the files. Therefore, any changes to the code will always be available the next time you open a new python interpreter.</p>
+<p>The <code>pip install</code> command will look for a <code>setup.py</code> file and if found, use it to determine the package's name and other installation options. The <code>-e</code> optional argument installs the package in "editable" or "development" mode. In simple terms, this option will create a <a href="https://en.wikipedia.org/wiki/Symbolic_link">symbolic link</a> to the package directory instead of copying the files. Therefore, any changes to the code will always be available the next time you open a new python interpreter.</p>
 <p><strong><code>pip install -e .</code> is the recommended way to install any local package, in pip or in conda environments</strong>.</p>
 
 </div>
@@ -12423,7 +12423,7 @@ detected by pytest.</p>
 <p>The simple template you are going to start with is not fundamentally different from larger packages like xarray or numpy. There are a couple of big differences though, and I'll list some of them here:</p>
 <ul>
 <li><a href="https://github.com/pydata/xarray">xarray</a> (as a pure python package) has a <code>setup.py</code> much like yours. It will have some more options related to the version control of the package and will have a separate folder for HTML documentation. The rest of the root directory files are related to testing and continuous integration. </li>
-<li><a href="https://github.com/numpy/numpy">numpy</a> (as a mix of python and C code) will be quite more complex to deploy. Installing a development version of numpy will imply some compilation of C code, which is quite easy to to on linux machines but needs quite some time.</li>
+<li><a href="https://github.com/numpy/numpy">numpy</a> (as a mix of python and C code) will be quite more complex to deploy. Installing a development version of numpy will imply some compilation of C code, which is quite easy to do on linux machines but needs quite some time.</li>
 </ul>
 <p>Tools like <code>pip</code> or <code>conda</code> hide all these things from the users, fortunately. They ship pre-compiled binaries and take care of most of the details in the background. This hasn't always been that easy though, and a recent post by <a href="https://xkcd.com/1987/">xkcd</a> reminds us that installing python packages can still be a mess sometimes:</p>
 
