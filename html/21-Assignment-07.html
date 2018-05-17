@@ -11832,7 +11832,15 @@ $( document ).ready(function(){
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>I've written a small package called <strong>visclim</strong>. Its design is based on the dummy <a href="https://github.com/fmaussion/scispack">template package</a>, but this time it really does something.</p>
-<p><strong>Download the zipped package from <a href="../data/climvis.zip">here</a>. Extract it and install it in development mode. Make sure to have read the README and the package requirements first!</strong></p>
+<p><strong>Download the zipped package from <a href="../data/climvis.zip">here</a> and extract it. Read the README and the package requirements first.</strong></p>
+<p><strong>Now install it in development mode. If you are working on your own computer:</strong></p>
+
+<pre><code>pip install -e .
+
+</code></pre>
+<p>From the root directory. <strong>If you are working on the university computer, do:</strong></p>
+
+<pre><code>pip install --user -e .</code></pre>
 
 </div>
 </div>
@@ -11859,13 +11867,20 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Can you run the tests successfully? Probably not. Somewhere in <code>cfg.py</code>, a hard coded path is pointing to a non-existing directory. Change the path to a local folder of yours and download the necessary data:</strong></p>
+<p><strong>Can you run the tests successfully? Probably not. Somewhere in <code>cfg.py</code>, a hard coded path is pointing to a non-existing directory.</strong></p>
+<p><strong>If you are working on your own computer, change the path to a local folder of yours and download the necessary data:</strong></p>
 <ul>
 <li><a href="https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.01/cruts.1709081022.v4.01/tmp/cru_ts4.01.1901.2016.tmp.dat.nc.gz">temperature</a></li>
 <li><a href="https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.01/cruts.1709081022.v4.01/pre/cru_ts4.01.1901.2016.pre.dat.nc.gz">precipitation</a></li>
 <li><a href="https://cluster.klima.uni-bremen.de/~fmaussion/misc/cru_cl1_topography.nc">elevation</a></li>
 </ul>
 <p><strong>Careful! The total decompressed output is about 6GB large.</strong></p>
+<p><strong>If you are working on the university computer, a floder containing the data is available at:</strong></p>
+
+<pre><code>/scratch/c707/c7071047/data-scipro/
+
+</code></pre>
+<p><strong>Careful! This is a subset of the data (Central Europe): the tools works for these locations, but not globally.</strong></p>
 
 </div>
 </div>
