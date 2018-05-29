@@ -11854,7 +11854,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As stated in the <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">OOP wikipedia page</a>, OOP is a "paradigm" which might or might not be supported by a specific programming language. Although Python is an OOP language as its core, <strong>it does not enforce its usage</strong>. In fact, many of you will be able to write your master thesis and even your PhD thesis without <em>programming</em> in OOP on your own. You have, however, already made heavy use of Python objects (<em>everything</em> is an object in Python, remember?) and I think it is very important that you are able to understand the basics of it in order to make better use of Python.</p>
+<p>As stated in the <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">OOP wikipedia page</a>, OOP is a "paradigm" which might or might not be supported by a specific programming language. Although Python is an OOP language at its core, <strong>it does not enforce its usage</strong>. In fact, many of you will be able to write your master thesis and even your PhD thesis without <em>programming</em> in OOP on your own. You have, however, already made heavy use of Python objects (<em>everything</em> is an object in Python, remember?) and I find it very important that you are able to understand the basics of it in order to make better use of Python.</p>
 <p>In short, OOP is simply <em>another</em> way to structure your programs. Until now, you have written modules consisting mainly of functions, sometimes with a short <code>__main__</code> script which was itself calling one or more functions. OOP will add a new tool to your repertoire by allowing you to <strong>bundle data and behaviors into individual objects</strong>, possibly helping you to organize your code in a way that feels more natural and clear.</p>
 <p>Let's get started with some examples and new semantics! We will talk about the advantages and disadvantages of OOP in the following unit, once you are more familiar with its syntax.</p>
 
@@ -11899,9 +11899,9 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There is already a lot of new things in this code snippet:</p>
+<p>There are already a couple of new things in this code snippet:</p>
 <ul>
-<li>first, the class name definition is happening at the very first line. As per <a href="https://www.python.org/dev/peps/pep-0008/#class-names">pep8</a>, class names in Python often have use the "CapWords" convention</li>
+<li>first, the class name definition is happening at the very first line. As per <a href="https://www.python.org/dev/peps/pep-0008/#class-names">pep8</a>, class names in Python should use "CapWords" per convention</li>
 <li>the class contains a "function" called <code>__init__</code>, which indeed looks very much like a normal function. Here the <code>__init__</code> function has three positional arguments: <code>self</code> (which has a special meaning as we are going to see), <code>name</code> and <code>weight</code>. These arguments are used to initialize the <strong>attributes</strong> of the same name. We'll go back to this in the next section.</li>
 </ul>
 <p>A class provides a new structure definition. It's a "blueprint" for how something should be defined, but it doesn't actually provide any real data content itself. To actually use the functionalities defined by the <strong>class</strong> you'll need to create a new <strong>instance</strong> of that class. <strong>Instantiating</strong> is a fancy term for creating a new, unique realization of a class (an <strong>object</strong>). Let's go for it:</p>
@@ -11934,7 +11934,7 @@ $( document ).ready(function(){
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;__main__.Cat at 0x7f2acc0ca710&gt;</pre>
+<pre>&lt;__main__.Cat at 0x7fa47c295780&gt;</pre>
 </div>
 
 </div>
@@ -12087,7 +12087,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It is still a unique instance and is not a copy of a in any way:</p>
+<p>It is still a unique instance and is not a copy of <code>a</code> in any way:</p>
 
 </div>
 </div>
@@ -12297,7 +12297,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Classes can also define <strong>class attributes</strong>, which are tied to a class but not to a specifi instance:</p>
+<p>Classes can also define <strong>class attributes</strong>, which are tied to a class but not to a specific instance:</p>
 
 </div>
 </div>
@@ -12393,7 +12393,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Careful!</strong> class and instance attributes are not <strong>immutable</strong>. They can be changed form outside the class:</p>
+<p><strong>Careful!</strong> Class and instance attributes are not <strong>immutable</strong>. They can be changed form outside the class:</p>
 
 </div>
 </div>
@@ -12541,7 +12541,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If a class only had attributes, it would merely be a simple data structure. Class become useful when they are adding "services" to the data they store. These services are called <strong>methods</strong>, and their definition has similarities to a function definition:</p>
+<p>If a class only had attributes, it would merely be a simple data structure. Classes become useful when they are adding "services" to the data they store. These services are called <strong>methods</strong>, and their syntax has similarities with a function definition:</p>
 
 </div>
 </div>
@@ -12970,7 +12970,7 @@ Weight after eating: 4.2 kg
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is already much better (and accurate), but it is somehow hiding the fact that the weight of a cat really is an attribute, no matter the unit. It should not be accessed with a <code>get_</code> method. This is very a new syntax comes handy:</p>
+<p>This is already much better (and accurate), but it is somehow hiding the fact that the weight of a cat really is an attribute, no matter the unit. It should not be accessed with a <code>get_</code> method. This is where a new syntax comes in handy:</p>
 
 </div>
 </div>
@@ -13051,7 +13051,7 @@ Weight after eating: 4.2 kg
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is very useful and frequently used in python. The <code>@</code> syntax is called a "decorator", and you might learn about decorators in a more advanced python class.</p>
+<p>This is a very useful pattern frequently used in python. The <code>@</code> syntax defines a "decorator", and you might learn about decorators in a more advanced python class.</p>
 
 </div>
 </div>
@@ -13068,7 +13068,7 @@ Weight after eating: 4.2 kg
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Inheritance</strong> is a core concept of OOP. It allows a <strong>subclass</strong>  (also called "child class") to override or extend methods and attributes from a <strong>base class</strong> (also called "parent class"). In other words, child classes inherit all of the parent's attributes and behaviors but can also specify different behavior to follow. This is best shown with an example: let's make the <code>Cat</code> and <code>Dog</code> class inherit from the <code>Pet</code> class.</p>
+<p><strong>Inheritance</strong> is a core concept of OOP. It allows a <strong>subclass</strong>  (also called "<strong>child class</strong>") to override or extend methods and attributes from a <strong>base class</strong> (also called "<strong>parent class</strong>"). In other words, child classes inherit all of the parent's attributes and behaviors but can also specify new behaviors or replace old ones. This is best shown with an example: let's make the <code>Cat</code> and <code>Dog</code> class inherit from the <code>Pet</code> class.</p>
 
 </div>
 </div>
@@ -13124,8 +13124,8 @@ Weight after eating: 4.2 kg
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There is a lot of new information in here! Let's advance through these examples step by step.</p>
-<p>First, let's have a look at the <code>Pet</code> class. It is a standard class defined the exact same way as the previous <code>Cat</code> class. Therefore, it can be instantiated and used as expected:</p>
+<p>Let's advance through this example step by step.</p>
+<p>First, let's have a look at the <code>Pet</code> class. It is a standard class defined the exact same way as the previous <code>Cat</code> class. Therefore, it can be instantiated and will work as expected:</p>
 
 </div>
 </div>
@@ -13168,8 +13168,8 @@ Weight after eating: 4.2 kg
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As discussed during the lecture, the "formulation" of the base class <code>Pet</code> however is very general, and it is unlikely to be used alone. We used this class to implement the general functionality supported by all pets: they have a name and a weight, regardless of their species.</p>
-<p>The <code>Cat</code> and <code>Dog</code> classes make use of this functionality by <strong>inheriting</strong> from the <code>Pet</code> <strong>parent class</strong>. This inheritance is formalized in the class definition <code>class Cat(Pet)</code>. The code of the two <strong>child classes</strong> is remarkably easy: it is there to add new functionalities to the ones inherited from <code>Pet</code>. For example:</p>
+<p>As discussed during the lecture, the functionality of the parent class <code>Pet</code> however is very general, and it is unlikely to be used alone (a pet isn't specific enough). We used this class to implement the general functionality supported by all pets: they have a name and a weight, regardless of their species.</p>
+<p>The <code>Cat</code> and <code>Dog</code> classes make use of this functionality by <strong>inheriting</strong> from the <code>Pet</code> <strong>parent class</strong>. This inheritance is formalized in the class definition <code>class Cat(Pet)</code>. The code of the two <strong>child classes</strong> is remarkably simple: it adds a new functionality to the ones inherited from <code>Pet</code>. For example:</p>
 
 </div>
 </div>
@@ -13207,6 +13207,15 @@ Weight after eating: 4.2 kg
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>Pet</code> instance methods are still available:</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -13280,7 +13289,7 @@ Weight after eating: 4.2 kg
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There is a pretty straightforward rule for the behavior of child classes instances: <strong>when the called method or attribute is available at the subclass level, it will be used</strong> (even if also available at the base class level: this is called <strong>overriding</strong>, and will be a topic for next week); <strong>if not, use the parent class implementation</strong>.</p>
+<p>There is a pretty straightforward rule for the behavior of child classes instances: <strong>when the called method or attribute is available at the child class level, it will be used</strong> (even if also available at the parent class level: this is called <strong>overriding</strong>, and will be a topic for next week); <strong>if not, use the parent class implementation</strong>.</p>
 <p>This is exactly what happens in the code above: <code>eat_food</code> and <code>weight</code> are defined in the <code>Pet</code> class but are available for both <code>Cat</code> and <code>Dog</code> instances. <code>say_name</code>, however, is a child class instance method and can't be used by <code>Pet</code> instances.</p>
 <p>So, what about the <code>say_name_loudly</code> method? Although available for <code>Pet</code> instances, calling it will raise an error:</p>
 
@@ -13397,8 +13406,8 @@ Weight after eating: 4.2 kg
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Python is an object oriented programming language but does not enforce the use of object oriented programming concepts in your own programs. However, a basic understanding of the core concepts of OOP is a strong asset and allows to make better use of Python's capabilities.</li>
-<li>We defined a lot of new concepts today: classes, objects, instances, instance methods, instance attributes, class attributes, the @property decorator, inheritance... You will have to revise these concepts calmly and step by step, possibly by making use of external resources. The web contains plently of good beginner-level OOP tutorials, I recommend to have a look at at least one of them.</li>
+<li>Python is an object oriented programming language but does not enforce the definition of classes in your own programs. However, a basic understanding of the core concepts of OOP is a strong asset and allows to make better use of Python's capabilities.</li>
+<li>We defined a lot of new concepts today: classes, objects, instances, instance methods, instance attributes, class attributes, the @property decorator, inheritance... You will have to revise these concepts calmly and step by step, possibly by making use of external resources. The web has plenty of good beginner-level OOP tutorials, I recommend to have a look at at least one of them.</li>
 </ul>
 
 </div>
