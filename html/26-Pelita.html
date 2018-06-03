@@ -12286,8 +12286,8 @@ Team(index=1, zone=(31, 61), score=0)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(57, 3), noisy=True),
- Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(57, 9), noisy=True)]</pre>
+<pre>[Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(59, 2), noisy=True),
+ Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(59, 9), noisy=True)]</pre>
 </div>
 
 </div>
@@ -12343,7 +12343,7 @@ Team(index=1, zone=(31, 61), score=0)
 
 <div class="output_text output_subarea output_execute_result">
 <pre>[Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(59, 2), noisy=True),
- Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(60, 4), noisy=True)]</pre>
+ Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(57, 7), noisy=True)]</pre>
 </div>
 
 </div>
@@ -12773,8 +12773,8 @@ Team(index=1, zone=(31, 61), score=0)
             <span class="n">next_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">goto_pos</span><span class="p">(</span><span class="n">enemy</span><span class="o">.</span><span class="n">current_pos</span><span class="p">)</span>
             <span class="c1"># Check if the next_pos is on the wrong side of the maze</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">team</span><span class="o">.</span><span class="n">in_zone</span><span class="p">(</span><span class="n">next_pos</span><span class="p">):</span>
-                <span class="c1"># whoops, better go either north or south</span>
-                <span class="n">move</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rnd</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="n">datamodel</span><span class="o">.</span><span class="n">north</span><span class="p">,</span> <span class="n">datamodel</span><span class="o">.</span><span class="n">south</span><span class="p">])</span>
+                <span class="c1"># whoops, better not move</span>
+                <span class="n">move</span> <span class="o">=</span> <span class="n">datamodel</span><span class="o">.</span><span class="n">stop</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">move</span> <span class="o">=</span> <span class="n">diff_pos</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_pos</span><span class="p">,</span> <span class="n">next_pos</span><span class="p">)</span>
             <span class="c1"># Check that it is one of all possible moves, else stop</span>
@@ -12853,20 +12853,20 @@ Team(index=1, zone=(31, 61), score=0)
 <pre>##############################################################
 #                  ##    0           .                      1#
 #                  ## ##             .                       #
-#                   #  #       3     .                       #
+#                   #  #             .                       #
 #                   #  #             .                       #
 #      .            #  #             .                       #
 #                   #  #             .                       #
 #                   #  #             .                       #
 #                   #  #             ........................#
-#2                     #                                     #
+#2                     #       3                             #
 ##############################################################
 Team(index=0, zone=(0, 30), score=0)
 	Bot(index=0, initial_pos=(1, 1), team_index=0, homezone=(0, 30), current_pos=(25, 1), noisy=False)
 	Bot(index=2, initial_pos=(1, 9), team_index=0, homezone=(0, 30), current_pos=(1, 9), noisy=False)
 Team(index=1, zone=(31, 61), score=0)
 	Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(60, 1), noisy=False)
-	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(31, 3), noisy=False)
+	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(31, 9), noisy=False)
 
 </pre>
 </div>
@@ -12901,22 +12901,72 @@ Team(index=1, zone=(31, 61), score=0)
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>##############################################################
-#  0               ##                .                      1#
+#                  ##            0   .                      1#
 #                  ## ##             .                       #
-#                   #  #       3     .                       #
+#                   #  #             .                       #
 #                   #  #             .                       #
 #      .            #  #             .                       #
+#                   #  #             .                       #
+#                   #  #       3     .                       #
+#                   #  #             ........................#
+#2                     #                                     #
+##############################################################
+Team(index=0, zone=(0, 30), score=0)
+	Bot(index=0, initial_pos=(1, 1), team_index=0, homezone=(0, 30), current_pos=(33, 1), noisy=False)
+	Bot(index=2, initial_pos=(1, 9), team_index=0, homezone=(0, 30), current_pos=(1, 9), noisy=False)
+Team(index=1, zone=(31, 61), score=0)
+	Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(60, 1), noisy=False)
+	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(31, 7), noisy=False)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+    <span class="n">game_master</span><span class="o">.</span><span class="n">play_round</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">game_master</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">pretty</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>##############################################################
+#                  ##                                       1#
+#                  ## ##                                     #
+#                   #  #                                     #
+#                   #  #                                     #
+#      .            #  #       3     0                       #
 #                   #  #             .                       #
 #                   #  #             .                       #
 #                   #  #             ........................#
 #2                     #                                     #
 ##############################################################
-Team(index=0, zone=(0, 30), score=0)
-	Bot(index=0, initial_pos=(1, 1), team_index=0, homezone=(0, 30), current_pos=(3, 1), noisy=False)
+Team(index=0, zone=(0, 30), score=5)
+	Bot(index=0, initial_pos=(1, 1), team_index=0, homezone=(0, 30), current_pos=(37, 5), noisy=False)
 	Bot(index=2, initial_pos=(1, 9), team_index=0, homezone=(0, 30), current_pos=(1, 9), noisy=False)
-Team(index=1, zone=(31, 61), score=5)
+Team(index=1, zone=(31, 61), score=0)
 	Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(60, 1), noisy=False)
-	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(31, 3), noisy=False)
+	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(31, 5), noisy=False)
 
 </pre>
 </div>
