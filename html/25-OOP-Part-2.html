@@ -9,7 +9,7 @@ gtag('js', new Date());
 gtag('config', 'UA-88391345-1');
 </script>
 <meta charset="utf-8" />
-<title>23-OOP-Part-1</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>25-OOP-Part-2</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11789,7 +11789,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": "23", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "345px"}, "toc_section_display": "block", "toc_window_display": true};
+            var cfg = {"base_numbering": "25", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "345px"}, "toc_section_display": "block", "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -11805,7 +11805,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Object-Oriented-Programming:-introduction">Object Oriented Programming: introduction<a class="anchor-link" href="#Object-Oriented-Programming:-introduction">&#182;</a></h1>
+<h1 id="Object-Oriented-Programming:-why?">Object Oriented Programming: why?<a class="anchor-link" href="#Object-Oriented-Programming:-why?">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11813,22 +11813,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-oriented programming</a> (OOP) is a standard feature of many modern programming languages. Learning the main concepts of OOP would occupy one entire lecture at least, and we won't try to cover all the details here. The specific objectives of these two OOP units are:</p>
-<ul>
-<li>learn the basic OOP concepts syntax so that you are able to <em>understand</em> code and libraries making use of it</li>
-<li>become familiar with certain semantics associated with OOP: classes, objects, attributes, methods, etc.</li>
-<li>introduce simple examples where OOP is a useful paradigm, and try to raise your interest in its usage so that you can learn it by yourself when needed.</li>
-</ul>
-<p>This first OOP unit introduces the concept of "objects" in the Python language and shows you how to make objects on your own. Next week's unit will tell you what objects are useful for.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Copyright notice: this chapter is partly inspired from <a href="https://realpython.com/python3-object-oriented-programming/">RealPython's beginner tutorial</a> on OOP.</em></p>
+<p>In the first OOP unit you learned the basic semantics of OOP in python. This week we will attempt to provide concrete examples of the use of objects in python (and other OOP languages) and provide arguments in favor and against the use of OOP in python.</p>
 
 </div>
 </div>
@@ -11838,7 +11823,7 @@ $( document ).ready(function(){
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Object-Oriented-Programming:-introduction" data-toc-modified-id="Object-Oriented-Programming:-introduction-23"><span class="toc-item-num">23&nbsp;&nbsp;</span>Object Oriented Programming: introduction</a></span><ul class="toc-item"><li><span><a href="#Introduction" data-toc-modified-id="Introduction-23.1"><span class="toc-item-num">23.1&nbsp;&nbsp;</span>Introduction</a></span></li><li><span><a href="#Classes-and-objects" data-toc-modified-id="Classes-and-objects-23.2"><span class="toc-item-num">23.2&nbsp;&nbsp;</span>Classes and objects</a></span></li><li><span><a href="#Class/instance-attributes" data-toc-modified-id="Class/instance-attributes-23.3"><span class="toc-item-num">23.3&nbsp;&nbsp;</span>Class/instance attributes</a></span></li><li><span><a href="#Instance-Methods" data-toc-modified-id="Instance-Methods-23.4"><span class="toc-item-num">23.4&nbsp;&nbsp;</span>Instance Methods</a></span></li><li><span><a href="#Extending-attributes:-the-@property-decorator" data-toc-modified-id="Extending-attributes:-the-@property-decorator-23.5"><span class="toc-item-num">23.5&nbsp;&nbsp;</span>Extending attributes: the @property decorator</a></span></li><li><span><a href="#Class-inheritance:-introduction" data-toc-modified-id="Class-inheritance:-introduction-23.6"><span class="toc-item-num">23.6&nbsp;&nbsp;</span>Class inheritance: introduction</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-23.7"><span class="toc-item-num">23.7&nbsp;&nbsp;</span>Take home points</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-23.8"><span class="toc-item-num">23.8&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Object-Oriented-Programming:-why?" data-toc-modified-id="Object-Oriented-Programming:-why?-25"><span class="toc-item-num">25&nbsp;&nbsp;</span>Object Oriented Programming: why?</a></span><ul class="toc-item"><li><span><a href="#Introduction" data-toc-modified-id="Introduction-25.1"><span class="toc-item-num">25.1&nbsp;&nbsp;</span>Introduction</a></span></li><li><span><a href="#Abstraction" data-toc-modified-id="Abstraction-25.2"><span class="toc-item-num">25.2&nbsp;&nbsp;</span>Abstraction</a></span></li><li><span><a href="#Encapsulation" data-toc-modified-id="Encapsulation-25.3"><span class="toc-item-num">25.3&nbsp;&nbsp;</span>Encapsulation</a></span></li><li><span><a href="#Modularity" data-toc-modified-id="Modularity-25.4"><span class="toc-item-num">25.4&nbsp;&nbsp;</span>Modularity</a></span></li><li><span><a href="#Polymorphism" data-toc-modified-id="Polymorphism-25.5"><span class="toc-item-num">25.5&nbsp;&nbsp;</span>Polymorphism</a></span></li><li><span><a href="#Inheritance" data-toc-modified-id="Inheritance-25.6"><span class="toc-item-num">25.6&nbsp;&nbsp;</span>Inheritance</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-25.7"><span class="toc-item-num">25.7&nbsp;&nbsp;</span>Take home points</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-25.8"><span class="toc-item-num">25.8&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
 </div>
 </div>
 </div>
@@ -11854,9 +11839,14 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As stated in the <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">OOP wikipedia page</a>, OOP is a "paradigm" which might or might not be supported by a specific programming language. Although Python is an OOP language at its core, <strong>it does not enforce its usage</strong>. In fact, many of you will be able to write your master thesis and even your PhD thesis without <em>programming</em> in OOP on your own. You have, however, already made heavy use of Python objects (<em>everything</em> is an object in Python, remember?) and I find it very important that you are able to understand the basics of it in order to make better use of Python.</p>
-<p>In short, OOP is simply <em>another</em> way to structure your programs. Until now, you have written modules consisting mainly of functions, sometimes with a short <code>__main__</code> script which was itself calling one or more functions. OOP will add a new tool to your repertoire by allowing you to <strong>bundle data and behaviors into individual objects</strong>, possibly helping you to organize your code in a way that feels more natural and clear.</p>
-<p>Let's get started with some examples and new semantics! We will talk about the advantages and disadvantages of OOP in the following unit, once you are more familiar with its syntax.</p>
+<p>OOP is a tool that, when used wisely, can help you to structure your programs in a way which might be more readable, easier to maintain and more flexible than purely procedural programs. But why is that so? In this class we will provide examples for five core concepts of OOP:</p>
+<ul>
+<li>abstraction</li>
+<li>encapsulation</li>
+<li>modularity </li>
+<li>polymorphism </li>
+<li>inheritance</li>
+</ul>
 
 </div>
 </div>
@@ -11865,7 +11855,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Classes-and-objects">Classes and objects<a class="anchor-link" href="#Classes-and-objects">&#182;</a></h2>
+<h2 id="Abstraction">Abstraction<a class="anchor-link" href="#Abstraction">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -11873,7 +11863,10 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Classes</strong> are used to create new user-defined structures that contain information about something and that come with "services". Let's define a new class called <code>Cat</code>:</p>
+<p>Data abstraction refers to the separation between the abstract properties of an object and its internal representation.  By giving a name to things and hiding unnecessary details from the user, objects provide an intuitive interface to concepts which might be extremely complex internally.</p>
+<p>Going back to our examples from last week: we used the term "objects" in programming as surrogate for actual "objects" in the real world: a cat, a pen, a car... These objects have a "state" (in OOP: attributes) and realize actions (in OOP: methods). For a pen, the attributes could be: the color of the ink, the volume of remaining ink, the size of the point, etc. The actions (methods) could be: write(), fill_ink(), etc.</p>
+<p>Leaving the real world and entering the programming world: if a concept in your program is easily describable in terms of "state" and "actions", it might be a good candidate for writing a class.</p>
+<p>Taking a widely used object in Python: an instance of the class string:</p>
 
 </div>
 </div>
@@ -11883,11 +11876,7 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
-    <span class="c1"># Initializer</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;hello!&#39;</span>
 </pre></div>
 
 </div>
@@ -11899,12 +11888,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There are already a couple of new things in this code snippet:</p>
-<ul>
-<li>first, the class name definition is happening at the very first line. As per <a href="https://www.python.org/dev/peps/pep-0008/#class-names">pep8</a>, class names in Python should use "CapWords" per convention</li>
-<li>the class contains a "function" called <code>__init__</code>, which indeed looks very much like a normal function. Here the <code>__init__</code> function has three positional arguments: <code>self</code> (which has a special meaning as we are going to see), <code>name</code> and <code>weight</code>. These arguments are used to initialize the <strong>attributes</strong> of the same name. We'll go back to this in the next section.</li>
-</ul>
-<p>A class provides a new structure definition. It's a "blueprint" for how something should be defined, but it doesn't actually provide any real data content itself. To actually use the functionalities defined by the <strong>class</strong> you'll need to create a new <strong>instance</strong> of that class. <strong>Instantiating</strong> is a fancy term for creating a new, unique realization of a class (an <strong>object</strong>). Let's go for it:</p>
+<p>The "state" of our object is relatively simple to describe: it is the sentence (list of characters) stored in the object. We have access to this state (we can print its values) but the way theses values are stored on memory is "abstracted" from us. We don't care about the details, we just want a string. Now, a string provides many actions:</p>
 
 </div>
 </div>
@@ -11914,8 +11898,7 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">a</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -11934,7 +11917,7 @@ $( document ).ready(function(){
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;__main__.Cat at 0x7f04556c9828&gt;</pre>
+<pre>&#39;Hello!&#39;</pre>
 </div>
 
 </div>
@@ -11942,23 +11925,13 @@ $( document ).ready(function(){
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We just created a new instance of the class <code>Cat</code> and assigned it to the variable <code>a</code>. An instance of a class is commonly called an <strong>object</strong> (this can be used as synonym for "instance"). The variable <code>a</code> stores an object (instance) of the class <code>Cat</code>:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Ask if a is an instance of Cat or not</span>
-<span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">Cat</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="o">.</span><span class="n">istitle</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -11986,21 +11959,12 @@ $( document ).ready(function(){
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In fact, we just created a new datatype called <code>Cat</code>:</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;l&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12019,7 +11983,7 @@ $( document ).ready(function(){
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>__main__.Cat</pre>
+<pre>[&#39;he&#39;, &#39;&#39;, &#39;o!&#39;]</pre>
 </div>
 
 </div>
@@ -12032,7 +11996,26 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Every new instance of a class is unique</strong>, regardless of the values used to initialize it. Let's create a new Cat with the same name and weight:</p>
+<p>Abstractions should be a simple and well defined as possible. Sometimes there are more than one possible way to provide an abstraction to the user, and it becomes a debate among the programmers of a project whether these abstractions are useful or not.</p>
+<p>Well defined abstractions can be <em>composed</em> together. A good example is provided by the <a href="http://xarray.pydata.org">xarray</a> library: a <code>xarray.DataSet</code> is composed of several <code>xarray.DataArray</code> objects. These <code>xarray.DataArray</code> objects have the function to store data (a <code>numpy.ndarray</code> object) together with coordinates (other <code>numpy.ndarray</code> objects) and attributes (units, name, etc.). This chain of abstractions is possible of each of these concepts has a clearly defined role: xarray does not mess around with numbers in arrays: numpy does. Inversely, numpy does not care whether an array has coordinates or not: xarray does.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Encapsulation">Encapsulation<a class="anchor-link" href="#Encapsulation">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Encapsulation is tied to the concepts of abstraction. By hiding of the internal implementation of a class behind a defined interface, users of the class do not need to know details about the internals of the class to use it. The implementation of the class can be changed (or internal data can be modified) without having to change the code of the users of the class.</p>
+<p>In python, encapsulation is more difficult than in other languages like Java. Indeed, Java implements the concept of <strong>private methods and attributes</strong>, which are hidden from the user per definition. In python, <em>nothing</em> is hidden from the user: however, developers make use of <em>conventions</em> to inform the users that a method or attribute is not meant to be used by the class alone, not by users. Let's take an xarray DataArray as an example:</p>
 
 </div>
 </div>
@@ -12042,7 +12025,8 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="n">da</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -12055,7 +12039,7 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">Cat</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">da</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12074,7 +12058,243 @@ $( document ).ready(function(){
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
+<pre>[&#39;T&#39;,
+ &#39;_DataArray__default&#39;,
+ &#39;_DataArray__default_name&#39;,
+ &#39;_HANDLED_TYPES&#39;,
+ &#39;__abs__&#39;,
+ &#39;__add__&#39;,
+ &#39;__and__&#39;,
+ &#39;__array__&#39;,
+ &#39;__array_priority__&#39;,
+ &#39;__array_ufunc__&#39;,
+ &#39;__array_wrap__&#39;,
+ &#39;__bool__&#39;,
+ &#39;__class__&#39;,
+ &#39;__complex__&#39;,
+ &#39;__contains__&#39;,
+ &#39;__copy__&#39;,
+ &#39;__dask_graph__&#39;,
+ &#39;__dask_keys__&#39;,
+ &#39;__dask_optimize__&#39;,
+ &#39;__dask_postcompute__&#39;,
+ &#39;__dask_postpersist__&#39;,
+ &#39;__dask_scheduler__&#39;,
+ &#39;__deepcopy__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__delitem__&#39;,
+ &#39;__dict__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__div__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__enter__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__exit__&#39;,
+ &#39;__float__&#39;,
+ &#39;__floordiv__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattr__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__getitem__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__iadd__&#39;,
+ &#39;__iand__&#39;,
+ &#39;__ifloordiv__&#39;,
+ &#39;__imod__&#39;,
+ &#39;__imul__&#39;,
+ &#39;__init__&#39;,
+ &#39;__int__&#39;,
+ &#39;__invert__&#39;,
+ &#39;__ior__&#39;,
+ &#39;__ipow__&#39;,
+ &#39;__isub__&#39;,
+ &#39;__iter__&#39;,
+ &#39;__itruediv__&#39;,
+ &#39;__ixor__&#39;,
+ &#39;__le__&#39;,
+ &#39;__len__&#39;,
+ &#39;__long__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__mod__&#39;,
+ &#39;__module__&#39;,
+ &#39;__mul__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__neg__&#39;,
+ &#39;__new__&#39;,
+ &#39;__nonzero__&#39;,
+ &#39;__or__&#39;,
+ &#39;__pos__&#39;,
+ &#39;__pow__&#39;,
+ &#39;__radd__&#39;,
+ &#39;__rand__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__rfloordiv__&#39;,
+ &#39;__rmod__&#39;,
+ &#39;__rmul__&#39;,
+ &#39;__ror__&#39;,
+ &#39;__rpow__&#39;,
+ &#39;__rsub__&#39;,
+ &#39;__rtruediv__&#39;,
+ &#39;__rxor__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__setitem__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__sub__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__truediv__&#39;,
+ &#39;__weakref__&#39;,
+ &#39;__xor__&#39;,
+ &#39;_all_compat&#39;,
+ &#39;_attr_sources&#39;,
+ &#39;_binary_op&#39;,
+ &#39;_calc_assign_results&#39;,
+ &#39;_copy_attrs_from&#39;,
+ &#39;_cum_extra_args_docstring&#39;,
+ &#39;_dask_finalize&#39;,
+ &#39;_from_temp_dataset&#39;,
+ &#39;_get_axis_num&#39;,
+ &#39;_getitem_coord&#39;,
+ &#39;_groupby_cls&#39;,
+ &#39;_in_memory&#39;,
+ &#39;_initialized&#39;,
+ &#39;_inplace_binary_op&#39;,
+ &#39;_ipython_key_completions_&#39;,
+ &#39;_item_key_to_dict&#39;,
+ &#39;_item_sources&#39;,
+ &#39;_iter&#39;,
+ &#39;_level_coords&#39;,
+ &#39;_reduce_extra_args_docstring&#39;,
+ &#39;_reduce_method&#39;,
+ &#39;_replace&#39;,
+ &#39;_replace_indexes&#39;,
+ &#39;_replace_maybe_drop_dims&#39;,
+ &#39;_resample_cls&#39;,
+ &#39;_resample_immediately&#39;,
+ &#39;_result_name&#39;,
+ &#39;_rolling_cls&#39;,
+ &#39;_title_for_slice&#39;,
+ &#39;_to_dataset_split&#39;,
+ &#39;_to_dataset_whole&#39;,
+ &#39;_to_temp_dataset&#39;,
+ &#39;_unary_op&#39;,
+ &#39;all&#39;,
+ &#39;any&#39;,
+ &#39;argmax&#39;,
+ &#39;argmin&#39;,
+ &#39;argsort&#39;,
+ &#39;assign_attrs&#39;,
+ &#39;assign_coords&#39;,
+ &#39;astype&#39;,
+ &#39;attrs&#39;,
+ &#39;bfill&#39;,
+ &#39;broadcast_equals&#39;,
+ &#39;chunk&#39;,
+ &#39;chunks&#39;,
+ &#39;clip&#39;,
+ &#39;close&#39;,
+ &#39;combine_first&#39;,
+ &#39;compute&#39;,
+ &#39;conj&#39;,
+ &#39;conjugate&#39;,
+ &#39;coords&#39;,
+ &#39;copy&#39;,
+ &#39;count&#39;,
+ &#39;cumprod&#39;,
+ &#39;cumsum&#39;,
+ &#39;data&#39;,
+ &#39;diff&#39;,
+ &#39;dim_0&#39;,
+ &#39;dims&#39;,
+ &#39;dot&#39;,
+ &#39;drop&#39;,
+ &#39;dropna&#39;,
+ &#39;dt&#39;,
+ &#39;dtype&#39;,
+ &#39;encoding&#39;,
+ &#39;equals&#39;,
+ &#39;expand_dims&#39;,
+ &#39;ffill&#39;,
+ &#39;fillna&#39;,
+ &#39;from_cdms2&#39;,
+ &#39;from_dict&#39;,
+ &#39;from_iris&#39;,
+ &#39;from_series&#39;,
+ &#39;get_axis_num&#39;,
+ &#39;get_index&#39;,
+ &#39;groupby&#39;,
+ &#39;groupby_bins&#39;,
+ &#39;identical&#39;,
+ &#39;imag&#39;,
+ &#39;indexes&#39;,
+ &#39;interpolate_na&#39;,
+ &#39;isel&#39;,
+ &#39;isel_points&#39;,
+ &#39;isin&#39;,
+ &#39;isnull&#39;,
+ &#39;item&#39;,
+ &#39;load&#39;,
+ &#39;loc&#39;,
+ &#39;max&#39;,
+ &#39;mean&#39;,
+ &#39;median&#39;,
+ &#39;min&#39;,
+ &#39;name&#39;,
+ &#39;nbytes&#39;,
+ &#39;ndim&#39;,
+ &#39;notnull&#39;,
+ &#39;persist&#39;,
+ &#39;pipe&#39;,
+ &#39;plot&#39;,
+ &#39;prod&#39;,
+ &#39;quantile&#39;,
+ &#39;rank&#39;,
+ &#39;real&#39;,
+ &#39;reduce&#39;,
+ &#39;reindex&#39;,
+ &#39;reindex_like&#39;,
+ &#39;rename&#39;,
+ &#39;reorder_levels&#39;,
+ &#39;resample&#39;,
+ &#39;reset_coords&#39;,
+ &#39;reset_index&#39;,
+ &#39;roll&#39;,
+ &#39;rolling&#39;,
+ &#39;round&#39;,
+ &#39;searchsorted&#39;,
+ &#39;sel&#39;,
+ &#39;sel_points&#39;,
+ &#39;set_index&#39;,
+ &#39;shape&#39;,
+ &#39;shift&#39;,
+ &#39;size&#39;,
+ &#39;sizes&#39;,
+ &#39;sortby&#39;,
+ &#39;squeeze&#39;,
+ &#39;stack&#39;,
+ &#39;std&#39;,
+ &#39;sum&#39;,
+ &#39;swap_dims&#39;,
+ &#39;to_cdms2&#39;,
+ &#39;to_dataframe&#39;,
+ &#39;to_dataset&#39;,
+ &#39;to_dict&#39;,
+ &#39;to_index&#39;,
+ &#39;to_iris&#39;,
+ &#39;to_masked_array&#39;,
+ &#39;to_netcdf&#39;,
+ &#39;to_pandas&#39;,
+ &#39;to_series&#39;,
+ &#39;transpose&#39;,
+ &#39;unstack&#39;,
+ &#39;values&#39;,
+ &#39;var&#39;,
+ &#39;variable&#39;,
+ &#39;where&#39;]</pre>
 </div>
 
 </div>
@@ -12087,7 +12307,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It is still a unique instance and is not a copy of <code>a</code> in any way:</p>
+<p>In this long list of methods and attributes, some of them are available and documented. For example:</p>
 
 </div>
 </div>
@@ -12097,7 +12317,7 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">da</span><span class="o">.</span><span class="n">values</span>
 </pre></div>
 
 </div>
@@ -12116,7 +12336,7 @@ $( document ).ready(function(){
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>False</pre>
+<pre>array([1, 2, 3])</pre>
 </div>
 
 </div>
@@ -12124,13 +12344,22 @@ $( document ).ready(function(){
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Other methods/attributes start with <strong>one underscore</strong>. This underscore has no special meaning in the Python language other than a warning to the users: "if you use this method/attribute, do it at your own risk". For example:</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="ow">is</span> <span class="n">a</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">da</span><span class="o">.</span><span class="n">_in_memory</span>
 </pre></div>
 
 </div>
@@ -12149,7 +12378,7 @@ $( document ).ready(function(){
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>False</pre>
+<pre>True</pre>
 </div>
 
 </div>
@@ -12162,7 +12391,8 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Class/instance-attributes">Class/instance attributes<a class="anchor-link" href="#Class/instance-attributes">&#182;</a></h2>
+<p><code>_in_memory</code> is an attribute which is meant for internal use in the class (it is called <strong>private</strong>). Setting it to another value might have unpredictable consequences, and relying on it for your own code is not recommended: the xarray developers might rename it or change it without notice.</p>
+
 </div>
 </div>
 </div>
@@ -12170,7 +12400,42 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The cat's name and weight are called <strong>instance attributes</strong> and can be accessed with the dot syntax:</p>
+<p>The methods having <strong>two trailing and leading underscores have a special meaning in Python and are part of the language specifications</strong>. We already encountered <code>__init__</code> for our class instantiation, and we will talk about the others later in this chapter.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Modularity">Modularity<a class="anchor-link" href="#Modularity">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Modularity is a technique to separate different portions of the program (modules) based on some logical boundary. Modularity is a general principle in programming, although object-oriented programming typically makes it more explicit. Taking the example of <code>xarray.DataArray</code> and <code>numpy.Array</code>: both classes have very clear domains of functionality. The latter shines at doing fast numerical computations on arrays, the former provides an intuitive abstraction to the internal arrays by giving names and coordinates to its axes.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Polymorphism">Polymorphism<a class="anchor-link" href="#Polymorphism">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Polymorphism represents the technique of creating multiple classes that obey the same interface. Objects from these classes can then be mixed at runtime. In other words, polymorphism originates from the fact that a certain action can have well defined but different meanings depending on the objects they apply to.</p>
+<p>An example of polymorphism is provided by the addition in python:</p>
 
 </div>
 </div>
@@ -12180,7 +12445,7 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">name</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 
 </div>
@@ -12199,7 +12464,7 @@ $( document ).ready(function(){
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Grumpy&#39;</pre>
+<pre>2</pre>
 </div>
 
 </div>
@@ -12213,7 +12478,7 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">weight</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mf">1.2</span>
 </pre></div>
 
 </div>
@@ -12232,7 +12497,7 @@ $( document ).ready(function(){
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>4</pre>
+<pre>2.2</pre>
 </div>
 
 </div>
@@ -12240,32 +12505,13 @@ $( document ).ready(function(){
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>A common synonym for the term "attribute" is "<strong>property</strong>". The two terms are very close and you might find one or the other term depending on who writes about them. Properties in python are a special kind of attributes, but the difference is subtle and not relevant here.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Instance attributes</strong> are specific to the created object. They are often defined at instantiation:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Tiger&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">b</span><span class="o">.</span><span class="n">name</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -12284,7 +12530,7 @@ $( document ).ready(function(){
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Tiger&#39;</pre>
+<pre>[1, 2, 3, 4]</pre>
 </div>
 
 </div>
@@ -12292,1017 +12538,13 @@ $( document ).ready(function(){
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Classes can also define <strong>class attributes</strong>, which are tied to a class but not to a specific instance:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
-    <span class="c1"># Class attribute</span>
-    <span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
-    
-    <span class="c1"># Initializer</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Cat</span><span class="o">.</span><span class="n">language</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[13]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Meow&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">language</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[14]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Meow&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Careful!</strong> Class and instance attributes are not <strong>immutable</strong>. They can be changed form outside the class:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Roncheux&#39;</span>
-<span class="n">a</span><span class="o">.</span><span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;Miaou&#39;</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">name</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[16]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Roncheux&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">language</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[17]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Miaou&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>These changes are specific to the instance, and the class remains unchanged:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Cat</span><span class="o">.</span><span class="n">language</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[18]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Meow&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>In comparison to other OO languages, python is very "liberal" regarding attributes: some languages like Java would not allow to change attributes this way. In practice, attributes should not be changed by the users of a class. Unless they are documented as being "changeable", and in this case become "properties". More on this later.</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Instance-Methods">Instance Methods<a class="anchor-link" href="#Instance-Methods">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>If a class only had attributes, it would merely be a simple data structure. Classes become useful when they are adding "services" to the data they store. These services are called <strong>methods</strong>, and their syntax has similarities with a function definition:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
-    <span class="c1"># Class attribute</span>
-    <span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
-    
-    <span class="c1"># Initializer</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-        
-    <span class="c1"># Method</span>
-    <span class="k">def</span> <span class="nf">say_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, my name is </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">language</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The biggest difference with functions is that a method is tied to a class instance: this is made clear by the <code>self</code> argument, present in the method definition but not used when calling the method:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Kitty&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Meow, my name is Kitty!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">b</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Meow, my name is Grumpy!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>self</code> variable is implicit in the call above, and refers to the instance of the class which is calling the method. It might sound a little complicated at first, but you'll get used to it: <code>self</code> is used to read and write instance attributes, and is the first argument to virtually any method defined in the class (there is one exception to this rule which we will ignore for now).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>At this point, you may have noticed similarities between the objects you used commonly in the climate lecture and the objects we just defined here. Let's make the analogy:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">)</span>  <span class="c1"># instanciating a class</span>
-<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span>  <span class="c1"># a is an instance of the Series class</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>  <span class="c1"># pandas.core.series.Series is a new datatype</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># name is an instance attribute</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>  <span class="c1"># mean is an instance method</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;pandas.core.series.Series&#39;&gt;
-data
-2.0
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Are you confident about the meaning of all these terms? If not, I might have explained it in a way which is not the right one for you: you can use your google-skills to look for other tutorials. There are plenty!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Extending-attributes:-the-@property-decorator">Extending attributes: the @property decorator<a class="anchor-link" href="#Extending-attributes:-the-@property-decorator">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We have said that attributes are often meant to be data describing an instance of a class. It is often the job of instance methods to initialize and update these attributes. Consider the following example:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
-    <span class="c1"># Class attribute</span>
-    <span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
-    
-    <span class="c1"># Initializer</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-        
-    <span class="c1"># Method</span>
-    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Weight before eating: </span><span class="si">{}</span><span class="s1"> kg&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">weight</span><span class="p">))</span>
-<span class="n">a</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Weight after eating: </span><span class="si">{}</span><span class="s1"> kg&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">weight</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Weight before eating: 4 kg
-Weight after eating: 4.2 kg
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This was a simplified but typical use for instance attributes: they will change in an object's lifetime according to specific events. Now let's suppose that you are working with scientists from the USA, and they'd like to know the cat's weight in pounds. One way to do so would be to compute it at instantiation:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
-    <span class="c1"># Class attribute</span>
-    <span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
-    
-    <span class="c1"># Initializer</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight_lbs</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="mf">0.45359237</span>
-        
-    <span class="c1"># Method</span>
-    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[26]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>8.818490487395103</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There is an obvious drawback to this method however: what if the cat eats food? Its weight won't be updated!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span>  <span class="c1"># this is a problem</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[27]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>8.818490487395103</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>A possible way to deal with the issue would be to compute the pound weight <em>on demand</em>, i.e. write a method to compute it:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
-    <span class="c1"># Class attribute</span>
-    <span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
-    
-    <span class="c1"># Initializer</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-        
-    <span class="c1"># Method</span>
-    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
-        
-    <span class="k">def</span> <span class="nf">get_weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="mf">0.45359237</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">get_weight_lbs</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[29]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>9.259415011764858</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This is already much better (and accurate), but it is somehow hiding the fact that the weight of a cat really is an attribute, no matter the unit. It should not be accessed with a <code>get_</code> method. This is where a new syntax comes in handy:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
-    <span class="c1"># Class attribute</span>
-    <span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
-    
-    <span class="c1"># Initializer</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-        
-    <span class="c1"># Method</span>
-    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
-    
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="mf">0.45359237</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><code>weight_lbs</code> looks like a method (it computes something), but only in the class definition. For the class instances, the method is "hidden" in an attribute:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span>  <span class="c1"># weight_lbs is an attribute!</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[31]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>9.259415011764858</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This is a very useful pattern frequently used in python. The <code>@</code> syntax defines a "decorator", and you might learn about decorators in a more advanced python class.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Class-inheritance:-introduction">Class inheritance: introduction<a class="anchor-link" href="#Class-inheritance:-introduction">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Inheritance</strong> is a core concept of OOP. It allows a <strong>subclass</strong>  (also called "<strong>child class</strong>") to override or extend methods and attributes from a <strong>base class</strong> (also called "<strong>parent class</strong>"). In other words, child classes inherit all of the parent's attributes and behaviors but can also specify new behaviors or replace old ones. This is best shown with an example: let's make the <code>Cat</code> and <code>Dog</code> class inherit from the <code>Pet</code> class.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Pet</span><span class="p">:</span>
-
-    <span class="c1"># Initializer</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-        
-    <span class="c1"># Method</span>
-    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
-    
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="mf">0.45359237</span>
-    
-    <span class="k">def</span> <span class="nf">say_name_loudly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-
-<span class="k">class</span> <span class="nc">Cat</span><span class="p">(</span><span class="n">Pet</span><span class="p">):</span>
-    
-    <span class="c1"># Class attribute</span>
-    <span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
-        
-    <span class="c1"># Method</span>
-    <span class="k">def</span> <span class="nf">say_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, my name is </span><span class="si">{}</span><span class="s1"> and I am nice!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">language</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-        
-<span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Pet</span><span class="p">):</span>
-    
-    <span class="c1"># Class attribute</span>
-    <span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;Woof&#39;</span>
-        
-    <span class="c1"># Method</span>
-    <span class="k">def</span> <span class="nf">say_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, my name is </span><span class="si">{}</span><span class="s1"> and I smell funny!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">language</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's advance through this example step by step.</p>
-<p>First, let's have a look at the <code>Pet</code> class. It is a standard class defined the exact same way as the previous <code>Cat</code> class. Therefore, it can be instantiated and will work as expected:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Pet</span><span class="p">(</span><span class="s1">&#39;PetName&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">weight_lbs</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[33]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>22.046226218487757</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As discussed during the lecture, the functionality of the parent class <code>Pet</code> however is very general, and it is unlikely to be used alone (a pet isn't specific enough). We used this class to implement the general functionality supported by all pets: they have a name and a weight, regardless of their species.</p>
-<p>The <code>Cat</code> and <code>Dog</code> classes make use of this functionality by <strong>inheriting</strong> from the <code>Pet</code> <strong>parent class</strong>. This inheritance is formalized in the class definition <code>class Cat(Pet)</code>. The code of the two <strong>child classes</strong> is remarkably simple: it adds a new functionality to the ones inherited from <code>Pet</code>. For example:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Kitty&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">c</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[34]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Meow, my name is Kitty and I am nice!&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>Pet</code> instance methods are still available:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
-<span class="n">c</span><span class="o">.</span><span class="n">weight</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[35]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>4.2</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Milou&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">d</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[36]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Woof, my name is Milou and I smell funny!&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There is a pretty straightforward rule for the behavior of child classes instances: <strong>when the called method or attribute is available at the child class level, it will be used</strong> (even if also available at the parent class level: this is called <strong>overriding</strong>, and will be a topic for next week); <strong>if not, use the parent class implementation</strong>.</p>
-<p>This is exactly what happens in the code above: <code>eat_food</code> and <code>weight</code> are defined in the <code>Pet</code> class but are available for both <code>Cat</code> and <code>Dog</code> instances. <code>say_name</code>, however, is a child class instance method and can't be used by <code>Pet</code> instances.</p>
-<p>So, what about the <code>say_name_loudly</code> method? Although available for <code>Pet</code> instances, calling it will raise an error:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Pet</span><span class="p">(</span><span class="s1">&#39;PetName&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">say_name_loudly</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -13321,19 +12563,11 @@ Weight after eating: 4.2 kg
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-37-c2a6a9ac2512&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> p <span class="ansi-blue-fg">=</span> Pet<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;PetName&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>p<span class="ansi-blue-fg">.</span>say_name_loudly<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-12-d77f8337dcdd&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>np<span class="ansi-blue-fg">.</span>array<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">+</span> <span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">4</span><span class="ansi-blue-fg">]</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-32-7a9a9a6d065b&gt;</span> in <span class="ansi-cyan-fg">say_name_loudly</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">     15</span> 
-<span class="ansi-green-intense-fg ansi-bold">     16</span>     <span class="ansi-green-fg">def</span> say_name_loudly<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 17</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>say_name<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>upper<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     18</span> 
-<span class="ansi-green-intense-fg ansi-bold">     19</span> <span class="ansi-green-fg">class</span> Cat<span class="ansi-blue-fg">(</span>Pet<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-red-fg">AttributeError</span>: &#39;Pet&#39; object has no attribute &#39;say_name&#39;</pre>
+<span class="ansi-red-fg">NameError</span>: name &#39;np&#39; is not defined</pre>
 </div>
 </div>
 
@@ -13345,18 +12579,56 @@ Weight after eating: 4.2 kg
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>However, since <code>say_name_loudly</code> is available to the child class instances, the method will work for them!</p>
+<p>Each of these addition operations are performing a different action depending on the object they are applied to. OOP relies on polymorphism to provide higher levels of abstraction. In our <code>Cat</code> and <code>Dog</code> example from last week, both classes provided a <code>say_name()</code> method: the internal implementation, however, was different in each case.</p>
+<p>OOP (and Python) provide powerful tools for the purpose of polymorphism. One of them is <strong>operator overloading</strong>:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Kitty&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">c</span><span class="o">.</span><span class="n">say_name_loudly</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ArrayList</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Don&#39;t do this at home!&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What did we just do? The class definition (<code>class ArrayList(list)</code>) indicates that we created a subclass of the parent class <code>list</code>, a well know data type in python. Our child class has all the attributes and methods of the original parent class:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">ArrayList</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13369,13 +12641,13 @@ Weight after eating: 4.2 kg
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[38]:</div>
+<div class="prompt output_prompt">Out[15]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;MEOW, MY NAME IS KITTY AND I AM NICE!&#39;</pre>
+<pre>3</pre>
 </div>
 
 </div>
@@ -13388,7 +12660,141 @@ Weight after eating: 4.2 kg
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is a typical use case for class inheritance in OOP: it allows <a href="https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)#Code_reuse">code re-use</a>. We will talk about more advanced use cases next week.</p>
+<p>Now, we defined a method <code>__add__</code>, which allows us to do some python magic: <code>__add__</code> is the method which is actually called when two objects are added together. This means that the two statements below are totally equivalent:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[16]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 2]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="fm">__add__</span><span class="p">([</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[17]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 2]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, what does that mean for the addition on our <code>ArrayList</code> class? Let's try and find out:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[18]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[12, 14, 16]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We just defined a new way to realize additions on lists! This is a very powerful mechanism, but comes with great responsibility: it should be used with caution and only for very clear use cases. A prominent example is provided by numpy: by implementing the <code>__add__</code> method on ndarray objects, they provide a new functionality which is hidden from the user but intuitive at the same time, avoiding bad surprises.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Inheritance">Inheritance<a class="anchor-link" href="#Inheritance">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>TODO: describe examples from OGGM mass-balance model, duck-typing.</p>
 
 </div>
 </div>
@@ -13405,10 +12811,7 @@ Weight after eating: 4.2 kg
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Python is an object oriented programming language but does not enforce the definition of classes in your own programs. However, a basic understanding of the core concepts of OOP is a strong asset and allows to make better use of Python's capabilities.</li>
-<li>We defined a lot of new concepts today: classes, objects, instances, instance methods, instance attributes, class attributes, the @property decorator, inheritance... You will have to revise these concepts calmly and step by step, possibly by making use of external resources. The web has plenty of good beginner-level OOP tutorials, I recommend to have a look at at least one of them.</li>
-</ul>
+<p>TODO</p>
 
 </div>
 </div>
@@ -13425,7 +12828,7 @@ Weight after eating: 4.2 kg
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="24-Assignment-08.html">jump to this week's assignment</a>.</p>
+<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="26-Pelita.html">jump to the pelita project</a>!</p>
 
 </div>
 </div>

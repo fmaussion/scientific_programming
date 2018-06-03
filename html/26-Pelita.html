@@ -9,7 +9,7 @@ gtag('js', new Date());
 gtag('config', 'UA-88391345-1');
 </script>
 <meta charset="utf-8" />
-<title>23-OOP-Part-1</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>26-Pelita</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11789,7 +11789,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": "23", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "345px"}, "toc_section_display": "block", "toc_window_display": true};
+            var cfg = {"base_numbering": "26", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "750px", "left": "29px", "top": "111px", "width": "345px"}, "toc_section_display": true, "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -11805,7 +11805,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Object-Oriented-Programming:-introduction">Object Oriented Programming: introduction<a class="anchor-link" href="#Object-Oriented-Programming:-introduction">&#182;</a></h1>
+<h1 id="Pelita:-learning-by-gaming">Pelita: learning by gaming<a class="anchor-link" href="#Pelita:-learning-by-gaming">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11813,22 +11813,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-oriented programming</a> (OOP) is a standard feature of many modern programming languages. Learning the main concepts of OOP would occupy one entire lecture at least, and we won't try to cover all the details here. The specific objectives of these two OOP units are:</p>
-<ul>
-<li>learn the basic OOP concepts syntax so that you are able to <em>understand</em> code and libraries making use of it</li>
-<li>become familiar with certain semantics associated with OOP: classes, objects, attributes, methods, etc.</li>
-<li>introduce simple examples where OOP is a useful paradigm, and try to raise your interest in its usage so that you can learn it by yourself when needed.</li>
-</ul>
-<p>This first OOP unit introduces the concept of "objects" in the Python language and shows you how to make objects on your own. Next week's unit will tell you what objects are useful for.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Copyright notice: this chapter is partly inspired from <a href="https://realpython.com/python3-object-oriented-programming/">RealPython's beginner tutorial</a> on OOP.</em></p>
+<p>In the first OOP unit you learned the basic semantics of OOP in python. This week we will attempt to provide concrete examples of the use of objects in python (and other OOP languages) and provide arguments in favor and against the use of OOP in python.</p>
 
 </div>
 </div>
@@ -11838,7 +11823,7 @@ $( document ).ready(function(){
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Object-Oriented-Programming:-introduction" data-toc-modified-id="Object-Oriented-Programming:-introduction-23"><span class="toc-item-num">23&nbsp;&nbsp;</span>Object Oriented Programming: introduction</a></span><ul class="toc-item"><li><span><a href="#Introduction" data-toc-modified-id="Introduction-23.1"><span class="toc-item-num">23.1&nbsp;&nbsp;</span>Introduction</a></span></li><li><span><a href="#Classes-and-objects" data-toc-modified-id="Classes-and-objects-23.2"><span class="toc-item-num">23.2&nbsp;&nbsp;</span>Classes and objects</a></span></li><li><span><a href="#Class/instance-attributes" data-toc-modified-id="Class/instance-attributes-23.3"><span class="toc-item-num">23.3&nbsp;&nbsp;</span>Class/instance attributes</a></span></li><li><span><a href="#Instance-Methods" data-toc-modified-id="Instance-Methods-23.4"><span class="toc-item-num">23.4&nbsp;&nbsp;</span>Instance Methods</a></span></li><li><span><a href="#Extending-attributes:-the-@property-decorator" data-toc-modified-id="Extending-attributes:-the-@property-decorator-23.5"><span class="toc-item-num">23.5&nbsp;&nbsp;</span>Extending attributes: the @property decorator</a></span></li><li><span><a href="#Class-inheritance:-introduction" data-toc-modified-id="Class-inheritance:-introduction-23.6"><span class="toc-item-num">23.6&nbsp;&nbsp;</span>Class inheritance: introduction</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-23.7"><span class="toc-item-num">23.7&nbsp;&nbsp;</span>Take home points</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-23.8"><span class="toc-item-num">23.8&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Pelita:-learning-by-gaming" data-toc-modified-id="Pelita:-learning-by-gaming-26"><span class="toc-item-num">26&nbsp;&nbsp;</span>Pelita: learning by gaming</a></span><ul class="toc-item"><li><span><a href="#The-pelita-contest" data-toc-modified-id="The-pelita-contest-26.1"><span class="toc-item-num">26.1&nbsp;&nbsp;</span>The pelita contest</a></span></li><li><span><a href="#Objectives" data-toc-modified-id="Objectives-26.2"><span class="toc-item-num">26.2&nbsp;&nbsp;</span>Objectives</a></span></li><li><span><a href="#Getting-started" data-toc-modified-id="Getting-started-26.3"><span class="toc-item-num">26.3&nbsp;&nbsp;</span>Getting started</a></span></li><li><span><a href="#Gaining-speed" data-toc-modified-id="Gaining-speed-26.4"><span class="toc-item-num">26.4&nbsp;&nbsp;</span>Gaining speed</a></span></li><li><span><a href="#Let's-do-a-little-bit-of-exploration-ourselves" data-toc-modified-id="Let's-do-a-little-bit-of-exploration-ourselves-26.5"><span class="toc-item-num">26.5&nbsp;&nbsp;</span>Let's do a little bit of exploration ourselves</a></span><ul class="toc-item"><li><span><a href="#Write-two-simple-players" data-toc-modified-id="Write-two-simple-players-26.5.1"><span class="toc-item-num">26.5.1&nbsp;&nbsp;</span>Write two simple players</a></span></li><li><span><a href="#Define-a-maze-layout" data-toc-modified-id="Define-a-maze-layout-26.5.2"><span class="toc-item-num">26.5.2&nbsp;&nbsp;</span>Define a maze layout</a></span></li><li><span><a href="#And-a-team" data-toc-modified-id="And-a-team-26.5.3"><span class="toc-item-num">26.5.3&nbsp;&nbsp;</span>And a team</a></span></li><li><span><a href="#Explore" data-toc-modified-id="Explore-26.5.4"><span class="toc-item-num">26.5.4&nbsp;&nbsp;</span>Explore</a></span></li><li><span><a href="#A-more-complex-maze" data-toc-modified-id="A-more-complex-maze-26.5.5"><span class="toc-item-num">26.5.5&nbsp;&nbsp;</span>A more complex maze</a></span></li><li><span><a href="#A-more-aggressive-player" data-toc-modified-id="A-more-aggressive-player-26.5.6"><span class="toc-item-num">26.5.6&nbsp;&nbsp;</span>A more aggressive player</a></span></li></ul></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-26.6"><span class="toc-item-num">26.6&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
 </div>
 </div>
 </div>
@@ -11846,7 +11831,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2>
+<h2 id="The-pelita-contest">The pelita contest<a class="anchor-link" href="#The-pelita-contest">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -11854,9 +11839,9 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As stated in the <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">OOP wikipedia page</a>, OOP is a "paradigm" which might or might not be supported by a specific programming language. Although Python is an OOP language at its core, <strong>it does not enforce its usage</strong>. In fact, many of you will be able to write your master thesis and even your PhD thesis without <em>programming</em> in OOP on your own. You have, however, already made heavy use of Python objects (<em>everything</em> is an object in Python, remember?) and I find it very important that you are able to understand the basics of it in order to make better use of Python.</p>
-<p>In short, OOP is simply <em>another</em> way to structure your programs. Until now, you have written modules consisting mainly of functions, sometimes with a short <code>__main__</code> script which was itself calling one or more functions. OOP will add a new tool to your repertoire by allowing you to <strong>bundle data and behaviors into individual objects</strong>, possibly helping you to organize your code in a way that feels more natural and clear.</p>
-<p>Let's get started with some examples and new semantics! We will talk about the advantages and disadvantages of OOP in the following unit, once you are more familiar with its syntax.</p>
+<p><a href="https://aspp.github.io/pelita/index.html">Pelita</a> is an "Actor-based Toolkit for Interactive Language Education in Python". The game was created for an <a href="https://python.g-node.org/wiki/">Advanced Scientific Python summer school</a>, and we are going to use it as well.</p>
+<p>Download and have a look at the <a href="https://python.g-node.org/python-summerschool-2017/_media/pelita_2017.pdf">presentation</a> from last year to get you in the mood.</p>
+<p>The rules are simple: you work in a team, and send me your players before the contest (the exact date will be announced via OLAT). The last day of the lecture we will let the bots compete and let the best bot win!</p>
 
 </div>
 </div>
@@ -11865,7 +11850,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Classes-and-objects">Classes and objects<a class="anchor-link" href="#Classes-and-objects">&#182;</a></h2>
+<h2 id="Objectives">Objectives<a class="anchor-link" href="#Objectives">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -11873,8 +11858,77 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Classes</strong> are used to create new user-defined structures that contain information about something and that come with "services". Let's define a new class called <code>Cat</code>:</p>
+<p><strong>Your final grade will not be based on the outcome of the contest</strong>: it will be based on <strong>code quality, clarity, and originality</strong>. The specific objectives of this exercise are:</p>
+<ul>
+<li>to learn how to introspect and use a large codebase for your purpose: writing a player</li>
+<li>to apply the concepts learned during the lecture: organize your code in clear modules and packages, use object oriented concepts, and write tests!</li>
+<li>to define development strategies in a team</li>
+<li>to have fun!</li>
+</ul>
+<p>As you are going to see, it is possible to write simple to (very) complex strategies for your players. You should not try to develop the "best" strategy from scratch but rather advance in smaller steps. Also, you should know when to stop: I don't expect you to create the best players ever, not do I expect you to spend all your time on this. Try to avoid bugs, try to develop simple but clever players, and have fun!</p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Getting-started">Getting started<a class="anchor-link" href="#Getting-started">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Download the pelita package from the <a href="https://github.com/ASPP/pelita">official repository</a>. Unzip the package and install it with <code>pip install -e .</code> (don't forget the <code>--user</code> if you are on a university computer).</p>
+<p>run your first game with a simple call to <code>$ pelita</code>!</p>
+<p><strong>To write your own players</strong>, download the template available <a href="https://github.com/ASPP/pelita-player-2018-melbourne">here</a>. Unpack it and follow the instructions:</p>
+<ul>
+<li>run <code>$ make test</code> to test the template.</li>
+<li>run <code>$ make</code> for a quick game against a random team</li>
+</ul>
+<p>For more control, use <code>pelita</code> as indicated by its documentation. For example, to run a game against a predefined team:</p>
+<p><code>$ pelita team/ SmartEatingPlayer</code></p>
+<p>To run a game against yourself:</p>
+<p><code>$ pelita team/ team/</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Gaining-speed">Gaining speed<a class="anchor-link" href="#Gaining-speed">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The best way to get started is to have a look at the documentation about <a href="https://aspp.github.io/pelita/writing_player.html">writing a player</a> and <a href="https://aspp.github.io/pelita/running_player.html">running &amp; debugging</a>.</p>
+<p>You can test different simple strategies by having a look at the  demo players that you will find in the <code>pelita/pelita/player/</code> folder.</p>
+<p>All this, however, might still leave you a little confused: take your time and don't rush into coding right away. The test environment available in the template package and therefore runnable from spyder or pycharm is probably the best way to explore the tools available to you.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Let's-do-a-little-bit-of-exploration-ourselves">Let's do a little bit of exploration ourselves<a class="anchor-link" href="#Let's-do-a-little-bit-of-exploration-ourselves">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Write-two-simple-players">Write two simple players<a class="anchor-link" href="#Write-two-simple-players">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -11883,11 +11937,45 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
-    <span class="c1"># Initializer</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pelita</span> <span class="k">import</span> <span class="n">datamodel</span>
+<span class="kn">from</span> <span class="nn">pelita.graph</span> <span class="k">import</span> <span class="n">Graph</span><span class="p">,</span> <span class="n">NoPathException</span><span class="p">,</span> <span class="n">diff_pos</span>
+<span class="kn">from</span> <span class="nn">pelita.player</span> <span class="k">import</span> <span class="n">AbstractPlayer</span>
+
+
+<span class="k">class</span> <span class="nc">FastEatingPlayer</span><span class="p">(</span><span class="n">AbstractPlayer</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Like SmartEatingPlayer but without taking enemies into </span>
+<span class="sd">    account and seeking the closest food (always).&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">set_initial</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="c1"># This is called only once \t the beginning of the game</span>
+        <span class="c1"># A graph is useful to help you find your way in the maze</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">graph</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_uni</span><span class="o">.</span><span class="n">reachable</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">initial_pos</span><span class="p">]))</span>
+
+    <span class="k">def</span> <span class="nf">goto_pos</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
+
+        <span class="c1"># Next move to go to the desired position(s)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">bfs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_pos</span><span class="p">,</span> <span class="n">pos</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">get_move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="c1"># Check the move towards the closest enemy food</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">next_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">goto_pos</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">enemy_food</span><span class="p">)</span>
+            <span class="n">move</span> <span class="o">=</span> <span class="n">diff_pos</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_pos</span><span class="p">,</span> <span class="n">next_pos</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">NoPathException</span><span class="p">:</span>
+            <span class="n">move</span> <span class="o">=</span> <span class="n">datamodel</span><span class="o">.</span><span class="n">stop</span>
+
+        <span class="c1"># Check that it is one of all possible moves, else random</span>
+        <span class="k">if</span> <span class="n">move</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">legal_moves</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">move</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rnd</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">legal_moves</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+
+
+<span class="k">class</span> <span class="nc">StoppingPlayer</span><span class="p">(</span><span class="n">AbstractPlayer</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">datamodel</span><span class="o">.</span><span class="n">stop</span>
 </pre></div>
 
 </div>
@@ -11899,13 +11987,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There are already a couple of new things in this code snippet:</p>
-<ul>
-<li>first, the class name definition is happening at the very first line. As per <a href="https://www.python.org/dev/peps/pep-0008/#class-names">pep8</a>, class names in Python should use "CapWords" per convention</li>
-<li>the class contains a "function" called <code>__init__</code>, which indeed looks very much like a normal function. Here the <code>__init__</code> function has three positional arguments: <code>self</code> (which has a special meaning as we are going to see), <code>name</code> and <code>weight</code>. These arguments are used to initialize the <strong>attributes</strong> of the same name. We'll go back to this in the next section.</li>
-</ul>
-<p>A class provides a new structure definition. It's a "blueprint" for how something should be defined, but it doesn't actually provide any real data content itself. To actually use the functionalities defined by the <strong>class</strong> you'll need to create a new <strong>instance</strong> of that class. <strong>Instantiating</strong> is a fancy term for creating a new, unique realization of a class (an <strong>object</strong>). Let's go for it:</p>
-
+<h3 id="Define-a-maze-layout">Define a maze layout<a class="anchor-link" href="#Define-a-maze-layout">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -11914,31 +11996,23 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">a</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_layout</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="sd">&quot;&quot;&quot; ##############################################################</span>
+<span class="sd">        #0                                   .                      1#</span>
+<span class="sd">        #                                    .                       #</span>
+<span class="sd">        #                                    .                       #</span>
+<span class="sd">        #                                    .                       #</span>
+<span class="sd">        #      .                             .                       #</span>
+<span class="sd">        #                                    .                       #</span>
+<span class="sd">        #                                    .                       #</span>
+<span class="sd">        #                                    ........................#</span>
+<span class="sd">        #2                                                          3#</span>
+<span class="sd">        ##############################################################</span>
+<span class="sd">     &quot;&quot;&quot;</span>
+<span class="p">)</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[2]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&lt;__main__.Cat at 0x7f04556c9828&gt;</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -11947,8 +12021,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We just created a new instance of the class <code>Cat</code> and assigned it to the variable <code>a</code>. An instance of a class is commonly called an <strong>object</strong> (this can be used as synonym for "instance"). The variable <code>a</code> stores an object (instance) of the class <code>Cat</code>:</p>
-
+<h3 id="And-a-team">And a team<a class="anchor-link" href="#And-a-team">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -11957,31 +12030,26 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Ask if a is an instance of Cat or not</span>
-<span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">Cat</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pelita.game_master</span> <span class="k">import</span> <span class="n">GameMaster</span>
+<span class="kn">from</span> <span class="nn">pelita.player</span> <span class="k">import</span> <span class="n">SimpleTeam</span>
+
+<span class="c1"># Make the team</span>
+<span class="n">player_0</span> <span class="o">=</span> <span class="n">FastEatingPlayer</span><span class="p">()</span>
+<span class="n">player_1</span> <span class="o">=</span> <span class="n">StoppingPlayer</span><span class="p">()</span>
+<span class="n">player_2</span> <span class="o">=</span> <span class="n">StoppingPlayer</span><span class="p">()</span>
+<span class="n">player_3</span> <span class="o">=</span> <span class="n">StoppingPlayer</span><span class="p">()</span>
+<span class="n">teams</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">SimpleTeam</span><span class="p">(</span><span class="s1">&#39;One&#39;</span><span class="p">,</span> <span class="n">player_0</span><span class="p">,</span> <span class="n">player_2</span><span class="p">),</span>
+    <span class="n">SimpleTeam</span><span class="p">(</span><span class="s1">&#39;Two&#39;</span><span class="p">,</span> <span class="n">player_1</span><span class="p">,</span> <span class="n">player_3</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="c1"># Start the game</span>
+<span class="n">game_master</span> <span class="o">=</span> <span class="n">GameMaster</span><span class="p">(</span><span class="n">test_layout</span><span class="p">,</span> <span class="n">teams</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">universe</span> <span class="o">=</span> <span class="n">game_master</span><span class="o">.</span><span class="n">universe</span>
+<span class="n">game_master</span><span class="o">.</span><span class="n">set_initial</span><span class="p">()</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[3]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -11990,7 +12058,15 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In fact, we just created a new datatype called <code>Cat</code>:</p>
+<h3 id="Explore">Explore<a class="anchor-link" href="#Explore">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we are ready to see what is happening. Lets see the state of the universe before and after a round:</p>
 
 </div>
 </div>
@@ -12000,7 +12076,7 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">game_master</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">pretty</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12013,36 +12089,42 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[4]:</div>
+<div class="prompt"></div>
 
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>##############################################################
+#0                                   .                      1#
+#                                    .                       #
+#                                    .                       #
+#                                    .                       #
+#      .                             .                       #
+#                                    .                       #
+#                                    .                       #
+#                                    ........................#
+#2                                                          3#
+##############################################################
+Team(index=0, zone=(0, 30), score=0)
+	Bot(index=0, initial_pos=(1, 1), team_index=0, homezone=(0, 30), current_pos=(1, 1), noisy=False)
+	Bot(index=2, initial_pos=(1, 9), team_index=0, homezone=(0, 30), current_pos=(1, 9), noisy=False)
+Team(index=1, zone=(31, 61), score=0)
+	Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(60, 1), noisy=False)
+	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(60, 9), noisy=False)
 
-
-<div class="output_text output_subarea output_execute_result">
-<pre>__main__.Cat</pre>
+</pre>
+</div>
 </div>
 
 </div>
-
-</div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Every new instance of a class is unique</strong>, regardless of the values used to initialize it. Let's create a new Cat with the same name and weight:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">game_master</span><span class="o">.</span><span class="n">play_round</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12055,7 +12137,7 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">Cat</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">game_master</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">pretty</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12068,15 +12150,30 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[6]:</div>
+<div class="prompt"></div>
 
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>##############################################################
+# 0                                  .                      1#
+#                                    .                       #
+#                                    .                       #
+#                                    .                       #
+#      .                             .                       #
+#                                    .                       #
+#                                    .                       #
+#                                    ........................#
+#2                                                          3#
+##############################################################
+Team(index=0, zone=(0, 30), score=0)
+	Bot(index=0, initial_pos=(1, 1), team_index=0, homezone=(0, 30), current_pos=(2, 1), noisy=False)
+	Bot(index=2, initial_pos=(1, 9), team_index=0, homezone=(0, 30), current_pos=(1, 9), noisy=False)
+Team(index=1, zone=(31, 61), score=0)
+	Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(60, 1), noisy=False)
+	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(60, 9), noisy=False)
 
-
-<div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -12087,7 +12184,8 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It is still a unique instance and is not a copy of <code>a</code> in any way:</p>
+<p>Our player moved one step. What exacly is our player seeing from here?</p>
+<p>For example, the player sees the locations of the enemy food:</p>
 
 </div>
 </div>
@@ -12097,7 +12195,7 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">player_0</span><span class="o">.</span><span class="n">enemy_food</span>
 </pre></div>
 
 </div>
@@ -12116,7 +12214,37 @@ $( document ).ready(function(){
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>False</pre>
+<pre>[(38, 8),
+ (43, 8),
+ (37, 7),
+ (48, 8),
+ (40, 8),
+ (54, 8),
+ (59, 8),
+ (39, 8),
+ (37, 2),
+ (46, 8),
+ (44, 8),
+ (51, 8),
+ (49, 8),
+ (56, 8),
+ (37, 6),
+ (41, 8),
+ (55, 8),
+ (60, 8),
+ (47, 8),
+ (45, 8),
+ (52, 8),
+ (50, 8),
+ (37, 1),
+ (57, 8),
+ (37, 8),
+ (42, 8),
+ (37, 5),
+ (53, 8),
+ (58, 8),
+ (37, 4),
+ (37, 3)]</pre>
 </div>
 
 </div>
@@ -12124,13 +12252,22 @@ $( document ).ready(function(){
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The player also knows the (noisy) position of the enemy bots:</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="ow">is</span> <span class="n">a</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">player_0</span><span class="o">.</span><span class="n">enemy_bots</span>
 </pre></div>
 
 </div>
@@ -12149,7 +12286,8 @@ $( document ).ready(function(){
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>False</pre>
+<pre>[Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(57, 3), noisy=True),
+ Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(57, 9), noisy=True)]</pre>
 </div>
 
 </div>
@@ -12162,15 +12300,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Class/instance-attributes">Class/instance attributes<a class="anchor-link" href="#Class/instance-attributes">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The cat's name and weight are called <strong>instance attributes</strong> and can be accessed with the dot syntax:</p>
+<p>You can verify that it is noisy by checking that on the next round the positions might change although the players didn't move:</p>
 
 </div>
 </div>
@@ -12180,30 +12310,10 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">name</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">game_master</span><span class="o">.</span><span class="n">play_round</span><span class="p">()</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[9]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Grumpy&#39;</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -12213,7 +12323,7 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">weight</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">player_0</span><span class="o">.</span><span class="n">enemy_bots</span>
 </pre></div>
 
 </div>
@@ -12232,7 +12342,8 @@ $( document ).ready(function(){
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>4</pre>
+<pre>[Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(59, 2), noisy=True),
+ Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(60, 4), noisy=True)]</pre>
 </div>
 
 </div>
@@ -12240,32 +12351,13 @@ $( document ).ready(function(){
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>A common synonym for the term "attribute" is "<strong>property</strong>". The two terms are very close and you might find one or the other term depending on who writes about them. Properties in python are a special kind of attributes, but the difference is subtle and not relevant here.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Instance attributes</strong> are specific to the created object. They are often defined at instantiation:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Tiger&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">b</span><span class="o">.</span><span class="n">name</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">game_master</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">pretty</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12278,13 +12370,105 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[11]:</div>
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>##############################################################
+#  0                                 .                      1#
+#                                    .                       #
+#                                    .                       #
+#                                    .                       #
+#      .                             .                       #
+#                                    .                       #
+#                                    .                       #
+#                                    ........................#
+#2                                                          3#
+##############################################################
+Team(index=0, zone=(0, 30), score=0)
+	Bot(index=0, initial_pos=(1, 1), team_index=0, homezone=(0, 30), current_pos=(3, 1), noisy=False)
+	Bot(index=2, initial_pos=(1, 9), team_index=0, homezone=(0, 30), current_pos=(1, 9), noisy=False)
+Team(index=1, zone=(31, 61), score=0)
+	Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(60, 1), noisy=False)
+	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(60, 9), noisy=False)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What is the graph actually useful for? Let's find out:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">player_0</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">bfs</span><span class="p">(</span><span class="n">player_0</span><span class="o">.</span><span class="n">current_pos</span><span class="p">,</span> <span class="n">player_0</span><span class="o">.</span><span class="n">enemy_food</span><span class="p">)</span>
+<span class="n">path</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[12]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Tiger&#39;</pre>
+<pre>[(37, 1),
+ (36, 1),
+ (35, 1),
+ (34, 1),
+ (33, 1),
+ (32, 1),
+ (31, 1),
+ (30, 1),
+ (29, 1),
+ (28, 1),
+ (27, 1),
+ (26, 1),
+ (25, 1),
+ (24, 1),
+ (23, 1),
+ (22, 1),
+ (21, 1),
+ (20, 1),
+ (19, 1),
+ (18, 1),
+ (17, 1),
+ (16, 1),
+ (15, 1),
+ (14, 1),
+ (13, 1),
+ (12, 1),
+ (11, 1),
+ (10, 1),
+ (9, 1),
+ (8, 1),
+ (7, 1),
+ (6, 1),
+ (5, 1),
+ (4, 1),
+ (3, 1)]</pre>
 </div>
 
 </div>
@@ -12297,37 +12481,19 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Classes can also define <strong>class attributes</strong>, which are tied to a class but not to a specific instance:</p>
+<p>This gives us the shortest path towards all enemy food! Taking the last one gives us the next position we'd like to go:</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
-    <span class="c1"># Class attribute</span>
-    <span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
-    
-    <span class="c1"># Initializer</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Cat</span><span class="o">.</span><span class="n">language</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">next_pos</span> <span class="o">=</span> <span class="n">path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">move</span> <span class="o">=</span> <span class="n">diff_pos</span><span class="p">(</span><span class="n">player_0</span><span class="o">.</span><span class="n">current_pos</span><span class="p">,</span> <span class="n">next_pos</span><span class="p">)</span>
+<span class="n">move</span>
 </pre></div>
 
 </div>
@@ -12346,7 +12512,7 @@ $( document ).ready(function(){
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Meow&#39;</pre>
+<pre>(1, 0)</pre>
 </div>
 
 </div>
@@ -12360,31 +12526,13 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">language</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># east, west, north, south are nothing more than direction tuples</span>
+<span class="k">assert</span> <span class="n">move</span> <span class="o">==</span> <span class="n">datamodel</span><span class="o">.</span><span class="n">east</span>
+<span class="c1"># shoule be a legal move</span>
+<span class="k">assert</span> <span class="n">move</span> <span class="ow">in</span> <span class="n">player_0</span><span class="o">.</span><span class="n">legal_moves</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[14]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Meow&#39;</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -12393,8 +12541,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Careful!</strong> Class and instance attributes are not <strong>immutable</strong>. They can be changed form outside the class:</p>
-
+<h3 id="A-more-complex-maze">A more complex maze<a class="anchor-link" href="#A-more-complex-maze">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -12403,8 +12550,20 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Roncheux&#39;</span>
-<span class="n">a</span><span class="o">.</span><span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;Miaou&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_layout</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="sd">&quot;&quot;&quot; ##############################################################</span>
+<span class="sd">        #0                 ##                .                      1#</span>
+<span class="sd">        #                  ## ##             .                       #</span>
+<span class="sd">        #                   #  #             .                       #</span>
+<span class="sd">        #                   #  #             .                       #</span>
+<span class="sd">        #      .            #  #             .                       #</span>
+<span class="sd">        #                   #  #             .                       #</span>
+<span class="sd">        #                   #  #             .                       #</span>
+<span class="sd">        #                   #  #             ........................#</span>
+<span class="sd">        #2                     #                                    3#</span>
+<span class="sd">        ##############################################################</span>
+<span class="sd">     &quot;&quot;&quot;</span>
+<span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12417,82 +12576,46 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">name</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Start the game</span>
+<span class="n">game_master</span> <span class="o">=</span> <span class="n">GameMaster</span><span class="p">(</span><span class="n">test_layout</span><span class="p">,</span> <span class="n">teams</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">universe</span> <span class="o">=</span> <span class="n">game_master</span><span class="o">.</span><span class="n">universe</span>
+<span class="n">game_master</span><span class="o">.</span><span class="n">set_initial</span><span class="p">()</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[16]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Roncheux&#39;</pre>
 </div>
-
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Will our bot find its way through it?</p>
 
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">language</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
+    <span class="n">game_master</span><span class="o">.</span><span class="n">play_round</span><span class="p">()</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[17]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Miaou&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>These changes are specific to the instance, and the class remains unchanged:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Cat</span><span class="o">.</span><span class="n">language</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">game_master</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">pretty</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12505,15 +12628,30 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[18]:</div>
+<div class="prompt"></div>
 
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>##############################################################
+#                  ##                .                      1#
+#                  ## ##             .                       #
+#                   #  #             .                       #
+#                   #  #             .                       #
+#      .            #  #             .                       #
+#                   #  #             .                       #
+#                   #0 #             .                       #
+#                   #  #             ........................#
+#2                     #                                    3#
+##############################################################
+Team(index=0, zone=(0, 30), score=0)
+	Bot(index=0, initial_pos=(1, 1), team_index=0, homezone=(0, 30), current_pos=(21, 7), noisy=False)
+	Bot(index=2, initial_pos=(1, 9), team_index=0, homezone=(0, 30), current_pos=(1, 9), noisy=False)
+Team(index=1, zone=(31, 61), score=0)
+	Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(60, 1), noisy=False)
+	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(60, 9), noisy=False)
 
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Meow&#39;</pre>
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -12524,24 +12662,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><em>In comparison to other OO languages, python is very "liberal" regarding attributes: some languages like Java would not allow to change attributes this way. In practice, attributes should not be changed by the users of a class. Unless they are documented as being "changeable", and in this case become "properties". More on this later.</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Instance-Methods">Instance Methods<a class="anchor-link" href="#Instance-Methods">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>If a class only had attributes, it would merely be a simple data structure. Classes become useful when they are adding "services" to the data they store. These services are called <strong>methods</strong>, and their syntax has similarities with a function definition:</p>
+<p>Looks like it! Let the game run until the end:</p>
 
 </div>
 </div>
@@ -12551,41 +12672,20 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
-    <span class="c1"># Class attribute</span>
-    <span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
-    
-    <span class="c1"># Initializer</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-        
-    <span class="c1"># Method</span>
-    <span class="k">def</span> <span class="nf">say_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, my name is </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">language</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">game_master</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The biggest difference with functions is that a method is tied to a class instance: this is made clear by the <code>self</code> argument, present in the method definition but not used when calling the method:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Kitty&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">game_master</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">pretty</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12602,7 +12702,24 @@ $( document ).ready(function(){
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Meow, my name is Kitty!
+<pre>##############################################################
+#                  ##                                       1#
+#                  ## ##                                     #
+#                   #  #                                     #
+#                   #  #                                     #
+#      .            #  #                                     #
+#                   #  #                                     #
+#                   #  #                                     #
+#                   #  #                                    0#
+#2                     #                                    3#
+##############################################################
+Team(index=0, zone=(0, 30), score=31)
+	Bot(index=0, initial_pos=(1, 1), team_index=0, homezone=(0, 30), current_pos=(60, 8), noisy=False)
+	Bot(index=2, initial_pos=(1, 9), team_index=0, homezone=(0, 30), current_pos=(1, 9), noisy=False)
+Team(index=1, zone=(31, 61), score=0)
+	Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(60, 1), noisy=False)
+	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(60, 9), noisy=False)
+
 </pre>
 </div>
 </div>
@@ -12610,117 +12727,101 @@ $( document ).ready(function(){
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="A-more-aggressive-player">A more aggressive player<a class="anchor-link" href="#A-more-aggressive-player">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's make the opponent team a little more active:</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">b</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pelita.graph</span> <span class="k">import</span> <span class="n">manhattan_dist</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">class</span> <span class="nc">AggressivePlayer</span><span class="p">(</span><span class="n">AbstractPlayer</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">set_initial</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">graph</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_uni</span><span class="o">.</span><span class="n">reachable</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">initial_pos</span><span class="p">]))</span>
+
+    <span class="k">def</span> <span class="nf">goto_pos</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">a_star</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_pos</span><span class="p">,</span> <span class="n">pos</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">get_move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        
+        <span class="c1"># Take the closest enemy</span>
+        <span class="n">dis</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">enemy</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">enemy_bots</span><span class="p">:</span>
+            <span class="n">dis</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">manhattan_dist</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_pos</span><span class="p">,</span> <span class="n">enemy</span><span class="o">.</span><span class="n">current_pos</span><span class="p">))</span>
+        <span class="n">enemy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">enemy_bots</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">dis</span><span class="p">)]</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">next_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">goto_pos</span><span class="p">(</span><span class="n">enemy</span><span class="o">.</span><span class="n">current_pos</span><span class="p">)</span>
+            <span class="c1"># Check if the next_pos is on the wrong side of the maze</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">team</span><span class="o">.</span><span class="n">in_zone</span><span class="p">(</span><span class="n">next_pos</span><span class="p">):</span>
+                <span class="c1"># whoops, better go either north or south</span>
+                <span class="n">move</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rnd</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="n">datamodel</span><span class="o">.</span><span class="n">north</span><span class="p">,</span> <span class="n">datamodel</span><span class="o">.</span><span class="n">south</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">move</span> <span class="o">=</span> <span class="n">diff_pos</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_pos</span><span class="p">,</span> <span class="n">next_pos</span><span class="p">)</span>
+            <span class="c1"># Check that it is one of all possible moves, else stop</span>
+            <span class="k">if</span> <span class="n">move</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">legal_moves</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">move</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">datamodel</span><span class="o">.</span><span class="n">stop</span>
+        <span class="k">except</span> <span class="n">NoPathException</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">datamodel</span><span class="o">.</span><span class="n">stop</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Meow, my name is Grumpy!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>self</code> variable is implicit in the call above, and refers to the instance of the class which is calling the method. It might sound a little complicated at first, but you'll get used to it: <code>self</code> is used to read and write instance attributes, and is the first argument to virtually any method defined in the class (there is one exception to this rule which we will ignore for now).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>At this point, you may have noticed similarities between the objects you used commonly in the climate lecture and the objects we just defined here. Let's make the analogy:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">)</span>  <span class="c1"># instanciating a class</span>
-<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span>  <span class="c1"># a is an instance of the Series class</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>  <span class="c1"># pandas.core.series.Series is a new datatype</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># name is an instance attribute</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>  <span class="c1"># mean is an instance method</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Make the team</span>
+<span class="n">player_0</span> <span class="o">=</span> <span class="n">FastEatingPlayer</span><span class="p">()</span>
+<span class="n">player_1</span> <span class="o">=</span> <span class="n">StoppingPlayer</span><span class="p">()</span>
+<span class="n">player_2</span> <span class="o">=</span> <span class="n">StoppingPlayer</span><span class="p">()</span>
+<span class="n">player_3</span> <span class="o">=</span> <span class="n">AggressivePlayer</span><span class="p">()</span>
+<span class="n">teams</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">SimpleTeam</span><span class="p">(</span><span class="s1">&#39;One&#39;</span><span class="p">,</span> <span class="n">player_0</span><span class="p">,</span> <span class="n">player_2</span><span class="p">),</span>
+    <span class="n">SimpleTeam</span><span class="p">(</span><span class="s1">&#39;Two&#39;</span><span class="p">,</span> <span class="n">player_1</span><span class="p">,</span> <span class="n">player_3</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="c1"># Start the game</span>
+<span class="n">game_master</span> <span class="o">=</span> <span class="n">GameMaster</span><span class="p">(</span><span class="n">test_layout</span><span class="p">,</span> <span class="n">teams</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">universe</span> <span class="o">=</span> <span class="n">game_master</span><span class="o">.</span><span class="n">universe</span>
+<span class="n">game_master</span><span class="o">.</span><span class="n">set_initial</span><span class="p">()</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;pandas.core.series.Series&#39;&gt;
-data
-2.0
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Are you confident about the meaning of all these terms? If not, I might have explained it in a way which is not the right one for you: you can use your google-skills to look for other tutorials. There are plenty!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Extending-attributes:-the-@property-decorator">Extending attributes: the @property decorator<a class="anchor-link" href="#Extending-attributes:-the-@property-decorator">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We have said that attributes are often meant to be data describing an instance of a class. It is often the job of instance methods to initialize and update these attributes. Consider the following example:</p>
+<p>But stalking enemies is dangerous! See what happens in this game:</p>
 
 </div>
 </div>
@@ -12730,34 +12831,9 @@ data
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
-    <span class="c1"># Class attribute</span>
-    <span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
-    
-    <span class="c1"># Initializer</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-        
-    <span class="c1"># Method</span>
-    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Weight before eating: </span><span class="si">{}</span><span class="s1"> kg&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">weight</span><span class="p">))</span>
-<span class="n">a</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Weight after eating: </span><span class="si">{}</span><span class="s1"> kg&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">weight</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">40</span><span class="p">):</span>
+    <span class="n">game_master</span><span class="o">.</span><span class="n">play_round</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">game_master</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">pretty</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12774,8 +12850,24 @@ data
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Weight before eating: 4 kg
-Weight after eating: 4.2 kg
+<pre>##############################################################
+#                  ##    0           .                      1#
+#                  ## ##             .                       #
+#                   #  #       3     .                       #
+#                   #  #             .                       #
+#      .            #  #             .                       #
+#                   #  #             .                       #
+#                   #  #             .                       #
+#                   #  #             ........................#
+#2                     #                                     #
+##############################################################
+Team(index=0, zone=(0, 30), score=0)
+	Bot(index=0, initial_pos=(1, 1), team_index=0, homezone=(0, 30), current_pos=(25, 1), noisy=False)
+	Bot(index=2, initial_pos=(1, 9), team_index=0, homezone=(0, 30), current_pos=(1, 9), noisy=False)
+Team(index=1, zone=(31, 61), score=0)
+	Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(60, 1), noisy=False)
+	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(31, 3), noisy=False)
+
 </pre>
 </div>
 </div>
@@ -12784,525 +12876,14 @@ Weight after eating: 4.2 kg
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This was a simplified but typical use for instance attributes: they will change in an object's lifetime according to specific events. Now let's suppose that you are working with scientists from the USA, and they'd like to know the cat's weight in pounds. One way to do so would be to compute it at instantiation:</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
-    <span class="c1"># Class attribute</span>
-    <span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
-    
-    <span class="c1"># Initializer</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight_lbs</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="mf">0.45359237</span>
-        
-    <span class="c1"># Method</span>
-    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[26]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>8.818490487395103</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There is an obvious drawback to this method however: what if the cat eats food? Its weight won't be updated!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span>  <span class="c1"># this is a problem</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[27]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>8.818490487395103</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>A possible way to deal with the issue would be to compute the pound weight <em>on demand</em>, i.e. write a method to compute it:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
-    <span class="c1"># Class attribute</span>
-    <span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
-    
-    <span class="c1"># Initializer</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-        
-    <span class="c1"># Method</span>
-    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
-        
-    <span class="k">def</span> <span class="nf">get_weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="mf">0.45359237</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">get_weight_lbs</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[29]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>9.259415011764858</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This is already much better (and accurate), but it is somehow hiding the fact that the weight of a cat really is an attribute, no matter the unit. It should not be accessed with a <code>get_</code> method. This is where a new syntax comes in handy:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
-    <span class="c1"># Class attribute</span>
-    <span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
-    
-    <span class="c1"># Initializer</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-        
-    <span class="c1"># Method</span>
-    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
-    
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="mf">0.45359237</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><code>weight_lbs</code> looks like a method (it computes something), but only in the class definition. For the class instances, the method is "hidden" in an attribute:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span>  <span class="c1"># weight_lbs is an attribute!</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[31]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>9.259415011764858</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This is a very useful pattern frequently used in python. The <code>@</code> syntax defines a "decorator", and you might learn about decorators in a more advanced python class.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Class-inheritance:-introduction">Class inheritance: introduction<a class="anchor-link" href="#Class-inheritance:-introduction">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Inheritance</strong> is a core concept of OOP. It allows a <strong>subclass</strong>  (also called "<strong>child class</strong>") to override or extend methods and attributes from a <strong>base class</strong> (also called "<strong>parent class</strong>"). In other words, child classes inherit all of the parent's attributes and behaviors but can also specify new behaviors or replace old ones. This is best shown with an example: let's make the <code>Cat</code> and <code>Dog</code> class inherit from the <code>Pet</code> class.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Pet</span><span class="p">:</span>
-
-    <span class="c1"># Initializer</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-        
-    <span class="c1"># Method</span>
-    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
-    
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="mf">0.45359237</span>
-    
-    <span class="k">def</span> <span class="nf">say_name_loudly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-
-<span class="k">class</span> <span class="nc">Cat</span><span class="p">(</span><span class="n">Pet</span><span class="p">):</span>
-    
-    <span class="c1"># Class attribute</span>
-    <span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
-        
-    <span class="c1"># Method</span>
-    <span class="k">def</span> <span class="nf">say_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, my name is </span><span class="si">{}</span><span class="s1"> and I am nice!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">language</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-        
-<span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Pet</span><span class="p">):</span>
-    
-    <span class="c1"># Class attribute</span>
-    <span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;Woof&#39;</span>
-        
-    <span class="c1"># Method</span>
-    <span class="k">def</span> <span class="nf">say_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, my name is </span><span class="si">{}</span><span class="s1"> and I smell funny!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">language</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's advance through this example step by step.</p>
-<p>First, let's have a look at the <code>Pet</code> class. It is a standard class defined the exact same way as the previous <code>Cat</code> class. Therefore, it can be instantiated and will work as expected:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Pet</span><span class="p">(</span><span class="s1">&#39;PetName&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">weight_lbs</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[33]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>22.046226218487757</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As discussed during the lecture, the functionality of the parent class <code>Pet</code> however is very general, and it is unlikely to be used alone (a pet isn't specific enough). We used this class to implement the general functionality supported by all pets: they have a name and a weight, regardless of their species.</p>
-<p>The <code>Cat</code> and <code>Dog</code> classes make use of this functionality by <strong>inheriting</strong> from the <code>Pet</code> <strong>parent class</strong>. This inheritance is formalized in the class definition <code>class Cat(Pet)</code>. The code of the two <strong>child classes</strong> is remarkably simple: it adds a new functionality to the ones inherited from <code>Pet</code>. For example:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Kitty&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">c</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[34]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Meow, my name is Kitty and I am nice!&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>Pet</code> instance methods are still available:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
-<span class="n">c</span><span class="o">.</span><span class="n">weight</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[35]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>4.2</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Milou&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">d</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[36]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Woof, my name is Milou and I smell funny!&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There is a pretty straightforward rule for the behavior of child classes instances: <strong>when the called method or attribute is available at the child class level, it will be used</strong> (even if also available at the parent class level: this is called <strong>overriding</strong>, and will be a topic for next week); <strong>if not, use the parent class implementation</strong>.</p>
-<p>This is exactly what happens in the code above: <code>eat_food</code> and <code>weight</code> are defined in the <code>Pet</code> class but are available for both <code>Cat</code> and <code>Dog</code> instances. <code>say_name</code>, however, is a child class instance method and can't be used by <code>Pet</code> instances.</p>
-<p>So, what about the <code>say_name_loudly</code> method? Although available for <code>Pet</code> instances, calling it will raise an error:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Pet</span><span class="p">(</span><span class="s1">&#39;PetName&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">say_name_loudly</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+    <span class="n">game_master</span><span class="o">.</span><span class="n">play_round</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">game_master</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">pretty</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13318,66 +12899,27 @@ Weight after eating: 4.2 kg
 <div class="prompt"></div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-37-c2a6a9ac2512&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> p <span class="ansi-blue-fg">=</span> Pet<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;PetName&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>p<span class="ansi-blue-fg">.</span>say_name_loudly<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>##############################################################
+#  0               ##                .                      1#
+#                  ## ##             .                       #
+#                   #  #       3     .                       #
+#                   #  #             .                       #
+#      .            #  #             .                       #
+#                   #  #             .                       #
+#                   #  #             .                       #
+#                   #  #             ........................#
+#2                     #                                     #
+##############################################################
+Team(index=0, zone=(0, 30), score=0)
+	Bot(index=0, initial_pos=(1, 1), team_index=0, homezone=(0, 30), current_pos=(3, 1), noisy=False)
+	Bot(index=2, initial_pos=(1, 9), team_index=0, homezone=(0, 30), current_pos=(1, 9), noisy=False)
+Team(index=1, zone=(31, 61), score=5)
+	Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(60, 1), noisy=False)
+	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(31, 3), noisy=False)
 
-<span class="ansi-green-fg">&lt;ipython-input-32-7a9a9a6d065b&gt;</span> in <span class="ansi-cyan-fg">say_name_loudly</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">     15</span> 
-<span class="ansi-green-intense-fg ansi-bold">     16</span>     <span class="ansi-green-fg">def</span> say_name_loudly<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 17</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>say_name<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>upper<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     18</span> 
-<span class="ansi-green-intense-fg ansi-bold">     19</span> <span class="ansi-green-fg">class</span> Cat<span class="ansi-blue-fg">(</span>Pet<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-red-fg">AttributeError</span>: &#39;Pet&#39; object has no attribute &#39;say_name&#39;</pre>
+</pre>
 </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>However, since <code>say_name_loudly</code> is available to the child class instances, the method will work for them!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Kitty&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">c</span><span class="o">.</span><span class="n">say_name_loudly</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[38]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;MEOW, MY NAME IS KITTY AND I AM NICE!&#39;</pre>
-</div>
-
 </div>
 
 </div>
@@ -13388,27 +12930,7 @@ Weight after eating: 4.2 kg
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is a typical use case for class inheritance in OOP: it allows <a href="https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)#Code_reuse">code re-use</a>. We will talk about more advanced use cases next week.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Take-home-points">Take home points<a class="anchor-link" href="#Take-home-points">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Python is an object oriented programming language but does not enforce the definition of classes in your own programs. However, a basic understanding of the core concepts of OOP is a strong asset and allows to make better use of Python's capabilities.</li>
-<li>We defined a lot of new concepts today: classes, objects, instances, instance methods, instance attributes, class attributes, the @property decorator, inheritance... You will have to revise these concepts calmly and step by step, possibly by making use of external resources. The web has plenty of good beginner-level OOP tutorials, I recommend to have a look at at least one of them.</li>
-</ul>
+<p><strong>The bot will never be able to catch it!</strong> Having completely deterministic moves might be contra-productive sometimes.</p>
 
 </div>
 </div>
@@ -13425,7 +12947,25 @@ Weight after eating: 4.2 kg
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="24-Assignment-08.html">jump to this week's assignment</a>.</p>
+<p>Now it's your turn! Try to use these players in real games to visualize the outcome, and start to define new strategies! The game designers write in their presentation:</p>
+<ul>
+<li>Mazes don’t have dead-ends</li>
+<li>It's hard to catch another bot which outruns you: bots can combine their powers and attack from two sides</li>
+<li>Think about shortest-path algorithms</li>
+<li>Keep track of opponents</li>
+<li>Investigate communication between the Players</li>
+<li>Re-use your code</li>
+<li>Think about working in a team</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>.</p>
 
 </div>
 </div>
