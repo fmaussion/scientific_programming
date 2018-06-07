@@ -11813,15 +11813,6 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In the first OOP unit you learned the basic semantics of OOP in python. This week we will attempt to provide concrete examples of the use of objects in python (and other OOP languages) and provide arguments in favor and against the use of OOP in python.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
 <div class="toc"><ul class="toc-item"><li><span><a href="#Pelita:-learning-by-gaming" data-toc-modified-id="Pelita:-learning-by-gaming-26"><span class="toc-item-num">26&nbsp;&nbsp;</span>Pelita: learning by gaming</a></span><ul class="toc-item"><li><span><a href="#The-pelita-contest" data-toc-modified-id="The-pelita-contest-26.1"><span class="toc-item-num">26.1&nbsp;&nbsp;</span>The pelita contest</a></span></li><li><span><a href="#Objectives" data-toc-modified-id="Objectives-26.2"><span class="toc-item-num">26.2&nbsp;&nbsp;</span>Objectives</a></span></li><li><span><a href="#Getting-started" data-toc-modified-id="Getting-started-26.3"><span class="toc-item-num">26.3&nbsp;&nbsp;</span>Getting started</a></span></li><li><span><a href="#Gaining-speed" data-toc-modified-id="Gaining-speed-26.4"><span class="toc-item-num">26.4&nbsp;&nbsp;</span>Gaining speed</a></span></li><li><span><a href="#Let's-do-a-little-bit-of-exploration-ourselves" data-toc-modified-id="Let's-do-a-little-bit-of-exploration-ourselves-26.5"><span class="toc-item-num">26.5&nbsp;&nbsp;</span>Let's do a little bit of exploration ourselves</a></span><ul class="toc-item"><li><span><a href="#Write-two-simple-players" data-toc-modified-id="Write-two-simple-players-26.5.1"><span class="toc-item-num">26.5.1&nbsp;&nbsp;</span>Write two simple players</a></span></li><li><span><a href="#Define-a-maze-layout" data-toc-modified-id="Define-a-maze-layout-26.5.2"><span class="toc-item-num">26.5.2&nbsp;&nbsp;</span>Define a maze layout</a></span></li><li><span><a href="#And-a-team" data-toc-modified-id="And-a-team-26.5.3"><span class="toc-item-num">26.5.3&nbsp;&nbsp;</span>And a team</a></span></li><li><span><a href="#Explore" data-toc-modified-id="Explore-26.5.4"><span class="toc-item-num">26.5.4&nbsp;&nbsp;</span>Explore</a></span></li><li><span><a href="#A-more-complex-maze" data-toc-modified-id="A-more-complex-maze-26.5.5"><span class="toc-item-num">26.5.5&nbsp;&nbsp;</span>A more complex maze</a></span></li><li><span><a href="#A-more-aggressive-player" data-toc-modified-id="A-more-aggressive-player-26.5.6"><span class="toc-item-num">26.5.6&nbsp;&nbsp;</span>A more aggressive player</a></span></li></ul></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-26.6"><span class="toc-item-num">26.6&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
 </div>
@@ -11865,7 +11856,7 @@ $( document ).ready(function(){
 <li>to define development strategies in a team</li>
 <li>to have fun!</li>
 </ul>
-<p>As you are going to see, it is possible to write simple to (very) complex strategies for your players. You should not try to develop the "best" strategy from scratch but rather advance in smaller steps. Also, you should know when to stop: I don't expect you to create the best players ever, not do I expect you to spend all your time on this. Try to avoid bugs, try to develop simple but clever players, and have fun!</p>
+<p>As you are going to see, it is possible to write simple to (very) complex strategies for your players. You should not try to develop the "best" strategy from scratch but rather advance in smaller steps. Also, you should know when to stop: I don't expect you to create the best players ever, nor do I expect you to spend all your time on this. Try to avoid bugs, try to develop simple but clever players, and have fun!</p>
 
 </div>
 </div>
@@ -11882,9 +11873,9 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Download the pelita package from the <a href="https://github.com/ASPP/pelita">official repository</a>. Unzip the package and install it with <code>pip install -e .</code> (don't forget the <code>--user</code> if you are on a university computer).</p>
+<p>Download the pelita package from the <a href="https://github.com/ASPP/pelita">official repository</a>. Unzip the package and install it with <code>pip install -e /path/to/package</code> (don't forget the <code>--user</code> if you are on a university computer).</p>
 <p>run your first game with a simple call to <code>$ pelita</code>!</p>
-<p><strong>To write your own players</strong>, download the template available <a href="https://github.com/ASPP/pelita-player-2018-melbourne">here</a>. Unpack it and follow the instructions:</p>
+<p><strong>To write your own players, download the template available</strong> <a href="https://github.com/ASPP/pelita-player-2018-melbourne">here</a>. Unpack it and follow the instructions:</p>
 <ul>
 <li>run <code>$ make test</code> to test the template.</li>
 <li>run <code>$ make</code> for a quick game against a random team</li>
@@ -11991,6 +11982,15 @@ $( document ).ready(function(){
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Mazes can be provided by the user using a simple ascii layout. Walls are represented by <code>#</code>, food pellets with dots, and players by their number (0 and 2 belong to team 1, 1 and 3 to team 2). Here I defined a maze made to test the behavior of the players of team 1 (left hand side), and add one food pellet on the left hand side too (this is needed for the game to be valid):</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
@@ -12045,7 +12045,6 @@ $( document ).ready(function(){
 
 <span class="c1"># Start the game</span>
 <span class="n">game_master</span> <span class="o">=</span> <span class="n">GameMaster</span><span class="p">(</span><span class="n">test_layout</span><span class="p">,</span> <span class="n">teams</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
-<span class="n">universe</span> <span class="o">=</span> <span class="n">game_master</span><span class="o">.</span><span class="n">universe</span>
 <span class="n">game_master</span><span class="o">.</span><span class="n">set_initial</span><span class="p">()</span>
 </pre></div>
 
@@ -12286,8 +12285,8 @@ Team(index=1, zone=(31, 61), score=0)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(59, 2), noisy=True),
- Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(59, 9), noisy=True)]</pre>
+<pre>[Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(55, 1), noisy=True),
+ Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(59, 8), noisy=True)]</pre>
 </div>
 
 </div>
@@ -12342,8 +12341,8 @@ Team(index=1, zone=(31, 61), score=0)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(59, 2), noisy=True),
- Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(57, 7), noisy=True)]</pre>
+<pre>[Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(58, 3), noisy=True),
+ Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(59, 5), noisy=True)]</pre>
 </div>
 
 </div>
@@ -12904,10 +12903,10 @@ Team(index=1, zone=(31, 61), score=0)
 #                  ##            0   .                      1#
 #                  ## ##             .                       #
 #                   #  #             .                       #
-#                   #  #             .                       #
+#                   #  #       3     .                       #
 #      .            #  #             .                       #
 #                   #  #             .                       #
-#                   #  #       3     .                       #
+#                   #  #             .                       #
 #                   #  #             ........................#
 #2                     #                                     #
 ##############################################################
@@ -12916,7 +12915,7 @@ Team(index=0, zone=(0, 30), score=0)
 	Bot(index=2, initial_pos=(1, 9), team_index=0, homezone=(0, 30), current_pos=(1, 9), noisy=False)
 Team(index=1, zone=(31, 61), score=0)
 	Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(60, 1), noisy=False)
-	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(31, 7), noisy=False)
+	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(31, 4), noisy=False)
 
 </pre>
 </div>
@@ -12955,7 +12954,7 @@ Team(index=1, zone=(31, 61), score=0)
 #                  ## ##                                     #
 #                   #  #                                     #
 #                   #  #                                     #
-#      .            #  #       3     0                       #
+#      .            #  #        3    0                       #
 #                   #  #             .                       #
 #                   #  #             .                       #
 #                   #  #             ........................#
@@ -12966,7 +12965,7 @@ Team(index=0, zone=(0, 30), score=5)
 	Bot(index=2, initial_pos=(1, 9), team_index=0, homezone=(0, 30), current_pos=(1, 9), noisy=False)
 Team(index=1, zone=(31, 61), score=0)
 	Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(60, 1), noisy=False)
-	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(31, 5), noisy=False)
+	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(32, 5), noisy=False)
 
 </pre>
 </div>

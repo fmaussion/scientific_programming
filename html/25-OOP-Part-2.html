@@ -11789,7 +11789,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": "25", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "345px"}, "toc_section_display": "block", "toc_window_display": true};
+            var cfg = {"base_numbering": "25", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "307px"}, "toc_section_display": "block", "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -11888,7 +11888,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The "state" of our object is relatively simple to describe: it is the sentence (list of characters) stored in the object. We have access to this state (we can print its values) but the way theses values are stored on memory is "abstracted" from us. We don't care about the details, we just want a string. Now, a string provides many actions:</p>
+<p>The "state" of our object is relatively simple to describe: it is the sentence (list of characters) stored in the object. We have access to this state (we can print its values) but the way these values are stored in memory is abstracted away. We don't care about the details, we just want a string. Now, a string provides many actions:</p>
 
 </div>
 </div>
@@ -11996,8 +11996,8 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Abstractions should be a simple and well defined as possible. Sometimes there are more than one possible way to provide an abstraction to the user, and it becomes a debate among the programmers of a project whether these abstractions are useful or not.</p>
-<p>Well defined abstractions can be <em>composed</em> together. A good example is provided by the <a href="http://xarray.pydata.org">xarray</a> library: a <code>xarray.DataSet</code> is composed of several <code>xarray.DataArray</code> objects. These <code>xarray.DataArray</code> objects have the function to store data (a <code>numpy.ndarray</code> object) together with coordinates (other <code>numpy.ndarray</code> objects) and attributes (units, name, etc.). This chain of abstractions is possible of each of these concepts has a clearly defined role: xarray does not mess around with numbers in arrays: numpy does. Inversely, numpy does not care whether an array has coordinates or not: xarray does.</p>
+<p>Abstractions should be as simple and well defined as possible. Sometimes there is more than one possible way to provide an abstraction to the user, and it becomes a debate among the programmers of a project whether these abstractions are useful or not.</p>
+<p>Well defined abstractions can be <em>composed</em> together. A good example is provided by the <a href="http://xarray.pydata.org">xarray</a> library: an <code>xarray.DataSet</code> is composed of several <code>xarray.DataArray</code> objects. These <code>xarray.DataArray</code> objects have the function to store data (a <code>numpy.ndarray</code> object) together with coordinates (other <code>numpy.ndarray</code> objects) and attributes (units, name, etc.). This chain of abstractions is possible only if each of these concepts has a clearly defined role: xarray does not mess around with numbers in arrays: numpy does. Inversely, numpy does not care whether an array has coordinates or not: xarray does.</p>
 
 </div>
 </div>
@@ -12014,7 +12014,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Encapsulation is tied to the concepts of abstraction. By hiding of the internal implementation of a class behind a defined interface, users of the class do not need to know details about the internals of the class to use it. The implementation of the class can be changed (or internal data can be modified) without having to change the code of the users of the class.</p>
+<p>Encapsulation is tied to the concepts of abstraction. By hiding the internal implementation of a class behind a defined interface, users of the class do not need to know details about the internals of the class to use it. The implementation of the class can be changed (or internal data can be modified) without having to change the code of the users of the class.</p>
 <p>In python, encapsulation is more difficult than in other languages like Java. Indeed, Java implements the concept of <strong>private methods and attributes</strong>, which are hidden from the user per definition. In python, <em>nothing</em> is hidden from the user: however, developers make use of <em>conventions</em> to inform the users that a method or attribute is not meant to be used by the class alone, not by users. Let's take an xarray DataArray as an example:</p>
 
 </div>
@@ -12578,7 +12578,7 @@ $( document ).ready(function(){
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Each of these addition operations are performing a different action depending on the object they are applied to. OOP relies on polymorphism to provide higher levels of abstraction. In our <code>Cat</code> and <code>Dog</code> example from last week, both classes provided a <code>say_name()</code> method: the internal implementation, however, was different in each case.</p>
-<p>OOP (and Python) provide powerful tools for the purpose of polymorphism. One of them is <strong>operator overloading</strong>:</p>
+<p>Many OOP languages (including Python) provide powerful tools for the purpose of polymorphism. One of them is <strong>operator overloading</strong>:</p>
 
 </div>
 </div>
@@ -12603,7 +12603,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>What did we just do? The class definition (<code>class ArrayList(list)</code>) indicates that we created a subclass of the parent class <code>list</code>, a well know data type in python. Our child class has all the attributes and methods of the original parent class:</p>
+<p>What did we just do? The class definition (<code>class ArrayList(list)</code>) indicates that we created a subclass of the parent class <code>list</code>, a well known data type in python. Our child class has all the attributes and methods of the original parent class:</p>
 
 </div>
 </div>
