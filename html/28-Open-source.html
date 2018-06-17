@@ -9,7 +9,7 @@ gtag('js', new Date());
 gtag('config', 'UA-88391345-1');
 </script>
 <meta charset="utf-8" />
-<title>12-Assignment-03</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>28-Open-source</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11789,7 +11789,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": 1.0, "nav_menu": {}, "number_sections": false, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {}, "toc_section_display": "block", "toc_window_display": false};
+            var cfg = {"base_numbering": "28", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "750px", "left": "29px", "top": "111px", "width": "345px"}, "toc_section_display": true, "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -11805,7 +11805,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Assignment-#03:-exceptions-and-testing">Assignment #03: exceptions and testing<a class="anchor-link" href="#Assignment-#03:-exceptions-and-testing">&#182;</a></h1>
+<h1 id="Open-source-projects">Open source projects<a class="anchor-link" href="#Open-source-projects">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11813,9 +11813,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Since last week you have learned two important new concepts: unit testing and exceptions handling. In today's assignment we will revisit last week's code in order to properly test it and make it more robust.</p>
-<p>In exercise #03-02 we will learn the basics of numpy and matplotlib in order to display live meteorological data.</p>
-<p><strong>Note: for these exercises you are allowed to use the numpy and matplotlib libraries only! No external module is allowed (with the exception of the standard library of course).</strong></p>
+<p>The vast majority of the python libraries you are going to use during your career are open-source projects. This development model is fundamentally different from proprietary software like Matlab. But what does that mean exactly, and what are the consequences for you as a user? Since "everything has a cost", who pays for the development of open-source libraries? And how can you participate to open source development yourself?</p>
 
 </div>
 </div>
@@ -11824,7 +11822,8 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exercise-#03-01:-refactor-and-test-last-week's-code">Exercise #03-01: refactor and test last week's code<a class="anchor-link" href="#Exercise-#03-01:-refactor-and-test-last-week's-code">&#182;</a></h2>
+<p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Open-source-projects" data-toc-modified-id="Open-source-projects-28"><span class="toc-item-num">28&nbsp;&nbsp;</span>Open source projects</a></span><ul class="toc-item"><li><span><a href="#Definition" data-toc-modified-id="Definition-28.1"><span class="toc-item-num">28.1&nbsp;&nbsp;</span>Definition</a></span></li><li><span><a href="#Licenses" data-toc-modified-id="Licenses-28.2"><span class="toc-item-num">28.2&nbsp;&nbsp;</span>Licenses</a></span></li><li><span><a href="#Development-and-governance" data-toc-modified-id="Development-and-governance-28.3"><span class="toc-item-num">28.3&nbsp;&nbsp;</span>Development and governance</a></span></li><li><span><a href="#Consequences" data-toc-modified-id="Consequences-28.4"><span class="toc-item-num">28.4&nbsp;&nbsp;</span>Consequences</a></span></li><li><span><a href="#Participating" data-toc-modified-id="Participating-28.5"><span class="toc-item-num">28.5&nbsp;&nbsp;</span>Participating</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-28.6"><span class="toc-item-num">28.6&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
 </div>
 </div>
 </div>
@@ -11832,9 +11831,91 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Definition">Definition<a class="anchor-link" href="#Definition">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It is a common misconception to think that the primary purpose of open source software is to be free (of charge, as in "free beer"). In fact, what makes a software <a href="https://en.wikipedia.org/wiki/Open-source_software">open source</a> is its <strong>license</strong>, which must grant users and peers the rights to study, change, and distribute the software to anyone and for any purpose.</p>
+<p>Prominent example of open source softwares are the Linux operating system, the Firefox web browser, the VLC media player, or the CPython language implementation. Open source software may be developed in a collaborative public manner, but it doesn't have to.</p>
+<p>Non open source software are often called "closed source". They have a restrictive license and often attempt to hide their code from users and developers. Note that free of charge software might be closed source (in which case they are called "<a href="https://en.wikipedia.org/wiki/Freeware">freeware</a>"): a good example of popular freeware is Adobe Acrobat.</p>
+<p>The concept of "open" and "closed" source has been applied to many other aspects of society, technology, knowledge or science (<a href="https://en.wikipedia.org/wiki/Open_science">open science</a>).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Licenses">Licenses<a class="anchor-link" href="#Licenses">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Open source licenses can be roughly classified in three categories: <a href="https://en.wikipedia.org/wiki/Copyleft">copyleft</a>, <a href="https://en.wikipedia.org/wiki/Permissive_software_licence">permissive</a>, or <a href="https://en.wikipedia.org/wiki/Public-domain_software">public domain</a>.</p>
+<p><strong>Copyleft</strong> licenses grant the right to freely distribute copies and modified versions of a work with the stipulation that the same rights be preserved in derivative works down the line. By using this license, authors want to make sure that their work (and all the derivations of their work) will remain free. Prominent example of copyleft licenses are the <a href="https://en.wikipedia.org/wiki/GNU_General_Public_License">GNU General Public License</a> (used by the Linux kernel) or the 
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Share Alike</a> license.</p>
+<p><strong>Permissive</strong> licenses have less restrictions than copyleft licenses. Often, they warrant acknowledgement of the original authors (attribution), but they allow derivations of the work to be closed source. Supporters of permissive licenses argue that is is "more free" than copyleft licenses. Examples of permissive licenses are the <a href="https://en.wikipedia.org/wiki/BSD_licenses">BSD license family</a>, used for example by numpy. The majority of licenses in the python ecosystem are permissive, BSD-like licenses.</p>
+<p><strong>Public domain</strong> licenses are entirely free: they warrant absolutely no ownership such as copyright, trademark, or patent. A notable example of importnt software in the public domain is the secure hash algorithm <a href="https://en.wikipedia.org/wiki/SHA-3">SHA-3</a>.</p>
+<p>Note that providing code online (on GitHub or elsewhere) without license is not recommended. Even if you don't want to keep any rights on your code, you should add a statement putting your code in the public domain.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Development-and-governance">Development and governance<a class="anchor-link" href="#Development-and-governance">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <a href="https://en.wikipedia.org/wiki/Open-source_model">open source model</a> is a decentralized software-development model that encourages open collaboration. Very often, open source projects originate from a small group of developers and gather further developers as the software grows in recognition and acceptance. At the time of writing (17.06.2018), numpy had <a href="https://github.com/numpy/numpy/graphs/contributors">654 contributors</a>, xarray <a href="https://github.com/pydata/xarray/graphs/contributors">106</a>, OGGM <a href="https://github.com/OGGM/oggm/graphs/contributors">12</a>.</p>
+<p>The decentralized development model is made possible by platforms like <a href="https://github.com/">GitHub</a>, which help to organize the discussion and integration of code improvements by the community.</p>
+<p>Such a development model is not without problems and risks, and the lack of clear governance is probably the major argument that opponents of the open source model put forward when criticizing it.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Consequences">Consequences<a class="anchor-link" href="#Consequences">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Participating">Participating<a class="anchor-link" href="#Participating">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You probably didn't know it, but there are many ways in which you can participate to the development of open source source software!</p>
 <ul>
-<li><strong>Write a test suite for both exercises from last week</strong> (one <code>test_*.py</code> file per module). The test suite must contain unit tests for each function you programmed (I myself wrote 4 functions for exercise #02-01 and 3 for exercise #02-02).</li>
-<li><strong>Apply the exception handling methods learned in <a href="09-Exceptions.html">lesson 09</a> to the download function(s) of exercise #02-02</strong>. Add a test to your test suite to verify that exceptions are raised when an invalid tile is requested for download.</li>
+<li><strong>reporting bugs</strong> is probably the first encounter of many people with the open source development model. And it is an important one! Bugs that are reported can be corrected and are a good indicator of the use of a software library.</li>
+<li><strong>helping other to solve problems</strong> on platforms like github and stackoverflow is another step of open source participation</li>
+<li><strong>write documentation or tutorials</strong></li>
+<li><strong>participate to discussions about code improvements</strong></li>
+<li><strong>propose a bugfix or code improvement</strong></li>
+<li><strong>donate to open source foundation(s)</strong></li>
 </ul>
 
 </div>
@@ -11844,7 +11925,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Tutorials:-getting-started-with-numpy-and-matplotlib">Tutorials: getting started with numpy and matplotlib<a class="anchor-link" href="#Tutorials:-getting-started-with-numpy-and-matplotlib">&#182;</a></h2>
+<h2 id="What's-next?">What's next?<a class="anchor-link" href="#What's-next?">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -11852,42 +11933,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="http://www.numpy.org/">numpy</a> and <a href="https://matplotlib.org/">matplotlib</a> are two fundamental pillars of the scientific python stack. You will find <em>numerous</em> tutorials for both libraries online. I am asking you to learn the basics of both tools by yourself, at the pace that suits you. Personally I recommend to follow these two tutorials from the Scipy Lecture Notes for a start:</p>
-<ul>
-<li><a href="https://www.scipy-lectures.org/intro/numpy/index.html">numpy tutorial</a></li>
-<li><a href="https://www.scipy-lectures.org/intro/matplotlib/index.html">matplotlib tutorial</a></li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exercise-#03-02:-ACINN-meteorological-data">Exercise #03-02: ACINN meteorological data<a class="anchor-link" href="#Exercise-#03-02:-ACINN-meteorological-data">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The institute website provides live visualization of meteorological data: <a href="http://acinn.uibk.ac.at/current-weather/innsbruck-university">http://acinn.uibk.ac.at/current-weather/innsbruck-university</a> . The raw data used for the plots are available in a live feed at the following addresses:</p>
-<ul>
-<li><a href="http://acinn.uibk.ac.at/innsbruck/3">http://acinn.uibk.ac.at/innsbruck/3</a> for the three days data</li>
-<li><a href="http://acinn.uibk.ac.at/innsbruck/7">http://acinn.uibk.ac.at/innsbruck/7</a> for the seven days data</li>
-</ul>
-<p>The data for the other stations are available, per analogy:</p>
-<ul>
-<li><a href="http://acinn.uibk.ac.at/ellboegen/3">http://acinn.uibk.ac.at/ellboegen/3</a></li>
-<li><a href="http://acinn.uibk.ac.at/obergurgl/3">http://acinn.uibk.ac.at/obergurgl/3</a></li>
-<li><a href="http://acinn.uibk.ac.at/sattelberg/3">http://acinn.uibk.ac.at/sattelberg/3</a></li>
-</ul>
-<p>The data is shared by ACINN under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
-<p><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
-  <img align="left" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"/>
-</a></p>
+<p>Now that you are a proficient python programmer, embrace the open source movement!</p>
 
 </div>
 </div>
@@ -11896,150 +11942,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The data is provided in the <a href="https://www.json.org/">json</a> format, often used for web applications. Fortunately, this is very easy to read in python:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="k">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">urlopen</span>
-<span class="kn">import</span> <span class="nn">json</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://acinn.uibk.ac.at/innsbruck/3&#39;</span>
-<span class="c1"># Parse the given url</span>
-<span class="n">req</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">))</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="c1"># Read the data</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now I will help you to parse the timestamp of the data:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
-<span class="n">data</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1970</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">milliseconds</span><span class="o">=</span><span class="n">ds</span><span class="p">)</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;datumsec&#39;</span><span class="p">]]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>And make a first plot to get you started:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;tl&#39;</span><span class="p">]);</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYcAAAD8CAYAAACcjGjIAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAADl0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uIDIuMi4yLCBodHRwOi8vbWF0cGxvdGxpYi5vcmcvhp/UCwAAIABJREFUeJzt3Xd8XNWZ+P/PMzMa9d5sSbYlY7l3CxuwMWDTEyBkIQskAVKWX/ZLsmFJ2ZRNQjZlsymbkB4CJGFDQgglkFCMMZhqbGzjJlsukmVbktXbqGs05/fHFI9VrJE05d6Z83699PLMnXtnzvWV5rmnPUeUUmiapmmaP0ukC6BpmqYZjw4OmqZp2gg6OGiapmkj6OCgaZqmjaCDg6ZpmjaCDg6apmnaCDo4aJqmaSPo4KBpmqaNoIODpmmaNoIt0gUYTU5OjiouLo50MTRN00xj165dzUqp3GC9nyGDQ3FxMTt37ox0MTRN00xDRE4E8/10s5KmaZo2gg4OmqZp2gg6OGiapmkjjNvnICIzgEeAfEABDyil7heRvwDzPLtlAO1KqeWjHF8NOIAhwKmUKgtS2TVN07QQCaRD2gl8Tim1W0RSgV0islkp9c/eHUTkR0DHOd7jMqVU8xTLqmmapoXJuMFBKXUaOO157BCRQ0AhcBBARAT4ELAhhOXUNE3TwmhCfQ4iUgysALb7bb4YaFBKHR3jMAW8JCK7ROSuyRRS0zRNC6+Ag4OIpABPAvcopTr9XroV+PM5Dl2nlFoJXAPcLSLrx3j/u0Rkp4jsbGpqCrRYmmZ6NW09bCqvj3QxNO0sAQUHEYnDHRgeVUo95bfdBnwQ+MtYxyqlaj3/NgJPA6vH2O8BpVSZUqosNzdok/w0zbCaHP28VF7Pj146wqf+uIvmrv5IF0nTfAIZrSTAQ8AhpdT/Dnv5cqBCKVUzxrHJgMXTV5EMXAn81xTLrGmm1u8cor1nkK8+fYCXDzX4tm893MRNq4oiWDJNOyOQ0UprgY8C+0Vkj2fbV5RSzwO3MKxJSUQKgAeVUtfiHv76tDu+YAP+pJR6MViF1zQz+sTvd/LmsZGD916paNDBQTOMQEYrvQnIGK/dOcq2OuBaz+MqYNnUiqhp0aO1e4C3K88EhuLsJKpbegB4/UgzA04Xdpuem6pFnv4t1LQweu1IIy4FD99Zxleunc91ywoAWFaUTle/k5t/s40BpyvCpdQ0g2Zl1bRoteVQIzkp8Vw6N48N8/Np7xngVGsP/3HNfO54eAd7T7Wz43gr60pzIl1ULcbpmoOmhcngkIvXjzRx2bxcLBZ3S21Gkp2f3LKC6emJPHP3OuJtFl46WM/bx5pRSkW4xFos08FB08LkQG0HnX1OLp2XN+rriXYrF5fm8si2E9z24HZ2n2wPcwk17QwdHDQtTPbXutOPLZ+ZMeY+914x1/e4sqkr5GXStLHo4KBpYfC7t47z9WfKSY23UZCeMOZ+CwvSePGeiwE43twdruJp2gg6OGhaGPxqa6X7gYBn3s+Y5k9LY3ZuMsebdHDQIkcHB00LgxlZSQD89NYVAe0/OyeZ6hYdHLTI0cFB00Jsx/FWjjQ4+MDyAi4bozN6uBlZSZxq7QlxyTRtbHqeg6aFUM+Akw/9ZhsAeWlj9zUMl5+WQPfAEF39TlLi9Z+pFn665qBpIeTfqZyXGh/wcd59Gzv7gl4mTQuEDg6aFkL+wSF3AsEh31PLaHToNN5aZOjgoGkhVO0XHGyWwP/cfDUHHRy0CNGNmZoWQlXN3STZrXx4zUw2LgisMxrO9E/oZiUtUnTNQdNC6HC9g1WzMvnq+xaSEGcN+Li0BBvxNouuOYTJeyfbeOjN47R1D0S6KIahg4OmhUi/c4gjDQ4WF6ZP+FgRIT8tgZMtPWyrbKGzbzAEJdS8/vNvB/jWPw7y0JvHI10Uw9DBQdNC5Eh9F4NDiiWTCA4ABRkJvFhez62/fYcbf/GWXuchhBo8zXevVDRGuCTGoYODpoXInhp3VtXFBZMLDoUZSb7HlU3dPPyWvqsNBeeQi5buARLjrBw83UmjQ/fzgA4OmhYyrx1uZEZWIjOyEid1fGGGu1N6dXEWly/I56dbjtLRo5uXgq25awClYINnwMCxBp0NF3Rw0LSQ6Bsc4s1jzWyYlzduor2xFGS4g0pSvJVbV8+gZ2CIqmb9xRVs3ialNSVZgHuEmaaDg6YF3YmWbn700mH6Bl2snTP55T6TPGkz7FaLnhQXIpvK6/nu84cAWFqUQUKcxTdxUSnFU7tr6O53RrKIETNucBCRGSLyqogcFJFyEfmsZ/t9IlIrIns8P9eOcfzVInJYRI6JyJeCfQLa+JxDLrYebqRKLx4TckMuxd1/2s1v33D3DywtGnthn/GcX5wJwCfWlehJcSHQM+Dk/z26m+3HWwGYlpZAcXayLzhsq2zh3sf38v0XKzjS4ODtyuZIFjfsApkE5wQ+p5TaLSKpwC4R2ex57cdKqR+OdaCIWIFfAFcANcC7IvKsUurgVAuuBWbA6eLve+v43F/3kpcaz46vXh7pIkW1x949yYHaTt/z/LTAU2YMNz09kervvQ9wBx2L6ElxwfTm0WaGXAq7zcKA00V2ip3zclN8K/ZVeoLEW5Ut/GHbCQCe+NSFlBVnRazM4TRucFBKnQZOex47ROQQUBjg+68GjimlqgBE5DHgBkAHhzBwuRRX3/86VZ5FYxod/fQODJFoD3wylhY4pRQ/3nyU1SVZ7DjeSrLdOun+huGsFiEnJZ7GTl1zCJZXKhpJjbex82uX09XnJM5qYWFBGs/tP01H7yAH69xB/lhjFxYBl4LNhxpiJjhMqM9BRIqBFcB2z6ZPi8g+EXlYRDJHOaQQOOX3vIbAA4s2Rc/tP+0LDF56AZnQOdnaQ3NXPzeuKGTzv69n872XBPX989LiadDDLIPC5VK8UtHI+rm5xNusZKe4a3jeCYvLvvkSf9155qvrgyuLWDcnh60VTREpbyQEHBxEJAV4ErhHKdUJ/Ao4D1iOu2bxo6kURETuEpGdIrKzqSl2LkAoldd1jth2vLmb37xWyTN7aiNQoujmbU5aUphOaX6qb7RRsOSlJnC6XQeHYHDPZ+jnsvln57taXJDme/zhNTOJs7prfksK01kxM4NjTV0MDsXGZMSAgoOIxOEODI8qpZ4CUEo1KKWGlFIu4Le4m5CGqwVm+D0v8mwbQSn1gFKqTClVlpubO5Fz0IY50uDguX2naXT0MS0tgVvOn8Fjd10AwJO7avjvFyr47GN7IlzK6LO/toM4q1CanxKS919TksXhBgdvHNU3T1NVUe8AYNWssxs8slPiufOiYn535/l884bFzM5xX8sF09MoyUlmyKU41dqDUoo/7zhJUxQPEAhktJIADwGHlFL/67d9ut9uNwIHRjn8XaBUREpExA7cAjw7tSJr57L3VDtX/vh17v7Tbiobu5iWnsD3/mkpF8zOZmZWEls86QHibXoUczA5+gZ5cncNq2ZlEm8LTZ/OHRcVMys7ifueLdepNKbIOwt6tAED912/yFej+NI185mWlsDiwjSKc5IBeGTbCf7y7im+/NR+7n08em+yAvmGWAt8FNgwbNjq90Vkv4jsAy4D/h1ARApE5HkApZQT+DSwCTgEPK6UKg/FiWjQ3jPADb94y/d8b03HWauPrZ97Zsx9v9N11loD2tT8Y99pmhz9fOGq+SH7jIQ4K1+6ej6VTd1sq2oJ2efEgsbOflLibSTZzz0m57L5ebzzlY0k2W3M9gSH379dzZee2g9AZWP0Dg8PZLTSm8BoQy6eH2P/OuBav+fPj7WvFlyvHRnZ3JDvt27xujm5/PGdk2ycn8eWikYu/eFWtn15A9PTg9s2Hov21XSQlmBj5czJz2sIxHLP+9e09YT0c6Jdo6OPvAkOM85Iso/Y1h/FNTjdthBFth5uIjMpjr/cdQE3rnAPCvOvOVy1KJ8nPnUhX3nfAt+2LYd0FspgKK/rYHFhetCGro4lLzUBm0Woa+8N6edEu8bO/gmt6e21+d/Xs/trV/iet3QPRG2/gw4OUaSi3sGKmZmsmZ3tW3XM/+5IRCgrzmJ2TjLfvXEJyXarTlEcBA+8Xsm+mo5Jp+aeCKtFmJaeQG2bDg5T0ejoJy81YfwdhynNTyUr2c5jd13Av156HgD1HdE5gkwHhyjhcimqm7sp8bSLbpyfz21rZnLJ3JFLU4oIt62Zyc1lM3ilopEfbKqg3zkU7iJHjad2uwfgfWBFeKbwFGYkUqeHtE6aUopGR9+UZq9fMDubyz03YC3duuagGdgTu2roHRzyBYdEu5Xv3riEaelj3x15axe/eLWSbZW6g3Oy2nsGuXlVEQump42/cxAUZiRSq5uVJu3ZvXX0DbpYNMl1Nryyk93BpaUrOpcWDSS3kmZgA04Xh0538sUn9wH4RlQEYnXJmTQADTpnz6S19QyQmTyyszJUCjISqe/swznkwmbV93cT9ecdJ5mTl8J1ywqm9D7ZKe5r3hql607r3yyT+/JT+88avjonL/AJWPE2Kwf/6ypE0G3Yk9Q7MES/00VGUlzYPrMwM5Ehl9IZWieppq2XxQVpWC1TGzyQEm/DbrPQrJuVNCN6cneN7/Gf/mUNeWkT62RLstvIT02gVrdhT0pbj/uuMXOUYY6h4k3LoZuWJm7Ipajv6AtKahMRITvZHrXNSjo4mJzdb6bzhbOzJ/UehZmJemjkJJ0JDmGsOXiWD9XXbOIaHX04XYrCzODM7clOsetmJc14XC511vOpLEe5raqFt4/F1mImwdDuWdN5tAlSoaJrDpPnDajBSoqYnRxPS5duVtIM5nRnHwNOF+mJcdx33cJJv493SN6Dbx4PVtFiRiSalZLsNjKT4nQ/0SR4m08LgxQcCjISqW5xJ+KLNjo4mNgJT26kX354JXeuLZn0+9ywvJBrl0zTuZYmoc1TcwhnsxJAcU4yh06PTMmunZs3oAar5rC4MI2O3kFqojBQ6+BgUkopX7NCURDaT0tykjnZ2hMzueqDZc/JduKsEtZmJYD1pbm8d6o9atu7Q6WuvZf0xDhS4oMzin+xZ67Eu9WtQXk/I9HBwaTu+csevvCEe27DuSa6BaokJwWnS0XlHVConGzp4an3arjjwuKzBgaEw4b5eSiFXtthgurae4PWpAQwb1oqFoF7H9/LAc/a09FCBwcTcrkUz+ypA9xjrYOxfoB3ZvVnH3uP+18+OuX3i3ZP7a7hup+/iVLuZrlwWzDdPU7/aEP0powOhdr23qCu0JcQZ+Wnt64A4Pn9p4P2vkagg4MJ7fO7Q+nqdwblPRdMd98B7avp4McvHwnKe0azex/fS0evu7+hOCcp7J9vt1mYkZnIcd1PFJDtVS186v92UVHv8A0FDpb3Ly3gwtnZUZfEUgcHE9oZgvbNJLsNm+XMr0O0piEOhdSE8HZGe5XkJFOlg0NAfrm1khfL64HQXK+NC/KoqHdE1TobOjiY0P7aDqanJ5CXGs/nr5wbtPf9wc1LfY+jrf00mIzSaV+Sk0J1c/eI+S7a2br7nWyrbOHi0hzSEmysnxv8Neo3eJYVfTWKag86OJjQ/toOFhWks+Orl/PpDaVBe98blhey/74ribMKz0VZ+2kwHfYsTg+wbk7OOfYMrTl5KfQODnG4wRGV4+yD5d3qVgaGXNy1fjb77rvqrISTwTI7N4VZ2Um8fjR6JpLq4GAyXf1Ojjd3h2xhmdSEOD62toQndtVwqjV6qsjB4hxy8f6fvQnAIx9fzYN3lEWsLN7AdM39b/CQnsA4pv017lrwshkhXsJ1RkZU1bh1cDCZg3WdKAVLikK3dsA1i6cBZ98ha271ntTml87L5eLSHBLipj5SbLJmZp/pCH/s3VMRK4eR/XjzEX60+QjF2UmkhbhvaElhOqc7+miOknQaOjiYzH7PncniKS5Uci7eYa16JMxI3hXYPr62JOTrRQfiT/+yhoQ4C91BGrUWTcrrOrh/i3tYdjCGe49nsac2vz9Kag/jBgcRmSEir4rIQREpF5HPerb/QEQqRGSfiDwtIqPW2USkWkT2i8geEdkZ7BOINQdqO8hLjZ9wau6JyEiyk5Vs1yNhRlHb7m5qC+ZY+am46LwcPn/lvKi6Yw2Wp3fXYrMI1y0r4D/fvyDkn7ekMB271RI1CSwDqTk4gc8ppRYCFwB3i8hCYDOwWCm1FDgCfPkc73GZUmq5UipyDbRRoL6jj03l9VwwydTcE1GSk8zxZj3Bari6ICduC4blnrb07VXRl8JhKl6paGTtnBx+dusKLi4N/gil4ZLjbayZnRU18x3GDQ5KqdNKqd2exw7gEFColHpJKeWty74DFIWumBrAf79wCKdL8bkgDl8dy6zsJE606A7p4WraeslKtpNoj1xfw3DLZ2SQnhjHo9tPMOA0xjDbSHvzaDNVzd1csTA/rJ975cJ8Kpu6eSsKag8T6nMQkWJgBbB92EsfB14Y4zAFvCQiu0TkrokWUHOraurimT113HXxbGZlB75O9GRNS0ugydGvx9AP406/ELomvcmwWS1smJ/H25UtfOPZA5EujiHcv+UIM7OSuGlVeO9Zby6bwYysRH740uGwfm4oBBwcRCQFeBK4RynV6bf9q7ibnh4d49B1SqmVwDW4m6TWj/H+d4nIThHZ2dSkk4kN997JdgCuXz61RdEDlZcaj9OlfOsVaG7Vzd0UhyE4T9R/vm8Bs7KT2FTewFAMB/TTHb2UfXsz71a3cdWi/LCPJkuIs/KhVTN472Q7jQ5zL70bUHAQkTjcgeFRpdRTftvvBN4PfFiNMQtHKVXr+bcReBpYPcZ+DyilypRSZbm5oW8fNJv9tR0kxlk5LzclLJ/n7fBu6NSdnF4DThc1bT3MzjFecMhOiefeK+bS2j3ArhNtkS5OxLx8sIFmz5rOi0M0F2g8GzyLZ209bO6b3EBGKwnwEHBIKfW/ftuvBr4IXK+UGrVxWkSSRSTV+xi4EtD13kkor+tgYYE7E2c45KXGA5j+7ieYTrb24FJQkmu84ADuFA5ZyXZ+uOkwj2yrjsk1po83n/kqilRwWDg9jWlpCbxyyNwd04HUHNYCHwU2eIaj7hGRa4GfA6nAZs+2XwOISIGIPO85Nh94U0T2AjuA55RSLwb/NKLbkEtRXtfJ4oLQTXwbLt9Tc2jUCfgA94RAbydjSU54am8TlZoQx6cumc2O6la+/kw5n33svUgXKey8M5TXzsmmJELNfyLChgV5vHG0iX7nUETKEAzjLoeklHoTGO129flRtqGUqgOu9TyuApZNpYCaezJaz8BQWO+Ecj01B52d1e2qn7zue1xiwGYlr7LiM3mDvM0rsUIpxaHTnXzkgpl8+wNLIlqWjfPz+NP2k+w43hqWYbShoGdIm4D3biicwSEhzkp2sp3dMdx+PZoZWYmkJ0YmRXcgFk4/U7uMs0Z+Bnc4NXcN4Oh3hq1f7lwuOi+HeJuFLSZuWtLBwQS2VbYQb7NQmhfeX/qPrS1mS0Uj+2raw/q5RuM/1iI3JT6CJRmf/+icmrbemMrWWt3intFvhJpdot3K2jk5bCqvN23Tkg4OBlfZ1MUTu2u4uawImzW8l+v6Ze7lLytiPAFfz8CZP+6sZGMHB4Bn7l7LzauK6BkYiqk+o+NN7uAw2yB9Qh9bW8zpjj4eeftEpIsyKTo4GNw/9p7GpRT/tjF46zYEalp6AiJQ2xZ7o178eZcDTY238V83LIpwaca3bEYGVy1yZ9at74id0WZVzd3EWYXCTGOkNrm4NJd5+am8U9US6aJMig4OBvdKRQPLZ2SQlxr+Wbl2m4W81PiYHBLpzxsc/uempYZJuDeerBQ7AC3dsVNzOFzfyeyclLAN9w7EeXnJps1urIODgQ04Xeyr7YjoamMFGYnUdejgABi6I3q4HE/zV0sMjVg6UNcZsbkNYynJSeZka49hlpadCB0cDKypqx+lIpsBtDAjMeablTpNGByyfTWH2AgODZ19NDn6WVwYvrlAgSjJScHpUtSY8G9IBwcDa/SsOpaXFrlO0MKMROo6+mI6AZ8Zaw5JdivxNgutMRIcDta5070tCuEiWJNRkuNerc+M6e91cDAw70iTSPQ3eBVkJDLgdMXMHehovMEhzUTBQUTISYmPmQWAvMu3FhmkM9prerq7PPUd5rsOOjgYmFFqDuBOVR2LOnoG+fZzhwD3aCUzyU6xx0yfg7eGlJVsj3BJzpaTYt4cZTo4GFijox+LQHYEx9Z7R+fE6oilv++rA+DyBXlYDDQKJhBZyfaYaVZq7uonJd4W9hTd47HbLGQn200530QHBwNr7OwnJyU+okPzCmM8OLxS0cis7CR+e7v5VrgtykzkeHN3TKwO19I14OuEN5rc1HgaTZj6XgcHAzve3M30CI+rT0u0kRJvM+Voi6k60dLNm0ebuXxBPu7M9eayvjSXrn4nO6vNvba0UmrcBYxauwcM16TklZeWoJuVtODp6B1k18k21s3Jjmg5RITCjEROtJhzIs9U/Pq1SmxW4a71syNdlElZV5qD3WrhtaPmXnTmv1+o4LyvPH/OEXPNXf0RbX49l3xdc9CCafNB93KPG+aHd4H00Zxfksn24630DZozgdhk1bX3UZqX4lvbwmyS7DZmZidxsmXUtbhM44HXqwDoGnCOuU9L9wA5Bm1WykuLp6nLfOux6+BgQP3OIf73pcMsmJ7G8hkZkS4OG+fn0zMwxPbj5m6emChH3yCpCeYZvjqagozEqBlp1tEz6Hu8rbKF771QgVIK55CLtm7j9jnkpMQz5FK09w6Ov7OBmGtsXow40dJDXUcfn79qniHyxFwwOxurRdhZ3colc825cMlkOPqcpq01eBVmJHCwriPSxQiKjt5BZnge3/dsOYcbHCwsSKOlqx+nS7FyZmZEyzeWbM9w1tbufsP2i4xGBwcD8rZPGiXJW6LdSmleim/RoVjh6HOSmmDuP5GC9ESauwboGxwy3DDPier0u/O229yNHo+8XU1r9wCri7PYMD8vUkU7pxxPQGjuGmCOMYs4Kt2sZEDekQ15qcbpYFtUkM7+2s6YWjwmGpqVvOmro2EocmefOzgopXwDJHaeaKOquZv3L5tu2BFlvgy5JpuQqIODAfnSZhioSWNxYRrNXf0xs6a0c8hF98CQ+WsOvnkq5htKOZw3jUlr9wCdfU5uXFHoe+2yeca9JfeOomo1Wfp0c//mR6nGzn6S7VZSDJSuoTQvFYDKpm5DBa1Q6ep3j4wxe83B22fS0GnO4HDLA9t8j73B4VijO4nddcum84EVhcTbLMzISopI+QKRmRSHiLtZyUzGrTmIyAwReVVEDopIuYh81rM9S0Q2i8hRz7+j9gaJyB2efY6KyB3BPoFo1ODoM9wXcEmue11esy5cMlGOPndwSDN5zcHbNGnG9A0A71SdGSHnDQ5vHWvGIrBiRiaXzM3lgtmRnQs0HpvVQkZinOkWXgqkWckJfE4ptRC4ALhbRBYCXwK2KKVKgS2e52cRkSzgG8AaYDXwjbGCiOZW2dTFc/tOk2ug/gaA6WkJxNsspkw9PBne9m2z1xyS420k262mnKE7fF7A8eZuHnyjipcONrBqViaZJhr5k50SH319Dkqp00qp3Z7HDuAQUAjcAPzBs9sfgA+McvhVwGalVKtSqg3YDFwdjIJHo8EhF//6x10AhhsyarEIJTnmXfJwojp7o6PmAO6mJTPWHHqGTbp8fn89337uEBX1DkNMDp2I3JR40zXtTahDWkSKgRXAdiBfKXXa81I9MNrVKgRO+T2v8Wwb7b3vEpGdIrKzqcnc0/0na+vhJo40dPHLD6/k7svmRLo4IyyYnsb2460xsUaAI0pqDuBN/GauLyaAHk+/z3duXMzq4qyzXtu4wLgd0KMpyEjkdIe5rkHAwUFEUoAngXuUUp3+ryn3+MYpjXFUSj2glCpTSpXl5hrrrjlcXqloIDXexuULjHlXdPdlc+gZGOKRt6sjXZSQO7PAj/lrDnkmrTl4BwUk222sHbaOemleSiSKNGmFmYk0dPaZai3pgIKDiMThDgyPKqWe8mxuEJHpntenA42jHFoLvkmNAEWebdowSilerWji4rk5vgk+RjMnL4V5+am8d6o90kUJuXrPXZ7ZZ0iDO/FbQ2ef6eaodPe7m5WS421cMs99w7h+bi5vfWmDYec0jKUwIwGXOvN7ZQaBjFYS4CHgkFLqf/1eehbwjj66A3hmlMM3AVeKSKanI/pKzzZtmEZHP/WdfZw/rPpsNEsK0zlQ22G6L5qJqm3vJSfFbvpZxQAzs5PoG3SZbo5KtyfRXnK8lWVF6dx/y3J+esty3xojZmLGRbMCuUVdC3wU2CAiezw/1wLfA64QkaPA5Z7niEiZiDwIoJRqBb4FvOv5+S/PNm2Y/TXu1BRLCo21QPpwiwvTaOsZpM5Ed0CTUdvea8ovodGU5LiHIVeZbDBBt1+zkohww/JCMpLMM0LJnxmX2x23QVUp9SYwVh1u4yj77wQ+6ff8YeDhyRYwVuyv7UAEFhakRboo57TYE7z213REzZfnaOrae5mbnxrpYgRFcfaZOSpGnxPgz9fnYKDJoJNVmJlIYpyVvafa+eDKokgXJyDGbNyOQeV1HZyXm0KS3dh/CAump2G1COVRkulzNEop6tr7DJP4cKoKMhKx2yymG4Z8ps/B/E178TYra+dks6Wi0TRNsjo4GMT+2g7DNykBJMS5M7Tuj+IMrR29g/QODkVNcLBahJLsZF/aCbPoGYiemgPAZfPzqGnrNU2Q1sHBABodfTR09vuabIxuUUE65XWd4+9oUt55HEZdWWwyFhakma625z+UNRqsmOFODmGWGysdHCLsZ1uO8uk/vQfAYoP3N3iV5CTR5OindyD6lg1942gTH/zl24B7Ba9osbgwnYbOflOl0ejud5IQZzHEglfBUJqfgt1mMc26KDo4RNiPNh9hx/FWRGCRSWoOvmF5HeYZeRGoj/3uXTo9SfeMuuzkZHhvPMzyxQTQPTBkqMzEUxVntbBgWqquOWjj63eeufPOTLKb5g/BNyyvLfqCgz9vHv5osKQoHbvVwrbKlkgXJWCtXQOmHbqelMnZAAAgAElEQVQ6lpWzMnnvZLspat06OETQqdYe32MzVZy9NYdXDzfiNFE6gInKTDJ/XiWvJLuNNbOz2FIxWiIDY6rr6I2aQQFeG+bn0e908XZlc6SLMi4dHCKoqunMqIWby2acY09jmZbuTinxu7eq+fu+ugiXJnRs1uj689g4P4+qpm7TjJapbYueiYheq0uySLZbTRGko+u332SqPevgvnzvJXzhqnkRLk3g4vy+NKNh+Umv3oEhnC5zjEGfDG+a61dM8MXUNzhES/cAhRnmz23lL95m5eLSXF45ZPz5Djo4RFBtWy+pCTbm5KWYbkTGPz6zDoC2bnMtYHIulU3mmgcwUTOzkyjNS2HrYeMHB28OosLM6Ko5AGxYkEd9Zx8V9Y5IF+WczNEDGqXMnL9ncWE6s7KTTJkKeiw/efkoyXYr37xhsWmvy3iWFmWYor3bWyMtSI++6zB/mjstS21bLwumG3f4ug4OEVTb3mfqL6G8VPOtbjWW1u4BtlQ0cPelc7hplTly30xGYUaCb12BOAP3qXgnIhptudxgSE90D3TwrhliVMb97YgBtW09ph6NkZeWYLo00GPZergRpeCqRdMiXZSQKshINMW6AtG0Et9wOjho5+ToG6Szz2nqNtW81PioaFZyuRR/fOcE09ISWGSSWeqT5f19M/q6At6JiKlRsIb3cN6Ap4ODNipfm6qJaw75aQl09Tt9OXDM6s1jzew+2c69V8zFYrKBARNVYJJ1BTr7BrHbLFGx2NJwVouQGm+js08HB20U3rHmJZ5c+2Y0KysJgGqTjJsfS0W9O4lgtDcpwZnZ7UcajD0yy9HnJC0Kaw1eaYlxuuagjc4bHIpzkiJckskryT2ziIyZHW/uISvZTnoUzYgeS0KclcsX5PN/26oNPZjA0eeMyv4Gr/TEODp1cNBGc7y5i5yUeFP/AczKipbg0OVbSjMWfO39Cxh0KW554B12n2yLdHFG5egbjMr+Bq90XXPQxnK8uZvZJv9CSrRbKUhPiILg0B1TwWFWdjJfuWY+x5u7+d4LFZEuzqjczUrmvXEajw4O2qgGh1xUnHYwJz8l0kWZsjn5qaZKAz1c3+AQDZ39vv6TWHHn2hI+s2EOu0600d5jvFnunb265hBp4wYHEXlYRBpF5IDftr+IyB7PT7WI7Bnj2GoR2e/Zb2cwC25mO6vbcPQ7WV+aG+miTNn60hyONnadlWHWTBo73UNx89OjK4dPIDbMz2PIpXjtSFOkizKCu88heoNDWqLN/MEB+D1wtf8GpdQ/K6WWK6WWA08CT53j+Ms8+5ZNvpjR5ZWKBuxWC+tKcyJdlCnbuMA8ydxG410ZLT8t9oLDsqIMspPthrx27j6H6G5W6ht0nbWmi9GMGxyUUq8DraO9JiICfAj4c5DLFdW2VDSyZnaWaRb3OZeSnGRm5ySbIgXxaLyT+PKiME3DeCwW4dJ5eWw93MSQgbLRDrkU3QNDUV1zMMMs6an2OVwMNCiljo7xugJeEpFdInLXFD8rKlQ3d1PV1M3G+XmRLkrQbJifxzuVLXSbcDKcdzhnLAYHgNUlmXT0DhpqVT9vSpZoWsN7uDRPcDDycNapBodbOXetYZ1SaiVwDXC3iKwfa0cRuUtEdorIzqYm47WBBsuBOnfn7eqS7AiXJHjWleYwMORi76n2SBdlwhod/cRZhcwoW44yUCU57kERVc3GmBTX2TfIX3eeAqIzXbfXmZqDcW+oJh0cRMQGfBD4y1j7KKVqPf82Ak8Dq8+x7wNKqTKlVFlurvk7asfi7QCdHkUdoEuLMgBMs3C6v8bOfnJT4qM+bcZYvEN4jTIc+et/O8CPNh8BMHXG4vGkR3nN4XKgQilVM9qLIpIsIqnex8CVwIHR9o0lDY4+7FYLGVE0Gzcr2U5hRiIH6jojXZQJa3T0kRuDndFeOSl2UuNthgkO/okco+kGario6HMQkT8D24B5IlIjIp/wvHQLw5qURKRARJ73PM0H3hSRvcAO4Dml1IvBK7o5NXX2k5saj7svP3osLkzj3eOthh59MZrGzv6Y7W8AEBFKcpMNswreTL/5JtE8WiktGoKDUupWpdR0pVScUqpIKfWQZ/udSqlfD9u3Til1redxlVJqmednkVLqO6E5BXNpdPSTlxZ9X0a3rZlFfWcfj7x9ItJFmZBGRx/5UXg9JmL+tFQO1nWilOJzj+/lcU+bfyQYadRUKEVFzUELrkZHX1TeqV4yN5flMzL4+766SBclYP3OIdp6BslLjd7mi0AsKUynrWeQk609PLm7hi8+sc83/yPcvOnff/PRVRH5/HCJs1pIslt1cNDOaOjsj9ovoysW5rOvpoNGA2f79NcUw3Mc/C0qTAfgU3/c7du2qzoyCfm6+p2smJkRE+nTjZ5CQweHMOobHKKjdzBqv4w2eOZuvHrY+BPi6tp7OdrobmePxdnR/hZ6Frk/dPrMgIJIrfDn6HNGxeTQQGQk2WnrNl5eKy8dHMLIe6carV9G86elUpCewJZDxg8O67//Kh/73btAdC5iPxEJcVbe+OJlZ22LVLNSd39051Tyl5saT1OXcZfZ1cEhjLx3Y7lR2gEqImxYkMcbR5tpNvAvvculcPp1fE6L4iGTgSrym3CWkRTnm48Tbl39sVNzyE+NN/SCSzo4hFFjDKRq+NjaEpwuF99/0ZjrBAC0eKryF5fm8Nvby6I6TUOg/IdWz8xKoiFCzUpdfU6SYyQ45KXF09w1YNgRWjo4hNGZJG/Re6d6Xm4KH19bwuM7a/jU/+1iwOmKdJFGqGt35xG6/cJirliYH+HSGMdT/+8ifnHbSvJS4yMyqMDlUnQNOEmNleCQmsCQS9Fq0H4HHRzCqNHRh9UiZCdHdx6fz2wsZXZOMi+W1/tySRlJrSc4FGREb5CejJUzM3nf0unkpSVEpEO6Z3AIpSAlRvocvPNrjNq0pINDGDXESB6flHgbf/zkGgBDrhLnrTkUZcTW6m+Bmj8tldbuAd44Gt4EmF197jkOKfHROzPaX66nBaEpQk1449HBIUz6nUO8W916VnqAaDY9PYGsZLvhgoNS7pXPspLtpCXGxh3qRH2obAZFmYn84tVjvklp4dDZ5x7zHyujlbyJBY2SumQ4HRzC5B97T3OipYd/vey8SBclLESEpUXpvHWsxVD5lt6tbuONo83cfdmcqMtvFSwJcVauX1bAO1WtLP7GJlrCNPLMewcdK0OLp6UncF5usiGXaQUdHMKmsqkLm0WiYt3oQH1sbQm17b08tiNyuXqGe6m8HrvVwi3nz4h0UQxt44Izi1HtrQnPOh2xuPDSxgX5vFPVYsih3zo4hEldey/T0hOwRnl/g79L5uZSmJHIHgMtAvTq4UYuOC87ZoZLTtaKGZl8/sq5AHz89zt5u7I55J/pG80XpZNER/PPnpsUIw791sEhTGrbe6N68ZKxlOQkU2WQtQIATrT0sKggLdLFMDyLRfj0hlLf89t+u52egdD2PzR29pNst8bMJDjwDP1e5x76/d7JyOSzGosODmFS194Xs8HheFMXSkV+os/gkAunS5EYZ410UUzjnstLfZMEf7rlGPUdoRt22eDoi6lag9dnNpSSnxbP158pN9SEOB0cwsA55KK+sy+q18QdS0lOMp19TkNM9OkbdHeM6+AQuHsun8v2r2wE4NevVfIvj+wM2Wd5F8KKNSnxNr5y7QL213ZEdC2N4XRwCIP6zj6GXIqCGKw5zM51r1FcUe+IcEmgb9A9WzshTv/aT4TVIr6Mu6FaJ7yr38nRRgcFMZrn6vplBawuzuIHmw7TO2CM0X36ryTEfv/Wcdb9z6sAFGcnR7g04VdWnEWcVQwxXM9bc0jQNYcJ+/GHlnPTqiIA2nuCXwt8+M3jtPUMcvtFxUF/bzMQEb5942J+/ZFVJNqN8fupg0OIffu5Q77H3rvoWJISb2NNSTabDzbginB7qg4Ok5eeFMcHlhcC8C+P7OSB1yuD+v7P7z/NmpIsVs7MDOr7msnc/FRWl2RFuhg+OjiEmP+M6Fgav+3v5rIijjd385GHtkc0VUCv7nOYkpWzMgD3RMLvPl/BDzcdZnBo6okVa9t7qah3nDW3Qos8HRxCzH9hn1idkXv9sgI2zM/j7coWthxqiFg5zvQ56OAwGUl2Gw/eXuZ7/vNXj/FudeuU3/eVCvfiUBvm6wy5RjJucBCRh0WkUUQO+G27T0RqRWSP5+faMY69WkQOi8gxEflSMAtuFt671ctj+K5IRPjVR1YCkVt+EvxqDnZ9TzRZly/MZ/99V/qev3a4yddcNxmOvkF+9+ZxZmUncV4MNrsaWSB/Jb8Hrh5l+4+VUss9P88Pf1FErMAvgGuAhcCtIrJwKoU1o87eQd63dDoP3nF+pIsSUfE2K5lJcRFNT+z9Eou36ZrDVKQmxHHsO9dgswi/eb2Kr/3twPgHjeHLT+2nqrmbKxbkx2zN2qjGDQ5KqdeBydQdVwPHlFJVSqkB4DHghkm8j6l19A6SnhgbKYjHk5camXUCvHzzHAwyGsTMbFaLrz/tpYOTbyqsqHcwPT2Bez2pOjTjmEr9+tMiss/T7DTaEINCwH9GR41nW8xQSung4CcvLd4QwUH3OQTHg3eUsbgwjd7BoUl1TA+5FCdaurl+eQFJ9thJmWEWkw0OvwLOA5YDp4EfTbUgInKXiOwUkZ1NTZEfEx8Mv9xaidOldHDwyEtNiMjyk+DO+Pmtf7iHFevRSsExOzeFf7l4NgNOF0cbJr4mQW1bL4NDitk5uq/BiCYVHJRSDUqpIaWUC/gt7iak4WoB/7zIRZ5tY73nA0qpMqVUWW6u+dNau1yKH2w6DKCDg0deWjxNjv6IzHf4/F/3+hau0TOkg2f+NHcSw6ONE58BX9XsDiglOSlBLZMWHJP6KxGR6X5PbwRG65F6FygVkRIRsQO3AM9O5vPMqNVvFmmcVX8ZAZTmpeB0KV6OwHDWqqYzmWETdId00MzKTkLk7P/fQD2zpw671cLcfB0cjCiQoax/BrYB80SkRkQ+AXxfRPaLyD7gMuDfPfsWiMjzAEopJ/BpYBNwCHhcKVUeovMwHP9RObGaL2a465YVMCcvhZ++cjTsn93mF6yjfQ3vcEqIs1KYkcjxCaZl33G8laffq+X/u2Q2GUn2EJVOm4pxe4GUUreOsvmhMfatA671e/48MGKYayzwdrz+7NYVXDQnJ8KlMYY4q4UPrizk+y8epr6jj2lhCppd/U56DJLMLBqV5CRT3RJ4cHAOufj6MwcozEjk/106J4Ql06ZCt3eESFOnOzgsn5ER4ZIYy0bPLNgXD5wO22e2GSBdeDSbnZNMVVN3wH1Jf9pxkop6B1993wI9rNjAdHAIkUaHu1kpFvPTn8vc/BRWzcrkZ68c83UQh1pH72BYPidWrZiZSVe/kw/88i0qm8YetaSU4icvH+Hrz5Szdk421yyeFsZSahOlg0OINHT2k54Yp8fUDyMifPGqebR0D/CqJ6dOqDn63EHoQ2VFfPHqeWH5zFhyyVz36MJ9NR3c//JRnt1bx6nWnhH7vXSwgZ+8fJTZOcl8+wNL9Ixog9PBIUROd/QyXXdEj6qsOIusZLsv4VqoOfrcNYfbLyzWbdwhkJls5/1L3QMYn91bx7/9+T0+9/jeEfv94e1qZmUnsenf11Oi5zYYng4OIVLV3K3/AMZgtQgb5+exqbz+rFFdziEXA86pp4AezltzSE3Qs3BD5ee3reT7Ny31PS+v6zhrPWRH3yA7jrdy9eJpemi3SeirFALOIRcnW3p0cDiHT2+Yg3NI8autZxaN+caz5Xz0oe1B/yxvzSE1QU9GDKWbVhbx8r3r+Z9/WkL3wBAH/JYUfeNoM06X8g1I0IxPB4cQqGnrxelSOjicw6zsZC6Zl8tL5fV09g2y4YdbeXT7SXaeaJtSCujRdOqaQ1hYLMKcvFTWlXr7INp9r2051Eh6YhwrZ+rRe2ahg0MIeNMCxOKyoBOxcX4edR19/OKVY1R5JlENuRQV9RNPxXAujr5BEuIsujkjTArSE8hKtvO1Z8p5bt9pBpwuth5u5NJ5udj0NTANfaVCYHtVK3FWYZ4n74w2uisXTSMl3sZvXq86a/t+v+aIYHD0OXWTUhiJCEq5+xvu/tNu7vzdDlq6B/jgyqIIl0ybCB0cQuCVikbWlGSTEq+bMc4lK9nOfdcvIiPp7C/u1w438dTuGl7YfzooaxS7g4O+FuH0H1fP9z1+u7KF29bM9A151cxBB4cg6+gd5GhjFxfNyY50UUzhplVF7Pn6lcyflgqACLx8qIF7H9/Lvz66my/8dS/dU5ws19k3SJquOYTVLatnsvXzlwJw33UL+e6NSyJbIG3C9O1UkHV6ZuPmpOiZ0RPh7Q9YWpjO3poONs7PIzPZzhO7amjuGuCPn1wz6fdu7xkkM1kndwu34pxkDnzzKl2DNildcwiy7gHPyBj9BzEh3pFdC6a7+2kumJ3Nf39wCYsK0th1ou2sMfMToZR7tbGZWYlBK6sWOB0YzEtfuSDr8gybTNZ/FBPynRsXs35uLtcvK2BJUTofKptBnNXCx9eW8Lm/7qWqqYvS/NQJv29r9wCdfU69oIymTVBU1Ry+9rcDfPPv5VNuo54Kh+ezU3QH6ISkJsRx06oi7DYLH14zy9fMtKQoHYADdZMbweRdZ0AvRalpExNVweGJXTX87q1qth6O3BrU3pqDblYKjtk5ySTEWdhf0zmp473BQU9I1LSJiargsOcbVxBnlaCPk5+ILl1zCCqb1cLC6WlnpWIYj1KK0x29KKX4x77TpMbbKMzUfQ6aNhFRFRzibVbm5qdO6Isk2LxNWrojLngWF6ZTXtcR8GIyT+2u5cL/foU/7TjJa0ea+MzGOXp2tKZNUNT9xSwpTOdAXYdvhma4eTOAJtt1cAiWxYXpdA8MnXMhGX/vVLUA8H/bTgBwzeLpISubpkWrqAsOc/JSaO8ZpK0nMqt/dfU7SbZb9SL2QXThbPeEwteOBNaXFGdz/1pX1DtIT4yjSDcpadqERV1w8Ca7O94c2F1msHX1OXV/Q5DNyEpiXn4qWw4FtjiQ/5rRSwrT9YpjmjYJ4wYHEXlYRBpF5IDfth+ISIWI7BORp0Vk1Dy8IlItIvtFZI+I7AxmwcfiHc9e1dQdjo8boavfqfsbQmBdaQ67TrYFlGuptr3X93j93JxQFkvTolYgNYffA1cP27YZWKyUWgocAb58juMvU0otV0qVTa6IE1OUmYjNIr4hjOGmg0NoLC1KZ8Dp4lhjF02O/rNqB8PVeYJDXmo8t19YHKYSalp0GTc4KKVeB1qHbXtJKeWdafYOYJhcvHFWC7Oykzh0enLj4qeqtXuAtESd5C3YFhe6J8O9dayZ87/zMrc/vGPU/QacLpq7Brj3irls/8pGEuKs4SympkWNYPQ5fBx4YYzXFPCSiOwSkbuC8FkBubg0l21VLUFfUWw8g0MuDjc4fBlGteApyU4mNd7Gt587BIy95oN3nkl6Ypzua9C0KZhScBCRrwJO4NExdlmnlFoJXAPcLSLrz/Fed4nIThHZ2dQ0tRnOG+bn0TfoXn0qnI42dDHgdPnucrXgsViEB24v45vXL2J6egLT0xNG3c87z0TnttK0qZl0cBCRO4H3Ax9WY0wqUErVev5tBJ4GVo/1fkqpB5RSZUqpstzcqS0KcsHsbEpykvn+psM4g7BYTKC8k++W6OAQEheel80dFxVz/bICWroHRp3L4p1novt9NG1qJhUcRORq4IvA9UqpnjH2SRaRVO9j4ErgwGj7BpvdZuGey0upaupm98n2cfdXSvGHt6v5685TU5o893ZlM1nJdoqzdR6fUMpOsTPgdPmakPx5t+mV3zRtagIZyvpnYBswT0RqROQTwM+BVGCzZ5jqrz37FojI855D84E3RWQvsAN4Tin1YkjOYhQb5udhswg/2FRBd78TpRRvVzazv2ZkW3V5XSffeLacLzyxj2f31k3q8w7XO/jbnjounZerJ8CFWHayeyGllq6RI5a6+t2TH3XNQdOmZty/IKXUraNsfmiMfeuAaz2Pq4BlUyrdFKQmxLGuNIeth5v4+avHuGbxNG777XYA9t935VkLznubg5LtVh54vYoblhdO+PM+8pD7va9eNC0IpdfOJTvFvapbS/cAxcOyrTr0ehqaFhRRN0Pa3y9uW0lJTjIvH2xgz6kzzUsH684e5rq/toPUBBu3X1TM4XrHhEc5OfoGaXL0c/OqIq5YmB+UsmtjO1Nz6B/xmm5W0rTgiOrgkBxv4yMXzOJoYxdff6bct/2AX3BQSrGzuo1FBWksLUzH6VLM/9qLNDr6Av6c6mZ3t8vGBfl6+GQYeGsOjY6RwUFnxdW04Ijq4ABw08oiX1NPaoKN/LR4fvt6FXc/upuTLT3806/e5nCDgw+uKDprCOruE20Bf0aVJ4+TN6+TFlrT0hLISbHzn387wK9fqzzrta4+JyKQZNeT3zRtKqL+9io9KY5ffWQl33uhglWzMjnZ2sNTu2t5bv9pdlS30uTo56MXzOKmVUWIwPuXTucf+05zomXUQVijqmrqRgRmZiWF8Ew0L4tFWDkzk5cONvC9FypYPiODCzyZWx39TlLsNl2D07QpivqaA4CI8OVrF3Dloml88uLZ/OHj7ukWTY5+PnXJeXzrA4uxWAQR4ee3rSQ72U51S2C5mfoGh3jqvRoWTk/TqRrC6BPrSpiRlYhF4L5ny33zWXRWXE0LjpgIDsPlpsb7Hr9/6ciFYIpzkgPO6vrA61Wcau3lK9cuCFr5tPGtmZ3NG1/cwP23rKCi3sFble4FfnTiQ00LjpgMDuButwZYVJA24rU5uSkcrOukY5wFg/qdQ/xqayXXLJ7G2jk6NXQkrJ/rnk3vHY7c1jOgRyppWhDEbHD4+2fW8doXLh21bfr2i2bRPeDkxy8fOed7HK530Ds4xHXLCkJVTG0c6YlxzMpO4kCte2nYinoHpXk68aGmTVXMBofc1HhmjZHmYlFBOh9eM4tHtlVztMHBsUYHN//6bX646fBZ+3kzgy4u0LmUImlxYTovHKjn/i1Hae8ZZHGRvh6aNlUxGxzGc8/lpQD8fW8dr1Y08W51G7/ceuys3EsHajtJS7AxI0uvURxJH1kzi5wUOz95+SigEx9qWjDo4DCG7JR4Vs3KZEtFI1WeVeVcyr2Yj9fh+k4WTE/TwyYj7MLzsvnHZy5mSWE6S4vS9XoamhYEuufuHDbMz+d/XqygZ+BMOo3jzd1kp7hHO1W39HCVzqVkCNPSE/j7Z9ZFuhiaFjV0zeEcNszPA9wBYXVxFoCvFtHeM0Br9wCzc/SsaE3Too8ODucwNz+FAs+KYxeX5mC3WnwJ/I57gkSJDg6apkUh3ax0DiLCT29dwc4Tbdy8qoiatl7+8u4p3j3e6kvwVqLzKWmaFoV0cBhHWXEWZZ4mpS9dMx+rVWjvcXdKX5WWQIle9U3TtCikg8MEZCbb+e6NSyJdDE3TtJDTfQ6apmnaCDo4aJqmaSPo4KBpmqaNoIODpmmaNkJAwUFEHhaRRhE54LctS0Q2i8hRz7+ZYxx7h2efoyJyR7AKrmmapoVOoDWH3wNXD9v2JWCLUqoU2OJ5fhYRyQK+AawBVgPfGCuIaJqmacYRUHBQSr0OtA7bfAPwB8/jPwAfGOXQq4DNSqlWpVQbsJmRQUbTNE0zmKn0OeQrpU57HtcD+aPsUwic8nte49k2gojcJSI7RWRnU1PTFIqlaZqmTVVQJsEppZSIqPH3POd7PAA8ACAiTSJyIhhl88gBmoP4fpEULecSLecB+lyMKtbOZVYwP3AqwaFBRKYrpU6LyHSgcZR9aoFL/Z4XAVvHe2OlVO4UyjWCiOxUSpUF8z0jJVrOJVrOA/S5GJU+l6mZSrPSs4B39NEdwDOj7LMJuFJEMj0d0Vd6tmmapmkGFuhQ1j8D24B5IlIjIp8AvgdcISJHgcs9zxGRMhF5EEAp1Qp8C3jX8/Nfnm2apmmagQXUrKSUunWMlzaOsu9O4JN+zx8GHp5U6YLngQh/fjBFy7lEy3mAPhej0ucyBaLUlPqRNU3TtCik02domqZpIxgqOIjI1SJyWESOiciX/LaLiHxHRI6IyCER+bcxjv+051glIjmjvH6+iDhF5KZRXpshIq+KyEERKReRz/q99i0R2Scie0TkJREpiNS5iMilItLhKcseEfn6GMd/R0ROiUjXsO3rRWT3WP8PRjsXEUkSkedEpMJzXb7n99qnRGS/59g3RWRhpM7F73z2eMr52hjHG/66BHIuZrkuIvIFv9+vAyIyJO7MDcOPD8p1ieR5BPuaoJQyxA9gBSqB2YAd2Ass9Lz2MeARwOJ5njfGe6wAioFqIGeU938FeB64aZRjpwMrPY9TgSN+n5/mt9+/Ab+O1LngHhr8jwD+Py/wnFPXsO3FwFJPGUb8PxjtXIAk4DLPYzvwBnDNKNfleuDFCJ5LBnAQmDnO8Wa4LuOei1muy7B9rgNeCdV1ifR5BPOaKKUMtRLcauCYUqoKQEQew52i4yDwr8BtSikXgFJqtDkVKKXe8xw72sufAZ4Ezh/j2NPAac9jh4gcwj2b+6BSqtNv12RgvI6aUJ/LuJRS74x2vFKq2rPdFeBbRfRclFI9wKuexwMishv3fBkMdl1uA55SSp0c53gzXJdxz8VE18XfrcCfxzg+GNcloucR5GtiqGalc6XaOA/4Z3Gn13hBREon8sYiUgjcCPwqwP2LcUfw7X7bviMip4APA6M25fgJ2bl4XCgiez3HL5rE8RNhmHMRkQzcd01b/LbdLSKVwPdx1+rOJZTnMhfIFJGtIrJLRG6f4PETZZhzMfh18ZYnCXdetycnc3yADHMeQbgmhgoO5xIP9Cn3DMHfMvGhsT8B/sMbtc9FRFJw/8ff4x9tlVJfVUrNAOpmzt8AAAJLSURBVB4FPj3Bz/c31XPZDcxSSi0Dfgb8bQplmaqwnYuI2HDfLf3Ue2cGoJT6hVLqPOA/gP+c4Of7m+q52IBVwPtwJ5z8mojMnUJ5piJs52KC6+J1HfCWitw8q7CdR7CuiZGCQy0ww+95kWcbuCPwU57HT+NuA0RENnk6WB4c573LgMdEpBq4CfiliIzIIisicbgDw6NKqaeGv+7xKPBPkToXpVSnUqrL8/h5IE5G6XwPIqOcywPAUaXUT8Z4/TFGzwwclnPxHL9JKdWtlGoGXgeWjXPMVBjlXIx+XbxuYYwmpSAyynkE45oYqkPaBlQBJZzpzFnkee17wMc9jy8F3h3nvaoZuzPn94zeIS24O4x+MsprpX6PPwM8EalzAaZxZn7KauCk9/kYx3eNsX3U/wcjngvwbdxB23KO63IdsDOC57IAdxXehrtj8ACw2KTXJaBzMcN18WxLx73kQHIA/6+Tvi5GOI9gXROllHGCg6fQ1+IeJVQJfNVvewbwHLAfdxqPZWMc/2+4I7QTqAMeDPQiA+twd9LsA/Z4fq71vPak5w9kH/B3oDBS54K7Savc84v3DnDRGMd/33O8y/PvfZ7t53uedwMtQLmRzwX33ZcCDvldl096Xrvfc/we3B1xiyL5OwZ8AXfn4wHczZKmvC6BnIvJrsudwGPjfH5QrkskzyPY10TPkNY0TdNGMFKfg6ZpmmYQOjhomqZpI+jgoGmapo2gg4OmaZo2gg4OmqZp2gg6OGiapmkj6OCgaZqmjaCDg6ZpmjbC/w8plUSz8aQ9lQAAAABJRU5ErkJggg==
-"
->
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Your main task is to write a script that accepts three arguments: station name, variable name, and a number of days (3 or 7, defaults to 3). The variable name might be of: <code>['temperature', 'dewpoint_temperature', 'relative_humidity', 'windspeed', 'winddirection', 'pressure', 'precipitation', 'sunshine_duration']</code>. The script then displays a plot of the desired variable. The plot must contain the following information: variable name, variable description, unit. If the variable is not available, the script must print a warning and exit.</strong></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Here are some hints to get you started:</p>
-<ul>
-<li>write several functions!</li>
-<li>preprocess the data: rename the variables using a conversion table between the original variable names and the more human readable name of above. Add the metadata to the data, with at least two attributes: <code>'description'</code> and <code>'units'</code>. A possible way to organize your data would be with the help of nested dictionaries.</li>
-<li>write a function to convert dewpoint and temperature to relative humidity. It must be called only if necessary.</li>
-<li>write a function to convert temperature and relative humidity to dewpoint temperature. It must be called only if necessary.</li>
-<li>write tests!</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exercise-#03-03:-wind">Exercise #03-03: wind<a class="anchor-link" href="#Exercise-#03-03:-wind">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Based on the data from exercise #03-02, write a function that prints the following information in the terminal:</strong></p>
-
-<pre><code>At station XXX, over the last 3 days, the dominant wind direction was XX (xx% of the time). The second most dominant wind direction was XX (xx% of the time), the least dominant wind direction was XX (xx% of the time). The maximum wind speed was XX m/s, while the strongest wind speed averaged over an hour was XX m/s.</code></pre>
-<p>With the wind directions being of 8 classes: N, NW, W, SW, S, SE, E, NE.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Back to the <a href="00-Introduction.html#ctoc">table of contents</a></em></p>
+<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>.</p>
 
 </div>
 </div>
