@@ -11842,7 +11842,7 @@ $( document ).ready(function(){
 <p>It is a common misconception to think that the primary purpose of open source software is to be free (of charge, as in "free beer"). In fact, what makes a software <a href="https://en.wikipedia.org/wiki/Open-source_software">open source</a> is its <strong>license</strong>, which must grant users and peers the rights to study, change, and distribute the software to anyone and for any purpose.</p>
 <p>Prominent example of open source softwares are the Linux operating system, the Firefox web browser, the VLC media player, or the CPython language implementation. Open source software may be developed in a collaborative public manner, but it doesn't have to.</p>
 <p>Non open source software are often called "closed source". They have a restrictive license and often attempt to hide their code from users and developers. Note that free of charge software might be closed source (in which case they are called "<a href="https://en.wikipedia.org/wiki/Freeware">freeware</a>"): a good example of popular freeware is Adobe Acrobat.</p>
-<p>The concept of "open" and "closed" source has been applied to many other aspects of society, technology, knowledge or science (<a href="https://en.wikipedia.org/wiki/Open_science">open science</a>).</p>
+<p>The concept of "open" and "closed" source has been applied to many other aspects of society, technology, knowledge or science (e.g. <a href="https://en.wikipedia.org/wiki/Open_science">open science</a>).</p>
 
 </div>
 </div>
@@ -11864,7 +11864,7 @@ $( document ).ready(function(){
 <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Share Alike</a> license.</p>
 <p><strong>Permissive</strong> licenses have less restrictions than copyleft licenses. Often, they warrant acknowledgement of the original authors (attribution), but they allow derivations of the work to be closed source. Supporters of permissive licenses argue that is is "more free" than copyleft licenses. Examples of permissive licenses are the <a href="https://en.wikipedia.org/wiki/BSD_licenses">BSD license family</a>, used for example by numpy. The majority of licenses in the python ecosystem are permissive, BSD-like licenses.</p>
 <p><strong>Public domain</strong> licenses are entirely free: they warrant absolutely no ownership such as copyright, trademark, or patent. A notable example of importnt software in the public domain is the secure hash algorithm <a href="https://en.wikipedia.org/wiki/SHA-3">SHA-3</a>.</p>
-<p>Note that providing code online (on GitHub or elsewhere) without license is not recommended. Even if you don't want to keep any rights on your code, you should add a statement putting your code in the public domain.</p>
+<p>Note that providing code online (on GitHub or elsewhere) without license is not recommended. Even if you don't want to keep any rights on your code, you should add a statement making it clear that your code is in the public domain (and be careful not to violate any copyright in doing so!).</p>
 
 </div>
 </div>
@@ -11882,8 +11882,8 @@ $( document ).ready(function(){
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <a href="https://en.wikipedia.org/wiki/Open-source_model">open source model</a> is a decentralized software-development model that encourages open collaboration. Very often, open source projects originate from a small group of developers and gather further developers as the software grows in recognition and acceptance. At the time of writing (17.06.2018), numpy had <a href="https://github.com/numpy/numpy/graphs/contributors">654 contributors</a>, xarray <a href="https://github.com/pydata/xarray/graphs/contributors">106</a>, OGGM <a href="https://github.com/OGGM/oggm/graphs/contributors">12</a>.</p>
-<p>The decentralized development model is made possible by platforms like <a href="https://github.com/">GitHub</a>, which help to organize the discussion and integration of code improvements by the community.</p>
-<p>Such a development model is not without problems and risks, and the lack of clear governance is probably the major argument that opponents of the open source model put forward when criticizing it.</p>
+<p>The decentralized development model is made possible by platforms like <a href="https://github.com/">GitHub</a>, which help to organize the discussion and integration of code improvements by the community. In most of the cases, decisions are taken from one or two core maintainers (people with writing permission to the directory). When discussion is needed, a democratic decision process might take place.</p>
+<p>Such a development model is not without problems and risks, and the lack of clear governance is probably the major argument that opponents of the open source model put forward when criticizing it. In the next section we discuss some of the consequences of such a model.</p>
 
 </div>
 </div>
@@ -11893,6 +11893,29 @@ $( document ).ready(function(){
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Consequences">Consequences<a class="anchor-link" href="#Consequences">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Advantages:</p>
+<ul>
+<li>the most obvious advantage of open source projects is that they are available at no cost. This is particularly important for developing countries or small companies / individuals</li>
+<li>open source increases security: indeed, if many people can review the code the chances to find bugs are higher</li>
+<li>it isn't dependent on one entity or company: the development can continue even after a company closes</li>
+<li>freedom of development: since there is no commercial constraint, the code can be developed for ideas, not clients</li>
+<li>engaging community: new developers are more likely to participate to an open source project (which per definition belongs to anyone) than to a company's product</li>
+</ul>
+<p>Disadvantages (from a user perspective):</p>
+<ul>
+<li>bug fixes or new features can only be taken over by the community, and can take a long time (especially if they are special or hard to implement)</li>
+<li>the lack of clear long term direction of open source projects can lead to a monolithic, complex project structure</li>
+<li>the open source community sometimes enjoys freedom too much: this can lead to parallel developments of similar tools/features and unefficient resource management.</li>
+</ul>
+<p>The rise in popularity of open source projects like python and R, however, seem to indicate that the open source model is meant to become more frequent in the future.</p>
+
 </div>
 </div>
 </div>
