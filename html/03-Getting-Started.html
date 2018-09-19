@@ -11814,7 +11814,7 @@ $( document ).ready(function(){
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In this chapter we are getting used to the python command line, and we are going to write our first small program.</p>
-<p><strong>Prerequisites</strong>: you have a working python (v3.6) and ipython, as described in the <a href="02-Installation.html">previous chapter</a>.</p>
+<p><strong>Prerequisites</strong>: you have python and ipython installed, as described in the <a href="02-Installation.html">previous chapter</a>.</p>
 
 </div>
 </div>
@@ -11862,7 +11862,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This should look quite familiar to you, whatever language you learned before. We defined variables, and did some arithmetics with them. On line 3 we used the <code>print()</code> function to display the output of our computations, but as it turns out it is not necessary: the command line shell will print the output anyway. This functionality is called <a href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">REPL</a>, and it's a feature, of modern interpreted languages. We'll come back to this later.</p>
+<p>This should look quite familiar to you, whatever language you learned before. We defined variables, and did some arithmetics with them. On line 3 we used the <code>print()</code> function to display the output of our computations, but as it turns out it is not necessary: the command line shell will print the output anyway. This functionality is called <a href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">REPL</a>, and it is a feature of modern interpreted languages. We'll come back to this later.</p>
 <p>The default command-line interpreter comes with some functionality (for example, if you use the up and down arrows you can navigate in your previous commands) but this functionality is very sparse. Some important functionalities are missing: some are cosmetic (like colors), some are very useful (like <strong>automatic code completion</strong> with <code>[TAB]</code> or the possibility to paste several lines of code at once). For all these reasons, the default python command-line interpreter is only used for very small tasks like testing a command or two. Scientists need more interactivity when analysis their data: this is why <code>ipython</code> was created.</p>
 
 </div>
@@ -11905,7 +11905,7 @@ Out[4]: 6</code></pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>What are the differences? The <code>&gt;&gt;&gt;</code> prompt has been replaced by <code>In [1]:</code>. Now there <em>is</em> a slight difference between a line with or without <code>print()</code> (can you find it?). At first sight the differences are small, but it's in the everyday interactive coding that <code>ipython</code> becomes useful.</p>
-<p><strong>From now on, we will use the ipython command-line interpreter.</strong> Here is a small sample of its most useful functionalities:</p>
+<p><strong>From now on, we will always use the ipython command-line interpreter.</strong> Here is a small sample of its most useful functionalities:</p>
 
 </div>
 </div>
@@ -12215,30 +12215,7 @@ Out[4]: 6</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Start with reading the definition from <a href="https://techterms.com/definition/interpreter">the Tech Terms Dictionary</a>.</p>
 <p>Put simple, the python interpreter is a program executing python programs or commands. It reads the programs you write and execute the instructions they contain.</p>
-<p>Interestingly, there are <em>more than one</em> implementation of a Python interpreter: indeed, since the python language is well specified (meaning that there are clear rules about which command is supposed to do what), anyone (very) motivated can write a program able to execute a python program. In practice, there aren't that many alternative implementations of the python language, but let's name a few of them:</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/CPython">Cpython</a>: the reference implementation of the language (and the one you are using), written in C</li>
-<li><a href="http://www.jython.org/">Jython</a>: a Java implementation, useful to run programs written in both languages</li>
-<li><a href="https://pypy.org/">PyPy</a>: another implementation aiming at speeding the execution of your programs in certain circumstances.</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Question</strong>: would it be possible to write a Python interpreter in Python? If yes, what could it be useful for?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We will look into the Cpython interpreter in a little more detail later in the semester, when we will talk about compiled and interpreted languages.</p>
+<p>We will look into interpreters in a little more detail later in the semester, when we will talk about compiled and interpreted languages.</p>
 
 </div>
 </div>

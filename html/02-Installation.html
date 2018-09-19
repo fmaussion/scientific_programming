@@ -11847,7 +11847,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The latest stable major release of Python is <a href="https://docs.python.org/3/">Python version 3.6</a>. Like for many other software, installing the latest stable version is often the best thing to do and what we are going to do as well.</p>
+<p>The latest stable major release of Python is <a href="https://docs.python.org/3/">Python version 3.7</a>.</p>
 
 </div>
 </div>
@@ -11864,9 +11864,9 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If you did some research about Python you probably stumbled upon some discussion about the Py2 vs Py3 conundrum. About 10 years ago, an evolution of the python language introduced changes which were not <strong>backwards compatible</strong>. This means that code that used to work in Python 2.7 may not work in Python 3. According to the Python developers this change was necessary to get rid of old baggage and inconsistent syntax, but it was also considered by many as a "treason". Indeed, backwards compatibility is an important aspect of software development for large projects like python: it is a contract between developers and users stipulating that the code that users write will continue to work in subsequent releases. This contract was broken once, but this shouldn't happen again.</p>
-<p>Since updating code requires time and money, many people and companies continued to use Python 2 internally. Five years ago, I would maybe have been reluctant to teach you Python 3 because the future of the language was uncertain and many tools existed only in Python 2. Today the wide adoption of Python 3 is finally accomplished and the future is looking good. All major scientific python tools are supporting Python 3, and major libraries <a href="http://python3statement.org/">announced that they will stop to support Python 2</a> before of shortly after the end-of-life date of Python 2 (by 2020).</p>
-<p>In this lecture we might talk about the differences between Python 2 and Python 3 at some point, but only to get you used to them. You can safely concentrate on learning Python 3 only.</p>
+<p>If you did some online search about Python, you probably stumbled upon some discussion about the "Py2 vs Py3 problem". About 10 years ago, an evolution of the python language introduced changes which were not <strong>backwards compatible</strong>. This means that code written in Python 2.7 may not work in Python 3. According to the Python developers this change was necessary to get rid of old baggage and inconsistent syntax, but it was also considered by many as a "treason". Indeed, backwards compatibility is an important aspect of software development for large projects like python: it is a contract between developers and users stipulating that the code that users write will continue to work in subsequent releases. This contract was broken once, but this shouldn't happen again.</p>
+<p>Since updating code requires time and money, many people and companies continued to use Python 2 internally. Five years ago, I would maybe have been reluctant to teach you Python 3 because the future of the language was uncertain and many tools existed only in Python 2. Today the wide adoption of Python 3 is finally accomplished and the future is looking very good. All major scientific python tools are supporting Python 3, and major libraries <a href="http://python3statement.org/">announced that they will stop to support Python 2</a> before of shortly after the end-of-life date of Python 2 (by 2020).</p>
+<p>In this lecture we <em>might</em> talk about the differences between Python 2 and Python 3 at some point, but it's unlikely. You can safely concentrate on learning Python 3 only.</p>
 
 </div>
 </div>
@@ -11875,6 +11875,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><a id='install_uibk'></a></p>
 <h2 id="Installation-at-the-University-of-Innsbruck">Installation at the University of Innsbruck<a class="anchor-link" href="#Installation-at-the-University-of-Innsbruck">&#182;</a></h2>
 </div>
 </div>
@@ -11979,6 +11980,7 @@ export PATH="/scratch/c707/c7071047/miniconda3/bin:$PATH"</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><a id='install_pc'></a></p>
 <h2 id="Installing-Python-on-your-PC">Installing Python on your PC<a class="anchor-link" href="#Installing-Python-on-your-PC">&#182;</a></h2>
 </div>
 </div>
@@ -12165,8 +12167,13 @@ start <code>ipython</code> for example:</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Python is available on virtually any linux distribution (not on windows). This is useful for scripting or simple tasks, but for real-world data analysis workflows you probably want to install python (and related packages) on your own. The best tool to do so is <a href="https://conda.io/docs/">conda</a>, installed via <a href="https://conda.io/miniconda.html">miniconda</a>.</p>
-<p>On linux, a python "installation" is simply a link to a new python executable.</p>
+<ul>
+<li>python is available per default on virtually any linux distribution </li>
+<li>it is not available per default on windows, but can be installed </li>
+<li>the system python is useful for scripting or simple tasks, but for real-world data analysis you probably want to install python (and related packages) on your own. </li>
+<li>the best tool to install a custom python is <a href="https://conda.io/docs/">conda</a>, installed via <a href="https://conda.io/miniconda.html">miniconda</a></li>
+<li>on linux, a python "installation" is simply a link to a new python executable</li>
+</ul>
 
 </div>
 </div>
