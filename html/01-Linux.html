@@ -11789,7 +11789,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {}, "toc_section_display": "block", "toc_window_display": true};
+            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "384px"}, "toc_section_display": "block", "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -12107,7 +12107,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>[TAB]</code> is very useful in the Linux (and other) command line: it use an automated completion algorithm to complete the commands you are typing. For example, try to type <code>$ cd ~/uni</code> and then <code>TAB</code>. This is also going to make suggestions in case of multiple choices, or for commands.</p>
+<p><code>[TAB]</code> is very useful in the Linux (and other) command line: it uses an automated completion algorithm to complete the commands you are typing. For example, try to type <code>$ cd ~/uni</code> and then <code>TAB</code>. This is also going to make suggestions in case of multiple choices, or for commands.</p>
 
 </div>
 </div>
@@ -12348,7 +12348,7 @@ drwxrwxr-x 2 mowglie mowglie 4096 Feb 22 18:05 backup
 -rw-rw-r-- 1 mowglie mowglie 7767 Sep  1  2000 science.txt</code></pre>
 <p>The first list of characters indicate the file's <strong>permissions</strong>. Now read the first section of <a href="https://ryanstutorials.net/linuxtutorial/permissions.php">Ryan's tutorial about permissions</a>. So what do we learn from the above? That the file's owner (myself) is allowed to read and write the <code>myscript.sh</code> file, but not to execute it. Let's change this:</p>
 
-<pre><code>$ chmod a+x myscipt.sh</code></pre>
+<pre><code>$ chmod a+x myscript.sh</code></pre>
 <p>Now everybody (including me) is allowed to execute this file. It is a quite harmless script, so I'm not too worried. Now we can execute it:</p>
 
 <pre><code>$ ./myscript.sh</code></pre>
@@ -12415,7 +12415,7 @@ $ ls -l /usr/bin/which
 lrwxrwxrwx 1 root root 10 Nov 19 14:42 /usr/bin/which -&gt; /bin/which</code></pre>
 <p>As expected, <code>which</code> is an executable file. Some executables are binary files (i.e. not human readable), but in this case <code>which</code> is actually a script:</p>
 
-<pre><code>$ less which</code></pre>
+<pre><code>$ less /usr/bin/which</code></pre>
 
 </div>
 </div>
