@@ -15,6 +15,9 @@ def say_hi(name, lang='en'):
 def add_lang(key, phrase):
     """Add a language to the list."""
     global base
+    if key in base:
+        print('Language {} already available'.format(key))
+        return
     base[key] = phrase
 
 if __name__ == '__main__':
@@ -27,4 +30,3 @@ if __name__ == '__main__':
         print('Syntax:')
         print('%run greetings.py name language')
         print('Languages available: {}'.format(list(base)))
-    

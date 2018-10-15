@@ -12006,7 +12006,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <strong>global scope</strong> refers to the highest scope level (the module or, in interactive mode, the interpreter. The function's scope in turn is called <strong>local scope</strong>. One says that the global scope prevails because what is possible in one direction isn't possible in the other:</p>
+<p>The <strong>global scope</strong> refers to the highest scope level (the module or, in interactive mode, the interpreter). The function's scope in turn is called <strong>local scope</strong>. One says that the global scope prevails because what is possible in one direction isn't possible in the other:</p>
 
 </div>
 </div>
@@ -12051,7 +12051,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Yes, k is available in <code>foo()</code>: lobal variables are available in the <em>nested</em> local scopes. They can be overridden locally (like in the example above), but this change won't be visible at the global scope level.</p>
+<p>Yes, k is available in <code>foo()</code>: global variables are <em>also</em> available in the <em>nested</em> local scopes. They can be overridden locally (like in the example above), but this change won't be visible at the global scope level.</p>
 
 </div>
 </div>
@@ -12096,6 +12096,9 @@ $( document ).ready(function(){
 <span class="k">def</span> <span class="nf">add_lang</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">phrase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Add a language to the list.&quot;&quot;&quot;</span>
     <span class="k">global</span> <span class="n">base</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">base</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Language {} already available&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+        <span class="k">return</span>
     <span class="n">base</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">phrase</span>
 </pre></div>
 
@@ -12273,7 +12276,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Global variables in modules or scripts are useful, but they should be used with care. Indeed, since they are available in everywhere in the module, the <strong>namespace</strong> can quickly become "polluted": for large modules, it becomes hard to keep track of which variable is available where, andwhat happens in which order. This can become even more complicated when new modules with their own new variables and functions are used.</p>
+<p>Global variables in modules or scripts are useful, but they should be used with care. Indeed, since they are available in everywhere in the module, the <strong>namespace</strong> can quickly become "polluted": for large modules, it becomes hard to keep track of which variable is available where. This can become even more complicated when new modules with their own new variables and functions are used.</p>
 <p>Fortunately, the global scope is constrained to the current script or module, and using external modules is unlikely to cause confusion thanks to the <code>import</code> mechanism:</p>
 
 </div>
@@ -12387,7 +12390,7 @@ $( document ).ready(function(){
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># A</span>
-<span class="c1"># Import an entire module and access its atributes with a &quot;dot&quot;</span>
+<span class="c1"># Import an entire module and access its attributes with a &quot;dot&quot;</span>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
@@ -12532,11 +12535,11 @@ $( document ).ready(function(){
 <p>All four options lead to the same result: they compute the sinus of π/2.</p>
 <p>Now, which one to use? It is up to you, but there are some implicit rules (conventions) which are widely accepted:</p>
 <ol>
-<li>in case of doubt, use option A. It is the most readable and the most <em>explicit</em></li>
-<li>the exception to the first rule is when the library has a naming convention for its acronym. A good example is <code>numpy</code>, which <a href="https://docs.scipy.org/doc/scipy/reference/tutorial/general.html">recommends to use</a> <code>import numpy as np</code></li>
-<li>option C might be useful if the names you are importing are very explicit, and if you expect to use them often in your script. Otherwise, it is not recommended</li>
-<li>option D is bad. Don't use it. </li>
-<li>you can make an exception to rule 4 when working in the command line and exploring data. It should not be used in modules or scripts, though. </li>
+<li>In case of doubt, use option A. It is the most readable and the most <em>explicit</em>.</li>
+<li>The exception to the first rule is when the library has a naming convention for its acronym. A good example is <code>numpy</code>, which <a href="https://docs.scipy.org/doc/scipy/reference/tutorial/general.html">recommends to use</a> <code>import numpy as np</code>.</li>
+<li>Option C might be useful if the names you are importing are very explicit, and if you expect to use them often in your script. Otherwise, it is not recommended.</li>
+<li>Option D is bad. Don't use it. </li>
+<li>You can make an exception to rule 4 when working in the command line and exploring data. It should not be used in modules or scripts, though. </li>
 </ol>
 
 </div>
@@ -12755,7 +12758,7 @@ $( document ).ready(function(){
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You've already learned that importing modules actually <em>runs</em> them, the same way as <code>$ python mymodule.py</code> (from the linux terminal) or <code>%run mymodule.py</code> (in ipython) would. This can have some undesired consequences: what if, for example, you would like certain things to happen when the module is run as script but <em>not</em> when being imported?</p>
-<p>There is a mechanism allow to do exactly this. Add the following block of code at the end of the <code>greetings.py</code> module:</p>
+<p>There is a mechanism that allows to do exactly this. Add the following block of code at the end of the <code>greetings.py</code> module:</p>
 <div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="c1"># execute only if run as a script</span>
     <span class="kn">import</span> <span class="nn">sys</span>
@@ -12837,7 +12840,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>How does this work exactly? The important bit is the <code>if __name__ == '__main__':</code> line. <code>__name__</code> (and all other attributes starting and ending with two underscores are names which are reserved by the language. They are no different than other variables, but you should not erase or replace them (for now), since they contain useful information and might be used by other tools. For example:</p>
+<p>How does this work exactly? The important bit is the <code>if __name__ == '__main__':</code> line. <code>__name__</code> (and all other attributes starting and ending with two underscores) is "reserved" by the language. They are no different than other variables, but you should not erase or replace them (for now), since they contain useful information and might be used by other tools. For example:</p>
 
 </div>
 </div>
@@ -12931,10 +12934,10 @@ $( document ).ready(function(){
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>variables are defined in a <strong>scope</strong>, and we learned about two scopes: <strong>local</strong> and <strong>global</strong>. There are precise rules as to how each scope can interact with the other.</li>
-<li>the import mechanism is useful to avoid <strong>namespace pollution</strong>. Modules come with there own namespace, and it is recommended to keep each module's namespace clean (i.e. no <code>from XYZ import *</code>)</li>
+<li>the import mechanism is useful to avoid <strong>namespace pollution</strong>. Modules come with their own namespace, and it is recommended to keep each module's namespace clean (i.e. no <code>from XYZ import *</code>)</li>
 <li>python borrowed the <code>PATH</code> mechanism from linux and uses a similar logic to look for modules and packages. Installing a new module is therefore super easy: just put a <code>mymodule.py</code> at the right place. (and don't mess with the existing modules!)</li>
 <li>the <code>%autoreload</code> command from ipython allows to dynamically change a module while using it at the command line</li>
-<li>when writing scripts, always put the code that needs to be executed in an <code>if __name__ == '__main__'</code> block: that way, you script can still be imported for the functions it proposes</li>
+<li>when writing scripts, always put the code that needs to be executed in an <code>if __name__ == '__main__'</code> block: that way, your script can still be imported for the functions it proposes</li>
 </ul>
 
 </div>

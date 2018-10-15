@@ -11834,10 +11834,8 @@ $( document ).ready(function(){
 <p>Fortunately, the entire dataset is available on this server: <a href="http://srtm.csi.cgiar.org/SRT-ZIP/SRTM_V41/SRTM_Data_GeoTiff/">http://srtm.csi.cgiar.org/SRT-ZIP/SRTM_V41/SRTM_Data_GeoTiff/</a></p>
 <p>In order to protect from naive "download all" behavior, the files stored here cannot be listed (i.e. automated data scraping won't work). Fortunately for us , the file naming convention is very simple:</p>
 <ul>
-<li>example file: <a href="http://srtm.csi.cgiar.org/SRT-ZIP/SRTM_V41/SRTM_Data_GeoTiff/srtm_39_04.zip">http://srtm.csi.cgiar.org/SRT-ZIP/SRTM_V41/SRTM_Data_GeoTiff/srtm_39_04.zip</a><ul>
+<li>example file: <a href="http://srtm.csi.cgiar.org/SRT-ZIP/SRTM_V41/SRTM_Data_GeoTiff/srtm_39_04.zip">http://srtm.csi.cgiar.org/SRT-ZIP/SRTM_V41/SRTM_Data_GeoTiff/srtm_39_04.zip</a></li>
 <li>the first two digits number gives the location of the tile in the longitudes (starting at 180° West)</li>
-</ul>
-</li>
 <li>the last two digits gives the location of the tile in the latitudes (starting at 60° North and going southwards)</li>
 </ul>
 <p>Here are some examples of locations and their associated tile:</p>
@@ -11850,8 +11848,8 @@ $( document ).ready(function(){
 <p><strong>A. Write a script which, given a longitude and a latitude as arguments, downloads the corresponding file</strong> in the current directory. The function should raise an error when the given location is not valid.</p>
 <p><em>Hint 1: define "valid" locations first: some are easy to catch, some cannot be caught automatically. Do we really have to deal with those?</em></p>
 <p><em>Hint 2: unlike last week where we asked for user input, here I'm asking for a script with <a href="https://docs.python.org/3/tutorial/stdlib.html?highlight=sys%20argv#command-line-arguments">command line arguments</a>.</em></p>
-<p><strong>B.</strong> Extend this script to be a bit more clever: <strong>download the data file only if the file isn't already available in the current directory</strong>. This is particularly important because since last year, their server has changed and the new one is <em>much</em> slower. So slow that you'd better not download the files two times...</p>
-<p><strong>C.</strong> Extend this script to be even more clever: given a range of longitudes and latitudes, it should download all the files convering this area. For example, the range 9°W to 18°W and 44°N to 47°N would download 6 files.</p>
+<p><strong>B.</strong> Extend this script to be a bit more clever: <strong>download the data file only if the file isn't already available in the current directory</strong>. This is particularly important because since last year their server has changed and the new one is <em>much</em> slower. Now you'd better not download the files two times...</p>
+<p><strong>C.</strong> Extend this script to be even more clever: <strong>given a range of longitudes and latitudes, it should download all the files covering this area</strong>. For example, the range 9°W to 18°W and 44°N to 47°N would download 6 files.</p>
 
 </div>
 </div>
