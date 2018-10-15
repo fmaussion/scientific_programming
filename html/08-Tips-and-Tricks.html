@@ -9,7 +9,7 @@ gtag('js', new Date());
 gtag('config', 'UA-88391345-1');
 </script>
 <meta charset="utf-8" />
-<title>06-Assignment-02</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>08-Tips-and-Tricks</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11789,7 +11789,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": false, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {}, "toc_section_display": "block", "toc_window_display": false};
+            var cfg = {"base_numbering": "8", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "384px"}, "toc_section_display": "block", "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -11805,7 +11805,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Assignment-#02:-using-the-standard-library">Assignment #02: using the standard library<a class="anchor-link" href="#Assignment-#02:-using-the-standard-library">&#182;</a></h1>
+<h1 id="Tips-and-tricks">Tips and tricks<a class="anchor-link" href="#Tips-and-tricks">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11813,7 +11813,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Today's exercises have to be done with help of the python standard library alone! No external module can be used.</p>
+<p>At this stage of the lecture, you are now equipped to write more complex scripts and algorithms. You know everything you need to know about the syntax (almost ;-)), but you might be a little lost in all the possibilities the language is now offering to you. <em>Which tool should I use to do this and that? How was this function signature again?</em> This chapter will briefly give you some tips to help you out during your assignments.</p>
 
 </div>
 </div>
@@ -11822,7 +11822,8 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exercise-#02-01:-cryptography-for-dummies-Roman-Emperors">Exercise #02-01: cryptography for <s>dummies</s> Roman Emperors<a class="anchor-link" href="#Exercise-#02-01:-cryptography-for-dummies-Roman-Emperors">&#182;</a></h2>
+<p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Tips-and-tricks" data-toc-modified-id="Tips-and-tricks-8"><span class="toc-item-num">8&nbsp;&nbsp;</span>Tips and tricks</a></span><ul class="toc-item"><li><span><a href="#Batteries-included" data-toc-modified-id="Batteries-included-8.1"><span class="toc-item-num">8.1&nbsp;&nbsp;</span>Batteries included</a></span></li><li><span><a href="#Getting-help" data-toc-modified-id="Getting-help-8.2"><span class="toc-item-num">8.2&nbsp;&nbsp;</span>Getting help</a></span><ul class="toc-item"><li><span><a href="#Online-resources" data-toc-modified-id="Online-resources-8.2.1"><span class="toc-item-num">8.2.1&nbsp;&nbsp;</span>Online resources</a></span></li><li><span><a href="#Ask-questions-the-smart-way" data-toc-modified-id="Ask-questions-the-smart-way-8.2.2"><span class="toc-item-num">8.2.2&nbsp;&nbsp;</span>Ask questions the smart way</a></span></li><li><span><a href="#Getting-help-VS-learning" data-toc-modified-id="Getting-help-VS-learning-8.2.3"><span class="toc-item-num">8.2.3&nbsp;&nbsp;</span>Getting help VS learning</a></span></li></ul></li><li><span><a href="#Python-IDEs" data-toc-modified-id="Python-IDEs-8.3"><span class="toc-item-num">8.3&nbsp;&nbsp;</span>Python IDEs</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-8.4"><span class="toc-item-num">8.4&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
 </div>
 </div>
 </div>
@@ -11830,25 +11831,56 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A very simple encryption technique is called the <a href="http://en.wikipedia.org/wiki/Caesar_cipher">Caesar cipher</a>. The basic idea is that each letter is replaced by a letter that is a certain number of letters away, so for example if the shift was 2, then A would become C, B would become D, and Z will become B.</p>
-<p><strong>A. Write a function that given a string and a shift, will produce the encrypted string for that shift</strong>. The rules are:</p>
+<h2 id="Batteries-included">Batteries included<a class="anchor-link" href="#Batteries-included">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You may have read this expression ("batteries included") during your research about the Python language. It is widely used to indicate that if you choose python, it's not only for it's syntax: it is for all the tools that come with it. And there are PLENTY.</p>
+<p>Spend a minute or two to scroll through the list of tools available in the <a href="https://docs.python.org/3/library/index.html">standard library</a>. The <strong>standard library</strong> is available per default with any python installation. It is very robust and provides the core functionality of the language.</p>
+<p>As you will see, there is not much for us scientists in this list though. This is why <strong>third party packages</strong> were developed. And there are so many of them that one can easily be overwhelmed: for this week's assignment we will use the standard library only.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Getting-help">Getting help<a class="anchor-link" href="#Getting-help">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In order to become a good programmer, <strong>nothing is more important than being able to find help</strong>, either online or with your friends and colleagues.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Online-resources">Online resources<a class="anchor-link" href="#Online-resources">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Fortunately, getting help has become quite easy nowadays. Here are some resources to get you started:</p>
 <ul>
-<li>you should accept lowercase and uppercase letters, and return letters of the same case</li>
-<li>spaces or other punctuation characters should not be changed.</li>
+<li>the <a href="https://docs.python.org/3/">official python documentation</a> is definitely the best place to look for everything related to the standard library. It is also THE reference, and as such can sometimes be too detailed or complex. If this fails, then you'll have to refer to </li>
+<li><strong>your favorite search engine</strong>. Ask your question as precisely as possible! With some experience you'll learn to detect the sources you can trust, and learn to filter out outdated information (e.g. related to python 2). Very often your web search will lead you to</li>
+<li><a href="https://stackoverflow.com/">Stackoverflow</a>. In recent years, the Stack Exchange community of sites has emerged as a major resource for answering technical and other questions and is even the preferred forum for many open-source projects. Their system of rewards for well formulated questions and correct answers clearly makes finding the right solution easier than in many other forums.</li>
 </ul>
-<p>There are several ways to reach this result. Just pick the one which makes more sense to you. Then, decrypt the following message, which was encrypted with a shift of 13:</p>
-
-<pre><code>Pbatenghyngvbaf, lbh unir fhpprrqrq va qrpelcgvat gur fgevat.
-
-</code></pre>
-<p><strong>B. Now write a decoding script</strong> which, when run in the linux or windows command line, prints the decoded phrase after asking the user to enter a phrase and a shift with which it was encrypted. Test your script on the sentence above.</p>
-<p><strong>C. Now try to decrypt this sentence, for which the shift is unknown</strong>:</p>
-
-<pre><code>Gwc uivioml bw nqvl bpm zqopb apqnb.
-
-</code></pre>
-<p>One way to solve this problem involves human decision, but another way can be fully automated (and implies more work). Pick the one you want!</p>
-<p><strong>Tip:</strong> make use of python's <a href="https://docs.python.org/3/library/functions.html#input">input()</a> function</p>
 
 </div>
 </div>
@@ -11857,7 +11889,98 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Back to the <a href="00-Introduction.html#ctoc">table of contents</a></em></p>
+<p>Here is a general rule. When you encounter a problem, ask yourself the following question: <strong>is it likely that someone else had this problem before me?</strong> In a large majority of the cases, the answer will be "yes" (believe me on this one). The trick is to find the answer to your question: use as few words as possible, but put in all the keywords that makes your question unambiguous. Here is the example outcome of two google searches:</p>
+<ul>
+<li><a href="https://www.google.at/search?q=how+to+download+a+file+python">how to download a file python</a></li>
+<li><a href="https://www.google.at/search?q=how+to+download+a+file+python3">how to download a file python3</a></li>
+</ul>
+<p>The latter is the one you want and will lead you to the right answer. With time, you are going to get used to using the search engine more efficiently, but if everything else fails, then you might have to as ask a question yourself.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Ask-questions-the-smart-way">Ask questions the smart way<a class="anchor-link" href="#Ask-questions-the-smart-way">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you want to ask a question on stackoverflow or somewhere else (e.g. by sending an email at your teacher), please spend some time reading <a href="http://www.catb.org/esr/faqs/smart-questions.html">this resource</a>. Believe me, this will help you to get better answers!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Getting-help-VS-learning">Getting help VS learning<a class="anchor-link" href="#Getting-help-VS-learning">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I'll make a confession: without an internet connection, I am a very bad python programmer. And I don't expect you to learn all the python commands by heart and solve the assignments without online help. However, there is a difference between "getting help to find how to realize a specific task" and "asking for someone to do my homework for me". The border between the two might be subtle, but I'm sure you'll know when you cross it: at the moment you stopped to use your brain and simply copy/pasted code from one site to your assignment script, you crossed it.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Python-IDEs">Python IDEs<a class="anchor-link" href="#Python-IDEs">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>While it is possible to write python programs using a basic text editor, the majority of you will find it useful to use an <a href="https://en.wikipedia.org/wiki/Integrated_development_environment">integrated development environment</a> (short: IDE) instead. The advantages of IDEs is that they ship with tools that make your life easier when programming. Here is a non-exhaustive list of the tools a good IDE should have:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Lint_(software)">linter</a>: automatic detection of syntax errors and style violations</li>
+<li><a href="https://en.wikipedia.org/wiki/Debugger">debugger</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Intelligent_code_completion">Intelligent code completion</a></li>
+<li>project explorer and code exploration tools</li>
+<li>for interactive languages: a command line and variables </li>
+<li>version control tools</li>
+<li>automated build and testing tools</li>
+<li>appealing colors and graphics</li>
+<li>... </li>
+</ul>
+<p>There are many Python IDEs, but here are some of the ones that come up most often as recommendations on forums or blogposts:</p>
+<ul>
+<li><a href="https://pythonhosted.org/spyder/">Spyder</a>: the IDE made by and for scientists. It resembles the Matlab IDE and has many nice features such as variable exploration and an integrated ipython console. It is very easy to install with conda, and is therefore available on linux at the university (<code>$ spyder &amp;</code>). <strong>It is my recommended IDE for this semester's course</strong>.</li>
+<li><a href="https://www.jetbrains.com/pycharm/">PyCharm</a>: this is my personal favorite. It is however quite heavyweight and vcan be confusing for beginners.</li>
+<li><a href="https://atom.io/">Atom</a>: a modern, very nice looking editor. Useful if you program in more than one language, but it must be tuned a bit to become a real IDE</li>
+<li><a href="https://www.vim.org/">vim</a> or <a href="https://www.gnu.org/software/emacs/">emacs</a>: for people allergic to the mouse. Not recommended for most of us, but the people who learned to use them are (allegedly) the fastest programmers ever.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What's-next?">What's next?<a class="anchor-link" href="#What's-next?">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="09-Good-practices.html">jump to the next chapter</a>.</p>
 
 </div>
 </div>

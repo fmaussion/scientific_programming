@@ -9,7 +9,7 @@ gtag('js', new Date());
 gtag('config', 'UA-88391345-1');
 </script>
 <meta charset="utf-8" />
-<title>06-Assignment-02</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>09-Good-practices</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11789,7 +11789,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": false, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {}, "toc_section_display": "block", "toc_window_display": false};
+            var cfg = {"base_numbering": "9", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "384px"}, "toc_section_display": "block", "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -11805,7 +11805,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Assignment-#02:-using-the-standard-library">Assignment #02: using the standard library<a class="anchor-link" href="#Assignment-#02:-using-the-standard-library">&#182;</a></h1>
+<h1 id="Good-practices,-programming-style-and-conventions">Good practices, programming style and conventions<a class="anchor-link" href="#Good-practices,-programming-style-and-conventions">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11813,7 +11813,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Today's exercises have to be done with help of the python standard library alone! No external module can be used.</p>
+<p>Python is a very versatile programming language, and it has a very flexible syntax. Therefore, it is also very easy to write <em>ugly code</em> in python. This chapter reviews a number of guidelines and conventions widely accepted by the community.</p>
 
 </div>
 </div>
@@ -11822,7 +11822,8 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exercise-#02-01:-cryptography-for-dummies-Roman-Emperors">Exercise #02-01: cryptography for <s>dummies</s> Roman Emperors<a class="anchor-link" href="#Exercise-#02-01:-cryptography-for-dummies-Roman-Emperors">&#182;</a></h2>
+<p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Good-practices,-programming-style-and-conventions" data-toc-modified-id="Good-practices,-programming-style-and-conventions-9"><span class="toc-item-num">9&nbsp;&nbsp;</span>Good practices, programming style and conventions</a></span><ul class="toc-item"><li><span><a href="#Use-PEP-8" data-toc-modified-id="Use-PEP-8-9.1"><span class="toc-item-num">9.1&nbsp;&nbsp;</span>Use PEP 8</a></span></li><li><span><a href="#Give-meaningful-names-to-variables-and-functions" data-toc-modified-id="Give-meaningful-names-to-variables-and-functions-9.2"><span class="toc-item-num">9.2&nbsp;&nbsp;</span>Give meaningful names to variables and functions</a></span></li><li><span><a href="#Prefer-writing-many-small-functions-instead-of-monolithic-code-blocks" data-toc-modified-id="Prefer-writing-many-small-functions-instead-of-monolithic-code-blocks-9.3"><span class="toc-item-num">9.3&nbsp;&nbsp;</span>Prefer writing many small functions instead of monolithic code blocks</a></span></li><li><span><a href="#Document-your-code" data-toc-modified-id="Document-your-code-9.4"><span class="toc-item-num">9.4&nbsp;&nbsp;</span>Document your code</a></span></li><li><span><a href="#Refactor-your-code" data-toc-modified-id="Refactor-your-code-9.5"><span class="toc-item-num">9.5&nbsp;&nbsp;</span>Refactor your code</a></span></li><li><span><a href="#The-Zen-of-Python" data-toc-modified-id="The-Zen-of-Python-9.6"><span class="toc-item-num">9.6&nbsp;&nbsp;</span>The Zen of Python</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-9.7"><span class="toc-item-num">9.7&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
 </div>
 </div>
 </div>
@@ -11830,25 +11831,114 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A very simple encryption technique is called the <a href="http://en.wikipedia.org/wiki/Caesar_cipher">Caesar cipher</a>. The basic idea is that each letter is replaced by a letter that is a certain number of letters away, so for example if the shift was 2, then A would become C, B would become D, and Z will become B.</p>
-<p><strong>A. Write a function that given a string and a shift, will produce the encrypted string for that shift</strong>. The rules are:</p>
+<h2 id="Use-PEP-8">Use PEP 8<a class="anchor-link" href="#Use-PEP-8">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a> is a style guide for python code. It introduces new rules where the syntax leaves them open. As an example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Not PEP8 compliant</span>
+<span class="n">a</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span>
+<span class="c1"># PEP8 compliant</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="mi">3</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>PEP8 gives <strong>guidelines</strong>, not strict rules. It is your choice to comply with them or not. As a matter of fact however, many open source projects have adopted PEP8 and require to use it if you want to contribute. If you want to use it too, a good choice is to turn on PEP8 checking in your favorite IDE (in Spyder: <code>Tools -&gt; Preferences -&gt; Editor -&gt; Code Introspection/Analysis -&gt;</code> Tick <code>Real-time code style analysis</code> for PEP8 style analysis).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Give-meaningful-names-to-variables-and-functions">Give meaningful names to variables and functions<a class="anchor-link" href="#Give-meaningful-names-to-variables-and-functions">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Code space is less important than your time. Give meaningful name to your variables and functions, even if it makes them quite long! For example, prefer:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fahrenheit_to_celsius</span><span class="p">(</span><span class="n">temp</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Converts degrees Fahrenheits to degrees Celsius.&quot;&quot;&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>to the shorter but less explicit:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Converts degrees Fahrenheits to degrees Celsius.&quot;&quot;&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Prefer-writing-many-small-functions-instead-of-monolithic-code-blocks">Prefer writing many small functions instead of monolithic code blocks<a class="anchor-link" href="#Prefer-writing-many-small-functions-instead-of-monolithic-code-blocks">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://en.wikipedia.org/wiki/Separation_of_concerns">Separation of concerns</a> is an important design principle for separating a computer program into distinct sections, such that each section addresses a separate concern. This increases the code readability and facilitates unit testing.</p>
+<p>For example, a scientific script can often be organized in well defined steps:</p>
 <ul>
-<li>you should accept lowercase and uppercase letters, and return letters of the same case</li>
-<li>spaces or other punctuation characters should not be changed.</li>
+<li>data input (read a NetCDF or text file)</li>
+<li>data pre-processing (filtering missing data, discarding useless variables)</li>
+<li>data processing (actual computation)</li>
+<li>data visualization (producing a plot)</li>
+<li>output (writing the processed data to a file for later use)</li>
 </ul>
-<p>There are several ways to reach this result. Just pick the one which makes more sense to you. Then, decrypt the following message, which was encrypted with a shift of 13:</p>
-
-<pre><code>Pbatenghyngvbaf, lbh unir fhpprrqrq va qrpelcgvat gur fgevat.
-
-</code></pre>
-<p><strong>B. Now write a decoding script</strong> which, when run in the linux or windows command line, prints the decoded phrase after asking the user to enter a phrase and a shift with which it was encrypted. Test your script on the sentence above.</p>
-<p><strong>C. Now try to decrypt this sentence, for which the shift is unknown</strong>:</p>
-
-<pre><code>Gwc uivioml bw nqvl bpm zqopb apqnb.
-
-</code></pre>
-<p>One way to solve this problem involves human decision, but another way can be fully automated (and implies more work). Pick the one you want!</p>
-<p><strong>Tip:</strong> make use of python's <a href="https://docs.python.org/3/library/functions.html#input">input()</a> function</p>
+<p>Each of these steps and sub-steps should be separated in different functions, maybe even in different scripts.</p>
 
 </div>
 </div>
@@ -11857,7 +11947,126 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Back to the <a href="00-Introduction.html#ctoc">table of contents</a></em></p>
+<h2 id="Document-your-code">Document your code<a class="anchor-link" href="#Document-your-code">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Write comments in your code, and document the functions with docstrings. Here again there are <a href="https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt">some conventions</a> that I recommend to follow.</p>
+<p>Note that this is useful even if you don't plan to share your code. At the very last there is at least one person reading your code: yourself! And it's always a good idea to be nice to yourself ;-)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Abstruse Goose made a funny comic about code documentation: <a href="http://abstrusegoose.com/432">http://abstrusegoose.com/432</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Refactor-your-code">Refactor your code<a class="anchor-link" href="#Refactor-your-code">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It is impossible to get all things right at the first shot. Some real-life examples:</p>
+<ul>
+<li>after a while, a function that you found useful becomes clunky and its <a href="https://en.wikipedia.org/wiki/Type_signature">signature</a> needs to be redefined</li>
+<li>a code that worked with data A doesn't work with data B</li>
+<li>you find yourself copy-pasting 5 lines of codes many times in the same script</li>
+<li>the name of this variable made sense with data A, but not anymore with data B</li>
+<li>nobody understands your code</li>
+</ul>
+<p>All these are good indicators that your code needs some <a href="https://en.wikipedia.org/wiki/Code_refactoring">refactoring</a>. This happens often (even for big programs) and becomes more and more difficult the longer you wait. Here also, good IDEs can help you in this process, either by letting you know where the functions are used, and by letting you know when your tests fail.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-Zen-of-Python">The Zen of Python<a class="anchor-link" href="#The-Zen-of-Python">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">this</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren&#39;t special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you&#39;re Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it&#39;s a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let&#39;s do more of those!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What's-next?">What's next?<a class="anchor-link" href="#What's-next?">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="10-Assignment-03.html">jump to this week's assignment</a>.</p>
 
 </div>
 </div>
