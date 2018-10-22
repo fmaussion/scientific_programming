@@ -11813,7 +11813,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this chapter we are going to give elements of understanding of how numbers are represented in today's computers. We won't go too much into the details (which are perhaps not so relevant here), however it is extremely important for scientists to understand the pitfalls of the so-called "floating-point arithmetics". At the end of this lecture, you should understand what these pitfalls are and when they occur. Sooner or later, one of these pitfalls will hit you (I promise).</p>
+<p>In this chapter we are going to give elements of understanding of how numbers are represented in today's computers. We won't go too much into the details (which are perhaps not so relevant here), however it is extremely important for scientists to understand the pitfalls of the so-called "floating-point arithmetics". At the end of this lecture, you should understand what these pitfalls are and when they occur, since sooner or later one of these pitfalls will hit you.</p>
 
 </div>
 </div>
@@ -12564,7 +12564,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Because computers have a <em>finite</em> number of storage units available, they can only represent a <em>finite</em> number of distinguishable values. In fact, a memory slot with $N$ available bits cannot represent more then $2^N$ distinguishable values. The range of real (or complex) numbers is of course infinite, and therefore it becomes clear that in the computer representation of numbers <strong>there will always be a trade-off between the range of numbers one would like to represent and their relative accuracy</strong> (i.e. the absolute difference between two consecutive representable numbers).</p>
+<p>Because computers have a <em>finite</em> number of storage units available, they can only represent a <em>finite</em> number of distinguishable values. In fact, a memory slot with $N$ available bits cannot represent more than $2^N$ distinguishable values. The range of real (or complex) numbers is of course infinite, and therefore it becomes clear that in the computer representation of numbers <strong>there will always be a trade-off between the range of numbers one would like to represent and their relative accuracy</strong> (i.e. the absolute difference between two consecutive representable numbers).</p>
 <p>Taking the <strong>decimal representation</strong> of the number 1/3 as an example: it can be written as <code>0.33</code>, <code>0.333</code>, <code>0.3333</code>, etc. Depending on the numbers of digits available, the precision of the number will increase but never reach the exact value, at least in the decimal representation.</p>
 <p>This fundamental limitation is the explanation for unexpected results of certain arithmetic operations. For example:</p>
 
@@ -12658,7 +12658,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In the exponential notation (use by <a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic">floating point</a> numbers), a number is approximated with a fixed number of significant digits (the significand) and scaled using an exponent in some fixed base; the base for the scaling is normally two, ten, or sixteen. A number that can be represented exactly is of the following form:</p>
+<p>In the exponential notation (used by <a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic">floating point</a> numbers), a number is approximated with a fixed number of significant digits (the significand) and scaled using an exponent in some fixed base; the base for the scaling is normally two, ten, or sixteen. A number that can be represented exactly is of the following form:</p>
 <p>$\mathrm{number} = \mathrm{significand} \times \mathrm{base} ^{\mathrm{exponent}}$</p>
 
 </div>
@@ -12708,16 +12708,16 @@ $( document ).ready(function(){
 <p>A floating point number in any base will store three numbers:</p>
 <ul>
 <li>the sign (one bit) </li>
-<li>the significand (<code>Np</code> bits)</li>
-<li>the exponent (<code>Ne</code> bits)</li>
+<li>the significand ($N_s$ bits)</li>
+<li>the exponent ($N_e$ bits)</li>
 </ul>
-<p>Computers usually work in base 2, but other bases have been experimented with as well e.g. 16 (hexadecimal). <code>Np</code> and <code>Ne</code> are usually fixed beforehand. Now remember:</p>
+<p>Computers usually work in base 2, but other bases have been experimented with as well e.g. 16 (hexadecimal). $N_s$ and $N_e$ are usually fixed beforehand. Now remember:</p>
 <ul>
 <li>the significand determines the <strong>precision</strong> of the representation (significant digits)</li>
 <li>the exponent determines the <strong>magnitude</strong> of the represented number</li>
 </ul>
-<p>Let's make an example to illustrate this concept. We will work in base 10 for simplicity, and assume that we have 8 "memory slots" (the equivalent of bits) available, each memory slot capable of storing a number from 0 to 9 or the sign (+ or -). We attribute 6 slots to the significand (including its sign) and 2 slots to the exponent (including its sign).</p>
-<p>Now, what is the smallest positive number we can represent? And the largest? Let's try it:</p>
+<p>Let's make an example to illustrate this concept. We will work in base 10 for simplicity, and assume that we have 8 "memory slots" (the equivalent of bits) available, each memory slot capable of storing a number from 0 to 9 or the sign (+ or -). We attribute $N_s=6$ slots to the significand (including its sign) and $N_e=2$ slots to the exponent (including its sign).</p>
+<p>Now, what is the smallest positive number we can represent? And the biggest? Let's try it:</p>
 
 </div>
 </div>
@@ -12759,7 +12759,7 @@ $( document ).ready(function(){
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>From the example above, we can see that with a fixed number of memory slots, we have a trade-off between the maximum precision of a number and its size.</p>
 <p>This precision/size trade-off raises many challenges: memory and electronics must be optimized so that computations are fast while still allowing programs to realize computations on a <em>wide</em> range of numbers in the same program. For example, atmospheric models realize computations on specific humidity values ($\mathrm{kg}\,\mathrm{kg}^{-1}$) with typical values of 10$^{-5}$ and on the geopotential with values up to several order of magnitude larger. Using different standards for each variable would be impracticable. This lead to the development of the <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE Standard for Floating-Point Arithmetic (IEEE 754)</a>.</p>
-<p>The standard defines five basic formats that are named for their numeric base and the number of bits used in their encoding, as listed in <a href="https://en.wikipedia.org/wiki/IEEE_754#Basic_and_interchange_formats">this table</a>. For example, <code>binary64</code> is the famous "double precision" format, called <code>float64</code> in numpy and simply <code>float</code> in the python standard library. In this format, 53 bits are used for the significand, and the remaining 11 for the exponent.</p>
+<p>The standard defines five basic formats that are named for their numeric base and the number of bits used in their encoding, as listed in <a href="https://en.wikipedia.org/wiki/IEEE_754#Basic_and_interchange_formats">this table</a>. For example, <code>binary64</code> is the famous "double precision" format, called <code>float64</code> in numpy and simply <code>float</code> in the python standard library. In this format, $N_s=53$ bits are used for the significand, and the remaining $N_e=11$ for the exponent.</p>
 
 </div>
 </div>
@@ -13379,7 +13379,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 <li>The more calculations are done (especially when they form an iterative algorithm) the more important it is to consider this kind of problem.</li>
 <li>A method of calculation can be stable (meaning that it tends to reduce rounding errors) or unstable (meaning that rounding errors are magnified). Very often, there are both stable and unstable solutions for a problem.</li>
 </ul>
-<p>(list taken from from <a href="http://floating-point-gui.de/errors/propagation/">the floating point guide</a>)</p>
+<p>(list taken from <a href="http://floating-point-gui.de/errors/propagation/">the floating point guide</a>)</p>
 
 </div>
 </div>
