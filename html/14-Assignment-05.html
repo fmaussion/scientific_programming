@@ -9,7 +9,7 @@ gtag('js', new Date());
 gtag('config', 'UA-88391345-1');
 </script>
 <meta charset="utf-8" />
-<title>00-Introduction</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>14-Assignment-05</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11789,7 +11789,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": false, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {}, "toc_section_display": "block", "toc_window_display": true};
+            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": false, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {}, "toc_section_display": "block", "toc_window_display": false};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -11805,7 +11805,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Scientific-Programming">Scientific Programming<a class="anchor-link" href="#Scientific-Programming">&#182;</a></h1>
+<h1 id="Assignment-#05:-C,-python-and-numpy">Assignment #05: C, python and numpy<a class="anchor-link" href="#Assignment-#05:-C,-python-and-numpy">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11813,7 +11813,20 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Fabien Maussion</strong></p>
+<h2 id="Tutorials-#05-00">Tutorials #05-00<a class="anchor-link" href="#Tutorials-#05-00">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="http://www.numpy.org/">numpy</a> and <a href="https://matplotlib.org/">matplotlib</a> are two fundamental pillars of the scientific python stack. You will find <em>numerous</em> tutorials for both libraries online. I am asking you to learn the basics of both tools by yourself, at the pace that suits you. I can recommend these two tutorials:</p>
+<ul>
+<li><a href="https://www.scipy-lectures.org/intro/numpy/index.html">numpy tutorial</a></li>
+<li><a href="https://www.scipy-lectures.org/intro/matplotlib/index.html">matplotlib tutorial</a></li>
+</ul>
+<p>They can be quite long if you are new to numpy - I'm not asking to do them all today! Sections 1.3.1.1 to 1.3.1.5 in the <a href="https://www.scipy-lectures.org/intro/numpy/index.html">numpy tutorial</a> should get you enough information for today's lectures.</p>
 
 </div>
 </div>
@@ -11822,12 +11835,27 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Lecture notes of the master lecture <a href="https://orawww.uibk.ac.at/public/lfuonline_lv.details?sem_id_in=18S&amp;lvnr_id_in=707716">707716 - Scientific Programming</a>, given for the first time in the summer term of 2018 and regularly in the <strong>winter terms</strong> afterwards.</p>
-<p>If you're not here for the first time, jump to:</p>
-<ul>
-<li><a href="#ctoc">the table of contents</a></li>
-<li><a href="#refs">external resources</a></li>
-</ul>
+<h2 id="Exercise-#05-01:-a-glimpse-in-the-C-language">Exercise #05-01: a glimpse in the C language<a class="anchor-link" href="#Exercise-#05-01:-a-glimpse-in-the-C-language">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This exercise can be done on a linux machine only! You can use the university workstations for this.</p>
+<p>Here is the C code sample from the lecture:</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt; </span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+    <span class="n">printf</span> <span class="p">(</span><span class="s">&quot;Sum of two numbers : %d </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p><strong>Write this code in a C code file, compile and run it.</strong></p>
+<p><strong>Now, replace the line <code>int b = 3</code> with <code>char b = 't'</code>. Compile and run the program again. Does the output match your expectations? Can you explain what happens? Compare this behavior to python's, and try to explain why this behavior can lead to faster execution times.</strong></p>
 
 </div>
 </div>
@@ -11836,8 +11864,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/00_messing_python.png"></p>
-<p><em>Adapted from <a href="https://xkcd.com/519/">xkcd</a>. The xkcd author Randall Munroe <a href="https://xkcd.com/353/">would probably agree</a> with my changes.</em></p>
+<h2 id="Exercise-#05-02:-Monte-Carlo-estimation-of-$\pi$">Exercise #05-02: Monte-Carlo estimation of $\pi$<a class="anchor-link" href="#Exercise-#05-02:-Monte-Carlo-estimation-of-$\pi$">&#182;</a></h2><p><a id='vector'></a></p>
 
 </div>
 </div>
@@ -11846,16 +11873,10 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Preface">Preface<a class="anchor-link" href="#Preface">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There are plenty of excellent online resources to learn python (see <a href="#refs">references</a> below). So why writing these lecture notes? Well, for one, because none of the tutorials is organized to fit <em>exactly</em> the 15 week semester of Austrian universities. Therefore, I had to make some choices regarding (i) what to teach and (ii) how to teach it. However, there is no need in reinventing the wheel and rewriting what much better teachers wrote before me: as you will see, I will rely heavily on external resources, all openly available. Following the open source philosophy, these lecture notes are also freely available.</p>
-<p>These notes are actualized on the go, as this course advances. I am trying to write them in such a way that they are understandable without actually <em>attending</em> the course, but I strongly recommend to participate to both the lectures and the homeworks.</p>
+<p>A simple way to estimate $\pi$ using a computer is based on a <a href="https://en.wikipedia.org/wiki/Monte_Carlo_method">Monte-Carlo</a> method. By drawing a sample of N points with random 2D coordinates (x, y) in the <code>[0, 1[</code> range, the ratio of points that fall within the unit circle divided by the total number of points (N) gives an estimate of $\pi / 4$.</p>
+<p><strong>Provide two implementations of the monte-carlo estimation of $\pi$: a pure python version (standard library) and a vectorized version using numpy. Time their execution for N = [1e2, 1e3, ..., 1e7]. Plot the numpy speed-up as a function of N.</strong></p>
+<p><strong>Optional: try the numpy version with N=1e8 and above. Make conclusions about a new trade-off happening for large values of N.</strong></p>
+<p><em>Tip: you can try to mimic <code>%timeit</code> in your code by running each function at least three times and taking the fastest execution of all three.</em></p>
 
 </div>
 </div>
@@ -11864,7 +11885,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Learning-outcomes-of-this-course">Learning outcomes of this course<a class="anchor-link" href="#Learning-outcomes-of-this-course">&#182;</a></h2>
+<h2 id="Exercise-#05-03:-numpy-cycles">Exercise #05-03: numpy cycles<a class="anchor-link" href="#Exercise-#05-03:-numpy-cycles">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -11872,19 +11893,36 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This class aims at learning <strong>modern programming techniques</strong> for (geo-)scientists. After finishing the class, attendees should be able to program in a structured, extendable and reproducible manner. They should understand how numbers are handled by computers and be aware of numerical accuracy errors. Furthermore, they will get acquainted with various programming tools (IDEs, debugger, unit testing, object oriented programming, open development practices).</p>
-<p>The targeted audience for this lecture are (geo-)science <strong>students at the master level with previous experience in programming</strong>. No prior knowledge of python is required, but I'll assume that you are familiar with a similar language (Matlab, IDL, R...). This is <em>not</em> an introductory course, although we will shortly revisit programming basics in order to learn the python syntax.</p>
-<p>The course encompasses the following topics, which are developed by means of concrete examples in the Python programming language:</p>
-<ul>
-<li>Introduction to Linux</li>
-<li>Semantics: revisiting and formalizing the basic programming structures (loops, functions, conditional blocks...)</li>
-<li>General programming concepts, differences between compiled and interpreted languages</li>
-<li>Numerics: floating point numbers, N-dimensional arrays</li>
-<li>Software structure: packages, modules, functions, scripts</li>
-<li>Object oriented programming: fundamentals, usage, and basic design patterns</li>
-<li>Code testing</li>
-<li>Real world applications!</li>
-</ul>
+<p>Monthly averages of temperature data at Innsbruck can be downloaded from this lecture's github via:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="k">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">urlopen</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="c1"># Parse the given url</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/fmaussion/scientific_programming/master/data/innsbruck_temp.json&#39;</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">))</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="c1"># Read the data</span>
+<span class="n">inn_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>(original data obtained from NOAA's <a href="https://catalog.data.gov/dataset/global-surface-summary-of-the-day-gsod">Global Surface Summary of the Day</a>)</em></p>
 
 </div>
 </div>
@@ -11893,25 +11931,8 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Frequently-Asked--Questions">Frequently Asked  Questions<a class="anchor-link" href="#Frequently-Asked--Questions">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="What-is-&quot;Scientific-Programming&quot;?">What is "Scientific Programming"?<a class="anchor-link" href="#What-is-&quot;Scientific-Programming&quot;?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Scientific programming targets to solve scientific problems with the help of computers</strong>.</p>
-<p>It is sometimes used as synonym for <a href="https://en.wikipedia.org/wiki/Computational_science">computational science</a>, but in my opinion these are not entirely the same. "Scientific programming" is not really a discipline, and therefore cannot be taught.</p>
-<p>What are we doing here then? Well, we are going to learn <strong>programming</strong> first, and then <strong>programming as a tool to do science</strong>. We are going to apply our new skills to scientific problems, but not only. Within the time given to us, we won't be able to learn <em>everything</em> about programming of course. My hope is that at the end of the lecture you'll have sufficient background and tools at your disposition to solve your own problems, and (this is the most important bit) that you'll know <em>where</em> to find solutions to the problems you encounter.</p>
+<p><strong>Explore the inn_data variable. What is the type of "inn_data", and of the data it contains? Convert the data series to numpy arrays.</strong></p>
+<p><strong>Using numpy/scipy, matplotlib, and the standard library only, compute and plot the mean monthly annual cycle for 1981-2010 and the mean annual temperature timeseries for 1977-2017. Compute the linear trend (using scipy.stats.linregress) of the average annual temperature over 1977-2017. Repeat with winter (DJF) and summer (JJA) trends.</strong></p>
 
 </div>
 </div>
@@ -11920,304 +11941,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why-should-I-learn-programming?">Why should I learn programming?<a class="anchor-link" href="#Why-should-I-learn-programming?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As a scientist you are going to either <em>produce</em> or <em>analyze</em> data, most of the time you'll do both. For a long time, scientists have seen programming as a "tool", a menial task to accomplish in order to answer the questions they were asking. Nowadays programming has taken a prominent place in a scientist's work, for several reasons:</p>
-<ul>
-<li><strong>the amount of data we have to handle increases together with computational power and our capacity to store it</strong>. I would even argue that the bottleneck in model based scientific discovery isn't the computational effort anymore, but our capacity to comprehend and analyze these huge amounts of data.</li>
-<li><strong>the questions we are asking are getting more complex, and so are the tools we are using to answer them</strong>. The times when scientists could make discoveries with the help of a piece of paper and a pen are long gone, at least for most of us in the geosciences. We rely heavily on computer models, and these models are developed by us scientists, not only by programmers.</li>
-<li><strong>science faces a credibility crisis</strong>, and part of the mistrust towards scientists comes from the fact that their research happens behind closed doors, using closed source tools and based on protected data. Opening our computers and demonstrating that our code can be trusted is necessary to re-engage confidence in our results.</li>
-<li>on a more general note: a better understanding of the tools that govern our digital world is a strong asset for many aspects of our everyday life and citizenship.</li>
-</ul>
-<p>In simple words, we have to become better programmers to be faster and better at what we do: science.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why-Python?">Why Python?<a class="anchor-link" href="#Why-Python?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We will use the <a href="https://www.python.org/">Python programming language</a> in this course. In case you are wondering why this language and not any other like <code>&lt;name your favorite language here&gt;</code>, let me stop you right away: this course is not about "learning Python", it is about learning the general concepts of programming: algorithmic, numerics, program structure, object oriented programming, testing, etc. Python is just the tool I chose to use for this purpose.</p>
-<p>We could indeed have taken any other language, but there are several advantages in using Python. A quick web search will give you <a href="https://www.google.co.uk/search?dcr=0&amp;ei=Wo2OWtKHNY7fwAKv1KbIDQ&amp;q=Why+should+I+learn+python">millions of reasons</a>, but let me pick some of my favorites here:</p>
-<ul>
-<li><strong>Python is a general purpose programming language and, as such, well suited to learn general programming concepts</strong>. It is therefore better suited than, for example, <a href="https://www.r-project.org/">R</a> which was developed for statistics and has certain particularities regarding object oriented programming in particular.</li>
-<li><strong>Python can be used for many purposes</strong>, from data preprocessing to numerical modeling and plotting. Unless you have a very compelling reason to change, you are likely to be able to use Python for all programming tasks you'll have in the near future.</li>
-<li><strong>Python is one of the <a href="https://stackoverflow.blog/2017/09/06/incredible-growth-python/">fastest growing languages for data science</a></strong>. There is a very active community developing new and exiting packages every day, and joining this community is a good bet on the future.</li>
-<li><strong>Python is free and open-source</strong>. No license fee, the code is available for everyone to see.</li>
-</ul>
-<p>There are many other reasons to use Python (and some arguments <em>against</em> Python as well of course), but I don't think it's relevant to list them here. My argument is following: for a good programmer, switching language is not a very big deal. It's not easy of course, but it's possible - becoming a good programmer is the hard bit, and is a never ending process.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Course-contents">Course contents<a class="anchor-link" href="#Course-contents">&#182;</a></h2><p><a id='ctoc'></a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Winter term 2018:</strong></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><strong>Week 01: Introduction to Linux, installing Python</strong><ul>
-<li><a href="01-Linux.html">01 - A very short introduction to Linux</a></li>
-<li><a href="02-Installation.html">02 - Installing Python</a></li>
-<li><a href="03-Getting-Started.html">03 - Getting started with Python</a></li>
-<li><a href="04-Assignment-01.html">04 - Assignment #01: getting familiar with Linux and Python</a></li>
-<li><a href="http://fabienmaussion.info/scipro_w01/">Slides for week 01</a></li>
-</ul>
-</li>
-<li><strong>Week 02: The Python language and the standard library</strong><ul>
-<li><a href="05-Language-Basics.html">05 - Language Basics</a></li>
-<li><a href="06-Assignment-02.html">06 - Assignment #02: using the standard library</a></li>
-</ul>
-</li>
-<li><strong>Week 03: Variables scopes, modules, good practices in programming</strong><ul>
-<li><a href="07-Import-Scopes.html">07 - Modules, import mechanism, namespaces, scope(s)</a></li>
-<li><a href="08-Tips-and-Tricks.html">08 - Tips and tricks</a></li>
-<li><a href="09-Good-practices.html">09 - Good practices, programming style and conventions</a></li>
-<li><a href="10-Assignment-03.html">10 - Assignment #03: deeper in the python library</a></li>
-</ul>
-</li>
-<li><strong>Week 04: Floating point arithmetics</strong><ul>
-<li><a href="11-Numbers.html">11 - Number representation in computers</a></li>
-<li><a href="12-Assignment-04.html">12 - Assignment #04: rounding errors</a></li>
-</ul>
-</li>
-<li><strong>Week 05: Numpy</strong><ul>
-<li><a href="13-Numpy-part-I.html">13 - Numpy, part I: why numpy?</a></li>
-<li><a href="14-Assignment-05.html">14 - Assignment #05: C, python and numpy</a></li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-to-use-these-notes">How to use these notes<a class="anchor-link" href="#How-to-use-these-notes">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>These notes are written as a companion to the lectures. During class I will go through the major concepts (using slides, the good old way), and the notes are here to help you learn at home.</p>
-<p>The notes are a mix of examples and small exercises. The exercises can happen in between the examples and are marked with a question mark logo. If you want to download the notebooks I used to write the notes, you can download them on the course's <a href="https://github.com/fmaussion/scientific_programming">repository</a>. This repository gets updated frequently, so you might have to re-download the files from time to time.</p>
-<p>When you will be going through the examples of these notes, some sentences are marked in <strong>bold</strong>: this underlines their importance for the course. When <strong>single words</strong> are <strong>bold</strong>  this symbolizes new concepts or new definitions: they need to be understood (and <em>googled</em> if needed).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Grading">Grading<a class="anchor-link" href="#Grading">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The lecture will be graded based on three assessments:</p>
-<ul>
-<li>a mid-term group project (the <code>visclim</code> package): 20%</li>
-<li>an end-term group project (the <code>pelita</code> game): 20%</li>
-<li>an oral examination at the end of the semester: 60%</li>
-</ul>
-<p>A positive evaluation of each of these elements is mandatory to pass the class!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>For each week, there will be an <strong>assignment</strong> (unless specified otherwise, during graded the group projects). These can be worked through alone or in groups. Each week, I will ask <strong>one randomly selected group</strong> to present their results to the rest of the class.</p>
-<p>The class grants you 4 ECTS if successfully passed: <a href="https://en.wikipedia.org/wiki/European_Credit_Transfer_and_Accumulation_System">in theory</a>, this represents about 6 hours work per week (not including holidays). For this course, it means that you will spend at least twice as much time doing homework than sitting in class.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a id='refs'></a></p>
-<h2 id="External-resources">External resources<a class="anchor-link" href="#External-resources">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Resources used (and linked) in these lecture notes:</p>
-<p><strong>Linux and bash scripting:</strong></p>
-<ul>
-<li><a href="https://ryanstutorials.net/">Ryan's Tutorials</a> for the linux command line and bash scripting are entertaining and well designed.</li>
-</ul>
-<p><strong>Python tutorials:</strong></p>
-<ul>
-<li>the <a href="https://docs.python.org/3/tutorial/index.html">official tutorial</a>, always a good place to start.</li>
-<li>the <a href="https://www.scipy-lectures.org/index.html">scipy lecture notes</a>, a good overview of the scientific python stack for scientists with previous programming experience.</li>
-</ul>
-<p><strong>Python reference:</strong></p>
-<ul>
-<li>the <a href="https://docs.python.org">python documentation</a> is your best reference for any question related to the language and the standard library.</li>
-</ul>
-<p><strong>Testing</strong></p>
-<ul>
-<li>Katy Huff's <a href="https://katyhuff.github.io/python-testing/">scientific python testing tutorial</a>: a one and a half hour introduction to testing practices, from the basics to continuous integration</li>
-</ul>
-<p><strong>Floating point precision errors</strong></p>
-<ul>
-<li>Python's <a href="https://docs.python.org/3/tutorial/floatingpoint.html">Floating Point Arithmetic</a> article is a good read but a bit tough for beginners</li>
-<li><a href="http://floating-point-gui.de/">What Every Programmer Should Know About Floating-Point Arithmetic</a> is a more gentle introduction, but you still might want to use a search engine for more information.</li>
-</ul>
-<p><strong>Numpy</strong></p>
-<ul>
-<li><a href="https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/">Why python is slow</a> by Jake Vanderplas</li>
-<li><a href="http://www.labri.fr/perso/nrougier/from-python-to-numpy/">From Python to Numpy</a> by Nicolas P. Rougier: an open-access book on numpy vectorization techniques (rather advanced).</li>
-<li><a href="https://docs.scipy.org/doc/numpy/reference/index.html">The numpy reference</a>: the official documentation is always the best place to obtain first hand information.</li>
-</ul>
-<p><strong>Scientific Python</strong></p>
-<ul>
-<li><a href="https://jakevdp.github.io/PythonDataScienceHandbook/">Python Data Science Handbook</a> by Jake Vanderplas: an open-access  textbook on using Python for Scientists</li>
-</ul>
-<p><strong>Python namespaces and scopes</strong></p>
-<ul>
-<li><a href="http://sebastianraschka.com/Articles/2014_python_scope_and_namespaces.html#scope-resolution-for-variable-names-via-the-legb-rule">blog post by Sebastian Raschka</a>: A Beginner's Guide to Python's Namespaces, Scope Resolution, and the LEGB Rule</li>
-</ul>
-<p><strong>Object Oriented Programming</strong>
-The web is full of blog posts and basic tutorials about OOP in python. Unfortunately, most of them make a poor job at explaining <em>why</em> OOP can be useful and when not. I will try to find better resources, but for now I recommend:</p>
-<ul>
-<li><a href="https://realpython.com/python3-object-oriented-programming/">RealPython's beginner tutorial</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Wikipedia page about OOP</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming">Wikipedia page about inheritance</a></li>
-</ul>
-<p><strong>Documentation</strong></p>
-<ul>
-<li><a href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/">A beginner’s guide to writing documentation</a></li>
-</ul>
-<p><em>(this list will be updated when the notes get written further)</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Getting-help">Getting help<a class="anchor-link" href="#Getting-help">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Seeking for information online is necessary and helpful at <em>any</em> level of programming skills. I would even argue that good programmers are the ones who know how to efficiently find information online.</p>
-<p>When encountering an issue, the first question you should ask yourself is: <em>"am I the only person likely to be affected by this problem?"</em>. <strong>The answer will be no</strong> in 99% of the cases. For these, here is a list of recommendations:</p>
-<ul>
-<li><a href="https://stackoverflow.com/">Stack Overflow</a> is THE place for programming questions. Thanks to community based moderation rules, the good questions are more visible than bad ones, and good answers are rewarded. <a href="https://stackoverflow.com/tour">Take a tour</a> of the site's principles now, and look for similar questions there before asking your own question.</li>
-<li>Learn to ask the right question to your search engine. Naming this the correct way (semantics) is one of of the objectives of this lecture, and I hope that in the end you will not only write better code, you will also <em>speak</em> the programming language a little better. </li>
-</ul>
-<p>If every other thing fails (i.e the remaining 1% of the cases), then:</p>
-<ul>
-<li>Ask a question on Stack Overflow. Before doing so, read what a <a href="https://stackoverflow.com/help/mcve">Minimal, Complete, and Verifiable Example</a> is and try to stick to these recommendations.</li>
-<li>If you think you discovered a bug, than report it to the library directly. Almost all the scientific python packages are hosted on GitHub: the "issues" tab is where to report bugs. Read the excellent <a href="http://matthewrocklin.com/blog/work/2018/02/28/minimal-bug-reports">Craft Minimal Bug Reports</a> article from Matt Rocklin before doing so.</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Authors">Authors<a class="anchor-link" href="#Authors">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><a href="http://fabienmaussion.info/">Fabien Maussion</a> wrote these notes (unless specified otherwise, e.g. for some tutorials)</li>
-<li><a href="https://github.com/Matze77">Matthias Göbel</a> and <a href="https://github.com/lilianschuster">Lilian Schuster</a> (student assistants at the time of writing) reviewed and proof read them</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="License">License<a class="anchor-link" href="#License">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
-  <img align="left" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.eu.svg"/>
-</a></p>
-<p><br>
-<br></p>
-<p>These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
-<p>Feel free to use / adapt them, but don't sell them, and share them under the same licence.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="http://acinn.uibk.ac.at/" target="_blank">
-  <img align="left" src="../img/logo_acinn_small.jpg"/>
-</a></p>
+<p><em>Back to the <a href="00-Introduction.html#ctoc">table of contents</a></em></p>
 
 </div>
 </div>
