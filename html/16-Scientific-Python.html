@@ -10,7 +10,7 @@ gtag('config', 'UA-88391345-1');
 </script>
 <meta charset="utf-8" />
 
-<title>09-Exceptions</title>
+<title>16-Scientific-Python</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13131,7 +13131,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": "9", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "384px"}, "toc_section_display": "block", "toc_window_display": true};
+            var cfg = {"base_numbering": "18", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "384px"}, "toc_section_display": "block", "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -13146,15 +13146,15 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Errors,-Exceptions-and-Warnings">Errors, Exceptions and Warnings<a class="anchor-link" href="#Errors,-Exceptions-and-Warnings">&#182;</a></h1>
+<h1 id="The-scientific-python-stack">The scientific python stack<a class="anchor-link" href="#The-scientific-python-stack">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>At this stage of the lecture, you probably have encountered a couple of error messages when executing your code. Error messages are not nice, but they are frequent (no matter your programming skills) and simply belong to the programming workflow. In this chapter you will learn to recognize the different type of errors, and you will learn how to deal with them.</p>
-<p><em>Copyright notice: parts of this chapter are taken from the <a href="https://docs.python.org/3/tutorial/errors.html">official python tutorial</a></em></p>
+<p>Unlike Matlab, the set of Python tools used by scientists does not come from one single source. It is the result of a non-coordinated, chaotic and creative development process originating from a community of volunteers and professionals.</p>
+<p>In this chapter I will shortly describe some of the essential tools that every scientific python programmer should know about. It is not representative or complete: it's just a list of packages I happen to know about, and I surely missed many of them.</p>
 
 </div>
 </div>
@@ -13163,99 +13163,22 @@ $( document ).ready(function(){
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Errors,-Exceptions-and-Warnings" data-toc-modified-id="Errors,-Exceptions-and-Warnings-9"><span class="toc-item-num">9&nbsp;&nbsp;</span>Errors, Exceptions and Warnings</a></span><ul class="toc-item"><li><span><a href="#Syntax-errors" data-toc-modified-id="Syntax-errors-9.1"><span class="toc-item-num">9.1&nbsp;&nbsp;</span>Syntax errors</a></span></li><li><span><a href="#Exceptions" data-toc-modified-id="Exceptions-9.2"><span class="toc-item-num">9.2&nbsp;&nbsp;</span>Exceptions</a></span></li><li><span><a href="#Raising-Exceptions" data-toc-modified-id="Raising-Exceptions-9.3"><span class="toc-item-num">9.3&nbsp;&nbsp;</span>Raising Exceptions</a></span><ul class="toc-item"><li><span><a href="#The-raise-statement" data-toc-modified-id="The-raise-statement-9.3.1"><span class="toc-item-num">9.3.1&nbsp;&nbsp;</span>The raise statement</a></span></li><li><span><a href="#Raise-the-correct-exception" data-toc-modified-id="Raise-the-correct-exception-9.3.2"><span class="toc-item-num">9.3.2&nbsp;&nbsp;</span>Raise the correct exception</a></span></li><li><span><a href="#When-to-raise-an-exception?" data-toc-modified-id="When-to-raise-an-exception?-9.3.3"><span class="toc-item-num">9.3.3&nbsp;&nbsp;</span>When to raise an exception?</a></span></li></ul></li><li><span><a href="#Handling-exceptions" data-toc-modified-id="Handling-exceptions-9.4"><span class="toc-item-num">9.4&nbsp;&nbsp;</span>Handling exceptions</a></span></li><li><span><a href="#Warnings" data-toc-modified-id="Warnings-9.5"><span class="toc-item-num">9.5&nbsp;&nbsp;</span>Warnings</a></span><ul class="toc-item"><li><span><a href="#Silencing-warnings" data-toc-modified-id="Silencing-warnings-9.5.1"><span class="toc-item-num">9.5.1&nbsp;&nbsp;</span>Silencing warnings</a></span></li><li><span><a href="#Warnings-as-exceptions" data-toc-modified-id="Warnings-as-exceptions-9.5.2"><span class="toc-item-num">9.5.2&nbsp;&nbsp;</span>Warnings as exceptions</a></span></li><li><span><a href="#Filter-warnings-by-type-or-message" data-toc-modified-id="Filter-warnings-by-type-or-message-9.5.3"><span class="toc-item-num">9.5.3&nbsp;&nbsp;</span>Filter warnings by type or message</a></span></li></ul></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-9.6"><span class="toc-item-num">9.6&nbsp;&nbsp;</span>Take home points</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-9.7"><span class="toc-item-num">9.7&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#The-scientific-python-stack" data-toc-modified-id="The-scientific-python-stack-18"><span class="toc-item-num">18&nbsp;&nbsp;</span>The scientific python stack</a></span><ul class="toc-item"><li><span><a href="#Python's-scientific-ecosystem" data-toc-modified-id="Python's-scientific-ecosystem-18.1"><span class="toc-item-num">18.1&nbsp;&nbsp;</span>Python's scientific ecosystem</a></span></li><li><span><a href="#The-core-packages" data-toc-modified-id="The-core-packages-18.2"><span class="toc-item-num">18.2&nbsp;&nbsp;</span>The core packages</a></span></li><li><span><a href="#Essential-numpy-&quot;extensions&quot;" data-toc-modified-id="Essential-numpy-&quot;extensions&quot;-18.3"><span class="toc-item-num">18.3&nbsp;&nbsp;</span>Essential numpy "extensions"</a></span></li><li><span><a href="#Domain-specific-packages" data-toc-modified-id="Domain-specific-packages-18.4"><span class="toc-item-num">18.4&nbsp;&nbsp;</span>Domain specific packages</a></span></li><li><span><a href="#Development-environments" data-toc-modified-id="Development-environments-18.5"><span class="toc-item-num">18.5&nbsp;&nbsp;</span>Development environments</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-18.6"><span class="toc-item-num">18.6&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Syntax-errors">Syntax errors<a class="anchor-link" href="#Syntax-errors">&#182;</a></h2>
+<h2 id="Python's-scientific-ecosystem">Python's scientific ecosystem<a class="anchor-link" href="#Python's-scientific-ecosystem">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Syntax errors</strong> are perhaps the most common kind of complaint you get while you are still learning the language:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-1-9cd6f49faad3&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">1</span>
-<span class="ansi-red-fg">    t = range(12</span>
-                ^
-<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> unexpected EOF while parsing
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">t</span> <span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-2-2ab4574bc54c&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">1</span>
-<span class="ansi-red-fg">    t : range(12)</span>
-      ^
-<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> invalid syntax
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The parser repeats the offending line and displays a little ‘arrow’ pointing at the earliest point in the line where the error was detected. The error is caused by (or at least detected at) the token preceding the arrow. File name and line number are printed so you know where to look in case the input came from a script.</p>
+<p>The set of python scientific packages is sometimes referred to as the "scientific python ecosystem". I didn't find an official explanation for this name, but I guess that it has something to do with the fact that many packages rely on the others to build new features on top of them, like a natural ecosystem.</p>
+<p>Jake Vanderplas made a great graphic in a <a href="https://speakerdeck.com/jakevdp/the-state-of-the-stack-scipy-2015-keynote">2015 presentation</a> (the video of the presentation is also <a href="https://www.youtube.com/watch?v=5GlNDD7qbP4">available here</a> if you are interested), and I took the liberty to adapt it a little bit:</p>
 
 </div>
 </div>
@@ -13263,7 +13186,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Tip: avoiding syntax errors</strong></p>
+<p><img src="https://fabienmaussion.info/acinn_python_workshop/figures/scipy_ecosystem.png" alt="img"></p>
 
 </div>
 </div>
@@ -13271,440 +13194,20 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If you chose to work with a good IDE, it will let you know about syntax errors way before you even execute the code (this is called a <a href="https://en.wikipedia.org/wiki/Lint_(software">linter</a>). But sometimes it is still difficul to find out what's wrong in a line. The syntax errors which are hardest to track down are missing parentheses:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># bad coding: where&#39;s the parenthesis missing?</span>
-<span class="n">very_useful_formula</span> <span class="o">=</span> <span class="p">((</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="o">/</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-3-772d185acb45&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">2</span>
-<span class="ansi-red-fg">    very_useful_formula = ((10 + 2)**3 - (4 - 5)**2)*10/(5/6) + (6/5)**2)</span>
-                                                                        ^
-<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> invalid syntax
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Here, it helps to <strong>separate your code into simpler, multiple-lines statements</strong>:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># better coding</span>
-<span class="n">numerator</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
-<span class="n">numerator</span> <span class="o">*=</span> <span class="mi">10</span>  <span class="c1"># do you know this one?</span>
-<span class="n">denominator</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
-<span class="n">useful_number</span> <span class="o">=</span> <span class="n">numerator</span> <span class="o">/</span> <span class="n">denominator</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exceptions">Exceptions<a class="anchor-link" href="#Exceptions">&#182;</a></h2>
+<h2 id="The-core-packages">The core packages<a class="anchor-link" href="#The-core-packages">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Even if a statement or expression is syntactically correct, it may cause an error when an attempt is made to execute it. Errors detected during execution are called <strong>exceptions</strong> and are not unconditionally fatal: you will soon learn how to handle them. Most exceptions are not handled by programs, however, and result in error messages as shown here:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">10</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ZeroDivisionError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-5-0b280f36835c&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-cyan-fg">10</span> <span class="ansi-blue-fg">*</span> <span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">/</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">ZeroDivisionError</span>: division by zero</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">4</span> <span class="o">+</span> <span class="n">spam</span><span class="o">*</span><span class="mi">3</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-6-c98bb92cdcac&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-cyan-fg">4</span> <span class="ansi-blue-fg">+</span> spam<span class="ansi-blue-fg">*</span><span class="ansi-cyan-fg">3</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;spam&#39; is not defined</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;2&#39;</span> <span class="o">+</span> <span class="mi">2</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-7-d2b23a1db757&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-blue-fg">&#39;2&#39;</span> <span class="ansi-blue-fg">+</span> <span class="ansi-cyan-fg">2</span>
-
-<span class="ansi-red-fg">TypeError</span>: Can&#39;t convert &#39;int&#39; object to str implicitly</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The last line of the error message indicates what happened. Exceptions come in different types, and the type is printed as part of the message: the types in the example are <a href="https://docs.python.org/3/library/exceptions.html#ZeroDivisionError">ZeroDivisionError</a>, <a href="https://docs.python.org/3/library/exceptions.html#NameError">NameError</a> and <a href="https://docs.python.org/3/library/exceptions.html#TypeError">TypeError</a>. The string printed as the exception type is the name of the built-in exception that occurred.</p>
-<p>The rest of the line provides detail based on the type of exception and what caused it.</p>
-<p>The preceding part of the error message shows the context where the exception happened, in the form of a stack traceback. In general it contains a stack traceback listing source lines; however, it will not display lines read from the interactive interpreter.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Raising-Exceptions">Raising Exceptions<a class="anchor-link" href="#Raising-Exceptions">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-raise-statement">The raise statement<a class="anchor-link" href="#The-raise-statement">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>When writing programs you will sometimes need to <strong>raise exceptions</strong> yourself. This can be done with the <a href="https://docs.python.org/3/reference/simple_stmts.html#raise">raise</a> statement:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">useful_addition</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">12</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Adding numbers larger than 12 is not possible&#39;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>A <a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a> is often used by programmers to tell the user that they are trying to use non-valid arguments in a function:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">useful_addition</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-9-25c89af636c5&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>useful_addition<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">4</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">22</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-8-efb28ed26a6f&gt;</span> in <span class="ansi-cyan-fg">useful_addition</span><span class="ansi-blue-fg">(a, b)</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">def</span> useful_addition<span class="ansi-blue-fg">(</span>a<span class="ansi-blue-fg">,</span> b<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span>     <span class="ansi-green-fg">if</span> a <span class="ansi-blue-fg">&gt;</span> <span class="ansi-cyan-fg">12</span> <span class="ansi-green-fg">or</span> b <span class="ansi-blue-fg">&gt;</span> <span class="ansi-cyan-fg">12</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">raise</span> ValueError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Adding numbers larger than 12 is not possible&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span class="ansi-green-fg">return</span> a <span class="ansi-blue-fg">+</span> b
-
-<span class="ansi-red-fg">ValueError</span>: Adding numbers larger than 12 is not possible</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Raise-the-correct-exception">Raise the correct exception<a class="anchor-link" href="#Raise-the-correct-exception">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Here, I had to take two decisions: which exception should I raise, and which message should I send to the function's caller. I could have taken another, much less informative path:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">bad_addition</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">12</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">:</span>
-        <span class="c1"># Not recommended</span>
-        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;An error ocurred.&#39;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>It is your job to raise more helpful exceptions than that. The <a href="https://docs.python.org/3/library/exceptions.html#bltin-exceptions">built-in exceptions</a> page lists the built-in exceptions and their meanings. Scroll through the list of possible standard errors: you will see that many of them have meaningful, informative names stating what the error is about. You should learn to use some of them for your own purposes.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="When-to-raise-an-exception?">When to raise an exception?<a class="anchor-link" href="#When-to-raise-an-exception?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The type of exception you might be tempted to use most often are ValueError or TypeError. For example, as a well intentioned programmer you might want to be nice to the user and do the following:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">an_addition</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="c1"># Check input</span>
-    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;We can only add numbers, not strings!&#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;We can only add numbers of the same type!&#39;</span><span class="p">)</span>
-    <span class="c1"># OK, go</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>While it is sometimes useful to check the input of a function, this kind of <a href="https://en.wikipedia.org/wiki/Boilerplate_code">boilerplate code</a> is considered bad practice in python. The reason is that, very often, the error messages sent by python itself are informative enough. See the following examples</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">simple_addition</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">simple_addition</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-13-02baffeff2c9&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>simple_addition<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;1&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-12-58cbb50019ed&gt;</span> in <span class="ansi-cyan-fg">simple_addition</span><span class="ansi-blue-fg">(a, b)</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">def</span> simple_addition<span class="ansi-blue-fg">(</span>a<span class="ansi-blue-fg">,</span> b<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> a <span class="ansi-blue-fg">+</span> b
-
-<span class="ansi-red-fg">TypeError</span>: Can&#39;t convert &#39;int&#39; object to str implicitly</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Here the message is informative enough: so why should we bother adding our own message on top of that? As a rule of thumb: <strong>raise your own exception when you think that the default error message is not informative enough</strong>.</p>
-<p>A good example comes from last week's assignment, where we had to download SRTM files from a server. Two situations could lead to a bad error message:</p>
+<p>The entire scientific python stack relies on two core packages:</p>
 <ul>
-<li>SRTM data are available only from 60°S to 60°N: attempting to download a file outside this range would result in an <a href="https://docs.python.org/3/library/urllib.error.html#urllib.error.HTTPError">HTTPError</a></li>
-<li>There are no topography files for ocean tiles: attempting to download a file in the ocean would <em>also</em> result in an <a href="https://docs.python.org/3/library/urllib.error.html#urllib.error.HTTPError">HTTPError</a></li>
+<li><strong>numpy</strong>: <a href="https://docs.scipy.org/doc/">documentation</a>, <a href="https://github.com/numpy/numpy">code repository</a></li>
+<li><strong>scipy</strong>: <a href="https://docs.scipy.org/doc/scipy/reference/">documentation</a>, <a href="https://github.com/scipy/scipy">code repository</a></li>
+<li><strong>matplotlib</strong>: <a href="https://matplotlib.org/">documentation</a>, <a href="https://github.com/matplotlib/matplotlib">code repository</a></li>
 </ul>
-<p><code>HTTPError</code>s are not very informative. In both cases it is recommended to send a better message than that. Here is my implementation the <code>srtm_zone</code> function I wrote for the assignment:</p>
+<p>Numpy provides the N-dimensional arrays necessary to do fast computations, and SciPy adds the fundamental scientific tools to it. SciPy is a very large package and covers many aspects of the scientific workflow. It is organized in submodules, all dedicated to a specific aspect of data processing. For example: <a href="https://docs.scipy.org/doc/scipy/reference/integrate.html">scipy.integrate</a>, <a href="https://docs.scipy.org/doc/scipy/reference/optimize.html">scipy.optimize</a>, or <a href="https://docs.scipy.org/doc/scipy/reference/linalg.html">scipy.linalg</a>. Matplotlib is the traditional package to make graphics in python.</p>
 
 </div>
 </div>
@@ -13712,90 +13215,19 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">srtm_zone</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns the code of the SRTM zone corresponding to the given location.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    lon : float</span>
-<span class="sd">        The longitude</span>
-<span class="sd">    lat : float</span>
-<span class="sd">        The latitude</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    The SRTM zone (e.g. &#39;02_10&#39;)</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="c1"># Check input</span>
-    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">60</span> <span class="ow">or</span> <span class="nb">abs</span><span class="p">(</span><span class="n">lon</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">180</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;The given coordinates ({}, {}) &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">)</span> <span class="o">+</span> 
-                         <span class="s1">&#39;do not fit to the available data range [60S;60N].&#39;</span><span class="p">)</span>    
-    <span class="p">[</span><span class="n">code</span> <span class="n">deleted</span><span class="p">]</span>
-</pre></div>
-
+<h2 id="Essential-numpy-&quot;extensions&quot;">Essential numpy "extensions"<a class="anchor-link" href="#Essential-numpy-&quot;extensions&quot;">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This informs the user in an informative way that the provided input is not valid. For the "ocean" case the problem is not trivial: how to know beforehand if a tile exists or not? For this task we will use another trick, described below.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Handling-exceptions">Handling exceptions<a class="anchor-link" href="#Handling-exceptions">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>If you expect parts of a program to raise exceptions in some cases, it might be useful to handle them and avoid the program to stop or to send a cryptic error message. Look at the following example, which asks the user for input until a valid integer has been entered, but allows the user to interrupt the program (using Control-C or whatever the operating system supports):</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter a number: &quot;</span><span class="p">))</span>
-        <span class="k">break</span>
-    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Oops! That was no valid number. Try again...&quot;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <a href="https://docs.python.org/3/reference/compound_stmts.html#try">try</a> statement works as follows.</p>
+<p>There are two packages which I consider essential when it comes to data processing:</p>
 <ul>
-<li>First, the try clause (the statement(s) between the try and except keywords) is executed.</li>
-<li>If no exception occurs, the except clause is skipped and execution of the try statement is finished.</li>
-<li>If an exception occurs during execution of the try clause, the rest of the clause is skipped. Then if its type matches the exception named after the except keyword, the except clause is executed, and then execution continues after the try statement.</li>
-<li>If an exception occurs which does not match the exception named in the except clause, it is passed on to outer try statements; if no handler is found, it is an unhandled exception and execution stops with a message as shown above.</li>
+<li><strong>pandas</strong> provides data structures designed to make working with labeled data both easy and intuitive (<a href="http://pandas.pydata.org/pandas-docs/stable/">documentation</a>, <a href="https://github.com/pandas-dev/pandas">code repository</a>). </li>
+<li><strong>xarray</strong> extends pandas to N-dimensional arrays (<a href="http://xarray.pydata.org">documentation</a>, <a href="https://github.com/pydata/xarray">code repository</a>).</li>
 </ul>
-<p>A try statement may have more than one except clause, to specify handlers for different exceptions:</p>
-<div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
-<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Ha!)</span>
-<span class="k">except</span> <span class="ne">NameError</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Ho?)</span>
-</pre></div>
-<p>An except clause may name multiple exceptions as a parenthesized tuple, for example:</p>
-<div class="highlight"><pre><span></span><span class="k">except</span> <span class="p">(</span><span class="ne">RuntimeError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">NameError</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;All these are ok, we pass...&#39;</span><span class="p">)</span>
-</pre></div>
+<p>They both add a layer of abstraction to numpy arrays, giving "names" and "labels" to their dimensions and the data they contain. We will talk about them in the lecture, and most importantly, you will use both of them during the climate and cryosphere master lectures.</p>
 
 </div>
 </div>
@@ -13803,379 +13235,58 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>But when will we need to catch errors? As explained earlier, it might be useful to replace a bad error message with a more informative one. Here is my implementation of the <code>download_from_server</code> function I used for the assignment:</p>
-
+<h2 id="Domain-specific-packages">Domain specific packages<a class="anchor-link" href="#Domain-specific-packages">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlretrieve</span><span class="p">,</span> <span class="n">HTTPError</span>
-
-<span class="k">def</span> <span class="nf">download_from_server</span><span class="p">(</span><span class="n">zone</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Downloads an SRTM file for the given zone.</span>
-
-<span class="sd">    If the file is already available, skips.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    zone : str</span>
-<span class="sd">        The file identifier</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">server_url</span> <span class="o">=</span> <span class="s1">&#39;http://droppr.org/srtm/v4.1/6_5x5_TIFs/&#39;</span>
-    <span class="n">file_name</span> <span class="o">=</span> <span class="s1">&#39;srtm_{}.zip&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">zone</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;File already available! Skipping...&#39;</span><span class="p">)</span>
-        <span class="k">return</span>
-
-    <span class="c1"># Download the file </span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Downloading {}...&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file_name</span><span class="p">))</span>
-        <span class="n">urlretrieve</span><span class="p">(</span><span class="n">server_url</span><span class="o">+</span><span class="n">file_name</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Done!&#39;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="n">HTTPError</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;The file does not seem to be available on the server. &#39;</span>
-              <span class="s1">&#39;This might be due to the fact that no topography is &#39;</span>
-              <span class="s1">&#39;available at this location (e.g. oceans), or that &#39;</span>
-              <span class="s1">&#39;there was a connection problem. In this case, check your &#39;</span>
-              <span class="s1">&#39;internet connection and try again.&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Note: connection errors are tricky to handle and this will not work in all the cases. This function will need some tuning for more robust solutions, but we leave it as is for now.</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Warnings">Warnings<a class="anchor-link" href="#Warnings">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://docs.python.org/3/library/warnings.html">Warning</a> messages are typically issued in situations where it is useful to alert the user of some condition in a program, where that condition (normally) doesn’t warrant raising an exception and terminating the program. For example, a library will issue a warning when a program uses an obsolete module. Numpy issues warnings when mathematical computations lead to non-finite results.</p>
-<p>Warnings are useful because they do not terminate the program:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">/</span> <span class="n">a</span>  <span class="c1"># issues a warning</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/home/mowglie/.pyvirtualenvs/py3/lib/python3.5/site-packages/ipykernel_launcher.py:4: RuntimeWarning: invalid value encountered in true_divide
-  after removing the cwd from sys.path.
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[14]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>array([nan,  1.,  1.,  1.,  1.,  1.,  1.,  1.,  1.,  1.])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This is a nice feature because this invalid division at one location does not imply that the rest of the computations are useless. <code>NaN</code>s (Not A Number, to be explained in the next lesson) are an indicator for missing data, and most scientific libraries can deal with them.</p>
-<p>Depending on your use case, you might want to disable warnings or turn them into errors:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Silencing-warnings">Silencing warnings<a class="anchor-link" href="#Silencing-warnings">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>It is possible to temporarily disable warnings with the following syntax:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
-
-<span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">a</span>
-<span class="n">b</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[15]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>array([nan,  1.,  1.,  1.,  1.,  1.,  1.,  1.,  1.,  1.])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Warnings-as-exceptions">Warnings as exceptions<a class="anchor-link" href="#Warnings-as-exceptions">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In a similar way, you can turn warnings into exceptions:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
-
-<span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">)</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">a</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">RuntimeWarning</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-16-bda4c5445d76&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">with</span> warnings<span class="ansi-blue-fg">.</span>catch_warnings<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     warnings<span class="ansi-blue-fg">.</span>simplefilter<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;error&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg">     </span>b <span class="ansi-blue-fg">=</span> a <span class="ansi-blue-fg">/</span> a
-
-<span class="ansi-red-fg">RuntimeWarning</span>: invalid value encountered in true_divide</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <a href="https://docs.python.org/3/reference/compound_stmts.html#with">with statement</a> in the examples above is called a <strong>context manager</strong>. As the name indicates, it serves to temporarily change the <em>context</em> of the code block that follows. In this case, it defines a part of the code where the warnings are silenced or errored. We will get back to context managers later in the lecture.</p>
-<p>You can also disable warnings for an entire script or interpreter session simply by filtering them without using the context manager:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This is not recommended, as it might hide important and unexpected warnings.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Filter-warnings-by-type-or-message">Filter warnings by type or message<a class="anchor-link" href="#Filter-warnings-by-type-or-message">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://docs.python.org/2/library/warnings.html#warnings.filterwarnings">warnings.filterwarnings</a> gives more control to the filter in order to suppress predefined warnings only:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.</span><span class="o">**</span><span class="mi">100</span><span class="p">])</span><span class="o">**</span><span class="mi">100</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/home/mowglie/.pyvirtualenvs/py3/lib/python3.5/site-packages/ipykernel_launcher.py:1: RuntimeWarning: overflow encountered in power
-  &#34;&#34;&#34;Entry point for launching an IPython kernel.
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[17]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>array([inf])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="s2">&quot;invalid value encountered in true_divide&quot;</span><span class="p">,</span> <span class="ne">RuntimeWarning</span><span class="p">)</span>
-    <span class="c1"># Divide by zero is ignored</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">a</span>
-    <span class="c1"># But overflow is not</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.</span><span class="o">**</span><span class="mi">100</span><span class="p">])</span><span class="o">**</span><span class="mi">100</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/home/mowglie/.pyvirtualenvs/py3/lib/python3.5/site-packages/ipykernel_launcher.py:6: RuntimeWarning: overflow encountered in power
-  
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Take-home-points">Take home points<a class="anchor-link" href="#Take-home-points">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are so many of them! I can't list them all, but here are a few that you will probably come across in your career:</p>
+<p><strong>Geosciences/Meteorology</strong>:</p>
 <ul>
-<li>exceptions are not something to be afraid of: they are helping us to find problems in our code</li>
-<li>there are different types of exceptions, which is useful to understand what is causing the problem. Often, an additional error message is printed too, further explaining the problem</li>
-<li>you can raise exceptions yourself in your code. I recommend to use this feature, but in moderation!</li>
-<li>the <code>try ... except</code> statements help to catch expected errors and do something about it. This is particularly useful in software which need to run whatever happens. </li>
+<li><a href="https://unidata.github.io/MetPy/latest/index.html">MetPy</a>: the meteorology toolbox</li>
+<li><a href="https://scitools.org.uk/cartopy">Cartopy</a>: maps and map projections</li>
+<li><a href="https://xesmf.readthedocs.io/en/latest/">xESMF</a>: Universal Regridder for Geospatial Data</li>
+<li><a href="http://geopandas.org/">GeoPandas</a>: Pandas for vector data</li>
+<li><a href="https://rasterio.readthedocs.io/en/latest/">Rasterio</a>: geospatial raster data I/O</li>
+</ul>
+<p><strong>Statistics/Machine Learning</strong>:</p>
+<ul>
+<li><a href="https://www.statsmodels.org/stable/index.html">Statsmodels</a>: statistic toolbox for models and tests</li>
+<li><a href="https://seaborn.pydata.org/index.html">Seaborn</a>: statistical data visualization</li>
+<li><a href="http://scikit-learn.org/">Scikit-learn</a>: machine learning tools</li>
+<li><a href="https://www.tensorflow.org/">TensorFlow</a>: Google's brain</li>
+<li><a href="https://pytorch.org/">PyTorch</a>: Facebook's brain</li>
+</ul>
+<p><strong>Miscellaneous</strong>:</p>
+<ul>
+<li><a href="https://scikit-image.org/">Scikit-image</a>: image processing</li>
+<li><a href="https://bokeh.pydata.org/en/latest/">Bokeh</a>: interactive plots</li>
+<li><a href="http://docs.dask.org/en/latest/">Dask</a>: parallel computing</li>
+<li>...</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Development-environments">Development environments<a class="anchor-link" href="#Development-environments">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Development environments are not "python packages" per se, but they are helping you to write better code faster. Here are some of them:</p>
+<ul>
+<li><strong>ipython</strong>: an extended python command line, but much nicer to use (<a href="https://ipython.readthedocs.org/">documentation</a>, <a href="https://github.com/ipython/ipython">code repository</a>). Originally developed by the scientific python community, it it now used by many developers as well.</li>
+<li><strong>jupyter notebook</strong>: built on top of ipython, the jupyter notebook gives you access to an ipython interpreter in your browser (<a href="https://jupyter-notebook.readthedocs.io/en/stable/">documentation</a>, <a href="https://github.com/jupyter/notebook">code repository</a>). It allows you to write code and display its output in the same page, which is very useful for communicating your results or documenting code. As a <em>development environment</em>, however, the notebook quickly reaches its limits.</li>
+<li><strong>spyder</strong>: designed to look like the Matlab IDE, spyder is mostly used by scientists (<a href="https://www.spyder-ide.org/">documentation</a>, <a href="https://github.com/spyder-ide/spyder">code repository</a>). Because it is a non-funded community project it has some rough edges, but altogether it works great!</li>
+<li><strong>atom</strong> is a general purpose text editor (<a href="https://atom.io/">documentation</a>, <a href="https://github.com/atom/atom">code repository</a>). It is very fancy and lightweight, and has <em>a lot</em> of plugins for whatever you are using the editor for.</li>
+<li><strong>pycharm</strong> is a closed-source, professional IDE with a community version available for free. It has more features than spyder but is is also much more resource hungry. I use <a href="https://www.jetbrains.com/pycharm/download">pycharm community edition</a> in my work.</li>
 </ul>
 
 </div>
@@ -14191,7 +13302,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="10-Testing-part-I.html">jump to the next chapter</a>.</p>
+<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="17-Assignment-06.html">jump to this week's assignment</a>.</p>
 
 </div>
 </div>

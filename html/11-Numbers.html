@@ -9,8 +9,13 @@ gtag('js', new Date());
 gtag('config', 'UA-88391345-1');
 </script>
 <meta charset="utf-8" />
-<title>11-Numbers</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+
+<title>11-Numbers</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
 
 <style type="text/css">
     /*!
@@ -207,7 +212,6 @@ th {
   *:before,
   *:after {
     background: transparent !important;
-    color: #000 !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -6752,15 +6756,15 @@ button.close {
 *
 */
 /*!
- *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 /* FONT PATH
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.2.0');
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -6817,6 +6821,19 @@ button.close {
   border: solid 0.08em #eee;
   border-radius: .1em;
 }
+.fa-pull-left {
+  float: left;
+}
+.fa-pull-right {
+  float: right;
+}
+.fa.fa-pull-left {
+  margin-right: .3em;
+}
+.fa.fa-pull-right {
+  margin-left: .3em;
+}
+/* Deprecated as of 4.4.0 */
 .pull-right {
   float: right;
 }
@@ -6832,6 +6849,10 @@ button.close {
 .fa-spin {
   -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
+}
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+  animation: fa-spin 1s infinite steps(8);
 }
 @-webkit-keyframes fa-spin {
   0% {
@@ -6854,31 +6875,31 @@ button.close {
   }
 }
 .fa-rotate-90 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 .fa-rotate-180 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 .fa-rotate-270 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
   -webkit-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 .fa-flip-horizontal {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
   -webkit-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 .fa-flip-vertical {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
   -webkit-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   transform: scale(1, -1);
@@ -7363,6 +7384,7 @@ button.close {
 .fa-twitter:before {
   content: "\f099";
 }
+.fa-facebook-f:before,
 .fa-facebook:before {
   content: "\f09a";
 }
@@ -7375,6 +7397,7 @@ button.close {
 .fa-credit-card:before {
   content: "\f09d";
 }
+.fa-feed:before,
 .fa-rss:before {
   content: "\f09e";
 }
@@ -8012,7 +8035,8 @@ button.close {
 .fa-male:before {
   content: "\f183";
 }
-.fa-gittip:before {
+.fa-gittip:before,
+.fa-gratipay:before {
   content: "\f184";
 }
 .fa-sun-o:before {
@@ -8116,7 +8140,7 @@ button.close {
 .fa-digg:before {
   content: "\f1a6";
 }
-.fa-pied-piper:before {
+.fa-pied-piper-pp:before {
   content: "\f1a7";
 }
 .fa-pied-piper-alt:before {
@@ -8242,6 +8266,7 @@ button.close {
   content: "\f1ce";
 }
 .fa-ra:before,
+.fa-resistance:before,
 .fa-rebel:before {
   content: "\f1d0";
 }
@@ -8255,6 +8280,8 @@ button.close {
 .fa-git:before {
   content: "\f1d3";
 }
+.fa-y-combinator-square:before,
+.fa-yc-square:before,
 .fa-hacker-news:before {
   content: "\f1d4";
 }
@@ -8422,6 +8449,657 @@ button.close {
 }
 .fa-meanpath:before {
   content: "\f20c";
+}
+.fa-buysellads:before {
+  content: "\f20d";
+}
+.fa-connectdevelop:before {
+  content: "\f20e";
+}
+.fa-dashcube:before {
+  content: "\f210";
+}
+.fa-forumbee:before {
+  content: "\f211";
+}
+.fa-leanpub:before {
+  content: "\f212";
+}
+.fa-sellsy:before {
+  content: "\f213";
+}
+.fa-shirtsinbulk:before {
+  content: "\f214";
+}
+.fa-simplybuilt:before {
+  content: "\f215";
+}
+.fa-skyatlas:before {
+  content: "\f216";
+}
+.fa-cart-plus:before {
+  content: "\f217";
+}
+.fa-cart-arrow-down:before {
+  content: "\f218";
+}
+.fa-diamond:before {
+  content: "\f219";
+}
+.fa-ship:before {
+  content: "\f21a";
+}
+.fa-user-secret:before {
+  content: "\f21b";
+}
+.fa-motorcycle:before {
+  content: "\f21c";
+}
+.fa-street-view:before {
+  content: "\f21d";
+}
+.fa-heartbeat:before {
+  content: "\f21e";
+}
+.fa-venus:before {
+  content: "\f221";
+}
+.fa-mars:before {
+  content: "\f222";
+}
+.fa-mercury:before {
+  content: "\f223";
+}
+.fa-intersex:before,
+.fa-transgender:before {
+  content: "\f224";
+}
+.fa-transgender-alt:before {
+  content: "\f225";
+}
+.fa-venus-double:before {
+  content: "\f226";
+}
+.fa-mars-double:before {
+  content: "\f227";
+}
+.fa-venus-mars:before {
+  content: "\f228";
+}
+.fa-mars-stroke:before {
+  content: "\f229";
+}
+.fa-mars-stroke-v:before {
+  content: "\f22a";
+}
+.fa-mars-stroke-h:before {
+  content: "\f22b";
+}
+.fa-neuter:before {
+  content: "\f22c";
+}
+.fa-genderless:before {
+  content: "\f22d";
+}
+.fa-facebook-official:before {
+  content: "\f230";
+}
+.fa-pinterest-p:before {
+  content: "\f231";
+}
+.fa-whatsapp:before {
+  content: "\f232";
+}
+.fa-server:before {
+  content: "\f233";
+}
+.fa-user-plus:before {
+  content: "\f234";
+}
+.fa-user-times:before {
+  content: "\f235";
+}
+.fa-hotel:before,
+.fa-bed:before {
+  content: "\f236";
+}
+.fa-viacoin:before {
+  content: "\f237";
+}
+.fa-train:before {
+  content: "\f238";
+}
+.fa-subway:before {
+  content: "\f239";
+}
+.fa-medium:before {
+  content: "\f23a";
+}
+.fa-yc:before,
+.fa-y-combinator:before {
+  content: "\f23b";
+}
+.fa-optin-monster:before {
+  content: "\f23c";
+}
+.fa-opencart:before {
+  content: "\f23d";
+}
+.fa-expeditedssl:before {
+  content: "\f23e";
+}
+.fa-battery-4:before,
+.fa-battery:before,
+.fa-battery-full:before {
+  content: "\f240";
+}
+.fa-battery-3:before,
+.fa-battery-three-quarters:before {
+  content: "\f241";
+}
+.fa-battery-2:before,
+.fa-battery-half:before {
+  content: "\f242";
+}
+.fa-battery-1:before,
+.fa-battery-quarter:before {
+  content: "\f243";
+}
+.fa-battery-0:before,
+.fa-battery-empty:before {
+  content: "\f244";
+}
+.fa-mouse-pointer:before {
+  content: "\f245";
+}
+.fa-i-cursor:before {
+  content: "\f246";
+}
+.fa-object-group:before {
+  content: "\f247";
+}
+.fa-object-ungroup:before {
+  content: "\f248";
+}
+.fa-sticky-note:before {
+  content: "\f249";
+}
+.fa-sticky-note-o:before {
+  content: "\f24a";
+}
+.fa-cc-jcb:before {
+  content: "\f24b";
+}
+.fa-cc-diners-club:before {
+  content: "\f24c";
+}
+.fa-clone:before {
+  content: "\f24d";
+}
+.fa-balance-scale:before {
+  content: "\f24e";
+}
+.fa-hourglass-o:before {
+  content: "\f250";
+}
+.fa-hourglass-1:before,
+.fa-hourglass-start:before {
+  content: "\f251";
+}
+.fa-hourglass-2:before,
+.fa-hourglass-half:before {
+  content: "\f252";
+}
+.fa-hourglass-3:before,
+.fa-hourglass-end:before {
+  content: "\f253";
+}
+.fa-hourglass:before {
+  content: "\f254";
+}
+.fa-hand-grab-o:before,
+.fa-hand-rock-o:before {
+  content: "\f255";
+}
+.fa-hand-stop-o:before,
+.fa-hand-paper-o:before {
+  content: "\f256";
+}
+.fa-hand-scissors-o:before {
+  content: "\f257";
+}
+.fa-hand-lizard-o:before {
+  content: "\f258";
+}
+.fa-hand-spock-o:before {
+  content: "\f259";
+}
+.fa-hand-pointer-o:before {
+  content: "\f25a";
+}
+.fa-hand-peace-o:before {
+  content: "\f25b";
+}
+.fa-trademark:before {
+  content: "\f25c";
+}
+.fa-registered:before {
+  content: "\f25d";
+}
+.fa-creative-commons:before {
+  content: "\f25e";
+}
+.fa-gg:before {
+  content: "\f260";
+}
+.fa-gg-circle:before {
+  content: "\f261";
+}
+.fa-tripadvisor:before {
+  content: "\f262";
+}
+.fa-odnoklassniki:before {
+  content: "\f263";
+}
+.fa-odnoklassniki-square:before {
+  content: "\f264";
+}
+.fa-get-pocket:before {
+  content: "\f265";
+}
+.fa-wikipedia-w:before {
+  content: "\f266";
+}
+.fa-safari:before {
+  content: "\f267";
+}
+.fa-chrome:before {
+  content: "\f268";
+}
+.fa-firefox:before {
+  content: "\f269";
+}
+.fa-opera:before {
+  content: "\f26a";
+}
+.fa-internet-explorer:before {
+  content: "\f26b";
+}
+.fa-tv:before,
+.fa-television:before {
+  content: "\f26c";
+}
+.fa-contao:before {
+  content: "\f26d";
+}
+.fa-500px:before {
+  content: "\f26e";
+}
+.fa-amazon:before {
+  content: "\f270";
+}
+.fa-calendar-plus-o:before {
+  content: "\f271";
+}
+.fa-calendar-minus-o:before {
+  content: "\f272";
+}
+.fa-calendar-times-o:before {
+  content: "\f273";
+}
+.fa-calendar-check-o:before {
+  content: "\f274";
+}
+.fa-industry:before {
+  content: "\f275";
+}
+.fa-map-pin:before {
+  content: "\f276";
+}
+.fa-map-signs:before {
+  content: "\f277";
+}
+.fa-map-o:before {
+  content: "\f278";
+}
+.fa-map:before {
+  content: "\f279";
+}
+.fa-commenting:before {
+  content: "\f27a";
+}
+.fa-commenting-o:before {
+  content: "\f27b";
+}
+.fa-houzz:before {
+  content: "\f27c";
+}
+.fa-vimeo:before {
+  content: "\f27d";
+}
+.fa-black-tie:before {
+  content: "\f27e";
+}
+.fa-fonticons:before {
+  content: "\f280";
+}
+.fa-reddit-alien:before {
+  content: "\f281";
+}
+.fa-edge:before {
+  content: "\f282";
+}
+.fa-credit-card-alt:before {
+  content: "\f283";
+}
+.fa-codiepie:before {
+  content: "\f284";
+}
+.fa-modx:before {
+  content: "\f285";
+}
+.fa-fort-awesome:before {
+  content: "\f286";
+}
+.fa-usb:before {
+  content: "\f287";
+}
+.fa-product-hunt:before {
+  content: "\f288";
+}
+.fa-mixcloud:before {
+  content: "\f289";
+}
+.fa-scribd:before {
+  content: "\f28a";
+}
+.fa-pause-circle:before {
+  content: "\f28b";
+}
+.fa-pause-circle-o:before {
+  content: "\f28c";
+}
+.fa-stop-circle:before {
+  content: "\f28d";
+}
+.fa-stop-circle-o:before {
+  content: "\f28e";
+}
+.fa-shopping-bag:before {
+  content: "\f290";
+}
+.fa-shopping-basket:before {
+  content: "\f291";
+}
+.fa-hashtag:before {
+  content: "\f292";
+}
+.fa-bluetooth:before {
+  content: "\f293";
+}
+.fa-bluetooth-b:before {
+  content: "\f294";
+}
+.fa-percent:before {
+  content: "\f295";
+}
+.fa-gitlab:before {
+  content: "\f296";
+}
+.fa-wpbeginner:before {
+  content: "\f297";
+}
+.fa-wpforms:before {
+  content: "\f298";
+}
+.fa-envira:before {
+  content: "\f299";
+}
+.fa-universal-access:before {
+  content: "\f29a";
+}
+.fa-wheelchair-alt:before {
+  content: "\f29b";
+}
+.fa-question-circle-o:before {
+  content: "\f29c";
+}
+.fa-blind:before {
+  content: "\f29d";
+}
+.fa-audio-description:before {
+  content: "\f29e";
+}
+.fa-volume-control-phone:before {
+  content: "\f2a0";
+}
+.fa-braille:before {
+  content: "\f2a1";
+}
+.fa-assistive-listening-systems:before {
+  content: "\f2a2";
+}
+.fa-asl-interpreting:before,
+.fa-american-sign-language-interpreting:before {
+  content: "\f2a3";
+}
+.fa-deafness:before,
+.fa-hard-of-hearing:before,
+.fa-deaf:before {
+  content: "\f2a4";
+}
+.fa-glide:before {
+  content: "\f2a5";
+}
+.fa-glide-g:before {
+  content: "\f2a6";
+}
+.fa-signing:before,
+.fa-sign-language:before {
+  content: "\f2a7";
+}
+.fa-low-vision:before {
+  content: "\f2a8";
+}
+.fa-viadeo:before {
+  content: "\f2a9";
+}
+.fa-viadeo-square:before {
+  content: "\f2aa";
+}
+.fa-snapchat:before {
+  content: "\f2ab";
+}
+.fa-snapchat-ghost:before {
+  content: "\f2ac";
+}
+.fa-snapchat-square:before {
+  content: "\f2ad";
+}
+.fa-pied-piper:before {
+  content: "\f2ae";
+}
+.fa-first-order:before {
+  content: "\f2b0";
+}
+.fa-yoast:before {
+  content: "\f2b1";
+}
+.fa-themeisle:before {
+  content: "\f2b2";
+}
+.fa-google-plus-circle:before,
+.fa-google-plus-official:before {
+  content: "\f2b3";
+}
+.fa-fa:before,
+.fa-font-awesome:before {
+  content: "\f2b4";
+}
+.fa-handshake-o:before {
+  content: "\f2b5";
+}
+.fa-envelope-open:before {
+  content: "\f2b6";
+}
+.fa-envelope-open-o:before {
+  content: "\f2b7";
+}
+.fa-linode:before {
+  content: "\f2b8";
+}
+.fa-address-book:before {
+  content: "\f2b9";
+}
+.fa-address-book-o:before {
+  content: "\f2ba";
+}
+.fa-vcard:before,
+.fa-address-card:before {
+  content: "\f2bb";
+}
+.fa-vcard-o:before,
+.fa-address-card-o:before {
+  content: "\f2bc";
+}
+.fa-user-circle:before {
+  content: "\f2bd";
+}
+.fa-user-circle-o:before {
+  content: "\f2be";
+}
+.fa-user-o:before {
+  content: "\f2c0";
+}
+.fa-id-badge:before {
+  content: "\f2c1";
+}
+.fa-drivers-license:before,
+.fa-id-card:before {
+  content: "\f2c2";
+}
+.fa-drivers-license-o:before,
+.fa-id-card-o:before {
+  content: "\f2c3";
+}
+.fa-quora:before {
+  content: "\f2c4";
+}
+.fa-free-code-camp:before {
+  content: "\f2c5";
+}
+.fa-telegram:before {
+  content: "\f2c6";
+}
+.fa-thermometer-4:before,
+.fa-thermometer:before,
+.fa-thermometer-full:before {
+  content: "\f2c7";
+}
+.fa-thermometer-3:before,
+.fa-thermometer-three-quarters:before {
+  content: "\f2c8";
+}
+.fa-thermometer-2:before,
+.fa-thermometer-half:before {
+  content: "\f2c9";
+}
+.fa-thermometer-1:before,
+.fa-thermometer-quarter:before {
+  content: "\f2ca";
+}
+.fa-thermometer-0:before,
+.fa-thermometer-empty:before {
+  content: "\f2cb";
+}
+.fa-shower:before {
+  content: "\f2cc";
+}
+.fa-bathtub:before,
+.fa-s15:before,
+.fa-bath:before {
+  content: "\f2cd";
+}
+.fa-podcast:before {
+  content: "\f2ce";
+}
+.fa-window-maximize:before {
+  content: "\f2d0";
+}
+.fa-window-minimize:before {
+  content: "\f2d1";
+}
+.fa-window-restore:before {
+  content: "\f2d2";
+}
+.fa-times-rectangle:before,
+.fa-window-close:before {
+  content: "\f2d3";
+}
+.fa-times-rectangle-o:before,
+.fa-window-close-o:before {
+  content: "\f2d4";
+}
+.fa-bandcamp:before {
+  content: "\f2d5";
+}
+.fa-grav:before {
+  content: "\f2d6";
+}
+.fa-etsy:before {
+  content: "\f2d7";
+}
+.fa-imdb:before {
+  content: "\f2d8";
+}
+.fa-ravelry:before {
+  content: "\f2d9";
+}
+.fa-eercast:before {
+  content: "\f2da";
+}
+.fa-microchip:before {
+  content: "\f2db";
+}
+.fa-snowflake-o:before {
+  content: "\f2dc";
+}
+.fa-superpowers:before {
+  content: "\f2dd";
+}
+.fa-wpexplorer:before {
+  content: "\f2de";
+}
+.fa-meetup:before {
+  content: "\f2e0";
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
 }
 /*!
 *
@@ -8702,6 +9380,10 @@ div.traceback-wrapper {
   max-width: 800px;
   margin: auto;
 }
+div.traceback-wrapper pre.traceback {
+  max-height: 600px;
+  overflow: auto;
+}
 /**
  * Primary styles
  *
@@ -8727,6 +9409,10 @@ body > #header {
   z-index: 100;
 }
 body > #header #header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
   padding-bottom: 5px;
   padding-top: 5px;
   box-sizing: border-box;
@@ -8758,13 +9444,16 @@ body > #header .header-bar {
   padding-top: 1px;
   padding-bottom: 1px;
 }
-@media (max-width: 991px) {
-  #ipython_notebook {
-    margin-left: 10px;
-  }
-}
 [dir="rtl"] #ipython_notebook {
+  margin-right: 10px;
+  margin-left: 0;
+}
+[dir="rtl"] #ipython_notebook.pull-left {
   float: right !important;
+  float: right;
+}
+.flex-spacer {
+  flex: 1;
 }
 #noscript {
   width: auto;
@@ -8799,8 +9488,14 @@ body > #header .header-bar {
 input.ui-button {
   padding: 0.3em 0.9em;
 }
+span#kernel_logo_widget {
+  margin: 0 10px;
+}
 span#login_widget {
   float: right;
+}
+[dir="rtl"] span#login_widget {
+  float: left;
 }
 span#login_widget > .button,
 #logout {
@@ -8916,6 +9611,9 @@ span#login_widget > .button .badge,
   overflow: auto;
   flex: 1;
 }
+.modal-header {
+  cursor: move;
+}
 @media (min-width: 768px) {
   .modal .modal-dialog {
     width: 700px;
@@ -8936,6 +9634,19 @@ span#login_widget > .button .badge,
   display: inline-block;
   margin-bottom: -4px;
 }
+[dir="rtl"] .center-nav form.pull-left {
+  float: right !important;
+  float: right;
+}
+[dir="rtl"] .center-nav .navbar-text {
+  float: right;
+}
+[dir="rtl"] .navbar-inner {
+  text-align: right;
+}
+[dir="rtl"] div.text-left {
+  text-align: right;
+}
 /*!
 *
 * IPython tree view
@@ -8952,34 +9663,42 @@ span#login_widget > .button .badge,
   margin: 0;
 }
 .alternate_upload input.fileinput {
-  text-align: center;
-  vertical-align: middle;
-  display: inline;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
   opacity: 0;
   z-index: 2;
-  width: 12ex;
-  margin-right: -12ex;
+}
+.alternate_upload .btn-xs > input.fileinput {
+  margin: -1px -5px;
 }
 .alternate_upload .btn-upload {
+  position: relative;
   height: 22px;
+}
+::-webkit-file-upload-button {
+  cursor: pointer;
 }
 /**
  * Primary styles
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
   padding-bottom: 4px;
+}
+[dir="rtl"] ul#tabs.nav-tabs > li {
+  float: right;
+}
+[dir="rtl"] ul#tabs.nav.nav-tabs {
+  padding-right: 0;
 }
 ul.breadcrumb a:focus,
 ul.breadcrumb a:hover {
@@ -8999,15 +9718,13 @@ ul.breadcrumb span {
 .list_toolbar .tree-buttons {
   padding-top: 1px;
 }
-[dir="rtl"] .list_toolbar .tree-buttons {
+[dir="rtl"] .list_toolbar .tree-buttons .pull-right {
   float: left !important;
+  float: left;
 }
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
+[dir="rtl"] .list_toolbar .col-sm-4,
+[dir="rtl"] .list_toolbar .col-sm-8 {
+  float: right;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9063,7 +9780,7 @@ ul.breadcrumb span {
 .list_item > div input {
   margin-right: 7px;
   margin-left: 14px;
-  vertical-align: baseline;
+  vertical-align: text-bottom;
   line-height: 22px;
   position: relative;
   top: -1px;
@@ -9073,6 +9790,9 @@ ul.breadcrumb span {
   margin-left: -1px;
   vertical-align: baseline;
   line-height: 22px;
+}
+[dir="rtl"] .list_item > div input {
+  margin-right: 0;
 }
 .new-file input[type=checkbox] {
   visibility: hidden;
@@ -9088,6 +9808,14 @@ ul.breadcrumb span {
   margin-left: 7px;
   line-height: 22px;
   vertical-align: baseline;
+}
+.item_modified {
+  margin-right: 7px;
+  margin-left: 7px;
+}
+[dir="rtl"] .item_modified.pull-right {
+  float: left !important;
+  float: left;
 }
 .item_buttons {
   line-height: 1em;
@@ -9116,6 +9844,14 @@ ul.breadcrumb span {
   margin-right: 7px;
   float: left;
 }
+[dir="rtl"] .item_buttons.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .item_buttons .kernel-name {
+  margin-left: 7px;
+  float: right;
+}
 .toolbar_info {
   height: 24px;
   line-height: 24px;
@@ -9141,18 +9877,32 @@ ul.breadcrumb span {
   background-color: transparent;
   font-weight: bold;
 }
+.sort_button {
+  display: inline-block;
+  padding-left: 7px;
+}
+[dir="rtl"] .sort_button.pull-right {
+  float: left !important;
+  float: left;
+}
 #tree-selector {
   padding-right: 0px;
-}
-[dir="rtl"] #tree-selector a {
-  float: right;
 }
 #button-select-all {
   min-width: 50px;
 }
+[dir="rtl"] #button-select-all.btn {
+  float: right ;
+}
 #select-all {
   margin-left: 7px;
   margin-right: 2px;
+  margin-top: 2px;
+  height: 16px;
+}
+[dir="rtl"] #select-all.pull-left {
+  float: right !important;
+  float: right;
 }
 .menu_icon {
   margin-right: 2px;
@@ -9170,6 +9920,12 @@ ul.breadcrumb span {
   -moz-osx-font-smoothing: grayscale;
   content: "\f114";
 }
+.folder_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.folder_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .folder_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9186,6 +9942,12 @@ ul.breadcrumb span {
   content: "\f02d";
   position: relative;
   top: -1px;
+}
+.notebook_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.notebook_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .notebook_icon:before.pull-left {
   margin-right: .3em;
@@ -9205,6 +9967,12 @@ ul.breadcrumb span {
   top: -1px;
   color: #5cb85c;
 }
+.running_notebook_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.running_notebook_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .running_notebook_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9222,6 +9990,12 @@ ul.breadcrumb span {
   position: relative;
   top: -2px;
 }
+.file_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.file_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .file_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9236,8 +10010,11 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
+#new-menu .dropdown-header {
+  font-size: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 0 3px;
+  margin: -3px 20px 0;
 }
 .kernel-menu-icon {
   padding-right: 12px;
@@ -9284,9 +10061,6 @@ ul#new-menu {
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
 }
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
-}
 .delete-button {
   display: none;
 }
@@ -9294,6 +10068,12 @@ ul#new-menu {
   display: none;
 }
 .rename-button {
+  display: none;
+}
+.move-button {
+  display: none;
+}
+.download-button {
   display: none;
 }
 .shutdown-button {
@@ -9336,6 +10116,12 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
+.dirty-indicator.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator.fa-pull-right {
+  margin-left: .3em;
+}
 .dirty-indicator.pull-left {
   margin-right: .3em;
 }
@@ -9350,6 +10136,12 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
+}
+.dirty-indicator-dirty.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-dirty.fa-pull-right {
+  margin-left: .3em;
 }
 .dirty-indicator-dirty.pull-left {
   margin-right: .3em;
@@ -9366,6 +10158,12 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
+.dirty-indicator-clean.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-clean.fa-pull-right {
+  margin-left: .3em;
+}
 .dirty-indicator-clean.pull-left {
   margin-right: .3em;
 }
@@ -9380,6 +10178,12 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f00c";
+}
+.dirty-indicator-clean:before.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-clean:before.fa-pull-right {
+  margin-left: .3em;
 }
 .dirty-indicator-clean:before.pull-left {
   margin-right: .3em;
@@ -9425,14 +10229,132 @@ ul#new-menu {
     box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
   }
 }
+.CodeMirror-dialog {
+  background-color: #fff;
+}
 /*!
 *
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
 .ansibold {
   font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -9511,12 +10433,20 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  border-left-width: 1px;
-  padding-left: 5px;
-  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -9529,27 +10459,39 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected {
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
   border-color: #ababab;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
 }
 @media print {
-  div.cell.selected {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected.jupyter-soft-selected {
-  border-left-width: 0;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
-}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -9745,7 +10687,9 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em;
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -9755,11 +10699,24 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
   border: 0;
   border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
 }
 /*
 
@@ -10013,6 +10970,9 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
+div.output_area .mglyph > img {
+  max-width: none;
+}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -10051,7 +11011,7 @@ div.output_area svg.unconfined {
 }
 div.output_area pre {
   margin: 0;
-  padding: 0;
+  padding: 1px 0 1px 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -10211,39 +11171,35 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
 .rendered_html ul {
   list-style: disc;
-  margin: 0em 2em;
-  padding-left: 0px;
 }
 .rendered_html ul ul {
   list-style: square;
-  margin: 0em 2em;
+  margin-top: 0;
 }
 .rendered_html ul ul ul {
   list-style: circle;
-  margin: 0em 2em;
 }
 .rendered_html ol {
   list-style: decimal;
-  margin: 0em 2em;
-  padding-left: 0px;
 }
 .rendered_html ol ol {
   list-style: upper-alpha;
-  margin: 0em 2em;
+  margin-top: 0;
 }
 .rendered_html ol ol ol {
   list-style: lower-alpha;
-  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol {
   list-style: lower-roman;
-  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol ol {
   list-style: decimal;
-  margin: 0em 2em;
 }
 .rendered_html * + ul {
   margin-top: 1em;
@@ -10257,14 +11213,23 @@ div.output_unrecognized a:hover {
 }
 .rendered_html pre {
   margin: 1em 2em;
+  padding: 0px;
+  background-color: #fff;
+}
+.rendered_html code {
+  background-color: #eff0f1;
+}
+.rendered_html p code {
+  padding: 1px 5px;
+}
+.rendered_html pre code {
+  background-color: #fff;
 }
 .rendered_html pre,
 .rendered_html code {
   border: 0;
-  background-color: #fff;
   color: #000;
   font-size: 100%;
-  padding: 0px;
 }
 .rendered_html blockquote {
   margin: 1em 2em;
@@ -10272,24 +11237,36 @@ div.output_unrecognized a:hover {
 .rendered_html table {
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
+  border: none;
   border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
 }
 .rendered_html tr,
 .rendered_html th,
 .rendered_html td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  margin: 1em 2em;
-}
-.rendered_html td,
-.rendered_html th {
-  text-align: left;
+  text-align: right;
   vertical-align: middle;
-  padding: 4px;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
 }
 .rendered_html th {
   font-weight: bold;
+}
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
 }
 .rendered_html * + table {
   margin-top: 1em;
@@ -10316,6 +11293,15 @@ div.output_unrecognized a:hover {
 .rendered_html img.unconfined,
 .rendered_html svg.unconfined {
   max-width: none;
+}
+.rendered_html .alert {
+  margin-bottom: initial;
+}
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] .rendered_html p {
+  text-align: right;
 }
 div.text_cell {
   /* Old browsers */
@@ -10370,8 +11356,17 @@ h6:hover .anchor-link {
   overflow-x: auto;
   overflow-y: hidden;
 }
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered .rendered_html td {
+  max-width: none;
+}
 .text_cell.unrendered .text_cell_render {
   display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -10508,6 +11503,28 @@ kbd {
   padding-top: 1px;
   padding-bottom: 1px;
 }
+.jupyter-keybindings {
+  padding: 1px;
+  line-height: 24px;
+  border-bottom: 1px solid gray;
+}
+.jupyter-keybindings input {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.jupyter-keybindings i {
+  padding: 6px;
+}
+.well code {
+  background-color: #ffffff;
+  border-color: #ababab;
+  border-width: 1px;
+  border-style: solid;
+  padding: 2px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
 /* CSS for the cell toolbar */
 .celltoolbar {
   border: thin solid #CFCFCF;
@@ -10640,6 +11657,152 @@ select[multiple].celltoolbar select {
   margin-left: 5px;
   margin-right: 5px;
 }
+.tags_button_container {
+  width: 100%;
+  display: flex;
+}
+.tag-container {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+}
+.tag-container > * {
+  margin: 0 4px;
+}
+.remove-tag-btn {
+  margin-left: 4px;
+}
+.tags-input {
+  display: flex;
+}
+.cell-tag:last-child:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  /* Fade to background color of cell toolbar */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #EEE);
+}
+.tags-input > * {
+  margin-left: 4px;
+}
+.cell-tag,
+.tags-input input,
+.tags-input button {
+  display: block;
+  width: 100%;
+  height: 32px;
+  padding: 6px 12px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 1px;
+  box-shadow: none;
+  width: inherit;
+  font-size: inherit;
+  height: 22px;
+  line-height: 22px;
+  padding: 0px 4px;
+  display: inline-block;
+}
+.cell-tag:focus,
+.tags-input input:focus,
+.tags-input button:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.cell-tag::-moz-placeholder,
+.tags-input input::-moz-placeholder,
+.tags-input button::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.cell-tag:-ms-input-placeholder,
+.tags-input input:-ms-input-placeholder,
+.tags-input button:-ms-input-placeholder {
+  color: #999;
+}
+.cell-tag::-webkit-input-placeholder,
+.tags-input input::-webkit-input-placeholder,
+.tags-input button::-webkit-input-placeholder {
+  color: #999;
+}
+.cell-tag::-ms-expand,
+.tags-input input::-ms-expand,
+.tags-input button::-ms-expand {
+  border: 0;
+  background-color: transparent;
+}
+.cell-tag[disabled],
+.tags-input input[disabled],
+.tags-input button[disabled],
+.cell-tag[readonly],
+.tags-input input[readonly],
+.tags-input button[readonly],
+fieldset[disabled] .cell-tag,
+fieldset[disabled] .tags-input input,
+fieldset[disabled] .tags-input button {
+  background-color: #eeeeee;
+  opacity: 1;
+}
+.cell-tag[disabled],
+.tags-input input[disabled],
+.tags-input button[disabled],
+fieldset[disabled] .cell-tag,
+fieldset[disabled] .tags-input input,
+fieldset[disabled] .tags-input button {
+  cursor: not-allowed;
+}
+textarea.cell-tag,
+textarea.tags-input input,
+textarea.tags-input button {
+  height: auto;
+}
+select.cell-tag,
+select.tags-input input,
+select.tags-input button {
+  height: 30px;
+  line-height: 30px;
+}
+textarea.cell-tag,
+textarea.tags-input input,
+textarea.tags-input button,
+select[multiple].cell-tag,
+select[multiple].tags-input input,
+select[multiple].tags-input button {
+  height: auto;
+}
+.cell-tag,
+.tags-input button {
+  padding: 0px 4px;
+}
+.cell-tag {
+  background-color: #fff;
+  white-space: nowrap;
+}
+.tags-input input[type=text]:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #ccc;
+}
 .completions {
   position: absolute;
   z-index: 110;
@@ -10665,16 +11828,28 @@ select[multiple].celltoolbar select {
 .completions select option.context {
   color: #286090;
 }
-#kernel_logo_widget {
-  float: right !important;
-  float: right;
-}
 #kernel_logo_widget .current_kernel_logo {
   display: none;
   margin-top: -1px;
   margin-bottom: -1px;
   width: 32px;
   height: 32px;
+}
+[dir="rtl"] #kernel_logo_widget {
+  float: left !important;
+  float: left;
+}
+.modal .modal-body .move-path {
+  display: flex;
+  flex-direction: row;
+  justify-content: space;
+  align-items: center;
+}
+.modal .modal-body .move-path .server-root {
+  padding-right: 20px;
+}
+.modal .modal-body .move-path .path-input {
+  flex: 1;
 }
 #menubar {
   box-sizing: border-box;
@@ -10696,11 +11871,41 @@ select[multiple].celltoolbar select {
 #menubar .navbar-collapse {
   clear: left;
 }
+[dir="rtl"] #menubar .navbar-toggle {
+  float: right;
+}
+[dir="rtl"] #menubar .navbar-collapse {
+  clear: right;
+}
+[dir="rtl"] #menubar .navbar-nav {
+  float: right;
+}
+[dir="rtl"] #menubar .nav {
+  padding-right: 0px;
+}
+[dir="rtl"] #menubar .navbar-nav > li {
+  float: right;
+}
+[dir="rtl"] #menubar .navbar-right {
+  float: left !important;
+}
+[dir="rtl"] ul.dropdown-menu {
+  text-align: right;
+  left: auto;
+}
+[dir="rtl"] ul#new-menu.dropdown-menu {
+  right: auto;
+  left: 0;
+}
 .nav-wrapper {
   border-bottom: 1px solid #e7e7e7;
 }
 i.menu-icon {
   padding-top: 4px;
+}
+[dir="rtl"] i.menu-icon.pull-right {
+  float: left !important;
+  float: left;
 }
 ul#help_menu li a {
   overflow: hidden;
@@ -10708,6 +11913,17 @@ ul#help_menu li a {
 }
 ul#help_menu li a i {
   margin-right: -1.2em;
+}
+[dir="rtl"] ul#help_menu li a {
+  padding-left: 2.2em;
+}
+[dir="rtl"] ul#help_menu li a i {
+  margin-right: 0;
+  margin-left: -1.2em;
+}
+[dir="rtl"] ul#help_menu li a i.pull-right {
+  float: left !important;
+  float: left;
 }
 .dropdown-submenu {
   position: relative;
@@ -10717,6 +11933,10 @@ ul#help_menu li a i {
   left: 100%;
   margin-top: -6px;
   margin-left: -1px;
+}
+[dir="rtl"] .dropdown-submenu > .dropdown-menu {
+  right: 100%;
+  margin-right: -1px;
 }
 .dropdown-submenu:hover > .dropdown-menu {
   display: block;
@@ -10735,11 +11955,23 @@ ul#help_menu li a i {
   margin-top: 2px;
   margin-right: -10px;
 }
+.dropdown-submenu > a:after.fa-pull-left {
+  margin-right: .3em;
+}
+.dropdown-submenu > a:after.fa-pull-right {
+  margin-left: .3em;
+}
 .dropdown-submenu > a:after.pull-left {
   margin-right: .3em;
 }
 .dropdown-submenu > a:after.pull-right {
   margin-left: .3em;
+}
+[dir="rtl"] .dropdown-submenu > a:after {
+  float: left;
+  content: "\f0d9";
+  margin-right: 0;
+  margin-left: -10px;
 }
 .dropdown-submenu:hover > a:after {
   color: #262626;
@@ -10756,6 +11988,10 @@ ul#help_menu li a i {
   float: right;
   z-index: 10;
 }
+[dir="rtl"] #notification_area {
+  float: left !important;
+  float: left;
+}
 .indicator_area {
   float: right !important;
   float: right;
@@ -10766,6 +12002,10 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
+}
+[dir="rtl"] .indicator_area {
+  float: left !important;
+  float: left;
 }
 #kernel_indicator {
   float: right !important;
@@ -10783,6 +12023,12 @@ ul#help_menu li a i {
   padding-left: 5px;
   padding-right: 5px;
 }
+[dir="rtl"] #kernel_indicator {
+  float: left !important;
+  float: left;
+  border-left: 0;
+  border-right: 1px solid;
+}
 #modal_indicator {
   float: right !important;
   float: right;
@@ -10793,6 +12039,10 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
+}
+[dir="rtl"] #modal_indicator {
+  float: left !important;
+  float: left;
 }
 #readonly-indicator {
   float: right !important;
@@ -10823,6 +12073,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f040";
 }
+.edit_mode .modal_indicator:before.fa-pull-left {
+  margin-right: .3em;
+}
+.edit_mode .modal_indicator:before.fa-pull-right {
+  margin-left: .3em;
+}
 .edit_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
 }
@@ -10837,6 +12093,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: ' ';
+}
+.command_mode .modal_indicator:before.fa-pull-left {
+  margin-right: .3em;
+}
+.command_mode .modal_indicator:before.fa-pull-right {
+  margin-left: .3em;
 }
 .command_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
@@ -10853,6 +12115,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f10c";
 }
+.kernel_idle_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_idle_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .kernel_idle_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10867,6 +12135,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f111";
+}
+.kernel_busy_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_busy_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .kernel_busy_icon:before.pull-left {
   margin-right: .3em;
@@ -10883,6 +12157,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f1e2";
 }
+.kernel_dead_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_dead_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .kernel_dead_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10897,6 +12177,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f127";
+}
+.kernel_disconnected_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_disconnected_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .kernel_disconnected_icon:before.pull-left {
   margin-right: .3em;
@@ -11287,27 +12573,46 @@ div#pager .ui-resizable-handle::after {
   flex: 1;
 }
 span.save_widget {
-  margin-top: 6px;
+  height: 30px;
+  margin-top: 4px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  width: 50%;
+  flex: 1;
 }
 span.save_widget span.filename {
-  height: 1em;
+  height: 100%;
   line-height: 1em;
-  padding: 3px;
   margin-left: 16px;
   border: none;
   font-size: 146.5%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   border-radius: 2px;
 }
 span.save_widget span.filename:hover {
   background-color: #e6e6e6;
 }
+[dir="rtl"] span.save_widget.pull-left {
+  float: right !important;
+  float: right;
+}
+[dir="rtl"] span.save_widget span.filename {
+  margin-left: 0;
+  margin-right: 16px;
+}
 span.checkpoint_status,
 span.autosave_status {
   font-size: small;
+  white-space: nowrap;
+  padding: 0 5px;
 }
 @media (max-width: 767px) {
   span.save_widget {
     font-size: small;
+    padding: 0 0 0 5px;
   }
   span.checkpoint_status,
   span.autosave_status {
@@ -11351,6 +12656,9 @@ span.autosave_status {
   margin-top: 0px;
   margin-left: 5px;
 }
+.toolbar-btn-label {
+  margin-left: 6px;
+}
 #maintoolbar {
   margin-bottom: -3px;
   margin-top: -8px;
@@ -11370,6 +12678,10 @@ span.autosave_status {
 }
 .select-xs {
   height: 24px;
+}
+[dir="rtl"] .btn-group > .btn,
+.btn-group-vertical > .btn {
+  float: right;
 }
 .pulse,
 .dropdown-menu > li > a.pulse,
@@ -11520,6 +12832,10 @@ ul.typeahead-list i {
   margin-left: -10px;
   width: 18px;
 }
+[dir="rtl"] ul.typeahead-list i {
+  margin-left: 0;
+  margin-right: -10px;
+}
 ul.typeahead-list {
   max-height: 80vh;
   overflow: auto;
@@ -11528,6 +12844,13 @@ ul.typeahead-list > li > a {
   /** Firefox bug **/
   /* see https://github.com/jupyter/notebook/issues/559 */
   white-space: normal;
+}
+ul.typeahead-list  > li > a.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .typeahead-list {
+  text-align: right;
 }
 .cmd-palette .modal-body {
   padding: 7px;
@@ -11539,10 +12862,19 @@ ul.typeahead-list > li > a {
   outline: none;
 }
 .no-shortcut {
-  display: none;
+  min-width: 20px;
+  color: transparent;
+}
+[dir="rtl"] .no-shortcut.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .command-shortcut.pull-right {
+  float: left !important;
+  float: left;
 }
 .command-shortcut:before {
-  content: "(command)";
+  content: "(command mode)";
   padding-right: 3px;
   color: #777777;
 }
@@ -11551,6 +12883,10 @@ ul.typeahead-list > li > a {
   padding-right: 3px;
   color: #777777;
 }
+[dir="rtl"] .edit-shortcut.pull-right {
+  float: left !important;
+  float: left;
+}
 #find-and-replace #replace-preview .match,
 #find-and-replace #replace-preview .insert {
   background-color: #BBDEFB;
@@ -11558,6 +12894,12 @@ ul.typeahead-list > li > a {
   border-style: solid;
   border-width: 1px;
   border-radius: 0px;
+}
+[dir="ltr"] #find-and-replace .input-group-btn + .form-control {
+  border-left: none;
+}
+[dir="rtl"] #find-and-replace .input-group-btn + .form-control {
+  border-right: none;
 }
 #find-and-replace #replace-preview .replace .match {
   background-color: #FFCDD2;
@@ -11802,16 +13144,14 @@ $( document ).ready(function(){
     <div class="container" id="notebook-container">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Number-representation-in-computers">Number representation in computers<a class="anchor-link" href="#Number-representation-in-computers">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In this chapter we are going to give elements of understanding of how numbers are represented in today's computers. We won't go too much into the details (which are perhaps not so relevant here), however it is extremely important for scientists to understand the pitfalls of the so-called "floating-point arithmetics". At the end of this lecture, you should understand what these pitfalls are and when they occur, since sooner or later one of these pitfalls will hit you.</p>
 
@@ -11819,8 +13159,7 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
 <div class="toc"><ul class="toc-item"><li><span><a href="#Number-representation-in-computers" data-toc-modified-id="Number-representation-in-computers-11"><span class="toc-item-num">11&nbsp;&nbsp;</span>Number representation in computers</a></span><ul class="toc-item"><li><span><a href="#Binary-representation-of-integers" data-toc-modified-id="Binary-representation-of-integers-11.1"><span class="toc-item-num">11.1&nbsp;&nbsp;</span>Binary representation of integers</a></span><ul class="toc-item"><li><span><a href="#Basics" data-toc-modified-id="Basics-11.1.1"><span class="toc-item-num">11.1.1&nbsp;&nbsp;</span>Basics</a></span></li><li><span><a href="#Overflow" data-toc-modified-id="Overflow-11.1.2"><span class="toc-item-num">11.1.2&nbsp;&nbsp;</span>Overflow</a></span></li><li><span><a href="#Extending-the-binary-representation-to-non-integers:-fixed-point-notation" data-toc-modified-id="Extending-the-binary-representation-to-non-integers:-fixed-point-notation-11.1.3"><span class="toc-item-num">11.1.3&nbsp;&nbsp;</span>Extending the binary representation to non-integers: fixed-point notation</a></span></li></ul></li><li><span><a href="#Floating-point-numbers" data-toc-modified-id="Floating-point-numbers-11.2"><span class="toc-item-num">11.2&nbsp;&nbsp;</span>Floating point numbers</a></span><ul class="toc-item"><li><span><a href="#Introduction" data-toc-modified-id="Introduction-11.2.1"><span class="toc-item-num">11.2.1&nbsp;&nbsp;</span>Introduction</a></span></li><li><span><a href="#Scientific-(exponential)-notation-in-base-b" data-toc-modified-id="Scientific-(exponential)-notation-in-base-b-11.2.2"><span class="toc-item-num">11.2.2&nbsp;&nbsp;</span>Scientific (exponential) notation in base b</a></span></li><li><span><a href="#Floating-point-representation-(simplified)" data-toc-modified-id="Floating-point-representation-(simplified)-11.2.3"><span class="toc-item-num">11.2.3&nbsp;&nbsp;</span>Floating point representation (simplified)</a></span></li><li><span><a href="#IEEE-754" data-toc-modified-id="IEEE-754-11.2.4"><span class="toc-item-num">11.2.4&nbsp;&nbsp;</span>IEEE 754</a></span></li><li><span><a href="#Consequences" data-toc-modified-id="Consequences-11.2.5"><span class="toc-item-num">11.2.5&nbsp;&nbsp;</span>Consequences</a></span></li><li><span><a href="#Overflow" data-toc-modified-id="Overflow-11.2.6"><span class="toc-item-num">11.2.6&nbsp;&nbsp;</span>Overflow</a></span></li></ul></li><li><span><a href="#What-to-do-from-here?" data-toc-modified-id="What-to-do-from-here?-11.3"><span class="toc-item-num">11.3&nbsp;&nbsp;</span>What to do from here?</a></span><ul class="toc-item"><li><span><a href="#Alternative-data-types" data-toc-modified-id="Alternative-data-types-11.3.1"><span class="toc-item-num">11.3.1&nbsp;&nbsp;</span>Alternative data types</a></span></li><li><span><a href="#Symbolic-computations" data-toc-modified-id="Symbolic-computations-11.3.2"><span class="toc-item-num">11.3.2&nbsp;&nbsp;</span>Symbolic computations</a></span></li><li><span><a href="#Deal-with-it" data-toc-modified-id="Deal-with-it-11.3.3"><span class="toc-item-num">11.3.3&nbsp;&nbsp;</span>Deal with it</a></span><ul class="toc-item"><li><span><a href="#Awareness" data-toc-modified-id="Awareness-11.3.3.1"><span class="toc-item-num">11.3.3.1&nbsp;&nbsp;</span>Awareness</a></span></li><li><span><a href="#Error-propagation" data-toc-modified-id="Error-propagation-11.3.3.2"><span class="toc-item-num">11.3.3.2&nbsp;&nbsp;</span>Error propagation</a></span></li><li><span><a href="#Safer-tests" data-toc-modified-id="Safer-tests-11.3.3.3"><span class="toc-item-num">11.3.3.3&nbsp;&nbsp;</span>Safer tests</a></span></li></ul></li></ul></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-11.4"><span class="toc-item-num">11.4&nbsp;&nbsp;</span>Take home points</a></span></li><li><span><a href="#Further-reading" data-toc-modified-id="Further-reading-11.5"><span class="toc-item-num">11.5&nbsp;&nbsp;</span>Further reading</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-11.6"><span class="toc-item-num">11.6&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
@@ -11828,16 +13167,14 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Binary-representation-of-integers">Binary representation of integers<a class="anchor-link" href="#Binary-representation-of-integers">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Traditional arithmetics and mathematics rely on the <strong>decimal</strong> system. Every number can be decomposed in a sum of products such as: $908.2 = 9\times10^2 + 0\times10^1 + 8\times10^{0} + 2\times10^{-1}$. This system is called decimal because the factors can take the values $[0 - 9]$ while the <strong>fixed base</strong> (the number which is scaled by an exponent) is 10.</p>
 
@@ -11845,8 +13182,7 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Nearly all modern processors however represent numbers in binary form, with each digit being represented by a two-valued physical quantity such as a "low" or "high" voltage: 0s and 1s. These binary digits are called <strong>bits</strong>, and are the basis of the <strong>binary representation of numbers</strong>.</p>
 
@@ -11854,16 +13190,14 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Basics">Basics<a class="anchor-link" href="#Basics">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>With only 0s and 1s available the most efficient way to represent numbers is as a sum of 2s to the power of i, with i going from 0 to N-1. It is best shown with an example, here with N=4 digits:</p>
 
@@ -11883,7 +13217,7 @@ $( document ).ready(function(){
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">bin</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -11893,7 +13227,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[1]:</div>
+    <div class="prompt output_prompt">Out[1]:</div>
 
 
 
@@ -11909,8 +13243,7 @@ $( document ).ready(function(){
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>which converts an integer number to a binary string prefixed with <code>0b</code>. Now it appears quite clear that the number of different integers that a computer can represent with this system depends on the size N of the binary sequence. A <em>positive</em> integer represented with a <strong>byte</strong> (8 bits are called a <strong>byte</strong>) can thus be as large as:</p>
 
@@ -11925,7 +13258,7 @@ $( document ).ready(function(){
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sum</span><span class="p">([</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)])</span>  <span class="c1"># do you understand what this line does?</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -11935,7 +13268,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[2]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -11951,8 +13284,7 @@ $( document ).ready(function(){
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>but not larger. Unless specified otherwise, the first bit is often used to give the <em>sign</em> of the integer it represents. Therefore, the actual range of numbers that a byte can represent is $[-2^7; 2^7-1]= [-128; 127]$ (the reason for this asymmetry is a matter of definition, as we will see later). If you are sure that you only want to do arithmetics with positive number you can spare this one bit and specify your binary number as being of <strong>unsigned integer type</strong>.</p>
 
@@ -11960,8 +13292,7 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>So how many bits does our computer use to represent integers? Well, it depends on the platform and programming language you are using. Many older languages (including old python versions) made the distinction between short (32 bits) and long (64 bits) integers.</p>
 <p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: what is the largest number that a 64-bit integer can represent? The smallest? And a 32-bit unsigned integer?</p>
@@ -11970,8 +13301,7 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now, what is the default length of binary integers in python 3? Let's try to find out:</p>
 
@@ -11988,7 +13318,7 @@ $( document ).ready(function(){
 <span class="n">getsizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -11998,7 +13328,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[3]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -12014,8 +13344,7 @@ $( document ).ready(function(){
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>So 28 bytes? That's a lot of bits for the number 10. This is because the <a href="https://docs.python.org/3/library/sys.html#sys.getsizeof">getsizeof</a> function returns the <strong>memory consumption</strong> of the <em>object</em> <code>int(10)</code>. What does that mean? Well, in python numbers are not only numbers, they are also "things" (<strong>objects</strong>). And these things come with services, like for example the <code>bit_length</code> method:</p>
 
@@ -12030,7 +13359,7 @@ $( document ).ready(function(){
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">bit_length</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12040,7 +13369,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -12056,8 +13385,7 @@ $( document ).ready(function(){
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: what does <code>bit_length()</code> do? What is the bit length of 5? of 127?</p>
 
@@ -12065,8 +13393,7 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>These services have a memory cost (an "overhead"), and are required no matter how big our number is:</p>
 
@@ -12082,7 +13409,7 @@ $( document ).ready(function(){
 <span class="n">size_int</span>  <span class="c1"># size of an empty integer object</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12092,7 +13419,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -12117,7 +13444,7 @@ $( document ).ready(function(){
     <span class="k">return</span> <span class="p">(</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">integer</span><span class="p">)</span> <span class="o">-</span> <span class="n">getsizeof</span><span class="p">(</span><span class="nb">int</span><span class="p">()))</span> <span class="o">*</span> <span class="mi">8</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12130,7 +13457,7 @@ $( document ).ready(function(){
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_int_bitsize</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12140,7 +13467,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -12156,8 +13483,7 @@ $( document ).ready(function(){
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Ha! This looks more reasonable. So python uses 32 bits to store integers? But then, the largest number it can manipulate must be very small? Let's see if we can create a number larger than <code>2**32-1</code>:</p>
 
@@ -12172,7 +13498,7 @@ $( document ).ready(function(){
 <div class=" highlight hl-ipython3"><pre><span></span><span class="mi">12</span><span class="o">**</span><span class="mi">68</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12182,7 +13508,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[8]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -12205,7 +13531,7 @@ $( document ).ready(function(){
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_int_bitsize</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">18</span><span class="p">),</span> <span class="n">get_int_bitsize</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">68</span><span class="p">),</span> <span class="n">get_int_bitsize</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">100000</span><span class="p">)</span>  
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12215,7 +13541,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -12231,8 +13557,7 @@ $( document ).ready(function(){
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As shown above, it turns out that modern python versions have <strong>no limitations</strong> on the size of integers (other than the total memory available on your computer). The memory slot used to store your number simply depends on how large it is.</p>
 
@@ -12247,7 +13572,7 @@ $( document ).ready(function(){
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_int_bitsize</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">100000</span><span class="p">)</span> <span class="o">/</span> <span class="mi">8</span> <span class="o">/</span> <span class="mi">1024</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12257,7 +13582,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[10]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -12273,8 +13598,7 @@ $( document ).ready(function(){
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>So the <code>2**100000</code> number requires about 13 KB (<strong>Kilobytes</strong>) of memory.</p>
 <p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: print <code>2**100000</code> on screen, just for "fun".</p>
@@ -12283,16 +13607,14 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Overflow">Overflow<a class="anchor-link" href="#Overflow">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This dynamic resizing of integers in python means that they cannot <strong>overflow</strong>. <strong>Overflow</strong> is a common pitfall of many numerical operations though, and to illustrate what it is we can either use floats (unlike python integers, python floats can overflow), or numpy, which uses integer types of fixed length:</p>
 
@@ -12309,7 +13631,7 @@ $( document ).ready(function(){
 <span class="n">a</span><span class="o">.</span><span class="n">dtype</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12319,7 +13641,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -12342,7 +13664,7 @@ $( document ).ready(function(){
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12352,7 +13674,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -12375,7 +13697,7 @@ $( document ).ready(function(){
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12385,7 +13707,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
@@ -12397,7 +13719,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -12413,8 +13735,7 @@ $( document ).ready(function(){
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>What happened here? To understand this we need to understand how binary numbers are added together first. Please read the <a href="https://en.wikipedia.org/wiki/Binary_number#Addition">addition chapter</a> of the Wikipedia article on binary numbers before going on.</p>
 
@@ -12422,8 +13743,7 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Basically, we added 1 (binary <code>00000001</code>) to 127 (binary <code>01111111</code>) which gives us the binary number <code>10000000</code>, i.e. -128 in <a href="https://en.wikipedia.org/wiki/Two%27s_complement">two's complement</a> representation, which is the most common method of representing signed integers on computers. At least, python warned us that we are doing something wrong here. But be aware that this is not always the case:</p>
 
@@ -12438,7 +13758,7 @@ $( document ).ready(function(){
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="mi">2147483648</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12448,7 +13768,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[14]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -12472,7 +13792,7 @@ $( document ).ready(function(){
 <span class="n">a</span><span class="o">**</span><span class="n">a</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12482,7 +13802,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[15]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -12498,8 +13818,7 @@ $( document ).ready(function(){
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>These are examples of <strong>silent</strong> overflows. Silent means that they do not warn you about the probable mistake and could happen in your code without you noticing that this happens.</p>
 
@@ -12507,37 +13826,32 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Extending-the-binary-representation-to-non-integers:-fixed-point-notation">Extending the binary representation to non-integers: fixed-point notation<a class="anchor-link" href="#Extending-the-binary-representation-to-non-integers:-fixed-point-notation">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A more general definition of the binary representation for integers is to use negative exponents as well. With negative exponents, any rational number a can be approximated by:</p>
-<p>$$a = \pm \sum_{i=-j}^{k} z_i b^i$$ with $b &gt; 1$ (base) and $0 \le z_i \le b-1$, $j$ and $k$ all positive integers. The precision depends on the size of $j$ while the maximum range depends on the size of $k$.</p>
+$$a = \pm \sum_{i=-j}^{k} z_i b^i$$<p>with $b &gt; 1$ (base) and $0 \le z_i \le b-1$, $j$ and $k$ all positive integers. The precision depends on the size of $j$ while the maximum range depends on the size of $k$.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the notation, a fixed point separates digits of positive powers of the base, from those of negative powers. In <strong>base 2</strong> (binary), the number $10000.1_2$ is equal to $16.5_{10}$ in base 10.</p>
 <p>Indeed:</p>
-<p>$$1\times2^4 + 0\times2^3 + 0\times2^2 + 0\times2^1 + 0\times2^0 + 1\times2^{-1} = 16.5_{10}$$</p>
-
+$$1\times2^4 + 0\times2^3 + 0\times2^2 + 0\times2^1 + 0\times2^0 + 1\times2^{-1} = 16.5_{10}$$
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Although this representation is convenient, the representable value range is heavily limited by the number of bits available to represent the number (see this week's assignments). Therefore, most computers today are relying on the <strong>floating point notation</strong> to represent real numbers.</p>
 
@@ -12545,24 +13859,21 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Floating-point-numbers">Floating point numbers<a class="anchor-link" href="#Floating-point-numbers">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Because computers have a <em>finite</em> number of storage units available, they can only represent a <em>finite</em> number of distinguishable values. In fact, a memory slot with $N$ available bits cannot represent more than $2^N$ distinguishable values. The range of real (or complex) numbers is of course infinite, and therefore it becomes clear that in the computer representation of numbers <strong>there will always be a trade-off between the range of numbers one would like to represent and their relative accuracy</strong> (i.e. the absolute difference between two consecutive representable numbers).</p>
 <p>Taking the <strong>decimal representation</strong> of the number 1/3 as an example: it can be written as <code>0.33</code>, <code>0.333</code>, <code>0.3333</code>, etc. Depending on the numbers of digits available, the precision of the number will increase but never reach the exact value, at least in the decimal representation.</p>
@@ -12579,7 +13890,7 @@ $( document ).ready(function(){
 <div class=" highlight hl-ipython3"><pre><span></span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span>  <span class="c1"># so far so good</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12589,7 +13900,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -12612,7 +13923,7 @@ $( document ).ready(function(){
 <div class=" highlight hl-ipython3"><pre><span></span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.2</span>  <span class="c1"># wtf?</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12622,7 +13933,7 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[17]:</div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -12638,8 +13949,7 @@ $( document ).ready(function(){
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is a typical <strong>rounding error</strong>, happening because most computers do not represent numbers as decimal fractions, but as binary. Without going too much into details (which can be tricky), this chapter will give you some elements of understanding in order to prepare you for the most common pitfalls of floating point arithmetics.</p>
 
@@ -12647,16 +13957,14 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Scientific-(exponential)-notation-in-base-b">Scientific (exponential) notation in base b<a class="anchor-link" href="#Scientific-(exponential)-notation-in-base-b">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the exponential notation (used by <a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic">floating point</a> numbers), a number is approximated with a fixed number of significant digits (the significand) and scaled using an exponent in some fixed base; the base for the scaling is normally two, ten, or sixteen. A number that can be represented exactly is of the following form:</p>
 <p>$\mathrm{number} = \mathrm{significand} \times \mathrm{base} ^{\mathrm{exponent}}$</p>
@@ -12665,18 +13973,15 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For example, in base 10:</p>
-<p>$$1.234 = 1234 \times 10^{-3}$$</p>
-
+$$1.234 = 1234 \times 10^{-3}$$
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The number <code>1.234</code> can easily be represented exactly in base 10, but the number 1/3 cannot. However, in base 3 (which is just used here as an example) 1/3 can be represented exactly by $1 \times 3^{-1}$.</p>
 <p>To approximate a number in base 10, the rule of "the more bits you have, the more precise you are" continues to hold true: $33 \times 10^{-2}$ and $33333333333333 \times 10^{-14}$ are two ways to approximate the number, the later being more expensive in terms of storage requirements but more accurate.</p>
@@ -12685,8 +13990,7 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The exponential notation is the most common way to represent real numbers in computers and is the basis of the floating-point number representation.</p>
 
@@ -12694,16 +13998,14 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Floating-point-representation-(simplified)">Floating point representation (simplified)<a class="anchor-link" href="#Floating-point-representation-(simplified)">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A floating point number in any base will store three numbers:</p>
 <ul>
@@ -12723,8 +14025,7 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>smallest: $+00001 \times 10^{-9}$</li>
@@ -12737,8 +14038,7 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>From these examples it becomes apparent that the precision (the distance between two consecutive numbers) is better for small numbers than for large numbers. Although our example is simplified, the principle is exactly the same for "real" floating point numbers in most computers, which follow the IEEE754 convention.</p>
 
@@ -12746,16 +14046,14 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="IEEE-754">IEEE 754<a class="anchor-link" href="#IEEE-754">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>From the example above, we can see that with a fixed number of memory slots, we have a trade-off between the maximum precision of a number and its size.</p>
 <p>This precision/size trade-off raises many challenges: memory and electronics must be optimized so that computations are fast while still allowing programs to realize computations on a <em>wide</em> range of numbers in the same program. For example, atmospheric models realize computations on specific humidity values ($\mathrm{kg}\,\mathrm{kg}^{-1}$) with typical values of 10$^{-5}$ and on the geopotential with values up to several order of magnitude larger. Using different standards for each variable would be impracticable. This lead to the development of the <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE Standard for Floating-Point Arithmetic (IEEE 754)</a>.</p>
@@ -12765,8 +14063,7 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It is possible to compute the approximate precision of IEEE754 floating point numbers according to their value (see also the exercises):</p>
 
@@ -12774,8 +14071,7 @@ $( document ).ready(function(){
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/IEEE754.png/550px-IEEE754.png" alt="img">
 Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
@@ -12784,16 +14080,14 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Consequences">Consequences<a class="anchor-link" href="#Consequences">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>With the floating point format, <strong>small numbers have a larger absolute precision than large numbers</strong>. See this example:</p>
 
@@ -12808,7 +14102,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">.</span><span class="mi">99</span> <span class="o">==</span> <span class="o">.</span><span class="mi">98</span>  <span class="c1"># so far so good</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12818,7 +14112,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[18]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -12841,7 +14135,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="mf">999999999999999.99</span> <span class="o">==</span> <span class="mf">999999999999999.98</span>  <span class="c1"># wtf?</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12851,7 +14145,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[19]:</div>
 
 
 
@@ -12874,7 +14168,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="mf">999999999999999.99</span>  <span class="c1"># wtf?</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12884,7 +14178,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[20]:</div>
+    <div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -12900,8 +14194,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A further direct consequence is that <strong>when summing two numbers, precision is lost to match the size of the outcome</strong>.</p>
 
@@ -12909,16 +14202,14 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Overflow">Overflow<a class="anchor-link" href="#Overflow">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Like numpy integers, floating point numbers can overflow:</p>
 
@@ -12933,7 +14224,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">(</span><span class="mi">65510</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12943,7 +14234,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
@@ -12955,7 +14246,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[21]:</div>
+    <div class="prompt output_prompt">Out[21]:</div>
 
 
 
@@ -12971,8 +14262,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Fortunately, the IEEE 754 standard defines two new numbers (-inf and +inf) which are more informative (and less dangerous) than the negative reset of integer numbers. IEEE 754 also defines "Not A Number" (abbreviated NaN), which propagates through computations:</p>
 
@@ -12987,7 +14277,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">NaN</span> <span class="o">*</span> <span class="mi">10</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12997,7 +14287,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[22]:</div>
+    <div class="prompt output_prompt">Out[22]:</div>
 
 
 
@@ -13013,16 +14303,14 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="What-to-do-from-here?">What to do from here?<a class="anchor-link" href="#What-to-do-from-here?">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As we've learned, errors in floating-point numbers are unavoidable. Even if these errors are very small, simple calculations on approximated numbers can contain pitfalls that increase the error in the result way beyond just having the individual errors "add up".</p>
 
@@ -13030,16 +14318,14 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Alternative-data-types">Alternative data types<a class="anchor-link" href="#Alternative-data-types">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In certain cases where perfect decimal accuracy is needed (for example when dealing with currencies and money), it is possible to use a decimal floating point representation instead of the default binary one:</p>
 
@@ -13054,7 +14340,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span><span class="o">/</span><span class="mi">10</span><span class="o">*</span><span class="mi">3</span>  <span class="c1"># not precise</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13064,7 +14350,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[23]:</div>
+    <div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -13088,7 +14374,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 <span class="n">Decimal</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">Decimal</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span>  <span class="c1"># precise</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13098,7 +14384,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[24]:</div>
+    <div class="prompt output_prompt">Out[24]:</div>
 
 
 
@@ -13114,8 +14400,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>With limited-precision decimals there are no unexpected rounding errors. In practice, however, alternative datatypes are used rarely because the precision gain comes with a performance overhead: computers work best with 0s and 1s, not with numbers humans can read.</p>
 
@@ -13123,16 +14408,14 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Symbolic-computations">Symbolic computations<a class="anchor-link" href="#Symbolic-computations">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Symbolic computations are realized <em>literally</em> (like in mathematics), not approximately. <a href="http://www.sympy.org">SymPy</a> is a popular python library for symbolic mathematics:</p>
 
@@ -13149,7 +14432,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 <span class="n">a</span> <span class="o">+</span> <span class="n">a</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13159,7 +14442,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[25]:</div>
+    <div class="prompt output_prompt">Out[25]:</div>
 
 
 
@@ -13175,8 +14458,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Seams like the perfect solution, right? It probably is if you are a mathematician, but for actual numerical computations SymPy will be way too slow to use. Symbolic mathematics can only be used for problems where analytical solutions are known. Unfortunately, this is not always the case (take numerical models of the atmosphere for example).</p>
 
@@ -13184,16 +14466,14 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Deal-with-it">Deal with it<a class="anchor-link" href="#Deal-with-it">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>There are no simple answers to numerical rounding errors. Be aware that they occur and try to mitigate their effect.</p>
 
@@ -13201,16 +14481,14 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Awareness">Awareness<a class="anchor-link" href="#Awareness">&#182;</a></h4>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><em>Awareness</em> is mostly hindered by the string representation of floating point numbers. In practice:</p>
 
@@ -13225,7 +14503,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="mf">0.1</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13235,7 +14513,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[26]:</div>
+    <div class="prompt output_prompt">Out[26]:</div>
 
 
 
@@ -13258,7 +14536,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">format</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;.16g&#39;</span><span class="p">)</span>  <span class="c1"># give 16 significant digits</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13268,7 +14546,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[27]:</div>
+    <div class="prompt output_prompt">Out[27]:</div>
 
 
 
@@ -13291,7 +14569,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">format</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;.30g&#39;</span><span class="p">)</span>  <span class="c1"># give 30 significant digits</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13301,7 +14579,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[28]:</div>
+    <div class="prompt output_prompt">Out[28]:</div>
 
 
 
@@ -13317,8 +14595,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The default <code>0.1</code> print is therefore a "lie", but it is a useful one: in most cases you don't want to know about these insignificant digits at the end. The <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.finfo.html">numpy.finfo</a> is a useful function informing you about the machine limits for floating point types:</p>
 
@@ -13334,7 +14611,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 <span class="n">info</span><span class="o">.</span><span class="n">bits</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">precision</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">max</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13344,7 +14621,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[29]:</div>
+    <div class="prompt output_prompt">Out[29]:</div>
 
 
 
@@ -13360,16 +14637,14 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Error-propagation">Error propagation<a class="anchor-link" href="#Error-propagation">&#182;</a></h4>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Preventing rounding errors to happen is not possible, but there are a few general rules:</p>
 <ul>
@@ -13385,8 +14660,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As illustration for the difference between addition and multiplication, see the following example:</p>
 
@@ -13403,7 +14677,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 <span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13413,7 +14687,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[30]:</div>
+    <div class="prompt output_prompt">Out[30]:</div>
 
 
 
@@ -13436,7 +14710,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13446,7 +14720,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[31]:</div>
+    <div class="prompt output_prompt">Out[31]:</div>
 
 
 
@@ -13462,8 +14736,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Realize <strong>safer computations</strong> therefore involves asking yourself at which stage the most precision is going to be lost: this is most often the case when adding numbers of very different magnitudes. When building numerical models, this should always be something you consider: is a formula leading to dangerous additions, then reformulate it and/or use other units for your variables (e.g. $\mathrm{g}\,\mathrm{kg}^{-1}$ instead of $\mathrm{kg}\,\mathrm{kg}^{-1}$ for specific humidity). Consider the following example:</p>
 
@@ -13480,7 +14753,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 <span class="n">c</span> <span class="o">=</span> <span class="mi">10</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13494,7 +14767,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 <span class="n">c2</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="n">c</span> <span class="o">*</span> <span class="n">b</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13507,7 +14780,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">c1</span> <span class="o">==</span> <span class="n">c2</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13517,7 +14790,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[34]:</div>
+    <div class="prompt output_prompt">Out[34]:</div>
 
 
 
@@ -13533,8 +14806,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>c * (a + b)</code> and <code>c * a + c * b</code> are mathematically equivalent, and the first is computationally less expensive (two operations instead of three). However, the second is less prone to rounding errors!</p>
 
@@ -13542,16 +14814,14 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Safer-tests">Safer tests<a class="anchor-link" href="#Safer-tests">&#182;</a></h4>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Fortunately, rounding errors often remain unnoticed, meaning that your computations are probably OK! In our field in particular, we often do not care if the post-processed temperature forecast is numerically precise at 0.001° since the forecast accuracy is much lower anyway. However, this can still lead to surprises when comparing arrays for equality (e.g. when testing that a temperature is equal to zero, or for matching coordinates like longitude or latitude). In these cases, prefer to use numpy's specialized functions:</p>
 
@@ -13566,7 +14836,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">)</span>  <span class="c1"># OK is you don&#39;t care about small numerical errors</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13576,7 +14846,7 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[35]:</div>
+    <div class="prompt output_prompt">Out[35]:</div>
 
 
 
@@ -13592,16 +14862,14 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Take-home-points">Take home points<a class="anchor-link" href="#Take-home-points">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>computers can only represent a finite number of distinguishable values.</li>
@@ -13616,16 +14884,14 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Further-reading">Further reading<a class="anchor-link" href="#Further-reading">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Because of the importance of floating point computations you will find many resources online. I <strong>highly recommend</strong> to go through the short <a href="http://floating-point-gui.de/">floating point guide</a> website, which explains the problem to non specialists. It will give you another point of view on the topic.</p>
 <p>Other resources:</p>
@@ -13638,16 +14904,14 @@ Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="What's-next?">What's next?<a class="anchor-link" href="#What's-next?">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="12-Assignment-04.html">jump to this week's assignment</a>.</p>
 
