@@ -13192,7 +13192,7 @@ $( document ).ready(function(){
 <span class="p">}</span>
 </pre></div>
 <p><strong>Write this code in a C code file, compile and run it.</strong></p>
-<p><strong>Now, replace the line <code>int b = 3</code> with <code>char b = 't'</code>. Compile and run the program again. Does the output match your expectations? Can you explain what happens? Compare this behavior to python's, and try to explain why this behavior can lead to faster execution times.</strong></p>
+<p><strong>Now, replace the line <code>int b = 3</code> with <code>char b[] = "Hello";</code>. Compile and run the program again (ignore warnings at compilation). Does the output match your expectations? Can you explain what happens? Compare this behavior to python's, and try to explain why this behavior can lead to faster execution times.</strong></p>
 
 </div>
 </div>
@@ -13264,6 +13264,58 @@ $( document ).ready(function(){
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Explore the inn_data variable. What is the type of "inn_data", and of the data it contains? Convert the data series to numpy arrays.</strong></p>
 <p><strong>Using numpy/scipy, matplotlib, and the standard library only, compute and plot the mean monthly annual cycle for 1981-2010 and the mean annual temperature timeseries for 1977-2017. Compute the linear trend (using scipy.stats.linregress) of the average annual temperature over 1977-2017. Repeat with winter (DJF) and summer (JJA) trends.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Tip 1: to select part of an array (indexing) based on a condition, you can use the following syntax:</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">y</span><span class="p">[</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">]</span>  <span class="c1"># select y based on the values in x</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([25, 36, 49, 64, 81])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Tip 2: there are more than one way to compute the annual and monthly means. Some use loops, some use reshaping on the original 1D array.</em></p>
 
 </div>
 </div>
