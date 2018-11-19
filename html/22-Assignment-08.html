@@ -10,7 +10,7 @@ gtag('config', 'UA-88391345-1');
 </script>
 <meta charset="utf-8" />
 
-<title>00-Introduction</title>
+<title>22-Assignment-08</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13131,7 +13131,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": false, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {}, "toc_section_display": "block", "toc_window_display": true};
+            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": false, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {}, "toc_section_display": "block", "toc_window_display": false};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -13146,14 +13146,14 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Scientific-Programming">Scientific Programming<a class="anchor-link" href="#Scientific-Programming">&#182;</a></h1>
+<h1 id="Assignment-#08:-ACINN-meteorological-data">Assignment #08: ACINN meteorological data<a class="anchor-link" href="#Assignment-#08:-ACINN-meteorological-data">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Fabien Maussion</strong></p>
+<p>This weeks assignment is not directly related to the last lecture ("Python Packages"). This assignment has two main purposes: continuing to learn the scientific python tools, and introduce you to a new data source you will be able to use for the visclim project.</p>
 
 </div>
 </div>
@@ -13161,381 +13161,21 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Lecture notes of the master lecture <a href="https://orawww.uibk.ac.at/public/lfuonline_lv.details?sem_id_in=18S&amp;lvnr_id_in=707716">707716 - Scientific Programming</a>, given for the first time in the summer term of 2018 and regularly in the <strong>winter terms</strong> afterwards.</p>
-<p>If you're not here for the first time, jump to:</p>
+<p>The institute website provides live visualization of meteorological data: <a href="http://acinn.uibk.ac.at/current-weather/innsbruck-university">http://acinn.uibk.ac.at/current-weather/innsbruck-university</a> . The raw data used for the plots are available in a live feed at the following addresses:</p>
 <ul>
-<li><a href="#ctoc">the table of contents</a></li>
-<li><a href="#refs">external resources</a></li>
+<li><a href="http://acinn.uibk.ac.at/innsbruck/3">http://acinn.uibk.ac.at/innsbruck/3</a> for the three days data</li>
+<li><a href="http://acinn.uibk.ac.at/innsbruck/7">http://acinn.uibk.ac.at/innsbruck/7</a> for the seven days data</li>
 </ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/00_messing_python.png"></p>
-<p><em>Adapted from <a href="https://xkcd.com/519/">xkcd</a>. The xkcd author Randall Munroe <a href="https://xkcd.com/353/">would probably agree</a> with my changes.</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Preface">Preface<a class="anchor-link" href="#Preface">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There are plenty of excellent online resources to learn python (see <a href="#refs">references</a> below). So why writing these lecture notes? Well, for one, because none of the tutorials is organized to fit <em>exactly</em> the 15 week semester of Austrian universities. Therefore, I had to make some choices regarding (i) what to teach and (ii) how to teach it. However, there is no need in reinventing the wheel and rewriting what much better teachers wrote before me: as you will see, I will rely heavily on external resources, all openly available. Following the open source philosophy, these lecture notes are also freely available.</p>
-<p>These notes are actualized on the go, as this course advances. I am trying to write them in such a way that they are understandable without actually <em>attending</em> the course, but I strongly recommend to participate to both the lectures and the homeworks.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Learning-outcomes-of-this-course">Learning outcomes of this course<a class="anchor-link" href="#Learning-outcomes-of-this-course">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This class aims at learning <strong>modern programming techniques</strong> for (geo-)scientists. After finishing the class, attendees should be able to program in a structured, extendable and reproducible manner. They should understand how numbers are handled by computers and be aware of numerical accuracy errors. Furthermore, they will get acquainted with various programming tools (IDEs, debugger, unit testing, object oriented programming, open development practices).</p>
-<p>The targeted audience for this lecture are (geo-)science <strong>students at the master level with previous experience in programming</strong>. No prior knowledge of python is required, but I'll assume that you are familiar with a similar language (Matlab, IDL, R...). This is <em>not</em> an introductory course, although we will shortly revisit programming basics in order to learn the python syntax.</p>
-<p>The course encompasses the following topics, which are developed by means of concrete examples in the Python programming language:</p>
+<p>The data for the other stations are available, per analogy:</p>
 <ul>
-<li>Introduction to Linux</li>
-<li>Semantics: revisiting and formalizing the basic programming structures (loops, functions, conditional blocks...)</li>
-<li>General programming concepts, differences between compiled and interpreted languages</li>
-<li>Numerics: floating point numbers, N-dimensional arrays</li>
-<li>Software structure: packages, modules, functions, scripts</li>
-<li>Object oriented programming: fundamentals, usage, and basic design patterns</li>
-<li>Code testing</li>
-<li>Real world applications!</li>
+<li><a href="http://acinn.uibk.ac.at/ellboegen/3">http://acinn.uibk.ac.at/ellboegen/3</a></li>
+<li><a href="http://acinn.uibk.ac.at/obergurgl/3">http://acinn.uibk.ac.at/obergurgl/3</a></li>
+<li><a href="http://acinn.uibk.ac.at/sattelberg/3">http://acinn.uibk.ac.at/sattelberg/3</a></li>
 </ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Frequently-Asked--Questions">Frequently Asked  Questions<a class="anchor-link" href="#Frequently-Asked--Questions">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="What-is-&quot;Scientific-Programming&quot;?">What is "Scientific Programming"?<a class="anchor-link" href="#What-is-&quot;Scientific-Programming&quot;?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Scientific programming targets to solve scientific problems with the help of computers</strong>.</p>
-<p>It is sometimes used as synonym for <a href="https://en.wikipedia.org/wiki/Computational_science">computational science</a>, but in my opinion these are not entirely the same. "Scientific programming" is not really a discipline, and therefore cannot be taught.</p>
-<p>What are we doing here then? Well, we are going to learn <strong>programming</strong> first, and then <strong>programming as a tool to do science</strong>. We are going to apply our new skills to scientific problems, but not only. Within the time given to us, we won't be able to learn <em>everything</em> about programming of course. My hope is that at the end of the lecture you'll have sufficient background and tools at your disposition to solve your own problems, and (this is the most important bit) that you'll know <em>where</em> to find solutions to the problems you encounter.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why-should-I-learn-programming?">Why should I learn programming?<a class="anchor-link" href="#Why-should-I-learn-programming?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As a scientist you are going to either <em>produce</em> or <em>analyze</em> data, most of the time you'll do both. For a long time, scientists have seen programming as a "tool", a menial task to accomplish in order to answer the questions they were asking. Nowadays programming has taken a prominent place in a scientist's work, for several reasons:</p>
-<ul>
-<li><strong>the amount of data we have to handle increases together with computational power and our capacity to store it</strong>. I would even argue that the bottleneck in model based scientific discovery isn't the computational effort anymore, but our capacity to comprehend and analyze these huge amounts of data.</li>
-<li><strong>the questions we are asking are getting more complex, and so are the tools we are using to answer them</strong>. The times when scientists could make discoveries with the help of a piece of paper and a pen are long gone, at least for most of us in the geosciences. We rely heavily on computer models, and these models are developed by us scientists, not only by programmers.</li>
-<li><strong>science faces a credibility crisis</strong>, and part of the mistrust towards scientists comes from the fact that their research happens behind closed doors, using closed source tools and based on protected data. Opening our computers and demonstrating that our code can be trusted is necessary to re-engage confidence in our results.</li>
-<li>on a more general note: a better understanding of the tools that govern our digital world is a strong asset for many aspects of our everyday life and citizenship.</li>
-</ul>
-<p>In simple words, we have to become better programmers to be faster and better at what we do: science.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why-Python?">Why Python?<a class="anchor-link" href="#Why-Python?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We will use the <a href="https://www.python.org/">Python programming language</a> in this course. In case you are wondering why this language and not any other like <code>&lt;name your favorite language here&gt;</code>, let me stop you right away: this course is not about "learning Python", it is about learning the general concepts of programming: algorithmic, numerics, program structure, object oriented programming, testing, etc. Python is just the tool I chose to use for this purpose.</p>
-<p>We could indeed have taken any other language, but there are several advantages in using Python. A quick web search will give you <a href="https://www.google.co.uk/search?dcr=0&amp;ei=Wo2OWtKHNY7fwAKv1KbIDQ&amp;q=Why+should+I+learn+python">millions of reasons</a>, but let me pick some of my favorites here:</p>
-<ul>
-<li><strong>Python is a general purpose programming language and, as such, well suited to learn general programming concepts</strong>. It is therefore better suited than, for example, <a href="https://www.r-project.org/">R</a> which was developed for statistics and has certain particularities regarding object oriented programming in particular.</li>
-<li><strong>Python can be used for many purposes</strong>, from data preprocessing to numerical modeling and plotting. Unless you have a very compelling reason to change, you are likely to be able to use Python for all programming tasks you'll have in the near future.</li>
-<li><strong>Python is one of the <a href="https://stackoverflow.blog/2017/09/06/incredible-growth-python/">fastest growing languages for data science</a></strong>. There is a very active community developing new and exiting packages every day, and joining this community is a good bet on the future.</li>
-<li><strong>Python is free and open-source</strong>. No license fee, the code is available for everyone to see.</li>
-</ul>
-<p>There are many other reasons to use Python (and some arguments <em>against</em> Python as well of course), but I don't think it's relevant to list them here. My argument is following: for a good programmer, switching language is not a very big deal. It's not easy of course, but it's possible - becoming a good programmer is the hard bit, and is a never ending process.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Course-contents">Course contents<a class="anchor-link" href="#Course-contents">&#182;</a></h2><p><a id='ctoc'></a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><strong>Week 01: Introduction to Linux, installing Python</strong><ul>
-<li><a href="01-Linux.html">01 - A very short introduction to Linux</a></li>
-<li><a href="02-Installation.html">02 - Installing Python</a></li>
-<li><a href="03-Getting-Started.html">03 - Getting started with Python</a></li>
-<li><a href="04-Assignment-01.html">04 - Assignment #01: getting familiar with Linux and Python</a></li>
-<li><a href="http://fabienmaussion.info/scipro_w01/">Slides for week 01</a></li>
-</ul>
-</li>
-<li><strong>Week 02: The Python language and the standard library</strong><ul>
-<li><a href="05-Language-Basics.html">05 - Language Basics</a></li>
-<li><a href="06-Assignment-02.html">06 - Assignment #02: using the standard library</a></li>
-</ul>
-</li>
-<li><strong>Week 03: Variables scopes, modules, good practices in programming</strong><ul>
-<li><a href="07-Import-Scopes.html">07 - Modules, import mechanism, namespaces, scope(s)</a></li>
-<li><a href="08-Tips-and-Tricks.html">08 - Tips and tricks</a></li>
-<li><a href="09-Good-practices.html">09 - Good practices, programming style and conventions</a></li>
-<li><a href="10-Assignment-03.html">10 - Assignment #03: deeper in the python library</a></li>
-</ul>
-</li>
-<li><strong>Week 04: Floating point arithmetics</strong><ul>
-<li><a href="11-Numbers.html">11 - Number representation in computers</a></li>
-<li><a href="12-Assignment-04.html">12 - Assignment #04: rounding errors</a></li>
-</ul>
-</li>
-<li><strong>Week 05: Numpy</strong><ul>
-<li><a href="13-Numpy-part-I.html">13 - Numpy, part I: why numpy?</a></li>
-<li><a href="14-Assignment-05.html">14 - Assignment #05: C, python and numpy</a></li>
-</ul>
-</li>
-<li><strong>Week 06: Scientific Python</strong><ul>
-<li><a href="15-Numpy-part-II.html">15 - Numpy, part II: indexing, ufuncs, broadcasting</a></li>
-<li><a href="16-Scientific-Python.html">16 - The scientific python stack</a></li>
-<li><a href="17-Assignment-06.html">17 - Assignment #06: small numpy exercises</a></li>
-</ul>
-</li>
-<li><strong>Week 07: Exceptions and testing</strong><ul>
-<li><a href="18-Exceptions.html">18 - Errors, Exceptions and Warnings</a></li>
-<li><a href="19-Testing.html">19 - Testing your code</a></li>
-<li><a href="20-Assignment-07.html">20 - Assignment 07: exceptions and testing</a></li>
-</ul>
-</li>
-<li><strong>Week 08: Python Packages and Project 1</strong><ul>
-<li><a href="21-Package-structure.html">21 - Structure of a python package</a></li>
-<li><a href="22-Assignment-08.html">22 - Assignment 08: ACINN meteorological data</a></li>
-<li><a href="23-Project1-VisClim.html">23 - Project #1: the VisClim package</a></li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><font color="red">To access the previous course content (summer semester 2018), visit:</font> <a href="https://fabienmaussion.info/scipro_ss2018">https://fabienmaussion.info/scipro_ss2018</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-to-use-these-notes">How to use these notes<a class="anchor-link" href="#How-to-use-these-notes">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>These notes are written as a companion to the lectures. During class I will go through the major concepts (using slides, the good old way), and the notes are here to help you learn at home.</p>
-<p>The notes are a mix of examples and small exercises. The exercises can happen in between the examples and are marked with a question mark logo. If you want to download the notebooks I used to write the notes, you can download them on the course's <a href="https://github.com/fmaussion/scientific_programming">repository</a>. This repository gets updated frequently, so you might have to re-download the files from time to time.</p>
-<p>When you will be going through the examples of these notes, some sentences are marked in <strong>bold</strong>: this underlines their importance for the course. When <strong>single words</strong> are <strong>bold</strong>  this symbolizes new concepts or new definitions: they need to be understood (and <em>googled</em> if needed).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Grading">Grading<a class="anchor-link" href="#Grading">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The lecture will be graded based on three assessments:</p>
-<ul>
-<li>a mid-term group project (the <code>visclim</code> package): 20%</li>
-<li>an end-term group project (the <code>pelita</code> game): 20%</li>
-<li>an oral examination at the end of the semester: 60%</li>
-</ul>
-<p>A positive evaluation of each of these elements is mandatory to pass the class!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>For each week, there will be an <strong>assignment</strong> (unless specified otherwise, during graded the group projects). These can be worked through alone or in groups. Each week, I will ask <strong>one randomly selected group</strong> to present their results to the rest of the class.</p>
-<p>The class grants you 4 ECTS if successfully passed: <a href="https://en.wikipedia.org/wiki/European_Credit_Transfer_and_Accumulation_System">in theory</a>, this represents about 6 hours work per week (not including holidays). For this course, it means that you will spend at least twice as much time doing homework than sitting in class.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a id='refs'></a></p>
-<h2 id="External-resources">External resources<a class="anchor-link" href="#External-resources">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Resources used (and linked) in these lecture notes:</p>
-<p><strong>Linux and bash scripting:</strong></p>
-<ul>
-<li><a href="https://ryanstutorials.net/">Ryan's Tutorials</a> for the linux command line and bash scripting are entertaining and well designed.</li>
-</ul>
-<p><strong>Python tutorials:</strong></p>
-<ul>
-<li>the <a href="https://docs.python.org/3/tutorial/index.html">official tutorial</a>, always a good place to start.</li>
-<li>the <a href="https://www.scipy-lectures.org/index.html">scipy lecture notes</a>, a good overview of the scientific python stack for scientists with previous programming experience.</li>
-</ul>
-<p><strong>Python reference:</strong></p>
-<ul>
-<li>the <a href="https://docs.python.org">python documentation</a> is your best reference for any question related to the language and the standard library.</li>
-</ul>
-<p><strong>Testing</strong></p>
-<ul>
-<li>Katy Huff's <a href="https://katyhuff.github.io/python-testing/">scientific python testing tutorial</a>: a one and a half hour introduction to testing practices, from the basics to continuous integration</li>
-</ul>
-<p><strong>Floating point precision errors</strong></p>
-<ul>
-<li>Python's <a href="https://docs.python.org/3/tutorial/floatingpoint.html">Floating Point Arithmetic</a> article is a good read but a bit tough for beginners</li>
-<li><a href="http://floating-point-gui.de/">What Every Programmer Should Know About Floating-Point Arithmetic</a> is a more gentle introduction, but you still might want to use a search engine for more information.</li>
-</ul>
-<p><strong>Numpy</strong></p>
-<ul>
-<li><a href="https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/">Why python is slow</a> by Jake Vanderplas</li>
-<li><a href="http://www.labri.fr/perso/nrougier/from-python-to-numpy/">From Python to Numpy</a> by Nicolas P. Rougier: an open-access book on numpy vectorization techniques (rather advanced).</li>
-<li><a href="https://docs.scipy.org/doc/numpy/reference/index.html">The numpy reference</a>: the official documentation is always the best place to obtain first hand information.</li>
-</ul>
-<p><strong>Scientific Python</strong></p>
-<ul>
-<li><a href="https://jakevdp.github.io/PythonDataScienceHandbook/">Python Data Science Handbook</a> by Jake Vanderplas: an open-access  textbook on using Python for Scientists</li>
-</ul>
-<p><strong>Python namespaces and scopes</strong></p>
-<ul>
-<li><a href="http://sebastianraschka.com/Articles/2014_python_scope_and_namespaces.html#scope-resolution-for-variable-names-via-the-legb-rule">blog post by Sebastian Raschka</a>: A Beginner's Guide to Python's Namespaces, Scope Resolution, and the LEGB Rule</li>
-</ul>
-<p><strong>Object Oriented Programming</strong>
-The web is full of blog posts and basic tutorials about OOP in python. Unfortunately, most of them make a poor job at explaining <em>why</em> OOP can be useful and when not. I will try to find better resources, but for now I recommend:</p>
-<ul>
-<li><a href="https://realpython.com/python3-object-oriented-programming/">RealPython's beginner tutorial</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Wikipedia page about OOP</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming">Wikipedia page about inheritance</a></li>
-</ul>
-<p><strong>Documentation</strong></p>
-<ul>
-<li><a href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/">A beginner’s guide to writing documentation</a></li>
-</ul>
-<p><em>(this list will be updated when the notes get written further)</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Getting-help">Getting help<a class="anchor-link" href="#Getting-help">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Seeking for information online is necessary and helpful at <em>any</em> level of programming skills. I would even argue that good programmers are the ones who know how to efficiently find information online.</p>
-<p>When encountering an issue, the first question you should ask yourself is: <em>"am I the only person likely to be affected by this problem?"</em>. <strong>The answer will be no</strong> in 99% of the cases. For these, here is a list of recommendations:</p>
-<ul>
-<li><a href="https://stackoverflow.com/">Stack Overflow</a> is THE place for programming questions. Thanks to community based moderation rules, the good questions are more visible than bad ones, and good answers are rewarded. <a href="https://stackoverflow.com/tour">Take a tour</a> of the site's principles now, and look for similar questions there before asking your own question.</li>
-<li>Learn to ask the right question to your search engine. Naming this the correct way (semantics) is one of of the objectives of this lecture, and I hope that in the end you will not only write better code, you will also <em>speak</em> the programming language a little better. </li>
-</ul>
-<p>If every other thing fails (i.e the remaining 1% of the cases), then:</p>
-<ul>
-<li>Ask a question on Stack Overflow. Before doing so, read what a <a href="https://stackoverflow.com/help/mcve">Minimal, Complete, and Verifiable Example</a> is and try to stick to these recommendations.</li>
-<li>If you think you discovered a bug, than report it to the library directly. Almost all the scientific python packages are hosted on GitHub: the "issues" tab is where to report bugs. Read the excellent <a href="http://matthewrocklin.com/blog/work/2018/02/28/minimal-bug-reports">Craft Minimal Bug Reports</a> article from Matt Rocklin before doing so.</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Authors">Authors<a class="anchor-link" href="#Authors">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><a href="http://fabienmaussion.info/">Fabien Maussion</a> wrote these notes (unless specified otherwise, e.g. for some tutorials)</li>
-<li><a href="https://github.com/Matze77">Matthias Göbel</a> and <a href="https://github.com/lilianschuster">Lilian Schuster</a> (student assistants at the time of writing) reviewed and proof read them</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="License">License<a class="anchor-link" href="#License">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
-  <img align="left" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.eu.svg"/>
+<p>The data is shared by ACINN under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+<p><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+  <img align="left" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"/>
 </a></p>
-<p><br>
-<br></p>
-<p>These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
-<p>Feel free to use / adapt them, but don't sell them, and share them under the same licence.</p>
 
 </div>
 </div>
@@ -13543,9 +13183,120 @@ The web is full of blog posts and basic tutorials about OOP in python. Unfortuna
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="http://acinn.uibk.ac.at/" target="_blank">
-  <img align="left" src="../img/logo_acinn_small.jpg"/>
-</a></p>
+<p>The data is provided in the <a href="https://www.json.org/">json</a> format, often used for web applications. Fortunately, this is very easy to read in python:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="k">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">urlopen</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://acinn.uibk.ac.at/innsbruck/3&#39;</span>
+<span class="c1"># Parse the given url</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">))</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="c1"># Read the data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now I will help you to parse the timestamp of the data:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1970</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">milliseconds</span><span class="o">=</span><span class="n">ds</span><span class="p">)</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;datumsec&#39;</span><span class="p">]]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And make a first plot to get you started:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;tl&#39;</span><span class="p">]);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercise-#08-01:-wind-classification">Exercise #08-01: wind classification<a class="anchor-link" href="#Exercise-#08-01:-wind-classification">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Write a script that takes the station and number of days as input (either as command line arguments or user input, your choice) and prints the following information in the terminal:</strong></p>
+
+<pre><code>At station XXX, over the last X days, the dominant wind direction was XX (xx% of the time). The second most dominant wind direction was XX (xx% of the time), the least dominant wind direction was XX (xx% of the time). The maximum wind speed was XX m/s (DATE and TIME), while the strongest wind speed averaged over an hour was XX m/s (DATE and TIME).</code></pre>
+<p>With the wind directions being of 8 classes: N, NW, W, SW, S, SE, E, NE.mm</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Back to the <a href="00-Introduction.html#ctoc">table of contents</a> or to the <a href="23-Project1-VisClim.html">visclim project</a></em></p>
 
 </div>
 </div>
