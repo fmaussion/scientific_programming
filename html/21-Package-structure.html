@@ -13621,7 +13621,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I've written a simple package template to help you getting started. You will find the code <a href="https://github.com/fmaussion/scispack">on github</a> and a link to download it (green button in the top right). It is released in the public domain, feel free to use it for your projects. You will have more time to get familiar with it during the assignments, here I'll simply repeat its basic structure:</p>
+<p>I've written a simple package template called "scispack" to help you getting started. You will find the code <a href="https://github.com/fmaussion/scispack">on github</a> and a link to download it (green button in the top right). It is released in the public domain, feel free to use it for your projects. You will have more time to get familiar with it during the assignments, here I'll simply repeat its basic structure:</p>
 <p><strong>Directory root (<code>./</code>)</strong></p>
 <ul>
 <li><code>.gitignore</code>: for git users only</li>
@@ -13711,8 +13711,8 @@ detected by pytest.</p>
 <pre><code>$ pip install -e .
 
 </code></pre>
-<p>The <code>pip install</code> command will look for a <code>setup.py</code> file and if found, use it to determine the package's name and other installation options. The <code>-e</code> optional argument installs the package in "editable" or "development" mode. In simple terms, this option will create a <a href="https://en.wikipedia.org/wiki/Symbolic_link">symbolic link</a> to the package directory instead of copying the files. Therefore, any changes to the code will always be available the next time you open a new python interpreter.</p>
-<p><strong><code>pip install -e .</code> is the recommended way to install any local package, in pip or in conda environments</strong>.</p>
+<p>The <code>pip install .</code> command will look for a <code>setup.py</code> file <strong>in the current folder</strong> (this is why the dot <code>.</code> is used) and if found, use it to determine the package's name and other installation options. The <code>-e</code> optional argument installs the package in "editable" or "development" mode. In simple terms, this option will create a <a href="https://en.wikipedia.org/wiki/Symbolic_link">symbolic link</a> to the package directory instead of copying the files. Therefore, any changes to the code will always be available the next time you open a new python interpreter.</p>
+<p><strong><code>pip install -e .</code> is the recommended way to install any local package, in pip or in conda environments</strong>. At the university (or on computers where you don't have the super-user permissions), use <code>pip install --user -e .</code></p>
 
 </div>
 </div>
@@ -13759,7 +13759,7 @@ detected by pytest.</p>
 <li>python has very clear rules regarding the scope of variables, leading to clearly defined namespaces</li>
 <li>there are no global variables in python, only namespaces</li>
 <li>a package is a way to organize several modules under the same namespace. It allows to construct nested modules, like <code>from A.B import C</code></li>
-<li>installing local packages simply requires to comply to a couple of simple rules, including filling a <code>setup.py</code> installation file</li>
+<li>make your package installable simply requires to comply to a couple of simple rules, including defining a <code>setup.py</code> installation file at the root directory folder</li>
 <li>I recommend to install local packages with <code>pip install -e .</code></li>
 </ul>
 
