@@ -13176,7 +13176,7 @@ $( document ).ready(function(){
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Object-Oriented-Programming:-introduction" data-toc-modified-id="Object-Oriented-Programming:-introduction-24"><span class="toc-item-num">24&nbsp;&nbsp;</span>Object Oriented Programming: introduction</a></span><ul class="toc-item"><li><span><a href="#Introduction" data-toc-modified-id="Introduction-24.1"><span class="toc-item-num">24.1&nbsp;&nbsp;</span>Introduction</a></span></li><li><span><a href="#Classes-and-objects" data-toc-modified-id="Classes-and-objects-24.2"><span class="toc-item-num">24.2&nbsp;&nbsp;</span>Classes and objects</a></span></li><li><span><a href="#Class/instance-attributes" data-toc-modified-id="Class/instance-attributes-24.3"><span class="toc-item-num">24.3&nbsp;&nbsp;</span>Class/instance attributes</a></span></li><li><span><a href="#Instance-Methods" data-toc-modified-id="Instance-Methods-24.4"><span class="toc-item-num">24.4&nbsp;&nbsp;</span>Instance Methods</a></span></li><li><span><a href="#Extending-attributes:-the-@property-decorator" data-toc-modified-id="Extending-attributes:-the-@property-decorator-24.5"><span class="toc-item-num">24.5&nbsp;&nbsp;</span>Extending attributes: the @property decorator</a></span></li><li><span><a href="#Digging-deeper-into-@property:-setters" data-toc-modified-id="Digging-deeper-into-@property:-setters-24.6"><span class="toc-item-num">24.6&nbsp;&nbsp;</span>Digging deeper into @property: setters</a></span></li><li><span><a href="#Our-final-class" data-toc-modified-id="Our-final-class-24.7"><span class="toc-item-num">24.7&nbsp;&nbsp;</span>Our final class</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-24.8"><span class="toc-item-num">24.8&nbsp;&nbsp;</span>Take home points</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-24.9"><span class="toc-item-num">24.9&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Object-Oriented-Programming:-introduction" data-toc-modified-id="Object-Oriented-Programming:-introduction-24"><span class="toc-item-num">24&nbsp;&nbsp;</span>Object Oriented Programming: introduction</a></span><ul class="toc-item"><li><span><a href="#Introduction" data-toc-modified-id="Introduction-24.1"><span class="toc-item-num">24.1&nbsp;&nbsp;</span>Introduction</a></span></li><li><span><a href="#Classes-and-objects" data-toc-modified-id="Classes-and-objects-24.2"><span class="toc-item-num">24.2&nbsp;&nbsp;</span>Classes and objects</a></span></li><li><span><a href="#Class/instance-attributes" data-toc-modified-id="Class/instance-attributes-24.3"><span class="toc-item-num">24.3&nbsp;&nbsp;</span>Class/instance attributes</a></span></li><li><span><a href="#Instance-Methods" data-toc-modified-id="Instance-Methods-24.4"><span class="toc-item-num">24.4&nbsp;&nbsp;</span>Instance Methods</a></span></li><li><span><a href="#Extending-attributes:-the-@property-decorator" data-toc-modified-id="Extending-attributes:-the-@property-decorator-24.5"><span class="toc-item-num">24.5&nbsp;&nbsp;</span>Extending attributes: the @property decorator</a></span></li><li><span><a href="#Digging-deeper-into-@property:-setters" data-toc-modified-id="Digging-deeper-into-@property:-setters-24.6"><span class="toc-item-num">24.6&nbsp;&nbsp;</span>Digging deeper into @property: setters</a></span></li><li><span><a href="#Private-attributes-and-methods" data-toc-modified-id="Private-attributes-and-methods-24.7"><span class="toc-item-num">24.7&nbsp;&nbsp;</span>Private attributes and methods</a></span></li><li><span><a href="#Our-final-class" data-toc-modified-id="Our-final-class-24.8"><span class="toc-item-num">24.8&nbsp;&nbsp;</span>Our final class</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-24.9"><span class="toc-item-num">24.9&nbsp;&nbsp;</span>Take home points</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-24.10"><span class="toc-item-num">24.10&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
 </div>
 </div>
 </div>
@@ -13267,7 +13267,7 @@ $( document ).ready(function(){
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;__main__.Cat at 0x7f76b42860f0&gt;</pre>
+<pre>&lt;__main__.Cat at 0x7f4c3008e208&gt;</pre>
 </div>
 
 </div>
@@ -13633,7 +13633,7 @@ $( document ).ready(function(){
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
     <span class="c1"># Class attribute</span>
-    <span class="n">shout</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
+    <span class="n">speak</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
     
     <span class="c1"># Initializer</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
@@ -13651,7 +13651,7 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Cat</span><span class="o">.</span><span class="n">shout</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Cat</span><span class="o">.</span><span class="n">speak</span>
 </pre></div>
 
     </div>
@@ -13685,7 +13685,7 @@ $( document ).ready(function(){
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">shout</span>
+<span class="n">a</span><span class="o">.</span><span class="n">speak</span>
 </pre></div>
 
     </div>
@@ -13727,7 +13727,7 @@ $( document ).ready(function(){
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Roncheux&#39;</span>
-<span class="n">a</span><span class="o">.</span><span class="n">shout</span> <span class="o">=</span> <span class="s1">&#39;Miaou&#39;</span>
+<span class="n">a</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="s1">&#39;Miaou&#39;</span>
 </pre></div>
 
     </div>
@@ -13773,7 +13773,7 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">shout</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">speak</span>
 </pre></div>
 
     </div>
@@ -13814,7 +13814,7 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Cat</span><span class="o">.</span><span class="n">shout</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Cat</span><span class="o">.</span><span class="n">speak</span>
 </pre></div>
 
     </div>
@@ -13872,7 +13872,7 @@ $( document ).ready(function(){
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
     <span class="c1"># Class attribute</span>
-    <span class="n">shout</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
+    <span class="n">speak</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
     
     <span class="c1"># Initializer</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
@@ -13881,7 +13881,7 @@ $( document ).ready(function(){
         
     <span class="c1"># Method</span>
     <span class="k">def</span> <span class="nf">say_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shout</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">speak</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -14538,7 +14538,6 @@ Weight after eating: 4.2 kg
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
 
-    <span class="c1"># Initializer</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;kg&#39;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;kg&#39;</span><span class="p">:</span>
@@ -14548,7 +14547,6 @@ Weight after eating: 4.2 kg
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unit not understood: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">unit</span><span class="p">))</span>
         
-    <span class="c1"># Method</span>
     <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
     
@@ -14556,6 +14554,7 @@ Weight after eating: 4.2 kg
     <span class="k">def</span> <span class="nf">weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">/</span> <span class="mf">0.45359237</span>
     
+    <span class="c1"># This is new!</span>
     <span class="nd">@weight_lbs</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span> <span class="nf">weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_weight</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="mf">0.45359237</span> <span class="o">*</span> <span class="n">new_weight</span>
@@ -14613,7 +14612,7 @@ Weight after eating: 4.2 kg
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span> <span class="o">=</span> <span class="mi">11</span>  <span class="c1"># set OK</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span><span class="p">)</span>  <span class="c1"># nice!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span><span class="p">)</span>  <span class="c1"># updated: nice!</span>
 </pre></div>
 
     </div>
@@ -14642,6 +14641,123 @@ Weight after eating: 4.2 kg
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Private-attributes-and-methods">Private attributes and methods<a class="anchor-link" href="#Private-attributes-and-methods">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sometimes it can be useful to define and use attributes or methods within a class, <em>without</em> providing them to users of the class: in some OO languages like Java or C++, they are called <a href="https://en.wikipedia.org/wiki/Private_class_data_pattern">private</a> (e.g. a <strong>private attribute</strong> or a <strong>private method</strong>). In Python, there is no specific syntax or language specification for this pattern: in other words, all class attribute and methods are <strong>public</strong>, visible and usable by anyone.</p>
+<p>To allow the definition of private elements, however, the community agreed on a convention: all attributes or method starting with an underscore (<code>_</code>) are meant to be private and do not belong to the public facing (documented interface) of a class.</p>
+<p>There are plenty of uses for private attributes or methods, but I'll illustrate one of them below:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+    
+    <span class="c1"># Initializer</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">):</span>
+        
+        <span class="c1"># Name of the cat: an instance attribute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+          
+        <span class="c1"># The cats language</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># we don&#39;t know yet what the cat speaks</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_language</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># This is a private attribute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">language</span> <span class="o">=</span> <span class="n">language</span>
+        
+    <span class="c1"># Methods</span>
+    <span class="k">def</span> <span class="nf">say_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">speak</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+        
+    <span class="k">def</span> <span class="nf">_decide_speech</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="c1"># This is a private method</span>
+        <span class="c1"># We use it to structure our code within the class</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;en&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
+        <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;fr&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="s1">&#39;Miaou&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Language not understood: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+        
+    <span class="c1"># Property getter</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">language</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_language</span>
+        
+    <span class="c1"># Property setter</span>
+    <span class="nd">@language</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">language</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_language</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_decide_speech</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The design of this class comes from the addition of a new functionality: users can now set the language of their cat, and the cat's speech will change accordingly. See the following:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>  <span class="c1"># the default language is english</span>
+<span class="n">a</span><span class="o">.</span><span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;fr&#39;</span>  <span class="c1"># we set it to french</span>
+<span class="n">a</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>  <span class="c1"># now our cat speaks french!</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Meow, Grumpy!
+Miaou, Grumpy!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Line 3 in the code snippet above motivates the use of a <code>@setter</code>: when <code>language</code> is updated, we want the <code>speak</code> attribute to be updated too: we need a dedicated method (<code>def language(self, value)</code>) that we hide behind an attribute. This comes with a drawback: where to store the <code>language</code> value? We have to use a new container for it: the private attribute <code>_language</code> (by convention).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Our-final-class">Our final class<a class="anchor-link" href="#Our-final-class">&#182;</a></h2>
 </div>
 </div>
@@ -14656,16 +14772,12 @@ Weight after eating: 4.2 kg
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
     <span class="c1"># Class attributes</span>
-    <span class="c1"># This is the same for all cats, regardless of their language</span>
-    <span class="n">purr</span> <span class="o">=</span> <span class="s1">&#39;RRRrrrRRRrrr&#39;</span>
-    <span class="c1"># We can also use class attributes to set default values</span>
-    <span class="n">shout</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># we don&#39;t know yet</span>
-    <span class="n">_language</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># this is a private attribute</span>
+    <span class="n">purr</span> <span class="o">=</span> <span class="s1">&#39;RRRrrrRRRrrr&#39;</span>  <span class="c1"># same for all cats, regardless of their language</span>
      
     <span class="c1"># Initializer</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;kg&#39;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">):</span>
@@ -14673,7 +14785,7 @@ Weight after eating: 4.2 kg
         <span class="c1"># Name of the cat: an instance attribute</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         
-        <span class="c1"># Its weight in two possible units</span>
+        <span class="c1"># The cat&#39;s weight in two possible units</span>
         <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;kg&#39;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
         <span class="k">elif</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;lbs&#39;</span><span class="p">:</span>
@@ -14681,42 +14793,49 @@ Weight after eating: 4.2 kg
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unit not understood: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">unit</span><span class="p">))</span>
         
-        <span class="c1"># Its language</span>
+        <span class="c1"># The cat&#39;s language</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># we don&#39;t know yet what the cat speaks</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_language</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># private attribute</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">language</span> <span class="o">=</span> <span class="n">language</span>
         
     <span class="c1"># Methods</span>
     <span class="k">def</span> <span class="nf">say_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shout</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">speak</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
         
     <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;kg&#39;</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;lbs&#39;</span><span class="p">:</span>
             <span class="c1"># convert to kg</span>
             <span class="n">food</span> <span class="o">=</span> <span class="mf">0.45359237</span> <span class="o">*</span> <span class="n">food</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food</span>
-        
-    <span class="c1"># Property getter</span>
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">language</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_language</span>
-        
-    <span class="c1"># Property setter</span>
-    <span class="nd">@language</span><span class="o">.</span><span class="n">setter</span>
-    <span class="k">def</span> <span class="nf">language</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    
+    <span class="c1"># Private method</span>
+    <span class="k">def</span> <span class="nf">_decide_speech</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;en&#39;</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">shout</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
         <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;fr&#39;</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">shout</span> <span class="o">=</span> <span class="s1">&#39;Miaou&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="s1">&#39;Miaou&#39;</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Language not understood: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_language</span> <span class="o">=</span> <span class="n">value</span>
-        
+    
+    <span class="c1"># Property getter</span>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">/</span> <span class="mf">0.45359237</span>
     
+     <span class="c1"># Property setter</span>
     <span class="nd">@weight_lbs</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span> <span class="nf">weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_weight</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="mf">0.45359237</span> <span class="o">*</span> <span class="n">new_weight</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">language</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_language</span>
+        
+   
+    <span class="nd">@language</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">language</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_language</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_decide_speech</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14726,7 +14845,7 @@ Weight after eating: 4.2 kg
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Instantiating an object from the class &quot;Cat&quot;</span>
@@ -14740,7 +14859,7 @@ Weight after eating: 4.2 kg
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Calling an instance method</span>
@@ -14772,7 +14891,7 @@ Weight after eating: 4.2 kg
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Changing an attribute also changes the behavior of the object</span>
@@ -14805,7 +14924,7 @@ Weight after eating: 4.2 kg
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Class attributes are available for anyone to read</span>
@@ -14822,7 +14941,7 @@ Weight after eating: 4.2 kg
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[43]:</div>
+    <div class="prompt output_prompt">Out[45]:</div>
 
 
 
@@ -14839,7 +14958,7 @@ Weight after eating: 4.2 kg
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># An action on an object might change its instance attributes</span>
@@ -14857,7 +14976,7 @@ Weight after eating: 4.2 kg
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[44]:</div>
+    <div class="prompt output_prompt">Out[46]:</div>
 
 
 
@@ -14874,7 +14993,7 @@ Weight after eating: 4.2 kg
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Some attributes are passive and computed only when needed.</span>
@@ -14892,7 +15011,7 @@ Weight after eating: 4.2 kg
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[45]:</div>
+    <div class="prompt output_prompt">Out[47]:</div>
 
 
 
