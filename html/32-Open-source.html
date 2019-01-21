@@ -10,7 +10,7 @@ gtag('config', 'UA-88391345-1');
 </script>
 <meta charset="utf-8" />
 
-<title>00-Introduction</title>
+<title>32-Open-source</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13131,7 +13131,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": false, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {}, "toc_section_display": "block", "toc_window_display": true};
+            var cfg = {"base_numbering": "32", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "750px", "left": "29px", "top": "111px", "width": "345px"}, "toc_section_display": true, "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -13146,14 +13146,14 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Scientific-Programming">Scientific Programming<a class="anchor-link" href="#Scientific-Programming">&#182;</a></h1>
+<h1 id="Open-source-projects">Open source projects<a class="anchor-link" href="#Open-source-projects">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Fabien Maussion</strong></p>
+<p>The vast majority of the python libraries you are going to use during your career are open-source projects. This development model is fundamentally different from proprietary software models like Matlab. But what does that mean exactly, and what are the consequences for you as a user? Since "everything has a cost", who pays for the development of open-source libraries? And how can you participate to open source development yourself?</p>
 
 </div>
 </div>
@@ -13161,64 +13161,91 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Lecture notes of the master lecture <a href="https://orawww.uibk.ac.at/public/lfuonline_lv.details?sem_id_in=18S&amp;lvnr_id_in=707716">707716 - Scientific Programming</a>, given for the first time in the summer term of 2018 and regularly in the <strong>winter terms</strong> afterwards.</p>
-<p>If you're not here for the first time, jump to:</p>
+<p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Open-source-projects" data-toc-modified-id="Open-source-projects-32"><span class="toc-item-num">32&nbsp;&nbsp;</span>Open source projects</a></span><ul class="toc-item"><li><span><a href="#Definition" data-toc-modified-id="Definition-32.1"><span class="toc-item-num">32.1&nbsp;&nbsp;</span>Definition</a></span></li><li><span><a href="#Licenses" data-toc-modified-id="Licenses-32.2"><span class="toc-item-num">32.2&nbsp;&nbsp;</span>Licenses</a></span></li><li><span><a href="#Development-and-governance" data-toc-modified-id="Development-and-governance-32.3"><span class="toc-item-num">32.3&nbsp;&nbsp;</span>Development and governance</a></span></li><li><span><a href="#Consequences" data-toc-modified-id="Consequences-32.4"><span class="toc-item-num">32.4&nbsp;&nbsp;</span>Consequences</a></span></li><li><span><a href="#Participating" data-toc-modified-id="Participating-32.5"><span class="toc-item-num">32.5&nbsp;&nbsp;</span>Participating</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-32.6"><span class="toc-item-num">32.6&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Definition">Definition<a class="anchor-link" href="#Definition">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It is a common misconception to think that the primary purpose of open source software is to be free (free of charge, as in "free beer"). In fact, what makes a software <a href="https://en.wikipedia.org/wiki/Open-source_software">open source</a> is its <strong>license</strong>, which must grant users and peers the rights to study, change, and distribute the software to anyone and for any purpose.</p>
+<p>Famous examples of open source softwares are the Linux operating system, the Firefox web browser, the VLC media player, or the CPython language implementation. Open source software may be developed in a collaborative public manner, but it doesn't have to.</p>
+<p>Non open source software are often called "closed source". They have a restrictive license and often attempt to hide their code from users and developers. Note that free of charge software might be closed source (in which case they are called "<a href="https://en.wikipedia.org/wiki/Freeware">freeware</a>"): a good example of popular freeware is Adobe Acrobat.</p>
+<p>The concept of "open" and "closed" source has been applied to many other aspects of society, technology, knowledge or science (see e.g. the related concept of <a href="https://en.wikipedia.org/wiki/Open_science">open science</a>).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Licenses">Licenses<a class="anchor-link" href="#Licenses">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Open source licenses can be roughly classified in three categories: <a href="https://en.wikipedia.org/wiki/Copyleft">copyleft</a>, <a href="https://en.wikipedia.org/wiki/Permissive_software_licence">permissive</a>, or <a href="https://en.wikipedia.org/wiki/Public-domain_software">public domain</a>.</p>
+<p><strong>Copyleft</strong> licenses grant the right to freely distribute copies and modified versions of a work with the stipulation that the same rights be preserved in derivative works down the line. By using this license, authors want to make sure that their work (and all the derivations of their work) will remain free. Prominent examples of copyleft licenses are the <a href="https://en.wikipedia.org/wiki/GNU_General_Public_License">GNU General Public License</a> (used by the Linux kernel) or the 
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Share Alike</a> license.</p>
+<p><strong>Permissive</strong> licenses have less restrictions than copyleft licenses. Often, they warrant acknowledgement of the original authors (attribution), but they allow derivations of the work to be closed source. Supporters of permissive licenses argue that is is "more free" than copyleft licenses. Examples of permissive licenses are the <a href="https://en.wikipedia.org/wiki/BSD_licenses">BSD license family</a>, used for example by numpy. The majority of licenses in the python ecosystem are permissive, BSD-like licenses.</p>
+<p><strong>Public domain</strong> licenses are entirely free: they warrant absolutely no ownership such as copyright, trademark, or patent. A notable example of importnt software in the public domain is the secure hash algorithm <a href="https://en.wikipedia.org/wiki/SHA-3">SHA-3</a>.</p>
+<p>Note that providing code online (on GitHub or elsewhere) without license is not recommended. Even if you don't want to keep any rights on your code, you should add a statement making it clear that your code is in the public domain (and be careful not to violate any copyright in doing so!).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Development-and-governance">Development and governance<a class="anchor-link" href="#Development-and-governance">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <a href="https://en.wikipedia.org/wiki/Open-source_model">open source model</a> is a decentralized software-development model that encourages open collaboration. Very often, open source projects originate from a small group of developers and gather further developers as the software grows in recognition and acceptance. At the time of writing (21.01.2019), numpy had <a href="https://github.com/numpy/numpy/graphs/contributors">722 contributors</a>, xarray <a href="https://github.com/pydata/xarray/graphs/contributors">133</a>, OGGM <a href="https://github.com/OGGM/oggm/graphs/contributors">15</a>.</p>
+<p>The decentralized development model is made possible by platforms like <a href="https://github.com/">GitHub</a>, which help to organize the discussion and integration of code improvements by the community. In most of the cases, decisions are taken from one or two core maintainers (people with writing permission to the directory). When discussion is needed, a democratic decision process might take place.</p>
+<p>Such a development model is not without problems and risks, and the lack of clear governance is probably the major argument that opponents of the open source model put forward when criticizing it. In the next section we discuss some of the consequences of such a model.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Consequences">Consequences<a class="anchor-link" href="#Consequences">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Advantages:</p>
 <ul>
-<li><a href="#ctoc">the table of contents</a></li>
-<li><a href="#refs">external resources</a></li>
+<li>the most obvious advantage of open source projects is that they are available at no cost. This is particularly important for developing countries or small companies / individuals</li>
+<li>open source increases security: indeed, if many people can review the code the chances to find bugs are higher</li>
+<li>it isn't dependent on one entity or company: the development can continue even after a company disappears</li>
+<li>freedom of development: since there is no commercial constraint, the code can be developed for ideas, not clients</li>
+<li>engaging community: new developers are more likely to participate to an open source project (which per definition belongs to anyone) than to a company's product</li>
 </ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/00_messing_python.png"></p>
-<p><em>Adapted from <a href="https://xkcd.com/519/">xkcd</a>. The xkcd author Randall Munroe <a href="https://xkcd.com/353/">would probably agree</a> with my changes.</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Preface">Preface<a class="anchor-link" href="#Preface">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There are plenty of excellent online resources to learn python (see <a href="#refs">references</a> below). So why writing these lecture notes? Well, for one, because none of the tutorials is organized to fit <em>exactly</em> the 15 week semester of Austrian universities. Therefore, I had to make some choices regarding (i) what to teach and (ii) how to teach it. However, there is no need in reinventing the wheel and rewriting what much better teachers wrote before me: as you will see, I will rely heavily on external resources, all openly available. Following the open source philosophy, these lecture notes are also freely available.</p>
-<p>These notes are actualized on the go, as this course advances. I am trying to write them in such a way that they are understandable without actually <em>attending</em> the course, but I strongly recommend to participate to both the lectures and the homeworks.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Learning-outcomes-of-this-course">Learning outcomes of this course<a class="anchor-link" href="#Learning-outcomes-of-this-course">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This class aims at learning <strong>modern programming techniques</strong> for (geo-)scientists. After finishing the class, attendees should be able to program in a structured, extendable and reproducible manner. They should understand how numbers are handled by computers and be aware of numerical accuracy errors. Furthermore, they will get acquainted with various programming tools (IDEs, debugger, unit testing, object oriented programming, open development practices).</p>
-<p>The targeted audience for this lecture are (geo-)science <strong>students at the master level with previous experience in programming</strong>. No prior knowledge of python is required, but I'll assume that you are familiar with a similar language (Matlab, IDL, R...). This is <em>not</em> an introductory course, although we will shortly revisit programming basics in order to learn the python syntax.</p>
-<p>The course encompasses the following topics, which are developed by means of concrete examples in the Python programming language:</p>
+<p>Disadvantages (from a user perspective):</p>
 <ul>
-<li>Introduction to Linux</li>
-<li>Semantics: revisiting and formalizing the basic programming structures (loops, functions, conditional blocks...)</li>
-<li>General programming concepts, differences between compiled and interpreted languages</li>
-<li>Numerics: floating point numbers, N-dimensional arrays</li>
-<li>Software structure: packages, modules, functions, scripts</li>
-<li>Object oriented programming: fundamentals, usage, and basic design patterns</li>
-<li>Code testing</li>
-<li>Real world applications!</li>
+<li>bug fixes or new features can only be taken over by the community, and can take a long time (especially if they are special or hard to implement)</li>
+<li>the lack of clear long term direction of open source projects can lead to a monolithic, complex project structure</li>
+<li>the open source community sometimes enjoys freedom too much: this can lead to parallel developments of similar tools/features and unefficient resource management.</li>
 </ul>
+<p>The rise in popularity of open source projects like python and R, however, seem to indicate that the open source model is meant to become more frequent in the future.</p>
 
 </div>
 </div>
@@ -13226,161 +13253,21 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Frequently-Asked--Questions">Frequently Asked  Questions<a class="anchor-link" href="#Frequently-Asked--Questions">&#182;</a></h2>
+<h2 id="Participating">Participating<a class="anchor-link" href="#Participating">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="What-is-&quot;Scientific-Programming&quot;?">What is "Scientific Programming"?<a class="anchor-link" href="#What-is-&quot;Scientific-Programming&quot;?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Scientific programming targets to solve scientific problems with the help of computers</strong>.</p>
-<p>It is sometimes used as synonym for <a href="https://en.wikipedia.org/wiki/Computational_science">computational science</a>, but in my opinion these are not entirely the same. "Scientific programming" is not really a discipline, and therefore cannot be taught.</p>
-<p>What are we doing here then? Well, we are going to learn <strong>programming</strong> first, and then <strong>programming as a tool to do science</strong>. We are going to apply our new skills to scientific problems, but not only. Within the time given to us, we won't be able to learn <em>everything</em> about programming of course. My hope is that at the end of the lecture you'll have sufficient background and tools at your disposition to solve your own problems, and (this is the most important bit) that you'll know <em>where</em> to find solutions to the problems you encounter.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why-should-I-learn-programming?">Why should I learn programming?<a class="anchor-link" href="#Why-should-I-learn-programming?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As a scientist you are going to either <em>produce</em> or <em>analyze</em> data, most of the time you'll do both. For a long time, scientists have seen programming as a "tool", a menial task to accomplish in order to answer the questions they were asking. Nowadays programming has taken a prominent place in a scientist's work, for several reasons:</p>
+<p>You probably didn't know it, but there are many ways in which you can participate to the development of open source source software!</p>
 <ul>
-<li><strong>the amount of data we have to handle increases together with computational power and our capacity to store it</strong>. I would even argue that the bottleneck in model based scientific discovery isn't the computational effort anymore, but our capacity to comprehend and analyze these huge amounts of data.</li>
-<li><strong>the questions we are asking are getting more complex, and so are the tools we are using to answer them</strong>. The times when scientists could make discoveries with the help of a piece of paper and a pen are long gone, at least for most of us in the geosciences. We rely heavily on computer models, and these models are developed by us scientists, not only by programmers.</li>
-<li><strong>science faces a credibility crisis</strong>, and part of the mistrust towards scientists comes from the fact that their research happens behind closed doors, using closed source tools and based on protected data. Opening our computers and demonstrating that our code can be trusted is necessary to re-engage confidence in our results.</li>
-<li>on a more general note: a better understanding of the tools that govern our digital world is a strong asset for many aspects of our everyday life and citizenship.</li>
-</ul>
-<p>In simple words, we have to become better programmers to be faster and better at what we do: science.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why-Python?">Why Python?<a class="anchor-link" href="#Why-Python?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We will use the <a href="https://www.python.org/">Python programming language</a> in this course. In case you are wondering why this language and not any other like <code>&lt;name your favorite language here&gt;</code>, let me stop you right away: this course is not about "learning Python", it is about learning the general concepts of programming: algorithmic, numerics, program structure, object oriented programming, testing, etc. Python is just the tool I chose to use for this purpose.</p>
-<p>We could indeed have taken any other language, but there are several advantages in using Python. A quick web search will give you <a href="https://www.google.co.uk/search?dcr=0&amp;ei=Wo2OWtKHNY7fwAKv1KbIDQ&amp;q=Why+should+I+learn+python">millions of reasons</a>, but let me pick some of my favorites here:</p>
-<ul>
-<li><strong>Python is a general purpose programming language and, as such, well suited to learn general programming concepts</strong>. It is therefore better suited than, for example, <a href="https://www.r-project.org/">R</a> which was developed for statistics and has certain particularities regarding object oriented programming in particular.</li>
-<li><strong>Python can be used for many purposes</strong>, from data preprocessing to numerical modeling and plotting. Unless you have a very compelling reason to change, you are likely to be able to use Python for all programming tasks you'll have in the near future.</li>
-<li><strong>Python is one of the <a href="https://stackoverflow.blog/2017/09/06/incredible-growth-python/">fastest growing languages for data science</a></strong>. There is a very active community developing new and exiting packages every day, and joining this community is a good bet on the future.</li>
-<li><strong>Python is free and open-source</strong>. No license fee, the code is available for everyone to see.</li>
-</ul>
-<p>There are many other reasons to use Python (and some arguments <em>against</em> Python as well of course), but I don't think it's relevant to list them here. My argument is following: for a good programmer, switching language is not a very big deal. It's not easy of course, but it's possible - becoming a good programmer is the hard bit, and is a never ending process.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Course-contents">Course contents<a class="anchor-link" href="#Course-contents">&#182;</a></h2><p><a id='ctoc'></a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><strong>Week 01: Introduction to Linux, installing Python</strong><ul>
-<li><a href="01-Linux.html">01 - A very short introduction to Linux</a></li>
-<li><a href="02-Installation.html">02 - Installing Python</a></li>
-<li><a href="03-Getting-Started.html">03 - Getting started with Python</a></li>
-<li><a href="04-Assignment-01.html">04 - Assignment #01: getting familiar with Linux and Python</a></li>
-<li><a href="http://fabienmaussion.info/scipro_w01/">Slides for week 01</a></li>
-</ul>
-</li>
-<li><strong>Week 02: The Python language and the standard library</strong><ul>
-<li><a href="05-Language-Basics.html">05 - Language Basics</a></li>
-<li><a href="06-Assignment-02.html">06 - Assignment #02: using the standard library</a></li>
-</ul>
-</li>
-<li><strong>Week 03: Variables scopes, modules, good practices in programming</strong><ul>
-<li><a href="07-Import-Scopes.html">07 - Modules, import mechanism, namespaces, scope(s)</a></li>
-<li><a href="08-Tips-and-Tricks.html">08 - Tips and tricks</a></li>
-<li><a href="09-Good-practices.html">09 - Good practices, programming style and conventions</a></li>
-<li><a href="10-Assignment-03.html">10 - Assignment #03: deeper in the python library</a></li>
-</ul>
-</li>
-<li><strong>Week 04: Floating point arithmetics</strong><ul>
-<li><a href="11-Numbers.html">11 - Number representation in computers</a></li>
-<li><a href="12-Assignment-04.html">12 - Assignment #04: rounding errors</a></li>
-</ul>
-</li>
-<li><strong>Week 05: Numpy</strong><ul>
-<li><a href="13-Numpy-part-I.html">13 - Numpy, part I: why numpy?</a></li>
-<li><a href="14-Assignment-05.html">14 - Assignment #05: C, python and numpy</a></li>
-</ul>
-</li>
-<li><strong>Week 06: Scientific Python</strong><ul>
-<li><a href="15-Numpy-part-II.html">15 - Numpy, part II: indexing, ufuncs, broadcasting</a></li>
-<li><a href="16-Scientific-Python.html">16 - The scientific python stack</a></li>
-<li><a href="17-Assignment-06.html">17 - Assignment #06: small numpy exercises</a></li>
-</ul>
-</li>
-<li><strong>Week 07: Exceptions and testing</strong><ul>
-<li><a href="18-Exceptions.html">18 - Errors, Exceptions and Warnings</a></li>
-<li><a href="19-Testing.html">19 - Testing your code</a></li>
-<li><a href="20-Assignment-07.html">20 - Assignment 07: exceptions and testing</a></li>
-</ul>
-</li>
-<li><strong>Week 08: Python Packages and Project 1</strong><ul>
-<li><a href="21-Package-structure.html">21 - Structure of a python package</a></li>
-<li><a href="22-Assignment-08.html">22 - Assignment 08: ACINN meteorological data</a></li>
-<li><a href="23-Project1-ClimVis.html">23 - Project #1: the ClimVis package</a></li>
-</ul>
-</li>
-<li><strong>Week 09: Revisions, debugger, take it easy</strong><ul>
-<li><a href="http://fabienmaussion.info/scipro_revisions">Slides for week 09</a></li>
-</ul>
-</li>
-<li><strong>Week 10: Object Oriented Programming (Part I)</strong><ul>
-<li><a href="24-OOP-Part-1.html">24 - Object Oriented Programming: introduction</a></li>
-<li><a href="25-Assignment-09.html">25 - Assignment 09: a file writer class</a></li>
-</ul>
-</li>
-<li><strong>Week 11: Object Oriented Programming (Part II)</strong><ul>
-<li><a href="26-OOP-Part-2.html">26 - Object Oriented Programming: inheritance</a></li>
-<li><a href="27-Assignment-10.html">27 - Assignment 10: a Markdown writer</a></li>
-<li><a href="28-Pelita.html">28 - Pelita final projects: learning by gaming</a></li>
-</ul>
-</li>
-<li><strong>Week 12: Object Oriented Programming (Part III)</strong><ul>
-<li><a href="29-OOP-Part-3.html">29 - Object Oriented Programming: why?</a></li>
-</ul>
-</li>
-<li><strong>Week 13: The scientific data analysis workflow</strong><ul>
-<li><a href="30-DataWorkflow.html">30 - Scientific data analysis workflow</a></li>
-<li><a href="31-Documentation.html">31 - Documenting your code</a> <em>(should be moved to week 09)</em></li>
-<li><a href="http://fabienmaussion.info/scipro_scistack">Slides for week 13</a></li>
-</ul>
-</li>
-<li><strong>Week 14: Open Source</strong><ul>
-<li><a href="32-Open-source.html">32 - Open source projects</a></li>
-</ul>
-</li>
+<li><strong>reporting bugs</strong> is probably the first encounter of many people with the open source development model. And it is an important one! Bugs that are reported can be corrected and are a good indicator of the use of a software library. On <a href="https://github.com/">GitHub</a>, reporting a bug is as easy as clicking on the "New issue" button and explaining your problem. </li>
+<li><strong>helping other to solve problems</strong>: on platforms like <a href="https://github.com/">GitHub</a> and <a href="https://stackoverflow.com/">stackoverflow</a>, helping others is a great way to contribute to the community.</li>
+<li><strong>write documentation or tutorials</strong>: writing a good documentation is harder than writing good code! Most of the python package documentation is hosted on <a href="https://readthedocs.org/">ReadTheDocs</a>.</li>
+<li><strong>participate to discussions about code improvements</strong>: most software packages have a forum or mailing list where they discuss current issues. It is very instructive to follow these discussions: this is how I've learned most of my programming skills!</li>
+<li><strong>propose a bugfix or code improvement</strong>: this is the real thing! Having your code included in a large open source project is much easier than you think! First you'll need to learn a little bit about <a href="https://git-scm.com/">git</a> and <a href="https://github.com/">GitHub</a>, and then be prepared to learned a LOT of new things from your first code review.  </li>
+<li><strong>donate to open source foundation(s)</strong>: some tools (like <a href="https://opencollective.com/spyder/donate">Spyder</a>) rely on crowdsourcing platforms to sustain their development. </li>
 </ul>
 
 </div>
@@ -13389,7 +13276,14 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><font color="red">To access the previous course content (summer semester 2018), visit:</font> <a href="https://fabienmaussion.info/scipro_ss2018">https://fabienmaussion.info/scipro_ss2018</a></p>
+<h2 id="What's-next?">What's next?<a class="anchor-link" href="#What's-next?">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Now that you are a proficient python programmer, join the open source movement!</strong></p>
 
 </div>
 </div>
@@ -13397,184 +13291,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-to-use-these-notes">How to use these notes<a class="anchor-link" href="#How-to-use-these-notes">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>These notes are written as a companion to the lectures. During class I will go through the major concepts (using slides or the good old blackboard), these notes are here to help you learn at home.</p>
-<p>The notes are a mix of examples and small exercises. The exercises can happen in between the examples and are marked with a question mark logo. If you want to download the notebooks I used to write the notes, you can download them on the course's <a href="https://github.com/fmaussion/scientific_programming">repository</a>. This repository gets updated frequently, so you might have to re-download the files from time to time.</p>
-<p>When you will be going through the examples of these notes, some sentences are marked in <strong>bold</strong>: this underlines their importance for the course. When <strong>single words</strong> are bold  this symbolizes new concepts or new definitions: they need to be understood (and <em>googled</em> if needed).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Grading">Grading<a class="anchor-link" href="#Grading">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The lecture will be graded based on three assessments:</p>
-<ul>
-<li>a mid-term group project (the <code>climvis</code> package): 30%</li>
-<li>an end-term group project (the <code>pelita</code> game): 10%</li>
-<li>an oral examination at the end of the semester: 60%</li>
-</ul>
-<p>A positive evaluation of each of these elements is mandatory to pass the class!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Each week there will be an <strong>assignment</strong> (unless specified otherwise, e.g. during the group projects). These assignments can be worked through alone or in groups. Each week, I will ask <strong>one randomly selected group</strong> to present their results to the rest of the class.</p>
-<p>The class grants you 4 ECTS if successfully passed: <a href="https://en.wikipedia.org/wiki/European_Credit_Transfer_and_Accumulation_System">in theory</a>, this represents about 6 hours work per week (not including holidays). For this course, it means that you will spend at least twice as much time doing homework than sitting in class.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a id='refs'></a></p>
-<h2 id="External-resources">External resources<a class="anchor-link" href="#External-resources">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Resources used (and linked) in these lecture notes:</p>
-<p><strong>Linux and bash scripting:</strong></p>
-<ul>
-<li><a href="https://ryanstutorials.net/">Ryan's Tutorials</a> for the linux command line and bash scripting are entertaining and well designed.</li>
-</ul>
-<p><strong>Python tutorials:</strong></p>
-<ul>
-<li>the <a href="https://docs.python.org/3/tutorial/index.html">official tutorial</a>, always a good place to start.</li>
-<li>the <a href="https://www.scipy-lectures.org/index.html">scipy lecture notes</a>, a good overview of the scientific python stack for scientists with previous programming experience.</li>
-</ul>
-<p><strong>Python reference:</strong></p>
-<ul>
-<li>the <a href="https://docs.python.org">python documentation</a> is your best reference for any question related to the language and the standard library.</li>
-</ul>
-<p><strong>Testing</strong></p>
-<ul>
-<li>Katy Huff's <a href="https://katyhuff.github.io/python-testing/">scientific python testing tutorial</a>: a one and a half hour introduction to testing practices, from the basics to continuous integration</li>
-</ul>
-<p><strong>Floating point precision errors</strong></p>
-<ul>
-<li>Python's <a href="https://docs.python.org/3/tutorial/floatingpoint.html">Floating Point Arithmetic</a> article is a good read but a bit tough for beginners</li>
-<li><a href="http://floating-point-gui.de/">What Every Programmer Should Know About Floating-Point Arithmetic</a> is a more gentle introduction, but you still might want to use a search engine for more information.</li>
-</ul>
-<p><strong>Numpy</strong></p>
-<ul>
-<li><a href="https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/">Why python is slow</a> by Jake Vanderplas</li>
-<li><a href="http://www.labri.fr/perso/nrougier/from-python-to-numpy/">From Python to Numpy</a> by Nicolas P. Rougier: an open-access book on numpy vectorization techniques (rather advanced).</li>
-<li><a href="https://docs.scipy.org/doc/numpy/reference/index.html">The numpy reference</a>: the official documentation is always the best place to obtain first hand information.</li>
-</ul>
-<p><strong>Scientific Python</strong></p>
-<ul>
-<li><a href="https://jakevdp.github.io/PythonDataScienceHandbook/">Python Data Science Handbook</a> by Jake Vanderplas: an open-access  textbook on using Python for Scientists</li>
-</ul>
-<p><strong>Python namespaces and scopes</strong></p>
-<ul>
-<li><a href="http://sebastianraschka.com/Articles/2014_python_scope_and_namespaces.html#scope-resolution-for-variable-names-via-the-legb-rule">blog post by Sebastian Raschka</a>: A Beginner's Guide to Python's Namespaces, Scope Resolution, and the LEGB Rule</li>
-</ul>
-<p><strong>Object Oriented Programming</strong>
-The web is full of blog posts and basic tutorials about OOP in python. Unfortunately, most of them make a poor job at explaining <em>why</em> OOP can be useful and when not. I will try to find better resources, but for now I recommend:</p>
-<ul>
-<li><a href="https://realpython.com/python3-object-oriented-programming/">RealPython's beginner tutorial</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Wikipedia page about OOP</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming">Wikipedia page about inheritance</a></li>
-</ul>
-<p><strong>Documentation</strong></p>
-<ul>
-<li><a href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/">A beginner’s guide to writing documentation</a></li>
-</ul>
-<p><em>(this list will be updated when the notes get written further)</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Getting-help">Getting help<a class="anchor-link" href="#Getting-help">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Seeking for information online is necessary and helpful at <em>any</em> level of programming skills. I would even argue that good programmers are the ones who know how to efficiently find information online.</p>
-<p>When encountering an issue, the first question you should ask yourself is: <em>"am I the only person likely to be affected by this problem?"</em>. <strong>The answer will be no</strong> in 99% of the cases. For these, here is a list of recommendations:</p>
-<ul>
-<li><a href="https://stackoverflow.com/">Stack Overflow</a> is THE place for programming questions. Thanks to community based moderation rules, the good questions are more visible than bad ones, and good answers are rewarded. <a href="https://stackoverflow.com/tour">Take a tour</a> of the site's principles now, and look for similar questions there before asking your own question.</li>
-<li>Learn to ask the right question to your search engine. Naming this the correct way (semantics) is one of of the objectives of this lecture, and I hope that in the end you will not only write better code, you will also <em>speak</em> the programming language a little better. </li>
-</ul>
-<p>If every other thing fails (i.e the remaining 1% of the cases), then:</p>
-<ul>
-<li>Ask a question on Stack Overflow. Before doing so, read what a <a href="https://stackoverflow.com/help/mcve">Minimal, Complete, and Verifiable Example</a> is and try to stick to these recommendations.</li>
-<li>If you think you discovered a bug, than report it to the library directly. Almost all the scientific python packages are hosted on GitHub: the "issues" tab is where to report bugs. Read the excellent <a href="http://matthewrocklin.com/blog/work/2018/02/28/minimal-bug-reports">Craft Minimal Bug Reports</a> article from Matt Rocklin before doing so.</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Authors">Authors<a class="anchor-link" href="#Authors">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><a href="http://fabienmaussion.info/">Fabien Maussion</a> wrote these notes (unless specified otherwise, e.g. for some tutorials)</li>
-<li><a href="https://github.com/Matze77">Matthias Göbel</a> and <a href="https://github.com/lilianschuster">Lilian Schuster</a> (student assistants at the time of writing) reviewed and proof read them</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="License">License<a class="anchor-link" href="#License">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
-  <img align="left" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.eu.svg"/>
-</a></p>
-<p><br>
-<br></p>
-<p>These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
-<p>Feel free to use / adapt them, but don't sell them, and share them under the same licence.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="http://acinn.uibk.ac.at/" target="_blank">
-  <img align="left" src="../img/logo_acinn_small.jpg"/>
-</a></p>
+<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>.</p>
 
 </div>
 </div>
