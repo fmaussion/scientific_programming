@@ -15,11 +15,8 @@ HOWTO: https://github.com/fmaussion/scientific_programming/blob/master/HOWTO.md
 License
 -------
 
-.. image:: http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.eu.svg
-        :target: https://creativecommons.org/licenses/by-nc-sa/4.0/
+.. image:: https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg
+        :target: https://creativecommons.org/licenses/by/4.0/
         :alt: Creative Commons License
-        
-These lecture notes and exercises are licensed under a `Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License <https://creativecommons.org/licenses/by-nc-sa/4.0/>`_.
 
-Feel free to use / adapt them, but don't sell them, and share them under the same licence.
-
+These lecture notes and exercises are licensed under a `Creative Commons Attribution 4.0 International License <https://creativecommons.org/licenses/by/4.0/>`_.

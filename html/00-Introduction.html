@@ -13097,7 +13097,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -13174,15 +13174,6 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/00_messing_python.png"></p>
-<p><em>Adapted from <a href="https://xkcd.com/519/">xkcd</a>. The xkcd author Randall Munroe <a href="https://xkcd.com/353/">would probably agree</a> with my changes.</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Preface">Preface<a class="anchor-link" href="#Preface">&#182;</a></h2>
 </div>
 </div>
@@ -13191,7 +13182,7 @@ $( document ).ready(function(){
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>There are plenty of excellent online resources to learn python (see <a href="#refs">references</a> below). So why writing these lecture notes? Well, for one, because none of the tutorials is organized to fit <em>exactly</em> the 15 week semester of Austrian universities. Therefore, I had to make some choices regarding (i) what to teach and (ii) how to teach it. However, there is no need in reinventing the wheel and rewriting what much better teachers wrote before me: as you will see, I will rely heavily on external resources, all openly available. Following the open source philosophy, these lecture notes are also freely available.</p>
-<p>These notes are actualized on the go, as this course advances. I am trying to write them in such a way that they are understandable without actually <em>attending</em> the course, but I strongly recommend to participate to both the lectures and the homeworks.</p>
+<p>These notes are actualized on the go, as this course advances. I am trying to write them in such a way that they are understandable without actually <em>attending</em> the course, but I strongly recommend to participate to both the lectures and the practicals. <strong>Let me know if you encounter any typo / mistake / broken link / incomprehensible or difficult passage</strong>.</p>
 
 </div>
 </div>
@@ -13389,7 +13380,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><font color="red">To access the previous course content (summer semester 2018), visit:</font> <a href="https://fabienmaussion.info/scipro_ss2018">https://fabienmaussion.info/scipro_ss2018</a></p>
+<p><font color="red">To access the previous course content (winter semester 2018), visit:</font> <a href="https://fabienmaussion.info/scipro_ws2018">https://fabienmaussion.info/scipro_ws2018</a></p>
 
 </div>
 </div>
@@ -13424,10 +13415,11 @@ $( document ).ready(function(){
 <p>The lecture will be graded based on three assessments:</p>
 <ul>
 <li>a mid-term group project (the <code>climvis</code> package): 30%</li>
-<li>an end-term group project (the <code>pelita</code> game): 10%</li>
-<li>an oral examination at the end of the semester: 60%</li>
+<li>an end-term group project (the <code>pelita</code> game): mandatory</li>
+<li>an oral examination at the end of the semester: 70%</li>
 </ul>
 <p>A positive evaluation of each of these elements is mandatory to pass the class!</p>
+<p>There will be bonus points for pointing me to typos / mistakes / broken links / incomprehensible or difficult passages in these lecture notes.</p>
 
 </div>
 </div>
@@ -13436,7 +13428,7 @@ $( document ).ready(function(){
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Each week there will be an <strong>assignment</strong> (unless specified otherwise, e.g. during the group projects). These assignments can be worked through alone or in groups. Each week, I will ask <strong>one randomly selected group</strong> to present their results to the rest of the class.</p>
-<p>The class grants you 4 ECTS if successfully passed: <a href="https://en.wikipedia.org/wiki/European_Credit_Transfer_and_Accumulation_System">in theory</a>, this represents about 6 hours work per week (not including holidays). For this course, it means that you will spend at least twice as much time doing homework than sitting in class.</p>
+<p>The class grants you 5 ECTS if successfully passed: <a href="https://en.wikipedia.org/wiki/European_Credit_Transfer_and_Accumulation_System">in theory</a>, this represents 8 to 10 hours work per week (not including holidays). For this course, it means that you will spend about twice as much time doing homework than sitting in class.</p>
 
 </div>
 </div>
@@ -13456,6 +13448,10 @@ $( document ).ready(function(){
 <p><strong>Linux and bash scripting:</strong></p>
 <ul>
 <li><a href="https://ryanstutorials.net/">Ryan's Tutorials</a> for the linux command line and bash scripting are entertaining and well designed.</li>
+</ul>
+<p><strong>Preparation MOOCs:</strong></p>
+<ul>
+<li><a href="https://www.edx.org/course/programming-for-everybody-getting-started-with-python">Programming for Everybody (Getting Started with Python)</a> from EdX: if you have no programming experience, this is recommended <em>before</em> you take this lecture, this will guide you through the first programming steps. </li>
 </ul>
 <p><strong>Python tutorials:</strong></p>
 <ul>
@@ -13558,13 +13554,12 @@ The web is full of blog posts and basic tutorials about OOP in python. Unfortuna
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
-  <img align="left" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.eu.svg"/>
+<p><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+  <img align="left" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg"/>
 </a></p>
 <p><br>
 <br></p>
-<p>These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
-<p>Feel free to use / adapt them, but don't sell them, and share them under the same licence.</p>
+<p>These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0) </a>.</p>
 
 </div>
 </div>
