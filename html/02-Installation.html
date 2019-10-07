@@ -13287,6 +13287,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 <pre><code># added for the python course:
 export PATH="/scratch/c707/c7071047/miniconda3/bin:$PATH"</code></pre>
+<p><font color="red"><b>CAREFUL! This will add a folder to the PATH variable, which is a fundamental element in linux: make sure that you add these two lines (and exactly these lines: respect the upper- and lower-case as well!) to your .bashrc</b></font></p>
 <p>What did we just do? We added a folder to the <code>PATH</code> (remember what this is?) and added it at the <em>beginning</em> of it. This is important because linux is going to look for programs in order: if a <code>python</code> executable is found in the first folder, no need to look for another one (i.e. ignore the default linux program).</p>
 <p><strong>Note:</strong>  for this change to take effect, close your terminal and open a new one! <code>~/.bashrc</code> is executed only once, at the opening of a new terminal.</p>
 
