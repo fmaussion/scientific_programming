@@ -13097,7 +13097,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -13162,7 +13162,7 @@ $( document ).ready(function(){
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Modules,-import-mechanism,-namespaces,-scope(s)" data-toc-modified-id="Modules,-import-mechanism,-namespaces,-scope(s)-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Modules, import mechanism, namespaces, scope(s)</a></span><ul class="toc-item"><li><span><a href="#Variables-scopes" data-toc-modified-id="Variables-scopes-7.1"><span class="toc-item-num">7.1&nbsp;&nbsp;</span>Variables scopes</a></span></li><li><span><a href="#Modules" data-toc-modified-id="Modules-7.2"><span class="toc-item-num">7.2&nbsp;&nbsp;</span>Modules</a></span></li><li><span><a href="#Namespaces" data-toc-modified-id="Namespaces-7.3"><span class="toc-item-num">7.3&nbsp;&nbsp;</span>Namespaces</a></span></li><li><span><a href="#sys.path" data-toc-modified-id="sys.path-7.4"><span class="toc-item-num">7.4&nbsp;&nbsp;</span>sys.path</a></span></li><li><span><a href="#Reimporting-modules" data-toc-modified-id="Reimporting-modules-7.5"><span class="toc-item-num">7.5&nbsp;&nbsp;</span>Reimporting modules</a></span></li><li><span><a href="#Executing-modules-as-scripts" data-toc-modified-id="Executing-modules-as-scripts-7.6"><span class="toc-item-num">7.6&nbsp;&nbsp;</span>Executing modules as scripts</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-7.7"><span class="toc-item-num">7.7&nbsp;&nbsp;</span>Take home points</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-7.8"><span class="toc-item-num">7.8&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Modules,-import-mechanism,-namespaces,-scope(s)" data-toc-modified-id="Modules,-import-mechanism,-namespaces,-scope(s)-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Modules, import mechanism, namespaces, scope(s)</a></span><ul class="toc-item"><li><span><a href="#Variables-scopes" data-toc-modified-id="Variables-scopes-7.1"><span class="toc-item-num">7.1&nbsp;&nbsp;</span>Variables scopes</a></span></li><li><span><a href="#Modules" data-toc-modified-id="Modules-7.2"><span class="toc-item-num">7.2&nbsp;&nbsp;</span>Modules</a></span></li><li><span><a href="#Namespaces" data-toc-modified-id="Namespaces-7.3"><span class="toc-item-num">7.3&nbsp;&nbsp;</span>Namespaces</a></span></li><li><span><a href="#sys.path" data-toc-modified-id="sys.path-7.4"><span class="toc-item-num">7.4&nbsp;&nbsp;</span>sys.path</a></span></li><li><span><a href="#Reimporting-modules" data-toc-modified-id="Reimporting-modules-7.5"><span class="toc-item-num">7.5&nbsp;&nbsp;</span>Reimporting modules</a></span></li><li><span><a href="#Executing-modules-as-scripts" data-toc-modified-id="Executing-modules-as-scripts-7.6"><span class="toc-item-num">7.6&nbsp;&nbsp;</span>Executing modules as scripts</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-7.7"><span class="toc-item-num">7.7&nbsp;&nbsp;</span>Take home points</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-7.8"><span class="toc-item-num">7.8&nbsp;&nbsp;</span>What's next?</a></span></li><li><span><a href="#License" data-toc-modified-id="License-7.9"><span class="toc-item-num">7.9&nbsp;&nbsp;</span>License</a></span></li></ul></li></ul></div>
 </div>
 </div>
 </div>
@@ -13392,7 +13392,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: do you think there is a way to really overwrite the value of a global variable from a local scope? If yes, can you find it?</p>
+<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: do you think there is a way to really overwrite the value of a global variable from a local scope? If yes, can you find it and try it by yourself?</p>
 
 </div>
 </div>
@@ -13408,8 +13408,9 @@ $( document ).ready(function(){
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Python <strong>modules</strong> are used to store a collection of functions and variables that can be imported into other modules or into the main module (the collection of variables that you have access to in a script executed at the top level or in calculator mode).</p>
-<p>A module is a file containing Python definitions and statements. The file name is the module name with the suffix .py appended. Within a module, the module’s name (as a string) is available as the value of the global variable <code>__name__</code>. For instance, use your favorite text editor to create a file called <code>greetings.py</code> in the current directory with the following contents:</p>
-<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;A module to say hi in several langages.&quot;&quot;&quot;</span>
+<p>A module is a file containing Python definitions and statements. The file name is the module name with the suffix <code>.py</code> appended. For instance, use your favorite text editor to create a file called <code>greetings.py</code> in the current directory with the following content:</p>
+<p><code>greetings.py:</code></p>
+<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;A module to say hi! in several langages.&quot;&quot;&quot;</span>
 
 <span class="n">base</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;en&#39;</span><span class="p">:</span><span class="s1">&#39;Hi {}!&#39;</span><span class="p">,</span> 
@@ -13691,7 +13692,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Like our <code>greetings</code> module, the <code>math</code> module contains functions (like <code>math.radians</code>) as well as variables (<code>math.nan</code>). Some of the variables have a prefix of two underscores <code>__</code>. We'll get back to them soon.</p>
+<p>Like our <code>greetings</code> module, the <code>math</code> module contains functions (like <code>math.radians</code>) as well as variables (<code>math.nan</code>). For Python there is no fundamental difference between variables and functions (they are simply all attributes of the <code>math</code> module and therefore listed by <code>dir</code>). Some of the module attributes have a prefix of two underscores <code>__</code>. We'll get back to them soon.</p>
 
 </div>
 </div>
@@ -13883,7 +13884,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>But how does python know where to look for modules when you type <code>import mymodule</code>? Well, it relies on a mechanism very similar to linux's <code>PATH</code> environment variable. Remember this one? Within python, you can ask in which directories the interpreter will look for modules with <a href="https://docs.python.org/3/library/sys.html#sys.path">sys.path</a>:</p>
+<p>But how does python know where to look for modules when you type <code>import mymodule</code> in the interpreter? Well, it relies on a mechanism very similar to linux's <code>PATH</code> environment variable. Remember this one? Within python, the directories where the interpreter will look for modules to import are listed in <a href="https://docs.python.org/3/library/sys.html#sys.path">sys.path</a>:</p>
 
 </div>
 </div>
@@ -13911,7 +13912,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Similar to the linux <code>PATH</code> mechanism, python will look into each of these directories <em>in order</em>. The first directory is always the current working directory, the rest of the list may vary depending on your environment. When a file called <code>mymodule.py</code> is found, it is imported once (and only once) and added to the <code>sys.modules</code> variable, effectively telling python that the module has already been imported. <strong>This means that if you change the file and import it again, nothing will change</strong>. Fortunately, there are ways to avoid this behavior (see below).</p>
+<p>Similar to the linux <code>PATH</code> mechanism, python will look into each of these directories <em>in order</em>. The first directory is always the current working directory (an empty string), the rest of the list may vary depending on your environment. When a file called <code>mymodule.py</code> is found, it is imported once (and only once) and added to the <code>sys.modules</code> variable, effectively telling python that the module has already been imported. <strong>This means that if you change the file and import it again, nothing will change</strong>. Fortunately, there are ways to avoid this behavior (see below).</p>
 
 </div>
 </div>
@@ -13919,8 +13920,8 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As you can see, there are many folders related to <code>miniconda</code>, the tool we used to install python. This makes sense, because we want python to look for modules related to <em>our</em> installation of python. In particular, the <code>site-packages</code> folder is of interest to us. If you look into this folder (remember how?) you'll find the many packages we already installed together last week.</p>
-<p>You can edit <code>sys.path</code> at your wish and add new folders to it, exactly as you would with the <code>PATH</code> environment variable in linux. In practice, however, it is recommended to use standard folders to install your packages instead of messing around with <code>sys.path</code>.</p>
+<p>As you can see, there are many folders related to <code>miniconda</code>, the tool we used to install python. This makes sense, because we want python to look for modules related to <em>our</em> installation of python (not the one used by our operating system). In particular, the <code>site-packages</code> folder is of interest to us. If you look into this folder using the linux command line or ipython's magic commands (remember how?) you'll find the many packages we already installed together last week.</p>
+<p>You can edit <code>sys.path</code> at your wish and add new folders to it, exactly as you would with the <code>PATH</code> environment variable in linux. In practice, however, it is recommended to use standard folders to install your packages instead of messing around with <code>sys.path</code> (I personally never had to change <code>sys.path</code>).</p>
 
 </div>
 </div>
@@ -13936,7 +13937,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Because of this "feature", it is important to find meaningful (and unique) names for your own modules (don't forget to delete the fake <code>matplotlib</code> module!).</p>
+<p>Because of this "feature", it is important to find meaningful (and unique) names for your own modules (don't forget to delete the fake <code>matplotlib</code> module after trying that out!).</p>
 
 </div>
 </div>
@@ -13959,8 +13960,9 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Of course, there is a lot more behind an <code>import</code> statement than the short summary I made above (see the <a href="https://docs.python.org/3/reference/simple_stmts.html#import">documentation</a> for a more comprehensive overview). What you should remember however is that an import statement is not computationally cheap: it has to look for a file, (maybe) compile it to bytecode, add it to a registry... Actually, for all what it does, it is very fast already! But since <code>import</code> statements are used all the time in Python, it is a good idea to make them cheap.</p>
-<p>However, in interactive development, it might be useful to make changes to a module and having them available at the command line without having to restart a fresh Python interpreter. There are two mechanisms available to you:</p>
+<p>Of course, there is a lot more behind an <code>import</code> statement than this short summary (see the <a href="https://docs.python.org/3/reference/simple_stmts.html#import">documentation</a> for a more comprehensive overview). What you should remember however is that an import statement is not computationally cheap: it has to look for a file, (maybe) compile it to bytecode, add it to a registry... Actually, for all what it does, it is very fast already!</p>
+<p>Since <code>import</code> statements are used all the time in Python, it is a good idea to optimize them: therefore, Python will not re-import a module that is imported already.</p>
+<p>Most of the time this is not a problem, but sometimes (mostly in interactive development) it might be useful to make changes to a module and having them available at the command line without having to restart a fresh Python interpreter each time. To do this, there are two mechanisms available to you:</p>
 
 </div>
 </div>
@@ -14229,7 +14231,7 @@ $( document ).ready(function(){
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>variables are defined in a <strong>scope</strong>, and we learned about two scopes: <strong>local</strong> and <strong>global</strong>. There are precise rules as to how each scope can interact with the other.</li>
+<li>variables are defined in a <strong>scope</strong>, and we learned about two scopes: <strong>local</strong> and <strong>global</strong>. There are precise rules as to how each scope can interact with the other. As a general rule: global variables are available in nested scopes and cannot be overwritten (or can they?), and local variables are not available in the global scope.</li>
 <li>the import mechanism is useful to avoid <strong>namespace pollution</strong>. Modules come with their own namespace, and it is recommended to keep each module's namespace clean (i.e. no <code>from XYZ import *</code>)</li>
 <li>python borrowed the <code>PATH</code> mechanism from linux and uses a similar logic to look for modules and packages. Installing a new module is therefore super easy: just put a <code>mymodule.py</code> at the right place. (and don't mess with the existing modules!)</li>
 <li>the <code>%autoreload</code> command from ipython allows to dynamically change a module while using it at the command line</li>
@@ -14250,6 +14252,23 @@ $( document ).ready(function(){
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="08-Tips-and-Tricks.html">jump to the next chapter</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="License">License<a class="anchor-link" href="#License">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+  <img align="left" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg"/>
+</a></p>
 
 </div>
 </div>

@@ -13097,7 +13097,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -13153,7 +13153,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Python is a very versatile programming language, and it has a very flexible syntax. Therefore, it is also very easy to write <em>ugly code</em> in python. This chapter reviews a number of guidelines and conventions widely accepted by the community.</p>
+<p>Python is a very versatile programming language, and it has a very flexible syntax. Therefore, it is also very easy to write <em>ugly code</em> in python. This chapter reviews a number of guidelines and conventions widely accepted by the community. At this stage of the lecture we won't go in depth for each of these points, but try to keep them in mind while writing your assignments and also while checking my suggested solution to the assignments.</p>
 
 </div>
 </div>
@@ -13162,7 +13162,7 @@ $( document ).ready(function(){
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Good-practices,-programming-style-and-conventions" data-toc-modified-id="Good-practices,-programming-style-and-conventions-9"><span class="toc-item-num">9&nbsp;&nbsp;</span>Good practices, programming style and conventions</a></span><ul class="toc-item"><li><span><a href="#Use-PEP-8" data-toc-modified-id="Use-PEP-8-9.1"><span class="toc-item-num">9.1&nbsp;&nbsp;</span>Use PEP 8</a></span></li><li><span><a href="#Give-meaningful-names-to-variables-and-functions" data-toc-modified-id="Give-meaningful-names-to-variables-and-functions-9.2"><span class="toc-item-num">9.2&nbsp;&nbsp;</span>Give meaningful names to variables and functions</a></span></li><li><span><a href="#Prefer-writing-many-small-functions-instead-of-monolithic-code-blocks" data-toc-modified-id="Prefer-writing-many-small-functions-instead-of-monolithic-code-blocks-9.3"><span class="toc-item-num">9.3&nbsp;&nbsp;</span>Prefer writing many small functions instead of monolithic code blocks</a></span></li><li><span><a href="#Document-your-code" data-toc-modified-id="Document-your-code-9.4"><span class="toc-item-num">9.4&nbsp;&nbsp;</span>Document your code</a></span></li><li><span><a href="#Refactor-your-code" data-toc-modified-id="Refactor-your-code-9.5"><span class="toc-item-num">9.5&nbsp;&nbsp;</span>Refactor your code</a></span></li><li><span><a href="#The-Zen-of-Python" data-toc-modified-id="The-Zen-of-Python-9.6"><span class="toc-item-num">9.6&nbsp;&nbsp;</span>The Zen of Python</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-9.7"><span class="toc-item-num">9.7&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Good-practices,-programming-style-and-conventions" data-toc-modified-id="Good-practices,-programming-style-and-conventions-9"><span class="toc-item-num">9&nbsp;&nbsp;</span>Good practices, programming style and conventions</a></span><ul class="toc-item"><li><span><a href="#Use-PEP-8" data-toc-modified-id="Use-PEP-8-9.1"><span class="toc-item-num">9.1&nbsp;&nbsp;</span>Use PEP 8</a></span></li><li><span><a href="#Give-meaningful-names-to-variables-and-functions" data-toc-modified-id="Give-meaningful-names-to-variables-and-functions-9.2"><span class="toc-item-num">9.2&nbsp;&nbsp;</span>Give meaningful names to variables and functions</a></span></li><li><span><a href="#Prefer-writing-many-small-functions-instead-of-monolithic-code-blocks" data-toc-modified-id="Prefer-writing-many-small-functions-instead-of-monolithic-code-blocks-9.3"><span class="toc-item-num">9.3&nbsp;&nbsp;</span>Prefer writing many small functions instead of monolithic code blocks</a></span></li><li><span><a href="#Document-your-code" data-toc-modified-id="Document-your-code-9.4"><span class="toc-item-num">9.4&nbsp;&nbsp;</span>Document your code</a></span></li><li><span><a href="#The-Zen-of-Python" data-toc-modified-id="The-Zen-of-Python-9.5"><span class="toc-item-num">9.5&nbsp;&nbsp;</span>The Zen of Python</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-9.6"><span class="toc-item-num">9.6&nbsp;&nbsp;</span>What's next?</a></span></li><li><span><a href="#License" data-toc-modified-id="License-9.7"><span class="toc-item-num">9.7&nbsp;&nbsp;</span>License</a></span></li></ul></li></ul></div>
 </div>
 </div>
 </div>
@@ -13186,9 +13186,9 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Not PEP8 compliant</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># OK syntax but not PEP8 compliant </span>
 <span class="n">a</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span>
-<span class="c1"># PEP8 compliant</span>
+<span class="c1"># OK syntax *and* PEP8 compliant</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="mi">3</span>
 </pre></div>
 
@@ -13215,7 +13215,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Code space is less important than your time. Give meaningful name to your variables and functions, even if it makes them quite long! For example, prefer:</p>
+<p>The text space that code is taking is less important than your time. Give meaningful name to your variables and functions, even if it makes them quite long! For example, prefer:</p>
 
 </div>
 </div>
@@ -13258,16 +13258,16 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://en.wikipedia.org/wiki/Separation_of_concerns">Separation of concerns</a> is an important design principle for separating a computer program into distinct sections, such that each section addresses a separate concern. This increases the code readability and facilitates unit testing.</p>
+<p><a href="https://en.wikipedia.org/wiki/Separation_of_concerns">Separation of concerns</a> is an important design principle for separating a computer program into distinct sections, such that each section addresses a separate concern. This increases the code readability and facilitates unit testing (as we will see).</p>
 <p>For example, a scientific script can often be organized in well defined steps:</p>
 <ul>
-<li>data input (read a NetCDF or text file)</li>
+<li>data input (read a file)</li>
 <li>data pre-processing (filtering missing data, discarding useless variables)</li>
 <li>data processing (actual computation)</li>
-<li>data visualization (producing a plot)</li>
 <li>output (writing the processed data to a file for later use)</li>
+<li>data visualization (producing a plot)</li>
 </ul>
-<p>Each of these steps and sub-steps should be separated in different functions, maybe even in different scripts.</p>
+<p>Each of these steps and sub-steps should be separated in different functions, maybe even in different scripts. When discussing your assignment solutions, we will always discuss how your code is organized for readability and testing.</p>
 
 </div>
 </div>
@@ -13282,7 +13282,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Write comments in your code, and document the functions with docstrings. Here again there are <a href="https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt">some conventions</a> that I recommend to follow.</p>
+<p>Write comments in your code, and document the functions with docstrings. We will have a full lecture about it, but it's good to start early. Here again, there are <a href="https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt">some conventions</a> that I recommend to follow.</p>
 <p>Note that this is useful even if you don't plan to share your code. At the very last there is at least one person reading your code: yourself! And it's always a good idea to be nice to yourself ;-)</p>
 
 </div>
@@ -13292,29 +13292,6 @@ $( document ).ready(function(){
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Abstruse Goose made a funny comic about code documentation: <a href="http://abstrusegoose.com/432">http://abstrusegoose.com/432</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Refactor-your-code">Refactor your code<a class="anchor-link" href="#Refactor-your-code">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>It is impossible to get all things right at the first shot. Some real-life examples:</p>
-<ul>
-<li>after a while, a function that you found useful becomes clunky and its <a href="https://en.wikipedia.org/wiki/Type_signature">signature</a> needs to be redefined</li>
-<li>a code that worked with data A doesn't work with data B</li>
-<li>you find yourself copy-pasting 5 lines of codes many times in the same script</li>
-<li>the name of this variable made sense with data A, but not anymore with data B</li>
-<li>nobody understands your code</li>
-</ul>
-<p>All these are good indicators that your code needs some <a href="https://en.wikipedia.org/wiki/Code_refactoring">refactoring</a>. This happens often (even for big programs) and becomes more and more difficult the longer you wait. Here also, good IDEs can help you in this process, either by letting you know where the functions are used, and by letting you know when your tests fail.</p>
 
 </div>
 </div>
@@ -13388,6 +13365,23 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="10-Assignment-03.html">jump to this week's assignment</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="License">License<a class="anchor-link" href="#License">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+  <img align="left" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg"/>
+</a></p>
 
 </div>
 </div>
