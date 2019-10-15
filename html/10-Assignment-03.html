@@ -13153,7 +13153,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Today's exercises have to be done with help of the python standard library alone! No external module can be used.</p>
+<p>Today's exercises have to be done with help of the python standard library alone! No external module can be used (except for the <code>--plot</code> option).</p>
 
 </div>
 </div>
@@ -13168,9 +13168,9 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission">SRTM</a> is a digital elevation model at ~90 m resolution covering almost the entire globe (up to $\pm$ 60° latitude). The data is organized in 5°x5° tiles. To see a map of the tiles have a look at <a href="http://srtm.csi.cgiar.org/srtmdata/">this download page</a>. This tool is nice to use if you know which tile you want, but not very useful if you want more than one tile at different places of the globe.</p>
+<p><a href="https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission">SRTM</a> is a digital elevation model (DEM) at ~90 m resolution covering almost the entire globe (up to $\pm$ 60° latitude). The data is organized in 5°x5° tiles. To see a map of the tiles have a look at <a href="http://srtm.csi.cgiar.org/srtmdata/">this download page</a>. This tool is nice to use if you know which tile you want, but not very useful if you want more than one tile at different places of the globe.</p>
 <p>Fortunately, the entire dataset is available on this server: <a href="http://srtm.csi.cgiar.org/wp-content/uploads/files/srtm_5x5/TIFF/">http://srtm.csi.cgiar.org/wp-content/uploads/files/srtm_5x5/TIFF/</a></p>
-<p>In order to protect from naive "download all" behavior, the files stored here cannot be listed (i.e. automated data scraping won't work). Fortunately for us , the file naming convention is very simple:</p>
+<p>In order to protect from naive "download all" behavior, the files stored here cannot be listed (i.e. automated data scraping won't work). Fortunately for us, the file naming convention is very simple:</p>
 <ul>
 <li>example file: <a href="http://srtm.csi.cgiar.org/wp-content/uploads/files/srtm_5x5/TIFF/srtm_39_04.zip">http://srtm.csi.cgiar.org/wp-content/uploads/files/srtm_5x5/TIFF/srtm_39_04.zip</a></li>
 <li>the first two digits number gives the location of the tile in the longitudes (starting at 180° West)</li>
@@ -13184,30 +13184,40 @@ $( document ).ready(function(){
 <li>(-180, 60) -&gt; 'srtm_01_01.zip' (upper-left corner case)</li>
 </ul>
 <p>And so forth.</p>
-<p><strong>A. Write a script which, given a longitude and a latitude as arguments, downloads the corresponding file</strong> in the current directory. The function should raise an error when the given location is not valid.</p>
+<p><strong>A. Write a script which, given a longitude and a latitude as arguments, downloads the corresponding file</strong> in the current directory. The tool should print an error message when the given location is not valid and exit the script.</p>
 <p><em>Hint A1: define "valid" locations first: some are easy to catch, some cannot be caught automatically. Do we really have to deal with those?</em></p>
-<p><em>Hint A2: unlike last week where we asked for user input, here I'm asking for a script with <a href="https://docs.python.org/3/tutorial/stdlib.html?highlight=sys%20argv#command-line-arguments">command line arguments</a>. That is, the command <code>%run download_srtm.py 9 44</code> (in an ipython interpreter) should download the file as expected.</em></p>
+<p><em>Hint A2: unlike last week where we asked for user input, here I'm asking for a script with <a href="https://docs.python.org/3/tutorial/stdlib.html?highlight=sys%20argv#command-line-arguments">command line arguments</a>. That is, the command <code>%run download_srtm.py 9 44</code> (in an ipython interpreter) should download the file at the location 9°W, 44°N.</em></p>
+<p><em>Hint A3: although I agree with the python documentation that <code>argparse</code> is more robust (and much better) than parsing <code>sys.argv</code> yourself, for the learning effect I would like you to use <code>sys.argv</code> today and handle the command line arguments yourselves.</em></p>
 <p><strong>B.</strong> Extend this script to be a bit more clever: <strong>download the data file only if the file isn't already available in the current directory</strong>. This is particularly useful because the server is not very fast.</p>
 <p><strong>C.</strong> Extend this script to be even more clever: <strong>given a range of longitudes and latitudes, it should download all the files covering this area</strong>. For example, the range 9°W to 18°W and 44°N to 47°N would download 6 files. <strong>In order to avoid manual mistakes, warn the user by announcing the number of files that the command is going to download, and ask for confirmation before going on</strong> (by using the <code>input()</code> function).</p>
 <p><em>Hint C1: the command should now be <code>%run download_srtm.py 9 44 18 47</code>.</em></p>
-<p><strong>D.</strong> Let's add more functionality to our script:</p>
+<p><strong>D.</strong> Let's add even more functionality to our script:</p>
+<p><strong>D1.</strong> <strong>print a message to the user announcing if the file was downloaded or was already on disk</strong></p>
+<p><strong>D2.</strong> <strong>print the size of the file after download</strong> - choose <a href="https://wiki.ubuntu.com/UnitsPolicy">an appropriate unit</a> for the text</p>
+<p><strong>D3.</strong> let's assume that the user actually wants to download the files in a specific folder instead of the current directory (i.e. a folder where she stores all her DEMs). Let's give this opportunity to her by adding two options to the script:</p>
 <ul>
-<li>print a message to the user announcing if the file was downloaded or was already on disk</li>
-<li>print the size of the file after download - choose <a href="https://wiki.ubuntu.com/UnitsPolicy">an appropriate unit</a> for the text</li>
-<li>if the user asks for a plot, write a plot to disk with the file name <code>srtm_39_04.png</code> (if the tile 39, 4 was asked for). The user may ask for a plot by adding a <code>--plot</code> to the list of arguments. Note that <code>--plot</code> could be at any location in the argument list, i.e. <code>%run download_srtm.py 9 44 --plot 18 47</code> is a valid command and creates 6 plot files</li>
+<li><code>--output-dir /path/to/a/dir</code> should <strong>write the file (and check for its existence) in the given directory</strong></li>
+<li><code>--default-dir</code> should do following: it checks for a hidden file in the <code>$HOME</code> directory called <code>.demdownrc</code> (a text file), which if present should be opened to read one single line of text: the path to the default directory. If this file does not exist, ask the user to provide it as input in the command line, and write this file on disk</li>
+<li>in both cases, if the target directory does not exist, print a message to screen indicating that you can't continue and exit the script</li>
+<li>note that <code>--default-dir</code> cannot be at any location in the argument list, i.e. <code>%run download_srtm.py 9 44 --default-dir 18 47</code> is not a valid command, but <code>%run download_srtm.py 9 44 18 47 --default-dir</code> is.</li>
 </ul>
+<p><strong>D4.</strong> (optional: rasterio package installation and windows issues likely!) <strong>if the user asks for a plot, write a plot to disk</strong> (alongside the DEM file) with the file name <code>srtm_39_04.png</code> (if the tile 39, 4 was asked for). The user may ask for a plot by adding a <code>--plot</code> to the list of arguments.</p>
 <p>Here is a template for your plotting function:</p>
-<div class="highlight"><pre><span></span><span class="c1"># This is some real magic: we open the file from within the zip</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="kn">as</span> <span class="nn">xr</span>
+
+<span class="c1"># This is some real magic: we open the file from within the zip</span>
 <span class="n">f</span> <span class="o">=</span> <span class="s1">&#39;zip://srtm_39_04.zip!srtm_39_04.tif&#39;</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+
+<span class="c1"># Read the data and plot</span>
 <span class="k">with</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">as</span> <span class="n">da</span><span class="p">:</span>
     <span class="n">da</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">band</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;terrain&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Lat (°)&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Lon (°)&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;srtm_39_04&#39;</span><span class="p">);</span> 
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;srtm_39_04.png&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
-<p>No need to add more options than that: we haven't talked about these libraries yet! Just make sure that the filename is set to the correct value.</p>
-<p><em>Note: you'll need the matplotlib, xarray and rasterio libraries installed for this to work (on your laptop: <code>conda install matplotlib xarray rasterio</code>). Also, I'm not sure this is going to work on Windows. If it doesn't, then you might have to extract the file from the zip before plotting it.</em></p>
+<p>No need to add more features to the plot than that: we haven't talked about these libraries yet! Just make sure that the filename is set to the correct value.</p>
+<p><em>Note: you'll need the matplotlib, xarray and rasterio libraries installed for this to work (on your laptop: <code>conda install matplotlib xarray rasterio</code>). Also, I'm not sure this is going to work on Windows.</em></p>
 
 </div>
 </div>
