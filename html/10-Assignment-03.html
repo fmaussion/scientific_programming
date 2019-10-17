@@ -13153,7 +13153,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Today's exercises have to be done with help of the python standard library alone! No external module can be used (except for the <code>--plot</code> option).</p>
+<p>Today's exercises have to be done with help of the python standard library alone! No external module can be used (except for the <code>--plot</code> option where you can use the helper packages).</p>
 
 </div>
 </div>
@@ -13187,7 +13187,7 @@ $( document ).ready(function(){
 <p><strong>A. Write a script which, given a longitude and a latitude as arguments, downloads the corresponding file</strong> in the current directory. The tool should print an error message when the given location is not valid and exit the script.</p>
 <p><em>Hint A1: define "valid" locations first: some are easy to catch, some cannot be caught automatically. Do we really have to deal with those?</em></p>
 <p><em>Hint A2: unlike last week where we asked for user input, here I'm asking for a script with <a href="https://docs.python.org/3/tutorial/stdlib.html?highlight=sys%20argv#command-line-arguments">command line arguments</a>. That is, the command <code>%run download_srtm.py 9 44</code> (in an ipython interpreter) should download the file at the location 9°W, 44°N.</em></p>
-<p><em>Hint A3: although I agree with the python documentation that <code>argparse</code> is more robust (and much better) than parsing <code>sys.argv</code> yourself, for the learning effect I would like you to use <code>sys.argv</code> today and handle the command line arguments yourselves.</em></p>
+<p><em>Hint A3: although I agree with the python documentation that <code>argparse</code> is more robust (and much better) than parsing <code>sys.argv</code> yourself, for the purpose of learning I would like you to use <code>sys.argv</code> today and handle the command line arguments yourselves.</em></p>
 <p><strong>B.</strong> Extend this script to be a bit more clever: <strong>download the data file only if the file isn't already available in the current directory</strong>. This is particularly useful because the server is not very fast.</p>
 <p><strong>C.</strong> Extend this script to be even more clever: <strong>given a range of longitudes and latitudes, it should download all the files covering this area</strong>. For example, the range 9°W to 18°W and 44°N to 47°N would download 6 files. <strong>In order to avoid manual mistakes, warn the user by announcing the number of files that the command is going to download, and ask for confirmation before going on</strong> (by using the <code>input()</code> function).</p>
 <p><em>Hint C1: the command should now be <code>%run download_srtm.py 9 44 18 47</code>.</em></p>
@@ -13196,12 +13196,12 @@ $( document ).ready(function(){
 <p><strong>D2.</strong> <strong>print the size of the file after download</strong> - choose <a href="https://wiki.ubuntu.com/UnitsPolicy">an appropriate unit</a> for the text</p>
 <p><strong>D3.</strong> let's assume that the user actually wants to download the files in a specific folder instead of the current directory (i.e. a folder where she stores all her DEMs). Let's give this opportunity to her by adding two options to the script:</p>
 <ul>
-<li><code>--output-dir /path/to/a/dir</code> should <strong>write the file (and check for its existence) in the given directory</strong></li>
-<li><code>--default-dir</code> should do following: it checks for a hidden file in the <code>$HOME</code> directory called <code>.demdownrc</code> (a text file), which if present should be opened to read one single line of text: the path to the default directory. If this file does not exist, ask the user to provide it as input in the command line, and write this file on disk</li>
+<li><code>--output-dir /path/to/a/dir</code> should <strong>write the file (and check for its existence) in the directory given as argument</strong></li>
+<li><code>--default-dir</code> should do following: it checks for a hidden file in the user's <code>$HOME</code> directory called <code>.demdownrc</code> (a text file), which if present should be opened to read one single line of text: the path to the default directory. If this file does not exist, ask the user to provide the default directory as input in the command line, and write this information in the <code>.demdownrc</code> file on disk (your script has to create this file)</li>
 <li>in both cases, if the target directory does not exist, print a message to screen indicating that you can't continue and exit the script</li>
 <li>note that <code>--default-dir</code> cannot be at any location in the argument list, i.e. <code>%run download_srtm.py 9 44 --default-dir 18 47</code> is not a valid command, but <code>%run download_srtm.py 9 44 18 47 --default-dir</code> is.</li>
 </ul>
-<p><strong>D4.</strong> (optional: rasterio package installation and windows issues likely!) <strong>if the user asks for a plot, write a plot to disk</strong> (alongside the DEM file) with the file name <code>srtm_39_04.png</code> (if the tile 39, 4 was asked for). The user may ask for a plot by adding a <code>--plot</code> to the list of arguments.</p>
+<p><strong>D4.</strong> (optional: rasterio package installation and windows issues likely!) <strong>if the user asks for a plot, write a plot to disk</strong> (alongside the DEM file) with the file name <code>srtm_39_04.png</code> (if the tile 39, 4 was asked for). The user may ask for a plot by adding a <code>--plot</code> to the list of arguments. I.e. <code>%run download_srtm.py 9 44 18 47 --default-dir --plot</code> would write 6 plots in the user-chosen default directory.</p>
 <p>Here is a template for your plotting function:</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="kn">as</span> <span class="nn">xr</span>
