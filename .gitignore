@@ -25,7 +25,7 @@ parts/
 sdist/
 var/
 wheels/
-*.egg-info/
+*.egg-info/enodo
 .installed.cfg
 *.egg
 

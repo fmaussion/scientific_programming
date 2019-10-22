@@ -10,7 +10,7 @@ gtag('config', 'UA-88391345-1');
 </script>
 <meta charset="utf-8" />
 
-<title>21-Package-structure</title>
+<title>13-Assignment-04</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13097,7 +13097,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -13131,7 +13131,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": "21", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "361px"}, "toc_section_display": "block", "toc_window_display": true};
+            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": false, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {}, "toc_section_display": "block", "toc_window_display": false};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -13146,56 +13146,33 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Structure-of-a-python-package">Structure of a python package<a class="anchor-link" href="#Structure-of-a-python-package">&#182;</a></h1>
+<h1 id="Assignment-#04:-C,-python-and-numpy;-rounding-errors">Assignment #04: C, python and numpy; rounding errors<a class="anchor-link" href="#Assignment-#04:-C,-python-and-numpy;-rounding-errors">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Python Zen: "Namespaces are one honking great idea - let's do more of those!"</em></p>
-<p>We introduced the concept of python modules in a <a href="07-Import-Scopes.html">previous unit</a>. Today we are going into more details and will introduce the python "package" structure, which is widely used for bigger projects, containing more than one module.</p>
-
+<h2 id="Exercise-#04-01:-a-glimpse-in-the-C-language">Exercise #04-01: a glimpse in the C language<a class="anchor-link" href="#Exercise-#04-01:-a-glimpse-in-the-C-language">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Structure-of-a-python-package" data-toc-modified-id="Structure-of-a-python-package-21"><span class="toc-item-num">21&nbsp;&nbsp;</span>Structure of a python package</a></span><ul class="toc-item"><li><span><a href="#Revision:-modules,-namespaces-and-scopes" data-toc-modified-id="Revision:-modules,-namespaces-and-scopes-21.1"><span class="toc-item-num">21.1&nbsp;&nbsp;</span>Revision: modules, namespaces and scopes</a></span><ul class="toc-item"><li><span><a href="#Scopes" data-toc-modified-id="Scopes-21.1.1"><span class="toc-item-num">21.1.1&nbsp;&nbsp;</span>Scopes</a></span></li><li><span><a href="#The-global-statement" data-toc-modified-id="The-global-statement-21.1.2"><span class="toc-item-num">21.1.2&nbsp;&nbsp;</span>The <code>global</code> statement</a></span></li><li><span><a href="#Are-global-variables-truly-&quot;global&quot;-in-python?" data-toc-modified-id="Are-global-variables-truly-&quot;global&quot;-in-python?-21.1.3"><span class="toc-item-num">21.1.3&nbsp;&nbsp;</span>Are global variables truly "global" in python?</a></span></li></ul></li><li><span><a href="#Packages" data-toc-modified-id="Packages-21.2"><span class="toc-item-num">21.2&nbsp;&nbsp;</span>Packages</a></span><ul class="toc-item"><li><span><a href="#The-structure-of-a-package" data-toc-modified-id="The-structure-of-a-package-21.2.1"><span class="toc-item-num">21.2.1&nbsp;&nbsp;</span>The structure of a package</a></span></li><li><span><a href="#Installing-a-local-package" data-toc-modified-id="Installing-a-local-package-21.2.2"><span class="toc-item-num">21.2.2&nbsp;&nbsp;</span>Installing a local package</a></span></li><li><span><a href="#Advanced-applications:-packaging-and-sharing-code" data-toc-modified-id="Advanced-applications:-packaging-and-sharing-code-21.2.3"><span class="toc-item-num">21.2.3&nbsp;&nbsp;</span>Advanced applications: packaging and sharing code</a></span></li></ul></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-21.3"><span class="toc-item-num">21.3&nbsp;&nbsp;</span>Take home points</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-21.4"><span class="toc-item-num">21.4&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Revision:-modules,-namespaces-and-scopes">Revision: modules, namespaces and scopes<a class="anchor-link" href="#Revision:-modules,-namespaces-and-scopes">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Python <a href="https://docs.python.org/3/tutorial/modules.html">modules</a> simply are <code>*.py</code> files. They can contain executable statements as well as function definitions, in any order.</p>
-<p>For example, a module called <code>mymodule.py</code> could look like:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-
-<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Module top level 1&#39;</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">circle_area</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;A cool function&quot;&quot;&quot;</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;In function&#39;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
-
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Module top level 2&#39;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;In main script&#39;</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Area of circle: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">circle_area</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span>
+<p>This exercise can be done on a linux machine only! You can use the university workstations for this.</p>
+<p>Here is the C code sample from the lecture:</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt; </span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+    <span class="n">printf</span> <span class="p">(</span><span class="s">&quot;Sum of two numbers : %d </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
+<p><strong>Write this code in a C code file, compile and run it.</strong></p>
+<p><strong>Now, replace the line <code>int b = 3</code> with <code>char b[] = "Hello";</code>. Compile and run the program again (ignore warnings at compilation). Does the output match your expectations? Can you explain what happens? Compare this behavior to python's, and try to explain why this behavior can lead to faster execution times.</strong></p>
 
 </div>
 </div>
@@ -13203,7 +13180,17 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Excercise</strong>: can you predict what will be printed on screen if (i) you run <code>import mymodule</code> in a python interpreter, or (ii) run <code>python mymodule</code> from the command line? If not, try it yourself!</p>
+<h2 id="Exercise-#04-02:-Monte-Carlo-estimation-of-$\pi$">Exercise #04-02: Monte-Carlo estimation of $\pi$<a class="anchor-link" href="#Exercise-#04-02:-Monte-Carlo-estimation-of-$\pi$">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A simple way to estimate $\pi$ using a computer is based on a <a href="https://en.wikipedia.org/wiki/Monte_Carlo_method">Monte-Carlo</a> method. By drawing a sample of N points with random 2D coordinates (x, y) in the <code>[0, 1[</code> range, the ratio of points that fall within the unit circle divided by the total number of points (N) gives an estimate of $\pi / 4$.</p>
+<p><strong>Provide two implementations of the monte-carlo estimation of $\pi$: a pure python version (standard library) and a vectorized version using numpy. Time their execution for N = [1e2, 1e3, ..., 1e7]. Plot the numpy speed-up as a function of N.</strong></p>
+<p><strong>Optional: try the numpy version with N=1e8 and above. Make conclusions about a new trade-off happening for large values of N.</strong></p>
+<p><em>Tip: you can try to mimic <code>%timeit</code> in your code by running each function at least three times and taking the fastest execution of all three.</em></p>
 
 </div>
 </div>
@@ -13211,7 +13198,19 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The example should be self-explanatory, and we will discuss it in class. If you have any question at this point don't hesitate to ask me!</p>
+<h2 id="Exercise-#04-03:-a-new-format-based-on-fixed-point-binary-numbers">Exercise #04-03: a new format based on fixed point binary numbers<a class="anchor-link" href="#Exercise-#04-03:-a-new-format-based-on-fixed-point-binary-numbers">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Write a function which converts binary strings to decimal numbers. The function should handle unsigned (positive) numbers only. Examples:</p>
+<ul>
+<li><code>'101010'</code> $\rightarrow$ <code>42</code></li>
+<li><code>'10000.1'</code> $\rightarrow$ <code>16.5</code></li>
+<li><code>'1011101101.10101011'</code> $\rightarrow$ <code>749.66796875</code></li>
+</ul>
 
 </div>
 </div>
@@ -13219,9 +13218,12 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Continue to read only after the mechanisms happening in the example above are fully understood.</p>
-<p>...</p>
-<p>OK? Let's go on then.</p>
+<p>Now let's develop a new standard based on this representation. Dots cannot be represented by 0s and 1s, so that if we want the position of the dot to be flexible we need an additional memory slot to store this position. Let's define our new format as a 32 bits long sequence of bits, the first 5 bits (starting from the left) being used to give the position of the dot, and the remaining 27 bits used to represent the number. Examples:</p>
+<ul>
+<li><code>'10101010101010101010101010101010'</code> $\rightarrow$ <code>699050.65625</code>. </li>
+<li><code>'00000001100110011001100110011001'</code> $\rightarrow$ <code>0.19999999552965164</code>. </li>
+</ul>
+<p>Explanation for example 1: the first five digits are <code>'10101'</code> which gives the number 21. The second part of the string therefore becomes a dot at position 21: <code>'010101010101010101010.101010'</code>. This binary number is then converted to decimal.</p>
 
 </div>
 </div>
@@ -13229,20 +13231,18 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Scopes">Scopes<a class="anchor-link" href="#Scopes">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Here is a more intricate example for <code>mymodule.py</code>:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_n</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;The number N in the function is: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
-
-<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">print_n</span><span class="p">()</span>
-</pre></div>
+<p>Let's name this standard "BSE" (for "best standard ever"), and try to convince the <em>Institute of Electrical and Electronics Engineers</em> to adopt it in place of the old IEEE 754 standard. We have to answer the following questions:</p>
+<ul>
+<li>what is the smallest number the BSE can represent? The largest?</li>
+<li>what is the maximal accuracy of the BSE? (in other words, what is the difference between the smallest positive number and zero?)</li>
+<li>what is the lowest accuracy of our standard? (in other words, what is the difference between the largest number we can represent and the second largest?)</li>
+<li>does the difference between two nearest representable change, when the dot position doesn't?</li>
+<li>now compute the precision of our format for a range of possible values of the BSE </li>
+<li>for these values, compare the BSE to the IEEE754 <code>binary32</code> format (or its numpy equivalent <code>np.float32</code>) using <a href="https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.nextafter.html">numpy.nextafter</a>.</li>
+<li>(optional: you can also use matplotlib and a log-log plot to produce a graphic similar to the <a href="https://en.wikipedia.org/wiki/IEEE_754#Basic_and_interchange_formats">wikipedia page on IEEE 754</a>)</li>
+</ul>
+<p>Conclude. Do you think we should try to convince the <em>Institute of Electrical and Electronics Engineers</em> and <a href="https://xkcd.com/541/">present them our results</a>?</p>
+<p><em>Final note: the BSE format <strong>is not</strong> the IEEE754 format. I'm just saying, because some people got confused during the exam and remembered the BSE better than the real floating point representation...</em></p>
 
 </div>
 </div>
@@ -13250,21 +13250,22 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Excercise</strong>: will <code>import mymodule</code> run or will it fail with an error? If you don't know for sure, try it out!</p>
-
+<h2 id="Exercise-#04-04:-exponential-error-growth">Exercise #04-04: exponential error growth<a class="anchor-link" href="#Exercise-#04-04:-exponential-error-growth">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Why is this example working, even if <code>N</code> is defined below the function definition? Here again, the <em>order</em> at which things are happening when the module is imported is the important trick:</p>
-<ol>
-<li>the function <code>print_n</code> is detected and interpreted, but <em>not</em> executed (nobody called it)</li>
-<li>the variable <code>N</code> is assigned the value <code>10</code>. It is now available at the module scope, i.e. an external module import would allow the command <code>from mymodule import N</code> to run without error</li>
-<li>The function <code>print_n</code> is called. In this function, the interpreter seeks for a local scope variable (i.e. at the function level) called <code>N</code>. It doesn't find it, and therefore looks at the module level. Nice! A variable called <code>N</code> is found at the module level and printed.</li>
-</ol>
-<p>Note that this will not always work. See the following example which builds upon the previous one:</p>
+<p>The number <code>e</code> can be defined as the sum of the infinite series:</p>
+$$e = \sum_{n=0}^{\infty} \frac{1}{n!}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We are going to approximate this number by truncating the sum to a finite value. We use the <strong>standard library</strong> and it's math module:</p>
 
 </div>
 </div>
@@ -13274,90 +13275,22 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_n</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The number N in the function is: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
-    <span class="n">N</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">print_n</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">UnboundLocalError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-1-8aff2853bb47&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> 
-<span class="ansi-green-intense-fg ansi-bold">      5</span> N <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">10</span>
-<span class="ansi-green-fg">----&gt; 6</span><span class="ansi-red-fg"> </span>print_n<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-1-8aff2853bb47&gt;</span> in <span class="ansi-cyan-fg">print_n</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">def</span> print_n<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg">     </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;The number N in the function is: {}&#39;</span><span class="ansi-blue-fg">.</span>format<span class="ansi-blue-fg">(</span>N<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span>     N <span class="ansi-blue-fg">+=</span> <span class="ansi-cyan-fg">1</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> 
-<span class="ansi-green-intense-fg ansi-bold">      5</span> N <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">10</span>
-
-<span class="ansi-red-fg">UnboundLocalError</span>: local variable &#39;N&#39; referenced before assignment</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>So what is the difference to the first example? We just added a line <em>below</em> the one that used to work before. So now there is a variable <code>N</code> in the function, and it overrides the module-level one. The python interpreter detects that variable and raises an error at execution, independent to whether or not there is a global variable <code>N</code> available.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Even if it might work to define module level variables anywhere, the recommended order for code in a module is:</p>
-<ul>
-<li>import statements</li>
-<li>module level variable definitions</li>
-<li>functions</li>
-<li>if necessary (rare): one or more function calls</li>
-</ul>
-<p>But if module functions can read variables at the module level, can they also change them? Here is another example messing around with <strong>global</strong> and <strong>local</strong> variables:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-    <span class="k">return</span> <span class="n">x</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">e1</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
+<span class="n">e1</span>
 </pre></div>
 
     </div>
@@ -13370,16 +13303,15 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>4
-3
-2
-1
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2.7182818284590455</pre>
 </div>
+
 </div>
 
 </div>
@@ -13389,22 +13321,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>What can we learn from this example? That the local (function) scope variable <code>x</code> has nothing to do with the global scope variable <code>x</code>. For the python interpreter, both are unrelated and their name is irrelevant. What is relevant though is to which scope they are attached to (if you are interested to know which variables are currently available in your scope, check the built-in functions <a href="https://docs.python.org/3/library/functions.html#dir">dir()</a>, <a href="https://docs.python.org/3/library/functions.html#globals">globals()</a> and <a href="https://docs.python.org/3/library/functions.html#locals">locals()</a>).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-global-statement">The <code>global</code> statement<a class="anchor-link" href="#The-global-statement">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In special cases, it might be useful for a function to change the value of a global variable. Examples include package level parameter sets such as options and model parameters which will change the behavior of the package after being set. For example, see numpy's <a href="https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.set_printoptions.html">set_printoptions</a> function:</p>
+<p>Close enough! Now let's compute it with the same values, but summed from n=100 to n=0:</p>
 
 </div>
 </div>
@@ -13414,11 +13331,8 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.123456789</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">e2</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)][::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">e2</span>
 </pre></div>
 
     </div>
@@ -13431,14 +13345,15 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1.12345679]
-[1.1235]
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2.718281828459045</pre>
 </div>
+
 </div>
 
 </div>
@@ -13448,15 +13363,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We changed the value of a variable at the module level (we don't know its name but it isn't relevant here) which is now taken into account by the numpy print function.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's say we'd like to have a counter of the number of times a function has been called. We can do this with the following syntax:</p>
+<p>Seems reasonable too! Are they different?</p>
 
 </div>
 </div>
@@ -13466,15 +13373,7 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
-    <span class="k">global</span> <span class="n">count</span>  <span class="c1"># without this, count would be local!</span>
-    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="n">func</span><span class="p">()</span>
-<span class="n">func</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">e1</span> <span class="o">-</span> <span class="n">e2</span>
 </pre></div>
 
     </div>
@@ -13487,214 +13386,13 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>2
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Note that in practice, global variables that need updating are rarely single integers or floats like in this example. The reasons for this will be explained later on, once you've learned more about python packages and the import system.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Are-global-variables-truly-&quot;global&quot;-in-python?">Are global variables truly "global" in python?<a class="anchor-link" href="#Are-global-variables-truly-&quot;global&quot;-in-python?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>If by this question we mean "global" as available everywhere in any python script or interpreter, the short answer is <strong>no, there is no such thing as a "global" variable in python</strong>. The term "global variable" in python always refers to the module level, while "local variables" refer to the embedded scope (often, a function).</p>
-<p>If you want to have access to a module's top-level variable (or function), you <em>have</em> to import it. This system ensures very clear and unpolluted <strong>namespaces</strong>, where everything can be traced to its source:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">scipy</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="s1">&#39;from the math module&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="s1">&#39;from the numpy package&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">scipy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="s1">&#39;from the scipy package&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>3.141592653589793 from the math module
-3.141592653589793 from the numpy package
-3.141592653589793 from the scipy package
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The only exception to the import rule are <a href="https://docs.python.org/3/library/functions.html">built-ins functions</a>, which are available everywhere and have their own scope. If you want to know more about the four different python scopes, read this <a href="http://sebastianraschka.com/Articles/2014_python_scope_and_namespaces.html#scope-resolution-for-variable-names-via-the-legb-rule">blog post by Sebastian Raschka</a>: A Beginner's Guide to Python's Namespaces, Scope Resolution, and the LEGB Rule.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Packages">Packages<a class="anchor-link" href="#Packages">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>From the <a href="https://docs.python.org/3/tutorial/modules.html#packages">documentation</a>:</em></p>
-<p>Packages are a way of structuring Python’s module namespace by using "dotted module names". For example, the module name <code>A.B</code> designates a submodule named <code>B</code> in a package named <code>A</code>. Just like the use of modules saves the authors of different modules from having to worry about each other’s global variable names, the use of dotted module names saves the authors of multi-module packages like NumPy or Pillow from having to worry about each other’s module names.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Packages can also be used to organize bigger projects into thematic groups. SciPy for example has more than 12 subpackages, some of them being organized in sub-subpackages.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now read the few paragraphs from the python documentation on <a href="https://docs.python.org/3/tutorial/modules.html#packages">packages</a> <em>(estimated reading time: 5 min)</em>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>You are maybe asking yourself: <strong>what can I use packages for?</strong> Well, for one, it is necessary to understand their basic structure in order to be able to read someone else's code, for example in the <code>xarray</code> library. Second, because I think that you have everything to win by organizing your personal code (analysis routines, plot functions...) into a single package that you can import from anywhere (e.g. in a Jupyter Notebook or from a different working directory). Therefore, the ClimVis project will bring you to write a small package.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-structure-of-a-package">The structure of a package<a class="anchor-link" href="#The-structure-of-a-package">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>I've written a simple package template called "scispack" to help you getting started. You will find the code <a href="https://github.com/fmaussion/scispack">on github</a> and a link to download it (green button in the top right). It is released in the public domain, feel free to use it for your projects. You will have more time to get familiar with it during the assignments, here I'll simply repeat its basic structure:</p>
-<p><strong>Directory root (<code>./</code>)</strong></p>
-<ul>
-<li><code>.gitignore</code>: for git users only</li>
-<li><code>LICENSE.txt</code>: <a href="https://help.github.com/articles/licensing-a-repository/">always</a> 
-license your code</li>
-<li><code>README.md</code>: this page</li>
-<li><code>setup.py</code>: this is what makes your package installable by <code>pip</code>. It contains 
-a set of simple instructions regarding e.g. the name of the package, it's version
-number, or where to find command line scripts</li>
-</ul>
-<p><strong>The actual package (<code>./scispack</code>)</strong></p>
-<ul>
-<li><code>__init__.py</code>: tells python that the directory is a package and enables
-the  "dotted module names"  import syntax. It is often empty, but here
-we added some entry points to the package's API and the version string.</li>
-<li><code>cfg.py</code>, <code>utils.py</code> and <code>cli.py</code>: the modules</li>
-<li><code>cli.py</code>: entry point for the command line interface </li>
-<li><code>cfg.py</code>: container module for the package parameters and constants</li>
-</ul>
-<p><strong>The tests (<code>./scispack/tests</code>)</strong></p>
-<p>One test file per module. Their name has to start with <code>test_</code> in order to be 
-detected by pytest.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Installing-a-local-package">Installing a local package<a class="anchor-link" href="#Installing-a-local-package">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>By starting your python interpreter from the root directory of a package (for example the template package) you will have access to the familiar syntax (e.g. <code>from scispack.utils import area_of_circle</code>). But if you start an interpreter from anywhere else the package won't be available.</p>
-<p>Remember what we wrote about the <a href="07-Import-Scopes.html#path">python PATH</a> a couple of weeks ago? In order to "install" the package we have two options:</p>
-<ol>
-<li>we add the path to the package directory to the python PATH</li>
-<li>we copy the package into a folder already listed in the python PATH</li>
-</ol>
-<p>From the two solutions, number 2 is by far the easiest and most sustainable. In fact, this is what happens when you do <code>pip install packagename</code> or <code>conda install packagename</code>. The two commands are very similar in that they are looking for the package in an online repository, download it and copy it in the current environment's PATH. If you want to know where an installed package is located, you can do:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="n">numpy</span><span class="o">.</span><span class="vm">__file__</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;/home/mowglie/.pyvirtualenvs/py3/lib/python3.5/site-packages/numpy/__init__.py&#39;</pre>
+<pre>4.440892098500626e-16</pre>
 </div>
 
 </div>
@@ -13706,13 +13404,7 @@ detected by pytest.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The same options are offered to us for our self-made package. The simplest is to navigate to the package's root directory and run:</p>
-
-<pre><code>$ pip install -e .
-
-</code></pre>
-<p>The <code>pip install .</code> command will look for a <code>setup.py</code> file <strong>in the current folder</strong> (this is why the dot <code>.</code> is used) and if found, use it to determine the package's name and other installation options. The <code>-e</code> optional argument installs the package in "editable" or "development" mode. In simple terms, this option will create a <a href="https://en.wikipedia.org/wiki/Symbolic_link">symbolic link</a> to the package directory instead of copying the files. Therefore, any changes to the code will always be available the next time you open a new python interpreter.</p>
-<p><strong><code>pip install -e .</code> is the recommended way to install any local package, in pip or in conda environments</strong>. At the university (or on computers where you don't have the super-user permissions), use <code>pip install --user -e .</code></p>
+<p><strong>Which of the two values is closest to the actual e? Explain why this occurs, and what we can learn from this experiment.</strong></p>
 
 </div>
 </div>
@@ -13720,63 +13412,7 @@ detected by pytest.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Advanced-applications:-packaging-and-sharing-code">Advanced applications: packaging and sharing code<a class="anchor-link" href="#Advanced-applications:-packaging-and-sharing-code">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The simple template you are going to start with is not fundamentally different from larger packages like xarray or numpy. There are a couple of big differences though, and I'll list some of them here:</p>
-<ul>
-<li><a href="https://github.com/pydata/xarray">xarray</a> (as a pure python package) has a <code>setup.py</code> much like yours. It will have some more options related to the version control of the package and will have a separate folder for HTML documentation. The rest of the root directory files are related to testing and continuous integration. </li>
-<li><a href="https://github.com/numpy/numpy">numpy</a> (as a mix of python and C code) will be quite more complex to deploy. Installing a development version of numpy will imply some compilation of C code, which is quite easy to do on linux machines but needs quite some time.</li>
-</ul>
-<p>Tools like <code>pip</code> or <code>conda</code> hide all these things from the users, fortunately. They ship pre-compiled binaries and take care of most of the details in the background. This hasn't always been that easy though, and a recent post by <a href="https://xkcd.com/1987/">xkcd</a> reminds us that installing python packages can still be a mess sometimes:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="https://imgs.xkcd.com/comics/python_environment.png" alt="img"></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Take-home-points">Take home points<a class="anchor-link" href="#Take-home-points">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>python has very clear rules regarding the scope of variables, leading to clearly defined namespaces</li>
-<li>there are no global variables in python, only namespaces</li>
-<li>a package is a way to organize several modules under the same namespace. It allows to construct nested modules, like <code>from A.B import C</code></li>
-<li>make your package installable simply requires to comply to a couple of simple rules, including defining a <code>setup.py</code> installation file at the root directory folder</li>
-<li>I recommend to install local packages with <code>pip install -e .</code></li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What's-next?">What's next?<a class="anchor-link" href="#What's-next?">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="22-Assignment-08.html">jump to this week's assignment</a> or to the <a href="23-Project1-ClimVis.html">climvis project</a>.</p>
+<p><em>Back to the <a href="00-Introduction.html#ctoc">table of contents</a></em></p>
 
 </div>
 </div>

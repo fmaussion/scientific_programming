@@ -10,7 +10,7 @@ gtag('config', 'UA-88391345-1');
 </script>
 <meta charset="utf-8" />
 
-<title>28-Pelita</title>
+<title>12-Numbers</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13097,7 +13097,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -13131,7 +13131,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": "28", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "750px", "left": "29px", "top": "111px", "width": "345px"}, "toc_section_display": true, "toc_window_display": true};
+            var cfg = {"base_numbering": "12", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "384px"}, "toc_section_display": "block", "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -13146,7 +13146,15 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Pelita:-learning-by-gaming">Pelita: learning by gaming<a class="anchor-link" href="#Pelita:-learning-by-gaming">&#182;</a></h1>
+<h1 id="Number-representation-in-computers">Number representation in computers<a class="anchor-link" href="#Number-representation-in-computers">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this chapter we are going to give elements of understanding of how numbers are represented in today's computers. We won't go too much into the details (which are perhaps not so relevant here), however it is extremely important for scientists to understand the pitfalls of the so-called "floating-point arithmetics". At the end of this lecture, you should understand what these pitfalls are and when they occur, since <strong>sooner or later one of these pitfalls will hit you</strong> (believe me on that one).</p>
+
 </div>
 </div>
 </div>
@@ -13154,23 +13162,21 @@ $( document ).ready(function(){
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Pelita:-learning-by-gaming" data-toc-modified-id="Pelita:-learning-by-gaming-28"><span class="toc-item-num">28&nbsp;&nbsp;</span>Pelita: learning by gaming</a></span><ul class="toc-item"><li><span><a href="#The-pelita-contest" data-toc-modified-id="The-pelita-contest-28.1"><span class="toc-item-num">28.1&nbsp;&nbsp;</span>The pelita contest</a></span></li><li><span><a href="#Objectives" data-toc-modified-id="Objectives-28.2"><span class="toc-item-num">28.2&nbsp;&nbsp;</span>Objectives</a></span></li><li><span><a href="#Getting-started" data-toc-modified-id="Getting-started-28.3"><span class="toc-item-num">28.3&nbsp;&nbsp;</span>Getting started</a></span></li><li><span><a href="#Gaining-speed" data-toc-modified-id="Gaining-speed-28.4"><span class="toc-item-num">28.4&nbsp;&nbsp;</span>Gaining speed</a></span></li><li><span><a href="#Let's-do-a-little-bit-of-exploration-ourselves" data-toc-modified-id="Let's-do-a-little-bit-of-exploration-ourselves-28.5"><span class="toc-item-num">28.5&nbsp;&nbsp;</span>Let's do a little bit of exploration ourselves</a></span><ul class="toc-item"><li><span><a href="#Write-two-simple-players" data-toc-modified-id="Write-two-simple-players-28.5.1"><span class="toc-item-num">28.5.1&nbsp;&nbsp;</span>Write two simple players</a></span></li><li><span><a href="#Define-a-maze-layout" data-toc-modified-id="Define-a-maze-layout-28.5.2"><span class="toc-item-num">28.5.2&nbsp;&nbsp;</span>Define a maze layout</a></span></li><li><span><a href="#And-a-team" data-toc-modified-id="And-a-team-28.5.3"><span class="toc-item-num">28.5.3&nbsp;&nbsp;</span>And a team</a></span></li><li><span><a href="#Explore" data-toc-modified-id="Explore-28.5.4"><span class="toc-item-num">28.5.4&nbsp;&nbsp;</span>Explore</a></span></li><li><span><a href="#A-more-complex-maze" data-toc-modified-id="A-more-complex-maze-28.5.5"><span class="toc-item-num">28.5.5&nbsp;&nbsp;</span>A more complex maze</a></span></li><li><span><a href="#A-more-aggressive-player" data-toc-modified-id="A-more-aggressive-player-28.5.6"><span class="toc-item-num">28.5.6&nbsp;&nbsp;</span>A more aggressive player</a></span></li></ul></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-28.6"><span class="toc-item-num">28.6&nbsp;&nbsp;</span>What's next?</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Number-representation-in-computers" data-toc-modified-id="Number-representation-in-computers-12"><span class="toc-item-num">12&nbsp;&nbsp;</span>Number representation in computers</a></span><ul class="toc-item"><li><span><a href="#Binary-representation-of-integers" data-toc-modified-id="Binary-representation-of-integers-12.1"><span class="toc-item-num">12.1&nbsp;&nbsp;</span>Binary representation of integers</a></span><ul class="toc-item"><li><span><a href="#Basics" data-toc-modified-id="Basics-12.1.1"><span class="toc-item-num">12.1.1&nbsp;&nbsp;</span>Basics</a></span></li><li><span><a href="#Overflow" data-toc-modified-id="Overflow-12.1.2"><span class="toc-item-num">12.1.2&nbsp;&nbsp;</span>Overflow</a></span></li><li><span><a href="#Extending-the-binary-representation-to-non-integers:-fixed-point-notation" data-toc-modified-id="Extending-the-binary-representation-to-non-integers:-fixed-point-notation-12.1.3"><span class="toc-item-num">12.1.3&nbsp;&nbsp;</span>Extending the binary representation to non-integers: fixed-point notation</a></span></li></ul></li><li><span><a href="#Floating-point-numbers" data-toc-modified-id="Floating-point-numbers-12.2"><span class="toc-item-num">12.2&nbsp;&nbsp;</span>Floating point numbers</a></span><ul class="toc-item"><li><span><a href="#Introduction" data-toc-modified-id="Introduction-12.2.1"><span class="toc-item-num">12.2.1&nbsp;&nbsp;</span>Introduction</a></span></li><li><span><a href="#Scientific-(exponential)-notation-in-base-b" data-toc-modified-id="Scientific-(exponential)-notation-in-base-b-12.2.2"><span class="toc-item-num">12.2.2&nbsp;&nbsp;</span>Scientific (exponential) notation in base b</a></span></li><li><span><a href="#Floating-point-representation-(simplified)" data-toc-modified-id="Floating-point-representation-(simplified)-12.2.3"><span class="toc-item-num">12.2.3&nbsp;&nbsp;</span>Floating point representation (simplified)</a></span></li><li><span><a href="#IEEE-754" data-toc-modified-id="IEEE-754-12.2.4"><span class="toc-item-num">12.2.4&nbsp;&nbsp;</span>IEEE 754</a></span></li><li><span><a href="#Consequences" data-toc-modified-id="Consequences-12.2.5"><span class="toc-item-num">12.2.5&nbsp;&nbsp;</span>Consequences</a></span></li><li><span><a href="#Overflow" data-toc-modified-id="Overflow-12.2.6"><span class="toc-item-num">12.2.6&nbsp;&nbsp;</span>Overflow</a></span></li></ul></li><li><span><a href="#What-to-do-from-here?" data-toc-modified-id="What-to-do-from-here?-12.3"><span class="toc-item-num">12.3&nbsp;&nbsp;</span>What to do from here?</a></span><ul class="toc-item"><li><span><a href="#Alternative-data-types" data-toc-modified-id="Alternative-data-types-12.3.1"><span class="toc-item-num">12.3.1&nbsp;&nbsp;</span>Alternative data types</a></span></li><li><span><a href="#Symbolic-computations" data-toc-modified-id="Symbolic-computations-12.3.2"><span class="toc-item-num">12.3.2&nbsp;&nbsp;</span>Symbolic computations</a></span></li><li><span><a href="#Deal-with-it" data-toc-modified-id="Deal-with-it-12.3.3"><span class="toc-item-num">12.3.3&nbsp;&nbsp;</span>Deal with it</a></span><ul class="toc-item"><li><span><a href="#Awareness" data-toc-modified-id="Awareness-12.3.3.1"><span class="toc-item-num">12.3.3.1&nbsp;&nbsp;</span>Awareness</a></span></li><li><span><a href="#Error-propagation" data-toc-modified-id="Error-propagation-12.3.3.2"><span class="toc-item-num">12.3.3.2&nbsp;&nbsp;</span>Error propagation</a></span></li><li><span><a href="#Safer-tests" data-toc-modified-id="Safer-tests-12.3.3.3"><span class="toc-item-num">12.3.3.3&nbsp;&nbsp;</span>Safer tests</a></span></li></ul></li></ul></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-12.4"><span class="toc-item-num">12.4&nbsp;&nbsp;</span>Take home points</a></span></li><li><span><a href="#Further-reading" data-toc-modified-id="Further-reading-12.5"><span class="toc-item-num">12.5&nbsp;&nbsp;</span>Further reading</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-12.6"><span class="toc-item-num">12.6&nbsp;&nbsp;</span>What's next?</a></span></li><li><span><a href="#License" data-toc-modified-id="License-12.7"><span class="toc-item-num">12.7&nbsp;&nbsp;</span>License</a></span></li></ul></li></ul></div>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-pelita-contest">The pelita contest<a class="anchor-link" href="#The-pelita-contest">&#182;</a></h2>
+<h2 id="Binary-representation-of-integers">Binary representation of integers<a class="anchor-link" href="#Binary-representation-of-integers">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://aspp.github.io/pelita/index.html">Pelita</a> is an "Actor-based Toolkit for Interactive Language Education in Python". The game was created for an <a href="https://python.g-node.org/wiki/start">Advanced Scientific Python summer school</a>, and we are going to use it as well.</p>
-<p>Have a look at their <a href="https://python.g-node.org/python-summerschool-2017/_media/pelita_2017.pdf">presentation</a> from last year to get you in the mood.</p>
-<p>The rules are simple: you work in a team, and send me your players before the contest (the exact date will be announced via OLAT). The last day of the lecture we will see the bots compete and let the best team win!</p>
+<p>Traditional arithmetics and mathematics rely on the <strong>decimal</strong> system. Every number can be decomposed in a sum of products such as: $908.2 = 9\times10^2 + 0\times10^1 + 8\times10^{0} + 2\times10^{-1}$. This system is called decimal because the factors can take the values $[0 - 9]$ while the <strong>fixed base</strong> (the number which is scaled by an exponent) is 10.</p>
 
 </div>
 </div>
@@ -13178,22 +13184,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Objectives">Objectives<a class="anchor-link" href="#Objectives">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The specific objectives of this exercise are:</p>
-<ul>
-<li>to learn how to introspect and use a large codebase for your purpose: writing a player</li>
-<li>to apply the concepts learned during the lecture: organize your code in clear modules and packages, use object oriented concepts, and write tests!</li>
-<li>to define development strategies in a team</li>
-<li>to have fun!</li>
-</ul>
-<p>As you are going to see, it is possible to write simple to (very) complex strategies for your players. You should not try to develop the "best" strategy from scratch but rather advance in smaller steps. Also, you should know when to stop: I don't expect you to create the best players ever, nor do I expect you to spend all your time on this. Try to avoid bugs, try to develop simple but clever players, and have fun!</p>
-<p><strong>Your grade (10% of the final grade) will not be based on the outcome of the contest</strong>: it will be based on code quality, clarity, and originality.</p>
+<p>Nearly all modern processors however represent numbers in binary form, with each digit being represented by a two-valued physical quantity such as a "low" or "high" voltage: 0s and 1s. These binary digits are called <strong>bits</strong>, and are the basis of the <strong>binary representation of numbers</strong>.</p>
 
 </div>
 </div>
@@ -13201,64 +13192,20 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The Pelita developers write it this way:</p>
-<p><em>We expect you to try out the techniques, and evaluate what is feasible and what not, what helps you being more efficient at writing reliable code, and what feels like a hindrance instead. By doing this in the group we expect you to profit from the experience of other students, and, by explaining to other students your own experiences, to become more aware of what is it that you already master and what is it that you still have to learn.</em></p>
-<p><em>Write tests for the part of your code which are testable, decide what parts you can test, what parts you should test, what parts you must test, and also what parts can not be tested.</em></p>
-<p><em>The idea of the group project is not to write the most powered bots! Remember that and don't get carried away by the competition :)</em></p>
+<h3 id="Basics">Basics<a class="anchor-link" href="#Basics">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>With only 0s and 1s available the most efficient way to represent numbers is as a sum of 2s to the power of i, with i going from 0 to N-1. It is best shown with an example, here with N=4 digits:</p>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Getting-started">Getting started<a class="anchor-link" href="#Getting-started">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Download the pelita package from the <a href="https://github.com/ASPP/pelita">official repository</a>. Unzip the package and install it with <code>pip install -e /path/to/package</code> (don't forget the <code>--user</code> if you are on a university computer).</p>
-<p>run your first game with a simple call to <code>$ pelita</code>!</p>
-<p><strong>To start to write your own players, download the template available</strong> <a href="https://github.com/fmaussion/pelita-player-template">here</a>. Unpack it and follow the instructions:</p>
-<ul>
-<li>run <code>$ pytest</code> to dummy-test the template.</li>
-<li>run <code>$ pelita myteam demo_opponents/PolitePlayers.py</code> for a quick game against a demo team</li>
-</ul>
-<p>For more control options, type <code>pelita --help</code>.</p>
+<pre><code>0101
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Gaining-speed">Gaining speed<a class="anchor-link" href="#Gaining-speed">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The best way to get started is to have a look at all demo players in the package template. They will guide you through the basic functionalities from which you can build upon.</p>
-<p>The documentation about <a href="https://aspp.github.io/pelita/writing_player.html">writing a player</a> is a good second step.</p>
-<p>All this, however, might still leave you a little confused: take your time and don't rush into coding right away. The test environment available in the template package and therefore runnable <strong>in a debugger</strong> from spyder or pycharm is probably the best way to explore the tools available to you.</p>
+</code></pre>
+<p>To convert our number to a decimal representation we compute $0\times2^3 + 1\times2^2 + 0\times2^1 + 1\times2^0 = 5$. In this convention, the leftmost digit is called the <strong>most significant bit</strong> and the rightmost the <strong>least significant bit</strong>. If all the elements from the left are zeros, the convention is to omit them when writing. This is for example what the built-in <a href="https://docs.python.org/3/library/functions.html#bin">bin</a> function chooses to do:</p>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Let's-do-a-little-bit-of-exploration-ourselves">Let's do a little bit of exploration ourselves<a class="anchor-link" href="#Let's-do-a-little-bit-of-exploration-ourselves">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Write-two-simple-players">Write two simple players<a class="anchor-link" href="#Write-two-simple-players">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13267,63 +13214,38 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pelita</span> <span class="k">import</span> <span class="n">datamodel</span>
-<span class="kn">from</span> <span class="nn">pelita.graph</span> <span class="k">import</span> <span class="n">Graph</span><span class="p">,</span> <span class="n">NoPathException</span><span class="p">,</span> <span class="n">diff_pos</span>
-<span class="kn">from</span> <span class="nn">pelita.player</span> <span class="k">import</span> <span class="n">AbstractPlayer</span>
-
-
-<span class="k">class</span> <span class="nc">FastEatingPlayer</span><span class="p">(</span><span class="n">AbstractPlayer</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Like SmartEatingPlayer but without taking enemies into </span>
-<span class="sd">    account and seeking the closest food (always).&quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="nf">set_initial</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-        <span class="c1"># This is called only once \t the beginning of the game</span>
-        <span class="c1"># A graph is useful to help you find your way in the maze</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">graph</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_uni</span><span class="o">.</span><span class="n">reachable</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">initial_pos</span><span class="p">]))</span>
-
-    <span class="k">def</span> <span class="nf">goto_pos</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
-
-        <span class="c1"># Next move to go to the desired position(s)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">bfs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_pos</span><span class="p">,</span> <span class="n">pos</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-
-    <span class="k">def</span> <span class="nf">get_move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-        <span class="c1"># Check the move towards the closest enemy food</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">next_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">goto_pos</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">enemy_food</span><span class="p">)</span>
-            <span class="n">move</span> <span class="o">=</span> <span class="n">diff_pos</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_pos</span><span class="p">,</span> <span class="n">next_pos</span><span class="p">)</span>
-        <span class="k">except</span> <span class="n">NoPathException</span><span class="p">:</span>
-            <span class="n">move</span> <span class="o">=</span> <span class="n">datamodel</span><span class="o">.</span><span class="n">stop</span>
-
-        <span class="c1"># Check that it is one of all possible moves, else random</span>
-        <span class="k">if</span> <span class="n">move</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">legal_moves</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">move</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rnd</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">legal_moves</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
-
-
-<span class="k">class</span> <span class="nc">StoppingPlayer</span><span class="p">(</span><span class="n">AbstractPlayer</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">get_move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">datamodel</span><span class="o">.</span><span class="n">stop</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">bin</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[1]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;0b101&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Define-a-maze-layout">Define a maze layout<a class="anchor-link" href="#Define-a-maze-layout">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Mazes can be provided by the user using a simple ascii layout. Walls are represented by <code>#</code>, food pellets with dots, and players by their number (0 and 2 belong to team 1, 1 and 3 to team 2). Here I defined a maze made to test the behavior of the players of team 1 (left hand side), and added one food pellet on the left hand side too (this is needed for the game to be valid):</p>
+<p>which converts an integer number to a binary string prefixed with <code>0b</code>. Now it appears quite clear that the number of different integers that a computer can represent with this system depends on the size N of the binary sequence. A <em>positive</em> integer represented with a <strong>byte</strong> (8 bits are called a <strong>byte</strong>) can thus be as large as:</p>
 
 </div>
 </div>
@@ -13333,23 +13255,30 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_layout</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="sd">&quot;&quot;&quot; ##############################################################</span>
-<span class="sd">        #0                                   .                      1#</span>
-<span class="sd">        #                                    .                       #</span>
-<span class="sd">        #                                    .                       #</span>
-<span class="sd">        #                                    .                       #</span>
-<span class="sd">        #      .                             .                       #</span>
-<span class="sd">        #                                    .                       #</span>
-<span class="sd">        #                                    .                       #</span>
-<span class="sd">        #                                    ........................#</span>
-<span class="sd">        #2                                                          3#</span>
-<span class="sd">        ##############################################################</span>
-<span class="sd">     &quot;&quot;&quot;</span>
-<span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sum</span><span class="p">([</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)])</span>  <span class="c1"># do you understand what this line does?</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>255</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -13357,7 +13286,25 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="And-a-team">And a team<a class="anchor-link" href="#And-a-team">&#182;</a></h3>
+<p>but not larger. Unless specified otherwise, the first bit is often used to give the <em>sign</em> of the integer it represents. Therefore, the actual range of numbers that a byte can represent is $[-2^7; 2^7-1]= [-128; 127]$ (the reason for this asymmetry is a matter of definition, as we will see later). If you are sure that you only want to do arithmetics with positive number you can spare this one bit and specify your binary number as being of <strong>unsigned integer type</strong>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So how many bits does our computer use to represent integers? Well, it depends on the platform and programming language you are using. Many older languages (including old python versions) made the distinction between short (32 bits) and long (64 bits) integers.</p>
+<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: what is the largest number that a 64-bit integer can represent? The smallest? And a 32-bit unsigned integer?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, what is the default length of binary integers in python 3? Let's try to find out:</p>
+
 </div>
 </div>
 </div>
@@ -13366,40 +13313,40 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pelita.game_master</span> <span class="k">import</span> <span class="n">GameMaster</span>
-<span class="kn">from</span> <span class="nn">pelita.player</span> <span class="k">import</span> <span class="n">SimpleTeam</span>
-
-<span class="c1"># Make the team</span>
-<span class="n">player_0</span> <span class="o">=</span> <span class="n">FastEatingPlayer</span><span class="p">()</span>
-<span class="n">player_1</span> <span class="o">=</span> <span class="n">StoppingPlayer</span><span class="p">()</span>
-<span class="n">player_2</span> <span class="o">=</span> <span class="n">StoppingPlayer</span><span class="p">()</span>
-<span class="n">player_3</span> <span class="o">=</span> <span class="n">StoppingPlayer</span><span class="p">()</span>
-<span class="n">teams</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">SimpleTeam</span><span class="p">(</span><span class="s1">&#39;One&#39;</span><span class="p">,</span> <span class="n">player_0</span><span class="p">,</span> <span class="n">player_2</span><span class="p">),</span>
-    <span class="n">SimpleTeam</span><span class="p">(</span><span class="s1">&#39;Two&#39;</span><span class="p">,</span> <span class="n">player_1</span><span class="p">,</span> <span class="n">player_3</span><span class="p">)</span>
-<span class="p">]</span>
-
-<span class="c1"># Start the game</span>
-<span class="n">game_master</span> <span class="o">=</span> <span class="n">GameMaster</span><span class="p">(</span><span class="n">test_layout</span><span class="p">,</span> <span class="n">teams</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
-<span class="n">game_master</span><span class="o">.</span><span class="n">set_initial</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sys</span> <span class="k">import</span> <span class="n">getsizeof</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">getsizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>28</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Explore">Explore<a class="anchor-link" href="#Explore">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now we are ready to see what is happening. Lets see the state of the universe before and after a round:</p>
+<p>So 28 bytes? That's a lot of bits for the number 10. This is because the <a href="https://docs.python.org/3/library/sys.html#sys.getsizeof">getsizeof</a> function returns the <strong>memory consumption</strong> of the <em>object</em> <code>int(10)</code>. What does that mean? Well, in python numbers are not only numbers, they are also "things" (<strong>objects</strong>). And these things come with services, like for example the <code>bit_length</code> method:</p>
 
 </div>
 </div>
@@ -13409,7 +13356,7 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">game_master</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">pretty</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">bit_length</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13422,45 +13369,67 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>##############################################################
-#0                                   .                      1#
-#                                    .                       #
-#                                    .                       #
-#                                    .                       #
-#      .                             .                       #
-#                                    .                       #
-#                                    .                       #
-#                                    ........................#
-#2                                                          3#
-##############################################################
-Team(index=0, zone=(0, 30), score=0)
-	Bot(index=0, initial_pos=(1, 1), team_index=0, homezone=(0, 30), current_pos=(1, 1), noisy=False)
-	Bot(index=2, initial_pos=(1, 9), team_index=0, homezone=(0, 30), current_pos=(1, 9), noisy=False)
-Team(index=1, zone=(31, 61), score=0)
-	Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(60, 1), noisy=False)
-	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(60, 9), noisy=False)
 
-</pre>
+
+<div class="output_text output_subarea output_execute_result">
+<pre>4</pre>
 </div>
+
 </div>
 
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: what does <code>bit_length()</code> do? What is the bit length of 5? of 127?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>These services have a memory cost (an "overhead"), and are required no matter how big our number is:</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">game_master</span><span class="o">.</span><span class="n">play_round</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">size_int</span> <span class="o">=</span> <span class="n">getsizeof</span><span class="p">(</span><span class="nb">int</span><span class="p">())</span>
+<span class="n">size_int</span>  <span class="c1"># size of an empty integer object</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>24</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -13470,64 +13439,22 @@ Team(index=1, zone=(31, 61), score=0)
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">game_master</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">pretty</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_int_bitsize</span><span class="p">(</span><span class="n">integer</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns the actual memory consumption of an integer (in bits) without the object overhead.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">integer</span><span class="p">)</span> <span class="o">-</span> <span class="n">getsizeof</span><span class="p">(</span><span class="nb">int</span><span class="p">()))</span> <span class="o">*</span> <span class="mi">8</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>##############################################################
-# 0                                  .                      1#
-#                                    .                       #
-#                                    .                       #
-#                                    .                       #
-#      .                             .                       #
-#                                    .                       #
-#                                    .                       #
-#                                    ........................#
-#2                                                          3#
-##############################################################
-Team(index=0, zone=(0, 30), score=0)
-	Bot(index=0, initial_pos=(1, 1), team_index=0, homezone=(0, 30), current_pos=(2, 1), noisy=False)
-	Bot(index=2, initial_pos=(1, 9), team_index=0, homezone=(0, 30), current_pos=(1, 9), noisy=False)
-Team(index=1, zone=(31, 61), score=0)
-	Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(60, 1), noisy=False)
-	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(60, 9), noisy=False)
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Our player moved one step. What exacly is our player seeing from here?</p>
-<p>For example, the player sees the locations of the enemy food:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">player_0</span><span class="o">.</span><span class="n">enemy_food</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_int_bitsize</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13540,13 +13467,15 @@ Team(index=1, zone=(31, 61), score=0)
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[(38, 8), (43, 8), (37, 7), (48, 8), (40, 8), (54, 8), (59, 8), (39, 8), (37, 2), (46, 8), (44, 8), (51, 8), (49, 8), (56, 8), (37, 6), (41, 8), (55, 8), (60, 8), (47, 8), (45, 8), (52, 8), (50, 8), (37, 1), (57, 8), (37, 8), (42, 8), (37, 5), (53, 8), (58, 8), (37, 4), (37, 3)]
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>32</pre>
 </div>
+
 </div>
 
 </div>
@@ -13556,7 +13485,7 @@ Team(index=1, zone=(31, 61), score=0)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The player also knows the (noisy) position of the enemy bots:</p>
+<p>Ha! This looks more reasonable. So python uses 32 bits to store integers? But then, the largest number it can manipulate must be very small? Let's see if we can create a number larger than <code>2**32-1</code>:</p>
 
 </div>
 </div>
@@ -13566,7 +13495,7 @@ Team(index=1, zone=(31, 61), score=0)
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">player_0</span><span class="o">.</span><span class="n">enemy_bots</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">12</span><span class="o">**</span><span class="mi">68</span>
 </pre></div>
 
     </div>
@@ -13585,8 +13514,7 @@ Team(index=1, zone=(31, 61), score=0)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(57, 3), noisy=True),
- Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(56, 8), noisy=True)]</pre>
+<pre>24228399786958997352779519807679893609907752382877715390869269071681028096</pre>
 </div>
 
 </div>
@@ -13600,7 +13528,7 @@ Team(index=1, zone=(31, 61), score=0)
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">player_0</span><span class="o">.</span><span class="n">enemy_bots</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">current_pos</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_int_bitsize</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">18</span><span class="p">),</span> <span class="n">get_int_bitsize</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">68</span><span class="p">),</span> <span class="n">get_int_bitsize</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">100000</span><span class="p">)</span>  
 </pre></div>
 
     </div>
@@ -13619,7 +13547,7 @@ Team(index=1, zone=(31, 61), score=0)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(57, 3)</pre>
+<pre>(32, 96, 106688)</pre>
 </div>
 
 </div>
@@ -13631,7 +13559,7 @@ Team(index=1, zone=(31, 61), score=0)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can verify that it is noisy by checking that on the next round the positions might change although the players didn't move:</p>
+<p>As shown above, it turns out that modern python versions have <strong>no limitations</strong> on the size of integers (other than the total memory available on your computer). The memory slot used to store your number simply depends on how large it is.</p>
 
 </div>
 </div>
@@ -13641,20 +13569,66 @@ Team(index=1, zone=(31, 61), score=0)
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">game_master</span><span class="o">.</span><span class="n">play_round</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_int_bitsize</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">100000</span><span class="p">)</span> <span class="o">/</span> <span class="mi">8</span> <span class="o">/</span> <span class="mi">1024</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>13.0234375</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So the <code>2**100000</code> number requires about 13 KB (<strong>Kilobytes</strong>) of memory.</p>
+<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: print <code>2**100000</code> on screen, "just for fun".</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Overflow">Overflow<a class="anchor-link" href="#Overflow">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This dynamic resizing of integers in python means that they cannot <strong>overflow</strong>. <strong>Overflow</strong> is a common pitfall of many numerical operations, and to illustrate what it is we can either use floats (unlike python integers, python floats can overflow), or numpy, which uses integer types of fixed length:</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">player_0</span><span class="o">.</span><span class="n">enemy_bots</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">(</span><span class="mi">127</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">dtype</span>
 </pre></div>
 
     </div>
@@ -13673,8 +13647,7 @@ Team(index=1, zone=(31, 61), score=0)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(60, 2), noisy=True),
- Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(59, 7), noisy=True)]</pre>
+<pre>dtype(&#39;int8&#39;)</pre>
 </div>
 
 </div>
@@ -13688,7 +13661,7 @@ Team(index=1, zone=(31, 61), score=0)
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">game_master</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">pretty</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span>
 </pre></div>
 
     </div>
@@ -13701,51 +13674,27 @@ Team(index=1, zone=(31, 61), score=0)
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>##############################################################
-#  0                                 .                      1#
-#                                    .                       #
-#                                    .                       #
-#                                    .                       #
-#      .                             .                       #
-#                                    .                       #
-#                                    .                       #
-#                                    ........................#
-#2                                                          3#
-##############################################################
-Team(index=0, zone=(0, 30), score=0)
-	Bot(index=0, initial_pos=(1, 1), team_index=0, homezone=(0, 30), current_pos=(3, 1), noisy=False)
-	Bot(index=2, initial_pos=(1, 9), team_index=0, homezone=(0, 30), current_pos=(1, 9), noisy=False)
-Team(index=1, zone=(31, 61), score=0)
-	Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(60, 1), noisy=False)
-	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(60, 9), noisy=False)
 
-</pre>
+
+<div class="output_text output_subarea output_execute_result">
+<pre>127</pre>
 </div>
+
 </div>
 
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>What is the <code>graph</code> attribute actually useful for? Let's find out:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">player_0</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">bfs</span><span class="p">(</span><span class="n">player_0</span><span class="o">.</span><span class="n">current_pos</span><span class="p">,</span> <span class="n">player_0</span><span class="o">.</span><span class="n">enemy_food</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13761,10 +13710,24 @@ Team(index=1, zone=(31, 61), score=0)
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[(37, 1), (36, 1), (35, 1), (34, 1), (33, 1), (32, 1), (31, 1), (30, 1), (29, 1), (28, 1), (27, 1), (26, 1), (25, 1), (24, 1), (23, 1), (22, 1), (21, 1), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 1), (13, 1), (12, 1), (11, 1), (10, 1), (9, 1), (8, 1), (7, 1), (6, 1), (5, 1), (4, 1), (3, 1)]
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/home/mowglie/.pyvirtualenvs/py3/lib/python3.5/site-packages/ipykernel_launcher.py:1: RuntimeWarning: overflow encountered in byte_scalars
+  &#34;&#34;&#34;Entry point for launching an IPython kernel.
 </pre>
 </div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>-128</pre>
+</div>
+
 </div>
 
 </div>
@@ -13774,7 +13737,15 @@ Team(index=1, zone=(31, 61), score=0)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This gives us the shortest path towards all enemy food! Taking the last position gives us the next position we'd like to go:</p>
+<p>What happened here? To understand this we need to understand how binary numbers are added together first. Please read the <a href="https://en.wikipedia.org/wiki/Binary_number#Addition">addition chapter</a> of the Wikipedia article on binary numbers before going on.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Basically, we added 1 (binary <code>00000001</code>) to 127 (binary <code>01111111</code>) which gives us the binary number <code>10000000</code>, i.e. -128 in <a href="https://en.wikipedia.org/wiki/Two%27s_complement">two's complement</a> representation, which is the most common method of representing signed integers on computers. At least, python warned us that we are doing something wrong here. But be aware that this is not always the case:</p>
 
 </div>
 </div>
@@ -13784,9 +13755,7 @@ Team(index=1, zone=(31, 61), score=0)
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">next_pos</span> <span class="o">=</span> <span class="n">path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">move</span> <span class="o">=</span> <span class="n">diff_pos</span><span class="p">(</span><span class="n">player_0</span><span class="o">.</span><span class="n">current_pos</span><span class="p">,</span> <span class="n">next_pos</span><span class="p">)</span>
-<span class="n">move</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="mi">2147483648</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13805,7 +13774,7 @@ Team(index=1, zone=(31, 61), score=0)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(1, 0)</pre>
+<pre>-2147483648</pre>
 </div>
 
 </div>
@@ -13819,13 +13788,31 @@ Team(index=1, zone=(31, 61), score=0)
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># east, west, north, south are nothing more than direction tuples</span>
-<span class="k">assert</span> <span class="n">move</span> <span class="o">==</span> <span class="n">datamodel</span><span class="o">.</span><span class="n">east</span>
-<span class="c1"># shoule be a legal move</span>
-<span class="k">assert</span> <span class="n">move</span> <span class="ow">in</span> <span class="n">player_0</span><span class="o">.</span><span class="n">legal_moves</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">18</span><span class="p">])</span>
+<span class="n">a</span><span class="o">**</span><span class="n">a</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([-497033925936021504])</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -13833,7 +13820,65 @@ Team(index=1, zone=(31, 61), score=0)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="A-more-complex-maze">A more complex maze<a class="anchor-link" href="#A-more-complex-maze">&#182;</a></h3>
+<p>These are examples of <strong>silent</strong> overflows. Silent means that they do not warn you about the probable mistake and could happen in your code without you noticing that this happens.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Extending-the-binary-representation-to-non-integers:-fixed-point-notation">Extending the binary representation to non-integers: fixed-point notation<a class="anchor-link" href="#Extending-the-binary-representation-to-non-integers:-fixed-point-notation">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A more general definition of the binary representation for integers is to use negative exponents as well. With negative exponents, any rational number a can be approximated by:</p>
+$$a = \pm \sum_{i=-j}^{k} z_i b^i$$<p>with $b &gt; 1$ (base) and $0 \le z_i \le b-1$, $j$ and $k$ all positive integers. The precision depends on the size of $j$ while the maximum range depends on the size of $k$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the notation, a fixed point separates digits of positive powers of the base, from those of negative powers. In <strong>base 2</strong> (binary), the number $10000.1_2$ is equal to $16.5_{10}$ in base 10.</p>
+<p>Indeed:</p>
+$$1\times2^4 + 0\times2^3 + 0\times2^2 + 0\times2^1 + 0\times2^0 + 1\times2^{-1} = 16.5_{10}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Although this representation is convenient, the representable value range is heavily limited by the number of bits available to represent the number (see this week's assignments). Therefore, most computers today are relying on the <strong>floating point notation</strong> to represent real numbers.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Floating-point-numbers">Floating point numbers<a class="anchor-link" href="#Floating-point-numbers">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Because computers have a <em>finite</em> number of storage units available, they can only represent a <em>finite</em> number of distinguishable values. In fact, a memory slot with $N$ available bits cannot represent more than $2^N$ distinguishable values. The range of real (or complex) numbers is of course infinite, and therefore it becomes clear that in the computer representation of numbers <strong>there will always be a trade-off between the range of numbers one would like to represent and their relative accuracy</strong> (i.e. the absolute difference between two consecutive representable numbers).</p>
+<p>Taking the <strong>decimal representation</strong> of the number 1/3 as an example: it can be written as <code>0.33</code>, <code>0.333</code>, <code>0.3333</code>, etc. Depending on the numbers of digits available, the precision of the number will increase but never reach the exact value, at least in the decimal representation.</p>
+<p>This fundamental limitation is the explanation for unexpected results of certain arithmetic operations. For example:</p>
+
 </div>
 </div>
 </div>
@@ -13842,23 +13887,30 @@ Team(index=1, zone=(31, 61), score=0)
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_layout</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="sd">&quot;&quot;&quot; ##############################################################</span>
-<span class="sd">        #0                 ##                .                      1#</span>
-<span class="sd">        #                  ## ##             .                       #</span>
-<span class="sd">        #                   #  #             .                       #</span>
-<span class="sd">        #                   #  #             .                       #</span>
-<span class="sd">        #      .            #  #             .                       #</span>
-<span class="sd">        #                   #  #             .                       #</span>
-<span class="sd">        #                   #  #             .                       #</span>
-<span class="sd">        #                   #  #             ........................#</span>
-<span class="sd">        #2                     #                                    3#</span>
-<span class="sd">        ##############################################################</span>
-<span class="sd">     &quot;&quot;&quot;</span>
-<span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span>  <span class="c1"># so far so good</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[16]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.2</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -13868,13 +13920,30 @@ Team(index=1, zone=(31, 61), score=0)
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Start the game</span>
-<span class="n">game_master</span> <span class="o">=</span> <span class="n">GameMaster</span><span class="p">(</span><span class="n">test_layout</span><span class="p">,</span> <span class="n">teams</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
-<span class="n">universe</span> <span class="o">=</span> <span class="n">game_master</span><span class="o">.</span><span class="n">universe</span>
-<span class="n">game_master</span><span class="o">.</span><span class="n">set_initial</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.2</span>  <span class="c1"># wtf?</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.30000000000000004</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -13882,7 +13951,145 @@ Team(index=1, zone=(31, 61), score=0)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Will our bot find its way through it?</p>
+<p>This is a typical <strong>rounding error</strong>, happening because most computers do not represent numbers as decimal fractions, but as binary. Without going too much into details (which can be tricky), this chapter will give you some elements of understanding in order to prepare you for the most common pitfalls of floating point arithmetics.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Scientific-(exponential)-notation-in-base-b">Scientific (exponential) notation in base b<a class="anchor-link" href="#Scientific-(exponential)-notation-in-base-b">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the exponential notation (used by <a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic">floating point</a> numbers), a number is approximated with a fixed number of significant digits (the significand) and scaled using an exponent in some fixed base; the base for the scaling is normally two, ten, or sixteen. A number that can be represented exactly is of the following form:</p>
+<p>$\mathrm{number} = \mathrm{significand} \times \mathrm{base} ^{\mathrm{exponent}}$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For example, in base 10:</p>
+$$1.234 = 1234 \times 10^{-3}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The number <code>1.234</code> can easily be represented exactly in base 10, but the number 1/3 cannot. However, in base 3 (which is just used here as an example) 1/3 can be represented exactly by $1 \times 3^{-1}$.</p>
+<p>To approximate a number in base 10, the rule of "the more bits you have, the more precise you are" continues to hold true: $33 \times 10^{-2}$ and $33333333333333 \times 10^{-14}$ are two ways to approximate the number, the later being more expensive in terms of storage requirements but more accurate.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The exponential notation is the most common way to represent real numbers in computers and is the basis of the floating-point number representation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Floating-point-representation-(simplified)">Floating point representation (simplified)<a class="anchor-link" href="#Floating-point-representation-(simplified)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A floating point number in any base will store three numbers:</p>
+<ul>
+<li>the sign (one bit) </li>
+<li>the significand ($N_s$ bits)</li>
+<li>the exponent ($N_e$ bits)</li>
+</ul>
+<p>The numbers $N_s$ and $N_e$ are usually fixed beforehand, in the format specification. The base also needs to be specified of course: computers usually work in base 2, but other bases have been experimented with as well )e.g. 16, or hexadecimal). Now remember:</p>
+<ul>
+<li><strong>the significand determines the precision of the representation</strong> (significant digits)</li>
+<li><strong>the exponent determines the magnitude of the represented number</strong></li>
+</ul>
+<p>Let's make an example to illustrate this concept. We will work in base 10 for simplicity, and assume that we have 8 "memory slots" (the equivalent of bits) available, each memory slot capable of storing a number from 0 to 9 or the sign (+ or -). We attribute $N_s=6$ slots to the significand (including its sign) and $N_e=2$ slots to the exponent (including its sign).</p>
+<p>Now, what is the smallest positive number we can represent? And the biggest? Let's try it:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>smallest: $+00001 \times 10^{-9}$</li>
+<li>second smallest: $+00002 \times 10^{-9}$</li>
+<li>biggest: $+99999 \times 10^{+9}$</li>
+<li>second biggest: $+99998 \times 10^{+9}$</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>From these examples it becomes apparent that the precision (the distance between two consecutive numbers) is better for small numbers than for large numbers. Although our example is simplified, the principle is exactly the same for "real" floating point numbers in most computers, which follow the IEEE754 convention.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="IEEE-754">IEEE 754<a class="anchor-link" href="#IEEE-754">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>From the example above, we can see that with a fixed number of memory slots, we have a trade-off between the maximum precision of a number and its size.</p>
+<p>This precision/size trade-off raises many challenges: memory and electronics must be optimized so that computations are fast while still allowing programs to realize computations on a <em>wide</em> range of numbers in the same program. For example, atmospheric models realize computations on specific humidity values ($\mathrm{kg}\,\mathrm{kg}^{-1}$) with typical values of 10$^{-5}$ and on the geopotential with values up to several order of magnitude larger. Using different standards for each variable would be impracticable. This lead to the development of the <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE Standard for Floating-Point Arithmetic (IEEE 754)</a>.</p>
+<p>The standard defines five basic formats that are named for their numeric base and the number of bits used in their encoding, as listed in <a href="https://en.wikipedia.org/wiki/IEEE_754#Basic_and_interchange_formats">this table</a>. For example, <code>binary64</code> is the famous "double precision" format, called <code>float64</code> in numpy and simply <code>float</code> in the python standard library. In this format, $N_s=53$ bits are used for the significand, and the remaining $N_e=11$ for the exponent.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It is possible to compute the approximate precision of IEEE754 floating point numbers according to their value (see also the exercises):</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/IEEE754.png/550px-IEEE754.png" alt="img">
+Source: <a href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Consequences">Consequences<a class="anchor-link" href="#Consequences">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>With the floating point format, <strong>small numbers have a larger absolute precision than large numbers</strong>. See this example:</p>
 
 </div>
 </div>
@@ -13892,11 +14099,30 @@ Team(index=1, zone=(31, 61), score=0)
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
-    <span class="n">game_master</span><span class="o">.</span><span class="n">play_round</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">.</span><span class="mi">99</span> <span class="o">==</span> <span class="o">.</span><span class="mi">98</span>  <span class="c1"># so far so good</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[18]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -13906,7 +14132,7 @@ Team(index=1, zone=(31, 61), score=0)
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">game_master</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">pretty</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mf">999999999999999.99</span> <span class="o">==</span> <span class="mf">999999999999999.98</span>  <span class="c1"># wtf?</span>
 </pre></div>
 
     </div>
@@ -13919,63 +14145,83 @@ Team(index=1, zone=(31, 61), score=0)
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[19]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>##############################################################
-#                  ##                .                      1#
-#                  ## ##             .                       #
-#                   #  #             .                       #
-#                   #  #             .                       #
-#      .            #  #             .                       #
-#                   #  #             .                       #
-#                   #0 #             .                       #
-#                   #  #             ........................#
-#2                     #                                    3#
-##############################################################
-Team(index=0, zone=(0, 30), score=0)
-	Bot(index=0, initial_pos=(1, 1), team_index=0, homezone=(0, 30), current_pos=(21, 7), noisy=False)
-	Bot(index=2, initial_pos=(1, 9), team_index=0, homezone=(0, 30), current_pos=(1, 9), noisy=False)
-Team(index=1, zone=(31, 61), score=0)
-	Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(60, 1), noisy=False)
-	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(60, 9), noisy=False)
 
-</pre>
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
 </div>
+
 </div>
 
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Looks like it! Let the game run until the end:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">game_master</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mf">999999999999999.99</span>  <span class="c1"># wtf?</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[20]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1000000000000000.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A further direct consequence is that <strong>when summing two numbers, precision is lost to match the size of the outcome</strong>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Overflow">Overflow<a class="anchor-link" href="#Overflow">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Like numpy integers, floating point numbers can overflow:</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">game_master</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">pretty</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">(</span><span class="mi">65510</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13991,29 +14237,26 @@ Team(index=1, zone=(31, 61), score=0)
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>##############################################################
-#                  ##                                       1#
-#                  ## ##                                     #
-#                   #  #                                     #
-#                   #  #                                     #
-#      .            #  #                                     #
-#                   #  #                                     #
-#                   #  #                                     #
-#                   #  #                                    0#
-#2                     #                                    3#
-##############################################################
-Team(index=0, zone=(0, 30), score=31)
-	Bot(index=0, initial_pos=(1, 1), team_index=0, homezone=(0, 30), current_pos=(60, 8), noisy=False)
-	Bot(index=2, initial_pos=(1, 9), team_index=0, homezone=(0, 30), current_pos=(1, 9), noisy=False)
-Team(index=1, zone=(31, 61), score=0)
-	Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(60, 1), noisy=False)
-	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(60, 9), noisy=False)
-
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/home/mowglie/.pyvirtualenvs/py3/lib/python3.5/site-packages/ipykernel_launcher.py:1: RuntimeWarning: overflow encountered in half_scalars
+  &#34;&#34;&#34;Entry point for launching an IPython kernel.
 </pre>
 </div>
 </div>
 
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[21]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>inf</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -14021,14 +14264,7 @@ Team(index=1, zone=(31, 61), score=0)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="A-more-aggressive-player">A more aggressive player<a class="anchor-link" href="#A-more-aggressive-player">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's make the opponent team a little more active:</p>
+<p>Fortunately, the IEEE 754 standard defines two new numbers (-inf and +inf) which are more informative (and less dangerous) than the negative reset of overflowing integer numbers. IEEE 754 also defines "Not A Number" (abbreviated NaN), which propagates through computations:</p>
 
 </div>
 </div>
@@ -14038,89 +14274,70 @@ Team(index=1, zone=(31, 61), score=0)
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pelita.graph</span> <span class="k">import</span> <span class="n">manhattan_dist</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="k">class</span> <span class="nc">AggressivePlayer</span><span class="p">(</span><span class="n">AbstractPlayer</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="nf">set_initial</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">graph</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_uni</span><span class="o">.</span><span class="n">reachable</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">initial_pos</span><span class="p">]))</span>
-
-    <span class="k">def</span> <span class="nf">goto_pos</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">a_star</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_pos</span><span class="p">,</span> <span class="n">pos</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-
-    <span class="k">def</span> <span class="nf">get_move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        
-        <span class="c1"># Take the closest enemy</span>
-        <span class="n">dis</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">enemy</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">enemy_bots</span><span class="p">:</span>
-            <span class="n">dis</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">manhattan_dist</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_pos</span><span class="p">,</span> <span class="n">enemy</span><span class="o">.</span><span class="n">current_pos</span><span class="p">))</span>
-        <span class="n">enemy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">enemy_bots</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">dis</span><span class="p">)]</span>
-
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">next_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">goto_pos</span><span class="p">(</span><span class="n">enemy</span><span class="o">.</span><span class="n">current_pos</span><span class="p">)</span>
-            <span class="c1"># Check if the next_pos is on the wrong side of the maze</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">team</span><span class="o">.</span><span class="n">in_zone</span><span class="p">(</span><span class="n">next_pos</span><span class="p">):</span>
-                <span class="c1"># whoops, better not move</span>
-                <span class="n">move</span> <span class="o">=</span> <span class="n">datamodel</span><span class="o">.</span><span class="n">stop</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">move</span> <span class="o">=</span> <span class="n">diff_pos</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_pos</span><span class="p">,</span> <span class="n">next_pos</span><span class="p">)</span>
-            <span class="c1"># Check that it is one of all possible moves, else stop</span>
-            <span class="k">if</span> <span class="n">move</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">legal_moves</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">move</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">datamodel</span><span class="o">.</span><span class="n">stop</span>
-        <span class="k">except</span> <span class="n">NoPathException</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">datamodel</span><span class="o">.</span><span class="n">stop</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">NaN</span> <span class="o">*</span> <span class="mi">10</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[22]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>nan</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-to-do-from-here?">What to do from here?<a class="anchor-link" href="#What-to-do-from-here?">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As we've learned, errors in floating-point numbers are unavoidable. Even if these errors are very small, simple calculations on approximated numbers can contain pitfalls that increase the error in the result way beyond just having the individual errors "add up". Here we discuss some possible ways to deal with the pitfalls of floating point arithmetics.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Alternative-data-types">Alternative data types<a class="anchor-link" href="#Alternative-data-types">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In certain cases where perfect decimal accuracy is needed (for example when dealing with currencies and money), it is possible to use a decimal floating point representation instead of the default binary one:</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Make the team</span>
-<span class="n">player_0</span> <span class="o">=</span> <span class="n">FastEatingPlayer</span><span class="p">()</span>
-<span class="n">player_1</span> <span class="o">=</span> <span class="n">StoppingPlayer</span><span class="p">()</span>
-<span class="n">player_2</span> <span class="o">=</span> <span class="n">StoppingPlayer</span><span class="p">()</span>
-<span class="n">player_3</span> <span class="o">=</span> <span class="n">AggressivePlayer</span><span class="p">()</span>
-<span class="n">teams</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">SimpleTeam</span><span class="p">(</span><span class="s1">&#39;One&#39;</span><span class="p">,</span> <span class="n">player_0</span><span class="p">,</span> <span class="n">player_2</span><span class="p">),</span>
-    <span class="n">SimpleTeam</span><span class="p">(</span><span class="s1">&#39;Two&#39;</span><span class="p">,</span> <span class="n">player_1</span><span class="p">,</span> <span class="n">player_3</span><span class="p">)</span>
-<span class="p">]</span>
-
-<span class="c1"># Start the game</span>
-<span class="n">game_master</span> <span class="o">=</span> <span class="n">GameMaster</span><span class="p">(</span><span class="n">test_layout</span><span class="p">,</span> <span class="n">teams</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
-<span class="n">universe</span> <span class="o">=</span> <span class="n">game_master</span><span class="o">.</span><span class="n">universe</span>
-<span class="n">game_master</span><span class="o">.</span><span class="n">set_initial</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>But stalking enemies is dangerous! See what happens in this game:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">40</span><span class="p">):</span>
-    <span class="n">game_master</span><span class="o">.</span><span class="n">play_round</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">game_master</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">pretty</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span><span class="o">/</span><span class="mi">10</span><span class="o">*</span><span class="mi">3</span>  <span class="c1"># not precise</span>
 </pre></div>
 
     </div>
@@ -14133,44 +14350,86 @@ Team(index=1, zone=(31, 61), score=0)
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[23]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>##############################################################
-#                  ##    0           .                      1#
-#                  ## ##             .                       #
-#                   #  #             .                       #
-#                   #  #             .                       #
-#      .            #  #             .                       #
-#                   #  #             .                       #
-#                   #  #             .                       #
-#                   #  #             ........................#
-#2                     #       3                             #
-##############################################################
-Team(index=0, zone=(0, 30), score=0)
-	Bot(index=0, initial_pos=(1, 1), team_index=0, homezone=(0, 30), current_pos=(25, 1), noisy=False)
-	Bot(index=2, initial_pos=(1, 9), team_index=0, homezone=(0, 30), current_pos=(1, 9), noisy=False)
-Team(index=1, zone=(31, 61), score=0)
-	Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(60, 1), noisy=False)
-	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(31, 9), noisy=False)
 
-</pre>
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.30000000000000004</pre>
 </div>
+
 </div>
 
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">decimal</span> <span class="k">import</span> <span class="n">Decimal</span>
+<span class="n">Decimal</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">Decimal</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span>  <span class="c1"># precise</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[24]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Decimal(&#39;0.3&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>With limited-precision decimals there are no unexpected rounding errors. In practice, however, such alternative datatypes are used rarely because the precision gain comes with a performance overhead: computers work best with 0s and 1s, not with numbers humans can read.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Symbolic-computations">Symbolic computations<a class="anchor-link" href="#Symbolic-computations">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Symbolic computations are realized <em>literally</em> (like in mathematics), not approximately. <a href="http://www.sympy.org">SymPy</a> is a popular python library for symbolic mathematics:</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
-    <span class="n">game_master</span><span class="o">.</span><span class="n">play_round</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">game_master</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">pretty</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">sympify</span><span class="p">(</span><span class="s1">&#39;1 / 3&#39;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">+</span> <span class="n">a</span>
 </pre></div>
 
     </div>
@@ -14183,80 +14442,15 @@ Team(index=1, zone=(31, 61), score=0)
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[25]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>##############################################################
-#                  ##            0   .                      1#
-#                  ## ##             .                       #
-#                   #  #             .                       #
-#                   #  #             .                       #
-#      .            #  #       3     .                       #
-#                   #  #             .                       #
-#                   #  #             .                       #
-#                   #  #             ........................#
-#2                     #                                     #
-##############################################################
-Team(index=0, zone=(0, 30), score=0)
-	Bot(index=0, initial_pos=(1, 1), team_index=0, homezone=(0, 30), current_pos=(33, 1), noisy=False)
-	Bot(index=2, initial_pos=(1, 9), team_index=0, homezone=(0, 30), current_pos=(1, 9), noisy=False)
-Team(index=1, zone=(31, 61), score=0)
-	Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(60, 1), noisy=False)
-	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(31, 5), noisy=False)
 
-</pre>
-</div>
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2/3</pre>
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
-    <span class="n">game_master</span><span class="o">.</span><span class="n">play_round</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">game_master</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">pretty</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>##############################################################
-#                  ##                                       1#
-#                  ## ##                                     #
-#                   #  #                                     #
-#                   #  #                                     #
-#      .            #  #        3    0                       #
-#                   #  #             .                       #
-#                   #  #             .                       #
-#                   #  #             ........................#
-#2                     #                                     #
-##############################################################
-Team(index=0, zone=(0, 30), score=5)
-	Bot(index=0, initial_pos=(1, 1), team_index=0, homezone=(0, 30), current_pos=(37, 5), noisy=False)
-	Bot(index=2, initial_pos=(1, 9), team_index=0, homezone=(0, 30), current_pos=(1, 9), noisy=False)
-Team(index=1, zone=(31, 61), score=0)
-	Bot(index=1, initial_pos=(60, 1), team_index=1, homezone=(31, 61), current_pos=(60, 1), noisy=False)
-	Bot(index=3, initial_pos=(60, 9), team_index=1, homezone=(31, 61), current_pos=(32, 5), noisy=False)
-
-</pre>
-</div>
 </div>
 
 </div>
@@ -14266,7 +14460,446 @@ Team(index=1, zone=(31, 61), score=0)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>The bot will never be able to catch it!</strong> Having completely deterministic moves might be contra-productive sometimes.</p>
+<p>Seams like the perfect solution, right? It probably is if you are a mathematician, but for actual numerical computations SymPy will be way too slow to use. Symbolic mathematics can only be used for problems where analytical solutions are known. Unfortunately, this is not always the case (take numerical models of the atmosphere for example).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Deal-with-it">Deal with it<a class="anchor-link" href="#Deal-with-it">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are no simple answers to numerical rounding errors. Therfore: <strong>be aware that they occur and try to mitigate their effect</strong>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Awareness">Awareness<a class="anchor-link" href="#Awareness">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Awareness</em> is mostly hindered by the string representation of floating point numbers. In practice:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mf">0.1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[26]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">format</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;.16g&#39;</span><span class="p">)</span>  <span class="c1"># give 16 significant digits</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[27]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;0.1&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">format</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;.30g&#39;</span><span class="p">)</span>  <span class="c1"># give 30 significant digits</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[28]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;0.100000000000000005551115123126&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The default <code>0.1</code> print is therefore a "lie", but it is a useful one: in most cases you don't want to know about these insignificant digits at the end. The <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.finfo.html">numpy.finfo</a> is a useful function informing you about the machine limits for floating point types:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">info</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+<span class="n">info</span><span class="o">.</span><span class="n">bits</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">precision</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">max</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[29]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(64, 15, 1.7976931348623157e+308)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Error-propagation">Error propagation<a class="anchor-link" href="#Error-propagation">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Preventing rounding errors to happen is not possible, but there are a few general rules:</p>
+<ul>
+<li>Multiplication and division are "safer" operations</li>
+<li>Addition and subtraction are dangerous, because when numbers of different magnitudes are involved, digits of the smaller-magnitude number are lost.</li>
+<li>This loss of digits can be inevitable and benign (when the lost digits are also insignificant for the final result) or catastrophic (when the loss is magnified and distorts the result strongly).</li>
+<li>The more calculations are done (especially when they form an iterative algorithm) the more important it is to consider this kind of problem.</li>
+<li>A method of calculation can be stable (meaning that it tends to reduce rounding errors) or unstable (meaning that rounding errors are magnified). Very often, there are both stable and unstable solutions for a problem.</li>
+</ul>
+<p>(list taken from <a href="http://floating-point-gui.de/errors/propagation/">the floating point guide</a>)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As illustration for the difference between addition and multiplication, see the following example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="mf">0.1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span>
+<span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[30]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[31]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(1.0, 0.9999999999999999)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Realize <strong>safer computations</strong> therefore involves asking yourself at which stage the most precision is going to be lost: this is most often the case when adding numbers of very different magnitudes. When building numerical models, this should always be something you consider: is a formula leading to dangerous additions, then reformulate it and/or use other units for your variables (e.g. $\mathrm{g}\,\mathrm{kg}^{-1}$ instead of $\mathrm{kg}\,\mathrm{kg}^{-1}$ for specific humidity). Consider the following example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">1e-16</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="n">c</span> <span class="o">*</span> <span class="n">b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c1</span> <span class="o">==</span> <span class="n">c2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[34]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>c * (a + b)</code> and <code>c * a + c * b</code> are mathematically equivalent, and the first is computationally less expensive (two operations instead of three). However, the second is less prone to rounding errors!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Safer-tests">Safer tests<a class="anchor-link" href="#Safer-tests">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Fortunately, rounding errors often remain unnoticed, meaning that your computations are probably OK! In our field in particular, we often do not care if the post-processed temperature forecast is numerically precise at 0.001° since the forecast accuracy is much lower anyway. However, this can still lead to surprises when comparing arrays for equality (e.g. when testing that a temperature is equal to zero, or for matching coordinates like longitude or latitude). In these cases, prefer to use numpy's specialized functions:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">)</span>  <span class="c1"># OK is you don&#39;t care about small numerical errors</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[35]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Take-home-points">Take home points<a class="anchor-link" href="#Take-home-points">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>computers can only represent a finite number of distinguishable values.</li>
+<li>the range of representable numbers depends on the size of memory allocated to store it. There is practically no limit to the size of integers in python, but there is a limit for floats. Numpy implements several types of variables named after their size in bits (e.g. <code>np.float32</code>, <code>np.float64</code>, <code>np.float128</code>).</li>
+<li>there are many different ways to represent numbers on computers, all with different strengths and weaknesses. The vast majority of systems use the <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE 754</a> standard for floating points, which is a good compromise between range and accuracy. Most systems are binary (base 2) per default, but there are other bases available: base 10 (decimal) and base 16 (hexadecimal) are frequent as well.</li>
+<li>rounding errors happen because of these limitations. They always happen, even for the simplest arithmetics, and you <strong>shall not ignore them</strong>.</li>
+<li>the fact that a number is printed "correctly" on screen does not mean that its internal binary representation is perfect. In fact, it is statistically much more probable (<em>inifinitely</em> more probable) that a number is not represented exactly by the floating-point format</li>
+<li>however, there are ways to mitigate the impact of these rounding errors. This includes the use of more precise datatypes (e.g. float64 instead of float32), alternative representations (decimal instead of binary), and the use of more conservative operations (e.g. multiplication before addition when dealing with numbers of different magnitude)</li>
+<li>floating point errors have dramatic consequences in chaotic systems. A scary example is given in <a href="https://journals.ametsoc.org/doi/pdf/10.1175/MWR-D-12-00352.1">this paper</a> about the influence of floating point computations on numerical weather forecasts.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Further-reading">Further reading<a class="anchor-link" href="#Further-reading">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Because of the importance of floating point computations you will find many resources online. I <strong>highly recommend</strong> to go through the short <a href="http://floating-point-gui.de/">floating point guide</a> website, which explains the problem to non specialists. It will give you another point of view on the topic.</p>
+<p>Other resources:</p>
+<ul>
+<li><a href="https://docs.python.org/3/tutorial/floatingpoint.html">Python's documentation</a> on floating point arithmetic</li>
+<li><a href="https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html">What Every Computer Scientist Should Know About Floating-Point Arithmetic</a>: kind of heavy, but a reference text</li>
+</ul>
 
 </div>
 </div>
@@ -14281,17 +14914,7 @@ Team(index=1, zone=(31, 61), score=0)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now it's your turn! Try to use these players in real games to visualize the outcome, and start to define new strategies!</p>
-<p>Here some further tips:</p>
-<ul>
-<li>Mazes don’t have dead-ends</li>
-<li>It's hard to catch another bot which outruns you: bots can combine their powers and attack from two sides</li>
-<li>Think about shortest-path algorithms</li>
-<li>Keep track of opponents</li>
-<li>Investigate communication between the Players</li>
-<li>Re-use your code</li>
-<li>Think about working in a team</li>
-</ul>
+<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="13-Assignment-04.html">jump to this week's assignment</a>.</p>
 
 </div>
 </div>
@@ -14299,7 +14922,16 @@ Team(index=1, zone=(31, 61), score=0)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>.</p>
+<h2 id="License">License<a class="anchor-link" href="#License">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+  <img align="left" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg"/>
+</a></p>
 
 </div>
 </div>
