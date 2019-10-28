@@ -10,7 +10,7 @@ gtag('config', 'UA-88391345-1');
 </script>
 <meta charset="utf-8" />
 
-<title>11-Why-Numpy</title>
+<title>15-Scientific-Python</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13131,7 +13131,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": "11", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "364px"}, "toc_section_display": "block", "toc_window_display": true};
+            var cfg = {"base_numbering": "18", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "384px"}, "toc_section_display": "block", "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -13146,16 +13146,15 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Introduction-to-numpy:-why-does-numpy-exist?">Introduction to numpy: why does numpy exist?<a class="anchor-link" href="#Introduction-to-numpy:-why-does-numpy-exist?">&#182;</a></h1>
+<h1 id="The-scientific-python-stack">The scientific python stack<a class="anchor-link" href="#The-scientific-python-stack">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You might have read somewhere that Python is "slow" in comparison to other languages like Fortran or C. While generally true, this statement has only little meaning without context. As a scripting language, python is fast enough. For <em>numerical computations</em> (like the computations done by an atmospheric model or by a machine learning algorithm), pure Python is quite slow indeed. Fortunately, there are ways to overcome this problem!</p>
-<p>In this chapter we are going to explain why the <a href="http://numpy.org">numpy</a> library was created. Numpy is the fundamental library which transformed the general purpose python language into a scientific language like Matlab, IDL, or R.</p>
-<p>Before introducing numpy, we will discuss some of the differences between python and compiled languages widely used in scientific software development (like C and FORTRAN).</p>
+<p>Unlike Matlab, the set of Python tools used by scientists does not come from one single source. It is the result of a non-coordinated, chaotic and creative development process originating from a community of volunteers and professionals.</p>
+<p>In this chapter I will shortly describe some of the essential tools that every scientific python programmer should know about. It is not representative or complete: it's just a list of packages I happen to know about, and I surely missed many of them.</p>
 
 </div>
 </div>
@@ -13164,172 +13163,22 @@ $( document ).ready(function(){
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Introduction-to-numpy:-why-does-numpy-exist?" data-toc-modified-id="Introduction-to-numpy:-why-does-numpy-exist?-11"><span class="toc-item-num">11&nbsp;&nbsp;</span>Introduction to numpy: why does numpy exist?</a></span><ul class="toc-item"><li><span><a href="#Why-is-python-&quot;slow&quot;?" data-toc-modified-id="Why-is-python-&quot;slow&quot;?-11.1"><span class="toc-item-num">11.1&nbsp;&nbsp;</span>Why is python "slow"?</a></span></li><li><span><a href="#Dynamically-versus-statically-typed-languages" data-toc-modified-id="Dynamically-versus-statically-typed-languages-11.2"><span class="toc-item-num">11.2&nbsp;&nbsp;</span>Dynamically versus statically typed languages</a></span></li><li><span><a href="#Compiled-versus-interpreted-languages" data-toc-modified-id="Compiled-versus-interpreted-languages-11.3"><span class="toc-item-num">11.3&nbsp;&nbsp;</span>Compiled versus interpreted languages</a></span></li><li><span><a href="#Here-comes-numpy" data-toc-modified-id="Here-comes-numpy-11.4"><span class="toc-item-num">11.4&nbsp;&nbsp;</span>Here comes numpy</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-11.5"><span class="toc-item-num">11.5&nbsp;&nbsp;</span>Take home points</a></span></li><li><span><a href="#Further-reading" data-toc-modified-id="Further-reading-11.6"><span class="toc-item-num">11.6&nbsp;&nbsp;</span>Further reading</a></span></li><li><span><a href="#Addendum:-is-python-really-that-slow?" data-toc-modified-id="Addendum:-is-python-really-that-slow?-11.7"><span class="toc-item-num">11.7&nbsp;&nbsp;</span>Addendum: is python really <em>that</em> slow?</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-11.8"><span class="toc-item-num">11.8&nbsp;&nbsp;</span>What's next?</a></span></li><li><span><a href="#License" data-toc-modified-id="License-11.9"><span class="toc-item-num">11.9&nbsp;&nbsp;</span>License</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#The-scientific-python-stack" data-toc-modified-id="The-scientific-python-stack-18"><span class="toc-item-num">18&nbsp;&nbsp;</span>The scientific python stack</a></span><ul class="toc-item"><li><span><a href="#Python's-scientific-ecosystem" data-toc-modified-id="Python's-scientific-ecosystem-18.1"><span class="toc-item-num">18.1&nbsp;&nbsp;</span>Python's scientific ecosystem</a></span></li><li><span><a href="#The-core-packages" data-toc-modified-id="The-core-packages-18.2"><span class="toc-item-num">18.2&nbsp;&nbsp;</span>The core packages</a></span></li><li><span><a href="#Essential-numpy-&quot;extensions&quot;" data-toc-modified-id="Essential-numpy-&quot;extensions&quot;-18.3"><span class="toc-item-num">18.3&nbsp;&nbsp;</span>Essential numpy "extensions"</a></span></li><li><span><a href="#Domain-specific-packages" data-toc-modified-id="Domain-specific-packages-18.4"><span class="toc-item-num">18.4&nbsp;&nbsp;</span>Domain specific packages</a></span></li><li><span><a href="#Development-environments" data-toc-modified-id="Development-environments-18.5"><span class="toc-item-num">18.5&nbsp;&nbsp;</span>Development environments</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-18.6"><span class="toc-item-num">18.6&nbsp;&nbsp;</span>What's next?</a></span></li><li><span><a href="#License" data-toc-modified-id="License-18.7"><span class="toc-item-num">18.7&nbsp;&nbsp;</span>License</a></span></li></ul></li></ul></div>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Why-is-python-&quot;slow&quot;?">Why is python "slow"?<a class="anchor-link" href="#Why-is-python-&quot;slow&quot;?">&#182;</a></h2>
+<h2 id="Python's-scientific-ecosystem">Python's scientific ecosystem<a class="anchor-link" href="#Python's-scientific-ecosystem">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Last week, we've learned that the memory consumption of a python <code>int</code> is larger than the memory needed to store the binary number alone. This overhead in memory consumption is due to the nature of python data types, which are all <strong>objects</strong>. We've already learned that these objects come with certain "services", for example:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;this.needs.some.splitting&#39;</span>
-<span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>  <span class="c1"># join, split, title are all &quot;methods&quot; (like functions) applied to a string</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[1]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;This Needs Some Splitting&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Everything is an object in Python. Yes, even functions are objects! Let me prove it to you:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">useful_function</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;This function adds two objects together.</span>
-<span class="sd">    </span>
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    a : an object</span>
-<span class="sd">    b : another object</span>
-<span class="sd">    </span>
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    The sum of the two</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">useful_function</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[3]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>function</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">useful_function</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>This function adds two objects together.
-    
-    Parameters
-    ----------
-    a : an object
-    b : another object
-    
-    Returns
-    -------
-    The sum of the two
-    
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Functions are objects of type <code>function</code>, and one of their attributes (<code>__doc__</code>) gives us access to their <strong>docstring</strong>. During the course of the semester you are going to learn how to use more and more of these object features, and hopefully you are going to like them more and more (at least this is what happened to me).</p>
-<p>Now, why does this make python "slow"? Well, in simple words, these "services" tend to increase the complexity and the number of operations an interpreter has to perform when running a program.  More specialized languages will be less flexible than python, but will be faster at running specialized operations and be less memory hungry.</p>
-<p>Python's high-level of abstraction (i.e. python's flexibility) makes it slower than its lower-level counterparts like C or FORTRAN. But, why is that so?</p>
+<p>The set of python scientific packages is sometimes referred to as the "scientific python ecosystem". I didn't find an official explanation for this name, but I guess that it has something to do with the fact that many packages rely on the others to build new features on top of them, like a natural ecosystem.</p>
+<p>Jake Vanderplas made a great graphic in a <a href="https://speakerdeck.com/jakevdp/the-state-of-the-stack-scipy-2015-keynote">2015 presentation</a> (the video of the presentation is also <a href="https://www.youtube.com/watch?v=5GlNDD7qbP4">available here</a> if you are interested), and I took the liberty to adapt it a little bit:</p>
 
 </div>
 </div>
@@ -13337,93 +13186,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Dynamically-versus-statically-typed-languages">Dynamically versus statically typed languages<a class="anchor-link" href="#Dynamically-versus-statically-typed-languages">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Python is a so-called <strong>dynamically typed</strong> language, which means that the <strong>type</strong> of a variable is determined by the interpreter <em>at run time</em>. To understand what that  means in practice, let's have a look at the following code snippet:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The line <code>c = a + b</code> is valid python syntax. The <em>operation</em> that has to be applied by the <code>+</code> operator, however, depends on the type of the variables to be added. Remember what happens when adding two lists for example:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-<span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[7]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[2, 3]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In this simple example it would be theoretically possible for the interpreter to predict which operation to apply beforehand (by prior parsing of all lines of code prior to the action). In most cases, however, this is impossible: for example, a function taking arguments does not know beforehand the type of the arguments it will receive.</p>
-<p>Languages which assess the type of variables <em>at run time</em> are called <a href="https://en.wikipedia.org/wiki/Category:Dynamically_typed_programming_languages">dynamically typed programming languages</a>. Matlab, Python or R are examples falling in this category.</p>
+<p><img src="https://fabienmaussion.info/acinn_python_workshop/figures/scipy_ecosystem.png" alt="img"></p>
 
 </div>
 </div>
@@ -13431,280 +13194,19 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Statically typed languages</strong>, however, require the <em>programmer</em> to provide the type of variables while writing the code. Here is an example of a program written in C:</p>
-
+<h2 id="The-core-packages">The core packages<a class="anchor-link" href="#The-core-packages">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt; </span><span class="cp"></span>
-<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
-    <span class="n">printf</span> <span class="p">(</span><span class="s">&quot;Sum of two numbers : %d </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The variable type definition is an integral part of the C syntax. This applies to the variables themselves, but also to the output of computations. This is a fundamental difference to python, and comes with several advantages. Static typing usually results in code that executes faster: since the program knows the exact data types that are in use, it can predict the memory consumption of operations beforehand and produce optimized machine code. Another advantage is code documentation: the statement <code>int c = a + b</code> makes it clear that we are adding two numbers while the python equivalent <code>c = a + b</code> could produce a number, a string, a list, etc.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Compiled-versus-interpreted-languages">Compiled versus interpreted languages<a class="anchor-link" href="#Compiled-versus-interpreted-languages">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Statically typed languages often require <strong>compilation</strong>. To run the C code snippet I had to create a new text file (<code>example.c</code>), write the code, compile it (<code>$ gcc -o myprogram example.c</code>), before finally being able to execute it (<code>$ ./myprogram</code>).</p>
-<p><a href="https://en.wikipedia.org/wiki/GNU_Compiler_Collection">gcc</a> is the compiler I used to translate the C source code (a text file) to a low level language (machine code) in order to create an <strong>executable</strong> (<code>myprogram</code>). Later changes to the source code require a new compilation step for the changes to take effect.</p>
-<p>Because of this "edit-compile-run" cycle, compiled languages are not interactive: in the C language, there is no equivalent to python's command line interpreter. Compiling complex programs can take up to several hours in some extreme cases. This compilation time, however, is usually associated with faster execution times: as mentioned earlier, the compiler's task is to optimize the program for memory consumption by source code analysis. Often, a compiled program is optimized for the machine architecture it is compiled onto. Like interpreters, there can be different compilers for the same language. They differ in the optimization steps they undertake to make the program faster, and in their support of various hardware architectures.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Interpreters</strong> do not require compilation: they analyze the code at run time. The following code for example is syntactically correct:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">my_func</span><span class="p">():</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;2&#39;</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>but the <em>execution</em> of this code results in a TypeError:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_func</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-9-db3ada79940f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>my_func<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-8-9b6b5ad94aba&gt;</span> in <span class="ansi-cyan-fg">my_func</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span>     a <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">1</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span>     b <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">&#39;2&#39;</span>
-<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> a <span class="ansi-blue-fg">+</span> b
-
-<span class="ansi-red-fg">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The interpreter cannot detect these errors before runtime: they happen when the variables are finally added together, not when they are created.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Parenthesis I: python bytecode</strong></p>
-<p>When executing a python program from the command line, the CPython interpreter creates a hidden directory called <code>__pycache__</code>. This directory contains <a href="https://en.wikipedia.org/wiki/Bytecode">bytecode</a> files, which are your python source code files translated to binary files. This is an optimization step which makes subsequent executions of the program run faster. While this conversion step is sometimes called "compilation", it should not be mistaken with a C-program compilation: indeed, python bytecode still needs an interpreter to run, while compiled executables can be run without C interpreter.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Parenthesis II: static typing and compilation</strong></p>
-<p>Statically typed languages are often compiled, and dynamically typed languages are often interpreted. While this is a good rule of thumb, this is not always true and the vast landscape of programming languages contains many exceptions. This lecture is only a very short introduction to these concepts: you'll have to refer to more advanced computer science lectures if you want to learn about these topics in more detail.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Here-comes-numpy">Here comes numpy<a class="anchor-link" href="#Here-comes-numpy">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's summarize the two previous chapters:</p>
 <ul>
-<li>Python is flexible, interactive and slow</li>
-<li>C is less flexible, non-interactive and fast</li>
+<li><strong>numpy</strong>: <a href="https://docs.scipy.org/doc/">documentation</a>, <a href="https://github.com/numpy/numpy">code repository</a></li>
+<li><strong>scipy</strong>: <a href="https://docs.scipy.org/doc/scipy/reference/">documentation</a>, <a href="https://github.com/scipy/scipy">code repository</a></li>
+<li><strong>matplotlib</strong>: <a href="https://matplotlib.org/">documentation</a>, <a href="https://github.com/matplotlib/matplotlib">code repository</a></li>
 </ul>
-<p>This is a simplification, but not far from the truth.</p>
-<p>Now, let's add another obstacle to using python for science: the built-in <code>list</code> data type in python is mostly useless for arithmetics or vector computations. Indeed, to add two lists together element-wise (a behavior that you would expect as a scientist), you must write:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_lists</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Element-wise addition of two lists.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">a</span><span class="o">+</span><span class="n">b</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_lists</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[11]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[5, 7, 9]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The numpy equivalent is much more intuitive and straightforward:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="k">def</span> <span class="nf">add_arrays</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_arrays</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[13]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>array([5, 7, 9])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Tricky question</strong>: why did I prefer to use the <code>np.add</code> function here instead of the simpler <code>+</code> operator?</p>
+<p>Numpy provides the N-dimensional arrays necessary to do fast computations, and SciPy adds the fundamental scientific tools to it. SciPy is a very large package and covers many aspects of the scientific workflow. It is organized in submodules, all dedicated to a specific aspect of data processing. For example: <a href="https://docs.scipy.org/doc/scipy/reference/integrate.html">scipy.integrate</a>, <a href="https://docs.scipy.org/doc/scipy/reference/optimize.html">scipy.optimize</a>, or <a href="https://docs.scipy.org/doc/scipy/reference/linalg.html">scipy.linalg</a>. Matplotlib is the traditional package to make graphics in python.</p>
 
 </div>
 </div>
@@ -13712,232 +13214,57 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's see which of the two functions runs faster:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> add_lists(A, B)
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>2.27 µs ± 31.5 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> add_arrays(A, B)
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>437 ns ± 3.36 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Numpy is approximately 5 times faster.</p>
-
+<h2 id="Essential-numpy-&quot;extensions&quot;">Essential numpy "extensions"<a class="anchor-link" href="#Essential-numpy-&quot;extensions&quot;">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: repeat the performance test with n=100 and n=10000. How does the performance scale with the size of the array? Now repeat the test but make the input arguments <code>A</code> and <code>B</code> <em>lists</em> instead of numpy arrays. How is the performance comparison in this case? Why?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Why is numpy so much faster than pure python? One of the major reasons is <strong>vectorization</strong>, which is the process of applying mathematical operations to <em>all</em> elements of an array ("vector") at once instead of looping through them like we would do in pure python. "for loops" in python are slow because for each addition, python has to:</p>
+<p>There are two packages which I consider essential when it comes to data processing:</p>
 <ul>
-<li>access the elements a and b in the list A and B</li>
-<li>check the type of both a and b</li>
-<li>apply the <code>+</code> operator on the data they store</li>
-<li>store the result.</li>
+<li><strong>pandas</strong> provides data structures designed to make working with labeled data both easy and intuitive (<a href="http://pandas.pydata.org/pandas-docs/stable/">documentation</a>, <a href="https://github.com/pandas-dev/pandas">code repository</a>). </li>
+<li><strong>xarray</strong> extends pandas to N-dimensional arrays (<a href="http://xarray.pydata.org">documentation</a>, <a href="https://github.com/pydata/xarray">code repository</a>).</li>
 </ul>
-<p>Numpy skips the first two steps and does them only once before the actual operation. What does numpy know about the addition operation that the pure python version can't infer?</p>
+<p>They both add a layer of abstraction to numpy arrays, giving "names" and "labels" to their dimensions and the data they contain. We will talk about them in the lecture, and most importantly, you will use both of them during the climate and cryosphere master lectures.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Domain-specific-packages">Domain specific packages<a class="anchor-link" href="#Domain-specific-packages">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are so many of them! I can't list them all, but here are a few that you will probably come across in your career:</p>
+<p><strong>Geosciences/Meteorology</strong>:</p>
 <ul>
-<li>the type of all numbers to add</li>
-<li>the type of the output</li>
-<li>the size of the output array (same as input)</li>
+<li><a href="https://unidata.github.io/MetPy/latest/index.html">MetPy</a>: the meteorology toolbox</li>
+<li><a href="https://scitools.org.uk/cartopy">Cartopy</a>: maps and map projections</li>
+<li><a href="https://xesmf.readthedocs.io/en/latest/">xESMF</a>: Universal Regridder for Geospatial Data</li>
+<li><a href="https://xgcm.readthedocs.io/en/latest/">xgcm</a>: General Circulation Model Postprocessing with xarray</li>
+<li><a href="http://geopandas.org/">GeoPandas</a>: Pandas for vector data</li>
+<li><a href="https://rasterio.readthedocs.io/en/latest/">Rasterio</a>: geospatial raster data I/O</li>
 </ul>
-<p>Numpy can use this information to optimize the computation, but this isn't possible without trade-offs. See the following for example:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_lists</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">])</span>  <span class="c1"># works fine</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[17]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[4, &#39;foobar&#39;]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_arrays</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">])</span>  <span class="c1"># raises a TypeError</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-18-a49671b2d503&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>add_arrays<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;foo&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;bar&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># raises a TypeError</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-12-ac54cdd8bb43&gt;</span> in <span class="ansi-cyan-fg">add_arrays</span><span class="ansi-blue-fg">(A, B)</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">import</span> numpy <span class="ansi-green-fg">as</span> np
-<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">def</span> add_arrays<span class="ansi-blue-fg">(</span>A<span class="ansi-blue-fg">,</span> B<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> np<span class="ansi-blue-fg">.</span>add<span class="ansi-blue-fg">(</span>A<span class="ansi-blue-fg">,</span> B<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">TypeError</span>: ufunc &#39;add&#39; did not contain a loop with signature matching types dtype(&#39;&lt;U21&#39;) dtype(&#39;&lt;U21&#39;) dtype(&#39;&lt;U21&#39;)</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>$\rightarrow$ <strong>numpy can only be that fast because the input and output data types are uniform and known before the operation</strong>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Internally, numpy achieves vectorization by relying on a lower-level, statically typed and compiled language: C! At the time of writing, about 55% of the <a href="https://github.com/numpy/numpy">numpy codebase</a> is written in C/C++. The rest of the codebase offers an interface (a "layer") between python and the internal C code.</p>
-<p>As a result, numpy has to be <em>compiled</em> at installation. Most users do not notice this compilation step anymore (recent pip and conda installations are shipped with pre-compiled binaries), but installing numpy used to require several minutes on my laptop when I started to learn python myself.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Take-home-points">Take home points<a class="anchor-link" href="#Take-home-points">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Statistics/Machine Learning</strong>:</p>
 <ul>
-<li>The process of "type checking" may occur either at compile-time (statically typed language) or at runtime (dynamically typed language). These terms are not usually used in a strict sense.</li>
-<li>Statically typed languages are often compiled, while dynamically typed languages are interpreted.</li>
-<li>There is a trade-off between the flexibility of a language and its speed: static typing allows programs to be optimized at compilation time, thus allowing them to run faster.</li>
-<li>When speed matters, python allows to use compiled libraries under a python interface. numpy is using C under the hood to optimize its computations.</li>
-<li>numpy arrays use a continuous block of memory of homogenous data type. This allows for faster memory access and easy vectorization of mathematical operations.</li>
+<li><a href="https://www.statsmodels.org/stable/index.html">Statsmodels</a>: statistic toolbox for models and tests</li>
+<li><a href="https://seaborn.pydata.org/index.html">Seaborn</a>: statistical data visualization</li>
+<li><a href="http://scikit-learn.org/">Scikit-learn</a>: machine learning tools</li>
+<li><a href="https://www.tensorflow.org/">TensorFlow</a>: Google's brain</li>
+<li><a href="https://pytorch.org/">PyTorch</a>: Facebook's brain</li>
+</ul>
+<p><strong>Miscellaneous</strong>:</p>
+<ul>
+<li><a href="https://scikit-image.org/">Scikit-image</a>: image processing</li>
+<li><a href="https://bokeh.pydata.org/en/latest/">Bokeh</a>: interactive plots</li>
+<li><a href="http://docs.dask.org/en/latest/">Dask</a>: parallel computing</li>
+<li>...</li>
 </ul>
 
 </div>
@@ -13946,34 +13273,19 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Further-reading">Further reading<a class="anchor-link" href="#Further-reading">&#182;</a></h2>
+<h2 id="Development-environments">Development environments<a class="anchor-link" href="#Development-environments">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I highly recommend to have a look at the first part of Jake Vanderplas' blog post, <a href="https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/">Why python is slow</a> (up to the "hacking" part). It provides more details and a good visual illustration of the <code>c = a + b</code> example. The second part is a more involved read, but very interesting too!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Addendum:-is-python-really-that-slow?">Addendum: is python really <em>that</em> slow?<a class="anchor-link" href="#Addendum:-is-python-really-that-slow?">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The short answer is: yes, python is slower than a number of other languages. You'll find many benchmarks online illustrating it.</p>
-<p>Is it bad?</p>
-<p>No. Jake Vanderplas (a well known contributor of the scientific python community) <a href="https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/#So-Why-Use-Python?">writes</a>:</p>
-<p><em>As well, it comes down to this: dynamic typing makes Python easier to use than C. It's extremely flexible and forgiving, this flexibility leads to efficient use of development time, and on those occasions that you really need the optimization of C or Fortran, Python offers easy hooks into compiled libraries. It's why Python use within many scientific communities has been continually growing. With all that put together, Python ends up being an extremely efficient language for the overall task of doing science with code.</em></p>
-<p>It's the flexibility and readability of python that makes it so popular. Python is the language of choice for major actors like <a href="https://www.youtube.com/watch?v=66XoCk79kjM">instagram</a> or <a href="https://labs.spotify.com/2013/03/20/how-we-use-python-at-spotify/">spotify</a>, and it has become the high-level interface to highly optimized machine learning libraries like <a href="https://github.com/tensorflow/tensorflow">TensorFlow</a> or <a href="http://pytorch.org/">Torch</a>.</p>
-<p>For a scientist, writing code efficiently is <em>much</em> more important than writing efficient code. Or <a href="https://xkcd.com/1205/">is it</a>?</p>
+<p>Development environments are not "python packages" per se, but they are helping you to write better code faster. Here are some of them:</p>
+<ul>
+<li><strong>ipython</strong>: an extended python command line, but much nicer to use (<a href="https://ipython.readthedocs.org/">documentation</a>, <a href="https://github.com/ipython/ipython">code repository</a>). Originally developed by the scientific python community, it it now used by many developers as well.</li>
+<li><strong>jupyter notebook</strong>: built on top of ipython, the jupyter notebook gives you access to an ipython interpreter in your browser (<a href="https://jupyter-notebook.readthedocs.io/en/stable/">documentation</a>, <a href="https://github.com/jupyter/notebook">code repository</a>). It allows you to write code and display its output in the same page, which is very useful for communicating your results or documenting code. As a <em>development environment</em>, however, the notebook quickly reaches its limits.</li>
+<li>Standard IDEs: <strong>spyder</strong>, <strong>atom</strong>, <strong>pycharm</strong>, <strong>VSCode</strong>... Refer to <a href="08-Tips-and-Tricks.html#python_ides">lesson 08</a> for a description of some of them.</li>
+</ul>
 
 </div>
 </div>
@@ -13988,7 +13300,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="12-Numbers.html">jump to the next chapter</a>.</p>
+<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="16-Assignment-05.html">jump to this week's assignment</a>.</p>
 
 </div>
 </div>
