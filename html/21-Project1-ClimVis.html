@@ -10,7 +10,7 @@ gtag('config', 'UA-88391345-1');
 </script>
 <meta charset="utf-8" />
 
-<title>07-Import-Scopes</title>
+<title>21-Project1-ClimVis</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13131,7 +13131,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": "7", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "750px", "left": "725px", "top": "111.133px", "width": "384px"}, "toc_section_display": true, "toc_window_display": true};
+            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": false, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {}, "toc_section_display": "block", "toc_window_display": false};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -13146,1096 +13146,125 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Modules,-import-mechanism,-namespaces,-scope(s)">Modules, import mechanism, namespaces, scope(s)<a class="anchor-link" href="#Modules,-import-mechanism,-namespaces,-scope(s)">&#182;</a></h1>
+<h1 id="Project-#1:-the-ClimVis-package">Project #1: the ClimVis package<a class="anchor-link" href="#Project-#1:-the-ClimVis-package">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this chapter we will dive into one of the best features of python: the <code>import</code> mechanism. We will explain why modules are needed and how you can write one on your own.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Modules,-import-mechanism,-namespaces,-scope(s)" data-toc-modified-id="Modules,-import-mechanism,-namespaces,-scope(s)-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Modules, import mechanism, namespaces, scope(s)</a></span><ul class="toc-item"><li><span><a href="#Variables-scopes" data-toc-modified-id="Variables-scopes-7.1"><span class="toc-item-num">7.1&nbsp;&nbsp;</span>Variables scopes</a></span></li><li><span><a href="#Modules" data-toc-modified-id="Modules-7.2"><span class="toc-item-num">7.2&nbsp;&nbsp;</span>Modules</a></span></li><li><span><a href="#Namespaces" data-toc-modified-id="Namespaces-7.3"><span class="toc-item-num">7.3&nbsp;&nbsp;</span>Namespaces</a></span></li><li><span><a href="#sys.path" data-toc-modified-id="sys.path-7.4"><span class="toc-item-num">7.4&nbsp;&nbsp;</span>sys.path</a></span></li><li><span><a href="#Reimporting-modules" data-toc-modified-id="Reimporting-modules-7.5"><span class="toc-item-num">7.5&nbsp;&nbsp;</span>Reimporting modules</a></span></li><li><span><a href="#Executing-modules-as-scripts" data-toc-modified-id="Executing-modules-as-scripts-7.6"><span class="toc-item-num">7.6&nbsp;&nbsp;</span>Executing modules as scripts</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-7.7"><span class="toc-item-num">7.7&nbsp;&nbsp;</span>Take home points</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-7.8"><span class="toc-item-num">7.8&nbsp;&nbsp;</span>What's next?</a></span></li><li><span><a href="#License" data-toc-modified-id="License-7.9"><span class="toc-item-num">7.9&nbsp;&nbsp;</span>License</a></span></li></ul></li></ul></div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Variables-scopes">Variables scopes<a class="anchor-link" href="#Variables-scopes">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <strong>scope</strong> of a variable is the region of the program where the variable is valid, i.e. the "location" where the variable name can be used to refer to the data it links to. Let's consider this first example:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;in foo()&#39;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;global&#39;</span><span class="p">)</span>  <span class="c1"># will throw an error</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-1-1c2627dee89c&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span>     print<span class="ansi-blue-fg">(</span>i<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;in foo()&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> 
-<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>i<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;global&#39;</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># will throw an error</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;i&#39; is not defined</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>It doesn't work because the name <code>i</code> is defined in the function which we defined but never called (you can see this because nothing is printed), so the function's statements were actually never run. Let's see if the following example works better:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;in foo()&#39;</span><span class="p">)</span>
-
-<span class="n">foo</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;global&#39;</span><span class="p">)</span>   <span class="c1"># will throw an error</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>5 in foo()
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-2-b5c5ef25ae8d&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> foo<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      6</span> 
-<span class="ansi-green-fg">----&gt; 7</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>i<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;global&#39;</span><span class="ansi-blue-fg">)</span>   <span class="ansi-red-fg"># will throw an error</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;i&#39; is not defined</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Here, the function is called and <code>i</code> is defined and equal to 5. However, the <em>scope</em> of the variable <code>i</code> is the block defined by the function <code>foo</code>: outside of this scope the variable doesn't exist anymore. If this is understood, the following example might now be clearer?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;in foo()&#39;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;global before foo()&#39;</span><span class="p">)</span>
-
-<span class="n">foo</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;global after foo()&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>1 global before foo()
-5 in foo()
-1 global after foo()
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <strong>global scope</strong> refers to the highest scope level (the module or, in interactive mode, the interpreter). The function's scope in turn is called <strong>local scope</strong>. One says that the global scope prevails because what is possible in one direction isn't possible in the other:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>
-
-<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s1">&#39;is there a k in foo()?&#39;</span><span class="p">)</span>
-
-<span class="n">foo</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>2 is there a k in foo()?
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Yes, k is available in <code>foo()</code>: global variables are <em>also</em> available in the <em>nested</em> local scopes. They can be overridden locally (like in the example above), but this change won't be visible at the global scope level.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: do you think there is a way to really overwrite the value of a global variable from a local scope? If yes, can you find it and try it by yourself?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Modules">Modules<a class="anchor-link" href="#Modules">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Python <strong>modules</strong> are used to store a collection of functions and variables that can be imported into other modules or into the main module (the collection of variables that you have access to in a script executed at the top level or in calculator mode).</p>
-<p>A module is a file containing Python definitions and statements. The file name is the module name with the suffix <code>.py</code> appended. For instance, use your favorite text editor to create a file called <code>greetings.py</code> in the current directory with the following content:</p>
-<p><code>greetings.py:</code></p>
-<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;A module to say hi! in several languages.&quot;&quot;&quot;</span>
-
-<span class="n">base</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;en&#39;</span><span class="p">:</span><span class="s1">&#39;Hi {}!&#39;</span><span class="p">,</span> 
-    <span class="s1">&#39;fr&#39;</span><span class="p">:</span><span class="s1">&#39;Salut {}!&#39;</span><span class="p">,</span> 
-    <span class="s1">&#39;cn&#39;</span><span class="p">:</span><span class="s1">&#39;你好 {}!&#39;</span>
-<span class="p">}</span>
-
-<span class="k">def</span> <span class="nf">say_hi</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Say hi in the language of your choice.&quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">lang</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">base</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Language unknown: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lang</span><span class="p">))</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">base</span><span class="p">[</span><span class="n">lang</span><span class="p">]</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
-
-<span class="k">def</span> <span class="nf">add_lang</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">phrase</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add a language to the list.&quot;&quot;&quot;</span>
-    <span class="k">global</span> <span class="n">base</span>
-    <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">base</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Language {} already available&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
-        <span class="k">return</span>
-    <span class="n">base</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">phrase</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now enter the Python interpreter and import this module with the following command:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">greetings</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>By importing the module, we have access to the functions it contains:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">greetings</span><span class="o">.</span><span class="n">say_hi</span><span class="p">(</span><span class="s1">&#39;Fabi&#39;</span><span class="p">)</span>
-<span class="n">greetings</span><span class="o">.</span><span class="n">say_hi</span><span class="p">(</span><span class="s1">&#39;Xiao Li&#39;</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s1">&#39;cn&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Hi Fabi!
-你好 Xiao Li!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>But also to the global variables defined at the top level:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">greetings</span><span class="o">.</span><span class="n">base</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[7]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>{&#39;cn&#39;: &#39;你好 {}!&#39;, &#39;en&#39;: &#39;Hi {}!&#39;, &#39;fr&#39;: &#39;Salut {}!&#39;}</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now use the new <code>global</code> statement we just discovered:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">greetings</span><span class="o">.</span><span class="n">add_lang</span><span class="p">(</span><span class="s1">&#39;de&#39;</span><span class="p">,</span> <span class="s1">&#39;Hallo </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">greetings</span><span class="o">.</span><span class="n">say_hi</span><span class="p">(</span><span class="s1">&#39;Boris&#39;</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s1">&#39;de&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Hallo Boris!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Namespaces">Namespaces<a class="anchor-link" href="#Namespaces">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Global variables in modules or scripts are useful, but they should be used with care. Indeed, since they are available in everywhere in the module, the <strong>namespace</strong> can quickly become "polluted": for large modules, it becomes hard to keep track of which variable is available where. This can become even more complicated when new modules with their own new variables and functions are used.</p>
-<p>Fortunately, the global scope is constrained to the current script or module, and using external modules is unlikely to cause confusion thanks to the <code>import</code> mechanism:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;module &#39;math&#39; (built-in)&gt;
-3.14 3.141592653589793
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>By importing the <code>math</code> module (available in python's <strong>standard library</strong>), we have access to new variables and functions. What are they? We can use the built-in <code>dir()</code> function to find out:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">math</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[&#39;__doc__&#39;, &#39;__loader__&#39;, &#39;__name__&#39;, &#39;__package__&#39;, &#39;__spec__&#39;, &#39;acos&#39;, &#39;acosh&#39;, &#39;asin&#39;, &#39;asinh&#39;, &#39;atan&#39;, &#39;atan2&#39;, &#39;atanh&#39;, &#39;ceil&#39;, &#39;copysign&#39;, &#39;cos&#39;, &#39;cosh&#39;, &#39;degrees&#39;, &#39;e&#39;, &#39;erf&#39;, &#39;erfc&#39;, &#39;exp&#39;, &#39;expm1&#39;, &#39;fabs&#39;, &#39;factorial&#39;, &#39;floor&#39;, &#39;fmod&#39;, &#39;frexp&#39;, &#39;fsum&#39;, &#39;gamma&#39;, &#39;gcd&#39;, &#39;hypot&#39;, &#39;inf&#39;, &#39;isclose&#39;, &#39;isfinite&#39;, &#39;isinf&#39;, &#39;isnan&#39;, &#39;ldexp&#39;, &#39;lgamma&#39;, &#39;log&#39;, &#39;log10&#39;, &#39;log1p&#39;, &#39;log2&#39;, &#39;modf&#39;, &#39;nan&#39;, &#39;pi&#39;, &#39;pow&#39;, &#39;radians&#39;, &#39;sin&#39;, &#39;sinh&#39;, &#39;sqrt&#39;, &#39;tan&#39;, &#39;tanh&#39;, &#39;trunc&#39;]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: now ask the documentation what <code>dir</code> does (remember how? Simply type <code>? dir</code> in the ipython interpreter, or use a search engine).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Like our <code>greetings</code> module, the <code>math</code> module contains functions (like <code>math.radians</code>) as well as variables (<code>math.nan</code>). For Python there is no fundamental difference between variables and functions (they are simply all attributes of the <code>math</code> module and therefore listed by <code>dir</code>). Some of the module attributes have a prefix of two underscores <code>__</code>. We'll get back to them soon.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There are several ways to import (parts of) a module. See the four examples:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># A</span>
-<span class="c1"># Import an entire module and access its attributes with a &quot;dot&quot;</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[12]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>1.0</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># B</span>
-<span class="c1"># Same as A, but store the module under a new variable named &quot;ma&quot;</span>
-<span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">ma</span>
-<span class="n">ma</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ma</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[13]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>1.0</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># C</span>
-<span class="c1"># Import the attributes sin and pi *only*</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">pi</span>
-<span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[14]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>1.0</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># D</span>
-<span class="c1"># Import everything from the module and add it in our global scope</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="o">*</span>
-<span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[15]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>1.0</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>All four options lead to the same result: they compute the sinus of π/2.</p>
-<p>Now, which one to use? It is up to you, but there are some implicit rules (conventions) which are widely accepted:</p>
-<ol>
-<li>In case of doubt, use option A. It is the most readable and the most <em>explicit</em>.</li>
-<li>The exception to the first rule is when the library has a naming convention for its acronym. A good example is <code>numpy</code>, which <a href="https://docs.scipy.org/doc/scipy/reference/tutorial/general.html">recommends to use</a> <code>import numpy as np</code>.</li>
-<li>Option C might be useful if the names you are importing are very explicit, and if you expect to use them often in your script. Otherwise, it is not recommended.</li>
-<li>Option D is bad. Don't use it. </li>
-<li>You can make an exception to rule 4 when working in the command line and exploring data. It should not be used in modules or scripts, though. </li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: try to find arguments as to why is option D a bad idea. <strong>If you can't find any reason, ask me next week</strong>!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="sys.path">sys.path<a class="anchor-link" href="#sys.path">&#182;</a></h2><p><a id='path'></a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>But how does python know where to look for modules when you type <code>import mymodule</code> in the interpreter? Well, it relies on a mechanism very similar to linux's <code>PATH</code> environment variable. Remember this one? Within python, the directories where the interpreter will look for modules to import are listed in <a href="https://docs.python.org/3/library/sys.html#sys.path">sys.path</a>:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span>
-
-<span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
- <span class="s1">&#39;/scratch/c707/c7071047/miniconda3/bin&#39;</span><span class="p">,</span>
- <span class="s1">&#39;/scratch/c707/c7071047/miniconda3/lib/python36.zip&#39;</span><span class="p">,</span>
- <span class="s1">&#39;/scratch/c707/c7071047/miniconda3/lib/python3.6&#39;</span><span class="p">,</span>
- <span class="s1">&#39;/scratch/c707/c7071047/miniconda3/lib/python3.6/lib-dynload&#39;</span><span class="p">,</span>
- <span class="s1">&#39;/scratch/c707/c7071047/miniconda3/lib/python3.6/site-packages&#39;</span><span class="p">,</span>
- <span class="s1">&#39;/scratch/c707/c7071047/miniconda3/lib/python3.6/site-packages/cycler-0.10.0-py3.6.egg&#39;</span><span class="p">,</span>
- <span class="s1">&#39;/scratch/c707/c7071047/miniconda3/lib/python3.6/site-packages/IPython/extensions&#39;</span><span class="p">,</span>
- <span class="s1">&#39;/home/c7071047/.ipython&#39;</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Similar to the linux <code>PATH</code> mechanism, python will look into each of these directories <em>in order</em>. The first directory is always the current working directory (an empty string), the rest of the list may vary depending on your environment. When a file called <code>mymodule.py</code> is found, it is imported once (and only once) and added to the <code>sys.modules</code> variable, effectively telling python that the module has already been imported. <strong>This means that if you change the file and import it again, nothing will change</strong>. Fortunately, there are ways to avoid this behavior (see below).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As you can see, there are many folders related to <code>miniconda</code>, the tool we used to install python. This makes sense, because we want python to look for modules related to <em>our</em> installation of python (not the one used by our operating system). In particular, the <code>site-packages</code> folder is of interest to us. If you look into this folder using the linux command line or ipython's magic commands (remember how?) you'll find the many packages we already installed together last week.</p>
-<p>You can edit <code>sys.path</code> at your wish and add new folders to it, exactly as you would with the <code>PATH</code> environment variable in linux. In practice, however, it is recommended to use standard folders to install your packages instead of messing around with <code>sys.path</code> (I personally never had to change <code>sys.path</code>).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: let's trick with <code>sys.path</code> a little: create a fake module called <code>matplotlib.py</code> in your current working directory. Open a python interpreter and <code>import matplotlib</code>. Which of the modules (the official or the fake one) is loaded?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Because of this "feature", it is important to find meaningful (and unique) names for your own modules (don't forget to delete the fake <code>matplotlib</code> module after trying that out!).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Note: the "naming trick" above does not work with modules of the standard library, because built-in modules are imported as part of the interpreter's startup process.</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Reimporting-modules">Reimporting modules<a class="anchor-link" href="#Reimporting-modules">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Of course, there is a lot more behind an <code>import</code> statement than this short summary (see the <a href="https://docs.python.org/3/reference/simple_stmts.html#import">documentation</a> for a more comprehensive overview). What you should remember however is that an import statement is not computationally cheap: it has to look for a file, (maybe) compile it to bytecode, add it to a registry... Actually, for all what it does, it is very fast already!</p>
-<p>Since <code>import</code> statements are used all the time in Python, it is a good idea to optimize them: therefore, Python will not re-import a module that is imported already.</p>
-<p>Most of the time this is not a problem, but sometimes (mostly in interactive development) it might be useful to make changes to a module and having them available at the command line without having to restart a fresh Python interpreter each time. To do this, there are two mechanisms available to you:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Using Python's <a href="https://docs.python.org/3/library/importlib.html#importlib.reload">importlib.reload()</a> function:</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">importlib</span>
-<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">greetings</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[16]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&lt;module &#39;greetings&#39; from &#39;/home/mowglie/Documents/git/scientific_programming/notebooks/greetings.py&#39;&gt;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This can reimport a module which has been imported before (i.e. it won't do the search for it again). But this has to be done <em>each time</em> you change a module, making it quite cumbersome in interactive mode. Here again, ipython comes with a more flexible solution:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Using ipython's <a href="https://ipython.readthedocs.io/en/stable/config/extensions/autoreload.html">autoreload</a> extension:</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
-<span class="o">%</span><span class="k">autoreload</span> 2
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>From now on, <code>autoreload</code> will make sure that all modules are reloaded automatically before entering the execution of code typed at the IPython prompt.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Executing-modules-as-scripts">Executing modules as scripts<a class="anchor-link" href="#Executing-modules-as-scripts">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>You've already learned that importing modules actually <em>runs</em> them, the same way as <code>$ python mymodule.py</code> (from the linux terminal) or <code>%run mymodule.py</code> (in ipython) would. This can have some undesired consequences: what if, for example, you would like certain things to happen when the module is run as script but <em>not</em> when being imported?</p>
-<p>There is a mechanism that allows to do exactly this. Add the following block of code at the end of the <code>greetings.py</code> module:</p>
-<div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="c1"># execute only if run as a script</span>
-    <span class="kn">import</span> <span class="nn">sys</span>
-    <span class="n">nargs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">nargs</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-        <span class="n">say_hi</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">lang</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Syntax:&#39;</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%r</span><span class="s1">un greetings.py name language&#39;</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Languages available: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">base</span><span class="p">)))</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now you can execute your script like this:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> greetings.py Fabi fr
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Salut Fabi!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>But importing it will produce no output:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">greetings</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>How does this work exactly? The important bit is the <code>if __name__ == '__main__':</code> line. <code>__name__</code> (and all other attributes starting and ending with two underscores) is "reserved" by the language. They are no different than other variables, but you should not erase or replace them (for now), since they contain useful information and might be used by other tools. For example:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">greetings</span><span class="o">.</span><span class="vm">__doc__</span>  <span class="c1"># the documentation of the module as string</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[20]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;A module to say hi in several langages.&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">greetings</span><span class="o">.</span><span class="vm">__name__</span>  <span class="c1"># the name of the module as string</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[21]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;greetings&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now, back to our script: the statement <code>if __name__ == '__main__'</code> is going to be false when the module is imported (since the name is <code>greetings</code>), but obviously true when the module is run as script. Indeed, <code>__name__</code> is set to <code>__main__</code> when executed.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Take-home-points">Take home points<a class="anchor-link" href="#Take-home-points">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is the main project of this semester, and will count for 30% of the final grade. The submission is going to happen in three stages:</p>
 <ul>
-<li>variables are defined in a <strong>scope</strong>, and we learned about two scopes: <strong>local</strong> and <strong>global</strong>. There are precise rules as to how each scope can interact with the other. As a general rule: global variables are available in nested scopes and cannot be overwritten (or can they?), and local variables are not available in the global scope.</li>
-<li>the import mechanism is useful to avoid <strong>namespace pollution</strong>. Modules come with their own namespace, and it is recommended to keep each module's namespace clean (i.e. no <code>from XYZ import *</code>)</li>
-<li>python borrowed the <code>PATH</code> mechanism from linux and uses a similar logic to look for modules and packages. Installing a new module is therefore super easy: just put a <code>mymodule.py</code> at the right place. (and don't mess with the existing modules!)</li>
-<li>the <code>%autoreload</code> command from ipython allows to dynamically change a module while using it at the command line</li>
-<li>when writing scripts, always put the code that needs to be executed in an <code>if __name__ == '__main__'</code> block: that way, your script can still be imported for the functions it proposes</li>
+<li><strong>First submission deadline: Sunday 08.12.2019</strong> (one <code>.zip</code> file per group containing their version of the climvis package)</li>
+<li>Code review by me and 30 min feedback round per group (week from December 09 to December 13)</li>
+<li><strong>Second submission deadline: Sunday 12.01.2020</strong></li>
+</ul>
+<p>Here are the points I will take into account for the grading:</p>
+<ul>
+<li>code quality: <strong>documentation, comments, </strong>tests**, compliance to pep8</li>
+<li>traceability of group work: who did what, are the author(s) name(s) provided in the function's docstrings</li>
+<li>level and complexity of the implemented tools (i.e. amount of programming work)</li>
+<li>originality of the implemented tools</li>
+<li>reaction to the code reviews and updates</li>
+</ul>
+<p>I will try and test the code (using pytest) on my computer - any new data or library that is necessary should be documented in the code, or in the command line utility documentation!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-climvis-package">The climvis package<a class="anchor-link" href="#The-climvis-package">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I've written a small package called <strong>climvis</strong>. Its design is based on the <a href="https://github.com/fmaussion/scispack">template package</a>, but this time it really does something.</p>
+<p><strong>Download the zipped package from <a href="https://github.com/fmaussion/climvis/archive/master.zip">here</a> and extract it. Read the README and the package requirements first. You will have to install the <a href="https://github.com/ryancox/motionless">motionless</a> package for it to work: it is not available on conda, but you can install it with: <code>pip install motionless</code></strong> (if you have an <a href="https://github.com/conda-forge/testpath-feedstock/issues/7">obscure error</a> at <code>pip install ...</code>, update testpath first with <code>conda install testpath</code>)</p>
+<p><strong>Now install climvis in development mode. If you are working on your own computer run:</strong></p>
+
+<pre><code>pip install -e .
+
+</code></pre>
+<p>from the root directory. <strong>If you are working on the university computer, run:</strong></p>
+
+<pre><code>pip install --user -e .
+
+</code></pre>
+<p>instead.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Try the command line interface (<code>cruvis -h</code>) from a terminal. Now explore <code>setup.py</code>: can you identify what makes the command available from the terminal? Where is the code executing the command <code>cruvis</code>?</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Familiarize yourself with the tool. Can you understand what the role of each function is?</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Can you run the tests successfully? Probably not. Somewhere in <code>cfg.py</code>, a hard coded path is pointing to a non-existing directory.</strong></p>
+<p><strong>If you are working on your own computer, change the path to a local folder of yours and download the necessary data:</strong></p>
+<ul>
+<li><a href="https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.03/cruts.1905011326.v4.03/tmp/cru_ts4.03.1901.2018.tmp.dat.nc.gz">temperature</a></li>
+<li><a href="https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.03/cruts.1905011326.v4.03/pre/cru_ts4.03.1901.2018.pre.dat.nc.gz">precipitation</a></li>
+<li><a href="https://cluster.klima.uni-bremen.de/~fmaussion/misc/cru_cl1_topography.nc">elevation</a></li>
+</ul>
+<p><strong>Careful! The total decompressed output is about 6GB large.</strong></p>
+<p><strong>If you are working on the university computer, a folder containing the data is available at:</strong></p>
+
+<pre><code>/scratch/c707/c7071047/data-scipro/
+
+</code></pre>
+<p><strong>The scratch folder contains only a subset of the data (Central Europe): the tools works for these locations, but not globally.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Make sure you are able to run the command succesfully before going on. For example, <code>cruvis -l 12 47</code> should work fine and display a page in your browser.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Guided-exercise:-make-the-tool-more-robust">Guided exercise: make the tool more robust<a class="anchor-link" href="#Guided-exercise:-make-the-tool-more-robust">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here are a couple of smaller tasks to get you started:</p>
+<ul>
+<li><p>The hard coded path in <code>cfg.py</code> is very ugly. At the same time, we really need the CRU data for the tool to run! Add a safety check in the code in order to make sure the files are available. If the CRU files are not available, print the following message and exit the program:</p>
+<p><code>The CRU files are not available on this system. For cruvis to work properly, please create a file called ".cruvis" in your HOME directory, and indicate the path to the CRU directory in it.</code></p>
+</li>
+</ul>
+<ul>
+<li><p>Add a small function in <code>cfg.py</code> which parses this new <code>.cruvis</code> file and uses the given directory in place of the hard-coded one. Tip: you could make good use of <a href="https://docs.python.org/3/library/os.path.html#os.path.expanduser">os.path.expanduser</a> for this function.</p>
+</li>
+<li><p>Selecting a location over the oceans will raise a very uninformative python error message. Make the <code>write_html</code> function more robust: if the data contains NaNs, print a warning and exit the program.</p>
+</li>
 </ul>
 
 </div>
@@ -14244,14 +13273,27 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What's-next?">What's next?<a class="anchor-link" href="#What's-next?">&#182;</a></h2>
+<h2 id="Project:-make-the-tool-better">Project: make the tool better<a class="anchor-link" href="#Project:-make-the-tool-better">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="08-Tips-and-Tricks.html">jump to the next chapter</a>.</p>
+<p>Now you should be ready to contribute to this great package! <strong>Add at least N simple functionalities</strong> to it, where N is your group size (2, 3, or 4). This functionality can be anything you want, as long as it makes you write some code.</p>
+<p>Here are some ideas of functionalities that you can adapt at wish:</p>
+<ul>
+<li>you could add a plot of the 1901-2018 timeseries for this grid point, and make a trend analysis for the period.</li>
+<li>you could add <a href="https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.03/">other data from CRU</a> to the plot.</li>
+<li>you could add a new command to the tool called <code>uibkvis</code>, which instead plots the data from the UIBK weather stations. For example, you could plot the temperature for all stations, or even better: give choices to the user as to what they want to plot. You'll have to document its command line options of course. You can get inspiration from <a href="https://fabienmaussion.info/scipro_ss2018/html/12-Assignment-03.html#Exercise-#03-02:-ACINN-meteorological-data">last year's excercise</a>, which we didn't have time to do this year.</li>
+<li>you could redo the plots from the <a href="http://meteo145.uibk.ac.at/current-weather/innsbruck-university">old ACINN webpage</a>, but better?</li>
+<li>you could use a python <a href="https://github.com/python-windrose/windrose">windrose</a> package to plot a windrose from the uibk data, and maybe extend assignment 06 (wind statistics) to produce a webpage (instead of the sentence it produces now)  </li>
+<li>you could add an option to <code>cruvis</code>, which accepts a city name instead of the lon and lat of the point. You could use the file shipped with the package for this (<code>world_cities.csv</code>).</li>
+<li>you could add a new command line tool to compare the climate at two locations.</li>
+<li>you could parse any other data you'd find interesting from the web and plot it! For example, <a href="http://weather.uwyo.edu/upperair/sounding.html">upper air soundings</a>? </li>
+<li>you could use an interactive plotting library like <a href="https://bokeh.pydata.org">Bokeh</a> (possibly by making use of higher level tools like <a href="http://holoviews.org/">holoviews</a>) to make reactive plots in your HTML page.</li>
+<li><strong>any idea you find interesting</strong>! You can discuss some ideas with me beforehand if you are unsure.</li>
+</ul>
 
 </div>
 </div>
@@ -14259,16 +13301,15 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="License">License<a class="anchor-link" href="#License">&#182;</a></h2>
+<p>Some tasks are more difficult than others. I don't mind if you take an easy one, as long as you write something on your own, and write good code. Try to split the tasks within the group to get something coherent, ideally not only with "easy" tasks! <strong>Don't forget to write tests.</strong></p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
-  <img align="left" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg"/>
-</a></p>
+<p><em>Back to the <a href="00-Introduction.html#ctoc">table of contents</a></em></p>
 
 </div>
 </div>
