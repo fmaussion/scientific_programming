@@ -10,7 +10,7 @@ gtag('config', 'UA-88391345-1');
 </script>
 <meta charset="utf-8" />
 
-<title>01-Linux</title>
+<title>22-Documentation</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13131,7 +13131,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "384px"}, "toc_section_display": "block", "toc_window_display": true};
+            var cfg = {"base_numbering": "22", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "750px", "left": "29px", "top": "111px", "width": "310px"}, "toc_section_display": true, "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -13146,15 +13146,14 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="A-very-short-introduction-to-Linux">A very short introduction to Linux<a class="anchor-link" href="#A-very-short-introduction-to-Linux">&#182;</a></h1>
+<h1 id="Documenting-your-code">Documenting your code<a class="anchor-link" href="#Documenting-your-code">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This lecture is about programming, but it would be a big mistake to forget to talk about Linux! Linux (and Mac) are often preferred over Windows by scientists and programmers, for a number of reasons.</p>
-<p>Here we will give only a short introduction: every student in (geo-)sciences should know about the existence of Linux and know the basics of it. Atmospheric Sciences students in particular will have to use it sooner or later, since most of the tools and data they are using are running or have been created on Linux systems.</p>
+<p><strong>Code documentation is an integral part of the programming process</strong>. In this chapter I give some recommendations about how to write a useful documentation and how dedicated tools can be used to generate an html documentation for your project.</p>
 
 </div>
 </div>
@@ -13163,68 +13162,25 @@ $( document ).ready(function(){
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#A-very-short-introduction-to-Linux" data-toc-modified-id="A-very-short-introduction-to-Linux-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>A very short introduction to Linux</a></span><ul class="toc-item"><li><span><a href="#What-is-Linux?" data-toc-modified-id="What-is-Linux?-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>What is Linux?</a></span></li><li><span><a href="#Should-I-use-it?" data-toc-modified-id="Should-I-use-it?-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Should I use it?</a></span></li><li><span><a href="#Trying-Linux" data-toc-modified-id="Trying-Linux-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Trying Linux</a></span></li><li><span><a href="#Tutorial:-the-linux-command-line" data-toc-modified-id="Tutorial:-the-linux-command-line-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Tutorial: the linux command line</a></span><ul class="toc-item"><li><span><a href="#Listing-files-and-directories" data-toc-modified-id="Listing-files-and-directories-1.4.1"><span class="toc-item-num">1.4.1&nbsp;&nbsp;</span>Listing files and directories</a></span></li><li><span><a href="#The-directory-structure" data-toc-modified-id="The-directory-structure-1.4.2"><span class="toc-item-num">1.4.2&nbsp;&nbsp;</span>The directory structure</a></span></li><li><span><a href="#Making-Directories" data-toc-modified-id="Making-Directories-1.4.3"><span class="toc-item-num">1.4.3&nbsp;&nbsp;</span>Making Directories</a></span></li><li><span><a href="#Changing-to-a-different-directory" data-toc-modified-id="Changing-to-a-different-directory-1.4.4"><span class="toc-item-num">1.4.4&nbsp;&nbsp;</span>Changing to a different directory</a></span></li><li><span><a href="#The-directories-.-and-.." data-toc-modified-id="The-directories-.-and-..-1.4.5"><span class="toc-item-num">1.4.5&nbsp;&nbsp;</span>The directories . and ..</a></span></li><li><span><a href="#Copying-files" data-toc-modified-id="Copying-files-1.4.6"><span class="toc-item-num">1.4.6&nbsp;&nbsp;</span>Copying files</a></span></li><li><span><a href="#Using-[TAB]" data-toc-modified-id="Using-[TAB]-1.4.7"><span class="toc-item-num">1.4.7&nbsp;&nbsp;</span>Using [TAB]</a></span></li><li><span><a href="#Moving-files" data-toc-modified-id="Moving-files-1.4.8"><span class="toc-item-num">1.4.8&nbsp;&nbsp;</span>Moving files</a></span></li><li><span><a href="#Removing-files-and-directories" data-toc-modified-id="Removing-files-and-directories-1.4.9"><span class="toc-item-num">1.4.9&nbsp;&nbsp;</span>Removing files and directories</a></span></li><li><span><a href="#Displaying-the-contents-of-a-file-on-the-screen" data-toc-modified-id="Displaying-the-contents-of-a-file-on-the-screen-1.4.10"><span class="toc-item-num">1.4.10&nbsp;&nbsp;</span>Displaying the contents of a file on the screen</a></span></li><li><span><a href="#Searching-the-contents-of-a-file" data-toc-modified-id="Searching-the-contents-of-a-file-1.4.11"><span class="toc-item-num">1.4.11&nbsp;&nbsp;</span>Searching the contents of a file</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-1.4.12"><span class="toc-item-num">1.4.12&nbsp;&nbsp;</span>Take home points</a></span></li></ul></li><li><span><a href="#Executable-scripts" data-toc-modified-id="Executable-scripts-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Executable scripts</a></span><ul class="toc-item"><li><span><a href="#A-simple-script" data-toc-modified-id="A-simple-script-1.5.1"><span class="toc-item-num">1.5.1&nbsp;&nbsp;</span>A simple script</a></span></li><li><span><a href="#Make-a-file-executable" data-toc-modified-id="Make-a-file-executable-1.5.2"><span class="toc-item-num">1.5.2&nbsp;&nbsp;</span>Make a file executable</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-1.5.3"><span class="toc-item-num">1.5.3&nbsp;&nbsp;</span>Take home points</a></span></li></ul></li><li><span><a href="#The-linux-PATH" data-toc-modified-id="The-linux-PATH-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>The linux PATH</a></span><ul class="toc-item"><li><span><a href="#Locate-linux-programs" data-toc-modified-id="Locate-linux-programs-1.6.1"><span class="toc-item-num">1.6.1&nbsp;&nbsp;</span>Locate linux programs</a></span></li><li><span><a href="#The-PATH-variable" data-toc-modified-id="The-PATH-variable-1.6.2"><span class="toc-item-num">1.6.2&nbsp;&nbsp;</span>The PATH variable</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-1.6.3"><span class="toc-item-num">1.6.3&nbsp;&nbsp;</span>Take home points</a></span></li></ul></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>What's next?</a></span></li><li><span><a href="#License" data-toc-modified-id="License-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>License</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Documenting-your-code" data-toc-modified-id="Documenting-your-code-22"><span class="toc-item-num">22&nbsp;&nbsp;</span>Documenting your code</a></span><ul class="toc-item"><li><span><a href="#Introduction" data-toc-modified-id="Introduction-22.1"><span class="toc-item-num">22.1&nbsp;&nbsp;</span>Introduction</a></span></li><li><span><a href="#Inline-comments" data-toc-modified-id="Inline-comments-22.2"><span class="toc-item-num">22.2&nbsp;&nbsp;</span>Inline comments</a></span><ul class="toc-item"><li><span><a href="#How-to-write-inline-comments" data-toc-modified-id="How-to-write-inline-comments-22.2.1"><span class="toc-item-num">22.2.1&nbsp;&nbsp;</span>How to write inline comments</a></span></li><li><span><a href="#How-NOT-to-write-inline-comments" data-toc-modified-id="How-NOT-to-write-inline-comments-22.2.2"><span class="toc-item-num">22.2.2&nbsp;&nbsp;</span>How NOT to write inline comments</a></span></li></ul></li><li><span><a href="#API-documentation" data-toc-modified-id="API-documentation-22.3"><span class="toc-item-num">22.3&nbsp;&nbsp;</span>API documentation</a></span></li><li><span><a href="#Documentation-generators" data-toc-modified-id="Documentation-generators-22.4"><span class="toc-item-num">22.4&nbsp;&nbsp;</span>Documentation generators</a></span><ul class="toc-item"><li><span><a href="#Sphinx" data-toc-modified-id="Sphinx-22.4.1"><span class="toc-item-num">22.4.1&nbsp;&nbsp;</span>Sphinx</a></span></li><li><span><a href="#ReadTheDocs" data-toc-modified-id="ReadTheDocs-22.4.2"><span class="toc-item-num">22.4.2&nbsp;&nbsp;</span>ReadTheDocs</a></span></li></ul></li><li><span><a href="#Interactive-tutorials" data-toc-modified-id="Interactive-tutorials-22.5"><span class="toc-item-num">22.5&nbsp;&nbsp;</span>Interactive tutorials</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-22.6"><span class="toc-item-num">22.6&nbsp;&nbsp;</span>Take home points</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-22.7"><span class="toc-item-num">22.7&nbsp;&nbsp;</span>What's next?</a></span></li><li><span><a href="#License" data-toc-modified-id="License-22.8"><span class="toc-item-num">22.8&nbsp;&nbsp;</span>License</a></span></li></ul></li></ul></div>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What-is-Linux?">What is Linux?<a class="anchor-link" href="#What-is-Linux?">&#182;</a></h2>
+<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <a href="https://www.google.co.uk/search?q=What+is+Linux">web</a> is going to give a better answer than me to this question.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Should-I-use-it?">Should I use it?<a class="anchor-link" href="#Should-I-use-it?">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>My very personal answer is a clear: <strong>yes</strong>! I can't force you to it though, and most of the exercises of this lecture can be done on a Windows computer too. If you are running Mac OS X then you have access to a linux terminal anyway and you can ignore my recommendation (even if I don't like Apple for several other reasons - totally subjective opinion).</p>
-<p>Linux has always been an environment for programmers and has the reputation of being "geeky" and "complicated". This is less true today, with many Linux distributions becoming mainstream and easy to use (my personal favorite is <a href="http://linuxmint.com">Linux Mint</a>, but you probably mostly heard of <a href="https://ubuntu.com/download/desktop">Ubuntu</a> which I also recommend).</p>
-<p>I believe that Linux is <em>much</em> more user-friendly than Windows: once some of the particularities of Linux are understood (which can be frustrating in the beginning since it works <em>quite</em> differently than windows), it appears that there is much less "hidden" in Linux than in Windows (especially when it comes to installing/deinstalling software, using the command line, or protecting yourself from viruses and intruders).</p>
-<p><strong>As a scientist and programmer</strong> there are many reasons to prefer Linux (or Mac OS X) to Windows. Let me list some reasons here:</p>
+<p>There are three major components of code documentation:</p>
 <ul>
-<li><strong>Linux comes with many tools for scientists and programmers</strong> ("batteries included"). For historical reasons, Linux and its command line tools have been used by scientists and programmers since decades. It is not a surprise then that Linux comes with many (many) useful utilities to make programming and working with data easier.</li>
-<li><strong>Linux is fast and reliable</strong>. Linux is extremely stable and more lightweight than Windows. I've never seen a Linux machine becoming <em>slower</em> with time, as I was used to see in my time using Windows (I have to admit: it was more than 10 years ago).</li>
-<li><strong>Linux is the operating system of the huge majority of the super computers and web servers worldwide</strong>. Because of its efficiency, security, and multiple user management tools, Linux has taken over the web: <a href="https://en.wikipedia.org/wiki/Linux_adoption#Supercomputers">99.4%</a> of the super computers and <a href="https://en.wikipedia.org/wiki/Linux_adoption#Servers">67.5%</a> of the web servers run Linux, while <a href="https://en.wikipedia.org/wiki/Linux_adoption#Mobile_devices">79.3%</a> of the mobile devices run Linux via Android.</li>
-<li><strong>Linux is at the heart of the open-source philosophy</strong>. Linux is free and open-source, and it is not surprising that people who embraced the open-source philosophy also prefer Linux to Windows or Mac. </li>
-</ul>
-<p>There are also some reasons <strong>not</strong> to use Linux of course. For one, Linux can be confusing at first and you'll need some time to get used to it. Also, it doesn't come pre-installed on most computers and you'll have to do it yourself (however, several retailers are already selling cheaper Ubuntu laptops to students). It is possible (but unlikely) that some of your hardware will not be compatible with Linux. Finally, some programs simply aren't available on Linux: Microsoft Office, the Adobe Suite, and games are the most prominent examples. The free and open-source alternatives (LibreOffice and GIMP) are good, but not <em>as</em> good as their commercial counterpart. I used Linux exclusively for more than 10 years now, and I never regretted it. Recently I had to install Windows in a virtual machine in order to use the MS Office software provided by the University, and it works perfectly. Another option is to use <a href="https://www.winehq.org/">wine</a>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Trying-Linux">Trying Linux<a class="anchor-link" href="#Trying-Linux">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Here are a few ways you can use Linux and make an idea by yourself:</p>
-<ul>
-<li><strong>At the University of Innsbruck</strong>: In order to use Linux in the computer room you have to register for an account <a href="http://orawww.uibk.ac.at/public_prod/owa/uvw$web$10.p001">here</a>. After an hour or so you will be able to connect to any computer using your username and password. The Linux distribution used at the university is <a href="https://www.centos.org/">CentOS</a> (not my favorite, unfortunately). If you are a student of another university, it is likely that you have access to Linux environments, too.</li>
-<li><strong>On your laptop, with a live CD (or USB)</strong>: this is the <a href="https://tutorials.ubuntu.com/tutorial/try-ubuntu-before-you-install#0">best way to try it at no risk</a> and get a feeling for the general usage of a linux distribution. This is not permanent though.  </li>
-<li><strong>On your laptop, in a virtual machine</strong>: This is a relatively easy and non-destructive way to try Linux. There are tons of tutorials online, <a href="https://helpdeskgeek.com/linux-tips/how-to-install-ubuntu-in-virtualbox/">this one</a> seems OK.</li>
-<li><strong>On your laptop with Windows 10 Subsystem for Linux</strong>: This is a very recent but very encouraging trend at Windows. They seem to realize that Linux is better at certain things than Windows and therefore allowed to have a better way to use linux on windows than virtual machines. <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Here</a> is the official documentation (disclaimer: I haven't tried it yet).</li>
-<li><strong>On your laptop, alongside Windows (dual boot)</strong>: this is a bit more engaged, but the best way if you want to use both operating systems at full capacity. See <a href="https://help.ubuntu.com/community/WindowsDualBoot">here</a> for the official instructions. Be careful however: it is possible that things get a bit complicated going this way: secure your data first, and be prepared for some unexpected events. </li>
-<li><strong>On your laptop, without Windows</strong>: Congratulations, this is the best solution! Please check that your hardware is <a href="https://certification.ubuntu.com/desktop/">compatible</a> first, and follow the install instructions of your chosen OS. If you want to use Windows afterwards you can still re-install it or install it in a virtual machine. </li>
+<li><strong>inline comments</strong>: they explain the algorithm and single blocks of code as they are written. They are meant to be read by yourself and other programmers trying to debug and/or understand your code</li>
+<li><strong>API documentation</strong> (or function / method documentation): explains the purpose of functions or methods, their output, their input variables and their expected types, as well as implementation details if necessary. API stands for <a href="https://en.wikipedia.org/wiki/Application_programming_interface">Application Programming Interface</a>:  API documentation is written for <em>users</em> of the function and should be understandable without looking at the code.</li>
+<li><strong>project documentation</strong>: this encompasses all materials around a project: introductory material, tutorials, online classes, workshops, etc. Without such a project documentation, complex libraries like numpy or pandas would be very difficult to learn.</li>
 </ul>
 
 </div>
@@ -13233,14 +13189,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Tutorial:-the-linux-command-line">Tutorial: the linux command line<a class="anchor-link" href="#Tutorial:-the-linux-command-line">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Copyright notice: this section was largely inspired from the first parts of Michael Stonebank's <a href="http://www.ee.surrey.ac.uk/Teaching/Unix/index.html">UNIX tutorial</a></em></p>
+<p>Writing documentation is like writing tests: it is hard, and represents a lot of work with little immediate visible reward. <strong>At the very least</strong>, your own code should have inline comments.</p>
 
 </div>
 </div>
@@ -13248,8 +13197,14 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To open a terminal window, click on the "Terminal" icon from the <code>Applications/System Tools</code> menu. You can add an icon to your "quick launch" taskbar simply by dragging the icon to it.</p>
-<p>A terminal window should appear with a <code>$</code> prompt, waiting for you to start entering commands. The command line has a very important role in linux (as compared to windows where nobody uses it) since many tasks can be done much more efficiently with simple commands.</p>
+<h2 id="Inline-comments">Inline comments<a class="anchor-link" href="#Inline-comments">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Inline comments are plain text explanations of your code. As written in <a href="https://www.cs.utah.edu/~germain/PPS/Topics/commenting.html">cs.utah.edu</a>: All programs should be commented in such a manner as to easily describe the purpose of the code and any algorithms used to accomplish the purpose. A user should be able to utilize a previously written program (or function) without ever having to look at the code, simply by reading the comments.</p>
 
 </div>
 </div>
@@ -13257,26 +13212,133 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Listing-files-and-directories">Listing files and directories<a class="anchor-link" href="#Listing-files-and-directories">&#182;</a></h3>
+<h3 id="How-to-write-inline-comments">How to write inline comments<a class="anchor-link" href="#How-to-write-inline-comments">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>ls (list)</strong></p>
-<p>When you first login, your current working directory is your home directory. Your home directory has the same name as your username, for example, c7071047, and it is where your personal files and subdirectories are saved.</p>
-<p>To find out what is in your home directory, type:</p>
+<p>They are often placed at the top of a file (header comments) or before a thematic code block:</p>
 
-<pre><code>$ ls</code></pre>
-<p>The <code>ls</code> command lists the contents of your current working directory.</p>
-<p><code>ls</code> does not, in fact, cause all the files in your home directory to be listed, but only those ones whose name does not begin with a dot (.) Files beginning with a dot (.) are known as hidden files and usually contain important program configuration information. They are hidden because you should not change them unless you know what you do.</p>
-<p>To list all files in your home directory including those whose names begin with a dot, type:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1D interpolation example from scipy</span>
+<span class="c1"># see: https://docs.scipy.org/doc/scipy/reference/tutorial/interpolate.html</span>
+<span class="c1"># We compare two ways to interpolate data (linear and cubic) on a synthetic example</span>
+<span class="c1"># Inline comments are my own (F. Maussion)</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="k">import</span> <span class="n">interp1d</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 
-<pre><code>$ ls -a</code></pre>
-<p>As you can see, <code>ls -a</code> lists files that are normally hidden.</p>
-<p><code>ls</code> is an example of a command which can take options: <code>-a</code> is an example of an option. The options change the behaviour of the command. There are online manual pages that tell you which options a particular command can take, and how each option modifies the behaviour of the command. <code>ls -lh</code> is an other way to call <code>ls</code> with two options, <code>l</code> for "listing format" and <code>h</code> for "human readable".</p>
-<p><strong>Note:</strong> linux file names and commands are <em>case sensitive</em>, i.e. <code>Test.txt</code> is different from <code>test.txt</code>, and both names could coexist in the same directory.</p>
+<span class="c1"># Create synthetic data for the plot</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mf">9.0</span><span class="p">)</span>
+
+<span class="c1"># Define two different interpolation functions to compare:</span>
+<span class="c1"># linear (default) and cubic</span>
+<span class="n">fl</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">fc</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;cubic&#39;</span><span class="p">)</span>
+
+<span class="c1"># Location at which we want to interpolate</span>
+<span class="n">xnew</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">41</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Compute the interpolated points and plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">xnew</span><span class="p">,</span> <span class="n">fl</span><span class="p">(</span><span class="n">xnew</span><span class="p">),</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">xnew</span><span class="p">,</span> <span class="n">fc</span><span class="p">(</span><span class="n">xnew</span><span class="p">),</span> <span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="s1">&#39;cubic&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX8AAAD8CAYAAACfF6SlAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAADl0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uIDMuMC4zLCBodHRwOi8vbWF0cGxvdGxpYi5vcmcvnQurowAAIABJREFUeJzs3Xd8VFXex/HPmZJOElKAFEJCC6EmEDqCiEoRAVFU1F3biq7ruquPuKIu+uzqWtDdxy3qqihib3RRkKLSm4SaQjGEFEgvJJPMZOY8f0xAetrM3JnMeb9eeSUzc+ee7yzuLzfnniKklCiKoijeRad1AEVRFMX1VPFXFEXxQqr4K4qieCFV/BVFUbyQKv6KoiheSBV/RVEUL6SKv6IoihdSxV9RFMULqeKvKIrihQxaB7iUiIgIGR8fr3UMRVEUj7Jr165iKWVkY8e5bfGPj49n586dWsdQFEXxKEKIY005TnX7KIqieCFV/BVFUbyQKv6KoiheyG37/BVFURpjsVjIzc2ltrZW6ygu5+fnR2xsLEajsUXvV8VfURSPlZubS7t27YiPj0cIoXUcl5FSUlJSQm5uLgkJCS06h0O6fYQQ7wohCoUQ+y/xuhBC/FMIcVgIsVcIMdAR7V7Mkt15jHxxHQlPfM3IF9exZHees5pSFEVjtbW1hIeHe1XhBxBCEB4e3qq/eBx15b8A+Dew8BKvTwR6NHwNBd5o+O5QS3bnMWfRPkwWKwB55SbmLNoHwLSUGEc3d0Hb81Zlkl9uIjrUn9njE53epqIoeF3hP621n9shxV9K+aMQIv4yh0wFFkr7npFbhRChQogoKWWBI9o/bd6qTKSlhnv8P+NoYCVC6tHZjKxb50f70gSSgzoTYgyiQtZTZDUh9EaEzgA6+/eYwI74GAKosNVRXl8LOj3oDSAMoDcQHRSL0ejPKWsdtbIeH2MQPgY/Vu4r5qnFBzT5paMoitISrurzjwGOn/U4t+G5c4q/EGIWMAsgLi6u2Y3kl5sIp5ZB/j/yRWTEOa+tz93Px3kn6Gc2syYokGcjwy94/9LcfLpa6lka3I554e0veP27nDw6Wa18GBrMf9qHnvOaXzfJmmMlmKyh/Ccolu2Bgue3xJIjk4nwjyDCP4JxcePQ6/TN/lyKoniGZ599lqCgIB577LGLvr5kyRJ69uxJ7969XZzsQm51w1dK+RbwFkBqamqzd5aPDvUnrxx+V/o2ujIzBl0tBmEiKkTy2i2JdA2KAZ2BIZXHmVeeBdZ6pKxHWuuR0krk8F6gMzDqVD5hVcdAWsFmA1kPNivBveJBCq6oyae96QR1Vgtmm4VNR09iE1ZWWnrTXZwgWZ9JntGfYn0u7+7bgRUw6gzsun0XAK+nvU5WWRZJYUkkhSfRO7w3Ef4Rl/1siqK0ntbds0uWLGHy5MleVfzzgM5nPY5teM6hZo9PPNPnb5O+mK2+6I1h/P7qfvSN++UfuHNoHJ3jRl7yPF0bvi6lT8PXae+9uI68chM/NDz2LTIzpCSDWf4HuLl9JmWlhynX6xCv9YduV2Hzh8OVh1ibs/bMOfpH9Oej6z4CwGKzYNS1bPiWoigX56x7gs8//zzvv/8+HTp0oHPnzgwaNIi3336bt956C7PZTPfu3fnggw9IS0tj2bJl/PDDDzz33HN89dVXrFu37oLjAgICHPJ5G+OqSV7LgF83jPoZBlQ4ur8f7P+AL0zvR0yoPwKICfXnhen9nP6bffb4RPyNv3Tn1OHDTn0KfpNfQvfQDsIf3kO38a9A1ADYv4iHNr3Piv3b2GKN5r1O4/lT4h1Mip8A2IdwTVsyjQfWPMDiQ4upqKtwanZF8RbzVmWeKfynmSxW5q3KbPE5d+3axaeffkpaWhorV65kx44dAEyfPp0dO3awZ88ekpKSmD9/PiNGjGDKlCnMmzePtLQ0unXrdtHjXMUhV/5CiE+AK4EIIUQu8AxgBJBSvgmsBCYBh4Ea4G5HtHsx01JiXH6T9XR7l/xzMjQOUu+2f1ktcHw7HFlL0OE1pG55m1SAwEjI3Ehd1zGMixrO6vyNzN08l79s+QtDo4Zyb797GdxpsEs/l6I4Qk5lDj56HzoFdtI0R365qVnPN8WGDRu44YYbzlytT5kyBYD9+/fz9NNPU15ezqlTpxg/fvxF39/U45zBUaN9ZjbyugR+54i23FWTf+nojRA/0v41bi6cKoQj6+DwGji0Gr+9n/IogkeiB3Aw7hpW+epYXbqfU+ZTAFSaK5FSEuIb4uRPpCitV2et4+5v76bKUsXc4XOZ3HWyZlns9wQvLPTRof4Ob+uuu+5iyZIlDBgwgAULFvD999+36jhnUGv7aC2oAwy4FW58B2YfhvvWwdgnEXpf+mx7j0d/eJtvsg4yZsu78NNC3t7xdyZ+NZHX016n0lwJqIltivvy1fvy1LCn6BDQgTkb5vD0xqepsdRokuX87lkAf6Oe2eMTW3zO0aNHs2TJEkwmE1VVVSxfvhyAqqoqoqKisFgsfPTRR2eOb9euHVVVVWceX+o4V3Cr0T5eT6eHmEH2rzGPg6kMjv6AOLwGcXgtpC9jso+R4x1jeWPPG3y4fwGDw6axelsSpjofQM0xUNzD10e/pqimiLv63sVVcVcxOnY0b+55k7f2vsXe4r18et2nBBhdc2PztEa7Z1tg4MCB3HLLLQwYMIAOHToweLC9a/avf/0rQ4cOJTIykqFDh54p+Lfeeiv33Xcf//znP/nyyy8veZwrCHuPjPtJTU2VajOXs0gJhen27qHDa8go2MEbwQGsCwwgtdKX6BNX8IV1DGb7rRZiQv3Z9MRVGodWvNEXWV/w1y1/JbVTKm9d8xYG3S/XmNsLtrOnaA/39b/PIW2lp6eTlJTkkHN5oot9fiHELillamPvVVf+nkII6Njb/jXyYXrVneK17I3M+/zfjJRZjDC+S5LPXp6x3Yy1LrZVN7EUpaXeP/A+r+x8hVExo/jHlf84p/ADDIkawpCoIQCkFaax8OBC5g6bS6hf6MVOpziRKv6eyjcIEiewxOjDf8pN3K9fTkn0atoF/IfqoolE2q7ROqHiZd7Y8wavp73ONV2u4aUrXsKov/xclezKbNYfX8/eor0snLiQ6KBoFyVVQN3w9Xinb2L91zqZrieTGW2qxq/jSiJ7vM/J6pNax1O8SIR/BFO7TeXl0S83WvgBpnWfxocTP6TEVMInGZ+4IKFyNlX8PdwvE9sCeMV8N1OKe/BMcQkFNQe4cfmN7C3aq3VExUvM6DmDv4786wVdPZfTJ6IPYzqPYdmRZVisFiemU86nin8bMC0lhk1PXMXRF6/n6jlLuCkshc+P5zEkKIGuIZdbqEJRWkdKyT2r7jlz5d6SZYan95hOaW0pe4r2ODqechmq+Lc1Rj+49SPiQxL4+971BJUcpc5ax2M/PMaJ6hNap1PamLSiNHac2IGPzqfF5xgRPYJvpn9DaqdGB6goDqSKf1vkHwp3fAV+wfDRTeTmbWdj3kbu+vYucqtytU6ntCGfZ35OkDGIiQkTW3wOg85AbLtYB6ZyraCgIADy8/O56aabNE7TdKr4t1UhMfZfAPW1dFv6CO+MfpUqcxV3fnsnP1f8rHU6pQ0oqy1jdfZqJned3OoJWxabhd+v+z3v7HvHQelcLzo6mi+//NKpbdTX1zvsXKr4t2UdkmDmp1CeQ99vn+Xdq16n3lbPXd/eRVZZltbpFA+37MgyzDYzMxJntPpcRp2RGksNX2Z9iU3aHJDO9bKzs+nbty8ACxYsYPr06UyYMIEePXrw+OOPnzlu9erVDB8+nIEDBzJjxgxOnbKv2/WXv/yFwYMH07dvX2bNmsXpCbhXXnklf/zjH0lNTeW1115zWF41zr+t6zICbnwbPr+TxHUvsmD8fOZsfrpVfbSKApDaKZUHkx+kZ/ueDjnfDT1uYM6GOew4sYOhUS3Y4vubJ+DEPodkOaNTP5j4YovempaWxu7du/H19SUxMZHf//73+Pv789xzz7FmzRoCAwN56aWX+Pvf/87cuXN56KGHmDt3LgC/+tWvWLFiBddffz0AZrMZR694oIq/N+g9FSa+DN/MJiGoA59c9zFCp0NKSU5VDl2Cu2idUPFAfcL70Ce8T+MHNtHVcVfzN+PfWHRoUcuKv5sZN24cISH21Xd79+7NsWPHKC8v5+DBg4wcad9Mymw2M3z4cADWr1/Pyy+/TE1NDaWlpfTp0+dM8b/lllscnk8Vf28xdBZU5cPGfyCCY2DM4yw4sIDX017ntateY0T0CK0TKh7kq6yv6BfZz2FX/QB+Bj8mdZ10ZhOjZi9b3sIrdGfx9fU987Ner6e+vh4pJddccw2ffHLupLba2loefPBBdu7cSefOnXn22Wepra0983pgYKDD86k+f28y7hnofyusfx5+Wsj13a4nLjiOh9Y+xKa8TVqnUzxEsamY57Y+x9LDSx1+7psTb2ZW/1ktmi/gCYYNG8amTZs4fPgwANXV1WRlZZ0p9BEREZw6dcrpN45BFX/vIgRM/Td0uwqW/5GI47t4d/y7dA3pyuwfZpNdka11QsUDLD60mHpZz009HT+ssWf7ntw/4H6CfYIdfm53EBkZyYIFC5g5cyb9+/dn+PDhZGRkEBoayn333Uffvn0ZP378maWhnUkt6eyN6qpgwWQoyoS7VpAfGs2tK24l3D+cL67/olnT8xXvYrVZmbRoEp3bdead8c4ZlmmxWlh3fB092vdodIa6WtK55Us6qyt/b+TbDm7/wr6L2Mc3E11bw6tXvspjqY+pwq9c1ub8zeRX5ztkeOel1NTX8OSGJ/k4/WOntaGo4u+9gjrArxbbf/5wOoMD4xgZYx+BcLzquIbBFHdWUF1AXLs4rursvI2CQnxDuLrL1aw8upLa+trG36C0iCr+3iy8G9z2BVQXwcczoK6KH3N/5PrF17MuZ53W6RQ3dHPizSybtqxJSza3xvQe06myVLEmZ41T2/Fmqvh7u9hBMON9OLEfPv81QyNTSApLYs6GORwpP6J1OsWNFNYUIqVEr9M3fnArDe40mJigGBYfWuz0tryVKv4K9LwWrn8NjqzD9+vH+MeVf8fP4Mcf1v+BSnOl1ukUjS3ZnceIF79j7MfTGPTGgyzZnef0NnVCR6/AcezMPUbCnMWMfHGdS9r1Jqr4K3YDfwVjn4K9n9Jp63/5x5X/IO9UHn/68U8eu9aK0npLducxZ9E+Cq0/oTNWUVHalTmL9jm3ENusLNt5hI2buqA/dDc+EvLKTc5v18uooR3KL0bPhkr7LOCB7aJ5cuiT1FhqELTNCTdK4+atysRksdKx0zpsFj8mmQrwIZecr7+BU13Aaj7rywL1dfbvVjNYz/r5nOctDa+Zz3r9rPNIK1OAKXpAD1m2aK41z8NksTJvVSbTUmK0/p+lRb7//nteeeUVVqxYccFrkyZN4uOPPyY01HUb2avir/xCCLjuVThVCN88zowZC6DPnYB9x6a2OutSubT8chOh+gJqgvL5bVkFDxrn21+oB9Y2HCT0oPexfxkavuuNoPc96+eG13yDfjn29HM6Ixh8z3n+pe+OYsaAT9B+lnYsJuJoDsX1XcgvN2n1P4VTrVy50uVtquKvnEunh5vmw8KpsGgWBEayTlfH/P3zmX/tfPwMflonVFwoOtSfjnIzh4BNFTewsHYQFgyEh7Rj9WNX24u1E24AL9u6jrxyE33qQqnSL6Nb4E8UV3QhOtTf4W211sKFC3nllVcQQtC/f3/0ej2TJ08+s7FLUFDQmWWbKysrue666zh8+DBjx47l9ddfR6fTER8fz86dO4mIiLjgfB988IFTcqvir1zI6G/fB+Dd8fDpTAKnvsreor28secNHhn0iNbpFBeaPT6RoiVV3H+ijIdMV2LBB3+jnj9P6Gf/78SJ7c5ZtI+jtQNoZ1uCb8DP+NfomT0+8bLvu/vbuy94bnz8eG7tdSumehMPrnnwgtendp/KtO7TKKst49HvHz3ntfcmvHfZ9g4cOMBzzz3H5s2biYiIoLS0lEcfffSSx2/fvp2DBw/SpUsXJkyYwKJFi87Z/eti53MWdcNXubiAMPtOYAZ/hn7zDNPiruH9A++TUZqhdTLFhaalxDAjNIfwunjq8SEm1J8Xpvdzer/7tJQYXpjej7DQCLrXCk75l7ik3eZat24dM2bMICIiAoCwsLDLHj9kyBC6du2KXq9n5syZbNy4sVXnaw115a9cWmgc3PElvDeJxw5u4sfwYJ7d/CwfTvpQLQPhJXKLDrCSfKaPvJefx13n0ranpcQwLSWGf3/ahXdqj3Ftn8Zvhl7uSt3f4H/Z19v7tW/0Sr8pDAYDNpt9hJzNZsNsNp957fz7ZlreR1NX/srldeoHt3xISMkR5ph0HCg5wI+5P2qdSnGRHw9+wr/CQjFFD9Asw+ioYdxVUYm5PFuzDJdy1VVX8cUXX1BSUgJAaWkp8fHx7Nq1C4Bly5ZhsVjOHL99+3Z+/vlnbDYbn332GaNGjWr0fM6iir/SuK5j4IY3GX9sNwt9enBV7BitEykusqVgGzH19XTuPkGzDP27TeKPZRWEFrvfjPM+ffrw1FNPMWbMGAYMGMCjjz7Kfffdxw8//MCAAQPYsmXLORuxDB48mIceeoikpCQSEhK44YYbGj2fs6glnZWm2/xvWP0UDLmf/Cv+QFRQtBr+2YbV2+oZtXAgE2UAz9y9VbsgllpqX4zheOqd9Jj493NeUks6qyWdFVcY8RAM+x37095j8qJJfP3z11onUpxof8F2qoVkeKR2XT4AGP14KTqeOwvXqtnmDqTu2inNc+1zJFUVkFS6ib9t/F+e/8LGiTI90aH+zB6f6HajMZSWO5b9Pf42G0O6T9Y6Cskh3fiyOp2fy4/SrX13reO0CerKX2kenQ79DW/ysDUGk82E0f8dJGrtlbZoqsnCxuMnCO3qvLX7myo5ejgAadkXLvHsrl3Xztbaz62Kv9J8Bl/+XPEoU8oFZSE/0zXQPvrn9NorShtxbBM+0SngE9j4sU4WFz+W9lYru/M2nfO8n58fJSUlXvcLQEpJSUkJfn4tn3Gvun2UFjlUoaOs8n/oEjiP4YErOVp9BSDa7Nor3ubH7O9403qMeZ2vxx068kTHPgyos7Cn/NA5z8fGxpKbm0tRUZFGybTj5+dHbGxsi9/vkOIvhJgAvAbogXeklC+e9/pdwDzgdJ/Av6WUztn9WXGJ6FB/8sojGZM9nqeM89mvO8gWWx+3XHtFab7Nh5ZxyGggMkH7Lh8A9EZmGaOwWnzOedpoNJKQkKBRKM/W6m4fIYQe+A8wEegNzBRC9L7IoZ9JKZMbvlTh93Czxyfib9Sz3HoFpTKIqwKW42+Uja69oniGLYU/MajOjE/8qMYPdpF+UUNILkgHmxrx4wiO6PMfAhyWUh6VUpqBT4GpDjiv4sZOr70SERrCa4YR/LNzOTOG7VOjfdqAk9UnOVpfyTBDe/AL1jrOL6JT+EFfz4b0z7VO0iY4ovjHAMfPepzb8Nz5bhRC7BVCfCmE6HyxEwkhZgkhdgohdnpjH56nmZYSw6YnruLZh18jtbaODaVfYapXff6ebmvuBgCGdxyscZLzxAzkrdAQ5qc7Z4ljb+Oq0T7LgXgpZX/gO+D9ix0kpXxLSpkqpUyNjIx0UTSltURINA+HJlNsq+OT/Qu0jqO0UmRNORNPVdNDwyUdLiqiJwMsNvZX52KxWho/XrksRxT/PODsK/lYfrmxC4CUskRKWdfw8B1gkAPaVdxIysjHuaLGxPx986kyV2kdR2mFEZVlvFxUiq7LSK2jnEunJzkghjpsamlxB3BE8d8B9BBCJAghfIBbgWVnHyCEiDrr4RQg3QHtKu4kNpXfG2MQ9XVklaix/p6qoq6C4uzvoWMf+54Obia540AA0k7+pHESz9fq4i+lrAceAlZhL+qfSykPCCH+IoSY0nDYw0KIA0KIPcDDwF2tbVdxP0lDf8+anOMMqirROorSQksPLWIsORTFDtQ6ykV16DycGEs9GQXbtY7i8Rwyzl9KuRJYed5zc8/6eQ4wxxFtKW6s91T8Vv8Z25b/kBXRhV5hvbROpDTTluzviDdbiOw6TusoFxc9kA/zTxCeMlTrJB5PLe+gOI7eCIPv5d/ladz+9W2crD6pdSKlGcxWM7tK0xluqgV36+8/LawrEcYgREGa1kk8nir+imMNupvpNRZstnre2vuW1mmUZthTtAeTrGeYTzgEueloO52Oiqi+/LnwR7WjXCup4q84VmA4sX1u4qaqGhYd+orjlccbf4/iFrbkbUYvJYOjhmsd5bICowaySpjYeFwV/9ZQxV9xvKEPMKusBAPw+p7XtU6jNNHN7fvwamEx7bpeqXWUyzLEptK/zkxawTato3g0VfwVx+vYh8i4UcyssbC/aJ+a9eshOp3IYFyNCbqM0DrK5UWnkFxbR1bVMWosNVqn8Viq+CvOMfS3PHAyj0U97sTfoFb6dHd7i/byxdHl1LaPh+BoreNcXmgXkqURK5L9xfu1TuOxVPFXnKPneAJC4zFuf5va+lpOmU9pnUi5jGWHl/KKJQ+9u1/1AwhB//A+xNt0VFuqtU7jsVTxV5xDp4eh91OTu52JX1zN/P3ztU6kXMbu/K2k1NZijB+tdZQmCY4ZzPKc44yNGqZ1FI+lir/iPMm3E2AMItmm5/PMz1X/rJuqMldx6FQOA+rqIN5Nx/efLzoFpBVZsM/rtnB0FFX8FefxC4aU27nzeBaV5koWH16sdSLlIvYV7UMCyfoQCI3TOk7TRKew1c+XMT/+jqMVR7VO45FU8Veca8gskmtNDPAJ54ODH2C1WbVOpJznaMUR9FLSL9qDlkwIjibKJ5Qyay27C3drncYjqeKvOFd4N+g5gbsK88k7lcfWgq1aJ1LOc0fkEDYcyyUoYYzWUZpOCOI6JhMiUSN+WkgVf8X5hj3A2LKTfNDtDkZEe8BoEm+TvZF2Urrvej6XIGIGklhbS1aJWiG+JVTxV5wvYQz6Dr1J3r8cAeoGnRs5Un6EhzIXcDgkCsK6ah2neaJT6Gk2c6j8kOpObAFV/BXnEwKG3g8n9vHP7//EnI1qdW93sevETn6wluMXM8j+7+RJolO4wlTLzcFJ1FnrGj9eOYcq/opr9LsZ/NtD3i5WHl3JscpjWidSgLTcjUTUW4mJH6t1lOYL6sAIYwSz6/0JMAZoncbjqOKvuIZPAAy6i9uy0zDo9Hxw8AOtEylAWlEayXV1iPhRWkdpmehk6vJ2UWwq1jqJx1HFX3Gdwb8hwiqZ7BvN0sNLKa8t1zqRVys2FXPcXE6yzQCRiVrHaZnoFO7wq2HuBtWV2Fyq+CuuExILvafy62MHqLXW8lnmZ1on8mrlteWkWCAlvI/n9fefFp1Cd4uFTDXip9lU8Vdca9hv6V5dxp86juaaLtdoncardRc+LMzNoX/X8VpHabnoFHrVmSk0V1BWW6Z1Go+iir/iWrGDIXogdxzaRtfgeK3TeLX6nzfYf/CElTwvJSCMnr5hAGSWZWocxrOo4q+4lhAw7LdQcojMvR/w0vaX1Lh/DZitZq7YO4+PwjpAhz5ax2mVxMh+AGSWquLfHKr4K67XexoEdSJj7wd8mP4hO0/u1DqR10kvTecUVjqF9wSdZ5eBsJghPFlcyoj2vbWO4lE8+19d8UwGHxh8L+N/3kmwMUjd+NVAWo598/MBnT1oPZ9LiU5hZtUpetRUaJ3Eo6jir2hj0N346XyYqg9j7bG1apy2i+3J3UCsxUJEt6u1jtJ6UQMo1+n44fByLFaL1mk8hir+ijaCIqHfDGZk76Fe1rPk8BKtE3kNKSW7K46QbLFBp/5ax2k9vxC2Rsbz0Ml1HKk4onUaj6GKv6KdYQ+QYKpifFBXjDqj1mm8Rr2s545aG5OCuoLeoHUch0iMsN+0zijN0DiJ52gb//KKZ+rUD7qM4pWcozDtdq3TeA1jTTn35h+Fcb/SOorDxMUMwy9zN5knd0P3aVrHabElu/OYtyqT/HIT0aH+zB6fyLSUGKe0pa78FW0NewAqcrBlLOdA8QGt03iFrIxFlOp04Knr+VyEPmYQPcwWsgr3aB2lxZbszmPOon3klZuQQF65iTmL9rFkd55T2lPFX9FW4iQIjePd7a9w28rbKDhVoHWiNu+pzPd5vGMH+ybobUVUf3paLGScOu6x80bmrcrEZLEyWreH4Tr7hZDJYmXeKufMX1DFX9GWTg9D7mdiXjpSSr489KXWidq0aks1WZYqUvw6gL4N3WfxCeRufQcWCud0kbhCfrkJgITIT+kf/vEFzzuaKv6K9lLuIEb4cYUhlEWHFmGxqeF6zrIvdzM2AckdB2kdxeG6RA2iW8FBPHSJOqJD/YmmmN1BZjb6hp7zvDOo4q9ozz8Ukm/j5vyjFJuK+f7491onarPSjn6DkJJ+3a/TOorDyahkvhI1bDy0VOsoLTJ7fCKTfH6iyKCn0NIZAH+jntnjnbPctir+insYej+jqquI0gfwXfZ3Wqdps9IK99DNUk9wlyu0juJwImYg80ODWZThmTPGp6XE8OsOBzil01FR34mYUH9emN7PaaN91FBPxT1E9EDf41reObmH6Juf0TpNm/V4VR3lxhgw+mkdxfE69iXRXE9WZbbWSVqmphRbxV5o15FXp4/m+m5XObU5deWvuI+hDxBXeRJD+nKPHbHh1mor6VpwgIFdnFtUNGP0I9GnPTnWU9RYarRO03yZ39DOauGxHjPpF9HP6c2p4q+4j25XQUQi327/P6Yvu4Ha+lqtE7Upuw58wuJAf+q7DNM6itMkhvZAAlllWVpHab6MFYQHRXPn8DnEh8Q7vTlV/BX3IQQMvZ+wkqMcLj/C6mOrtU7Upiw+soz/CwtFH9uGi3/0UACyC3ZonKSZzNVwZB0nelxFduUxl/zl65DiL4SYIITIFEIcFkI8cZHXfYUQnzW8vk0IEe+IdpU2aMCtDMaPeOHL55mfa52mTdlTk8cAEYDwDdQ6itNEdRnNxmO5TNOHaR2leQ6vhfpa3vcX3LLiFoQL9lRudfEXQuiB/wATgd7ATCHE+bsq3AuUSSm7A/8AXmoP6mUCAAAgAElEQVRtu0ob5ROIGHgnM0pOsqdoj9qdyUHKqvLIFlaSQ3toHcWpRMc+hAgD5O/WOkrzZKwA//YUGYx0COjgkiYdceU/BDgspTwqpTQDnwJTzztmKvB+w89fAuOEK361KZ5pyCymnqrBFx1fZH2hdZo2YU/6VwAMiLtS2yDOZvBhY1Qi/5P/HVabVes0TWO1QNa30HMihaYiIgMiXdKsI4p/DHD8rMe5Dc9d9BgpZT1QAYSffyIhxCwhxE4hxM6ioiIHRFM8UmhnQhKv438qqhkfM1rrNG3C4fxtGKSkT68btY7idEXtY1ktajheeUzrKE2TvRFqKyBpMoU1hR515e8wUsq3pJSpUsrUyEjX/PZT3NTQ3zKztIjBJw5pnaRN+E1ZGd+bw/ALjNA6itMldkoFICPnB42TNFHGCjAGILuOpaimiA7+nlP884DOZz2ObXjuoscIIQxACFDigLaVtipuGEQN4OiON9SN39ay1ELuTkLa4Kzei+mWMA69lGTlb9M6SuNsNsj4GrqPw2bw5W9X/I2JCRNd0rQjiv8OoIcQIkEI4QPcCiw775hlwJ0NP98ErJNqFo9yOULA0N/yrbmQ57Y+p5Z6boWMzMX8Mbwd2R2ds0aMu/Ht2I8Ei5XMMg/4qzH/J6gqgF7Xo9fpGR8/nqTwJJc03eri39CH/xCwCkgHPpdSHhBC/EUIMaXhsPlAuBDiMPAocMFwUEW5QN/pTLX6IZEsPeKZi3W5g51HV7M2MAC/zkO1juIaegPJhmAMtZVaJ2lc+nLQGaDntRTWFLKtYBumeucs4Xw+h/T5SylXSil7Sim7SSmfb3hurpRyWcPPtVLKGVLK7lLKIVLKo45oV2njDL7EDLqHoaZalmZ9iU3atE7kkdLK0omyCTqFe8eVP8AzncbyWt5xsNZrHeXyMr6276jm355NeZv4zerfUGJyTY+4W93wVZQLpN7DtOpacmtOsuvkLq3TeJ56M2n1lST7d9I6iWtFp0C9CYrdeJ5IUSaUHIJekwEorCkE8M7RPopygaAOXJ0wgUirjezidK3TeJwTR9dy0qBnQBvcvOVyTB17c3tURz7b967WUS4tfbn9ey/73gqFNYWE+obio/dxSfOq+Ctuz2/Y71iVk8uMSg/ow3Uz5Tkb6VdbR0qP67WO4lL+HfqQbzSyt3if1lEuLWMFxKRCcDQAhSbXjfEHVfwVTxCdjDFuOGz/L9V16hdAc/Q6kcHH9e3pHTtC6yiupdORqAsg01SodZKLq8i1L0GRNPnMU4U1hS6b3Quq+CueYthvedxYzf0rZmqdxHNY67HmbIUuI7VOoonEoFiOiHosddVaR7lQxkr7916/FP+5w+fy+5TfuyyCKv6KZ0i8jt66APacyuFouRos1hSmvO2Migrl80BfraNooleHAdQLwdHsNVpHuVDGcohIhIhfFtrrE96HPuF9XBZBFX/FM+gNTO59O3opWbLnba3TeIQDh1ZwSqejY4yXjO8/T5+EaxhXXWMfVeNOakohe9M5XT5V5iqWHl7KieoTLouhir/iMSKGPMDoWjPLjq3CYrNoHcftpTUsb9A/bozGSbQRFzuC/6usJ7H0eOMHu1LWtyCt53T5HKs8xtObniajNMNlMVTxVzyHf3umdRhMibSw6cg3WqdxbzYre2ryiNf5096vvdZptCEERKdQk/+T1knOlb4CgmPscxEanB7jr274KsolXDHySZ4vKmFw7n6to7g1eWI/e4y6Nr95S2NeDdQz3qcMaXaTDd3NNXBknX1s/1lbmpyZ4OWiFT1BFX/Fwxg79mFKx2EE7loA9Wat47gtS/ZGbq+sYkLiDK2jaCoqrCflej0nczZqHcXuyFr7zOOzunzAXvz1Qk+Yn+u2n1TFX/E4GyNu4gNdDbfO+w0jX1zHkt3nryCu+Bzfwv2EMrLnNK2jaKpXF/v9jqxj32sb5LR0+3aN5w+/LTIVEe4fjl6nd1kUVfwVj7Jkdx6zNoeyJDCE8ojd5JVXM2fRPvUL4GxScjh3C5Vxw7ROormeMfYim1G0V+MkNGzX+A30nAh6wzkv/XHgH3nz6jddGkcVf8WjzFuVSY1F4l+RRJ4P9PbfgsliZd4qNxvOp6WiTGYHG3hcntQ6ieaCfNsRi5HMU7laR/llu8aGtXzOFu4fTo/2rr0/o4q/4lHyy+1rnf9UPg0fmyQ2dO05zytQeXQtR4xGkmOGax3FLdwblsz4skKoO6VtkIyvweAP3a664KUF+xeQVpjm0jiq+CseJTrUH4AaW3viqtuT3q6KGFFw5nkF9mWvRQpBctyVWkdxCzf1nMG11dVwQsNF3s7arhGfgHNeqrPW8equV9l+YrtLI6nir3iU2eMT8Tfab4odL7ua7uZ6bvX7htnjvWejksuSkrTSdHRAv8j+WqdxC9ao/hw2GinN2aRdiPzdUJUPSReurnpmjL+/68b4gyr+ioeZlhLDC9P7ERPqT0l1KjMLE3lAv4VpSUFaR3MPpUdJ01no4RdJoDFQ6zRu4YQOboiNYk3eD9qFyFgOQg89x1/wUlFNEQAdAzq6NJKh8UMUxb1MS4lhWkqM/UFeFMXzx+G3Yz5BVzyqbTB3kL2Rx0vKqRg7T+skbiM6MJp26MiqytEuxFnbNZ6v0OT62b2grvwVD1cQEsXVcbEs3feu++/X6grHNtHDJ5RULx/ffzYhBD19I8mwmeyjbVytKAuKsy7a5QO/XPm7ciMXUMVf8XBRQVH0DIxmqcFi/9Pam0nJztxNLI/phVVtdn+OxLCeZPkYseVpsM5PxrnbNZ5vZq+ZrJ2xlmCfYBeGUsVfaQOm9L6ddF8fDm15Teso2irP4Su9iVdtReiE+r/22RKjh2HS6Th+7EfXN56+AmIGndmu8XwGnYEOAR0QZ6314wrqvxDF403qNhkDOpZX/wzHXTtczq0c20Sarw/JEX1cXkjc3ciE8fynCiKLDrm24Yo8yP/pgrV8zrbwwEKWHVnmwlB2qvgrHi/ML4xRMSP5ul0Qts3/0jqOZoqPrifXaCQ55gqto7idjoEdGd0hhYACFy/zkHnhdo3n+zzrczbkbnBRoF+o4q+0CY+kPsaHURPRZayAsmNax9HEnoZJQskdUxo50jvtCYtljbkQqktc12j6cojoCZE9L/qylNLlG7efpoq/0iZ0De1K1IhHQOhg23+1juN6lflkmUsxCh1J4Ulap3FLH5sLeDG8PRTsdk2DNaX29Xwuc9VfbanGVG9y6Tr+p6nir7QZB+rLebhrH6p2L4TaSq3juFb2Jn5bXsma0f/CV++dG7Y3plfUYE4aDFQc3+qaBrNW2bdrTLp08ddiB6/TVPFX2gybzcZ6axmrfGyw+wOt47jWsY3gG0xY3MjGj/VSiR2SAcgs2OGaBjNWQLtoiLp0N1xZXRl6oXf5GH9QxV9pQ/pG9CUhJIFl4VGw9U2vmvS1PXcDj8V0prDWhf3ZHqZnmL3fPbP8sPMbM9fA4bX2sf26S5fZQR0HseuOXQzsMND5mc6jir/SZgghmNJtCruFmZzqfO+Z9HWqkB8sJaynxuUThTxJhH8EEfoAMmw1UOXkvQ6OrLNv13iZLp/T9Dq9S3fwOk0Vf6VNmdx1MgLB8sgY2PIfreO4xrFNbPXzIyW0J34GP63TuLWFqU/yTHGpfZVNZ8pYAX6hF2zXeL4vsr5g3g5t1mFSxV9pUzoFduLGnjfSIf5KyN3hFZO+io+uI8vXh2Fdxmkdxe11ThiHD8K5xd9qgcxvoOcE0Bsve+jmvM1szNNmc3lV/JU255nhzzDjyr+BX4hXXP1vz7ePXhkWo272NibXXM7LMQnk5G1zXiPHNkNteZO6fApN2ozxB1X8lTaqzmBkf7+pkL6sbU/6qilFV5lLim8kSWFqfH9j6qx1fOBTz56ydJDSOY1krGjYrrHxv8SKaopcvo7/aar4K23SvB3zuKdsK9U6PWx/S+s4znNsMxOqa1g4/DlNbhp6mi7BXfARejJlLVTmOb4BKS+5XeP5bNJGUU2Ry3fwOk0Vf6VNmtx1MiZrLd/2GAG73m+zk75qs3/EYvCzrxqpNMqgM9AjqDMZPj7O6ffP/8n+S+Uys3pPqzJXERkQSXTQxVf7dDZV/JU2aUDkALqFdGORrw7MVW120teyvB8YFduRInPb/OXmDIkd+pPlY0Q6Y23/9BWX3K7xfCG+Iay+aTU3J97s+BxNoIq/0iYJIZjeYzp7K4+QFTe4bU76qq1gi7mYEIM/Ef4RWqfxGInhfRA6A5V5Ox1/8oyvIX4kBIQ5/twO1qriL4QIE0J8J4Q41PD9wg0q7cdZhRBpDV+uX7ha8UrXd7seg87A+rj+UJFjvxHXhliPbWabnx/DIgao9fub4ZbEW/ghbAwhBXsde9O3+BAUZ0Kvi2/XeL61OWt5cM2DVNRpsLUkrb/yfwJYK6XsAaxteHwxJillcsPXlFa2qShN0t6vPUumLmHW2JehfUKbG/aZfuhrqvQ6hnWdqHUUj6LX6SE6xT4csyzbcSdOv/x2jefLKs1iQ94GAgyXvzHsLK0t/lOB9xt+fh9Qu0YrbqVLcBeE3gDDfgu529vUpK+tJ+3dFkM6q81bmmteVTqvtg917E3fjBUQPRBCYpp0eKGpkDC/MIyNTARzltYW/45SyoKGn08Alxqw6ieE2CmE2CqEuOQvCCHErIbjdhYVFbUymqLYvZH2Bo+c2g++bWjSV90pRhX+zBMhyaq/vwVybbV8HxhgH53jCJX5kLeryVf9YF/OWYvVPE9rtPgLIdYIIfZf5Gvq2cdJKSVwqQ60LlLKVOA24P+EEN0udpCU8i0pZaqUMjUyUpuxr0rbI4RgTe735CbPaDuTvo5vo1ddLbf3vVPrJB4pMTyJYwYDNXm7HHPCjK/t35Oa1t8P9glebl38pZRXSyn7XuRrKXBSCBEF0PC98BLnyGv4fhT4HlD7zCkuM637NHRCx+LQcPtOX21g0tfPh79ls38AFjW+v0USwxKRAg4XHwSbrfUnzFgB4T0gMrHJb+kY0JHE9k0/3tFa2+2zDDh96XEnsPT8A4QQ7YUQvg0/RwAjgYOtbFdRmqxTYCdGRo9kSe5a6pOmtolJX4sLNvK7jhFYDGrXrpY4XXQzdRYoPdK6k5nK7Ns1NmEtn7P9a9y/eHjgw61ruxVaW/xfBK4RQhwCrm54jBAiVQjxTsMxScBOIcQeYD3wopRSFX/FpW7scSOFNYVs7jnK8yd9WUxsrS8j2TecAKM2I0U8XUxQDCmhifhKWn/TN2sV2OqbPMTTXbSq+EspS6SU46SUPRq6h0obnt8ppfxNw8+bpZT9pJQDGr7Pd0RwRWmO0Z1Hc2fvO+kcPxbiRsA2z530VfbzejKMBoZ1SNU6iscSQrBw8qdMqbVBa2f6pi+HdlH24aNNdKDkANOXTWdf0b7Wtd0Kaoav4hWMOiOPDX6MhJAEGP47KM/x2J2+th9ajhSCYYk3aB3Fs+kN2KL6YWvNiJ8mbtd4voJTBRwqO6TZME9QxV/xMrsLd/NjUFDDpK/XtY7TIruK9hAkoU/0UK2jeLS0wjRGGYtJK01v+V+BR9fbt2tswkJuZyussY+N0WpFT1DFX/Eyr/30Gi/tmIcc+kDDpK8dWkdqnvo6/pR7hM/Cr8SgM2idxqPFBcdRJetJM0gozmrZSdIbtmuMH9WstxXWFGLQGWjvd9EVcVxCFX/Fq9zY40ZyqnLYGdPbPulrq4dN+sr7CX19LXHdr9U6iccL8wujS0AUu319W3bT11oPWU3brvF8RSb7Ov46oV0JVsVf8SpXd7madsZ2LMr+BlLvgoNLPWrS15qDH/N8eHtM0QO1jtImJEcNZo+fH7Ilk72ObbIP82zGrN7TugR3YVRM8/5acDRV/BWv4m/wZ1LXSXx37DsqkmcCwqMmfa0q3Mm6oGD8grXZAKStSe6QQpleR05BC5Z3zvgaDH72XbuaaVb/WcwdPrf5bTqQKv6K17mxx434Gfz4WdZBnxs8YtLXkt15XPHCt2y1VhJVE8zStHytI7UJQ6OGcl9gD3yLsqDe3PQ3nt6usds48Al0XkAnUsVf8TpJ4UmsuWkNyR2S7cM+zVWw+0OtY13Skt15zFm0j6C6zZTrddRWdWPOon0s2e2EPWi9TOd2nXm41+10MpugKL3pb8zfDZW5zZ7VC2CqNzHyk5F8mfVls9/rSKr4K17Jz+CHTdoobB8LccNh2xtuO+lr3qpMpKWG/sHfApB9ajgmi5V5qzI1TtY2mDr0Zq9vM/f0zTi9XeOEZrdXWFNIpbkSH71Ps9/rSKr4K17rD+v/wO/W/g457MGGSV/uudNXXfkJPvF5nm6igKhT4RTXdwYgv9ykcbK2YWHBj9we3YnK49ua/qb0FdBlRIu2azw9xl/LFT1BFX/Fi43tPJaM0gy2hoRD+3jY6oaTvooPsdT/WXqJHHYV3UvW8dlnXooO9dcwWNuR3CEZgL2FTbzyP71dYzOWbz5bblUuAJ0COrXo/Y6iir/itSZ3nUyEfwTvHXgfhj0Ix7e516Sv7E3wztWE+9QzU/9HVtl+WcvH36hn9njtlgNuS/pF9EOPYLfpBFhqG3/D6b8QWzDEE2B/8X6CjEHEBce16P2Oooq/4rV89D7cnnQ7Wwq2kNFlsHtN+tr7BXwwDYI6YL53GcfiFxEe+z0CiAn154Xp/ZiW0rTtApXLCzAG0DMgij2+Rjh5oPE3pK+AqGQIiW1Re30j+nJb0m2aTvACUPPDFa92c+LNvL33bZbkrOaJQXfCln/b+/9DNboqkxI2vALrnoMuo+DWD1l5bBX10sznM+8lKTxJm1xtXHLHQSw5lUt93k4MsZfZIKcyH/J2wlVPt7itG3q4x4J86spf8WrBPsEsnLiQx1Ifg6H3AwK2/VebMFYLLHvIXvj73wK/WgT+7Vl0aBFJYUmq8DvRrf3u5e1yMyI/7fIHnt6usYVr91eaK6moq2jRex1NFX/F6yWGJWLQGbAFR9snff200PWTvmor4KMZ9vkGY/4EN/wXDL4cLDlIemk603tMd20eL9O1fTcGRA5AX9CE4h/evVnbNZ5t8aHFjPp0FGW1ZS16vyOp4q8owPqc9UxePJmK1DuhrtK1k77Kj8O7EyB7A0x9HcY+CUIAsPzIcnz1vkzqOsl1ebzUprAoltfkgLn64geYyuz/Rr2uO/Pv01z7i/cTHRit6Wqep6niryhAdFA0x6uO83llpmsnfeWnwTtXQ0Uu3PEVpNx+zsuPDHqE+ePnE+wT7PwsXm6RtZR/hwbDiUvsrpW1utXbNe4r3kffiL4tfr8jqeKvKNi7fkZGj+Sj9I+oGzrLftM382vnNpq1Ct6bZF8O+J5V0PXKCw7x0fswIHKAc3MoACTHjCDfaOBk9o8XPyBjOQR1gpjL3BC+jBJTCXmn8ugf2b8VKR1HFX9FaXBX37soqS1hhcFqn/S1xYnDPne8A5/cChHd4TdroGPvCw55auNTfJX1lfMyKOdI7jwagLSCrRe+aDG1aLvGs+0rtv9F0S+iX4szOpIq/orSYGinoSSFJbHg4EJsQx5wzqQvmw1WPw1f/w/0uBbuWgntLpzpmV2RzbIjyyir0/7GoLfoFd4LPwRpFUcvfPHIerDUtHhiF0CvsF7MHT7XbUZtqXH+itJACMHswfblE0RoInz/gn3SV+cFjmnAYoLF99s3kBl8H0x8CXT6ix66+PBi9ELP1G5THdO20iijzkgf3w4cMWXbR3v5nXWfJWOFfRJg/BUtPn+nwE7M6Dmj9UEdRF35K8pZBncazOBOgxF+wTDoTji4zN7/31rVxfD+FPv5rn0eJs27ZOG32CwsPbyU0bGjiQzQboNvb/TagIf574kiKNjzy5PWesj8BnqOB0PLVuK0SRsrjq44s6ibO1DFX1HOU1tfy1+3/JWvo3van2jtpK/iw/YRPSf2ws0LYcRDlx0quCF3AyW1JWpsvwZC4kYiAPJ/+uXJnM1gKm3R2v2nHas8xpwNc9iUt6nVGR1FFX9FOY9RZySjNIOX9r9NWe/rWjfp69hmmH811FXBnSug95RG3xLmF8bkrpM13+PVG1n9Q3k6Oo5FOd/98mTG16D3te/a1ULudrMXVPFXlAvodXqeHfEsVeYq5gUHtHzS174vYeFUCAiH33wHnQc36W3JHZJ54YoXMOjULTlX0+v07PHzZX31MfsTZ7ZrvAp8g1p83r1Fewk0BpIQkuCgpK2nir+iXESP9j24t9+9LD+xmU1xKfZJXzZr094sJWz4O3x1L8Skwr3fQVjXJr1154mdZ9Z7V7SRHBRHms6KrC6BgjSoON6qLh+wz+ztE94H/SXu82hBFX9FuYRZ/WeREJLAvEA9tqbu9GW1wPI/wNr/hX4z4NdLmrzbk9Vm5c+b/swzm59pZXKlNVI6DaZcryf76Gr78s1CBz0ntvh8ZquZzLJMt+ryATXUU1EuyUfvw8ujXyZIH4CuYLJ90lfvywy9rK2EL+6CI2vhisfsy/42Yw2Yt/a+Re6pXPsKo4pmkrtNhEMfk5bzPQnZaRA3AgLDW3w+H70P307/FtHC9YCcRV35K8pl9ArrRWxIHHLobynP23HpSV8VefDeRDj6PUz5F4z7c7MK/44TO3hz75tM6TaFcV1afmNRab34Dv3pVy8QeT9BUUaru3wAOgZ21HzP3vOp4q8oTfC/9ce5JzoKy5Z/X/hiwV54ZxyUHYPbv4CBv27Wuctqy3jixyeIaxfHU0OfclBipaV0QsdLtr5My88CYPr69izZndfi832U/hGLDy12VDyHUcVfUZpgTJdrOGTU817++nMnfR36zn7FL3Rw7yro3vyrdj+DH2PjxjJvzDwCjAEOTK20xJLdeXx0PAwJ7LF14aeKdsxZtK/FvwA+PPghG/I2ODakA6g+f0VpgrFxY7k2ehRvyg3UvfEYf6+4kweCNjDb+ha6jn3gts8hOKrZ57VJG/4Gf54e1vJtARXHmrcqk3ARwui4GAae6A5mMFmszFuV2ex9k0trS8k9lcuMRPdZ1uE0deWvKE2UHPIgepuObe338KRhIX+qf4MNtv4sHzS/RYV/f/F+blx2I9kV2Y4Pq7RYfrmJ/eZUTNKPdcHinOeba3/xfsC9Jnedpoq/ojTRm+uKCCocRZ5RzwS/7/iwfhz31D3Ki2ubPy6/ylzFYz88RrWl2i12dVJ+ER3qj036UFk+Chl0CGEsPfN8c+0r3odO6OgT3sfRMVtNFX9FaaL8chM/l0/ihmMDeNt0B09bf41Nb2r2FaGUkv/d8r+cqD7By6NfJsQ3xEmJlZaYPT4Rf6MeS9lQAIyh2/A36pk9vvn79pbXlpPYPtEt7+WoPn9FaaLoUH/yyk383XwHAL4dVmII+YmgyjuadZ6vDn3FquxV/GHgH0jukOyMqEornO7Xn7cqk9Kq3viF7eTPV/5Ps/v7AZ4a9hTWps4MdzFV/BWliWaPT2TOon2YLPb/M1sqBmIMyqIm7E1e2n6KRwY9go/+8kv+Sin59udvGR41nHv63uOK2EoLTEuJYVpKDJmlMdTU15AcGd/ic7nTkg5na1W3jxBihhDigBDCJoRIvcxxE4QQmUKIw0KIJ1rTpqJoZVpKDC9M70dMqD8CiPJP4JlB/2Vmr5l8mP4ht319Gz9X/HzOe4pNxaw8upJnNj/D0sNLEULwxjVvMG/MPHRC9bq6u8SwRFI6pLRodu7q7NXcu+peSkwlTkjWeq298t8PTAcuueC5EEIP/Ae4BsgFdgghlkkpD7aybUVxudNXhOd6kpHRI3l+2/PYpA0pJa/ufJVN+Zs4XH4YgHY+7YgNigXsS0arfn7PUWIq4Y09bzC121T6RTZ91M6uk7vYV7yPUN9QJ6ZruVYVfyllOtDYb8UhwGEp5dGGYz8FpgKq+CttxpjOYxgRMwKjzghARmkGEf4RXNf1OoZFDSMpLMlt//xXLs/P4MeKoyuotlTzQuQLTX7fvuJ9breS59lc0ecfAxw/63EuMPRiBwohZgGzAOLi4pyfTFEc6HThB3j72rfdbiEvpWUCjYFM6TaFL7O+5LHUxwj3b3yRN7PVTEZpBnckNW8wgCs12ukohFgjhNh/kS+H7ywtpXxLSpkqpUyNjFR7lyqeSxX+tuXWXrdisVlYdGhRk47PLM3EYrM0q5vI1Rq98pdSXt3KNvKAzmc9jm14TlEUxSN0DenKsKhhfJb5GXf3vbvRXdYkkpHRI91yZu9prhhusAPoIYRIEEL4ALcCy1zQrqIoisP8qvevGB07mpr6mkaP7R/ZnzeveZNOgZ1ckKxlWjvU8wYhRC4wHPhaCLGq4floIcRKACllPfAQsApIBz6XUh5oXWxFURTXGh07mrnD5xLsE3zZ405Un2BtzloXpWq51o72WQxcsFC1lDIfmHTW45XAyta0pSiKojUpJXuK9hDhH0Fsu9hzXrNJG59nfs4/dv0DP4MfI6JH4G9o/npArqJmmSiKojRRpbmSe1bdw/sH3j/n+Z8rfubub+/m+W3PMyByAB9f97FbF35QxV9RFKXJQnxDmJgwkWVHlnHKfAqwz+K+efnNHCo/xF9H/pX/XvNfYoKavw6Qq6niryiK0gwze82kpr6Gd/e/C0CEfwRPDn2SZdOWMa37NI8Z5quKv6IoSjP0jehLr7BevL3vbdIK0wC4occNRPhHaJysedSqnoqiKM309LCn+f749ySEJGgdpcVU8VcURWmmAZEDGBA5QOsYraK6fRRFUbyQKv6KoiheSBV/RVEUL6SKv6IoihdSxV9RFMULqeKvKIrihVTxVxRF8UKq+CuKonghIaXUOsNFCSGKgGOtOEUEUOygOJ7C2z6zt31eUJ/ZW7TmM3eRUja6D67bFv/WEkLslFKmap3DlbztM3vb5wX1mb2FKz6z6vZRFEXxQqr4K4qieJQF2LgAAANjSURBVKG2XPzf0jqABrztM3vb5wX1mb2F0z9zm+3zVxRFUS6tLV/5K4qiKJfQ5oq/EGKCECJTCHFYCPGE1nmcTQjRWQixXghxUAhxQAjxB60zuYoQQi+E2C2EWKF1FlcQQoQKIb4UQmQIIdKFEMO1zuRsQohHGv673i+E+EQI4ad1JkcTQrwrhCgUQuw/67kwIcR3QohDDd/bO7rdNlX8hRB64D/ARKA3MFMI0VvbVE5XD/yPlLI3MAz4nRd85tP+AKRrHcKFXgO+lVL2AgbQxj+7ECIGeBhIlVL2BfTArdqmcooFwITznnsCWCul7AGsbXjsUG2q+ANDgMNSyqNSSjPwKTBV40xOJaUskFL+1PBzFfaCEKNtKucTQsQC1wHvaJ3FFYQQIcBoYD6AlNIspSzXNpVLGAB/IYQBCADyNc7jcFLKH4HS856eCrzf8PP7wDRHt9vWin8McPysx7l4QSE8TQgRD6QA27RN4hL/BzwO2LQO4iIJQBHwXkNX1ztCiECtQzmTlDIPeAXIAQqACinlam1TuUxHKWVBw88ngI6ObqCtFX+vJYQIAr4C/iilrNQ6jzMJISYDhVLKXVpncSEDMBB4Q0qZAlTjhK4Ad9LQzz0V+y++aCBQCHGHtqlcT9qHZDp8WGZbK/55QOezHsc2PNemCSGM2Av/R1LKRVrn+f927ti1aiiO4vj3gDg4uwgd7CD+C6VdpM+5Yzd5FNf2D2iXrp36JzgpgjyEvkFwcRdBC0W7taV9g7Z/QoXjcFPo6JDkQnI+S0KG3B8knNzc3JserAEbki4oQ3vrkt7WLalzC2Bh++6tbkZ5GAzZS+Dc9o3tW+AjsFq5pr78kfQEoNlet93A0ML/G/BM0rKkh5SPQ/PKNXVKkijjwKe2D2vX0wfbu7aXbD+lXOMvtgfdI7T9G7iS9Lw5NAF+VSypD5fAiqRHzX0+YeAfue+ZA9Nmfwoctd3Ag7ZPWJPtv5K2gc+UmQFvbP+sXFbX1oBXwImk4+bYnu1PFWuKbuwA75qOzRmwVbmeTtn+KmkGfKfMavvBAFf7SnoPvAAeS1oA+8AB8EHSa8rfjTdbbzcrfCMixmdowz4REfEfEv4RESOU8I+IGKGEf0TECCX8IyJGKOEfETFCCf+IiBFK+EdEjNA/XIQY5WCwWhUAAAAASUVORK5CYII=
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As you can see, the comments help to organize the code. The same example without comments is much less engaging:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="k">import</span> <span class="n">interp1d</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mf">9.0</span><span class="p">)</span>
+<span class="n">fl</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">fc</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;cubic&#39;</span><span class="p">)</span>
+<span class="n">xnew</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">41</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">xnew</span><span class="p">,</span> <span class="n">fl</span><span class="p">(</span><span class="n">xnew</span><span class="p">),</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">xnew</span><span class="p">,</span> <span class="n">fc</span><span class="p">(</span><span class="n">xnew</span><span class="p">),</span> <span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="s1">&#39;cubic&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Comments can include references to algorithms or indications about who wrote these lines. They should become an automatism when you write code: organize your code in blocks, and comment the purpose of each block. For places which require a bit more explanation, don't hesitate to write several lines of comments.</p>
 
 </div>
 </div>
@@ -13284,483 +13346,310 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-directory-structure">The directory structure<a class="anchor-link" href="#The-directory-structure">&#182;</a></h3>
+<h3 id="How-NOT-to-write-inline-comments">How NOT to write inline comments<a class="anchor-link" href="#How-NOT-to-write-inline-comments">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>All the files are grouped together in the directory structure. The file-system is arranged in a hierarchical structure, like an inverted tree. The top of the hierarchy is traditionally called root (written as a slash <code>/</code> )</p>
-<p><img src="../img/unix-tree.png" alt="image"></p>
-<p>When loging in we are automatically located in our personal <code>home</code> directory, which is aptly named because:</p>
+<p>Inline comments can be more harmfull than helping. See the following example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Numpy tutorial on matrix multiplication</span>
+<span class="c1"># Author: mowglie</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="k">import</span> <span class="n">interp1d</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="c1"># linspace between 0 and 10</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mf">9.0</span><span class="p">)</span>  <span class="c1"># apply cosinus</span>
+
+<span class="c1"># from documentation: </span>
+<span class="c1"># https://docs.numpy.org/doc/numpy/reference/generated/scipy.interpolate.interp1d.html#scipy.interpolate.interp1d</span>
+<span class="n">fl</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">fc</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;cubic&#39;</span><span class="p">)</span>
+
+<span class="c1"># linspace between 0 and 10</span>
+<span class="n">xnew</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">41</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">xnew</span><span class="p">,</span> <span class="n">fl</span><span class="p">(</span><span class="n">xnew</span><span class="p">),</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">xnew</span><span class="p">,</span> <span class="n">fc</span><span class="p">(</span><span class="n">xnew</span><span class="p">),</span> <span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="s1">&#39;cubic&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What are the problems here?</p>
+<ol>
+<li><strong>Wrong/outdated documentation</strong>: the header inline comments are from a previous file and the documentation link does not work</li>
+<li><strong>Commenting the obvious</strong>: paraphrasing the name of the function or its arguments is not helping at all! It is not plain English, and assumes that the reader knows the function and what it does.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Regarding obvious comments, I really like this comic by <a href="https://abstrusegoose.com/432">Abstruse Goose</a> which I find brings it quite to the point:</p>
+<p><img src="https://abstrusegoose.com/strips/you_down_wit_OPC-yeah_you_know_me.png" alt="abstruse goose 432"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Basically: <strong>think about future readers when writing both code and comments</strong>! And don't forget: this future reader might be <em>you</em>, and you'll be thanking yourself.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="API-documentation">API documentation<a class="anchor-link" href="#API-documentation">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A <a href="https://developer.mozilla.org/en-US/docs/Glossary/Signature/Function">function signature</a> (or type signature, or method signature) defines input and output of functions or methods. When writing a function, you expect users (including yourself) to use it more than once, possibly for a longer period of time. Ideally, you would like to understand what a function does <em>long</em> after writing it. This is what <a href="https://www.python.org/dev/peps/pep-0257/#what-is-a-docstring">docstrings</a> are for:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">repeat</span><span class="p">(</span><span class="n">phrase</span><span class="p">,</span> <span class="n">n_times</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Repeat a phrase a given number of times.</span>
+<span class="sd">    </span>
+<span class="sd">    This uses the well known alogorithm of string multiplication</span>
+<span class="sd">    by GvR et al.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    phrase : str</span>
+<span class="sd">        The phrase to repat</span>
+<span class="sd">    n_times : int, optional</span>
+<span class="sd">        The number of times the phrase should be repeated</span>
+<span class="sd">    sep : str, optional</span>
+<span class="sd">        The separator between each repetition</span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str</span>
+<span class="sd">        The repeated phrase</span>
+<span class="sd">        </span>
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        When ``phrase`` is not a string</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">phrase</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;phrase should be a string!&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sep</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">phrase</span><span class="p">]</span> <span class="o">*</span> <span class="n">n_times</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Docstring</strong> have a special meaning in python. They are not used by the language itself, but python offers way to deal with them:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">repeat</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Repeat a phrase a given number of times.
+    
+    This uses the well known alogorithm of string multiplication
+    by GvR et al.
+    
+    Parameters
+    ----------
+    phrase : str
+        The phrase to repat
+    n_times : int, optional
+        The number of times the phrase should be repeated
+    sep : str, optional
+        The separator between each repetition
+        
+    Returns
+    -------
+    str
+        The repeated phrase
+        
+    Raises
+    ------
+    ValueError
+        When ``phrase`` is not a string
+    
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The dosctring is also read by ipython when calling help (<code>?</code>) on a function.</p>
+<p>There are no strict rules about how docstrings should be written, but the scientific community has more or less agreed on a convention: <a href="https://numpydoc.readthedocs.io/en/latest/format.html">numpydoc</a>, first written for python and then applied by many other projects in the scientific stack. By complying to this convention you'll make the job of your readers easier.</p>
+<p>The convention describes how to describe the input and output variables type as well as other information. More importantly, it can be parsed automatically by doc generators like Sphinx (see below).</p>
+<p>I highly recommend to write numpydoc docstrings for your projects. There is one exception to this recommendation though: <strong>write docstrings only if they are accurate and if you plan to maintain them</strong>. Indeed, <strong>wrong/false documentation is worse than no documentation at all</strong>: it gives others confidence in what your function is supposed to do (a "contract"), and if you not complying to this contract will lead to bugs, deceptions, and lost of time for all involved.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Documentation-generators">Documentation generators<a class="anchor-link" href="#Documentation-generators">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Writing documentation is hard and tedious. It is a task that most people want to avoid, but it is extremely important. In particular in the python world where almost everything is open-source and based on the work of volunteers, documentation might sometimes be neglected.</p>
+<p>Fortunately, some tools make it easier for open-source programmers to write documentation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Sphinx">Sphinx<a class="anchor-link" href="#Sphinx">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="http://www.sphinx-doc.org/">Shpinx</a> is a tool that makes it easy to create intelligent and beautiful documentation. It can parse your documentation written as text files and convert them to nice, engaging html websites. Importantly, sphinx can parse python code and write an API documentation automatically.</p>
+<p>Many open-source projects use sphinx for their documentation, including numpy and xarray. In the lecture we will make a demo of sphinx by building a project documentation locally.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="ReadTheDocs">ReadTheDocs<a class="anchor-link" href="#ReadTheDocs">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://readthedocs.org/">readthedocs.org</a> is a platform hosting the documentation of open-source projects <em>for free</em>. It build the documentation website using sphinx and actualizes it at each code update. The documentation of the <a href="http://docs.oggm.org">Open Global Glacier Model</a> or <a href="http://xarray.pydata.org/">xarray</a> are hosted on ReadTheDocs.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Interactive-tutorials">Interactive tutorials<a class="anchor-link" href="#Interactive-tutorials">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Since the rise of jupyter notebooks in recent years, they have proven very useful tools to write engaging tutorials. You can find jupyter notebooks documenting libraries like xarray, or scientific findings like the recent <a href="https://www.numfocus.org/blog/numfocus-projects-featured-in-ligo-gravitational-waves-discovery/">nobel prize in physics</a>.</p>
+<p>Thanks to innovative online services, notebook can now be run interactively <em>in your web browser</em>: the leading platform to run jupyter notebooks online is <a href="https://mybinder.org/">MyBinder</a>. We use MyBinder to offer online tutorials for our <a href="http://edu.oggm.org/en/latest/oggm_tuto.html">glacier model</a>, for example.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Take-home-points">Take home points<a class="anchor-link" href="#Take-home-points">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>we won't need to leave <code>home</code> during our exercises</li>
-<li>we are allowed to do whatever we want in our <code>home</code>, while we are not allowed to write, delete or change things in the other directories.</li>
+<li>write inline comments (always), but write them in a useful way (you will be thanking yourself for this later): do not state the obvious, organize your code in blocks, provide keys to understanding complex code to your readers</li>
+<li>write function docstrings, but only if you plan to take care of them</li>
+<li>a wrong documentation is worse than no documentation, but a good documentation is far better than no documentation</li>
 </ul>
-<p>To know where we are in the directory structure, there is a useful command:</p>
-
-<pre><code>$ pwd</code></pre>
-<p>which prints the path of the current working directory.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Making-Directories">Making Directories<a class="anchor-link" href="#Making-Directories">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>mkdir (make directory)</strong></p>
-<p>We will now make a subdirectory in your home directory to hold the files you will be creating and using in the course of this tutorial. To make a subdirectory called <code>unixstuff</code> in your current working directory type:</p>
-
-<pre><code>$ mkdir unixstuff</code></pre>
-<p>To see the directory you have just created, type:</p>
-
-<pre><code>$ ls</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Changing-to-a-different-directory">Changing to a different directory<a class="anchor-link" href="#Changing-to-a-different-directory">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>cd (change directory)</strong></p>
-<p>The command <code>cd directory</code> means change the current working directory to "directory". The current working directory may be thought of as the directory you are in, i.e. your current position in the file-system tree.</p>
-<p>To change to the directory you have just made, type:</p>
-
-<pre><code>$ cd unixstuff</code></pre>
-<p>Type <code>ls</code> to see the contents (which should be empty)</p>
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: make a directory called <code>backup</code> in the <code>unixstuff</code> directory</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-directories-.-and-..">The directories . and ..<a class="anchor-link" href="#The-directories-.-and-..">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Still in the <code>unixstuff</code> directory, type:</p>
-
-<pre><code>$ ls -a</code></pre>
-<p>As you can see, in the unixstuff directory (and in all other directories), there are two special directories called (.) and (..)</p>
-<p><strong>The current directory (.)</strong></p>
-<p>In linux, (.) means the current directory, so typing:</p>
-
-<pre><code>$ cd .</code></pre>
-<p>means "stay where you are" (the unixstuff directory).</p>
-<p>This may not seem very useful at first, but using (.) as the name of the current directory will save a lot of typing, as we shall see.</p>
-<p><strong>The parent directory (..)</strong></p>
-<p>(..) means the parent of the current directory, so typing:</p>
-
-<pre><code>$ cd ..</code></pre>
-<p>will take you one directory up the hierarchy (back to your home directory). Try it now.</p>
-<p><strong>Note</strong>: typing cd with no argument always returns you to your home directory. This is very useful if you are lost in the file system.</p>
-<p><strong>~ (your home directory)</strong></p>
-<p>Home directories can also be referred to by the tilde <code>~</code> character. It can be used to specify paths starting at your home directory. So typing:</p>
-
-<pre><code>  $ ls ~/unixstuff</code></pre>
-<p>will list the contents of your unixstuff directory, no matter where you currently are in the file system.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Copying-files">Copying files<a class="anchor-link" href="#Copying-files">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>cp (copy)</strong></p>
-<p><code>cp file1 file2</code> is the command which makes a copy of <code>file1</code> in the current working directory and calls it <code>file2</code></p>
-<p>What we are going to do now, is to take a file stored in an open access area of the file system, and use the <code>cp</code> command to copy it to your unixstuff directory.</p>
-<p>First, <code>cd</code> to your unixstuff directory:</p>
-
-<pre><code>$ cd ~/unixstuff</code></pre>
-<p>Then type:</p>
-
-<pre><code>$ cp /scratch/c707/c7071047/tuto/science.txt .</code></pre>
-<p><strong>Note</strong>: Don't forget the dot . at the end. Remember, in linux, the dot means the current directory.</p>
-<p>The above command means "copy the file science.txt to the current directory, keeping the name the same".</p>
-<p><strong>Note</strong>: The directory <code>/scratch/c707/c7071047/tuto</code> is an area to which everyone in the University has read and copy access. If you are from outside the University, you can grab a copy of the file from the internet. For this, you can use another very useful command, <code>wget</code>:</p>
-
-<pre><code>$ wget http://www.ee.surrey.ac.uk/Teaching/Unix/science.txt</code></pre>
-<p>This will download the file <code>science.txt</code> to your current directory</p>
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: Create a backup of your <code>science.txt</code> file by copying it to a file called <code>science.bak</code></p>
-<p><strong>Note:</strong>  directories can also be copied with the <code>-r</code> option added to <code>cp</code>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Using-[TAB]">Using [TAB]<a class="anchor-link" href="#Using-[TAB]">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><code>[TAB]</code> is very useful in the Linux (and other) command line: it uses an automated completion algorithm to complete the commands you are typing. For example, try to type <code>$ cd ~/uni</code> and then <code>TAB</code>. This is also going to make suggestions in case of multiple choices, or for commands.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Moving-files">Moving files<a class="anchor-link" href="#Moving-files">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>mv (move)</strong></p>
-<p><code>mv file1 file2</code> moves (or renames) <code>file1</code> to <code>file2</code></p>
-<p>To move a file from one place to another, use the <code>mv</code> command. This has the effect of moving rather than copying the file, so you end up with only one file rather than two.</p>
-<p>It can also be used to rename a file, by moving the file to the same directory, but giving it a different name.</p>
-<p>We are now going to move the file <code>science.bak</code> to your <code>backup</code> directory.</p>
-<p>First, change directories to your <code>unixstuff</code> directory. Then type:</p>
-
-<pre><code>$ mv science.bak backup/</code></pre>
-<p>Type <code>ls</code> and <code>ls backup</code> to see if it has worked.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Removing-files-and-directories">Removing files and directories<a class="anchor-link" href="#Removing-files-and-directories">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>rm (remove), rmdir (remove directory)</strong></p>
-<p>To delete (remove) a file, use the <code>rm</code> command. As an example, we are going to create a copy of the <code>science.txt</code> file and then delete it.</p>
-<p>Inside your <code>unixstuff</code> directory, type:</p>
-
-<pre><code>$ cp science.txt tempfile.txt 
-$ ls
-$ rm tempfile.txt
-$ ls</code></pre>
-<p>You can use the <code>rmdir</code> command to remove a directory (make sure it is empty first). Try to remove the <code>backup</code> directory. You will not be able to since linux will not let you remove a non-empty directory. To delete a non-empty directory with all its subdirectories you can use the option <code>-r</code> (r for recursive):</p>
-
-<pre><code>$ rm -r /path/to/some/directory</code></pre>
-<p>This command will then ask you confirmation for certain files judged important. If you are very sure of what you do, you can add a <code>-f</code> to the command (f for force):</p>
-
-<pre><code>$ rm -rf /path/to/some/directory/that/i/am/very/sure/to/delete</code></pre>
-<p><strong>Note:</strong> directories deleted with <code>rm</code> are lost <em>forever</em>. They don't go to the trash, they are just deleted.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Displaying-the-contents-of-a-file-on-the-screen">Displaying the contents of a file on the screen<a class="anchor-link" href="#Displaying-the-contents-of-a-file-on-the-screen">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>clear (clear screen)</strong></p>
-<p>Before you start the next section, you may like to clear the terminal window of the previous commands so the output of the following commands can be clearly understood.</p>
-<p>At the prompt, type:</p>
-
-<pre><code>$ clear</code></pre>
-<p>This will clear all text and leave you with the <code>$</code> prompt at the top of the window.</p>
-<p><strong>cat (concatenate)</strong></p>
-<p>The command <code>cat</code> can be used to display the contents of a file on the screen. Type:</p>
-
-<pre><code>$ cat science.txt</code></pre>
-<p>As you can see, the file is longer than than the size of the window. You can scroll back but this is not very useful.</p>
-<p><strong>less</strong></p>
-<p>The command <code>less</code> writes the contents of a file onto the screen a page at a time. Type:</p>
-
-<pre><code>$ less science.txt</code></pre>
-<p>Press the <code>[space-bar]</code> if you want to see another page, and type <code>[q]</code> if you want to quit reading. As you can see, <code>less</code> is used in preference to <code>cat</code> for long files.</p>
-<p><strong>head</strong></p>
-<p>The <code>head</code> command writes the first ten lines of a file to the screen.</p>
-<p>First clear the screen then type:</p>
-
-<pre><code>$ head science.txt</code></pre>
-<p>Then type:</p>
-
-<pre><code>$ head -5 science.txt</code></pre>
-<p>What difference did the <code>-5</code> do to the head command?</p>
-<p><strong>tail</strong></p>
-<p>The tail command writes the last ten lines of a file to the screen.</p>
-<p>Clear the screen and type:</p>
-
-<pre><code>$ tail science.txt</code></pre>
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: How can you view the last 15 lines of the file?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Searching-the-contents-of-a-file">Searching the contents of a file<a class="anchor-link" href="#Searching-the-contents-of-a-file">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Simple searching using <code>less</code></strong></p>
-<p>Using <code>less</code>, you can search through a text file for a keyword (pattern). For example, to search through <code>science.txt</code> for the word "science", type:</p>
-
-<pre><code>$ less science.txt</code></pre>
-<p>then, still in <code>less</code>, type a forward slash <code>[/]</code> followed by the word to search:</p>
-
-<pre><code>/science</code></pre>
-<p>And tape <code>[enter]</code>. Type <code>[n]</code> to search for the next occurrence of the word.</p>
-<p><strong>grep</strong></p>
-<p><code>grep</code> is one of many standard linux utilities. It searches files for specified words or patterns. First clear the screen, then type:</p>
-
-<pre><code>$ grep science science.txt</code></pre>
-<p>As you can see, <code>grep</code> has printed out each line containg the word science.</p>
-<p>Or has it ????</p>
-<p>Try typing:</p>
-
-<pre><code>$ grep Science science.txt</code></pre>
-<p>The <code>grep</code> command is case sensitive; it distinguishes between Science and science.</p>
-<p>To ignore upper/lower case distinctions, use the <code>-i</code> option, i.e. type:</p>
-
-<pre><code>$ grep -i science science.txt</code></pre>
-<p>To search for a phrase or pattern, you must enclose it in single quotes (the apostrophe symbol). For example to search for spinning top, type:</p>
-
-<pre><code>$ grep -i 'spinning top' science.txt</code></pre>
-<p>Some of the other options of <code>grep</code> are:</p>
-<ul>
-<li><code>-v</code> display those lines that do NOT match</li>
-<li><code>-n</code> precede each matching line with the line number</li>
-<li><code>-c</code> print only the total count of matched lines</li>
-</ul>
-<p>Try some of them and see the different results. Don't forget, you can use more than one option at a time. For example, the number of lines without the words science or Science is:</p>
-
-<pre><code>$ grep -ivc science science.txt</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Take-home-points">Take home points<a class="anchor-link" href="#Take-home-points">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We have only shown some examples of how to navigate in the linux directory structure and use some simple commands. This is by far not sufficient to demonstrate its usefulness: the <code>grep</code> command for example is extremely powerful to help you find files that you thought you had lost, and <code>wget</code> a file to a current directory is often much faster than downloading it in firefox and copy it afterwards. For the time being, this short tutorial should help get you started.</p>
-<p><strong>To go further</strong>, I recommend to follow <a href="https://ryanstutorials.net/linuxtutorial/">Ryan's linux tutorials</a>, they are excellent!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Executable-scripts">Executable scripts<a class="anchor-link" href="#Executable-scripts">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now that you are familiar with the command line, you must have noticed that linux commands have some similarities with the <strong>statements</strong> you used in your bachelor programming course: by typing them in, the computer does things for you and gives you information back (often printed on screen, but not always). When you want to <strong>automate</strong> a series of commands you just typed in (for example renaming and moving files), a natural thing would be to write a <strong>script</strong> to do so.</p>
-<p>Scripts are the simplest type of program one can write, and this can be seen as your first programming experience in this course. We are going to write a <strong>bash script</strong> and execute it: why we want to do this in a python scientific programming course may be not clear right now, but it will make more sense later I promise.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="A-simple-script">A simple script<a class="anchor-link" href="#A-simple-script">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In your <code>unixstuff</code> directory, create a new file name <code>myscript.sh</code>. You can do this using the default (graphical) text editor in linux, <code>gedit</code>. At the command line:</p>
-
-<pre><code>`
-$ gedit myscript.sh</code></pre>
-<p>Just type one simple line in the file:</p>
-
-<pre><code>echo Hello World!</code></pre>
-<p>Quit your editor and go back to the command line again. You can execute your script with the following command:</p>
-
-<pre><code>$ bash myscript.sh</code></pre>
-<p><strong>Bash</strong> is a so-called "interpreter". It reads your file and understands how to execute the commands in it.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Make-a-file-executable">Make a file executable<a class="anchor-link" href="#Make-a-file-executable">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>List the files in your directory, but whith the option <code>-l</code> for more information. Here is how it looks like on my computer:</p>
-
-<pre><code>mowglie@flappi-top ~/Documents/unixstuff $ ls -l
-total 28
-drwxrwxr-x 2 mowglie mowglie 4096 Feb 22 18:05 backup
--rw-rw-r-- 1 mowglie mowglie   19 Feb 22 18:44 myscipt.sh
--rw-rw-r-- 1 mowglie mowglie 7767 Sep  1  2000 science.txt</code></pre>
-<p>The first list of characters indicate the file's <strong>permissions</strong>. Now read the first section of <a href="https://ryanstutorials.net/linuxtutorial/permissions.php">Ryan's tutorial about permissions</a>. So what do we learn from the above? That the file's owner (myself) is allowed to read and write the <code>myscript.sh</code> file, but not to execute it. Let's change this:</p>
-
-<pre><code>$ chmod a+x myscript.sh</code></pre>
-<p>Now everybody (including me) is allowed to execute this file. It is a quite harmless script, so I'm not too worried. Now we can execute it:</p>
-
-<pre><code>$ ./myscript.sh</code></pre>
-<p>Nice! We could add much more commands to our script (possibly making it more useful), but this was enough to illustrate the point I wanted to make: files can be executable in Linux, and a whole new world opens to us.</p>
-<p><strong>Note:</strong> Most often, it is recommended to add a specific first line to your script, called a <strong>shebang</strong>. This line tells the computer which interpreter should be used to run the file. In our case it is the default interpreter (bash), but this may not always be the case. To be entirely explicit, we recommend to always add a shebang to your script. In this case, we should add <code>#!/bin/bash</code> to our script:</p>
-
-<pre><code>#!/bin/bash
-# Maybe some comment line about the purpose of this script
-
-echo Hello World!</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Take-home-points">Take home points<a class="anchor-link" href="#Take-home-points">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>It is possible to write simple programs in linux called "scripts". These scripts can be executed by the default interpreter, and be made "executable" very easily. If you want to know more about bash scripts, read <a href="https://ryanstutorials.net/bash-scripting-tutorial/">Ryan's tutorial about the subject</a>!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-linux-PATH">The linux PATH<a class="anchor-link" href="#The-linux-PATH">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Locate-linux-programs">Locate linux programs<a class="anchor-link" href="#Locate-linux-programs">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>You may have asked yourself: how does the linux command line know about the commands we are using? Where do I find them? A nice program helping us to find out is <strong>which</strong>. Let's use it:</p>
-
-<pre><code>$ which less
-/usr/bin/less</code></pre>
-<p>Now we can use another command, <strong>whatis</strong>, to tell us what we just did:</p>
-
-<pre><code>$ whatis which</code></pre>
-<p>The <code>which</code> command tells us that the <code>less</code> program is located in <code>/usr/bin</code>. We can also ask <code>which</code> where to find <code>which</code>:</p>
-
-<pre><code>$ which which
-/usr/bin/which
-$ ls -l /usr/bin/which
-lrwxrwxrwx 1 root root 10 Nov 19 14:42 /usr/bin/which -&gt; /bin/which</code></pre>
-<p>As expected, <code>which</code> is an executable file. Some executables are binary files (i.e. not human readable), but in this case <code>which</code> is actually a script:</p>
-
-<pre><code>$ less /usr/bin/which</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: scroll through the script. Can you locate the shebang line? How does the code look like to you: easily understandable, or rather cryptic?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-PATH-variable">The PATH variable<a class="anchor-link" href="#The-PATH-variable">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The linux command line knows so-called <strong>environmental variables</strong>. The <code>echo</code> command can display their value:</p>
-
-<pre><code>$ echo $PATH</code></pre>
-<p>(the <code>$</code> tells echo to display the value of the variable PATH rather than its name). The <a href="http://www.linfo.org/path_env_var.html">PATH</a> variable contains a list of paths, separated by semicolons. It is an extremely important variable: it tells linux <em>where</em> to look for executables and programs. Each time you type a command, linux will look in the PATH and see if it finds it. This is an extremely flexible and powerful system, as we are going to see in the next chapter (Installing Python).</p>
-<p>The PATH can be extended to contain any other directory you find useful to add. Let's do it:</p>
-
-<pre><code>$ mkdir ~/myprograms
-$ export PATH=$PATH:~/myprograms</code></pre>
-<p><code>export</code> creates a new variable called PATH (in this case, it overwrites the existing PATH).</p>
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: now move your executable script <code>myscript.sh</code> in the <code>myprograms</code> directory. Verify that you can now execute the <code>myscript.sh</code> program from any directory.</p>
-<p><strong>Note:</strong> we have extended the <code>PATH</code> variable in <em>this session</em> only. If you close and reopen the terminal the changes will be lost. There are ways to make these changes permanent, we will learn them in the next chapter.</p>
-<p><strong>Note:</strong> if a program is listed in several path directories, linux takes the first instance. Directories can be prepended and appended, as we will see in the next chapter.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Take-home-points">Take home points<a class="anchor-link" href="#Take-home-points">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>PATH</code> variable tells linux where to look for programs and scripts. This is a very simple and powerful way to customize linux with your own scripts and programs. We are going to use this feature to install Python in the next chapter.</p>
 
 </div>
 </div>
@@ -13775,7 +13664,7 @@ $ export PATH=$PATH:~/myprograms</code></pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="02-Installation.html">jump to the next chapter</a>.</p>
+<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>.</p>
 
 </div>
 </div>
