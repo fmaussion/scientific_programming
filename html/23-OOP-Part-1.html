@@ -10,7 +10,7 @@ gtag('config', 'UA-88391345-1');
 </script>
 <meta charset="utf-8" />
 
-<title>11-Why-Numpy</title>
+<title>23-OOP-Part-1</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13131,7 +13131,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": "11", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "364px"}, "toc_section_display": "block", "toc_window_display": true};
+            var cfg = {"base_numbering": "23", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "345px"}, "toc_section_display": "block", "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -13146,16 +13146,28 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Introduction-to-numpy:-why-does-numpy-exist?">Introduction to numpy: why does numpy exist?<a class="anchor-link" href="#Introduction-to-numpy:-why-does-numpy-exist?">&#182;</a></h1>
+<h1 id="Object-Oriented-Programming:-introduction">Object Oriented Programming: introduction<a class="anchor-link" href="#Object-Oriented-Programming:-introduction">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You might have read somewhere that Python is "slow" in comparison to other languages like Fortran or C. While generally true, this statement has only little meaning without context. As a scripting language, python is fast enough. For <em>numerical computations</em> (like the computations done by an atmospheric model or by a machine learning algorithm), pure Python is quite slow indeed. Fortunately, there are ways to overcome this problem!</p>
-<p>In this chapter we are going to explain why the <a href="http://numpy.org">numpy</a> library was created. Numpy is the fundamental library which transformed the general purpose python language into a scientific language like Matlab, IDL, or R.</p>
-<p>Before introducing numpy, we will discuss some of the differences between python and compiled languages widely used in scientific software development (like C and FORTRAN).</p>
+<p><a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-oriented programming</a> (OOP) is a standard feature of many modern programming languages. Learning OOP "properly" would require one entire semester at least, and we won't try to cover all the details here. The specific objectives of these three OOP units are:</p>
+<ul>
+<li>to learn the basic OOP concepts syntax so that you are able to understand OOP code and can use libraries making use of OOP concepts (i.e.: almost all python libraries)</li>
+<li>to become familiar with certain semantics associated with OOP: classes, objects, attributes, methods, inheritance</li>
+<li>to introduce simple examples where OOP is a useful paradigm, and try to raise your interest in its usage so that you can learn it by yourself when needed</li>
+</ul>
+<p>Todays OOP unit introduces the concept of "objects" in the Python language and shows you how to create new kind of objects on your own. Next week we will learn the concept of class inheritance. Finally, we will learn in which circumstances objects can be useful, and when not.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Copyright notice: this chapter is vaguely inspired from <a href="https://realpython.com/python3-object-oriented-programming/">RealPython's beginner tutorial</a> on OOP.</em></p>
 
 </div>
 </div>
@@ -13164,21 +13176,38 @@ $( document ).ready(function(){
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Introduction-to-numpy:-why-does-numpy-exist?" data-toc-modified-id="Introduction-to-numpy:-why-does-numpy-exist?-11"><span class="toc-item-num">11&nbsp;&nbsp;</span>Introduction to numpy: why does numpy exist?</a></span><ul class="toc-item"><li><span><a href="#Why-is-python-&quot;slow&quot;?" data-toc-modified-id="Why-is-python-&quot;slow&quot;?-11.1"><span class="toc-item-num">11.1&nbsp;&nbsp;</span>Why is python "slow"?</a></span></li><li><span><a href="#Dynamically-versus-statically-typed-languages" data-toc-modified-id="Dynamically-versus-statically-typed-languages-11.2"><span class="toc-item-num">11.2&nbsp;&nbsp;</span>Dynamically versus statically typed languages</a></span></li><li><span><a href="#Compiled-versus-interpreted-languages" data-toc-modified-id="Compiled-versus-interpreted-languages-11.3"><span class="toc-item-num">11.3&nbsp;&nbsp;</span>Compiled versus interpreted languages</a></span></li><li><span><a href="#Here-comes-numpy" data-toc-modified-id="Here-comes-numpy-11.4"><span class="toc-item-num">11.4&nbsp;&nbsp;</span>Here comes numpy</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-11.5"><span class="toc-item-num">11.5&nbsp;&nbsp;</span>Take home points</a></span></li><li><span><a href="#Further-reading" data-toc-modified-id="Further-reading-11.6"><span class="toc-item-num">11.6&nbsp;&nbsp;</span>Further reading</a></span></li><li><span><a href="#Addendum:-is-python-really-that-slow?" data-toc-modified-id="Addendum:-is-python-really-that-slow?-11.7"><span class="toc-item-num">11.7&nbsp;&nbsp;</span>Addendum: is python really <em>that</em> slow?</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-11.8"><span class="toc-item-num">11.8&nbsp;&nbsp;</span>What's next?</a></span></li><li><span><a href="#License" data-toc-modified-id="License-11.9"><span class="toc-item-num">11.9&nbsp;&nbsp;</span>License</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Object-Oriented-Programming:-introduction" data-toc-modified-id="Object-Oriented-Programming:-introduction-23"><span class="toc-item-num">23&nbsp;&nbsp;</span>Object Oriented Programming: introduction</a></span><ul class="toc-item"><li><span><a href="#Introduction" data-toc-modified-id="Introduction-23.1"><span class="toc-item-num">23.1&nbsp;&nbsp;</span>Introduction</a></span></li><li><span><a href="#Classes-and-objects" data-toc-modified-id="Classes-and-objects-23.2"><span class="toc-item-num">23.2&nbsp;&nbsp;</span>Classes and objects</a></span></li><li><span><a href="#Class/instance-attributes" data-toc-modified-id="Class/instance-attributes-23.3"><span class="toc-item-num">23.3&nbsp;&nbsp;</span>Class/instance attributes</a></span></li><li><span><a href="#Instance-Methods" data-toc-modified-id="Instance-Methods-23.4"><span class="toc-item-num">23.4&nbsp;&nbsp;</span>Instance Methods</a></span></li><li><span><a href="#Extending-attributes:-the-@property-decorator" data-toc-modified-id="Extending-attributes:-the-@property-decorator-23.5"><span class="toc-item-num">23.5&nbsp;&nbsp;</span>Extending attributes: the @property decorator</a></span></li><li><span><a href="#Digging-deeper-into-@property:-setters" data-toc-modified-id="Digging-deeper-into-@property:-setters-23.6"><span class="toc-item-num">23.6&nbsp;&nbsp;</span>Digging deeper into @property: setters</a></span></li><li><span><a href="#Private-attributes-and-methods" data-toc-modified-id="Private-attributes-and-methods-23.7"><span class="toc-item-num">23.7&nbsp;&nbsp;</span>Private attributes and methods</a></span></li><li><span><a href="#Our-final-class" data-toc-modified-id="Our-final-class-23.8"><span class="toc-item-num">23.8&nbsp;&nbsp;</span>Our final class</a></span></li><li><span><a href="#Take-home-points" data-toc-modified-id="Take-home-points-23.9"><span class="toc-item-num">23.9&nbsp;&nbsp;</span>Take home points</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-23.10"><span class="toc-item-num">23.10&nbsp;&nbsp;</span>What's next?</a></span></li><li><span><a href="#License" data-toc-modified-id="License-23.11"><span class="toc-item-num">23.11&nbsp;&nbsp;</span>License</a></span></li></ul></li></ul></div>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Why-is-python-&quot;slow&quot;?">Why is python "slow"?<a class="anchor-link" href="#Why-is-python-&quot;slow&quot;?">&#182;</a></h2>
+<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Last week, we've learned that the memory consumption of a python <code>int</code> is larger than the memory needed to store the binary number alone. This overhead in memory consumption is due to the nature of python data types, which are all <strong>objects</strong>. We've already learned that these objects come with certain "services", for example:</p>
+<p>As stated in the <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">OOP wikipedia page</a>, OOP is a "paradigm" which might or might not be supported by a specific programming language. Although Python is an OOP language at its core, <strong>it does not enforce its usage</strong>. Matlab or R follow the same philosophy: they support OOP but do not force their users to use it. In fact, many of you will finish your master thesis without having to write any OOP specific code. You have, however, already made heavy use of Python objects (<em>everything</em> is an object in Python, remember?) and I argue that it is very important that you are able to understand the basics of OOP in order to make better use of Python.</p>
+<p>In short, <strong>OOP is simply another way to structure your programs</strong>. Until now, you have written modules consisting of functions, sometimes with a short <code>__main__</code> script which was itself calling one or more functions. OOP will add a new tool to your repertoire by allowing you to <strong>bundle data and behaviors into individual objects</strong>, possibly helping you to organize your code in a way that feels more natural and clearer.</p>
+<p>Let's get started with some examples and new semantics! We will talk about the advantages and disadvantages of OOP in a following unit, once you are more familiar with its syntax.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Classes-and-objects">Classes and objects<a class="anchor-link" href="#Classes-and-objects">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Classes</strong> are used to create new user-defined structures that contain information about something. These "things" come with "services", as you already know. Let's define a new class called <code>Cat</code>:</p>
 
 </div>
 </div>
@@ -13188,8 +13217,38 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;this.needs.some.splitting&#39;</span>
-<span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>  <span class="c1"># join, split, title are all &quot;methods&quot; (like functions) applied to a string</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+    <span class="c1"># Initializer</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What are the new things in this code snippet?</p>
+<ul>
+<li>first, the class name definition (<code>class Cat</code>). As per <a href="https://www.python.org/dev/peps/pep-0008/#class-names">pep8</a>, class names in Python should use "CapWords" per convention</li>
+<li>the class contains a "function" called <code>__init__</code>, which indeed looks very much like a normal function. Here the <code>__init__</code> function has three positional arguments: <code>self</code> (which has a special meaning as we are going to see), <code>name</code> and <code>weight</code>. These arguments are used to initialize the <strong>attributes</strong> of the same name. We'll go back to this in the next section.</li>
+</ul>
+<p>A class provides a new structure definition. It's a "blueprint" for how something should be defined, but it doesn't actually provide any real data content itself. To actually use the functionalities defined by the <strong>class</strong> you'll need to create a new <strong>instance</strong> of that class. <strong>Instantiating</strong> is a fancy term for creating a new, unique realization of a class (an <strong>object</strong>). Let's go for it:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span>
 </pre></div>
 
     </div>
@@ -13202,13 +13261,13 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[1]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;This Needs Some Splitting&#39;</pre>
+<pre>&lt;__main__.Cat at 0x7f0d70375a58&gt;</pre>
 </div>
 
 </div>
@@ -13220,42 +13279,18 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Everything is an object in Python. Yes, even functions are objects! Let me prove it to you:</p>
+<p>We just created a new instance of the class <code>Cat</code> and assigned it to the variable <code>a</code>. An instance of a class is commonly called an <strong>object</strong> (this can be used as synonym for "instance"). The variable <code>a</code> stores an instance of the class <code>Cat</code>:</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">useful_function</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;This function adds two objects together.</span>
-<span class="sd">    </span>
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    a : an object</span>
-<span class="sd">    b : another object</span>
-<span class="sd">    </span>
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    The sum of the two</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">useful_function</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Ask if a is an instance of Cat or not</span>
+<span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">Cat</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13274,7 +13309,7 @@ $( document ).ready(function(){
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>function</pre>
+<pre>True</pre>
 </div>
 
 </div>
@@ -13282,13 +13317,21 @@ $( document ).ready(function(){
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In fact, we just created a new datatype called <code>Cat</code>:</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">useful_function</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13301,23 +13344,15 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>This function adds two objects together.
-    
-    Parameters
-    ----------
-    a : an object
-    b : another object
-    
-    Returns
-    -------
-    The sum of the two
-    
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>__main__.Cat</pre>
 </div>
+
 </div>
 
 </div>
@@ -13327,24 +13362,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Functions are objects of type <code>function</code>, and one of their attributes (<code>__doc__</code>) gives us access to their <strong>docstring</strong>. During the course of the semester you are going to learn how to use more and more of these object features, and hopefully you are going to like them more and more (at least this is what happened to me).</p>
-<p>Now, why does this make python "slow"? Well, in simple words, these "services" tend to increase the complexity and the number of operations an interpreter has to perform when running a program.  More specialized languages will be less flexible than python, but will be faster at running specialized operations and be less memory hungry.</p>
-<p>Python's high-level of abstraction (i.e. python's flexibility) makes it slower than its lower-level counterparts like C or FORTRAN. But, why is that so?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Dynamically-versus-statically-typed-languages">Dynamically versus statically typed languages<a class="anchor-link" href="#Dynamically-versus-statically-typed-languages">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Python is a so-called <strong>dynamically typed</strong> language, which means that the <strong>type</strong> of a variable is determined by the interpreter <em>at run time</em>. To understand what that  means in practice, let's have a look at the following code snippet:</p>
+<p><strong>Every new instance of a class is unique</strong>, regardless of the values used to initialize it. Let's create a new Cat with the same name and weight:</p>
 
 </div>
 </div>
@@ -13354,8 +13372,7 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13368,10 +13385,30 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">Cat</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -13379,7 +13416,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The line <code>c = a + b</code> is valid python syntax. The <em>operation</em> that has to be applied by the <code>+</code> operator, however, depends on the type of the variables to be added. Remember what happens when adding two lists for example:</p>
+<p>It is still a unique instance and is not a copy of <code>a</code> in any way:</p>
 
 </div>
 </div>
@@ -13389,9 +13426,7 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-<span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
 </pre></div>
 
     </div>
@@ -13410,7 +13445,7 @@ $( document ).ready(function(){
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[2, 3]</pre>
+<pre>False</pre>
 </div>
 
 </div>
@@ -13418,103 +13453,13 @@ $( document ).ready(function(){
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In this simple example it would be theoretically possible for the interpreter to predict which operation to apply beforehand (by prior parsing of all lines of code prior to the action). In most cases, however, this is impossible: for example, a function taking arguments does not know beforehand the type of the arguments it will receive.</p>
-<p>Languages which assess the type of variables <em>at run time</em> are called <a href="https://en.wikipedia.org/wiki/Category:Dynamically_typed_programming_languages">dynamically typed programming languages</a>. Matlab, Python or R are examples falling in this category.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Statically typed languages</strong>, however, require the <em>programmer</em> to provide the type of variables while writing the code. Here is an example of a program written in C:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt; </span><span class="cp"></span>
-<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
-    <span class="n">printf</span> <span class="p">(</span><span class="s">&quot;Sum of two numbers : %d </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The variable type definition is an integral part of the C syntax. This applies to the variables themselves, but also to the output of computations. This is a fundamental difference to python, and comes with several advantages. Static typing usually results in code that executes faster: since the program knows the exact data types that are in use, it can predict the memory consumption of operations beforehand and produce optimized machine code. Another advantage is code documentation: the statement <code>int c = a + b</code> makes it clear that we are adding two numbers while the python equivalent <code>c = a + b</code> could produce a number, a string, a list, etc.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Compiled-versus-interpreted-languages">Compiled versus interpreted languages<a class="anchor-link" href="#Compiled-versus-interpreted-languages">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Statically typed languages often require <strong>compilation</strong>. To run the C code snippet I had to create a new text file (<code>example.c</code>), write the code, compile it (<code>$ gcc -o myprogram example.c</code>), before finally being able to execute it (<code>$ ./myprogram</code>).</p>
-<p><a href="https://en.wikipedia.org/wiki/GNU_Compiler_Collection">gcc</a> is the compiler I used to translate the C source code (a text file) to a low level language (machine code) in order to create an <strong>executable</strong> (<code>myprogram</code>). Later changes to the source code require a new compilation step for the changes to take effect.</p>
-<p>Because of this "edit-compile-run" cycle, compiled languages are not interactive: in the C language, there is no equivalent to python's command line interpreter. Compiling complex programs can take up to several hours in some extreme cases. This compilation time, however, is usually associated with faster execution times: as mentioned earlier, the compiler's task is to optimize the program for memory consumption by source code analysis. Often, a compiled program is optimized for the machine architecture it is compiled onto. Like interpreters, there can be different compilers for the same language. They differ in the optimization steps they undertake to make the program faster, and in their support of various hardware architectures.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Interpreters</strong> do not require compilation: they analyze the code at run time. The following code for example is syntactically correct:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">my_func</span><span class="p">():</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;2&#39;</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>but the <em>execution</em> of this code results in a TypeError:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_func</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="ow">is</span> <span class="n">a</span>
 </pre></div>
 
     </div>
@@ -13527,23 +13472,15 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-9-db3ada79940f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>my_func<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-8-9b6b5ad94aba&gt;</span> in <span class="ansi-cyan-fg">my_func</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span>     a <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">1</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span>     b <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">&#39;2&#39;</span>
-<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> a <span class="ansi-blue-fg">+</span> b
 
-<span class="ansi-red-fg">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
 </div>
+
 </div>
 
 </div>
@@ -13553,71 +13490,107 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The interpreter cannot detect these errors before runtime: they happen when the variables are finally added together, not when they are created.</p>
-
+<h2 id="Class/instance-attributes">Class/instance attributes<a class="anchor-link" href="#Class/instance-attributes">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Parenthesis I: python bytecode</strong></p>
-<p>When executing a python program from the command line, the CPython interpreter creates a hidden directory called <code>__pycache__</code>. This directory contains <a href="https://en.wikipedia.org/wiki/Bytecode">bytecode</a> files, which are your python source code files translated to binary files. This is an optimization step which makes subsequent executions of the program run faster. While this conversion step is sometimes called "compilation", it should not be mistaken with a C-program compilation: indeed, python bytecode still needs an interpreter to run, while compiled executables can be run without C interpreter.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Parenthesis II: static typing and compilation</strong></p>
-<p>Statically typed languages are often compiled, and dynamically typed languages are often interpreted. While this is a good rule of thumb, this is not always true and the vast landscape of programming languages contains many exceptions. This lecture is only a very short introduction to these concepts: you'll have to refer to more advanced computer science lectures if you want to learn about these topics in more detail.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Here-comes-numpy">Here comes numpy<a class="anchor-link" href="#Here-comes-numpy">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's summarize the two previous chapters:</p>
-<ul>
-<li>Python is flexible, interactive and slow</li>
-<li>C is less flexible, non-interactive and fast</li>
-</ul>
-<p>This is a simplification, but not far from the truth.</p>
-<p>Now, let's add another obstacle to using python for science: the built-in <code>list</code> data type in python is mostly useless for arithmetics or vector computations. Indeed, to add two lists together element-wise (a behavior that you would expect as a scientist), you must write:</p>
+<p>The cat's name and weight are called <strong>instance attributes</strong> and can be accessed with the dot syntax:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_lists</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Element-wise addition of two lists.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">a</span><span class="o">+</span><span class="n">b</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">name</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;Grumpy&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">weight</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>4</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A common synonym for the term "attribute" is "<strong>property</strong>". The two terms are very close and you might find one or the other term depending on who writes about them. Properties in python are a special kind of attributes, but the difference is subtle and not relevant here.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Instance attributes</strong> are specific to the created object. They are often defined at instantiation:</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_lists</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Tiger&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">b</span><span class="o">.</span><span class="n">name</span>
 </pre></div>
 
     </div>
@@ -13636,7 +13609,7 @@ $( document ).ready(function(){
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[5, 7, 9]</pre>
+<pre>&#39;Tiger&#39;</pre>
 </div>
 
 </div>
@@ -13648,7 +13621,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The numpy equivalent is much more intuitive and straightforward:</p>
+<p>Classes can also define <strong>class attributes</strong>, which are tied to a class but not to a specific instance:</p>
 
 </div>
 </div>
@@ -13658,9 +13631,15 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="k">def</span> <span class="nf">add_arrays</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+    <span class="c1"># Class attributes are defined at the class level</span>
+    <span class="n">speak</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
+    
+    <span class="c1"># Initializer</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="c1"># Instance attributes only makes sense at instanciation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
 </pre></div>
 
     </div>
@@ -13673,7 +13652,7 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_arrays</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Cat</span><span class="o">.</span><span class="n">speak</span>
 </pre></div>
 
     </div>
@@ -13692,7 +13671,7 @@ $( document ).ready(function(){
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([5, 7, 9])</pre>
+<pre>&#39;Meow&#39;</pre>
 </div>
 
 </div>
@@ -13700,44 +13679,14 @@ $( document ).ready(function(){
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Tricky question</strong>: why did I prefer to use the <code>np.add</code> function here instead of the simpler <code>+</code> operator?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's see which of the two functions runs faster:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> add_lists(A, B)
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">speak</span>
 </pre></div>
 
     </div>
@@ -13750,15 +13699,39 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>3 µs ± 51.6 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;Meow&#39;</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Careful!</strong> Both class and instance attributes are <strong>mutable</strong>. They can be changed form outside the class:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Roncheux&#39;</span>
+<span class="n">a</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="s1">&#39;Miaou&#39;</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
@@ -13768,7 +13741,7 @@ $( document ).ready(function(){
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> add_arrays(A, B)
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">name</span>
 </pre></div>
 
     </div>
@@ -13781,62 +13754,27 @@ $( document ).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>562 ns ± 2.28 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
-</pre>
-</div>
-</div>
 
-</div>
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;Roncheux&#39;</pre>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Numpy is approximately 5 times faster.</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../img/logo_ex.png" align="left" style="width:1em; height:1em;"> <strong>Exercise</strong>: repeat the performance test with n=100 and n=10000. How does the performance scale with the size of the array? Now repeat the test but make the input arguments <code>A</code> and <code>B</code> <em>lists</em> instead of numpy arrays. How is the performance comparison in this case? Why?</p>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Why is numpy so much faster than pure python? One of the major reasons is <strong>vectorization</strong>, which is the process of applying mathematical operations to <em>all</em> elements of an array ("vector") at once instead of looping through them like we would do in pure python. "for loops" in python are slow because for each addition, python has to:</p>
-<ul>
-<li>access the elements a and b in the list A and B</li>
-<li>check the type of both a and b</li>
-<li>apply the <code>+</code> operator on the data they store</li>
-<li>store the result.</li>
-</ul>
-<p>Numpy skips the first two steps and does them only once before the actual operation. What does numpy know about the addition operation that the pure python version can't infer?</p>
-<ul>
-<li>the type of all numbers to add</li>
-<li>the type of the output</li>
-<li>the size of the output array (same as input)</li>
-</ul>
-<p>Numpy can use this information to optimize the computation, but this isn't possible without trade-offs. See the following for example:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_lists</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">])</span>  <span class="c1"># works fine</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">speak</span>
 </pre></div>
 
     </div>
@@ -13855,9 +13793,137 @@ $( document ).ready(function(){
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[4, &#39;foobar&#39;]</pre>
+<pre>&#39;Miaou&#39;</pre>
 </div>
 
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>These changes are specific to the instance, and the class attributes remains unchanged:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Cat</span><span class="o">.</span><span class="n">speak</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[18]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;Meow&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>In comparison to other OO languages, python is very "liberal" regarding attributes: some languages like Java would not allow to change attributes this way. In practice, attributes should not be changed by the users of a class. Unless they are documented as being "changeable", and in this case they become "properties". More on this later.</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Instance-Methods">Instance Methods<a class="anchor-link" href="#Instance-Methods">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If a class only had attributes, it would merely be a structure for data storage. Classes become useful when they add "services" to the data they store. These services are called <strong>methods</strong>, and their syntax has similarities with a function definition:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+    <span class="c1"># Class attribute</span>
+    <span class="n">speak</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
+    
+    <span class="c1"># Initializer</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        
+    <span class="c1"># Method</span>
+    <span class="k">def</span> <span class="nf">say_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">speak</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The biggest difference between methods and functions is that <strong>a method is tied to a class instance</strong>: this is made clear by the <code>self</code> argument, present in the method definition but not used when calling the method:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Kitty&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Meow, Kitty!
+</pre>
+</div>
 </div>
 
 </div>
@@ -13866,10 +13932,452 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_arrays</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">])</span>  <span class="c1"># raises a TypeError</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">b</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Meow, Grumpy!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>self</code> variable is implicit in the call above, and refers to the instance of the class which is calling the method. It might sound a little complicated at first, but you'll get used to it: <code>self</code> is used to read and write instance attributes, and is the first argument to virtually any method defined in the class (there is one exception to this rule, and we will ignore it for today).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>At this point, you may have noticed similarities between the objects you used commonly in the climate lecture and the objects we just defined here. Let's make the analogy:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;my data variable&#39;</span><span class="p">)</span>  <span class="c1"># instanciating a class</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">)</span>  <span class="c1"># a is an instance of the DataArray class</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>  <span class="c1"># xarray.core.dataarray.DataArray is the datatype</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># name is an instance attribute</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>  <span class="c1"># mean is an instance method</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;xarray.core.dataarray.DataArray&#39;&gt;
+my data variable
+&lt;xarray.DataArray &#39;my data variable&#39; ()&gt;
+array(2.)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Are you confident about the meaning of all these terms? If not, I might have explained it in a way which is not the right one for you: you can use your google-skills to look for other tutorials. There are plenty of good tutorials on the web!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Extending-attributes:-the-@property-decorator">Extending attributes: the @property decorator<a class="anchor-link" href="#Extending-attributes:-the-@property-decorator">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We learned that "attributes" are data that describe some aspects of a class instance. Very often, instance methods will initialize and/or update these attributes at run time. Consider the following example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+    
+    <span class="c1"># Initializer</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        
+    <span class="c1"># Method</span>
+    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Weight before eating: </span><span class="si">{}</span><span class="s1"> kg&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">weight</span><span class="p">))</span>
+<span class="n">a</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Weight after eating: </span><span class="si">{}</span><span class="s1"> kg&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">weight</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Weight before eating: 4 kg
+Weight after eating: 4.2 kg
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is a simplified but very typical use for instance attributes: they will change in an object's lifetime according to specific events. Now let's suppose that you are working with scientists from the USA, and they'd like to know the cat's weight in pounds. One way to do so would be to compute it at instantiation:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+    
+    <span class="c1"># Initializer</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight_lbs</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="mf">0.45359237</span>
+        
+    <span class="c1"># Method</span>
+    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[26]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>8.818490487395103</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There is an obvious drawback to this method however: what if the cat eats food? Its weight in lbs won't be updated!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span>  <span class="c1"># this is a problem</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[27]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>8.818490487395103</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A possible way to deal with the issue would be to compute the pound weight <em>on demand</em>, i.e. write a method to compute it:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+    
+    <span class="c1"># Initializer</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        
+    <span class="c1"># Method</span>
+    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
+        
+    <span class="k">def</span> <span class="nf">get_weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">/</span> <span class="mf">0.45359237</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">get_weight_lbs</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[29]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>9.259415011764858</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is already much better (and accurate), but it is somehow hiding the fact that the weight of a cat really is an attribute, no matter the unit. It should not be accessed with a <code>get_</code> method. This is where a new syntax comes in handy:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+
+    <span class="c1"># Initializer</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        
+    <span class="c1"># Method</span>
+    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">/</span> <span class="mf">0.45359237</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>weight_lbs</code> looks like a method (it computes something), but only in the class definition. For the user of the objects, the computation is hidden in an attribute call:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span>  <span class="c1"># weight_lbs is an attribute!</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[31]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>9.259415011764858</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is a very useful pattern, and it is frequently used in python. The <code>@</code> syntax defines a "decorator", and you might learn about decorators in a more advanced python class.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Digging-deeper-into-@property:-setters">Digging deeper into @property: setters<a class="anchor-link" href="#Digging-deeper-into-@property:-setters">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, your colleagues from the USA can finally read the weight of the cat in pounds, and you programmed this without compromising the consistency of the cat's weight, regardless of the unit used. However, your colleagues are still unhappy: they would like to be able to set the weight of the cat in pounds as well (these Americans really hate SI units). This is causing you trouble, because when they try to set it they get an error:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span> <span class="o">=</span> <span class="mi">9</span>  <span class="c1"># this generates an attribute error</span>
 </pre></div>
 
     </div>
@@ -13888,16 +14396,11 @@ $( document ).ready(function(){
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-18-a49671b2d503&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>add_arrays<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;foo&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;bar&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># raises a TypeError</span>
+<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-32-7313ef98de06&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>a<span class="ansi-blue-fg">.</span>weight_lbs <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">9</span>  <span class="ansi-red-fg"># this generates an attribute error</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-12-ac54cdd8bb43&gt;</span> in <span class="ansi-cyan-fg">add_arrays</span><span class="ansi-blue-fg">(A, B)</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">import</span> numpy <span class="ansi-green-fg">as</span> np
-<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">def</span> add_arrays<span class="ansi-blue-fg">(</span>A<span class="ansi-blue-fg">,</span> B<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> np<span class="ansi-blue-fg">.</span>add<span class="ansi-blue-fg">(</span>A<span class="ansi-blue-fg">,</span> B<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">TypeError</span>: ufunc &#39;add&#39; did not contain a loop with signature matching types dtype(&#39;&lt;U21&#39;) dtype(&#39;&lt;U21&#39;) dtype(&#39;&lt;U21&#39;)</pre>
+<span class="ansi-red-fg">AttributeError</span>: can&#39;t set attribute</pre>
 </div>
 </div>
 
@@ -13908,7 +14411,347 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$\rightarrow$ <strong>numpy can only be that fast because the input and output data types are uniform and known before the operation</strong>.</p>
+<p>This is expected, because nothing in the class definition above can set an attribute named <code>weight_lbs</code>: it is a passive, "read only" property. Here again, your creative mind came up with an elegant solution:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+
+    <span class="c1"># Initializer</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;kg&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;kg&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="k">elif</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;lbs&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_weight_lbs</span><span class="p">(</span><span class="n">weight</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unit not understood: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">unit</span><span class="p">))</span>
+        
+    <span class="c1"># Method</span>
+    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">/</span> <span class="mf">0.45359237</span>
+    
+    <span class="c1"># Set a new value for the weight!</span>
+    <span class="k">def</span> <span class="nf">set_weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_weight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="mf">0.45359237</span> <span class="o">*</span> <span class="n">new_weight</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>With this new method, we are now able to consistently switch between units:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>4.2 9.259415011764858
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">set_weight_lbs</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>4.9895160700000005 11.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This solution works, but is suboptimal. Here again, your USA colleagues have to use a method (<code>obj.set_xxx()</code>) where you can use a more intuitive attribute syntax (<code>obj.xxx = new_value</code>). For this reason, Python introduced a <strong>setter</strong> decorator, with a syntax inspired from <code>@property</code>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;kg&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;kg&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="k">elif</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;lbs&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">weight_lbs</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unit not understood: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">unit</span><span class="p">))</span>
+        
+    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">/</span> <span class="mf">0.45359237</span>
+    
+    <span class="c1"># This is new!</span>
+    <span class="nd">@weight_lbs</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_weight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="mf">0.45359237</span> <span class="o">*</span> <span class="n">new_weight</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>With this new syntax, the USA colleagues won't see a difference between the "true attribute" (in SI units) and theirs:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span><span class="p">)</span>  <span class="c1"># read OK</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>4.2 9.259415011764858
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span> <span class="o">=</span> <span class="mi">11</span>  <span class="c1"># set OK</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span><span class="p">)</span>  <span class="c1"># updated: nice!</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>4.9895160700000005 11.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Private-attributes-and-methods">Private attributes and methods<a class="anchor-link" href="#Private-attributes-and-methods">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sometimes it can be useful to define and use attributes or methods within a class, <em>without</em> providing them to users of the class: in some OO languages like Java or C++, they are called <a href="https://en.wikipedia.org/wiki/Private_class_data_pattern">private</a> (e.g. a <strong>private attribute</strong> or a <strong>private method</strong>). In Python, there is no specific syntax or language specification for this pattern: in other words, all class attribute and methods are <strong>public</strong>, visible and usable by anyone.</p>
+<p>To allow the definition of private elements, however, the community agreed on a convention: all attributes or method starting with an underscore (<code>_</code>) are meant to be private and do not belong to the public facing (documented interface) of a class.</p>
+<p>There are plenty of uses for private attributes or methods, but I'll illustrate one of them below:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+    
+    <span class="c1"># Initializer</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">):</span>
+        
+        <span class="c1"># Name of the cat: an instance attribute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+          
+        <span class="c1"># The cats language</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># we don&#39;t know yet what the cat speaks</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_language</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># This is a private attribute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">language</span> <span class="o">=</span> <span class="n">language</span>
+        
+    <span class="c1"># Methods</span>
+    <span class="k">def</span> <span class="nf">say_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">speak</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+        
+    <span class="k">def</span> <span class="nf">_decide_speech</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="c1"># This is a private method</span>
+        <span class="c1"># We use it to structure our code within the class</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;en&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
+        <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;fr&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="s1">&#39;Miaou&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Language not understood: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+        
+    <span class="c1"># Property getter</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">language</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_language</span>
+        
+    <span class="c1"># Property setter</span>
+    <span class="nd">@language</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">language</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_language</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_decide_speech</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The design of this class comes from the addition of a new functionality: users can now set the language of their cat, and the cat's speech will change accordingly. See the following:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>  <span class="c1"># the default language is english</span>
+<span class="n">a</span><span class="o">.</span><span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;fr&#39;</span>  <span class="c1"># we set it to french</span>
+<span class="n">a</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>  <span class="c1"># now our cat speaks french!</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Meow, Grumpy!
+Miaou, Grumpy!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Line 3 in the code snippet above motivates the use of a <code>@setter</code>: when <code>language</code> is updated, we want the <code>speak</code> attribute to be updated too: we need a dedicated method (<code>def language(self, value)</code>) that we hide behind an attribute. This comes with a drawback: where to store the <code>language</code> value? We have to use a new container for it: the private attribute <code>_language</code> (by convention).</p>
 
 </div>
 </div>
@@ -13916,11 +14759,273 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Internally, numpy achieves vectorization by relying on a lower-level, statically typed and compiled language: C! At the time of writing, about 55% of the <a href="https://github.com/numpy/numpy">numpy codebase</a> is written in C/C++. The rest of the codebase offers an interface (a "layer") between python and the internal C code.</p>
-<p>As a result, numpy has to be <em>compiled</em> at installation. Most users do not notice this compilation step anymore (recent pip and conda installations are shipped with pre-compiled binaries), but installing numpy used to require several minutes on my laptop when I started to learn python myself.</p>
+<h2 id="Our-final-class">Our final class<a class="anchor-link" href="#Our-final-class">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I attempt to summarize all the concepts we learned above into a single class. Please read through it carefully:</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+    <span class="c1"># Class attributes</span>
+    <span class="n">purr</span> <span class="o">=</span> <span class="s1">&#39;RRRrrrRRRrrr&#39;</span>  <span class="c1"># same for all cats, regardless of their language</span>
+     
+    <span class="c1"># Initializer</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;kg&#39;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">):</span>
+        
+        <span class="c1"># Name of the cat: an instance attribute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        
+        <span class="c1"># The cat&#39;s weight in two possible units</span>
+        <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;kg&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="k">elif</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;lbs&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">weight_lbs</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unit not understood: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">unit</span><span class="p">))</span>
+        
+        <span class="c1"># The cat&#39;s language</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># we don&#39;t know yet what the cat speaks</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_language</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># private attribute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">language</span> <span class="o">=</span> <span class="n">language</span>
+        
+    <span class="c1"># Methods</span>
+    <span class="k">def</span> <span class="nf">say_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">speak</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+        
+    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;kg&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;lbs&#39;</span><span class="p">:</span>
+            <span class="c1"># convert to kg</span>
+            <span class="n">food</span> <span class="o">=</span> <span class="mf">0.45359237</span> <span class="o">*</span> <span class="n">food</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food</span>
+    
+    <span class="c1"># Private method</span>
+    <span class="k">def</span> <span class="nf">_decide_speech</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;en&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
+        <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;fr&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="s1">&#39;Miaou&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Language not understood: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+    
+    <span class="c1"># Property getter</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">/</span> <span class="mf">0.45359237</span>
+    
+     <span class="c1"># Property setter</span>
+    <span class="nd">@weight_lbs</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_weight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="mf">0.45359237</span> <span class="o">*</span> <span class="n">new_weight</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">language</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_language</span>
+        
+   
+    <span class="nd">@language</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">language</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_language</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_decide_speech</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Instantiating an object from the class &quot;Cat&quot;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Calling an instance method</span>
+<span class="n">a</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Meow, Grumpy!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Changing an attribute also changes the behavior of the object</span>
+<span class="n">a</span><span class="o">.</span><span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;fr&#39;</span>
+<span class="n">a</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Miaou, Grumpy!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Class attributes are available for anyone to read</span>
+<span class="n">a</span><span class="o">.</span><span class="n">purr</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[45]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;RRRrrrRRRrrr&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># An action on an object might change its instance attributes</span>
+<span class="n">a</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;lbs&#39;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">weight</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[46]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>4.136077711</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Some attributes are passive and computed only when needed.</span>
+<span class="c1"># The user doesn&#39;t see the difference:</span>
+<span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[47]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>9.118490487395103</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13933,47 +15038,9 @@ $( document ).ready(function(){
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>The process of "type checking" may occur either at compile-time (statically typed language) or at runtime (dynamically typed language). These terms are not usually used in a strict sense.</li>
-<li>Statically typed languages are often compiled, while dynamically typed languages are interpreted.</li>
-<li>There is a trade-off between the flexibility of a language and its speed: static typing allows programs to be optimized at compilation time, thus allowing them to run faster.</li>
-<li>When speed matters, python allows to use compiled libraries under a python interface. numpy is using C under the hood to optimize its computations.</li>
-<li>numpy arrays use a continuous block of memory of homogenous data type. This allows for faster memory access and easy vectorization of mathematical operations.</li>
+<li>Python is an object oriented programming language but does not enforce the definition of classes in your own programs. However, a basic understanding of the core concepts of OOP is a strong asset and allows to make better use of Python's capabilities.</li>
+<li>We defined a lot of new concepts today: classes, objects, instances, instance methods, instance attributes, class attributes, the @property decorator, and the @property.setter decorator. They are all important! You will have to revise these concepts calmly and step by step, possibly by making use of external resources. The web has plenty of good beginner-level OOP tutorials, I recommend to have a look at at least one of them.</li>
 </ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Further-reading">Further reading<a class="anchor-link" href="#Further-reading">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>I highly recommend to have a look at the first part of Jake Vanderplas' blog post, <a href="https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/">Why python is slow</a> (up to the "hacking" part). It provides more details and a good visual illustration of the <code>c = a + b</code> example. The second part is a more involved read, but very interesting too!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Addendum:-is-python-really-that-slow?">Addendum: is python really <em>that</em> slow?<a class="anchor-link" href="#Addendum:-is-python-really-that-slow?">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The short answer is: yes, python is slower than a number of other languages. You'll find many benchmarks online illustrating it.</p>
-<p>Is it bad?</p>
-<p>No. Jake Vanderplas (a well known contributor of the scientific python community) <a href="https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/#So-Why-Use-Python?">writes</a>:</p>
-<p><em>As well, it comes down to this: dynamic typing makes Python easier to use than C. It's extremely flexible and forgiving, this flexibility leads to efficient use of development time, and on those occasions that you really need the optimization of C or Fortran, Python offers easy hooks into compiled libraries. It's why Python use within many scientific communities has been continually growing. With all that put together, Python ends up being an extremely efficient language for the overall task of doing science with code.</em></p>
-<p>It's the flexibility and readability of python that makes it so popular. Python is the language of choice for major actors like <a href="https://www.youtube.com/watch?v=66XoCk79kjM">instagram</a> or <a href="https://labs.spotify.com/2013/03/20/how-we-use-python-at-spotify/">spotify</a>, and it has become the high-level interface to highly optimized machine learning libraries like <a href="https://github.com/tensorflow/tensorflow">TensorFlow</a> or <a href="http://pytorch.org/">Torch</a>.</p>
-<p>For a scientist, writing code efficiently is <em>much</em> more important than writing efficient code. Or <a href="https://xkcd.com/1205/">is it</a>?</p>
 
 </div>
 </div>
@@ -13988,7 +15055,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="12-Numbers.html">jump to the next chapter</a>.</p>
+<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>, or <a href="24-Assignment-07.html">jump to this week's assignment</a>.</p>
 
 </div>
 </div>
