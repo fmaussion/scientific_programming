@@ -10,7 +10,7 @@ gtag('config', 'UA-88391345-1');
 </script>
 <meta charset="utf-8" />
 
-<title>00-Introduction</title>
+<title>28-DataWorkflow</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13131,7 +13131,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": false, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {}, "toc_section_display": "block", "toc_window_display": true};
+            var cfg = {"base_numbering": "28", "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "750px", "left": "29px", "top": "111px", "width": "310px"}, "toc_section_display": true, "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -13146,14 +13146,14 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Scientific-Programming">Scientific Programming<a class="anchor-link" href="#Scientific-Programming">&#182;</a></h1>
+<h1 id="The-scientific-data-analysis-workflow">The scientific data analysis workflow<a class="anchor-link" href="#The-scientific-data-analysis-workflow">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Fabien Maussion</strong></p>
+<p>In this lecture I will write down some basic principles which might come handy when analyzing data of any kind in your thesis or any class project. I'll keep it short, but try to remember some of my tips when you'll do some "real" programming work!</p>
 
 </div>
 </div>
@@ -13161,205 +13161,54 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Lecture notes of the master lecture <a href="https://orawww.uibk.ac.at/public/lfuonline_lv.details?sem_id_in=18S&amp;lvnr_id_in=707716">707716 - Scientific Programming</a>, given for the first time in the summer term of 2018 and regularly in the <strong>winter terms</strong> afterwards.</p>
-<p>If you're not here for the first time, jump to:</p>
+<p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
+<div class="toc"><ul class="toc-item"><li><span><a href="#The-scientific-data-analysis-workflow" data-toc-modified-id="The-scientific-data-analysis-workflow-28"><span class="toc-item-num">28&nbsp;&nbsp;</span>The scientific data analysis workflow</a></span><ul class="toc-item"><li><span><a href="#A-typical-workflow" data-toc-modified-id="A-typical-workflow-28.1"><span class="toc-item-num">28.1&nbsp;&nbsp;</span>A typical workflow</a></span></li><li><span><a href="#Some-recommendations" data-toc-modified-id="Some-recommendations-28.2"><span class="toc-item-num">28.2&nbsp;&nbsp;</span>Some recommendations</a></span></li><li><span><a href="#What's-next?" data-toc-modified-id="What's-next?-28.3"><span class="toc-item-num">28.3&nbsp;&nbsp;</span>What's next?</a></span></li><li><span><a href="#License" data-toc-modified-id="License-28.4"><span class="toc-item-num">28.4&nbsp;&nbsp;</span>License</a></span></li></ul></li></ul></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="A-typical-workflow">A typical workflow<a class="anchor-link" href="#A-typical-workflow">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Almost <strong>all data analysis workflows follow the same structure</strong>:</p>
+<ol>
+<li><strong>Read the data</strong>: typically from a file, e.g. a text file, some NetCDF or Geotiff, or from domain specifi formats.</li>
+<li><strong>Cleanse it</strong>: remove missing data, delete useless variables, select a time period, remove outliers...</li>
+<li><strong>Process and add value to the data</strong>: compute additional diagnostic variables out of the raw data, merge several datasets into one frame (e.g. on a map projection or to the same time coordinates)</li>
+<li><strong>Reduce the data</strong>: this is a statistical term, meaning that in order to be understood by a human the data must be "simplified": e.g. temporal averages, smoothing, data classification, histograms...</li>
+<li><strong>Plot or output to table</strong>: this is the final step and the only reason is to make the data understandable by humans.</li>
+<li><strong>Evaluation of the final result</strong>: Happy? Stop. Not happy? Repeat.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Some-recommendations">Some recommendations<a class="anchor-link" href="#Some-recommendations">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>With almost no exception, all your scientific workflows will follow a similar structure (the most notable exception is modeling work, which is another story...). Sometimes a step is very short (e.g. when the data is very "clean" or already averaged), but in general each of these steps has to be applied at least once.</p>
+<p>Here are some general recommendations:</p>
 <ul>
-<li><a href="#ctoc">the table of contents</a></li>
-<li><a href="#refs">external resources</a></li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Preface">Preface<a class="anchor-link" href="#Preface">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There are plenty of excellent online resources to learn python (see <a href="#refs">references</a> below). So why writing these lecture notes? Well, for one, because none of the tutorials is organized to fit <em>exactly</em> the 15 week semester of Austrian universities. Therefore, I had to make some choices regarding (i) what to teach and (ii) how to teach it. However, there is no need in reinventing the wheel and rewriting what much better teachers wrote before me: as you will see, I will rely heavily on external resources, all openly available. Following the open source philosophy, these lecture notes are also freely available.</p>
-<p>These notes are actualized on the go, as this course advances. I am trying to write them in such a way that they are understandable without actually <em>attending</em> the course, but I strongly recommend to participate to both the lectures and the practicals. <strong>Let me know if you encounter any typo / mistake / broken link / incomprehensible or difficult passage</strong>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Learning-outcomes-of-this-course">Learning outcomes of this course<a class="anchor-link" href="#Learning-outcomes-of-this-course">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This class aims at learning <strong>modern programming techniques</strong> for (geo-)scientists. After finishing the class, attendees should be able to program in a structured, extendable and reproducible manner. They should understand how numbers are handled by computers and be aware of numerical accuracy errors. Furthermore, they will get acquainted with various programming tools (IDEs, debugger, unit testing, object oriented programming, open development practices).</p>
-<p>The targeted audience for this lecture are (geo-)science <strong>students at the master level with previous experience in programming</strong>. No prior knowledge of python is required, but I'll assume that you are familiar with a similar language (Matlab, IDL, R...). This is <em>not</em> an introductory course, although we will shortly revisit programming basics in order to learn the python syntax.</p>
-<p>The course encompasses the following topics, which are developed by means of concrete examples in the Python programming language:</p>
-<ul>
-<li>Introduction to Linux</li>
-<li>Semantics: revisiting and formalizing the basic programming structures (loops, functions, conditional blocks...)</li>
-<li>General programming concepts, differences between compiled and interpreted languages</li>
-<li>Numerics: floating point numbers, N-dimensional arrays</li>
-<li>Software structure: packages, modules, functions, scripts</li>
-<li>Object oriented programming: fundamentals, usage, and basic design patterns</li>
-<li>Code testing</li>
-<li>Real world applications!</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Frequently-Asked--Questions">Frequently Asked  Questions<a class="anchor-link" href="#Frequently-Asked--Questions">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="What-is-&quot;Scientific-Programming&quot;?">What is "Scientific Programming"?<a class="anchor-link" href="#What-is-&quot;Scientific-Programming&quot;?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Scientific programming targets to solve scientific problems with the help of computers</strong>.</p>
-<p>It is sometimes used as synonym for <a href="https://en.wikipedia.org/wiki/Computational_science">computational science</a>, but in my opinion these are not entirely the same. "Scientific programming" is not really a discipline, and therefore cannot be taught.</p>
-<p>What are we doing here then? Well, we are going to learn <strong>programming</strong> first, and then <strong>programming as a tool to do science</strong>. We are going to apply our new skills to scientific problems, but not only. Within the time given to us, we won't be able to learn <em>everything</em> about programming of course. My hope is that at the end of the lecture you'll have sufficient background and tools at your disposition to solve your own problems, and (this is the most important bit) that you'll know <em>where</em> to find solutions to the problems you encounter.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why-should-I-learn-programming?">Why should I learn programming?<a class="anchor-link" href="#Why-should-I-learn-programming?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As a scientist you are going to either <em>produce</em> or <em>analyze</em> data, most of the time you'll do both. For a long time, scientists have seen programming as a "tool", a menial task to accomplish in order to answer the questions they were asking. Nowadays programming has taken a prominent place in a scientist's work, for several reasons:</p>
-<ul>
-<li><strong>the amount of data we have to handle increases together with computational power and our capacity to store it</strong>. I would even argue that the bottleneck in model based scientific discovery isn't the computational effort anymore, but our capacity to comprehend and analyze these huge amounts of data.</li>
-<li><strong>the questions we are asking are getting more complex, and so are the tools we are using to answer them</strong>. The times when scientists could make discoveries with the help of a piece of paper and a pen are long gone, at least for most of us in the geosciences. We rely heavily on computer models, and these models are developed by us scientists, not only by programmers.</li>
-<li><strong>science faces a credibility crisis</strong>, and part of the mistrust towards scientists comes from the fact that their research happens behind closed doors, using closed source tools and based on protected data. Opening our computers and demonstrating that our code can be trusted is necessary to re-engage confidence in our results.</li>
-<li>on a more general note: a better understanding of the tools that govern our digital world is a strong asset for many aspects of our everyday life and citizenship.</li>
-</ul>
-<p>In simple words, we have to become better programmers to be faster and better at what we do: science.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why-Python?">Why Python?<a class="anchor-link" href="#Why-Python?">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We will use the <a href="https://www.python.org/">Python programming language</a> in this course. In case you are wondering why this language and not any other like <code>&lt;name your favorite language here&gt;</code>, let me stop you right away: this course is not about "learning Python", it is about learning the general concepts of programming: algorithmic, numerics, program structure, object oriented programming, testing, etc. Python is just the tool I chose to use for this purpose.</p>
-<p>We could indeed have taken any other language, but there are several advantages in using Python. A quick web search will give you <a href="https://www.google.co.uk/search?dcr=0&amp;ei=Wo2OWtKHNY7fwAKv1KbIDQ&amp;q=Why+should+I+learn+python">millions of reasons</a>, but let me pick some of my favorites here:</p>
-<ul>
-<li><strong>Python is a general purpose programming language and, as such, well suited to learn general programming concepts</strong>. It is therefore better suited than, for example, <a href="https://www.r-project.org/">R</a> which was developed for statistics and has certain particularities regarding object oriented programming in particular.</li>
-<li><strong>Python can be used for many purposes</strong>, from data preprocessing to numerical modeling and plotting. Unless you have a very compelling reason to change, you are likely to be able to use Python for all programming tasks you'll have in the near future.</li>
-<li><strong>Python is one of the <a href="https://stackoverflow.blog/2017/09/06/incredible-growth-python/">fastest growing languages for data science</a></strong>. There is a very active community developing new and exiting packages every day, and joining this community is a good bet on the future.</li>
-<li><strong>Python is free and open-source</strong>. No license fee, the code is available for everyone to see.</li>
-</ul>
-<p>There are many other reasons to use Python (and some arguments <em>against</em> Python as well of course), but I don't think it's relevant to list them here. My argument is following: for a good programmer, switching language is not a very big deal. It's not easy of course, but it's possible - becoming a good programmer is the hard bit, and is a never ending process.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Course-contents">Course contents<a class="anchor-link" href="#Course-contents">&#182;</a></h2><p><a id='ctoc'></a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><strong>Week 01: Introduction to Linux, installing Python</strong><ul>
-<li><a href="01-Linux.html">01 - A very short introduction to Linux</a></li>
-<li><a href="02-Installation.html">02 - Installing Python</a></li>
-<li><a href="03-Getting-Started.html">03 - Getting started with Python</a></li>
-<li><a href="04-Assignment-01.html">04 - Assignment #01: getting familiar with Linux and Python</a></li>
-<li><a href="http://fabienmaussion.info/scipro_w01/">Slides for week 01</a></li>
-</ul>
-</li>
-<li><strong>Week 02: The Python language and the standard library</strong><ul>
-<li><a href="05-Language-Basics.html">05 - Language Basics</a></li>
-<li><a href="06-Assignment-02.html">06 - Assignment #02: using the standard library</a></li>
-</ul>
-</li>
-<li><strong>Week 03: Variables scopes, modules, good practices in programming</strong><ul>
-<li><a href="07-Import-Scopes.html">07 - Modules, import mechanism, namespaces, scope(s)</a></li>
-<li><a href="08-Tips-and-Tricks.html">08 - Tips and tricks</a></li>
-<li><a href="09-Good-practices.html">09 - Good practices, programming style and conventions</a></li>
-<li><a href="10-Assignment-03.html">10 - Assignment #03: deeper in the python library</a></li>
-</ul>
-</li>
-<li><strong>Week 04: Floating point arithmetics, Numpy basics</strong><ul>
-<li><a href="11-Why-Numpy.html">11 - Introduction to numpy: why does numpy exist?</a></li>
-<li><a href="12-Numbers.html">12 - Number representation in computers</a></li>
-<li><a href="13-Assignment-04.html">13 - Assignment #04: C, python and numpy; rounding errors</a></li>
-</ul>
-</li>
-<li><strong>Week 05: Scientific Python</strong><ul>
-<li><a href="14-Numpy-ndarrays.html">14 - Arrays in numpy: indexing, ufuncs, broadcasting</a></li>
-<li><a href="15-Scientific-Python.html">15 - The scientific python stack</a></li>
-<li><a href="16-Assignment-05.html">16 - Assignment #05: small numpy exercises</a></li>
-</ul>
-</li>
-<li><strong>Week 06: Exceptions and testing</strong><ul>
-<li><a href="17-Exceptions.html">17 - Errors, Exceptions and Warnings</a></li>
-<li><a href="18-Testing.html">18 - Testing your code</a></li>
-<li><a href="19-Assignment-06.html">19 - Assignment 06: exceptions and testing</a></li>
-</ul>
-</li>
-<li><strong>Week 07: Python Packages and ClimVis project</strong><ul>
-<li><a href="20-Package-structure.html">20 - Structure of a python package</a></li>
-<li><a href="21-Project1-ClimVis.html">21 - Project #1: the ClimVis package</a></li>
-</ul>
-</li>
-<li><strong>Week 08: Documentation</strong><ul>
-<li><a href="22-Documentation.html">22 - Documenting your code</a></li>
-</ul>
-</li>
-<li><strong>Week 09: Revisions</strong></li>
-<li><strong>Week 10: Object Oriented Programming basics</strong><ul>
-<li><a href="23-OOP-Part-1.html">23 - Object Oriented Programming: introduction</a></li>
-<li><a href="24-Assignment-07.html">24 - Assignment #07: a file writer class</a></li>
-</ul>
-</li>
-<li><strong>Week 11: Object Oriented Programming (Part II &amp; III)</strong><ul>
-<li><a href="25-OOP-Part-2.html">25 - Object Oriented Programming: inheritance</a></li>
-<li><a href="26-OOP-Part-3.html">26 - Object Oriented Programming: why?</a></li>
-<li><a href="27-Assignment-08.html">27 - Assignment #08: a Markdown writer</a></li>
-</ul>
-</li>
-<li><strong>Week 12: Scientific python - a quick intro to pandas and xarray</strong><ul>
-<li><a href="28-DataWorkflow.html">28 - The scientific data analysis workflow</a></li>
-<li><a href="http://fabienmaussion.info/scipro_scistack">Slides for week 12</a></li>
-<li><a href="29-Pelita-1.html">29 - Fun group project: the Pelita game (Part 1)</a></li>
-</ul>
-</li>
+<li><strong>resist the temptation to put one step before the other</strong>: for example, it can be appealing to reduce the data before processing it. If this is not strictly necessary (i.e. for data management and storage issues), don't do it: if you find out later that you still need high-resolution data, you'll regret it.</li>
+<li><strong>store the output of the individual steps in well-documented intermediate files</strong>. In particular if your data is messy, storing it in clean intermediate files will spare you a lot of trouble when you'll go back to your code after the week-end. This is particularly true for <strong>data intensive workflows</strong>, where repeating each step can take hours or days</li>
+<li><strong>use conventions for metadata, and use popular data formats to store your data</strong>: CSV files are okay but not great (<em>"what's the unit of the variable WS_200 again?"</em>). NetCDF is much better. All kind of proprietary data formats (or obscure domain specific formats) are usually bad.</li>
+<li><strong>organize your code around each step above</strong> (maybe one file per step, or one Jupyter Notebook section) and  <strong>write formal tests</strong> using asserts in code (okay) or pytest <code>test_</code> modules (better)</li>
+<li><strong>store your code and data in some place safe</strong> (<a href="https://github.com/">github</a> or <a href="https://about.gitlab.com/">gitlab</a> are a good idea for code, not so good for data) and in a structure which will remind you what was done when you go back to your code in 6 months from now. For example, use a directory structure following each step: <code>0_RAW_DATA</code>, <code>1_FILTERED_DATA</code>, <code>2_PROCESSED</code>, etc.). </li>
+<li><strong>have someone look at your code</strong>, or <strong>use code that works</strong>: always ask yourself the same question: <em>"Am I the first person facing this problem? Where could I find someone who has done that already?"</em>. If you find yourself implementing a function to compute relative humidy out of water vapor pressure, you may have searched not long enough. </li>
+<li><strong>write tests</strong>: I did say that already, but I'm saying it again: <strong>write tests</strong></li>
 </ul>
 
 </div>
@@ -13368,170 +13217,14 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><font color="red">To access the previous course content (winter semester 2018), visit:</font> <a href="https://fabienmaussion.info/scipro_ws2018">https://fabienmaussion.info/scipro_ws2018</a></p>
-
+<h2 id="What's-next?">What's next?<a class="anchor-link" href="#What's-next?">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-to-use-these-notes">How to use these notes<a class="anchor-link" href="#How-to-use-these-notes">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>These notes are written as a companion to the lectures. During class I will go through the major concepts (using slides or the good old blackboard), these notes are here to help you learn at home.</p>
-<p>The notes are a mix of examples and small exercises. The exercises can happen in between the examples and are marked with a question mark logo. If you want to download the notebooks I used to write the notes, you can download them on the course's <a href="https://github.com/fmaussion/scientific_programming">repository</a>. This repository gets updated frequently, so you might have to re-download the files from time to time.</p>
-<p>When you will be going through the examples of these notes, some sentences are marked in <strong>bold</strong>: this underlines their importance for the course. When <strong>single words</strong> are bold  this symbolizes new concepts or new definitions: they need to be understood (and <em>googled</em> if needed).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Grading">Grading<a class="anchor-link" href="#Grading">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The lecture will be graded based on three assessments:</p>
-<ul>
-<li>a mid-term group project (the <code>climvis</code> package): 30%</li>
-<li>an end-term group project (the <code>pelita</code> game): mandatory</li>
-<li>an oral examination at the end of the semester: 70%</li>
-</ul>
-<p>A positive evaluation of each of these elements is mandatory to pass the class!</p>
-<p>There will be bonus points for pointing me to typos / mistakes / broken links / incomprehensible or difficult passages in these lecture notes.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Each week there will be an <strong>assignment</strong> (unless specified otherwise, e.g. during the group projects). These assignments can be worked through alone or in groups. Each week, I will ask <strong>one randomly selected group</strong> to present their results to the rest of the class.</p>
-<p>The class grants you 5 ECTS if successfully passed: <a href="https://en.wikipedia.org/wiki/European_Credit_Transfer_and_Accumulation_System">in theory</a>, this represents 8 to 10 hours work per week (not including holidays). For this course, it means that you will spend about twice as much time doing homework than sitting in class.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a id='refs'></a></p>
-<h2 id="External-resources">External resources<a class="anchor-link" href="#External-resources">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Resources used (and linked) in these lecture notes:</p>
-<p><strong>Linux and bash scripting:</strong></p>
-<ul>
-<li><a href="https://ryanstutorials.net/">Ryan's Tutorials</a> for the linux command line and bash scripting are entertaining and well designed.</li>
-</ul>
-<p><strong>Preparation MOOCs:</strong></p>
-<ul>
-<li><a href="https://www.edx.org/course/programming-for-everybody-getting-started-with-python">Programming for Everybody (Getting Started with Python)</a> from EdX: if you have no programming experience, this is recommended <em>before</em> you take this lecture, this will guide you through the first programming steps. </li>
-</ul>
-<p><strong>Python tutorials:</strong></p>
-<ul>
-<li>the <a href="https://docs.python.org/3/tutorial/index.html">official tutorial</a>, always a good place to start.</li>
-<li>the <a href="http://scipy-lectures.org">scipy lecture notes</a>, a good overview of the scientific python stack for scientists with previous programming experience.</li>
-</ul>
-<p><strong>Python reference:</strong></p>
-<ul>
-<li>the <a href="https://docs.python.org">python documentation</a> is your best reference for any question related to the language and the standard library.</li>
-</ul>
-<p><strong>Testing</strong></p>
-<ul>
-<li>Katy Huff's <a href="https://katyhuff.github.io/python-testing/">scientific python testing tutorial</a>: a one and a half hour introduction to testing practices, from the basics to continuous integration</li>
-</ul>
-<p><strong>Floating point precision errors</strong></p>
-<ul>
-<li>Python's <a href="https://docs.python.org/3/tutorial/floatingpoint.html">Floating Point Arithmetic</a> article is a good read but a bit tough for beginners</li>
-<li><a href="http://floating-point-gui.de/">What Every Programmer Should Know About Floating-Point Arithmetic</a> is a more gentle introduction, but you still might want to use a search engine for more information.</li>
-</ul>
-<p><strong>Numpy</strong></p>
-<ul>
-<li><a href="https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/">Why python is slow</a> by Jake Vanderplas</li>
-<li><a href="http://www.labri.fr/perso/nrougier/from-python-to-numpy/">From Python to Numpy</a> by Nicolas P. Rougier: an open-access book on numpy vectorization techniques (rather advanced).</li>
-<li><a href="https://docs.scipy.org/doc/numpy/reference/index.html">The numpy reference</a>: the official documentation is always the best place to obtain first hand information.</li>
-</ul>
-<p><strong>Scientific Python</strong></p>
-<ul>
-<li><a href="https://jakevdp.github.io/PythonDataScienceHandbook/">Python Data Science Handbook</a> by Jake Vanderplas: an open-access  textbook on using Python for Scientists</li>
-</ul>
-<p><strong>Python namespaces and scopes</strong></p>
-<ul>
-<li><a href="http://sebastianraschka.com/Articles/2014_python_scope_and_namespaces.html#scope-resolution-for-variable-names-via-the-legb-rule">blog post by Sebastian Raschka</a>: A Beginner's Guide to Python's Namespaces, Scope Resolution, and the LEGB Rule</li>
-</ul>
-<p><strong>Object Oriented Programming</strong>
-The web is full of blog posts and basic tutorials about OOP in python. Unfortunately, most of them make a poor job at explaining <em>why</em> OOP can be useful and when not. I will try to find better resources, but for now I recommend:</p>
-<ul>
-<li><a href="https://realpython.com/python3-object-oriented-programming/">RealPython's beginner tutorial</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Wikipedia page about OOP</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming">Wikipedia page about inheritance</a></li>
-</ul>
-<p><strong>Documentation</strong></p>
-<ul>
-<li><a href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/">A beginner’s guide to writing documentation</a></li>
-</ul>
-<p><strong>Some youtube videos about tech in general</strong></p>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=ajGX7odA87k">A fun but though-provoking talk about machine learning and why we should think before we do things</a></li>
-</ul>
-<p><em>(this list will be updated when the notes get written further)</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Getting-help">Getting help<a class="anchor-link" href="#Getting-help">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Seeking for information online is necessary and helpful at <em>any</em> level of programming skills. I would even argue that good programmers are the ones who know how to efficiently find information online.</p>
-<p>When encountering an issue, the first question you should ask yourself is: <em>"am I the only person likely to be affected by this problem?"</em>. <strong>The answer will be no</strong> in 99% of the cases. For these, here is a list of recommendations:</p>
-<ul>
-<li><a href="https://stackoverflow.com/">Stack Overflow</a> is THE place for programming questions. Thanks to community based moderation rules, the good questions are more visible than bad ones, and good answers are rewarded. <a href="https://stackoverflow.com/tour">Take a tour</a> of the site's principles now, and look for similar questions there before asking your own question.</li>
-<li>Learn to ask the right question to your search engine. Naming this the correct way (semantics) is one of the objectives of this lecture, and I hope that in the end you will not only write better code, you will also <em>speak</em> the programming language a little better. </li>
-</ul>
-<p>If every other thing fails (i.e the remaining 1% of the cases), then:</p>
-<ul>
-<li>Ask a question on Stack Overflow. Before doing so, read what a <a href="https://stackoverflow.com/help/mcve">Minimal, Complete, and Verifiable Example</a> is and try to stick to these recommendations.</li>
-<li>If you think you discovered a bug, than report it to the library directly. Almost all the scientific python packages are hosted on GitHub: the "issues" tab is where to report bugs. Read the excellent <a href="http://matthewrocklin.com/blog/work/2018/02/28/minimal-bug-reports">Craft Minimal Bug Reports</a> article from Matt Rocklin before doing so.</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Authors">Authors<a class="anchor-link" href="#Authors">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><a href="http://fabienmaussion.info/">Fabien Maussion</a> wrote these notes (unless specified otherwise, e.g. for some tutorials)</li>
-<li><a href="https://github.com/Matze77">Matthias Göbel</a> and <a href="https://github.com/lilianschuster">Lilian Schuster</a> (student assistants at the time of writing) reviewed and proof read them</li>
-</ul>
+<p>Back to the <a href="00-Introduction.html#ctoc">table of contents</a>.</p>
 
 </div>
 </div>
@@ -13548,19 +13241,6 @@ The web is full of blog posts and basic tutorials about OOP in python. Unfortuna
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
   <img align="left" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg"/>
-</a></p>
-<p><br>
-<br></p>
-<p>These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0) </a>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="http://acinn.uibk.ac.at/" target="_blank">
-  <img align="left" src="../img/logo_acinn_small.jpg"/>
 </a></p>
 
 </div>
