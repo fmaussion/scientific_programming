@@ -13560,7 +13560,7 @@ test_metutils.py .                                                       [100%]
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://en.wikipedia.org/wiki/Unit_testing">Unit tests</a> have the purpose to test the smallest possible units of source code, i.e. single <em>functions</em> in python. Units tests have the advantage to be highly specialized and are often written together or before the actual function from which they are testing the functionality.</p>
+<p><a href="https://en.wikipedia.org/wiki/Unit_testing">Unit tests</a> have the purpose to test the smallest possible units of source code, i.e. single <em>functions</em> in python. Unit tests have the advantage to be highly specialized and are often written together or before the actual function from which they are testing the functionality.</p>
 <p>Unit tests are useful because they encourage programmers to write small "code units" (functions) instead of monolithic code. Let's make an example: say you'd like to write a function which computes the <a href="https://en.wikipedia.org/wiki/Dew_point#Calculating_the_dew_point">dewpoint temperature</a> from temperatures (in Fahrenheits) and relative humidity (in %). This function will first convert °F to °C (a first code unit), then the dewpoint temperature in °C (another unit), and convert back to °F (a third unit). A good way to write this tool would be to write the three smallest functions first and test them independently.</p>
 
 </div>
@@ -13592,7 +13592,7 @@ test_metutils.py .                                                       [100%]
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a href="https://en.wikipedia.org/wiki/Software_verification_and_validation">Verification tests</a> is the process of checking that a software system meets the <strong>specifications</strong>. Software specifications is an important concept in engineering and commercial applications, where softwares are built to meet the customer's needs.</p>
-<p>In science, the verification tests would check that a function really meets the documented features. For example: does my function really works with arrays of any dimension (as announced in the documentation) or only with scalars? Does my function really fail for relative humidity values below 0%?</p>
+<p>In science, the verification tests would check that a function really meets the documented features. For example: does my function really work with arrays of any dimension (as announced in the documentation) or only with scalars? Does my function really fail for relative humidity values below 0%?</p>
 
 </div>
 </div>
@@ -13623,7 +13623,7 @@ test_metutils.py .                                                       [100%]
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>At the beginning you will probably find writing tests hard and confusing. "What should I test and how?" are the questions you will have to ask yourself very often.</p>
-<p>In the course of the semester this task will become easier and easier thanks to an influential testing philosophy: <a href="https://en.wikipedia.org/wiki/Test-driven_development">test-driven development</a> (TDD). In TDD, one writes the test <em>before</em> coding the actual feature one would like to implement. Together with the function's documentation, this encourages to thoroughly think about the <strong>design of of a function's interface</strong> before writing it.</p>
+<p>In the course of the semester this task will become easier and easier thanks to an influential testing philosophy: <a href="https://en.wikipedia.org/wiki/Test-driven_development">test-driven development</a> (TDD). In TDD, one writes the test <em>before</em> coding the actual feature one would like to implement. Together with the function's documentation, this encourages to thoroughly think about the <strong>design of a function's interface</strong> before writing it.</p>
 
 </div>
 </div>
@@ -13684,7 +13684,7 @@ test_metutils.py .                                                       [100%]
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Arange</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Arrange</span>
 <span class="n">tf</span> <span class="o">=</span> <span class="mi">212</span>
 <span class="n">expected</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="c1"># Act</span>
