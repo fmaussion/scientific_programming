@@ -129,7 +129,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/introduction.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/welcome.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -153,7 +153,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=tree/book/introduction.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/welcome.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -161,7 +161,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/fmaussion/scientific_programming/blob/master/book/introduction.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/fmaussion/scientific_programming/blob/master/book/welcome.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -221,18 +221,21 @@
                 
   <div class="section" id="welcome">
 <h1>Welcome<a class="headerlink" href="#welcome" title="Permalink to this headline">¶</a></h1>
-<p>Lecture notes of the master lecture <a class="reference external" href="https://orawww.uibk.ac.at/public/lfuonline_lv.details?sem_id_in=20W&amp;lvnr_id_in=707716">707716 - Scientific Programming</a>, taught to 1st semester students in the <a class="reference external" href="https://www.uibk.ac.at/acinn/studies/master-in-atmospheric-sciences.html.en">Master in Atmospheric Sciences</a> from the <strong>Department of Atmospheric and Cryospheric Sciences</strong> (<a class="reference external" href="https://www.uibk.ac.at/acinn">ACINN</a>), University of Innsbruck.</p>
-<p>The organization of these notes is tailored for a 15 weeks class, but this page might also be of interest to any (geo-)scientist wanting to learn the fundamentals of scientific programming. Welcome!</p>
+<p>Lecture notes of the master lecture <a class="reference external" href="https://orawww.uibk.ac.at/public/lfuonline_lv.details?sem_id_in=20W&amp;lvnr_id_in=707716">707716 - Scientific Programming</a>, taught to 1st semester students following a <a class="reference external" href="https://www.uibk.ac.at/acinn/studies/master-in-atmospheric-sciences.html.en">Master in Atmospheric Sciences</a> curriculum from the Department of Atmospheric and Cryospheric Sciences (<a class="reference external" href="https://www.uibk.ac.at/acinn">ACINN</a>) at the University of Innsbruck.</p>
+<p>This lecture is tailored for a 15 weeks class, but these notes might also be of interest to other (geo-)scientists wanting to learn the fundamentals of scientific programming. <strong>Welcome to you all!</strong></p>
 <div class="section" id="learning-outcomes">
 <h2>Learning outcomes<a class="headerlink" href="#learning-outcomes" title="Permalink to this headline">¶</a></h2>
-<p>This class aims at learning <strong>modern programming techniques</strong> for (geo-)scientists. After completing the class, attendees will be able to program in a structured, extendable and reproducible manner. They will become familiar with a major programming language (Python) and will be able to read and write python programs of medium complexity. They will be able to search for, understand, install and take advantage of existing packages and libraries available in the rich scientific Python ecosystem. They should understand how numbers are handled by computers and be aware of numerical accuracy errors. Furthermore, they will get acquainted with various programming tools (IDEs, debugger, unit testing, object oriented programming, open development practices).</p>
-<p>The targeted audience for this lecture are (geo-)science <strong>students at the master level with previous experience in programming</strong>. No prior knowledge of python is required, but I’ll assume that you are familiar with a similar language (Matlab, IDL, R…). This is <em>not</em> an introductory course, although we will shortly revisit programming basics in order to learn the python syntax.</p>
+<div class="margin figure align-default" id="margin-figure">
+<img alt="_images/logo_acinn_small.jpg" src="_images/logo_acinn_small.jpg" />
+</div>
+<p>This class aims at learning <strong>modern programming techniques</strong> for (geo-)scientists. After completing the class, attendees will be able to program in a structured, extendable and reproducible manner. They will become familiar with a modern and open-source programming language (Python) and will be able to read and write python programs of medium complexity. They will be able to search for, understand, install and take advantage of existing packages and libraries available in the rich scientific Python ecosystem. They should understand how numbers are handled by computers and be aware of numerical accuracy errors as well as simple performance considerations (vectorization). Furthermore, they will get acquainted with various programming tools (IDEs, debugger, unit testing, object oriented programming, open development practices).</p>
+<p>The targeted audience for this lecture are <strong>students at the master level with previous experience in programming</strong>. No prior knowledge of python is required, but I’ll assume that you are familiar with a similar language (Matlab, IDL, R…) and basic programming structures (loops, functions, conditional blocks…). This is <em>not</em> an introductory course, although we will shortly revisit programming basics in order to learn the python syntax.</p>
 <p>The course encompasses the following topics, developed by means of concrete examples and practicals:</p>
 <ul class="simple">
 <li><p>Introduction to Linux</p></li>
 <li><p>General programming concepts, differences between compiled and interpreted languages</p></li>
-<li><p>Revisiting and formalizing the basic programming structures (loops, functions, conditional blocks…) and learn new ones</p></li>
-<li><p>Semantics: precise semantics are very important in programming, and will help you to ask questions the right way (see <a class="reference internal" href="#getting-help"><span class="std std-ref">Getting help</span></a>).</p></li>
+<li><p>Revisiting and formalizing basic programming structures (e.g. loops) and learn more advanced ones</p></li>
+<li><p>Semantics: precise vocabulary is very important in programming, and will help you to ask questions the right way (see <a class="reference internal" href="#getting-help"><span class="std std-ref">Getting help</span></a>).</p></li>
 <li><p>Numerics: floating point numbers, N-dimensional arrays</p></li>
 <li><p>Software structure: packages, modules, functions, scripts</p></li>
 <li><p>Object oriented programming: fundamentals, usage, and basic design patterns</p></li>
@@ -290,7 +293,7 @@
 <li><p><a class="reference external" href="http://fabienmaussion.info/">Fabien Maussion</a> wrote these notes (unless specified otherwise, e.g. for some tutorials)</p></li>
 <li><p><a class="reference external" href="https://github.com/Matze77">Matthias Göbel</a> and <a class="reference external" href="https://github.com/lilianschuster">Lilian Schuster</a> (student assistants in 2018 and 2019) reviewed and proof read them</p></li>
 </ul>
-<p><font color="red">To access the previous year’s course content (winter semester 2019), visit:</font> <a class="reference external" href="https://fabienmaussion.info/scipro_ws2019">https://fabienmaussion.info/scipro_ws2019</a></p>
+<p><font color="red">To access the previous year’s course (winter semester 2019), visit:</font> <a class="reference external" href="https://fabienmaussion.info/scipro_ws2019">https://fabienmaussion.info/scipro_ws2019</a></p>
 </div>
 <div class="section" id="license">
 <h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
@@ -300,7 +303,6 @@
 <br>
 <br>
 <p>These lecture notes and exercises are licensed under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0) </a>.</p>
-<img alt="_images/logo_acinn_small.jpg" class="bg-primary" src="_images/logo_acinn_small.jpg" />
 <div class="toctree-wrapper compound">
 </div>
 </div>
