@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>External resources &#8212; Scientific Programming</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Frequently Asked Questions" href="faq.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Scientific Programming</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="faq.html">
+   Frequently Asked  Questions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   External resources
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/start/references.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=tree/book/start/references.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/fmaussion/scientific_programming/blob/master/book/start/references.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="external-resources">
+<h1>External resources<a class="headerlink" href="#external-resources" title="Permalink to this headline">¶</a></h1>
+<p>Resources used (and linked) in these lecture notes:</p>
+<p><strong>Linux and bash scripting:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://ryanstutorials.net/">Ryan’s Tutorials</a> for the linux command line and bash scripting are entertaining and well designed.</p></li>
+</ul>
+<p><strong>Preparation MOOCs:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.edx.org/course/programming-for-everybody-getting-started-with-python">Programming for Everybody (Getting Started with Python)</a> from EdX: if you have no programming experience, this is recommended <em>before</em> you take this lecture, this will guide you through the first programming steps.</p></li>
+</ul>
+<p><strong>Python tutorials:</strong></p>
+<ul class="simple">
+<li><p>the <a class="reference external" href="https://docs.python.org/3/tutorial/index.html">official tutorial</a>, always a good place to start.</p></li>
+<li><p>the <a class="reference external" href="http://scipy-lectures.org">scipy lecture notes</a>, a good overview of the scientific python stack for scientists with previous programming experience.</p></li>
+</ul>
+<p><strong>Python reference:</strong></p>
+<ul class="simple">
+<li><p>the <a class="reference external" href="https://docs.python.org">python documentation</a> is your best reference for any question related to the language and the standard library.</p></li>
+</ul>
+<p><strong>Testing</strong></p>
+<ul class="simple">
+<li><p>Katy Huff’s <a class="reference external" href="https://katyhuff.github.io/python-testing/">scientific python testing tutorial</a>: a one and a half hour introduction to testing practices, from the basics to continuous integration</p></li>
+</ul>
+<p><strong>Floating point precision errors</strong></p>
+<ul class="simple">
+<li><p>Python’s <a class="reference external" href="https://docs.python.org/3/tutorial/floatingpoint.html">Floating Point Arithmetic</a> article is a good read but a bit tough for beginners</p></li>
+<li><p><a class="reference external" href="http://floating-point-gui.de/">What Every Programmer Should Know About Floating-Point Arithmetic</a> is a more gentle introduction, but you still might want to use a search engine for more information.</p></li>
+</ul>
+<p><strong>Numpy</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/">Why python is slow</a> by Jake Vanderplas</p></li>
+<li><p><a class="reference external" href="http://www.labri.fr/perso/nrougier/from-python-to-numpy/">From Python to Numpy</a> by Nicolas P. Rougier: an open-access book on numpy vectorization techniques (rather advanced).</p></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/index.html">The numpy reference</a>: the official documentation is always the best place to obtain first hand information.</p></li>
+</ul>
+<p><strong>Scientific Python</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/">Python Data Science Handbook</a> by Jake Vanderplas: an open-access  textbook on using Python for Scientists</p></li>
+</ul>
+<p><strong>Python namespaces and scopes</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://sebastianraschka.com/Articles/2014_python_scope_and_namespaces.html#scope-resolution-for-variable-names-via-the-legb-rule">blog post by Sebastian Raschka</a>: A Beginner’s Guide to Python’s Namespaces, Scope Resolution, and the LEGB Rule</p></li>
+</ul>
+<p><strong>Object Oriented Programming</strong>
+The web is full of blog posts and basic tutorials about OOP in python. Unfortunately, most of them make a poor job at explaining <em>why</em> OOP can be useful and when not. I will try to find better resources, but for now I recommend:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://realpython.com/python3-object-oriented-programming/">RealPython’s beginner tutorial</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Object-oriented_programming">Wikipedia page about OOP</a></p></li>
+<li><p><a href="https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming">Wikipedia page about inheritance</a></p></li>
+</ul>
+<p><strong>Documentation</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/">A beginner’s guide to writing documentation</a></p></li>
+</ul>
+<p><strong>Some youtube videos about tech in general</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=ajGX7odA87k">A fun but though-provoking talk about machine learning and why we should think before we do things</a></p></li>
+</ul>
+<p><em>(this list will be updated when the notes get written further)</em></p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./start"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="faq.html" title="previous page">Frequently Asked  Questions</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Fabien Maussion<br/>
+        
+            &copy; Copyright 2018-2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
