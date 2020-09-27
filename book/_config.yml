@@ -1,0 +1,19 @@
+#######################################################################################
+# A default configuration that will be loaded for all jupyter books
+# See the documentation for help and more options: 
+# https://jupyterbook.org/customize/config.html
+
+#######################################################################################
+# Book settings
+title: Scientific Programming  # The title of the book. Will be placed in the left navbar.
+author: Fabien Maussion  # The author of the book
+copyright: "2018-2020"  # Copyright year to be placed in the footer
+logo: img/logo.png  # A path to the book logo
+parse:
+  myst_extended_syntax: true
+repository:
+  url: https://github.com/fmaussion/scientific_programming
+  path_to_book: book 
+  branch: master
+launch_buttons:
+  binderhub_url: "https://mybinder.org"
