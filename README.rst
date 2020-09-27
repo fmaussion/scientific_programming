@@ -7,10 +7,7 @@ Scientific Programming
 
 Lectures notes of the scientific programming course at the University of Innsbruck.
 
-Website: http://fabienmaussion.info/scientific_programming/index.html
-
-HOWTO: https://github.com/fmaussion/scientific_programming/blob/master/HOWTO.md
-
+Website: http://fabienmaussion.info/scientific_programming
 
 License
 -------
