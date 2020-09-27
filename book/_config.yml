@@ -16,4 +16,5 @@ repository:
   path_to_book: book 
   branch: master
 launch_buttons:
+  notebook_interface: "jupyterlab"
   binderhub_url: "https://mybinder.org"
