@@ -36,7 +36,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Frequently Asked Questions" href="start/faq.html" />
+    <link rel="next" title="Frequently Asked Questions" href="faq.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -76,15 +76,47 @@
   </a>
  </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="start/faq.html">
+  <a class="reference internal" href="faq.html">
    Frequently Asked  Questions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="start/references.html">
+  <a class="reference internal" href="references.html">
    External resources
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 01 - Linux &amp; Python primer
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="week_01/01-Linux.html">
+   01 - A very short introduction to Linux
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="week_01/02-Installation.html">
+   02 - Installing Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="week_01/03-Getting-Started.html">
+   03 - Getting started with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="week_01/Assignment-01.html">
+   Assignment #01
   </a>
  </li>
 </ul>
@@ -139,6 +171,24 @@
     
 </div>
         <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/fmaussion/scientific_programming"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fwelcome.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/welcome.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
 
 
         <!-- Full screen (wrap in <a> to have style consistency -->
@@ -203,11 +253,8 @@
   <a class="reference internal nav-link" href="#authors">
    Authors
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#license">
-   License
-  </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
  </li>
 </ul>
 
@@ -223,11 +270,11 @@
 <h1>Welcome<a class="headerlink" href="#welcome" title="Permalink to this headline">¶</a></h1>
 <p>Lecture notes of the master lecture <a class="reference external" href="https://orawww.uibk.ac.at/public/lfuonline_lv.details?sem_id_in=20W&amp;lvnr_id_in=707716">707716 - Scientific Programming</a>, taught to 1st semester students following a <a class="reference external" href="https://www.uibk.ac.at/acinn/studies/master-in-atmospheric-sciences.html.en">Master in Atmospheric Sciences</a> curriculum from the Department of Atmospheric and Cryospheric Sciences (<a class="reference external" href="https://www.uibk.ac.at/acinn">ACINN</a>) at the University of Innsbruck.</p>
 <p>This lecture is tailored for a 15 weeks class, but these notes might also be of interest to other (geo-)scientists wanting to learn the fundamentals of scientific programming. <strong>Welcome to you all!</strong></p>
-<div class="section" id="learning-outcomes">
-<h2>Learning outcomes<a class="headerlink" href="#learning-outcomes" title="Permalink to this headline">¶</a></h2>
 <div class="margin figure align-default" id="margin-figure">
 <img alt="_images/logo_acinn_small.jpg" src="_images/logo_acinn_small.jpg" />
 </div>
+<div class="section" id="learning-outcomes">
+<h2>Learning outcomes<a class="headerlink" href="#learning-outcomes" title="Permalink to this headline">¶</a></h2>
 <p>This class aims at learning <strong>modern programming techniques</strong> for (geo-)scientists. After completing the class, attendees will be able to program in a structured, extendable and reproducible manner. They will become familiar with a modern and open-source programming language (Python) and will be able to read and write python programs of medium complexity. They will be able to search for, understand, install and take advantage of existing packages and libraries available in the rich scientific Python ecosystem. They should understand how numbers are handled by computers and be aware of numerical accuracy errors as well as simple performance considerations (vectorization). Furthermore, they will get acquainted with various programming tools (IDEs, debugger, unit testing, object oriented programming, open development practices).</p>
 <p>The targeted audience for this lecture are <strong>students at the master level with previous experience in programming</strong>. No prior knowledge of python is required, but I’ll assume that you are familiar with a similar language (Matlab, IDL, R…) and basic programming structures (loops, functions, conditional blocks…). This is <em>not</em> an introductory course, although we will shortly revisit programming basics in order to learn the python syntax.</p>
 <p>The course encompasses the following topics, developed by means of concrete examples and practicals:</p>
@@ -245,14 +292,24 @@
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This course is very dense (especially if you don’t have much prior experience with python), but it won’t make you a “fully accomplished programmer”. For one, there is no such thing, but more importantly: programming is best “learned-by-doing”. <strong>My main objective is to get you prepared to learn efficiently what you’ll need for the rest of your studies and professional life.</strong></p>
+<p>This course is very dense (especially if you don’t have much prior experience with python), but it won’t make of you a “fully accomplished programmer”. For one, there is no such thing, but more importantly: programming is best “learned-by-doing”.</p>
+<p><strong>My main objective for this course is to get you prepared to learn independently what you’ll need for the rest of your studies and professional life.</strong></p>
 </div>
 </div>
 <div class="section" id="how-to-use-these-notes">
 <h2>How to use these notes<a class="headerlink" href="#how-to-use-these-notes" title="Permalink to this headline">¶</a></h2>
-<p>These notes are written as a companion to the lectures. During class I will go through the major concepts (using slides or the good old blackboard): these notes are here to help you learn at home.</p>
-<p>They are actualized on the go, as this course advances. I am trying to write them in such a way that they are understandable without actually <em>attending</em> the course, but I <em>strongly</em> recommend to participate to both the lectures and the practicals. Let me know if you encounter any typo / mistake / broken link / incomprehensible or difficult passage (there will be bonus points for students pointing these mistakes to me).</p>
-<p>The notes are a mix of examples and small exercises. The exercises can happen in between the examples and are marked as such: they are for you to try at home! If you want to download the jupyter notebooks I used to write the notes, you can download them on the course’s <a class="reference external" href="https://github.com/fmaussion/scientific_programming">repository</a> or run them online in an interactive window.</p>
+<p>These notes are written as a companion to the lectures. During class I will go through the major concepts (using slides or the good old blackboard), while these notes are for individual learning.</p>
+<p>They are actualized on the go, as this course advances. I am trying to write them in such a way that they are understandable without actually <em>attending</em> the course, but I strongly recommend to participate to both the lectures and the practicals.</p>
+<p>The notes are a mix of examples and small exercises for you to try at home. If you want to run the lecture’s code yourself, you can:</p>
+<div class="margin figure align-default" id="markdown-fig">
+<img alt="launch-button" class="margin" src="_images/launch_binder.png" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Binder button</span><a class="headerlink" href="#markdown-fig" title="Permalink to this image">¶</a></p>
+</div>
+<ul class="simple">
+<li><p>copy-paste the code of the lecture in a python interpreter and repeat the steps yourself (<strong>recommended for beginners</strong>)</p></li>
+<li><p>you can run the notebooks online in an interactive window, by clicking on the “Launch Binder” button on the top-right of this page. For a primer on Jupyter Notebooks and MyBinder, visit <a class="reference external" href="https://edu.oggm.org/en/latest/notebooks_howto.html">OGGM-Edu</a>.</p></li>
+<li><p>download the jupyter notebooks I used to write the notes from the course’s <a class="reference external" href="https://github.com/fmaussion/scientific_programming">repository</a> and run them on your computer (recommended after you have become more familiar with Jupyter Notebooks).</p></li>
+</ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>When you will be going through the examples of these notes, some sentences are marked in <strong>bold</strong>: this underlines their importance for the course. When <strong>single words</strong> are bold  this symbolizes new programming concepts or definitions: they need to be understood (and <em>googled</em> if needed).</p>
@@ -268,8 +325,8 @@
 </ul>
 <p>A positive evaluation of each of these elements is mandatory to pass the class!</p>
 <p>There will be bonus points for pointing me to typos / mistakes / broken links / incomprehensible or difficult passages in these lecture notes.</p>
-<p>Each week there will be an <strong>assignment</strong> (unless specified otherwise, e.g. during the group projects). These assignments can be worked through alone or in groups. Each week, I will ask <strong>one randomly selected group</strong> to present their results to the rest of the class.</p>
-<p>The class grants you 5 ECTS if successfully passed: <a class="reference external" href="https://en.wikipedia.org/wiki/European_Credit_Transfer_and_Accumulation_System">in theory</a>, this represents 8 to 10 hours work per week (not including holidays). For this course, it means that you will spend about twice as much time doing homework than sitting in class.</p>
+<p>Each week there will be an <strong>assignment</strong> (unless specified otherwise, e.g. during the group projects). These assignments can be worked through alone or in groups. Each week, I will ask <strong>one randomly selected group</strong> to present their results to the rest of the class (this group will be informed prior to the class of course).</p>
+<p>The class grants you 5 ECTS if successfully passed: <a class="reference external" href="https://en.wikipedia.org/wiki/European_Credit_Transfer_and_Accumulation_System">in theory</a>, this represents 8 to 10 hours work per week (not including holidays). For this course, it means that <strong>you will spend at least twice as much time doing homework than sitting in class</strong>.</p>
 </div>
 <div class="section" id="getting-help">
 <span id="id1"></span><h2>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
@@ -293,16 +350,9 @@
 <li><p><a class="reference external" href="http://fabienmaussion.info/">Fabien Maussion</a> wrote these notes (unless specified otherwise, e.g. for some tutorials)</p></li>
 <li><p><a class="reference external" href="https://github.com/Matze77">Matthias Göbel</a> and <a class="reference external" href="https://github.com/lilianschuster">Lilian Schuster</a> (student assistants in 2018 and 2019) reviewed and proof read them</p></li>
 </ul>
-<p><font color="red">To access the previous year’s course (winter semester 2019), visit:</font> <a class="reference external" href="https://fabienmaussion.info/scipro_ws2019">https://fabienmaussion.info/scipro_ws2019</a></p>
+<p><font color="red">To access last year’s course (winter semester 2019), visit:</font> <a class="reference external" href="https://fabienmaussion.info/scipro_ws2019">https://fabienmaussion.info/scipro_ws2019</a></p>
+<div class="toctree-wrapper compound">
 </div>
-<div class="section" id="license">
-<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
-<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
-  <img align="left" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg"/>
-</a>
-<br>
-<br>
-<p>These lecture notes and exercises are licensed under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0) </a>.</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -336,7 +386,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='right-next' id="next-link" href="start/faq.html" title="next page">Frequently Asked  Questions</a>
+    <a class='right-next' id="next-link" href="faq.html" title="next page">Frequently Asked  Questions</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
@@ -345,7 +395,17 @@
         
           By Fabien Maussion<br/>
         
-            &copy; Copyright 2018-2020.<br/>
+          <div class="extra_footer">
+            <p>
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+  <img align="right" class="margin" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg" width="88px">
+</a>
+These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International (CC BY 4.0) license</a>.
+<br>
+&copy; Copyright 2018-2020.
+</p>
+
+          </div>
       </p>
     </div>
   </footer>
@@ -356,6 +416,16 @@
     </div>
 
     <script src="_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-88391345-1', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
     
   </body>
 </html>
