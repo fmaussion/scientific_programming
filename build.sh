@@ -1,5 +1,5 @@
 #!/bin/bash
 
-rm -rf book/_build
+jupyter-book clean --html book
 jupyter-book build book
 
