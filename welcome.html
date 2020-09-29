@@ -269,46 +269,46 @@
   <div class="section" id="welcome">
 <h1>Welcome<a class="headerlink" href="#welcome" title="Permalink to this headline">¶</a></h1>
 <p>Lecture notes of the master lecture <a class="reference external" href="https://orawww.uibk.ac.at/public/lfuonline_lv.details?sem_id_in=20W&amp;lvnr_id_in=707716">707716 - Scientific Programming</a>, taught to 1st semester students following a <a class="reference external" href="https://www.uibk.ac.at/acinn/studies/master-in-atmospheric-sciences.html.en">Master in Atmospheric Sciences</a> curriculum from the Department of Atmospheric and Cryospheric Sciences (<a class="reference external" href="https://www.uibk.ac.at/acinn">ACINN</a>) at the University of Innsbruck.</p>
-<p>This lecture is tailored for a 15 weeks class, but these notes might also be of interest to other (geo-)scientists wanting to learn the fundamentals of scientific programming. <strong>Welcome to you all!</strong></p>
+<p>This lecture is tailored for a 15 weeks-long class, but these notes might also be of interest to other (geo-)scientists wanting to learn the fundamentals of scientific programming. <strong>Welcome to you all!</strong></p>
 <div class="margin figure align-default" id="margin-figure">
 <img alt="_images/logo_acinn_small.jpg" src="_images/logo_acinn_small.jpg" />
 </div>
 <div class="section" id="learning-outcomes">
 <h2>Learning outcomes<a class="headerlink" href="#learning-outcomes" title="Permalink to this headline">¶</a></h2>
-<p>This class aims at learning <strong>modern programming techniques</strong> for (geo-)scientists. After completing the class, attendees will be able to program in a structured, extendable and reproducible manner. They will become familiar with a modern and open-source programming language (Python) and will be able to read and write python programs of medium complexity. They will be able to search for, understand, install and take advantage of existing packages and libraries available in the rich scientific Python ecosystem. They should understand how numbers are handled by computers and be aware of numerical accuracy errors as well as simple performance considerations (vectorization). Furthermore, they will get acquainted with various programming tools (IDEs, debugger, unit testing, object oriented programming, open development practices).</p>
+<p>This class aims at teaching <strong>modern programming techniques</strong> for (geo-)scientists. After completing the class, attendees will be able to program in a structured, extendable and reproducible manner. They will become familiar with a modern and open-source programming language (Python) and will be able to read and write python programs of medium complexity. They will be able to search for, understand, install and take advantage of existing packages and libraries available in the rich scientific Python ecosystem. They should understand how numbers are handled by computers and be aware of numerical accuracy errors as well as simple performance considerations (vectorization). Furthermore, they will get acquainted with various programming tools (IDEs, debugger, unit testing, open development practices).</p>
 <p>The targeted audience for this lecture are <strong>students at the master level with previous experience in programming</strong>. No prior knowledge of python is required, but I’ll assume that you are familiar with a similar language (Matlab, IDL, R…) and basic programming structures (loops, functions, conditional blocks…). This is <em>not</em> an introductory course, although we will shortly revisit programming basics in order to learn the python syntax.</p>
 <p>The course encompasses the following topics, developed by means of concrete examples and practicals:</p>
 <ul class="simple">
 <li><p>Introduction to Linux</p></li>
 <li><p>General programming concepts, differences between compiled and interpreted languages</p></li>
-<li><p>Revisiting and formalizing basic programming structures (e.g. loops) and learn more advanced ones</p></li>
-<li><p>Semantics: precise vocabulary is very important in programming, and will help you to ask questions the right way (see <a class="reference internal" href="#getting-help"><span class="std std-ref">Getting help</span></a>).</p></li>
+<li><p>Revisiting and formalizing basic programming structures (e.g. loops) and learn more advanced ones (e.g. context managers)</p></li>
+<li><p>Semantics: precise vocabulary in order to ask questions “the right way” (see <a class="reference internal" href="#getting-help"><span class="std std-ref">Getting help</span></a>).</p></li>
 <li><p>Numerics: floating point numbers, N-dimensional arrays</p></li>
 <li><p>Software structure: packages, modules, functions, scripts</p></li>
 <li><p>Object oriented programming: fundamentals, usage, and basic design patterns</p></li>
-<li><p>Code testing</p></li>
-<li><p>Overview of major scientific python packages</p></li>
+<li><p>Code testing with pytest</p></li>
+<li><p>Short overview of major scientific python packages</p></li>
 <li><p>Real world applications!</p></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This course is very dense (especially if you don’t have much prior experience with python), but it won’t make of you a “fully accomplished programmer”. For one, there is no such thing, but more importantly: programming is best “learned-by-doing”.</p>
-<p><strong>My main objective for this course is to get you prepared to learn independently what you’ll need for the rest of your studies and professional life.</strong></p>
+<p><strong>My main objective for this course is to get you prepared to learn independently about the more advanced tools you’ll need for the rest of your studies and professional life.</strong></p>
 </div>
 </div>
 <div class="section" id="how-to-use-these-notes">
 <h2>How to use these notes<a class="headerlink" href="#how-to-use-these-notes" title="Permalink to this headline">¶</a></h2>
-<p>These notes are written as a companion to the lectures. During class I will go through the major concepts (using slides or the good old blackboard), while these notes are for individual learning.</p>
+<p>These notes are written as a companion to the lectures. During class I will go through the major concepts (using slides or the good old blackboard), and you can use these notes are for independent learning.</p>
 <p>They are actualized on the go, as this course advances. I am trying to write them in such a way that they are understandable without actually <em>attending</em> the course, but I strongly recommend to participate to both the lectures and the practicals.</p>
-<p>The notes are a mix of examples and small exercises for you to try at home. If you want to run the lecture’s code yourself, you can:</p>
+<p>The notes are a mix of examples and small exercises for you to try at home. They are written in <a class="reference external" href="https://jupyter-notebook.readthedocs.io">Jupyter Notebooks</a> If you want to run the lecture’s code yourself, you can:</p>
 <div class="margin figure align-default" id="markdown-fig">
 <img alt="launch-button" class="margin" src="_images/launch_binder.png" />
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Binder button</span><a class="headerlink" href="#markdown-fig" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
 <li><p>copy-paste the code of the lecture in a python interpreter and repeat the steps yourself (<strong>recommended for beginners</strong>)</p></li>
-<li><p>you can run the notebooks online in an interactive window, by clicking on the “Launch Binder” button on the top-right of this page. For a primer on Jupyter Notebooks and MyBinder, visit <a class="reference external" href="https://edu.oggm.org/en/latest/notebooks_howto.html">OGGM-Edu</a>.</p></li>
-<li><p>download the jupyter notebooks I used to write the notes from the course’s <a class="reference external" href="https://github.com/fmaussion/scientific_programming">repository</a> and run them on your computer (recommended after you have become more familiar with Jupyter Notebooks).</p></li>
+<li><p>run the notebooks online in an interactive window, by clicking on the “Launch Binder” button on the top-right of this page. For a primer on Jupyter Notebooks and MyBinder, visit <a class="reference external" href="https://edu.oggm.org/en/latest/notebooks_howto.html">OGGM-Edu</a>.</p></li>
+<li><p>download the jupyter notebooks from the course’s <a class="reference external" href="https://github.com/fmaussion/scientific_programming">repository</a> and run them on your computer (recommended after you have become more familiar with Jupyter Notebooks<a class="footnote-reference brackets" href="#foot-nb" id="id1">1</a>).</p></li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -319,18 +319,18 @@
 <h2>Grading<a class="headerlink" href="#grading" title="Permalink to this headline">¶</a></h2>
 <p>The lecture will be graded based on three assessments:</p>
 <ul class="simple">
-<li><p>a mid-term group project (the <code class="docutils literal notranslate"><span class="pre">climvis</span></code> package): 30%</p></li>
+<li><p>a mid-term group project (the <code class="docutils literal notranslate"><span class="pre">climvis</span></code> package): 40%</p></li>
 <li><p>an end-term group project (the <code class="docutils literal notranslate"><span class="pre">pelita</span></code> game): not graded but team submission mandatory</p></li>
-<li><p>an oral examination at the end of the semester: 70%</p></li>
+<li><p>an oral examination at the end of the semester: 60%</p></li>
 </ul>
 <p>A positive evaluation of each of these elements is mandatory to pass the class!</p>
-<p>There will be bonus points for pointing me to typos / mistakes / broken links / incomprehensible or difficult passages in these lecture notes.</p>
-<p>Each week there will be an <strong>assignment</strong> (unless specified otherwise, e.g. during the group projects). These assignments can be worked through alone or in groups. Each week, I will ask <strong>one randomly selected group</strong> to present their results to the rest of the class (this group will be informed prior to the class of course).</p>
+<p>There will be bonus points for pointing me to typos / mistakes / broken links / incomprehensible or difficult passages in the lecture notes.</p>
+<p>Each week there will be an <strong>assignment</strong> (unless specified otherwise, e.g. during the group projects). These assignments can be worked through alone or in groups. Each week, I will ask <strong>one volunteer group</strong> to present their results to the rest of the class on the following week.</p>
 <p>The class grants you 5 ECTS if successfully passed: <a class="reference external" href="https://en.wikipedia.org/wiki/European_Credit_Transfer_and_Accumulation_System">in theory</a>, this represents 8 to 10 hours work per week (not including holidays). For this course, it means that <strong>you will spend at least twice as much time doing homework than sitting in class</strong>.</p>
 </div>
 <div class="section" id="getting-help">
-<span id="id1"></span><h2>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
-<p>Seeking for information online is necessary and helpful at <em>any</em> level of programming skills. I would even argue that good programmers are the ones who know how to efficiently find information online.</p>
+<span id="id2"></span><h2>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
+<p>Seeking for information online is necessary and helpful for programmers of <em>any</em> level. I would even argue that the best programmers are the ones who know how to efficiently find information online.</p>
 <p>When encountering an issue, the first question you should ask yourself is: <em>“am I the only person likely to be affected by this problem?”</em>. <strong>The answer will be no</strong> in 99% of the cases. For these, here is a list of recommendations:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://stackoverflow.com/">Stack Overflow</a> is THE place for programming questions. Thanks to community based moderation rules, the good questions are more visible than bad ones, and good answers are rewarded. <a class="reference external" href="https://stackoverflow.com/tour">Take a tour</a> of the site’s principles, and look for similar questions before asking your own one.</p></li>
@@ -348,13 +348,19 @@
 <h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="http://fabienmaussion.info/">Fabien Maussion</a> wrote these notes (unless specified otherwise, e.g. for some tutorials)</p></li>
-<li><p><a class="reference external" href="https://github.com/Matze77">Matthias Göbel</a> and <a class="reference external" href="https://github.com/lilianschuster">Lilian Schuster</a> (student assistants in 2018 and 2019) reviewed and proof read them</p></li>
+<li><p><a class="reference external" href="https://github.com/Matze77">Matthias Göbel</a> and <a class="reference external" href="https://github.com/lilianschuster">Lilian Schuster</a> (student assistants in ss2018 and WS2018/19) reviewed and proof read them</p></li>
 </ul>
 <p><font color="red">To access last year’s course (winter semester 2019), visit:</font> <a class="reference external" href="https://fabienmaussion.info/scipro_ws2019">https://fabienmaussion.info/scipro_ws2019</a></p>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="foot-nb"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Jupyter Notebooks are great and I use them everyday (you will use them in the climate lecture), but they can be a bit confusing for beginners.</p>
+</dd>
+</dl>
 </div>
 </div>
 

@@ -301,8 +301,8 @@
                 
   <div class="section" id="installing-python">
 <h1>02 - Installing Python<a class="headerlink" href="#installing-python" title="Permalink to this headline">¶</a></h1>
-<p><img src="https://www.python.org/static/community_logos/python-logo.png" align="left"> This chapter contains some instructions about how to install Python on your personal computer and at the University. Python is free!</p>
-<p>In previous semesters, it was possible to use Python at the University’s Computer lab (easiest). In these rather special circumstances, it is probably easier to also install Python on your laptop as well.</p>
+<p><img src="https://www.python.org/static/community_logos/python-logo.png" align="left"> This chapter contains some instructions about how to install Python on your personal computer and at the University.</p>
+<p>In previous years, it was possible to use Python at the University’s Computer lab (easiest). In these rather special circumstances, it is probably easier to also install Python on your laptop as well.</p>
 <div class="section" id="preamble-which-python-version">
 <h2>Preamble: which Python version?<a class="headerlink" href="#preamble-which-python-version" title="Permalink to this headline">¶</a></h2>
 <p>Short answer: <strong>the latest stable major release of Python is <a class="reference external" href="https://docs.python.org/3/">Python version 3.8</a></strong>.</p>
@@ -387,7 +387,7 @@ same on all platforms.</p>
 <div class="warning admonition">
 <p class="admonition-title"> For Windows users</p>
 <p>Windows is not a very friendly environment for software development and science<a class="footnote-reference brackets" href="#foot-windows" id="id1">1</a>. Things tend to work, but they are often more complicated and slower than on linux or mac. Furthermore, since the majority of the scientific software developers and teachers (including me) do not work on Windows, bugs or problems are sometimes left unnoticed.</p>
-<p>All of my past students managed to get python to work on Windows. It should work OK for you as well. But, if you can, I <strong>strongly</strong> recommend to try linux as well. For the less intrusive option, I recommend to use <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux 2</a> (this is an official windows product).</p>
+<p>All of my past students managed to get python to work on Windows. It should work OK for you as well. But, if you can, I recommend to try linux as well. For the less intrusive and easiest option, I recommend to use <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux 2</a> (this is an official windows product).</p>
 </div>
 <div class="section" id="install-miniconda">
 <h3>Install Miniconda<a class="headerlink" href="#install-miniconda" title="Permalink to this headline">¶</a></h3>
@@ -420,17 +420,18 @@ installation directory where you have enough space available
 <div class="section" id="optional-make-a-new-environment-called-scipro">
 <h3>Optional: make a new environment called “scipro”<a class="headerlink" href="#optional-make-a-new-environment-called-scipro" title="Permalink to this headline">¶</a></h3>
 <p>Conda also helps us to define so-called “environments”. A conda environment is
-a directory that contains a specific collection of packages that you have
+an isolated directory that contains a specific collection of packages that you have
 installed.</p>
 <p>Environments are not necessary, but helpful on the long term (helpful e.g. if some packages are in conflict with each other). If this is
 your first installation you probably want to skip this part and go directly
-to <a class="reference external" href="#packs">Install the packages</a>. Please have a short look at the conda introduction
-<a class="reference external" href="http://conda.pydata.org/docs/intro.html">here</a> before going on.</p>
+to <a class="reference external" href="#packs">Install the packages</a>.</p>
+<p>If you want to try environments already, please have a short look at the conda introduction
+<a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/concepts/environments.html">here</a> before going on.</p>
 <p>In the terminal, type:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda create -n scipro python=3.8
 </pre></div>
 </div>
-<p>This created a new environment called “py3” which has python V3.6 as
+<p>This created a new environment called “scipro” which has python V3.8 as
 default interpreter. This environment can be activated with one command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">activate</span> <span class="n">scipro</span>
 </pre></div>
@@ -490,17 +491,17 @@ start <code class="docutils literal notranslate"><span class="pre">ipython</span
 <div class="section" id="take-home-points">
 <h2>Take home points<a class="headerlink" href="#take-home-points" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>python is available per default on virtually all linux distributions that exist</p></li>
-<li><p>it is not available per default on windows, but can be installed</p></li>
-<li><p>the system python is useful for scripting or simple tasks, but for real-world applications you want to install python (and related packages) on your own.</p></li>
+<li><p>python is available per default on almost all linux distributions, for the simple reason that many software packages use python internally</p></li>
+<li><p>it is not available per default on windows, but it can be installed</p></li>
+<li><p>the system python is useful for scripting or for simple tasks, but for real-world applications you want to install python (and related packages) on your own.</p></li>
 <li><p>the best tool to install a custom python and selected packages is <a class="reference external" href="https://conda.io/docs/">conda</a>, installed via <a class="reference external" href="https://conda.io/miniconda.html">miniconda</a></p></li>
-<li><p>on linux, a python “installation” is simply a link to a new python executable - on Windows, it’s complicated</p></li>
+<li><p>on linux, a python “installation” is simply a link to a python executable file - on Windows, it’s more complicated</p></li>
 <li><p>on Windows, I recommend to use Windows Subsystem for Linux</p></li>
 </ul>
 <hr class="docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="foot-windows"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Some people would obviously disagree with this, but I personally stand to it: for daily tasks like programming, connecting to a supercomputer or a data server, analyzing and managing data, writing a document with latex, etc., linux is much (much) better than Windows.</p>
+<dd><p>Some people would obviously disagree with this, but I personally stand to it: for daily tasks like programming, connecting to a supercomputer or a data server, analyzing and managing data, writing a document with latex, etc., linux is better than Windows.</p>
 </dd>
 <dt class="label" id="foot-update"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
 <dd><p>Some updates might include changes which change the way functions are called, or -even worse- change your results. This is usually not the case for large, well-known software packages, but it can happen. The best way to ensure consistency are tests - as we are going to learn - and getting information about the package updates.</p>
