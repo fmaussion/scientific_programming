@@ -7,6 +7,7 @@
   chapters:
     - file: faq
     - file: references
+    - file: slides
     
 - part: Week 01 - Linux & Python primer
   chapters:
