@@ -329,14 +329,14 @@
   <div class="section" id="installing-python">
 <h1>02 - Installing Python<a class="headerlink" href="#installing-python" title="Permalink to this headline">¶</a></h1>
 <p><img src="https://www.python.org/static/community_logos/python-logo.png" align="left"> This chapter contains some instructions about how to install Python on your personal computer and at the University.</p>
-<p>In previous years, it was possible to use Python at the University’s Computer lab (easiest). In these rather special circumstances, it is probably easier to also install Python on your laptop as well.</p>
+<p>In previous years, it was possible to use Python at the University’s Computer lab (easiest). In these rather special circumstances, it is probably easier to also install Python on your laptop.</p>
 <div class="section" id="preamble-which-python-version">
 <h2>Preamble: which Python version?<a class="headerlink" href="#preamble-which-python-version" title="Permalink to this headline">¶</a></h2>
 <p>Short answer: <strong>the latest stable major release of Python is <a class="reference external" href="https://docs.python.org/3/">Python version 3.8</a></strong>.</p>
 <div class="dropdown note admonition">
 <p class="admonition-title"> Long answer</p>
 <p>If you did some online search about Python, you probably stumbled upon some discussion about the “Py2 vs Py3 problem”. About 10 years ago, an evolution of the python language introduced changes which were not <strong>backwards compatible</strong>. This means that code written in Python 2.7 may not work in Python 3. According to the Python developers this change was necessary to get rid of old baggage and inconsistent syntax, but it was also considered by many as a “treason”. Indeed, backwards compatibility is an important aspect of software development for large projects like python: it is a contract between developers and users stipulating that the code that users write will continue to work in subsequent releases. This contract was broken once, but this shouldn’t happen again.</p>
-<p>Since updating code requires time and money, many people and companies continued to use Python 2 internally. Five years ago, I would maybe have been reluctant to teach you Python 3 because the future of the language was uncertain and many tools existed only in Python 2. Today the wide adoption of Python 3 is finally accomplished and the future is looking very good. All major scientific python tools are supporting Python 3, and major libraries <a class="reference external" href="http://python3statement.org/">announced that they will stop to support Python 2</a> before of shortly after the end-of-life date of Python 2 (by 2020).</p>
+<p>Since updating code requires time and money, many people and companies continued to use Python 2 internally. Five years ago, I would maybe have been reluctant to teach you Python 3 because the future of the language was uncertain and many tools existed only in Python 2. Today the wide adoption of Python 3 is finally accomplished and the future is looking very good. All major scientific python tools are supporting Python 3, and major libraries <a class="reference external" href="http://python3statement.org/">announced that they will stop to support Python 2</a> before or shortly after the end-of-life date of Python 2 (by 2020).</p>
 <p>In this lecture we <em>might</em> talk about the differences between Python 2 and Python 3 at some point, but it’s unlikely. You can safely concentrate on learning Python 3 only.</p>
 </div>
 </div>
@@ -418,11 +418,12 @@ same on all platforms.</p>
 </div>
 <div class="section" id="install-miniconda">
 <h3>Install Miniconda<a class="headerlink" href="#install-miniconda" title="Permalink to this headline">¶</a></h3>
-<p>Got to the miniconda <a class="reference external" href="http://conda.pydata.org/miniconda.html">website</a> and
+<p>Go to the miniconda <a class="reference external" href="http://conda.pydata.org/miniconda.html">website</a> and
 download the latest <strong>python 3.8</strong> installer for your platform (be careful to
 check whether you need a 64- or 32-bit version).</p>
 <p>The installation is really easy and described
-<a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/install/index.html">here</a>. Choose an
+<a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/install/index.html">here</a>.
+If you are installing conda on WSL2, <a class="reference external" href="https://github.com/kapsakcj/win10-linux-conda-how-to">this page</a> is a really helpful resource. Choose an
 installation directory where you have enough space available
 (conda installations can quickly grow larger than a few GB).</p>
 <p>To see if everything worked well, open a terminal window (on Windows, the
