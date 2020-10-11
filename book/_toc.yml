@@ -15,3 +15,8 @@
     - file: week_01/02-Installation
     - file: week_01/03-Getting-Started
     - file: week_01/Assignment-01
+    
+- part: Week 02 - Python language fundamentals
+  chapters:
+    - file: week_02/01-Language-Fundamentals
+    - file: week_02/Assignment-02
