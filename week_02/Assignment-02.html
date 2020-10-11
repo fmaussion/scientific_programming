@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment #01 &#8212; Scientific Programming</title>
+    <title>Assignment #02: using the standard library &#8212; Scientific Programming</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -56,8 +56,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="01 - Language fundamentals" href="../week_02/01-Language-Fundamentals.html" />
-    <link rel="prev" title="03 - Getting started with Python" href="03-Getting-Started.html" />
+    <link rel="prev" title="01 - Language fundamentals" href="01-Language-Fundamentals.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -124,24 +123,24 @@
   Week 01 - Linux &amp; Python primer
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="01-Linux.html">
+  <a class="reference internal" href="../week_01/01-Linux.html">
    01 - A very short introduction to Linux
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02-Installation.html">
+  <a class="reference internal" href="../week_01/02-Installation.html">
    02 - Installing Python
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03-Getting-Started.html">
+  <a class="reference internal" href="../week_01/03-Getting-Started.html">
    03 - Getting started with Python
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/Assignment-01.html">
    Assignment #01
   </a>
  </li>
@@ -151,14 +150,14 @@
   Week 02 - Python language fundamentals
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../week_02/01-Language-Fundamentals.html">
+  <a class="reference internal" href="01-Language-Fundamentals.html">
    01 - Language fundamentals
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_02/Assignment-02.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Assignment #02: using the standard library
   </a>
  </li>
@@ -204,7 +203,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/week_01/Assignment-01.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/week_02/Assignment-02.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -224,10 +223,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_01/Assignment-01.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_02/Assignment-02.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_01/Assignment-01.ipynb"><button
+        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_02/Assignment-02.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -247,7 +246,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_01/Assignment-01.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_02/Assignment-02.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -255,7 +254,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/fmaussion/scientific_programming/blob/master/book/week_01/Assignment-01.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/fmaussion/scientific_programming/blob/master/book/week_02/Assignment-02.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -275,23 +274,22 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-01-01-linux-tutorial">
-   Exercise #01-01: linux tutorial
+  <a class="reference internal nav-link" href="#exercise-02-01-cryptography-for-s-dummies-s-roman-emperors">
+   Exercise #02-01: cryptography for
+   <s>
+    dummies
+   </s>
+   Roman Emperors
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-01-02a-not-in-2020-install-python-on-your-university-account">
-   Exercise #01-02a (not in 2020): install python on your university account
+  <a class="reference internal nav-link" href="#exercise-02-02-the-substitution-cipher">
+   Exercise #02-02: the substitution cipher
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-01-02b-install-python-on-your-laptop">
-   Exercise #01-02b: install python on your laptop
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-01-03-python-script-instead-of-bash">
-   Exercise #01-03: python script instead of bash
+  <a class="reference internal nav-link" href="#just-for-fun-optional-exercise">
+   Just for fun: optional exercise
   </a>
  </li>
 </ul>
@@ -305,28 +303,93 @@
         
               <div>
                 
-  <div class="section" id="assignment-01">
-<h1>Assignment #01<a class="headerlink" href="#assignment-01" title="Permalink to this headline">¶</a></h1>
-<p>This week’s assignment is about getting you more comfortable with linux and able to use python on your computer before doing more complicated things.</p>
-<div class="section" id="exercise-01-01-linux-tutorial">
-<h2>Exercise #01-01: linux tutorial<a class="headerlink" href="#exercise-01-01-linux-tutorial" title="Permalink to this headline">¶</a></h2>
-<p>Follow the linux tutorial from <a class="reference internal" href="01-Linux.html"><span class="doc">01 - A very short introduction to Linux</span></a> on MyBinder (no installation needed).</p>
+  <div class="section" id="assignment-02-using-the-standard-library">
+<h1>Assignment #02: using the standard library<a class="headerlink" href="#assignment-02-using-the-standard-library" title="Permalink to this headline">¶</a></h1>
+<p>Today’s exercises have to be done with help of the python <strong>standard library</strong> alone! <strong>No external module can be used</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>“standard library” is <em>not</em> the same as “built-in” - can you check what modules are available in the standard library?</p>
 </div>
-<div class="section" id="exercise-01-02a-not-in-2020-install-python-on-your-university-account">
-<h2>Exercise #01-02a (not in 2020): install python on your university account<a class="headerlink" href="#exercise-01-02a-not-in-2020-install-python-on-your-university-account" title="Permalink to this headline">¶</a></h2>
-<p>Follow the instructions from <a class="reference internal" href="02-Installation.html#installation-uni"><span class="std std-ref">Installation at the University of Innsbruck (optional)</span></a> to install python on your linux account at the university.</p>
+<div class="section" id="exercise-02-01-cryptography-for-s-dummies-s-roman-emperors">
+<h2>Exercise #02-01: cryptography for <s>dummies</s> Roman Emperors<a class="headerlink" href="#exercise-02-01-cryptography-for-s-dummies-s-roman-emperors" title="Permalink to this headline">¶</a></h2>
+<p>A very simple encryption technique is called the <a class="reference external" href="http://en.wikipedia.org/wiki/Caesar_cipher">Caesar cipher</a>. The basic idea is that each letter is replaced by a letter that is a certain number of letters away, so for example if the shift was 2, then A would become C, B would become D, and Z will become B.</p>
+<p><strong>A. Write a function that given a string and a shift, will produce the encrypted string for that shift</strong>. The rules are:</p>
+<ul class="simple">
+<li><p>you should accept lowercase and uppercase letters, and return letters of the same case</p></li>
+<li><p>spaces or other punctuation characters should not be changed.</p></li>
+</ul>
+<p>There are several ways to reach this result. Just pick the one which makes more sense to you. Then, decrypt the following message, which was encrypted with a shift of 13:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Pbatenghyngvbaf, lbh unir fhpprrqrq va qrpelcgvat gur fgevat.
+</pre></div>
 </div>
-<div class="section" id="exercise-01-02b-install-python-on-your-laptop">
-<h2>Exercise #01-02b: install python on your laptop<a class="headerlink" href="#exercise-01-02b-install-python-on-your-laptop" title="Permalink to this headline">¶</a></h2>
-<p>Follow the instructions from <a class="reference internal" href="02-Installation.html#installation-pc"><span class="std std-ref">Installing Python on your PC</span></a> to install python on your laptop.</p>
-<div class="note admonition">
-<p class="admonition-title"> Online learning in 2020</p>
-<p>In previous years, I would make the installation on the University lab mandatory - this would be enough for the entire semester. This year is different though, and working in the computer lab is not possible. For this week, you can use MyBinder - but starting from next week I recommend to have a working python on your PC as well.</p>
+<p><strong>B. Now write a decoding script</strong> <code class="docutils literal notranslate"><span class="pre">caesar.py</span></code> which, when run in the command line, prints the decoded phrase after asking the user to enter a phrase and a shift with which it was encrypted. Test your script on the sentence above.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Make use of python’s <a class="reference external" href="https://docs.python.org/3/library/functions.html#input">input()</a> function</p>
+</div>
+<p><strong>C. Now try to decrypt this sentence, for which the shift is unknown</strong>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Gwc uivioml bw nqvl bpm zqopb apqnb.
+</pre></div>
+</div>
+<p>One way to solve this problem involves human decision, but another way can be fully automated (and implies more work). Pick the one you want! You can also add the decryption option to your script if you want.</p>
+</div>
+<div class="section" id="exercise-02-02-the-substitution-cipher">
+<h2>Exercise #02-02: the substitution cipher<a class="headerlink" href="#exercise-02-02-the-substitution-cipher" title="Permalink to this headline">¶</a></h2>
+<p>Since we managed to crack the code above so easily, maybe we should use a better cryptographic algorithm from now on.</p>
+<p>The Caesar cipher is a special case of the more general <a class="reference external" href="https://en.wikipedia.org/wiki/Substitution_cipher">substitution cipher</a>. In this cipher, any new combined alphabet (or sequence of bits, characters, numbers…) can be used in place of the regular alphabet.</p>
+<p>To simplify things a bit, we will use python’s <code class="docutils literal notranslate"><span class="pre">random</span></code> module and in particular it’s <a class="reference external" href="https://docs.python.org/3/library/random.html#random.shuffle">shuffle</a> function to do the job. To generate a random (but predictable) substitution table we can use the mechanism of “seeds”, which can be seen as a secret key that you’ll have to (privately) give to your forbidden lover for him/her to decipher your message. This works as following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alphabet</span> <span class="o">=</span> <span class="s1">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">42</span>  <span class="c1"># the secret key known by both parties </span>
+
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+
+<span class="n">new_alphabet</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">alphabet</span><span class="p">)</span>
+<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">new_alphabet</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new_alphabet</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
-<div class="section" id="exercise-01-03-python-script-instead-of-bash">
-<h2>Exercise #01-03: python script instead of bash<a class="headerlink" href="#exercise-01-03-python-script-instead-of-bash" title="Permalink to this headline">¶</a></h2>
-<p>Use linux on MyBinder for this exercise. Write a python script called <code class="docutils literal notranslate"><span class="pre">my_cli_test.py</span></code>. The script can be as simple as you wish, but it should produce one printed output (a simple “Hello world!” would suffice!). Put this script in a new directory in your HOME, called <code class="docutils literal notranslate"><span class="pre">bin</span></code>. Now make this script callable from everywhere (not just from the <code class="docutils literal notranslate"><span class="pre">bin</span></code> directory) with a call to <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">my_cli_test.py</span></code>. Make this change “permanent” for your HOME environment.</p>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;q&#39;, &#39;m&#39;, &#39;j&#39;, &#39;z&#39;, &#39;t&#39;, &#39;g&#39;, &#39;f&#39;, &#39;k&#39;, &#39;p&#39;, &#39;w&#39;, &#39;l&#39;, &#39;s&#39;, &#39;b&#39;, &#39;o&#39;, &#39;x&#39;, &#39;n&#39;, &#39;c&#39;, &#39;r&#39;, &#39;y&#39;, &#39;e&#39;, &#39;v&#39;, &#39;h&#39;, &#39;i&#39;, &#39;a&#39;, &#39;d&#39;, &#39;u&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>A. Building upon the template from the previous exercise, create a script <code class="docutils literal notranslate"><span class="pre">substitute.py</span></code> which now asks:</strong>
+1. for a phrase to encrypt or decrypt
+2. whether the script should Encrypt (E) or Decrypt (D) the phrase
+3. which seed should be used (it should always be an integer, but can be any integer)</p>
+<p><strong>B. Since your cipher still preserves the location of punctuation (space, points, exclamation marks, etc.), it is easier to crack. Can you think of a very simple way to substitute these characters as well for better encoding?</strong> (minimal change in code)</p>
+</div>
+<div class="section" id="just-for-fun-optional-exercise">
+<h2>Just for fun: optional exercise<a class="headerlink" href="#just-for-fun-optional-exercise" title="Permalink to this headline">¶</a></h2>
+<p>The female to male ratio in this year’s class is 8 to 16. I made 6 groups of 4 students, and obtain the following distribution: 0 FFFF, 2 FFMM, 4 FMMM, and 0 MMMM groups. Compare these statistics to the distribution obtained with a true random choice, by calculating the percentage of each group’s occurrence in a full cycle of all possible group combinations. You can do this by using the python standard library only, with the <a class="reference external" href="https://docs.python.org/3/library/itertools.html">itertools</a> module.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations</span><span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="s1">&#39;F&#39;</span> <span class="o">+</span> <span class="mi">14</span> <span class="o">*</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{:5.2f}</span><span class="s1">%&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">v</span> <span class="o">/</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;F&#39;, &#39;F&#39;, &#39;F&#39;, &#39;F&#39;)  0.96%
+(&#39;F&#39;, &#39;F&#39;, &#39;F&#39;, &#39;M&#39;) 10.72%
+(&#39;F&#39;, &#39;F&#39;, &#39;M&#39;, &#39;M&#39;) 34.83%
+(&#39;F&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;) 39.81%
+(&#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;) 13.68%
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -343,7 +406,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./week_01"
+            path: "./week_02"
         },
         predefinedOutput: true
     }
@@ -358,8 +421,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="03-Getting-Started.html" title="previous page">03 - Getting started with Python</a>
-    <a class='right-next' id="next-link" href="../week_02/01-Language-Fundamentals.html" title="next page">01 - Language fundamentals</a>
+    <a class='left-prev' id="prev-link" href="01-Language-Fundamentals.html" title="previous page">01 - Language fundamentals</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

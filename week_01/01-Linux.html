@@ -31,6 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -142,6 +143,23 @@
  <li class="toctree-l1">
   <a class="reference internal" href="Assignment-01.html">
    Assignment #01
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 02 - Python language fundamentals
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_02/01-Language-Fundamentals.html">
+   01 - Language fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_02/Assignment-02.html">
+   Assignment #02: using the standard library
   </a>
  </li>
 </ul>
@@ -497,9 +515,11 @@
 </pre></div>
 </div>
 <p>Type <code class="docutils literal notranslate"><span class="pre">ls</span></code> to see the contents (which should be empty)</p>
-<div class="attention admonition">
-<p class="admonition-title">Exercise</p>
+<div class="exercise admonition" id="week_01/01-Linux-exercise-0">
+<p class="admonition-title"><span class="caption-number">Exercise 1 </span></p>
+<div class="section" id="exercise-content">
 <p>Make a directory called <code class="docutils literal notranslate"><span class="pre">backup</span></code> located in the <code class="docutils literal notranslate"><span class="pre">unixstuff</span></code> directory</p>
+</div>
 </div>
 </div>
 <div class="section" id="the-directories-and">
@@ -551,9 +571,11 @@
 </pre></div>
 </div>
 <p>Can you check in the terminal (or online) what <code class="docutils literal notranslate"><span class="pre">wget</span></code> does?</p>
-<div class="attention admonition">
-<p class="admonition-title"> Exercise</p>
+<div class="exercise admonition" id="week_01/01-Linux-exercise-1">
+<p class="admonition-title"><span class="caption-number">Exercise 2 </span></p>
+<div class="section" id="exercise-content">
 <p>Create a backup of your <code class="docutils literal notranslate"><span class="pre">science.txt</span></code> file by copying it to a file called <code class="docutils literal notranslate"><span class="pre">science.bak</span></code></p>
+</div>
 </div>
 </div>
 <div class="section" id="using-tab">
@@ -629,9 +651,11 @@ $ ls
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tail science.txt
 </pre></div>
 </div>
-<div class="attention admonition">
-<p class="admonition-title"> Exercise</p>
+<div class="exercise admonition" id="week_01/01-Linux-exercise-2">
+<p class="admonition-title"><span class="caption-number">Exercise 3 </span></p>
+<div class="section" id="exercise-content">
 <p>How can you view the last 15 lines of the file?</p>
+</div>
 </div>
 </div>
 <div class="section" id="searching-the-contents-of-a-file">
@@ -771,9 +795,11 @@ lrwxrwxrwx 1 root root 10 Nov 19 14:42 /usr/bin/which -&gt; /bin/which
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ less /usr/bin/which
 </pre></div>
 </div>
-<div class="attention admonition">
-<p class="admonition-title"> Exercise</p>
+<div class="exercise admonition" id="week_01/01-Linux-exercise-3">
+<p class="admonition-title"><span class="caption-number">Exercise 4 </span></p>
+<div class="section" id="exercise-content">
 <p>Scroll through the script. Can you locate the shebang line? How does the code look like to you: easily understandable, or rather cryptic?</p>
+</div>
 </div>
 </div>
 <div class="section" id="the-path-variable">
@@ -789,9 +815,11 @@ $ export PATH=$PATH:~/myprograms
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">export</span></code> creates a new variable called PATH (in this case, it overwrites the existing PATH).</p>
-<div class="attention admonition">
-<p class="admonition-title"> Exercise</p>
+<div class="exercise admonition" id="week_01/01-Linux-exercise-4">
+<p class="admonition-title"><span class="caption-number">Exercise 5 </span></p>
+<div class="section" id="exercise-content">
 <p>Now move your executable script <code class="docutils literal notranslate"><span class="pre">myscript.sh</span></code> in the <code class="docutils literal notranslate"><span class="pre">myprograms</span></code> directory. Verify that you can now execute the <code class="docutils literal notranslate"><span class="pre">myscript.sh</span></code> program from any directory.</p>
+</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
