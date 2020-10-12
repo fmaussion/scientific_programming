@@ -477,13 +477,9 @@ to <a class="reference external" href="#packs">Install the packages</a>.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda create -n scipro python=3.8
 </pre></div>
 </div>
-<p>This created a new environment called “scipro” which has python V3.8 as
+<p>This created a new environment called “scipro” which has python version 3.8 as
 default interpreter. This environment can be activated with one command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">activate</span> <span class="n">scipro</span>
-</pre></div>
-</div>
-<p>or on windows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">activate</span> <span class="n">scipro</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">scipro</span>
 </pre></div>
 </div>
 <p>Note that after activation, the prompt changed to something like
@@ -493,11 +489,7 @@ if you need different versions of python for different projects for example.</p>
 <p><strong>Don’t forget to activate this environment</strong> every time you want to work on
 the exercises or when you want to install a new package. You can deactivate
 the current environment with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">deactivate</span>
-</pre></div>
-</div>
-<p>or on windows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">deactivate</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">deactivate</span>
 </pre></div>
 </div>
 </div>
@@ -519,7 +511,14 @@ start <code class="docutils literal notranslate"><span class="pre">ipython</span
 </pre></div>
 </div>
 <p>Use <code class="docutils literal notranslate"><span class="pre">[CTRL+D]</span></code> to close the interpreter and get back to the prompt.</p>
-<p>We will need some other packages later on, but this will get you started.</p>
+<p>We will need some other packages later on, but this will get you started. If you want to install the <a class="reference external" href="https://www.spyder-ide.org/">spyder</a> development environment, do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">spyder</span>
+</pre></div>
+</div>
+<p>And then run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">spyder3</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="optional-update-the-packages">
 <h3>Optional: update the packages<a class="headerlink" href="#optional-update-the-packages" title="Permalink to this headline">¶</a></h3>
