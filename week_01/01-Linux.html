@@ -47,6 +47,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -163,6 +165,33 @@
   </a>
  </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 03 - Variables scopes, modules, good practices
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/01-Import-Scopes.html">
+   01 - Modules, import mechanism, namespaces, scope(s)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/02-Tips-and-Tricks.html">
+   02 - Tips and tricks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/03-Good-practices.html">
+   Good practices, programming style and conventions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/Assignment-03.html">
+   Assignment #03: deeper in the python library
+  </a>
+ </li>
+</ul>
 
 </nav>
 
@@ -254,11 +283,6 @@
                     alt="Interact on binder">Binder</button></a>
         
         
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/fmaussion/scientific_programming/blob/master/book/week_01/01-Linux.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
         
         
     </div>
@@ -444,7 +468,7 @@
 <li><p><strong>At the University of Innsbruck</strong>: In order to use Linux in the computer room you have to register for an account <a class="reference external" href="http://orawww.uibk.ac.at/public_prod/owa/uvw%24web%2410.p001">here</a>. After an hour or so you will be able to connect to any computer using your username and password. The Linux distribution used at the university is <a class="reference external" href="https://www.centos.org/">CentOS</a> (not my favorite, unfortunately). If you are a student of another university, it is likely that you have access to Linux environments, too.</p></li>
 <li><p><strong>On an online, interactive MyBinder environment</strong>: my recommendation for this chapter and in times of global pandemic.</p></li>
 <li><p><strong>On your laptop with Windows 10, with <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux</a></strong>: recommended if you want to stay on Windows while still enjoying the powerful Linux command line. <em>UPDATE 2020: WSL2 seems to cause trouble to some of you (in particular, many of you cannot open graphic windows from WSL: until this problem is solved, WSL2 is not as useful as it could be)</em>.</p></li>
-<li><p><strong>On your laptop, with a live USB</strong>: this is the <a class="reference external" href="https://tutorials.ubuntu.com/tutorial/try-ubuntu-before-you-install#0">best way to try it at no risk</a> and get a feeling for the general usage of a linux distribution. This is not permanent though.</p></li>
+<li><p><strong>On your laptop, with a live USB</strong>: this is the <a class="reference external" href="https://tutorials.ubuntu.com/tutorial/try-ubuntu-before-you-install">best way to try it at no risk</a> and get a feeling for the general usage of a linux distribution. This is not permanent though.</p></li>
 <li><p><strong>On your laptop, in a virtual machine</strong>: This is a relatively easy and non-destructive way to try Linux. There are tons of tutorials online, <a class="reference external" href="https://helpdeskgeek.com/linux-tips/how-to-install-ubuntu-in-virtualbox/">this one</a> seems OK. The problem with virtual machines is that they need a lot of resources (about double) to run both OS at the same time.</p></li>
 <li><p><strong>On your laptop, alongside Windows (dual boot)</strong>: this is a bit more engaged, but the best way if you want to use both operating systems at full capacity. See <a class="reference external" href="https://help.ubuntu.com/community/WindowsDualBoot">here</a> for the official instructions. Be careful however: it is possible that things get a bit complicated going this way: secure your data first, and be prepared for some unexpected events.</p></li>
 <li><p><strong>On your laptop, without Windows</strong>: Congratulations, this is the best solution! Please check that your hardware is <a class="reference external" href="https://certification.ubuntu.com/desktop/">compatible</a> first, and follow the install instructions of your chosen OS. If you want to use Windows afterwards you can still re-install it or install it in a virtual machine.</p></li>
