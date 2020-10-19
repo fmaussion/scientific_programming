@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Good practices, programming style and conventions &#8212; Scientific Programming</title>
+    <title>03 - Good practices, programming style and conventions &#8212; Scientific Programming</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -183,7 +183,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Good practices, programming style and conventions
+   03 - Good practices, programming style and conventions
   </a>
  </li>
  <li class="toctree-l1">
@@ -335,33 +335,33 @@
               <div>
                 
   <div class="section" id="good-practices-programming-style-and-conventions">
-<h1>Good practices, programming style and conventions<a class="headerlink" href="#good-practices-programming-style-and-conventions" title="Permalink to this headline">¶</a></h1>
+<h1>03 - Good practices, programming style and conventions<a class="headerlink" href="#good-practices-programming-style-and-conventions" title="Permalink to this headline">¶</a></h1>
 <p>Python is a very versatile programming language, and it has a very flexible syntax. Therefore, it is also very easy to write <em>ugly code</em> in python. This chapter reviews a number of guidelines and conventions widely accepted by the community. At this stage of the lecture we won’t go in depth for each of these points, but try to keep them in mind while writing your assignments and also while checking my suggested solution to the assignments.</p>
 <div class="section" id="use-pep-8">
 <h2>Use PEP 8<a class="headerlink" href="#use-pep-8" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a> is a style guide for python code. It introduces new rules where the syntax leaves them open. As an example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># OK syntax but not PEP8 compliant </span>
-<span class="n">a</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span>
-<span class="c1"># OK syntax *and* PEP8 compliant</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="mi">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Syntax OK but not PEP8 compliant </span>
+<span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">x</span><span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="c1"># Syntax OK *and* PEP8 compliant</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>PEP8 gives <em>guidelines</em>, not strict rules. It is your choice to comply with them or not. As a matter of fact however, many open source projects have adopted PEP8 and require to use it if you want to contribute. If you want to use it too, a good choice is to turn on PEP8 checking in your favorite IDE (in Spyder: <code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">-&gt;</span> <span class="pre">Preferences</span> <span class="pre">-&gt;</span> <span class="pre">Editor</span> <span class="pre">-&gt;</span> <span class="pre">Code</span> <span class="pre">Introspection/Analysis</span> <span class="pre">-&gt;</span> </code> Tick <code class="docutils literal notranslate"><span class="pre">Real-time</span> <span class="pre">code</span> <span class="pre">style</span> <span class="pre">analysis</span></code> for PEP8 style analysis).</p>
+<p>PEP8 gives <em>guidelines</em>, not strict rules. It is your choice to comply with them or not. As a matter of fact however, many open source projects have adopted PEP8 and require to use it if you want to contribute. If you want to use it too, a good choice is to turn on PEP8 checking in your favorite IDE (in Spyder: <code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">-&gt;</span> <span class="pre">Preferences</span> <span class="pre">-&gt;</span> <span class="pre">Completion</span> <span class="pre">and</span> <span class="pre">linting</span> <span class="pre">-&gt;</span> <span class="pre">Code</span> <span class="pre">style</span> <span class="pre">-&gt;</span> </code> Tick <code class="docutils literal notranslate"><span class="pre">Enable</span> <span class="pre">code</span> <span class="pre">style</span> <span class="pre">linting</span></code> for PEP8 style analysis).</p>
 </div>
 <div class="section" id="give-meaningful-names-to-variables-and-functions">
 <h2>Give meaningful names to variables and functions<a class="headerlink" href="#give-meaningful-names-to-variables-and-functions" title="Permalink to this headline">¶</a></h2>
 <p>The text space that code is taking is less important than your time. Give meaningful name to your variables and functions, even if it makes them quite long! For example, prefer:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fahrenheit_to_celsius</span><span class="p">(</span><span class="n">temp</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Converts degrees Fahrenheits to degrees Celsius.&quot;&quot;&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fahrenheit_to_celsius</span><span class="p">(</span><span class="n">temp_fahrenheit</span><span class="p">):</span>
 </pre></div>
 </div>
 <p>to the shorter but less explicit:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Converts degrees Fahrenheits to degrees Celsius.&quot;&quot;&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -381,8 +381,7 @@
 <div class="section" id="document-your-code">
 <h2>Document your code<a class="headerlink" href="#document-your-code" title="Permalink to this headline">¶</a></h2>
 <p>Write comments in your code, and document the functions with docstrings. We will have a full lecture about it, but it’s good to start early. Here again, there are <a class="reference external" href="https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt">some conventions</a> that I recommend to follow.</p>
-<p>Note that this is useful even if you don’t plan to share your code. At the very last there is at least one person reading your code: yourself! And it’s always a good idea to be nice to yourself ;-)</p>
-<p>Abstruse Goose made a <a class="reference external" href="http://abstrusegoose.com/432">fun comic</a> about code documentation.</p>
+<p>Note that this is useful even if you don’t plan to share your code. At the very last there is at least one person reading your code: yourself! And it’s always a good idea to be nice to yourself! (see the related <a class="reference external" href="http://abstrusegoose.com/432">Abstruse Goose comic</a>)</p>
 </div>
 <div class="section" id="the-zen-of-python">
 <h2>The Zen of Python<a class="headerlink" href="#the-zen-of-python" title="Permalink to this headline">¶</a></h2>
