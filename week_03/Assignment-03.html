@@ -58,6 +58,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="01 - Introduction to numpy: why does numpy exist?" href="../week_04/01-Why-Numpy.html" />
     <link rel="prev" title="03 - Good practices, programming style and conventions" href="03-Good-practices.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -188,6 +189,28 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Assignment #03
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 04 - Floating point arithmetics, Numpy basics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_04/01-Why-Numpy.html">
+   01 - Introduction to numpy: why does numpy exist?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_04/02-Numbers.html">
+   02 - Number representation in computers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_04/Assignment-04.html">
+   Assignment #04
   </a>
  </li>
 </ul>
@@ -323,8 +346,8 @@
 <p>In order to protect from disruptive “download all” behavior, the files stored here cannot be listed (i.e. automated data scraping won’t work). Fortunately for us, the file naming convention is very simple:</p>
 <ul class="simple">
 <li><p>example file: <a class="reference external" href="http://srtm.csi.cgiar.org/wp-content/uploads/files/srtm_5x5/TIFF/srtm_39_04.zip">http://srtm.csi.cgiar.org/wp-content/uploads/files/srtm_5x5/TIFF/srtm_39_04.zip</a></p></li>
-<li><p>the first two digits number gives the location of the tile in the longitudes (starting at 180° West)</p></li>
-<li><p>the last two digits number gives the location of the tile in the latitudes (starting at 60° North and going southwards)</p></li>
+<li><p>the first two digits give the location of the tile in the longitudes (starting at 180° West)</p></li>
+<li><p>the last two digits give the location of the tile in the latitudes (starting at 60° North and going southwards)</p></li>
 </ul>
 <p>Here are some examples of locations and their associated tile:</p>
 <ul class="simple">
@@ -336,7 +359,7 @@
 <p>And so forth.</p>
 <p><strong>A. Write a script which, given a longitude and a latitude as arguments, downloads the corresponding file</strong> in the current directory. The tool should print an error message when the given location is not valid and exit the script.</p>
 <p><em>Hint A1: define “valid” locations first: some are easy to catch, some cannot be caught automatically. Do we really have to deal with those?</em></p>
-<p><em>Hint A2: unlike last week where we asked for user input, here I’m asking for a script with <a class="reference external" href="https://docs.python.org/3/tutorial/stdlib.html?highlight=sys%20argv#command-line-arguments">command line arguments</a>. That is, the command <code class="docutils literal notranslate"><span class="pre">%run</span> <span class="pre">download_srtm.py</span> <span class="pre">9</span> <span class="pre">44</span></code> (in an ipython interpreter) should download the file at the location 9°W, 44°N.</em></p>
+<p><em>Hint A2: unlike last week where we asked for user input, here I’m asking for a script with <a class="reference external" href="https://docs.python.org/3/tutorial/stdlib.html?highlight=sys%20argv#command-line-arguments">command line arguments</a>. The command <code class="docutils literal notranslate"><span class="pre">%run</span> <span class="pre">download_srtm.py</span> <span class="pre">9</span> <span class="pre">44</span></code> (in an ipython interpreter) should download the file at the location 9°W, 44°N.</em></p>
 <p><em>Hint A3: although I agree with the python documentation that <code class="docutils literal notranslate"><span class="pre">argparse</span></code> is more robust (and much better) than parsing <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> yourself, for the purpose of learning I would like you to use <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> today and handle the command line arguments yourselves.</em></p>
 <p><strong>B.</strong> Extend this script to be a bit more clever: <strong>download the data file only if the file isn’t already available in the current directory</strong>. This is particularly useful because the server is not very fast.</p>
 <p><strong>C.</strong> Extend this script to be even more clever: <strong>given a range of longitudes and latitudes, it should download all the files covering this area</strong>. For example, the range 9°W to 18°W and 44°N to 47°N would download 6 files. <strong>In order to avoid manual mistakes, warn the user by announcing the number of files that the command is going to download, and ask for confirmation before going on</strong> (by using the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function).</p>
@@ -348,7 +371,7 @@
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--output-dir</span> <span class="pre">/path/to/a/dir</span></code> should <strong>write the file (and check for its existence) in the directory given as argument</strong></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--default-dir</span></code> should do following: it checks for a hidden file in the user’s <code class="docutils literal notranslate"><span class="pre">$HOME</span></code> directory called <code class="docutils literal notranslate"><span class="pre">.demdownrc</span></code> (a text file), which if present should be opened to read one single line of text: the path to the default directory. If this file does not exist, ask the user to provide the default directory as input in the command line, and write this information in the <code class="docutils literal notranslate"><span class="pre">.demdownrc</span></code> file on disk (your script has to create this file)</p></li>
-<li><p>in both cases, if the target directory does not exist, print a message to screen indicating that you can’t continue and exit the script</p></li>
+<li><p>in both cases, if the target directory does not exist, print a message to the screen, indicating that you can’t continue and exit the script</p></li>
 <li><p>you can decide if <code class="docutils literal notranslate"><span class="pre">--default-dir</span></code> can or cannot be at any location in the argument list, i.e. <code class="docutils literal notranslate"><span class="pre">%run</span> <span class="pre">download_srtm.py</span> <span class="pre">9</span> <span class="pre">44</span> <span class="pre">--default-dir</span> <span class="pre">18</span> <span class="pre">47</span></code> could be a valid command or not. However, <code class="docutils literal notranslate"><span class="pre">%run</span> <span class="pre">download_srtm.py</span> <span class="pre">9</span> <span class="pre">44</span> <span class="pre">18</span> <span class="pre">47</span> <span class="pre">--default-dir</span></code> should be a valid command.</p></li>
 </ul>
 <p><strong>D4.</strong> (optional: rasterio package installation and windows issues likely!) <strong>if the user asks for a plot, write a plot to disk</strong> (alongside the DEM file) with the file name <code class="docutils literal notranslate"><span class="pre">srtm_39_04.png</span></code> (if the tile 39, 4 was asked for). The user may ask for a plot by adding a <code class="docutils literal notranslate"><span class="pre">--plot</span></code> to the list of arguments. I.e. <code class="docutils literal notranslate"><span class="pre">%run</span> <span class="pre">download_srtm.py</span> <span class="pre">9</span> <span class="pre">44</span> <span class="pre">18</span> <span class="pre">47</span> <span class="pre">--default-dir</span> <span class="pre">--plot</span></code> would write 6 plots in the user-chosen default directory.</p>
@@ -368,7 +391,7 @@
 </pre></div>
 </div>
 <p>No need to add more features to the plot than that: we haven’t talked about these libraries yet! Just make sure that the filename is set to the correct value.</p>
-<p><em>Note: you’ll need the matplotlib, xarray and rasterio libraries installed for this to work (on your laptop: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">matplotlib</span> <span class="pre">xarray</span> <span class="pre">rasterio</span></code>). Also, I’m not sure this is going to work on Windows.</em></p>
+<p><em>Note: you’ll need the matplotlib, xarray and rasterio libraries installed for this to work (on your laptop: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">matplotlib</span> <span class="pre">xarray</span> <span class="pre">rasterio</span></code>). Although, I’m not sure if this is going to work on Windows.</em></p>
 </div>
 </div>
 
@@ -401,6 +424,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="03-Good-practices.html" title="previous page">03 - Good practices, programming style and conventions</a>
+    <a class='right-next' id="next-link" href="../week_04/01-Why-Numpy.html" title="next page">01 - Introduction to numpy: why does numpy exist?</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -192,6 +192,28 @@
   </a>
  </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 04 - Floating point arithmetics, Numpy basics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_04/01-Why-Numpy.html">
+   01 - Introduction to numpy: why does numpy exist?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_04/02-Numbers.html">
+   02 - Number representation in computers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_04/Assignment-04.html">
+   Assignment #04
+  </a>
+ </li>
+</ul>
 
 </nav>
 
@@ -299,8 +321,8 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variables-scopes">
-   Variables scopes
+  <a class="reference internal nav-link" href="#variable-scopes">
+   Variable scopes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -347,8 +369,8 @@
   <div class="section" id="modules-import-mechanism-namespaces-scope-s">
 <h1>01 - Modules, import mechanism, namespaces, scope(s)<a class="headerlink" href="#modules-import-mechanism-namespaces-scope-s" title="Permalink to this headline">¶</a></h1>
 <p>In this chapter we will dive into one of the most important features of python: the <code class="docutils literal notranslate"><span class="pre">import</span></code> mechanism. We will explain why modules are useful, how to “import” them, and how you can write one yourself.</p>
-<div class="section" id="variables-scopes">
-<h2>Variables scopes<a class="headerlink" href="#variables-scopes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="variable-scopes">
+<h2>Variable scopes<a class="headerlink" href="#variable-scopes" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>scope</strong> of a variable is the region of the program where the variable is valid, i.e. the “location” where the variable name can be used to refer to the data it links to. Let’s consider this first example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -663,7 +685,7 @@
 <div class="exercise admonition" id="week_03/01-Import-Scopes-exercise-3">
 <p class="admonition-title"><span class="caption-number">Exercise 11 </span></p>
 <div class="section" id="exercise-content">
-<p>Try to find arguments as to why is option D a bad idea. <strong>If you can’t find any reason, ask me next week</strong>!</p>
+<p>Try to find arguments why option D is a bad idea. <strong>If you can’t find any reason, ask me next week</strong>!</p>
 </div>
 </div>
 </div>
@@ -696,11 +718,11 @@
 </div>
 </div>
 </div>
-<p>But this will add my folder to the current session or script only. To add a folder permanently, you can use the <a class="reference external" href="https://docs.python.org/3/using/cmdline.html?highlight=pythonpath#envvar-PYTHONPATH">PYTHONPATH</a> environment variable.</p>
+<p>But this will add the folder to the current session or script only. To add a folder permanently, you can use the <a class="reference external" href="https://docs.python.org/3/using/cmdline.html?highlight=pythonpath#envvar-PYTHONPATH">PYTHONPATH</a> environment variable.</p>
 <div class="exercise admonition" id="week_03/01-Import-Scopes-exercise-4">
 <p class="admonition-title"><span class="caption-number">Exercise 12 </span></p>
 <div class="section" id="exercise-content">
-<p>Print your own <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> on your laptop and explore the folders listed here.</p>
+<p>Print your own <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> on your laptop and explore the folders listed there.</p>
 <p>Now let’s play with <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> a little. Create a fake module called <code class="docutils literal notranslate"><span class="pre">matplotlib.py</span></code> in your current working directory. Open a python interpreter and <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">matplotlib</span></code>. Which of the modules (the official or the fake one) is loaded by python, and why?</p>
 </div>
 </div>
@@ -728,7 +750,7 @@
 </div>
 </div>
 </div>
-<p>This can reimport a module which has been imported before (i.e. it won’t do the search for it again). But this has to be done <em>each time</em> you change a module, making it quite cumbersome in interactive mode. Here again, ipython comes with a more flexible solution:</p>
+<p>This can reimport a module which has been imported before (i.e. it won’t search for it again). But this has to be done <em>each time</em> you change a module, making it quite cumbersome in interactive mode. Here again, ipython comes with a more flexible solution:</p>
 <ol class="simple">
 <li><p>Using ipython’s <a class="reference external" href="https://ipython.readthedocs.io/en/stable/config/extensions/autoreload.html">autoreload</a> extension:</p></li>
 </ol>
@@ -805,7 +827,7 @@
 </div>
 </div>
 </div>
-<p>Now, back to our script: the statement <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span></code> is going to be false when the module is imported (since the name is <code class="docutils literal notranslate"><span class="pre">greetings</span></code>), but obviously true when the module is run as script. Indeed, <code class="docutils literal notranslate"><span class="pre">__name__</span></code> is set to <code class="docutils literal notranslate"><span class="pre">__main__</span></code> when executed.</p>
+<p>Now, back to our script: the statement <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span></code> is going to be false when the module is imported (since the name is <code class="docutils literal notranslate"><span class="pre">greetings</span></code>), but obviously true when the module is run as a script. Indeed, <code class="docutils literal notranslate"><span class="pre">__name__</span></code> is set to <code class="docutils literal notranslate"><span class="pre">__main__</span></code> when executed.</p>
 </div>
 <div class="section" id="take-home-points">
 <h2>Take home points<a class="headerlink" href="#take-home-points" title="Permalink to this headline">¶</a></h2>

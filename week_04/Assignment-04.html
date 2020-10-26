@@ -1,0 +1,551 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment #04 &#8212; Scientific Programming</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="02 - Number representation in computers" href="02-Numbers.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Scientific Programming</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../welcome.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../faq.html">
+   Frequently Asked  Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   External resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../slides.html">
+   Presentation slides
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 01 - Linux &amp; Python primer
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/01-Linux.html">
+   01 - A very short introduction to Linux
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/02-Installation.html">
+   02 - Installing Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/03-Getting-Started.html">
+   03 - Getting started with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/Assignment-01.html">
+   Assignment #01
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 02 - Python language fundamentals
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_02/01-Language-Fundamentals.html">
+   01 - Language fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_02/Assignment-02.html">
+   Assignment #02
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 03 - Variables scopes, modules, good practices
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/01-Import-Scopes.html">
+   01 - Modules, import mechanism, namespaces, scope(s)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/02-Tips-and-Tricks.html">
+   02 - Tips and tricks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/03-Good-practices.html">
+   03 - Good practices, programming style and conventions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/Assignment-03.html">
+   Assignment #03
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 04 - Floating point arithmetics, Numpy basics
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-Why-Numpy.html">
+   01 - Introduction to numpy: why does numpy exist?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-Numbers.html">
+   02 - Number representation in computers
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Assignment #04
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/week_04/Assignment-04.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/fmaussion/scientific_programming"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_04/Assignment-04.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_04/Assignment-04.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_04/Assignment-04.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-04-01-a-glimpse-in-the-c-language">
+   Exercise #04-01: a glimpse in the C language
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-04-02-monte-carlo-estimation-of-pi">
+   Exercise #04-02: Monte-Carlo estimation of
+   <span class="math notranslate nohighlight">
+    \(\pi\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-04-03-a-new-format-based-on-fixed-point-binary-numbers">
+   Exercise #04-03: a new format based on fixed point binary numbers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-04-04-exponential-error-growth">
+   Exercise #04-04: exponential error growth
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="assignment-04">
+<h1>Assignment #04<a class="headerlink" href="#assignment-04" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="exercise-04-01-a-glimpse-in-the-c-language">
+<h2>Exercise #04-01: a glimpse in the C language<a class="headerlink" href="#exercise-04-01-a-glimpse-in-the-c-language" title="Permalink to this headline">¶</a></h2>
+<p>This exercise can be done on a linux machine only!</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use MyBinder’s terminal if you don’t have Linux!</p>
+</div>
+<p>Here is the C code sample from the lecture:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="c1"> </span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+    <span class="n">printf</span> <span class="p">(</span><span class="s">&quot;Sum of two numbers : %d </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Write this code in a C code file, compile and run it.</strong></p>
+<p><strong>Now, replace the line <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">3</span></code> with <code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">b[]</span> <span class="pre">=</span> <span class="pre">&quot;Hello&quot;;</span></code>. Compile and run the program again (ignore warnings at compilation). Does the output match your expectations? Can you explain what happens? Compare this behavior to python’s, and try to explain why this behavior can lead to faster execution times.</strong></p>
+</div>
+<div class="section" id="exercise-04-02-monte-carlo-estimation-of-pi">
+<h2>Exercise #04-02: Monte-Carlo estimation of <span class="math notranslate nohighlight">\(\pi\)</span><a class="headerlink" href="#exercise-04-02-monte-carlo-estimation-of-pi" title="Permalink to this headline">¶</a></h2>
+<p><a id='vector'></a></p>
+<p>A simple way to estimate <span class="math notranslate nohighlight">\(\pi\)</span> using a computer is based on a <a class="reference external" href="https://en.wikipedia.org/wiki/Monte_Carlo_method">Monte-Carlo</a> method. By drawing a sample of N points with random 2D coordinates (x, y) in the <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1[</span></code> range, the ratio of points that fall within the unit circle divided by the total number of points (N) gives an estimate of <span class="math notranslate nohighlight">\(\pi / 4\)</span>.</p>
+<p><strong>Provide two implementations of the monte-carlo estimation of <span class="math notranslate nohighlight">\(\pi\)</span>: a pure python version (standard library) and a vectorized version using numpy. Time their execution for N = [1e2, 1e3, …, 1e7]. Optional: plot the numpy speed-up as a function of N.</strong></p>
+<p><strong>Optional: try the numpy version with N=1e8 and above. Make conclusions about a new trade-off happening for large values of N.</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can try to mimic ipython’s <code class="docutils literal notranslate"><span class="pre">%timeit</span></code> in your code by running each function at least three times and taking the fastest execution of all three.</p>
+</div>
+</div>
+<div class="section" id="exercise-04-03-a-new-format-based-on-fixed-point-binary-numbers">
+<h2>Exercise #04-03: a new format based on fixed point binary numbers<a class="headerlink" href="#exercise-04-03-a-new-format-based-on-fixed-point-binary-numbers" title="Permalink to this headline">¶</a></h2>
+<p>Write a function which converts binary strings to decimal numbers. The function should handle unsigned (positive) numbers only. Examples:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'101010'</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">42</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'10000.1'</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">16.5</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'1011101101.10101011'</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">749.66796875</span></code></p></li>
+</ul>
+<p>Now let’s develop a new standard based on this representation. Dots cannot be represented by 0s and 1s, so that if we want the position of the dot to be flexible we need an additional memory slot to store this position. Let’s define our new format as a 32 bits long sequence of bits, the first 5 bits (starting from the left) being used to give the position of the dot, and the remaining 27 bits used to represent the number. Examples:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'10101010101010101010101010101010'</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">699050.65625</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'00000001100110011001100110011001'</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">0.19999999552965164</span></code>.</p></li>
+</ul>
+<p>Explanation for example 1: the first five digits are <code class="docutils literal notranslate"><span class="pre">'10101'</span></code> which gives the number 21. The second part of the string therefore becomes a dot at position 21: <code class="docutils literal notranslate"><span class="pre">'010101010101010101010.101010'</span></code>. This binary number is then converted to decimal.</p>
+<p>Let’s name this standard “BSE” (for “best standard ever”), and try to convince the <em>Institute of Electrical and Electronics Engineers</em> to adopt it in place of the old IEEE 754 standard. We have to answer the following questions:</p>
+<ul class="simple">
+<li><p>what is the smallest number the BSE can represent? The largest?</p></li>
+<li><p>what is the maximal accuracy of the BSE? (in other words, what is the difference between the smallest positive number and zero?)</p></li>
+<li><p>what is the lowest accuracy of our standard? (in other words, what is the difference between the largest number we can represent and the second largest?)</p></li>
+<li><p>does the difference between two nearest representable change, when the dot position doesn’t?</p></li>
+<li><p>now compute the precision of our format for a range of possible values of the BSE</p></li>
+<li><p>for these values, compare the BSE to the IEEE754 <code class="docutils literal notranslate"><span class="pre">binary32</span></code> format (or its numpy equivalent <code class="docutils literal notranslate"><span class="pre">np.float32</span></code>) using <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.nextafter.html">numpy.nextafter</a>.</p></li>
+<li><p>(optional: you can also use matplotlib and a log-log plot to produce a graphic similar to the <a class="reference external" href="https://en.wikipedia.org/wiki/IEEE_754#Basic_and_interchange_formats">wikipedia page on IEEE 754</a>)</p></li>
+</ul>
+<p>Conclude. Do you think we should try to convince the <em>Institute of Electrical and Electronics Engineers</em> and <a class="reference external" href="https://xkcd.com/541/">present them our results</a>?</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The BSE format <strong>is not</strong> the IEEE754 format. The BSE is a fun format explaining <em>some</em> (but not all) of the underlying concepts behind floating point numbers. I’m just saying, because some people got confused during the exam and remembered the BSE better than the real floating point representation…</p>
+</div>
+</div>
+<div class="section" id="exercise-04-04-exponential-error-growth">
+<h2>Exercise #04-04: exponential error growth<a class="headerlink" href="#exercise-04-04-exponential-error-growth" title="Permalink to this headline">¶</a></h2>
+<p>The number <code class="docutils literal notranslate"><span class="pre">e</span></code> can be defined as the sum of the infinite series:</p>
+<div class="math notranslate nohighlight">
+\[e = \sum_{n=0}^{\infty} \frac{1}{n!}\]</div>
+<p>We are going to approximate this number by truncating the sum to a finite value. We use the <strong>standard library</strong> and it’s math module:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e1</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
+<span class="n">e1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.7182818284590455
+</pre></div>
+</div>
+</div>
+</div>
+<p>Close enough! Now let’s compute it with the same values, but summed from n=100 to n=0:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e2</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)][::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">e2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.718281828459045
+</pre></div>
+</div>
+</div>
+</div>
+<p>Seems reasonable too! Are they different?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e1</span> <span class="o">-</span> <span class="n">e2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.440892098500626e-16
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Which of the two values is closest to the actual e? Explain why this occurs, and what we can learn from this experiment.</strong></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./week_04"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="02-Numbers.html" title="previous page">02 - Number representation in computers</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Fabien Maussion<br/>
+        
+          <div class="extra_footer">
+            <p>
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+  <img align="right" class="margin" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg" width="88px">
+</a>
+These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International (CC BY 4.0) license</a>.
+<br>
+&copy; Copyright 2018-2020.
+</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-88391345-1', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>
