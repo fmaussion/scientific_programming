@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment #02 &#8212; Scientific Programming</title>
+    <title>02 - The scientific python stack &#8212; Scientific Programming</title>
     
   <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
 
@@ -58,8 +58,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="01 - Modules, import mechanism, namespaces, scope(s)" href="../week_03/01-Import-Scopes.html" />
-    <link rel="prev" title="01 - Language fundamentals" href="01-Language-Fundamentals.html" />
+    <link rel="next" title="Assignment #05" href="Assignment-05.html" />
+    <link rel="prev" title="01 - Arrays in numpy: indexing, ufuncs, broadcasting" href="01-Numpy-ndarrays.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -153,14 +153,14 @@
   Week 02 - Python language fundamentals
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="01-Language-Fundamentals.html">
+  <a class="reference internal" href="../week_02/01-Language-Fundamentals.html">
    01 - Language fundamentals
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_02/Assignment-02.html">
    Assignment #02
   </a>
  </li>
@@ -219,19 +219,19 @@
   Week 05 - Scientific Python
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../week_05/01-Numpy-ndarrays.html">
+  <a class="reference internal" href="01-Numpy-ndarrays.html">
    01 - Arrays in numpy: indexing, ufuncs, broadcasting
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_05/02-Scientific-Python.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    02 - The scientific python stack
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../week_05/Assignment-05.html">
+  <a class="reference internal" href="Assignment-05.html">
    Assignment #05
   </a>
  </li>
@@ -277,7 +277,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/week_02/Assignment-02.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/week_05/02-Scientific-Python.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -297,10 +297,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_02/Assignment-02.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_05/02-Scientific-Python.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_02/Assignment-02.ipynb"><button
+        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_05/02-Scientific-Python.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -320,7 +320,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_02/Assignment-02.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_05/02-Scientific-Python.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -343,18 +343,23 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-02-01-cryptography-for-roman-emperors">
-   Exercise #02-01: cryptography for Roman Emperors
+  <a class="reference internal nav-link" href="#python-s-scientific-ecosystem">
+   Python’s scientific ecosystem
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-02-02-the-substitution-cipher">
-   Exercise #02-02: the substitution cipher
+  <a class="reference internal nav-link" href="#the-core-packages">
+   The core packages
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#just-for-fun-optional-exercise">
-   Just for fun: optional exercise
+  <a class="reference internal nav-link" href="#essential-numpy-extensions">
+   Essential numpy “extensions”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#domain-specific-packages">
+   Domain specific packages
   </a>
  </li>
 </ul>
@@ -368,95 +373,61 @@
         
               <div>
                 
-  <div class="section" id="assignment-02">
-<h1>Assignment #02<a class="headerlink" href="#assignment-02" title="Permalink to this headline">¶</a></h1>
-<p>Today’s exercises have to be done with help of the python <strong>standard library</strong> alone! <strong>No external module can be used</strong>.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Can you remember what the “standard library” is? <a class="reference external" href="https://docs.python.org/3/library/">Here</a> is a list of all the modules and built-ins it provides: so quite a lot!</p>
+  <div class="section" id="the-scientific-python-stack">
+<h1>02 - The scientific python stack<a class="headerlink" href="#the-scientific-python-stack" title="Permalink to this headline">¶</a></h1>
+<p>Unlike Matlab, the set of Python tools used by scientists does not come from one single source. It is the result of a non-coordinated, chaotic and creative development process originating from a community of volunteers and professionals.</p>
+<p>In this chapter I will shortly describe some of the essential tools that every scientific python programmer should know about. It is not representative or complete: it’s just a list of packages I happen to know about, and I surely missed many of them.</p>
+<div class="section" id="python-s-scientific-ecosystem">
+<h2>Python’s scientific ecosystem<a class="headerlink" href="#python-s-scientific-ecosystem" title="Permalink to this headline">¶</a></h2>
+<p>The set of python scientific packages is sometimes referred to as the “scientific python ecosystem”. I didn’t find an official explanation for this name, but I guess that it has something to do with the fact that many packages rely on the others to build new features on top of them, like a natural ecosystem.</p>
+<p>Jake Vanderplas made a great graphic in a <a class="reference external" href="https://speakerdeck.com/jakevdp/the-state-of-the-stack-scipy-2015-keynote">2015 presentation</a> (the video of the presentation is also <a class="reference external" href="https://www.youtube.com/watch?v=5GlNDD7qbP4">available here</a> if you are interested), and I took the liberty to adapt it a little bit:</p>
+<p><img alt="img" src="https://fabienmaussion.info/acinn_python_workshop/figures/scipy_ecosystem.png" /></p>
 </div>
-<div class="section" id="exercise-02-01-cryptography-for-roman-emperors">
-<h2>Exercise #02-01: cryptography for Roman Emperors<a class="headerlink" href="#exercise-02-01-cryptography-for-roman-emperors" title="Permalink to this headline">¶</a></h2>
-<p>A very simple encryption technique is called the <a class="reference external" href="http://en.wikipedia.org/wiki/Caesar_cipher">Caesar cipher</a>. The basic idea is that each letter is replaced by a letter that is a certain number of letters away, so for example if the shift was 2, then A would become C, B would become D, and Z will become B.</p>
-<p><strong>A. Write a function that given a string and a shift, will produce the encrypted string for that shift</strong>. The rules are:</p>
+<div class="section" id="the-core-packages">
+<h2>The core packages<a class="headerlink" href="#the-core-packages" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>you should accept lowercase and uppercase letters, and return letters of the same case</p></li>
-<li><p>spaces or other punctuation characters should not be changed.</p></li>
+<li><p><strong>numpy</strong>: <a class="reference external" href="https://docs.scipy.org/doc/">documentation</a>, <a class="reference external" href="https://github.com/numpy/numpy">code repository</a></p></li>
+<li><p><strong>scipy</strong>: <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/">documentation</a>, <a class="reference external" href="https://github.com/scipy/scipy">code repository</a></p></li>
+<li><p><strong>matplotlib</strong>: <a class="reference external" href="https://matplotlib.org/">documentation</a>, <a class="reference external" href="https://github.com/matplotlib/matplotlib">code repository</a></p></li>
 </ul>
-<p>There are several ways to reach this result. Just pick the one which makes more sense to you. Then, decrypt the following message, which was encrypted with a shift of 13:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Pbatenghyngvbaf, lbh unir fhpprrqrq va qrpelcgvat gur fgevat.
-</pre></div>
+<p>Numpy provides the N-dimensional arrays necessary to do fast computations, and SciPy adds the fundamental scientific tools to it. SciPy is a very large package and covers many aspects of the scientific workflow. It is organized in submodules, all dedicated to a specific aspect of data processing. For example: <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/integrate.html">scipy.integrate</a>, <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html">scipy.optimize</a>, or <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/linalg.html">scipy.linalg</a>. Matplotlib is the traditional package to make graphics in python.</p>
 </div>
-<p><strong>B. Now write a decoding script</strong> <code class="docutils literal notranslate"><span class="pre">caesar.py</span></code> which, when run in the command line, prints the decoded phrase after asking the user to enter a phrase and a shift with which it was encrypted. Test your script on the sentence above.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Make use of python’s <a class="reference external" href="https://docs.python.org/3/library/functions.html#input">input()</a> function</p>
+<div class="section" id="essential-numpy-extensions">
+<h2>Essential numpy “extensions”<a class="headerlink" href="#essential-numpy-extensions" title="Permalink to this headline">¶</a></h2>
+<p>There are two packages which I consider essential when it comes to data processing:</p>
+<ul class="simple">
+<li><p><strong>pandas</strong> provides data structures designed to make working with labeled data both easy and intuitive (<a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/">documentation</a>, <a class="reference external" href="https://github.com/pandas-dev/pandas">code repository</a>).</p></li>
+<li><p><strong>xarray</strong> extends pandas to N-dimensional arrays (<a class="reference external" href="http://xarray.pydata.org">documentation</a>, <a class="reference external" href="https://github.com/pydata/xarray">code repository</a>).</p></li>
+</ul>
+<p>They both add a layer of abstraction to numpy arrays, giving “names” and “labels” to their dimensions and the data they contain. We will talk about them in the lecture, and most importantly, you will use both of them during the climate and cryosphere master lectures.</p>
 </div>
-<p><strong>C. Now try to decrypt this sentence, for which the shift is unknown</strong>:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Gwc uivioml bw nqvl bpm zqopb apqnb.
-</pre></div>
-</div>
-<p>One way to solve this problem involves human decision, but another way can be fully automated (and implies more work). Pick the one you want! You can also add the decryption option to your script if you want.</p>
-</div>
-<div class="section" id="exercise-02-02-the-substitution-cipher">
-<h2>Exercise #02-02: the substitution cipher<a class="headerlink" href="#exercise-02-02-the-substitution-cipher" title="Permalink to this headline">¶</a></h2>
-<p>Since we managed to crack the code above so easily, maybe we should use a better cryptographic algorithm from now on.</p>
-<p>The Caesar cipher is a special case of the more general <a class="reference external" href="https://en.wikipedia.org/wiki/Substitution_cipher">substitution cipher</a>. In this cipher, any new combined alphabet (or sequence of bits, characters, numbers…) can be used in place of the regular alphabet.</p>
-<p>To simplify things a bit, we will use python’s <code class="docutils literal notranslate"><span class="pre">random</span></code> module and in particular it’s <a class="reference external" href="https://docs.python.org/3/library/random.html#random.shuffle">shuffle</a> function to do the job. To generate a random (but predictable) substitution table we can use the mechanism of “seeds”, which can be seen as a secret key that you’ll have to (privately) give to your forbidden lover for him/her to decipher your message. This works as following:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alphabet</span> <span class="o">=</span> <span class="s1">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span>
-<span class="n">seed</span> <span class="o">=</span> <span class="mi">42</span>  <span class="c1"># the secret key known by both parties </span>
-
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
-
-<span class="n">new_alphabet</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">alphabet</span><span class="p">)</span>
-<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">new_alphabet</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">new_alphabet</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;q&#39;, &#39;m&#39;, &#39;j&#39;, &#39;z&#39;, &#39;t&#39;, &#39;g&#39;, &#39;f&#39;, &#39;k&#39;, &#39;p&#39;, &#39;w&#39;, &#39;l&#39;, &#39;s&#39;, &#39;b&#39;, &#39;o&#39;, &#39;x&#39;, &#39;n&#39;, &#39;c&#39;, &#39;r&#39;, &#39;y&#39;, &#39;e&#39;, &#39;v&#39;, &#39;h&#39;, &#39;i&#39;, &#39;a&#39;, &#39;d&#39;, &#39;u&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>A. Building upon the template from the previous exercise, create a script <code class="docutils literal notranslate"><span class="pre">substitute.py</span></code> which now asks:</strong>
-1. for a phrase to encrypt or decrypt
-2. whether the script should Encrypt (E) or Decrypt (D) the phrase
-3. which seed should be used (it should always be an integer, but can be any integer)</p>
-<p><strong>B. Since your cipher still preserves the location of punctuation (space, points, exclamation marks, etc.), it is easier to crack. Can you think of a very simple way to substitute these characters as well for better encoding?</strong> (minimal change in code)</p>
-</div>
-<div class="section" id="just-for-fun-optional-exercise">
-<h2>Just for fun: optional exercise<a class="headerlink" href="#just-for-fun-optional-exercise" title="Permalink to this headline">¶</a></h2>
-<p>The female to male ratio in this year’s class is 8 to 16. I made 6 groups of 4 students, and obtain the following distribution: 0 FFFF, 2 FFMM, 4 FMMM, and 0 MMMM groups. Compare these statistics to the distribution obtained with a true random choice, by calculating the percentage of each group’s occurrence in a full cycle of all possible group combinations. You can do this by using the python standard library only, with the <a class="reference external" href="https://docs.python.org/3/library/itertools.html">itertools</a> module.</p>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">itertools</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
-
-<span class="n">d</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations</span><span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="s1">&#39;F&#39;</span> <span class="o">+</span> <span class="mi">16</span> <span class="o">*</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-
-<span class="n">n</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Chances of pick:&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{:5.2f}</span><span class="s1">%&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">v</span> <span class="o">/</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Chances of pick:
-(&#39;F&#39;, &#39;F&#39;, &#39;F&#39;, &#39;F&#39;)  0.66%
-(&#39;F&#39;, &#39;F&#39;, &#39;F&#39;, &#39;M&#39;)  8.43%
-(&#39;F&#39;, &#39;F&#39;, &#39;M&#39;, &#39;M&#39;) 31.62%
-(&#39;F&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;) 42.16%
-(&#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;) 17.13%
-</pre></div>
-</div>
-</div>
-</div>
+<div class="section" id="domain-specific-packages">
+<h2>Domain specific packages<a class="headerlink" href="#domain-specific-packages" title="Permalink to this headline">¶</a></h2>
+<p>There are so many of them! I can’t list them all, but here are a few that you will probably come across in your career:</p>
+<p><strong>Geosciences/Meteorology</strong>:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://unidata.github.io/MetPy/latest/index.html">MetPy</a>: the meteorology toolbox</p></li>
+<li><p><a class="reference external" href="https://scitools.org.uk/cartopy">Cartopy</a>: maps and map projections</p></li>
+<li><p><a class="reference external" href="https://xesmf.readthedocs.io/en/latest/">xESMF</a>: Universal Regridder for Geospatial Data</p></li>
+<li><p><a class="reference external" href="https://xgcm.readthedocs.io/en/latest/">xgcm</a>: General Circulation Model Postprocessing with xarray</p></li>
+<li><p><a class="reference external" href="http://geopandas.org/">GeoPandas</a>: Pandas for vector data</p></li>
+<li><p><a class="reference external" href="https://rasterio.readthedocs.io/en/latest/">Rasterio</a>: geospatial raster data I/O</p></li>
+</ul>
+<p><strong>Statistics/Machine Learning</strong>:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.statsmodels.org/stable/index.html">Statsmodels</a>: statistic toolbox for models and tests</p></li>
+<li><p><a class="reference external" href="https://seaborn.pydata.org/index.html">Seaborn</a>: statistical data visualization</p></li>
+<li><p><a class="reference external" href="http://scikit-learn.org/">Scikit-learn</a>: machine learning tools</p></li>
+<li><p><a class="reference external" href="https://www.tensorflow.org/">TensorFlow</a>: Google’s brain</p></li>
+<li><p><a class="reference external" href="https://pytorch.org/">PyTorch</a>: Facebook’s brain</p></li>
+</ul>
+<p><strong>Miscellaneous</strong>:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://scikit-image.org/">Scikit-image</a>: image processing</p></li>
+<li><p><a class="reference external" href="https://bokeh.pydata.org/en/latest/">Bokeh</a>: interactive plots</p></li>
+<li><p><a class="reference external" href="http://docs.dask.org/en/latest/">Dask</a>: parallel computing</p></li>
+<li><p>…</p></li>
+</ul>
 </div>
 </div>
 
@@ -473,7 +444,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./week_02"
+            path: "./week_05"
         },
         predefinedOutput: true
     }
@@ -488,8 +459,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="01-Language-Fundamentals.html" title="previous page">01 - Language fundamentals</a>
-    <a class='right-next' id="next-link" href="../week_03/01-Import-Scopes.html" title="next page">01 - Modules, import mechanism, namespaces, scope(s)</a>
+    <a class='left-prev' id="prev-link" href="01-Numpy-ndarrays.html" title="previous page">01 - Arrays in numpy: indexing, ufuncs, broadcasting</a>
+    <a class='right-next' id="next-link" href="Assignment-05.html" title="next page">Assignment #05</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

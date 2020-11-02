@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>01 - Introduction to numpy: why does numpy exist? &#8212; Scientific Programming</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
 
     
   <link rel="stylesheet"
@@ -25,8 +25,8 @@
     href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.01f49d9d8f4f02518b50b83e3c92fd04.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -46,7 +46,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -84,19 +84,22 @@
   <h1 class="site-logo" id="site-title">Scientific Programming</h1>
   
 </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
+
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+  <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../welcome.html">
    Welcome
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Introduction
  </span>
@@ -118,7 +121,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Week 01 - Linux &amp; Python primer
  </span>
@@ -145,7 +148,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Week 02 - Python language fundamentals
  </span>
@@ -162,7 +165,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Week 03 - Variables scopes, modules, good practices
  </span>
@@ -189,7 +192,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Week 04 - Floating point arithmetics, Numpy basics
  </span>
@@ -211,8 +214,32 @@
   </a>
  </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 05 - Scientific Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/01-Numpy-ndarrays.html">
+   01 - Arrays in numpy: indexing, ufuncs, broadcasting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/02-Scientific-Python.html">
+   02 - The scientific python stack
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/Assignment-05.html">
+   Assignment #05
+  </a>
+ </li>
+</ul>
 
-</nav> <!-- To handle the deprecated key -->
+</nav>
+
+ <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -367,7 +394,7 @@
                 
   <div class="section" id="introduction-to-numpy-why-does-numpy-exist">
 <h1>01 - Introduction to numpy: why does numpy exist?<a class="headerlink" href="#introduction-to-numpy-why-does-numpy-exist" title="Permalink to this headline">¶</a></h1>
-<p>You might have read somewhere that Python is “slow” in comparison to some other languages. While generally true, this statement has only little meaning without context. As a scripting language (e.g. simplify task such as file renaming, data download, etc.), python is fast enough. For <em>numerical computations</em> (like the computations done by an atmospheric model or by a machine learning algorithm), “pure” Python is very slow indeed. Fortunately, there is a way to overcome this problem!</p>
+<p>You might have read somewhere that Python is “slow” in comparison to some other languages. While generally true, this statement has only little meaning without context. As a scripting language (e.g. simplify tasks such as file renaming, data download, etc.), python is fast enough. For <em>numerical computations</em> (like the computations done by an atmospheric model or by a machine learning algorithm), “pure” Python is very slow indeed. Fortunately, there is a way to overcome this problem!</p>
 <p>In this chapter we are going to explain why the <a class="reference external" href="http://numpy.org">numpy</a> library was created. Numpy is the fundamental library which transformed the general purpose python language into a scientific language like Matlab, R or IDL.</p>
 <p>Before introducing numpy, we will discuss some of the differences between python and compiled languages widely used in scientific software development (like C and FORTRAN).</p>
 <div class="section" id="why-is-python-slow">
@@ -428,7 +455,7 @@
 </div>
 </div>
 <p>Functions are objects of type <code class="docutils literal notranslate"><span class="pre">function</span></code>, and one of their attributes (<code class="docutils literal notranslate"><span class="pre">__doc__</span></code>) gives us access to their <strong>docstring</strong>. During the course of the semester you are going to learn how to use more and more of these object features, and hopefully you are going to like them more and more (at least this is what happened to me).</p>
-<p>Now, why does this make python “slow”? Well, in simple terms, these “services” tend to increase the complexity and the number of operations an interpreter has to perform when running a program.  More specialized languages will be less flexible than python, but will be faster at running specialized operations and be less hungry memory (because they don’t need this overhead of flexible memory on top of every object).</p>
+<p>Now, why does this make python “slow”? Well, in simple terms, these “services” tend to increase the complexity and the number of operations an interpreter has to perform when running a program.  More specialized languages will be less flexible than python, but will be faster at running specialized operations and be less memory hungry (because they don’t need this overhead of flexible memory on top of every object).</p>
 <p>Python’s high-level of abstraction (i.e. python’s flexibility) makes it slower than its lower-level counterparts like C or FORTRAN. But, why is that so?</p>
 </div>
 <div class="section" id="dynamically-versus-statically-typed-languages">
@@ -464,7 +491,7 @@
 </div>
 </div>
 </div>
-<p>In this simple example it would be theoretically possible for the interpreter to predict which operation to apply beforehand (by prior parsing of all lines of code prior to the action). In most cases, however, this is impossible: for example, a function taking arguments does not know beforehand the type of the arguments it will receive.</p>
+<p>In this simple example it would be theoretically possible for the interpreter to predict which operation to apply beforehand (by parsing all lines of code prior to the action). In most cases, however, this is impossible: for example, a function taking arguments does not know beforehand the type of the arguments it will receive.</p>
 <p>Languages which assess the type of variables <em>at run time</em> are called <a class="reference external" href="https://en.wikipedia.org/wiki/Category:Dynamically_typed_programming_languages">dynamically typed programming languages</a>. Matlab, Python or R are examples falling in this category.</p>
 <p><strong>Statically typed languages</strong>, however, require the <em>programmer</em> to provide the type of variables while writing the code. Here is an example of a program written in C:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="c1"> </span><span class="cp"></span>
@@ -574,7 +601,7 @@
 </div>
 </div>
 <div class="exercise admonition" id="week_04/01-Why-Numpy-exercise-0">
-<p class="admonition-title"><span class="caption-number">Exercise 13 </span></p>
+<p class="admonition-title"></p>
 <div class="section" id="exercise-content">
 <p><strong>Tricky optional question</strong>: why did I prefer to use the <code class="docutils literal notranslate"><span class="pre">np.add</span></code> function here instead of the simpler <code class="docutils literal notranslate"><span class="pre">+</span></code> operator?</p>
 </div>
@@ -596,7 +623,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.91 µs ± 55.7 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.17 µs ± 328 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre></div>
 </div>
 </div>
@@ -608,21 +635,21 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>533 ns ± 9.08 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>538 ns ± 7.77 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 </pre></div>
 </div>
 </div>
 </div>
 <p>Numpy is approximately 5-6 times faster.</p>
 <div class="exercise admonition" id="week_04/01-Why-Numpy-exercise-1">
-<p class="admonition-title"><span class="caption-number">Exercise 14 </span></p>
+<p class="admonition-title"></p>
 <div class="section" id="exercise-content">
 <p>Repeat the performance test with n=100 and n=10000. How does the performance scale with the size of the array? Now repeat the test but make the input arguments <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> <em>lists</em> instead of numpy arrays. How is the performance comparison in this case? Why?</p>
 </div>
 </div>
 <p>Why is numpy so much faster than pure python? One of the major reasons is <strong>vectorization</strong>, which is the process of applying mathematical operations to <em>all</em> elements of an array (“vector”) at once instead of looping through them like we would do in pure python. “for loops” in python are slow because for each addition, python has to:</p>
 <ul class="simple">
-<li><p>access the elements a and b in the list A and B</p></li>
+<li><p>access the elements a and b in the lists A and B</p></li>
 <li><p>check the type of both a and b</p></li>
 <li><p>apply the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator on the data they store</p></li>
 <li><p>store the result.</p></li>
@@ -756,7 +783,7 @@ These lecture notes and exercises are licensed under a <a href="https://creative
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
 
 
     

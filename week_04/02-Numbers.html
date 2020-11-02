@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>02 - Number representation in computers &#8212; Scientific Programming</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
 
     
   <link rel="stylesheet"
@@ -25,8 +25,8 @@
     href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.01f49d9d8f4f02518b50b83e3c92fd04.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -46,7 +46,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -84,19 +84,22 @@
   <h1 class="site-logo" id="site-title">Scientific Programming</h1>
   
 </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
+
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+  <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../welcome.html">
    Welcome
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Introduction
  </span>
@@ -118,7 +121,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Week 01 - Linux &amp; Python primer
  </span>
@@ -145,7 +148,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Week 02 - Python language fundamentals
  </span>
@@ -162,7 +165,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Week 03 - Variables scopes, modules, good practices
  </span>
@@ -189,7 +192,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Week 04 - Floating point arithmetics, Numpy basics
  </span>
@@ -211,8 +214,32 @@
   </a>
  </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 05 - Scientific Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/01-Numpy-ndarrays.html">
+   01 - Arrays in numpy: indexing, ufuncs, broadcasting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/02-Scientific-Python.html">
+   02 - The scientific python stack
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/Assignment-05.html">
+   Assignment #05
+  </a>
+ </li>
+</ul>
 
-</nav> <!-- To handle the deprecated key -->
+</nav>
+
+ <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -476,7 +503,7 @@
 <p>but not larger. Unless specified otherwise, the first bit is often used to give the <em>sign</em> of the integer it represents. Therefore, the actual range of numbers that a byte can represent is <span class="math notranslate nohighlight">\([-2^7; 2^7-1]= [-128; 127]\)</span> (the reason for this asymmetry is a matter of definition, as we will see later). If you are sure that you only want to do arithmetics with positive numbers you can spare one bit and specify your binary number as being of <strong>unsigned integer type</strong>.</p>
 <p>So how many bits does our computer use to represent integers? Well, it depends on the platform and programming language you are using. Many older languages (including old python versions) made the distinction between short (32 bits) and long (64 bits) integers.</p>
 <div class="exercise admonition" id="week_04/02-Numbers-exercise-0">
-<p class="admonition-title"><span class="caption-number">Exercise 15 </span></p>
+<p class="admonition-title"></p>
 <div class="section" id="exercise-content">
 <p>What is the largest number that a 64-bit integer can represent? The smallest? And a 32-bit unsigned integer?</p>
 </div>
@@ -510,7 +537,7 @@
 </div>
 </div>
 <div class="exercise admonition" id="week_04/02-Numbers-exercise-1">
-<p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
+<p class="admonition-title"></p>
 <div class="section" id="exercise-content">
 <p>What does <code class="docutils literal notranslate"><span class="pre">bit_length()</span></code> do? What is the bit length of 5? of 127?</p>
 </div>
@@ -590,7 +617,7 @@
 </div>
 <p>So the <code class="docutils literal notranslate"><span class="pre">2**100000</span></code> number requires about 13 KB (<strong>Kilobytes</strong>) of memory.</p>
 <div class="exercise admonition" id="week_04/02-Numbers-exercise-2">
-<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
+<p class="admonition-title"></p>
 <div class="section" id="exercise-content">
 <p>Print <code class="docutils literal notranslate"><span class="pre">2**100000</span></code> on screen, “just for fun”.</p>
 </div>
@@ -756,7 +783,7 @@
 <div class="section" id="ieee-754">
 <h3>IEEE 754<a class="headerlink" href="#ieee-754" title="Permalink to this headline">¶</a></h3>
 <p>From the example above, we can see that with a fixed number of memory slots, we have a trade-off between the maximum precision of a number and its size.</p>
-<p>This precision/size trade-off raises many challenges: memory and electronics must be optimized so that computations are fast while still allowing programs to realize computations on a <em>wide</em> range of numbers in the same program. For example, atmospheric models realize computations on specific humidity values (<span class="math notranslate nohighlight">\(\mathrm{kg}\,\mathrm{kg}^{-1}\)</span>) with typical values of 10<span class="math notranslate nohighlight">\(^{-5}\)</span> and on the geopotential with values up to several order of magnitude larger. Using different standards for each variable would be impracticable. This lead to the development of the <a class="reference external" href="https://en.wikipedia.org/wiki/IEEE_754">IEEE Standard for Floating-Point Arithmetic (IEEE 754)</a>.</p>
+<p>This precision/size trade-off raises many challenges: memory and electronics must be optimized so that computations are fast while still allowing programs to realize computations on a <em>wide</em> range of numbers in the same program. For example, atmospheric models realize computations on specific humidity values (<span class="math notranslate nohighlight">\(\mathrm{kg}\,\mathrm{kg}^{-1}\)</span>) with typical values of 10<span class="math notranslate nohighlight">\(^{-5}\)</span> and on the geopotential with values up to several order of magnitude larger. Using different standards for each variable would be impracticable. This led to the development of the <a class="reference external" href="https://en.wikipedia.org/wiki/IEEE_754">IEEE Standard for Floating-Point Arithmetic (IEEE 754)</a>.</p>
 <p>The standard defines five basic formats that are named for their numeric base and the number of bits used in their encoding, as listed in <a class="reference external" href="https://en.wikipedia.org/wiki/IEEE_754#Basic_and_interchange_formats">this table</a>. For example, <code class="docutils literal notranslate"><span class="pre">binary64</span></code> is the famous “double precision” format, called <code class="docutils literal notranslate"><span class="pre">float64</span></code> in numpy and simply <code class="docutils literal notranslate"><span class="pre">float</span></code> in the python standard library. In this format, <span class="math notranslate nohighlight">\(N_s=53\)</span> bits are used for the significand, and the remaining <span class="math notranslate nohighlight">\(N_e=11\)</span> for the exponent.</p>
 <p>It is possible to compute the approximate precision of IEEE754 floating point numbers according to their value (see also the exercises):</p>
 <p><img alt="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/IEEE754.png/550px-IEEE754.png" />
@@ -952,7 +979,7 @@ Source: <a class="reference external" href="https://en.wikipedia.org/wiki/IEEE_7
 <li><p>Multiplication and division are “safer” operations</p></li>
 <li><p>Addition and subtraction are dangerous, because when numbers of different magnitudes are involved, digits of the smaller-magnitude number are lost.</p></li>
 <li><p>This loss of digits can be inevitable and benign (when the lost digits are also insignificant for the final result) or catastrophic (when the loss is magnified and distorts the result strongly).</p></li>
-<li><p>The more calculations are done (especially when they form an iterative algorithm) the more important it is to consider this kind of problem.</p></li>
+<li><p>The more calculations are done (especially when they form an iterative algorithm) the more important is it to consider this kind of problem.</p></li>
 <li><p>A method of calculation can be stable (meaning that it tends to reduce rounding errors) or unstable (meaning that rounding errors are magnified). Very often, there are both stable and unstable solutions for a problem.</p></li>
 </ul>
 <p>(list taken from <a class="reference external" href="http://floating-point-gui.de/errors/propagation/">the floating point guide</a>)</p>
@@ -983,7 +1010,7 @@ Source: <a class="reference external" href="https://en.wikipedia.org/wiki/IEEE_7
 </div>
 </div>
 </div>
-<p>Realize <strong>safer computations</strong> therefore involves asking yourself at which stage the most precision is going to be lost: this is most often the case when adding numbers of very different magnitudes. When building numerical models, this should always be something you consider: is a formula leading to dangerous additions, then reformulate it and/or use other units for your variables (e.g. <span class="math notranslate nohighlight">\(\mathrm{g}\,\mathrm{kg}^{-1}\)</span> instead of <span class="math notranslate nohighlight">\(\mathrm{kg}\,\mathrm{kg}^{-1}\)</span> for specific humidity). Consider the following example:</p>
+<p>Realize <strong>safer computing</strong> therefore involves asking yourself at which stage the most precision is going to be lost: this is most often the case when adding numbers of very different magnitudes. When building numerical models, this should always be something you consider: is a formula leading to dangerous additions, then reformulate it and/or use other units for your variables (e.g. <span class="math notranslate nohighlight">\(\mathrm{g}\,\mathrm{kg}^{-1}\)</span> instead of <span class="math notranslate nohighlight">\(\mathrm{kg}\,\mathrm{kg}^{-1}\)</span> for specific humidity). Consider the following example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
@@ -1020,7 +1047,7 @@ Source: <a class="reference external" href="https://en.wikipedia.org/wiki/IEEE_7
 <p>Fortunately, rounding errors often remain unnoticed, meaning that your computations are probably OK! In our field in particular, we often do not care if the post-processed temperature forecast is numerically precise at 0.001° since the forecast accuracy is much lower anyway. However, this can still lead to surprises when comparing arrays for equality (e.g. when testing that a temperature is equal to zero, or for matching coordinates like longitude or latitude). In these cases, prefer to use numpy’s specialized functions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">)</span>  <span class="c1"># OK is you don&#39;t care about small numerical errors</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">)</span>  <span class="c1"># OK if you don&#39;t care about small numerical errors</span>
 </pre></div>
 </div>
 </div>
@@ -1115,7 +1142,7 @@ These lecture notes and exercises are licensed under a <a href="https://creative
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
 
 
     
