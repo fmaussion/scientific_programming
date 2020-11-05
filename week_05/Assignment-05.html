@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignment #05 &#8212; Scientific Programming</title>
     
-  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
     
   <link rel="stylesheet"
@@ -26,7 +26,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.8e7f2d2261e638b37f2dac1b7111b4c0.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -46,7 +46,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -83,22 +83,19 @@
   <h1 class="site-logo" id="site-title">Scientific Programming</h1>
   
 </a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
+    <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../welcome.html">
    Welcome
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Introduction
  </span>
@@ -120,7 +117,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Week 01 - Linux &amp; Python primer
  </span>
@@ -147,7 +144,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Week 02 - Python language fundamentals
  </span>
@@ -164,7 +161,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Week 03 - Variables scopes, modules, good practices
  </span>
@@ -191,7 +188,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Week 04 - Floating point arithmetics, Numpy basics
  </span>
@@ -213,7 +210,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Week 05 - Scientific Python
  </span>
@@ -236,9 +233,7 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -384,7 +379,7 @@
 <li><p><a class="reference external" href="http://scipy-lectures.org/intro/numpy/index.html">numpy tutorial</a></p></li>
 <li><p><a class="reference external" href="http://scipy-lectures.org/intro/matplotlib/index.html">matplotlib tutorial</a></p></li>
 </ul>
-<p>They can be quite long if you are new to numpy - I’m not asking to do them all today! Sections 1.3.1.1 to 1.3.1.5 in the <a class="reference external" href="http://scipy-lectures.org/intro/numpy/index.html">numpy tutorial</a> should get you enough information for today’s assignments, or you can try without it and learn on the fly - your choice!</p>
+<p>They can be quite long if you are new to numpy - I’m not asking to do them all today! Sections 1.4.1.1 to 1.4.1.5 in the <a class="reference external" href="http://scipy-lectures.org/intro/numpy/index.html">numpy tutorial</a> should get you enough information for today’s assignments, or you can try without it and learn on the fly - your choice!</p>
 <div class="section" id="exercise-05-01-numpy-cycles">
 <h2>Exercise #05-01: numpy cycles<a class="headerlink" href="#exercise-05-01-numpy-cycles" title="Permalink to this headline">¶</a></h2>
 <p>Monthly averages of temperature data at Innsbruck can be downloaded from this lecture’s github via:</p>
@@ -421,7 +416,7 @@
 </div>
 </div>
 </div>
-<p><em>Tip 2: there are more than one way to compute the annual and monthly means. Some use loops, some use reshaping on the original 1D array.</em></p>
+<p><em>Tip 2: there is more than one way to compute the annual and monthly means. Some use loops, some use reshaping on the original 1D array.</em></p>
 </div>
 <div class="section" id="exercise-05-02-indexing">
 <h2>Exercise #05-02: indexing<a class="headerlink" href="#exercise-05-02-indexing" title="Permalink to this headline">¶</a></h2>
@@ -515,7 +510,7 @@
 </div>
 </div>
 <p>However, the data is not well processed! The longitudes are ranging from 0 to 360°, thus cutting UK and Africa in half! Reorganize the data and the corresponding coordinate to obtain a plot similar to this one:</p>
-<img alt="../_images/18_temp_pic.png" class="align-left" src="../_images/18_temp_pic.png" />
+<img alt="../_images/18_temp_pic.png" src="../_images/18_temp_pic.png" />
 </div>
 <div class="section" id="exercise-05-05-acinn-meteorological-data">
 <h2>Exercise #05-05: ACINN meteorological data<a class="headerlink" href="#exercise-05-05-acinn-meteorological-data" title="Permalink to this headline">¶</a></h2>
@@ -524,7 +519,7 @@
 <li><p>http://meteo145.uibk.ac.at/innsbruck/3 for the three days data</p></li>
 <li><p>http://meteo145.uibk.ac.at/innsbruck/7 for the seven days data</p></li>
 </ul>
-<p>The data for the other stations are available, per analogy:</p>
+<p>The datasets for the other stations are available, per analogy:</p>
 <ul class="simple">
 <li><p>http://meteo145.uibk.ac.at/ellboegen/3</p></li>
 <li><p>http://meteo145.uibk.ac.at/obergurgl/3</p></li>
@@ -532,7 +527,7 @@
 </ul>
 <p>The data is shared by ACINN under a <a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
 <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
-  <img align="left" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"/>
+  <img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"/>
 </a><p>The data is provided in the <a class="reference external" href="https://www.json.org/">json</a> format, often used for web applications. Fortunately, this is very easy to read in python:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -573,7 +568,10 @@
 </div>
 </div>
 <p>You will get much more time to get used to these data in the mid-semester projects. For today, I’m asking to <strong>write a script that takes the station and number of days as input (either as command line arguments or user input, your choice) and prints the following information in the terminal:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">At</span> <span class="n">station</span> <span class="n">XXX</span><span class="p">,</span> <span class="n">over</span> <span class="n">the</span> <span class="n">last</span> <span class="n">X</span> <span class="n">days</span><span class="p">,</span> <span class="n">the</span> <span class="n">dominant</span> <span class="n">wind</span> <span class="n">direction</span> <span class="n">was</span> <span class="n">XX</span> <span class="p">(</span><span class="n">xx</span><span class="o">%</span> <span class="n">of</span> <span class="n">the</span> <span class="n">time</span><span class="p">)</span><span class="o">.</span> <span class="n">The</span> <span class="n">second</span> <span class="n">most</span> <span class="n">dominant</span> <span class="n">wind</span> <span class="n">direction</span> <span class="n">was</span> <span class="n">XX</span> <span class="p">(</span><span class="n">xx</span><span class="o">%</span> <span class="n">of</span> <span class="n">the</span> <span class="n">time</span><span class="p">),</span> <span class="n">the</span> <span class="n">least</span> <span class="n">dominant</span> <span class="n">wind</span> <span class="n">direction</span> <span class="n">was</span> <span class="n">XX</span> <span class="p">(</span><span class="n">xx</span><span class="o">%</span> <span class="n">of</span> <span class="n">the</span> <span class="n">time</span><span class="p">)</span><span class="o">.</span> <span class="n">The</span> <span class="n">maximum</span> <span class="n">wind</span> <span class="n">speed</span> <span class="n">was</span> <span class="n">XX</span> <span class="n">m</span><span class="o">/</span><span class="n">s</span> <span class="p">(</span><span class="n">DATE</span> <span class="ow">and</span> <span class="n">TIME</span><span class="p">),</span> <span class="k">while</span> <span class="n">the</span> <span class="n">strongest</span> <span class="n">wind</span> <span class="n">speed</span> <span class="n">averaged</span> <span class="n">over</span> <span class="n">an</span> <span class="n">hour</span> <span class="n">was</span> <span class="n">XX</span> <span class="n">m</span><span class="o">/</span><span class="n">s</span> <span class="p">(</span><span class="n">DATE</span> <span class="ow">and</span> <span class="n">TIME</span><span class="p">)</span><span class="o">.</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>At station XXX, over the last X days, the dominant wind direction was XX (xx% of the time). 
+The second most dominant wind direction was XX (xx% of the time), the least dominant wind
+direction was XX (xx% of the time). The maximum wind speed was XX m/s (DATE and TIME), 
+while the strongest wind speed averaged over an hour was XX m/s (DATE and TIME).
 </pre></div>
 </div>
 <p>With the wind directions being of 8 classes: N, NW, W, SW, S, SE, E, NE.</p>
@@ -638,7 +636,7 @@ These lecture notes and exercises are licensed under a <a href="https://creative
     </div>
 
     
-  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
     
