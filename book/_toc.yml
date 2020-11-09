@@ -39,3 +39,7 @@
     - file: week_05/01-Numpy-ndarrays
     - file: week_05/02-Scientific-Python
     - file: week_05/Assignment-05
+    
+- part: Week 06 - Revision
+  chapters:
+    - file: week_06/01-Revision
