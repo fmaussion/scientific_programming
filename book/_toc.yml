@@ -43,3 +43,9 @@
 - part: Week 06 - Revision
   chapters:
     - file: week_06/01-Revision
+    
+- part: Week 07 - Testing
+  chapters:
+    - file: week_07/01-Exceptions
+    - file: week_07/02-Testing
+    - file: week_07/Assignment-06
