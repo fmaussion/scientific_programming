@@ -1,0 +1,993 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02 - Testing your code &#8212; Scientific Programming</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.c2503ba76ccc0c9da7bd1e10de722da9.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignment #06: exceptions and testing" href="Assignment-06.html" />
+    <link rel="prev" title="01 - Errors, Exceptions and Warnings" href="01-Exceptions.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Scientific Programming</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../welcome.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../faq.html">
+   Frequently Asked  Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   External resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../slides.html">
+   Presentation slides
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 01 - Linux &amp; Python primer
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/01-Linux.html">
+   01 - A very short introduction to Linux
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/02-Installation.html">
+   02 - Installing Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/03-Getting-Started.html">
+   03 - Getting started with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/Assignment-01.html">
+   Assignment #01
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 02 - Python language fundamentals
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_02/01-Language-Fundamentals.html">
+   01 - Language fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_02/Assignment-02.html">
+   Assignment #02
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 03 - Variables scopes, modules, good practices
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/01-Import-Scopes.html">
+   01 - Modules, import mechanism, namespaces, scope(s)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/02-Tips-and-Tricks.html">
+   02 - Tips and tricks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/03-Good-practices.html">
+   03 - Good practices, programming style and conventions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/Assignment-03.html">
+   Assignment #03
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 04 - Floating point arithmetics, Numpy basics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_04/01-Why-Numpy.html">
+   01 - Introduction to numpy: why does numpy exist?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_04/02-Numbers.html">
+   02 - Number representation in computers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_04/Assignment-04.html">
+   Assignment #04
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 05 - Scientific Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/01-Numpy-ndarrays.html">
+   01 - Arrays in numpy: indexing, ufuncs, broadcasting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/02-Scientific-Python.html">
+   02 - The scientific python stack
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/Assignment-05.html">
+   Assignment #05
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 06 - Revision
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_06/01-Revision.html">
+   Revision
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 07 - Testing
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-Exceptions.html">
+   01 - Errors, Exceptions and Warnings
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   02 - Testing your code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assignment-06.html">
+   Assignment #06: exceptions and testing
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/week_07/02-Testing.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/fmaussion/scientific_programming"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_07/02-Testing.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_07/02-Testing.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_07/02-Testing.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-testing">
+   Why testing?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scientific-code-is-used-to-take-important-decisions">
+     Scientific code is used to take important decisions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#trial-and-error-development-practices-hide-important-bugs">
+     “Trial and error” development practices hide important bugs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-that-worked-once-might-not-work-a-year-later">
+     Code that worked once might not work a year later
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#untested-s-science-s-code-is-bad-s-science-s-code">
+     Untested
+     <s>
+      science
+     </s>
+     code is “bad
+     <s>
+      science
+     </s>
+     code”
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-tests-a-first-example">
+   Writing tests: a first example
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assertions-and-exceptions">
+     Assertions and exceptions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-first-independent-test">
+     A first independent test
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pytest">
+   Pytest
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#usage">
+     Usage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assertions-in-pytest">
+     Assertions in pytest
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#software-testing-methods">
+   Software testing methods
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unit-tests">
+     Unit tests
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integration-tests">
+     Integration tests
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#verification-tests">
+     Verification tests
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#and-so-on">
+     And so on…
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#designing-and-writing-tests">
+   Designing and writing tests
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-aaa-concept">
+     The “AAA”  concept
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#testing-for-equality">
+     Testing for equality
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#testing-for-numpy-arrays">
+     Testing for numpy arrays
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#testing-the-validity-of-the-output">
+     Testing the validity of the output
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#testing-the-interface-of-a-function">
+     Testing the interface of a function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#testing-that-a-function-raises-exceptions">
+     Testing that a function raises exceptions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#final-remarks">
+   Final remarks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#take-home-points">
+   Take home points
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="testing-your-code">
+<h1>02 - Testing your code<a class="headerlink" href="#testing-your-code" title="Permalink to this headline">¶</a></h1>
+<p>In this chapter we are going to learn how to check that the code you write is working as expected. This will be achieved with the introduction of testing tools which will help you to formalize and organize your tests, as well as with the definition of new concepts: unit testing and test driven development.</p>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Nobody can write bug-free code in the first try. Believe me on that one, <strong>nobody</strong> can. Therefore, every programmer constantly needs to test that a newly written code is working as expected. Very often, scientists without formal training in computer sciences and programming will test their code “ad-hoc”, i.e. with trial-and-error approaches on an interactive console or with print statements throughout the code. While this is a quick way to get the job done at the first sight, it is in fact a dangerous, non-scientific practice. Today and throughout the lecture I will often remind you of a simple rule:</p>
+<p><strong>Always write tests for your code.</strong></p>
+<p>Oh, sorry, I actually meant to say this louder:</p>
+<div class="warning admonition">
+<p class="admonition-title">Important</p>
+<p><strong>Always write tests for your code.</strong> Really.</p>
+</div>
+<p>Now, let’s learn:</p>
+<ul class="simple">
+<li><p>why should we write tests?</p></li>
+<li><p>how should we write tests?</p></li>
+</ul>
+</div>
+<div class="section" id="why-testing">
+<h2>Why testing?<a class="headerlink" href="#why-testing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="scientific-code-is-used-to-take-important-decisions">
+<h3>Scientific code is used to take important decisions<a class="headerlink" href="#scientific-code-is-used-to-take-important-decisions" title="Permalink to this headline">¶</a></h3>
+<p>Scientists are writing highly influencial code. Our climate and weather models are guiding political decisions, and, more recently, epidemiological models were <a class="reference external" href="https://www.nature.com/articles/d41586-020-01003-6">at the core of the decision making process that drove us into lockdown</a>.</p>
+<p>As scientists, we always have to provide results which are correct <em>to the best of our knowledge</em>. In recent years, erroneous software code lead to several “scandals” in the scientific world. For example, in 2006 scientists <a class="reference external" href="http://science.sciencemag.org/content/314/5807/1856">had to retract five of their papers</a> after discovering that their results were based on erroneous computations. “As a result of a bug in a Perl script”, other authors <a class="reference external" href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.0030158">retracted a paper in PLoS</a>. In <a class="reference external" href="https://www.vice.com/en_us/article/zmjwda/a-code-glitch-may-have-caused-errors-in-more-than-100-published-studies">this article</a> from October 2019, Vice reports how a short script that produces different results on different operating systems may have caused widespread errors in peer-reviewed studies.</p>
+<p>All these examples tell us an important message: the challenge of <a class="reference external" href="https://www.nature.com/collections/prbfkwmwvz/">(ir)reproducible research</a> can only be tackled with <strong>openly tested scientific software</strong>.</p>
+<p>The requirement of “100% error-free code” announced in my title will of course never be achieved, but we have to do our best to avoid situations like described above. This slide by <a class="reference external" href="https://pberkes.github.io">Pietro Berkes</a> presented at a SciPy tutorial brings it quite well to the point:</p>
+<a class="reference internal image-reference" href="../_images/10_errors_in_science.png"><img alt="../_images/10_errors_in_science.png" src="../_images/10_errors_in_science.png" style="width: 50%;" /></a>
+</div>
+<div class="section" id="trial-and-error-development-practices-hide-important-bugs">
+<h3>“Trial and error” development practices hide important bugs<a class="headerlink" href="#trial-and-error-development-practices-hide-important-bugs" title="Permalink to this headline">¶</a></h3>
+<p>Checking that “the curve looks okay” or that “the relative humidity values seem realistic” is not a quantitative test: it is error prone and possibly wrong. Testing must be achieved in a formal and quantitative way:</p>
+<ul class="simple">
+<li><p>are the results of my code providing correct results as provided by an external source or an independent computation?</p></li>
+<li><p>is my software running under all circumstances, also with missing data?</p></li>
+<li><p>does my software fail with informative error messages when the input is not compliant to predefined rules?</p></li>
+<li><p>is my software doing what is announced in the documentation?</p></li>
+</ul>
+</div>
+<div class="section" id="code-that-worked-once-might-not-work-a-year-later">
+<h3>Code that worked once might not work a year later<a class="headerlink" href="#code-that-worked-once-might-not-work-a-year-later" title="Permalink to this headline">¶</a></h3>
+<p>This is a problem often overseen by scientists: once written and tested “ad-hoc”, a script will be used and sometimes shared with colleagues. However, the same code might provide different results at a later time, as shown in these examples:</p>
+<ul class="simple">
+<li><p>a change of computer leads to numerical accuracy errors which didn’t happen before</p></li>
+<li><p>numpy was updated to a new major version, and a function that worked perfectly now raises a <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code> when executed</p></li>
+<li><p>the weather station was updated and suddenly the relative humidity values computed by my code are unrealistic. My code did not warn me about it and I used wrong values to compute the latent energy flux.</p></li>
+<li><p>I optimized my function <code class="docutils literal notranslate"><span class="pre">clever_compute()</span></code> which was too slow, and now it doesn’t work anymore</p></li>
+<li><p>I changed the function <code class="docutils literal notranslate"><span class="pre">abc()</span></code> where I found a bug, but now the other function <code class="docutils literal notranslate"><span class="pre">dfg()</span></code> does not work anymore.</p></li>
+</ul>
+<p>In all these cases, formal tests would have helped to isolate the problems at an early stage and avoid late and tedious debugging. Therefore, tests are sometimes called “regression tests”: once a test is written and works, it serves the purpose to make sure that future changes won’t break things. Tests should be re-run each time something is changed in the code or when third-party packages are updated.</p>
+</div>
+<div class="section" id="untested-s-science-s-code-is-bad-s-science-s-code">
+<h3>Untested <s>science</s> code is “bad <s>science</s> code”<a class="headerlink" href="#untested-s-science-s-code-is-bad-s-science-s-code" title="Permalink to this headline">¶</a></h3>
+<p>You would never use data from an uncalibrated temperature sensor, would you? <strong>Scientific code is no different: never trust untested code</strong>. Don’t trust tested code either (!), but untested code is much worse. When using new scripts/packages for your work, always check that these come with good tests for the functionality you are using.</p>
+</div>
+</div>
+<div class="section" id="writing-tests-a-first-example">
+<h2>Writing tests: a first example<a class="headerlink" href="#writing-tests-a-first-example" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="assertions-and-exceptions">
+<h3>Assertions and exceptions<a class="headerlink" href="#assertions-and-exceptions" title="Permalink to this headline">¶</a></h3>
+<p><a id='asserts'></a></p>
+<p>One way to test your code is to write <strong>assertions</strong> <em>within</em> your scripts and functions. Let’s say we would like to write a function converting degrees Fahrenheits to degrees Celsius:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Converts degrees Fahrenheits to degrees Celsius&quot;&quot;&quot;</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">tf</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="o">/</span><span class="mi">9</span>
+    <span class="c1"># Check that we provide physically reasonable results</span>
+    <span class="k">assert</span> <span class="n">r</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mf">273.15</span>
+    <span class="k">return</span> <span class="n">r</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Assert statements are a convenient way to insert debugging assertions into a program. During the process of writing code, they help to check that some variables comply to certain rules you have decided are important. Here are some examples of assert statements:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="mf">2.</span>
+<span class="k">assert</span> <span class="n">result</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Asserts are convenient, but they shouldn’t be used too often. Indeed, my example above is a good example of bad code, since it might fail because of bad user input:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">e3c34d509537</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">f2c</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="nn">&lt;ipython-input-1-0254147c1a13&gt;</span> in <span class="ni">f2c</span><span class="nt">(tf)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">tf</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="o">/</span><span class="mi">9</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="c1"># Check that we provide physically reasonable results</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="k">assert</span> <span class="n">r</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mf">273.15</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="k">return</span> <span class="n">r</span>
+
+<span class="ne">AssertionError</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is not very informative. A much better practice would be:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Converts degrees Fahrenheits to degrees Celsius&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">tf</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">459.67</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Input temperature below absolute zero!&#39;</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">tf</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="o">/</span><span class="mi">9</span>
+    <span class="k">return</span> <span class="n">r</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Assertions in code are similar to debug <code class="docutils literal notranslate"><span class="pre">print()</span></code> statements filling a script: they help to debug or understand an algorithm, but they are not sustainable and should not replace real, independent tests.</p>
+</div>
+<div class="section" id="a-first-independent-test">
+<h3>A first independent test<a class="headerlink" href="#a-first-independent-test" title="Permalink to this headline">¶</a></h3>
+<p>Now, how should we test our <code class="docutils literal notranslate"><span class="pre">f2c</span></code> function appropriatly? Well, this should happen in a dedicated script or module testing that the function behaves like expected. A good start is to look for <a class="reference external" href="https://de.wikipedia.org/wiki/Grad_Fahrenheit#Temperaturvergleich">typical conversion table values</a> and see if our function returns the expected values:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">f2c</span><span class="p">(</span><span class="mi">9941</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5505</span>
+<span class="k">assert</span> <span class="n">f2c</span><span class="p">(</span><span class="mi">212</span><span class="p">)</span> <span class="o">==</span> <span class="mi">100</span>
+<span class="k">assert</span> <span class="n">f2c</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the assertions fail it would let us know that something is wrong in our function. These tests, however, are still considered “ad-hoc”: if you type them in the interpreter at the moment you write the function (“trial and error development”) but don’t store them for later, you might brake your code later on without noticing. This is why <strong>test automation</strong> is needed.</p>
+</div>
+</div>
+<div class="section" id="pytest">
+<h2>Pytest<a class="headerlink" href="#pytest" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://docs.pytest.org/en/latest/contents.html">pytest</a> is a python package helping you to formalize and run your tests efficiently. It is a command line program recognizing and executing tests on demand as well as a python library providing useful modules helping programmers to write better tests.</p>
+<div class="section" id="usage">
+<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h3>
+<p>Let’s start with an example:</p>
+<div class="exercise admonition" id="week_07/02-Testing-exercise-0">
+<p class="admonition-title"><span class="caption-number">Exercise 19 </span></p>
+<div class="section" id="exercise-content">
+<p><strong>Install the pytest package</strong> (i.e. <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">pytest</span></code>). In your working directory, create a new <code class="docutils literal notranslate"><span class="pre">metutils.py</span></code> module, which provides the <code class="docutils literal notranslate"><span class="pre">f2c</span></code> function. In the same directory, create a new <code class="docutils literal notranslate"><span class="pre">test_metutils.py</span></code> module, which contains a <code class="docutils literal notranslate"><span class="pre">test_f2c</span></code> function. This function must implement the tests we described above (<em>note: don’t forget to import metutils in the test module!</em>). Now, <strong>in a command line environment</strong> (not in python!), type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pytest
+</pre></div>
+</div>
+<p>You should see an output similar to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=============================</span> <span class="n">test</span> <span class="n">session</span> <span class="n">starts</span> <span class="o">==============================</span>
+<span class="n">platform</span> <span class="n">linux</span> <span class="o">--</span> <span class="n">Python</span> <span class="mf">3.6</span><span class="o">.</span><span class="mi">4</span><span class="p">,</span> <span class="n">pytest</span><span class="o">-</span><span class="mf">3.4</span><span class="o">.</span><span class="mi">2</span><span class="p">,</span> <span class="n">py</span><span class="o">-</span><span class="mf">1.5</span><span class="o">.</span><span class="mi">2</span><span class="p">,</span> <span class="n">pluggy</span><span class="o">-</span><span class="mf">0.6</span><span class="o">.</span><span class="mi">0</span>
+<span class="n">rootdir</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">c7071047</span><span class="o">/</span><span class="n">ptest</span><span class="p">,</span> <span class="n">inifile</span><span class="p">:</span>
+<span class="n">collected</span> <span class="mi">1</span> <span class="n">item</span>                                                               
+
+<span class="n">test_metutils</span><span class="o">.</span><span class="n">py</span> <span class="o">.</span>                                                       <span class="p">[</span><span class="mi">100</span><span class="o">%</span><span class="p">]</span>
+
+<span class="o">===========================</span> <span class="mi">1</span> <span class="n">passed</span> <span class="ow">in</span> <span class="mf">0.02</span> <span class="n">seconds</span> <span class="o">===========================</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What did <code class="docutils literal notranslate"><span class="pre">pytest</span></code> just do? It searched the working directory for certain patterns (files and functions starting with <code class="docutils literal notranslate"><span class="pre">test_*</span></code>) and executed them.</p>
+<div class="exercise admonition" id="week_07/02-Testing-exercise-1">
+<p class="admonition-title"><span class="caption-number">Exercise 20 </span></p>
+<div class="section" id="exercise-content">
+<p>Now write a new function in the <code class="docutils literal notranslate"><span class="pre">metutils</span></code> module called <code class="docutils literal notranslate"><span class="pre">c2f</span></code>, converting Celsius to Fahrenheits. Write a new test for this function. Then, write a third test function (<code class="docutils literal notranslate"><span class="pre">test_roundtrip_f2c</span></code>), which tests that for any valid value the “roundtrip” <code class="docutils literal notranslate"><span class="pre">val</span> <span class="pre">==</span> <span class="pre">f2c(c2f(val))</span></code> is true. Run <code class="docutils literal notranslate"><span class="pre">pytest</span></code> to see that everything is working as expected.</p>
+</div>
+</div>
+</div>
+<div class="section" id="assertions-in-pytest">
+<h3>Assertions in pytest<a class="headerlink" href="#assertions-in-pytest" title="Permalink to this headline">¶</a></h3>
+<p>If you have read carefully you probably noticed that in <a class="reference external" href="#asserts">this section</a> I recommended <em>against</em> heavy use of <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements in your code. So what about all these assertions in our tests? Well, <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements in tests executed by <code class="docutils literal notranslate"><span class="pre">pytest</span></code> are very different: they provide enriched information provided by the pytest package itself.</p>
+<div class="exercise admonition" id="week_07/02-Testing-exercise-2">
+<p class="admonition-title"><span class="caption-number">Exercise 21 </span></p>
+<div class="section" id="exercise-content">
+<p>Make a test fail, either by altering the original function, or by writing a wrong assert statement. Verify that the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> log is giving you information about <em>why</em> the test is now failing.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="software-testing-methods">
+<h2>Software testing methods<a class="headerlink" href="#software-testing-methods" title="Permalink to this headline">¶</a></h2>
+<p>You might be surprised to learn that <a class="reference external" href="https://www.google.at/search?q=software+testing+books">there is a broad literature</a> dedicated to software testing only. Authors and researchers agreed upon certain semantics and standards, and we are going to introduce a few of these concepts here.</p>
+<div class="section" id="unit-tests">
+<h3>Unit tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Unit_testing">Unit tests</a> have the purpose to test the smallest possible units of source code, i.e. single <em>functions</em> in python. Unit tests have the advantage to be highly specialized and are often written together or before the actual function from which they are testing the functionality.</p>
+<p>Unit tests are useful because they encourage programmers to write small “code units” (functions) instead of monolithic code. Let’s make an example: say you’d like to write a function which computes the <a class="reference external" href="https://en.wikipedia.org/wiki/Dew_point#Calculating_the_dew_point">dewpoint temperature</a> from temperatures (in Fahrenheits) and relative humidity (in %). This function will first convert °F to °C (a first code unit), then the dewpoint temperature in °C (another unit), and convert back to °F (a third unit). A good way to write this tool would be to write the three smallest functions first and test them independently.</p>
+</div>
+<div class="section" id="integration-tests">
+<h3>Integration tests<a class="headerlink" href="#integration-tests" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Integration_testing">Integration tests</a> check that the units are working as a group. To keep the dewpoint example from above, an integration test would be a test that checks that the entire computation chain works as expected.</p>
+<img alt="https://i.stack.imgur.com/yHGn1.gif" src="https://i.stack.imgur.com/yHGn1.gif" />
+</div>
+<div class="section" id="verification-tests">
+<h3>Verification tests<a class="headerlink" href="#verification-tests" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Software_verification_and_validation">Verification tests</a> is the process of checking that a software system meets the <strong>specifications</strong>. Software specifications is an important concept in engineering and commercial applications, where softwares are built to meet the customer’s needs.</p>
+<p>In science, the verification tests would check that a function really meets the documented features. For example: does my function really work with arrays of any dimension (as announced in the documentation) or only with scalars? Does my function really fail for relative humidity values below 0%?</p>
+</div>
+<div class="section" id="and-so-on">
+<h3>And so on…<a class="headerlink" href="#and-so-on" title="Permalink to this headline">¶</a></h3>
+<p>If you spend some time on the wikipedia articles linked above you will see that there is a large variety of concepts behind software testing practices. For us scientists these concepts are only partly applicable because often we do not have to meet customer requirements the same way software developers do. For now we will stick with these three concepts and try to apply them as thoroughly as possible.</p>
+</div>
+</div>
+<div class="section" id="designing-and-writing-tests">
+<h2>Designing and writing tests<a class="headerlink" href="#designing-and-writing-tests" title="Permalink to this headline">¶</a></h2>
+<p>At the beginning you will probably find writing tests hard and confusing. “What should I test and how?” are the questions you will have to ask yourself very often.</p>
+<p>In the course of the semester this task will become easier and easier thanks to an influential testing philosophy: <a class="reference external" href="https://en.wikipedia.org/wiki/Test-driven_development">test-driven development</a> (TDD). In TDD, one writes the test <em>before</em> coding the actual feature one would like to implement. Together with the function’s documentation, this encourages to thoroughly think about the <strong>design of a function’s interface</strong> before writing it.</p>
+<a class="reference internal image-reference" href="../_images/10_tdd.png"><img alt="../_images/10_tdd.png" src="../_images/10_tdd.png" style="width: 40%;" /></a>
+<p><small> Chart by <a class="reference external" href="http://archive.euroscipy.org/talk/6634">Pietro Berkes</a> </small></p>
+<div class="section" id="the-aaa-concept">
+<h3>The “AAA”  concept<a class="headerlink" href="#the-aaa-concept" title="Permalink to this headline">¶</a></h3>
+<p>In principle all unit tests follow a very similar structure, the Arrange-Act-Assert workflow:</p>
+<ul class="simple">
+<li><p><strong>Arrange</strong>: preparation of the data and objects needed for the test. For example, for the <code class="docutils literal notranslate"><span class="pre">f2c</span></code> test we needed to gather the data in °F (to be converted) and °C (to be compared to). This step is the most complicated and can sometimes occupy most of the test function</p></li>
+<li><p><strong>Act</strong>: execute the test. Basically a call to the targeted function using the input data we created in the previous step. Usually one line of code.</p></li>
+<li><p><strong>Assert</strong>: last step of a unit test application. Check and verify that the returned result is equal (or close to) the expected results.</p></li>
+</ul>
+</div>
+<div class="section" id="testing-for-equality">
+<h3>Testing for equality<a class="headerlink" href="#testing-for-equality" title="Permalink to this headline">¶</a></h3>
+<p>This is the most obvious kind of test and the one we used above. Following the AAA structure:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Arrange</span>
+<span class="n">tf</span> <span class="o">=</span> <span class="mi">212</span>
+<span class="n">expected</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="c1"># Act</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">f2c</span><span class="p">(</span><span class="mi">212</span><span class="p">)</span>
+<span class="c1"># Assert</span>
+<span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">expected</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="testing-for-numpy-arrays">
+<h3>Testing for numpy arrays<a class="headerlink" href="#testing-for-numpy-arrays" title="Permalink to this headline">¶</a></h3>
+<p>In most scientific applications, <em>exact</em> solutions cannot be guaranteed (one reason is floating point accuracy as we will learn later in the course). Therefore, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> comes with several handy <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.14.0/reference/routines.testing.html">testing functions</a>. We first need to make our function a little more flexible:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Make f2c numpy friendly</span>
+<span class="k">def</span> <span class="nf">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Converts degrees Fahrenheits to degrees Celsius.</span>
+<span class="sd">    </span>
+<span class="sd">    Works with numpy arrays as well as with scalars.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">tf</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">459.67</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Input temperature below absolute zero!&#39;</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">tf</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="o">/</span><span class="mi">9</span>
+    <span class="k">return</span> <span class="n">r</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And now the test:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Arange</span>
+<span class="n">tf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">32</span><span class="p">,</span> <span class="mi">212</span><span class="p">,</span> <span class="mi">9941</span><span class="p">])</span>
+<span class="n">expected</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">5505</span><span class="p">])</span>
+<span class="c1"># Act</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">)</span>
+<span class="c1"># Assert</span>
+<span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_allclose</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">expected</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Other very useful assert functions are listed in the <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.14.0/reference/routines.testing.html#asserts">numpy documentation</a>.</p>
+</div>
+<div class="section" id="testing-the-validity-of-the-output">
+<h3>Testing the validity of the output<a class="headerlink" href="#testing-the-validity-of-the-output" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Arange</span>
+<span class="n">tf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">32</span><span class="p">,</span> <span class="mi">212</span><span class="p">,</span> <span class="mi">9941</span><span class="p">])</span>
+<span class="c1"># Act</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">)</span>
+<span class="c1"># Assert</span>
+<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="testing-the-interface-of-a-function">
+<h3>Testing the interface of a function<a class="headerlink" href="#testing-the-interface-of-a-function" title="Permalink to this headline">¶</a></h3>
+<p>These kind of tests verify that a function complies with the documentation. The focus is not necessarily the result, but also the type of the result:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Arange</span>
+<span class="n">tf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">32</span><span class="p">,</span> <span class="mi">212</span><span class="p">,</span> <span class="mi">9941</span><span class="p">])</span>
+<span class="c1"># Act </span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">)</span>
+<span class="c1"># Assert</span>
+<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">tf</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">tf</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="c1"># Arange</span>
+<span class="n">tf</span> <span class="o">=</span> <span class="mf">32.</span>
+<span class="c1"># Act </span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">)</span>
+<span class="c1"># Assert</span>
+<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">tf</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="testing-that-a-function-raises-exceptions">
+<h3>Testing that a function raises exceptions<a class="headerlink" href="#testing-that-a-function-raises-exceptions" title="Permalink to this headline">¶</a></h3>
+<p>These tests are also testing the behavior of a function rather than its input. They are extremely important for libraries like numpy or matplotlib:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+<span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+    <span class="n">f2c</span><span class="p">(</span><span class="o">-</span><span class="mi">3000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">93</span><span class="n">da1a896154</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pytest</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">f2c</span><span class="p">(</span><span class="o">-</span><span class="mi">3000</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pytest&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or, even more precise:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">match</span><span class="o">=</span><span class="s2">&quot;Input temperature below absolute zero&quot;</span><span class="p">):</span>
+    <span class="n">f2c</span><span class="p">(</span><span class="o">-</span><span class="mi">3000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">4915</span><span class="n">c786f8c4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">match</span><span class="o">=</span><span class="s2">&quot;Input temperature below absolute zero&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">f2c</span><span class="p">(</span><span class="o">-</span><span class="mi">3000</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;pytest&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="final-remarks">
+<h2>Final remarks<a class="headerlink" href="#final-remarks" title="Permalink to this headline">¶</a></h2>
+<p>Writing tests is hard. Programmers often spend as much time writing tests than writing actual code. Scientists cannot spend that much time writing tests of course, but I strongly believe that learning to write tests is a very good investment in the long term.</p>
+<p>I often hear the question: “In science we are programming new models and equations, we can’t test for that”. This is only partly true, and should not refrain you from writing unit tests. In particular, automated tests that check that data types are conserved, that a function returns valid values, or that a function simply <em>runs</em> are already much better than no test at all.</p>
+<p>Some parts of the code are really hard to test. For example:</p>
+<ul class="simple">
+<li><p>data Input/Output (how do I know that I read the data correctly?)</p></li>
+<li><p>model applied to real-case situations with unknown theoretical outcome</p></li>
+<li><p>graphical output</p></li>
+</ul>
+<p>For these cases (and other issues such as automated testing and continuous integration) we might get back to the topic in a second testing chapter at the end of the semester (if time permits).</p>
+</div>
+<div class="section" id="take-home-points">
+<h2>Take home points<a class="headerlink" href="#take-home-points" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>write tests!</strong></p></li>
+<li><p>tests are a safeguard against scientific mistakes and future bugs</p></li>
+<li><p>tests functions are written in a dedicated module and follow a simple convention: <code class="docutils literal notranslate"><span class="pre">test_*</span></code>. They are run automatically with <code class="docutils literal notranslate"><span class="pre">pytest</span></code></p></li>
+<li><p>“unit testing” is the practice of testing the smallest units of the code first. Unit tests help to organize the code.</p></li>
+<li><p>tests can check for function output, behavior, and errors</p></li>
+<li><p>testing is hard</p></li>
+<li><p><strong>write tests!</strong> Really. Write tests as you code, and you will be a better programmer and scientist.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./week_07"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="01-Exceptions.html" title="previous page">01 - Errors, Exceptions and Warnings</a>
+    <a class='right-next' id="next-link" href="Assignment-06.html" title="next page">Assignment #06: exceptions and testing</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Fabien Maussion<br/>
+        
+          <div class="extra_footer">
+            <p>
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+  <img align="right" class="margin" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg" width="88px">
+</a>
+These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International (CC BY 4.0) license</a>.
+<br>
+&copy; Copyright 2018-2020.
+</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-88391345-1', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>
