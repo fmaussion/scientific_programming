@@ -449,7 +449,7 @@
                 
   <div class="section" id="errors-exceptions-and-warnings">
 <h1>01 - Errors, Exceptions and Warnings<a class="headerlink" href="#errors-exceptions-and-warnings" title="Permalink to this headline">¶</a></h1>
-<p>At this stage of the lecture, you probably have encountered a several (many?) error messages when executing your code. Error messages are not nice, but they are frequent (no matter your programming skills) and simply belong to the programming workflow. In this chapter you will learn to recognize the different type of errors, and you will learn how to deal with them.</p>
+<p>At this stage of the lecture, you probably have encountered several (many?) error messages when executing your code. Error messages are not nice, but they are frequent (no matter your programming skills) and simply belong to the programming workflow. In this chapter you will learn to recognize the different type of errors, and you will learn how to deal with them.</p>
 <p><em>Copyright notice: parts of this chapter are taken from the <a class="reference external" href="https://docs.python.org/3/tutorial/errors.html">official python tutorial</a></em></p>
 <div class="section" id="syntax-errors">
 <h2>Syntax errors<a class="headerlink" href="#syntax-errors" title="Permalink to this headline">¶</a></h2>
@@ -470,7 +470,7 @@
 </div>
 </div>
 <p>The parser repeats the offending line and displays a little ‘arrow’ pointing at the earliest point in the line where the error was detected. The error is caused by (or at least detected at) the token preceding the arrow. File name and line number are printed so you know where to look in case the input came from a script.</p>
-<p><strong>Tip: avoiding syntax errors.</strong> If you chose to work with a good IDE, it will let you know about syntax errors way before you even execute the code (this is called a <a class="reference external" href="https://en.wikipedia.org/wiki/Lint_(software)">linter</a>. But sometimes it is still difficult to find out what’s wrong in a line. The syntax errors which are hardest to track down are missing parentheses:</p>
+<p><strong>Tip: avoiding syntax errors.</strong> If you chose to work with a good IDE, it will let you know about syntax errors way before you even execute the code (this is called a <a class="reference external" href="https://en.wikipedia.org/wiki/Lint_(software)">linter</a>). But sometimes it is still difficult to find out what’s wrong in a line. The syntax errors which are hardest to track down are missing parentheses:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bad coding: where&#39;s the parenthesis missing?</span>
@@ -616,7 +616,7 @@
 </div>
 <div class="section" id="when-to-raise-an-exception">
 <h3>When to raise an exception?<a class="headerlink" href="#when-to-raise-an-exception" title="Permalink to this headline">¶</a></h3>
-<p>The type of exception you might be tempted to use most often are <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> or <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>. For example, a well intentioned programmer might want to be nice to the user and write the following:</p>
+<p>The type of exception you might be tempted to use most often is <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> or <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>. For example, a well intentioned programmer might want to be nice to the user and write the following:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">an_addition</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
