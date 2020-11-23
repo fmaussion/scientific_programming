@@ -267,6 +267,23 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 08 - Python Packages and ClimVis project
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_08/01-Package-structure.html">
+   01 - Structure of a python package
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_08/02-ClimVis.html">
+   Project #1: the ClimVis package
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -742,8 +759,7 @@
 </div>
 </div>
 <div class="section" id="sys-path">
-<h2>sys.path<a class="headerlink" href="#sys-path" title="Permalink to this headline">¶</a></h2>
-<p><a id='path'></a></p>
+<span id="content-syspath"></span><h2>sys.path<a class="headerlink" href="#sys-path" title="Permalink to this headline">¶</a></h2>
 <p>But how does python know where to look for modules when you type <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">mymodule</span></code> in the interpreter? Well, it relies on a mechanism very similar to linux’s <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environment variable. Remember this one? Within python, the directories where the interpreter will look for modules to import are listed in <a class="reference external" href="https://docs.python.org/3/library/sys.html#sys.path">sys.path</a>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span>

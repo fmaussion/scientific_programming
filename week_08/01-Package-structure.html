@@ -1,0 +1,817 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01 - Structure of a python package &#8212; Scientific Programming</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.c2503ba76ccc0c9da7bd1e10de722da9.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Project #1: the ClimVis package" href="02-ClimVis.html" />
+    <link rel="prev" title="Assignment #06: exceptions and testing" href="../week_07/Assignment-06.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Scientific Programming</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../welcome.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../faq.html">
+   Frequently Asked  Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   External resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../slides.html">
+   Presentation slides
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 01 - Linux &amp; Python primer
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/01-Linux.html">
+   01 - A very short introduction to Linux
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/02-Installation.html">
+   02 - Installing Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/03-Getting-Started.html">
+   03 - Getting started with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/Assignment-01.html">
+   Assignment #01
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 02 - Python language fundamentals
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_02/01-Language-Fundamentals.html">
+   01 - Language fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_02/Assignment-02.html">
+   Assignment #02
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 03 - Variables scopes, modules, good practices
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/01-Import-Scopes.html">
+   01 - Modules, import mechanism, namespaces, scope(s)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/02-Tips-and-Tricks.html">
+   02 - Tips and tricks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/03-Good-practices.html">
+   03 - Good practices, programming style and conventions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/Assignment-03.html">
+   Assignment #03
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 04 - Floating point arithmetics, Numpy basics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_04/01-Why-Numpy.html">
+   01 - Introduction to numpy: why does numpy exist?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_04/02-Numbers.html">
+   02 - Number representation in computers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_04/Assignment-04.html">
+   Assignment #04
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 05 - Scientific Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/01-Numpy-ndarrays.html">
+   01 - Arrays in numpy: indexing, ufuncs, broadcasting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/02-Scientific-Python.html">
+   02 - The scientific python stack
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/Assignment-05.html">
+   Assignment #05
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 06 - Revision
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_06/01-Revision.html">
+   Revision
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 07 - Testing
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_07/01-Exceptions.html">
+   01 - Errors, Exceptions and Warnings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_07/02-Testing.html">
+   02 - Testing your code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_07/Assignment-06.html">
+   Assignment #06: exceptions and testing
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 08 - Python Packages and ClimVis project
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   01 - Structure of a python package
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-ClimVis.html">
+   Project #1: the ClimVis package
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/week_08/01-Package-structure.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/fmaussion/scientific_programming"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_08/01-Package-structure.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_08/01-Package-structure.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_08/01-Package-structure.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#revision-modules-namespaces-and-scopes">
+   Revision: modules, namespaces and scopes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-on-scopes">
+     More on scopes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-global-statement">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       global
+      </span>
+     </code>
+     statement
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#are-global-variables-truly-global-in-python">
+     Are global variables truly “global” in python?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#packages">
+   Packages
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-structure-of-a-package">
+     The structure of a package
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-a-local-package">
+     Installing a local package
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#advanced-applications-packaging-and-sharing-code">
+     Advanced applications: packaging and sharing code
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#take-home-points">
+   Take home points
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="structure-of-a-python-package">
+<h1>01 - Structure of a python package<a class="headerlink" href="#structure-of-a-python-package" title="Permalink to this headline">¶</a></h1>
+<p><em>Python Zen: “Namespaces are one honking great idea - let’s do more of those!”</em></p>
+<p>We introduced the concept of python modules in a <a class="reference internal" href="../week_03/01-Import-Scopes.html"><span class="doc std std-doc">previous unit</span></a>. Today we are going into more details and will introduce Python “<strong>packages</strong>”, which contain more than one module and are the structure used by all larger Python libraries.</p>
+<div class="section" id="revision-modules-namespaces-and-scopes">
+<h2>Revision: modules, namespaces and scopes<a class="headerlink" href="#revision-modules-namespaces-and-scopes" title="Permalink to this headline">¶</a></h2>
+<p>Python <a class="reference external" href="https://docs.python.org/3/tutorial/modules.html">modules</a> simply are <code class="docutils literal notranslate"><span class="pre">*.py</span></code> files. They can contain executable statements as well as function definitions, in any order.</p>
+<p>For example, a module called <code class="docutils literal notranslate"><span class="pre">mymodule.py</span></code> could look like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Module top level 1&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">circle_area</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A cool function&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;In function&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Module top level 2&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;In main script&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Area of circle: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">circle_area</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span>
+</pre></div>
+</div>
+<div class="exercise admonition" id="week_08/01-Package-structure-exercise-0">
+<p class="admonition-title"><span class="caption-number">Exercise 22 </span></p>
+<div class="section" id="exercise-content">
+<p>Can you predict what will be printed on screen if (i) you run <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">mymodule</span></code> in a python interpreter, or (ii) run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">mymodule</span></code> from the command line? If not, try it yourself!</p>
+</div>
+</div>
+<p>The example should be self-explanatory, and we will discuss it in class. If you have any question at this point don’t hesitate to ask me!</p>
+<p>Continue to read only after the mechanisms happening in the example above are fully understood.</p>
+<p>…</p>
+<p>OK? Let’s go on then.</p>
+<div class="section" id="more-on-scopes">
+<h3>More on scopes<a class="headerlink" href="#more-on-scopes" title="Permalink to this headline">¶</a></h3>
+<p>Here is a more intricate example for <code class="docutils literal notranslate"><span class="pre">mymodule.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_n</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The number N in the function is: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">print_n</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="exercise admonition" id="week_08/01-Package-structure-exercise-1">
+<p class="admonition-title"><span class="caption-number">Exercise 23 </span></p>
+<div class="section" id="exercise-content">
+<p>Will <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">mymodule</span></code> run or will it fail with an error? If you don’t know for sure, try it out!</p>
+</div>
+</div>
+<p>Why is this example working, even if <code class="docutils literal notranslate"><span class="pre">N</span></code> is defined below the function definition? Here again, the <em>order</em> at which things are happening when the module is imported is the important trick:</p>
+<ol class="simple">
+<li><p>the function <code class="docutils literal notranslate"><span class="pre">print_n</span></code> is detected and interpreted, but <em>not</em> executed (nobody called it)</p></li>
+<li><p>the variable <code class="docutils literal notranslate"><span class="pre">N</span></code> is assigned the value <code class="docutils literal notranslate"><span class="pre">10</span></code>. It is now available at the module scope, i.e. an external module import would allow the command <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">mymodule</span> <span class="pre">import</span> <span class="pre">N</span></code> to run without error</p></li>
+<li><p>The function <code class="docutils literal notranslate"><span class="pre">print_n</span></code> is called. In this function, the interpreter seeks for a local scope variable (i.e. at the function level) called <code class="docutils literal notranslate"><span class="pre">N</span></code>. It doesn’t find it, and therefore looks at the module level. Nice! A variable called <code class="docutils literal notranslate"><span class="pre">N</span></code> is found at the module level and printed.</p></li>
+</ol>
+<p>Note that this will not always work. See the following example which builds upon the previous one:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_n</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The number N in the function is: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+    <span class="n">N</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">print_n</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">UnboundLocalError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">8</span><span class="n">aff2853bb47</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">print_n</span><span class="p">()</span>
+
+<span class="nn">&lt;ipython-input-1-8aff2853bb47&gt;</span> in <span class="ni">print_n</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">print_n</span><span class="p">():</span>
+<span class="nn">----&gt; 2     print(&#39;The number N</span> in <span class="ni">the function is: {}&#39;.format</span><span class="nt">(N))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">N</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="ne">UnboundLocalError</span>: local variable &#39;N&#39; referenced before assignment
+</pre></div>
+</div>
+</div>
+</div>
+<p>So how is this example different to the one above, which worked fine as explained? We just added a line <em>below</em> the one that used to work before. So now there is a variable <code class="docutils literal notranslate"><span class="pre">N</span></code> in the function, and it overrides the module-level one. The python interpreter detects that variable and raises an error at execution, independent to whether or not there is a global variable <code class="docutils literal notranslate"><span class="pre">N</span></code> available.</p>
+<p>Even if it might work to define module level variables anywhere, the recommended order of code in a module is:</p>
+<ol class="simple">
+<li><p>import statements</p></li>
+<li><p>module level variable definitions</p></li>
+<li><p>functions</p></li>
+<li><p>if necessary (rare): one or more function calls (e.g. to initialize some global values), <code class="docutils literal notranslate"><span class="pre">__main__</span></code></p></li>
+</ol>
+<p>But… If module functions can read variables at the module level, can they also change them? Here is another example messing around with <strong>global</strong> and <strong>local</strong> variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+3
+2
+1
+</pre></div>
+</div>
+</div>
+</div>
+<p>What can we learn from this example? That the local (function) scope variable <code class="docutils literal notranslate"><span class="pre">x</span></code> has nothing to do with the global scope variable <code class="docutils literal notranslate"><span class="pre">x</span></code>. For the python interpreter, both are unrelated and their name is irrelevant. What is relevant though is to which scope they are attached to (if you are interested to know which variables are currently available in your scope, check the built-in functions <a class="reference external" href="https://docs.python.org/3/library/functions.html#dir">dir()</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#globals">globals()</a> and <a class="reference external" href="https://docs.python.org/3/library/functions.html#locals">locals()</a>).</p>
+</div>
+<div class="section" id="the-global-statement">
+<h3>The <code class="docutils literal notranslate"><span class="pre">global</span></code> statement<a class="headerlink" href="#the-global-statement" title="Permalink to this headline">¶</a></h3>
+<p>In special cases, it might be useful for a function to change the value of a global variable. Examples include package level parameter sets such as options and model parameters which will change the behavior of the package after being set. For example, see numpy’s <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.set_printoptions.html">set_printoptions</a> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.123456789</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.12345679]
+[1.1235]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We changed the value of a variable at the module level (we don’t know its name but it isn’t relevant here) which is now taken into account by the numpy print function.</p>
+<p>Let’s say we’d like to have a counter of the number of times a function has been called. We can do this with the following syntax:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">count</span>  <span class="c1"># without this, count would be local!</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">func</span><span class="p">()</span>
+<span class="n">func</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that in practice, global variables that need updating are rarely single integers or floats like in this example. The reasons for this will be explained later on, once you’ve learned more about python packages and the import system.</p>
+</div>
+<div class="section" id="are-global-variables-truly-global-in-python">
+<h3>Are global variables truly “global” in python?<a class="headerlink" href="#are-global-variables-truly-global-in-python" title="Permalink to this headline">¶</a></h3>
+<p>If by this question we mean “global” as available everywhere in any python script or interpreter, the short answer is <strong>no, there is no such thing as a “global” variable in python</strong>. The term “global variable” in python always refers to the module level, while “local variables” refer to the embedded scope (often, a function).</p>
+<p>If you want to have access to a module’s top-level variable (or function), you <em>have</em> to import it. This system ensures very clear and unpolluted <strong>namespaces</strong>, where everything can be traced to its source:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="s1">&#39;from the math module&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="s1">&#39;from the numpy package&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">scipy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="s1">&#39;from the scipy package&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793 from the math module
+3.141592653589793 from the numpy package
+3.141592653589793 from the scipy package
+</pre></div>
+</div>
+</div>
+</div>
+<p>The only exception to the import rule are <a class="reference external" href="https://docs.python.org/3/library/functions.html">built-in functions</a>, which are available everywhere and have their own scope. If you want to know more about the four different python scopes, read this <a class="reference external" href="http://sebastianraschka.com/Articles/2014_python_scope_and_namespaces.html#scope-resolution-for-variable-names-via-the-legb-rule">blog post by Sebastian Raschka</a>: A Beginner’s Guide to Python’s Namespaces, Scope Resolution, and the LEGB Rule.</p>
+</div>
+</div>
+<div class="section" id="packages">
+<h2>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h2>
+<p><em>From the <a class="reference external" href="https://docs.python.org/3/tutorial/modules.html#packages">documentation</a>:</em></p>
+<p>Packages are a way of structuring Python’s module namespace by using “dotted module names”. For example, the module name <code class="docutils literal notranslate"><span class="pre">A.B</span></code> designates a submodule named <code class="docutils literal notranslate"><span class="pre">B</span></code> in a package named <code class="docutils literal notranslate"><span class="pre">A</span></code>. Just like the use of modules saves the authors of different modules from having to worry about each other’s global variable names, the use of dotted module names saves the authors of multi-module packages like NumPy or Xarray from having to worry about each other’s module names.</p>
+<p>Packages can also be used to organize bigger projects into thematic groups. SciPy for example has more than 12 subpackages, some of them being organized in sub-subpackages.</p>
+<p>Now read the few paragraphs from the python documentation on <a class="reference external" href="https://docs.python.org/3/tutorial/modules.html#packages">packages</a> <em>(estimated reading time: 5 min)</em>.</p>
+<p>You are maybe asking yourself: <strong>what can I use packages for?</strong> Well, for one, it is necessary to understand their basic structure in order to be able to read someone else’s code, for example in the <code class="docutils literal notranslate"><span class="pre">xarray</span></code> library. Second, because I think that you have everything to win by organizing your personal code (analysis routines, plot functions…) into a single package that you can import from anywhere (e.g. in a Jupyter Notebook or from a different working directory). Therefore, the ClimVis project will bring you to write a small package.</p>
+<div class="section" id="the-structure-of-a-package">
+<h3>The structure of a package<a class="headerlink" href="#the-structure-of-a-package" title="Permalink to this headline">¶</a></h3>
+<p>I’ve written a simple package template called “scispack” to help you getting started with your future packages. You will find the code <a class="reference external" href="https://github.com/fmaussion/scispack">on github</a> and a link to download it (green button in the top right). It is released in the public domain, feel free to use it for your projects. You will have more time to get familiar with it during the assignments (the <code class="docutils literal notranslate"><span class="pre">climvis</span></code> package is based on it). Here, I’ll simply repeat its basic structure:</p>
+<p><strong>Directory root (<code class="docutils literal notranslate"><span class="pre">./</span></code>)</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>: for git users only</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LICENSE.txt</span></code>: <a class="reference external" href="https://help.github.com/articles/licensing-a-repository/">always</a>
+license your code</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">README.md</span></code>: this page</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setup.py</span></code>: this is what makes your package installable by <code class="docutils literal notranslate"><span class="pre">pip</span></code>. It contains
+a set of simple instructions regarding e.g. the name of the package, it’s version
+number, or where to find command line scripts</p></li>
+</ul>
+<p><strong>The actual package (<code class="docutils literal notranslate"><span class="pre">./scispack</span></code>)</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>: tells python that the directory is a package and enables
+the  “dotted module names”  import syntax. It is often empty, but here
+we added some entry points to the package’s API and the version string.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cfg.py</span></code>, <code class="docutils literal notranslate"><span class="pre">utils.py</span></code> and <code class="docutils literal notranslate"><span class="pre">cli.py</span></code>: the modules</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cli.py</span></code>: entry point for the command line interface</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cfg.py</span></code>: container module for the package parameters and constants</p></li>
+</ul>
+<p><strong>The tests (<code class="docutils literal notranslate"><span class="pre">./scispack/tests</span></code>)</strong></p>
+<p>One test file per module. Their name has to start with <code class="docutils literal notranslate"><span class="pre">test_</span></code> in order to be
+detected by pytest.</p>
+</div>
+<div class="section" id="installing-a-local-package">
+<h3>Installing a local package<a class="headerlink" href="#installing-a-local-package" title="Permalink to this headline">¶</a></h3>
+<p>By starting your python interpreter from the root directory of a package (for example the template package) you will have access to the familiar syntax (e.g. <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">scispack.utils</span> <span class="pre">import</span> <span class="pre">area_of_circle</span></code>). But if you start an interpreter from anywhere else the package won’t be available.</p>
+<p>Remember what we wrote about the <a class="reference internal" href="../week_03/01-Import-Scopes.html#content-syspath"><span class="std std-ref">python sys.path</span></a> a couple of weeks ago? In order to “install” the package we have two options:</p>
+<ol class="simple">
+<li><p>we add the path to the package directory to <code class="docutils literal notranslate"><span class="pre">sys.path</span></code></p></li>
+<li><p>we copy the package into a folder already listed in <code class="docutils literal notranslate"><span class="pre">sys.path</span></code></p></li>
+</ol>
+<p>From the two solutions, number 2 is by far the easiest and most sustainable. In fact, this is what happens when you do <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">packagename</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">packagename</span></code>. The two commands are very similar in that they are looking for the package in an online repository, download it and copy it in the current environment’s <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>. If you want to know where an installed package is located, you can do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">numpy</span><span class="o">.</span><span class="vm">__file__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/mowglie/.pyenv/versions/3.8.5/envs/py3/lib/python3.8/site-packages/numpy/__init__.py&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The same installation options are offered to us for our self-made package. The simplest is to navigate to our package’s root directory and run:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ pip install -e .
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">.</span></code> command will look for a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file <strong>in the current folder</strong> (this is why the dot <code class="docutils literal notranslate"><span class="pre">.</span></code> is used) and if found, use it to determine the package’s name and other installation options. The <code class="docutils literal notranslate"><span class="pre">-e</span></code> optional argument installs the package in “editable” or “development” mode. In simple terms, this option will create a <a class="reference external" href="https://en.wikipedia.org/wiki/Symbolic_link">symbolic link</a> to the package directory instead of copying the files. Therefore, any changes to the code will always be available the next time you open a new python interpreter.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> is the recommended way to install any local package, in pip or in conda environments**. At the university (or on computers where you don’t have the super-user permissions), use <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--user</span> <span class="pre">-e</span> <span class="pre">.</span></code></p>
+</div>
+</div>
+<div class="section" id="advanced-applications-packaging-and-sharing-code">
+<h3>Advanced applications: packaging and sharing code<a class="headerlink" href="#advanced-applications-packaging-and-sharing-code" title="Permalink to this headline">¶</a></h3>
+<p>The simple template you are going to start with in <code class="docutils literal notranslate"><span class="pre">ClimVis</span></code> is not fundamentally different from larger packages like xarray or numpy. There are a couple of big differences though, and I’ll list some of them here:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/pydata/xarray">xarray</a> (as a pure python package) has a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> much like yours. It will have some more options related to the version control of the package and will have a separate folder for HTML documentation. The rest of the root directory files are related to testing and continuous integration.</p></li>
+<li><p><a class="reference external" href="https://github.com/numpy/numpy">numpy</a> (as a mix of python and C code) will be quite more complex to deploy. Installing a development version of numpy will imply some compilation of C code, which is quite easy to do on linux machines but needs quite some time.</p></li>
+</ul>
+<p>Tools like <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code> hide all these things from the users, fortunately. They ship pre-compiled binaries and take care of most of the details in the background. This hasn’t always been that easy though, and a recent post by <a class="reference external" href="https://xkcd.com/1987/">xkcd</a> reminds us that installing python packages can still be a mess sometimes:</p>
+<p><img alt="img" src="https://imgs.xkcd.com/comics/python_environment.png" /></p>
+</div>
+</div>
+<div class="section" id="take-home-points">
+<h2>Take home points<a class="headerlink" href="#take-home-points" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>python has very clear rules regarding the scope of variables, leading to clearly defined namespaces</p></li>
+<li><p>there are no global variables in python, only namespaces</p></li>
+<li><p>a package is a way to organize several modules under the same namespace. It allows to construct nested modules, like <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">A.B</span> <span class="pre">import</span> <span class="pre">C</span></code></p></li>
+<li><p>make your package installable simply requires to comply to a couple of simple rules, including defining a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> installation file at the root directory folder</p></li>
+<li><p>I recommend to install local packages with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./week_08"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../week_07/Assignment-06.html" title="previous page">Assignment #06: exceptions and testing</a>
+    <a class='right-next' id="next-link" href="02-ClimVis.html" title="next page">Project #1: the ClimVis package</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Fabien Maussion<br/>
+        
+          <div class="extra_footer">
+            <p>
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+  <img align="right" class="margin" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg" width="88px">
+</a>
+These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International (CC BY 4.0) license</a>.
+<br>
+&copy; Copyright 2018-2020.
+</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-88391345-1', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>
