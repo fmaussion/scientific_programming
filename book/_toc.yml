@@ -49,3 +49,9 @@
     - file: week_07/01-Exceptions
     - file: week_07/02-Testing
     - file: week_07/Assignment-06
+    
+- part: Week 08 - Python Packages and ClimVis project
+  chapters:
+    - file: week_08/01-Package-structure
+    - file: week_08/02-ClimVis
+
