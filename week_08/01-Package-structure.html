@@ -484,10 +484,10 @@
 <div class="exercise admonition" id="week_08/01-Package-structure-exercise-0">
 <p class="admonition-title"><span class="caption-number">Exercise 22 </span></p>
 <div class="section" id="exercise-content">
-<p>Can you predict what will be printed on screen if (i) you run <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">mymodule</span></code> in a python interpreter, or (ii) run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">mymodule</span></code> from the command line? If not, try it yourself!</p>
+<p>Can you predict what will be printed on screen if (i) you run <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">mymodule</span></code> in a python interpreter, or (ii) run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">mymodule.py</span></code> from the command line? If not, try it yourself!</p>
 </div>
 </div>
-<p>The example should be self-explanatory, and we will discuss it in class. If you have any question at this point don’t hesitate to ask me!</p>
+<p>The example should be self-explanatory, and we will discuss it in class. If you have any question at this point don’t hesitate to ask me! See <a class="reference external" href="https://realpython.com/run-python-scripts/">this tutorial from RealPython</a> for more details.</p>
 <p>Continue to read only after the mechanisms happening in the example above are fully understood.</p>
 <p>…</p>
 <p>OK? Let’s go on then.</p>
@@ -579,7 +579,7 @@
 </div>
 </div>
 </div>
-<p>What can we learn from this example? That the local (function) scope variable <code class="docutils literal notranslate"><span class="pre">x</span></code> has nothing to do with the global scope variable <code class="docutils literal notranslate"><span class="pre">x</span></code>. For the python interpreter, both are unrelated and their name is irrelevant. What is relevant though is to which scope they are attached to (if you are interested to know which variables are currently available in your scope, check the built-in functions <a class="reference external" href="https://docs.python.org/3/library/functions.html#dir">dir()</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#globals">globals()</a> and <a class="reference external" href="https://docs.python.org/3/library/functions.html#locals">locals()</a>).</p>
+<p>What can we learn from this example? That the local (function) scope variable <code class="docutils literal notranslate"><span class="pre">x</span></code> has nothing to do with the global scope variable <code class="docutils literal notranslate"><span class="pre">x</span></code>. For the python interpreter, both are unrelated and their name is irrelevant. What is relevant though is which scope they are attached to (if you are interested to know which variables are currently available in your scope, check the built-in functions <a class="reference external" href="https://docs.python.org/3/library/functions.html#dir">dir()</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#globals">globals()</a> and <a class="reference external" href="https://docs.python.org/3/library/functions.html#locals">locals()</a>).</p>
 </div>
 <div class="section" id="the-global-statement">
 <h3>The <code class="docutils literal notranslate"><span class="pre">global</span></code> statement<a class="headerlink" href="#the-global-statement" title="Permalink to this headline">¶</a></h3>
@@ -702,7 +702,7 @@ detected by pytest.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/mowglie/.pyenv/versions/3.8.5/envs/py3/lib/python3.8/site-packages/numpy/__init__.py&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/mowglie/.pyenv/versions/3.8.5/envs/book/lib/python3.8/site-packages/numpy/__init__.py&#39;
 </pre></div>
 </div>
 </div>
@@ -714,7 +714,7 @@ detected by pytest.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">.</span></code> command will look for a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file <strong>in the current folder</strong> (this is why the dot <code class="docutils literal notranslate"><span class="pre">.</span></code> is used) and if found, use it to determine the package’s name and other installation options. The <code class="docutils literal notranslate"><span class="pre">-e</span></code> optional argument installs the package in “editable” or “development” mode. In simple terms, this option will create a <a class="reference external" href="https://en.wikipedia.org/wiki/Symbolic_link">symbolic link</a> to the package directory instead of copying the files. Therefore, any changes to the code will always be available the next time you open a new python interpreter.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> is the recommended way to install any local package, in pip or in conda environments**. At the university (or on computers where you don’t have the super-user permissions), use <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--user</span> <span class="pre">-e</span> <span class="pre">.</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> is the recommended way to install any local package, in pip or in conda environments. At the university (or on computers where you don’t have the super-user permissions), use <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--user</span> <span class="pre">-e</span> <span class="pre">.</span></code></p>
 </div>
 </div>
 <div class="section" id="advanced-applications-packaging-and-sharing-code">
