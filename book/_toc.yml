@@ -54,4 +54,7 @@
   chapters:
     - file: week_08/01-Package-structure
     - file: week_08/02-ClimVis
-
+    
+- part: Week 09 - Good to know
+  chapters:
+    - file: week_09/01-Documentation
