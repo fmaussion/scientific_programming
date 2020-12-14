@@ -1,0 +1,1387 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01 - Object Oriented Programming: introduction &#8212; Scientific Programming</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.da26317cf37e5c4af2fa3e6253912353.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignment #07: a file writer class" href="Assignment-07.html" />
+    <link rel="prev" title="01 - Documenting your code" href="../week_09/01-Documentation.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Scientific Programming</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../welcome.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../faq.html">
+   Frequently Asked  Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   External resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../slides.html">
+   Presentation slides
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 01 - Linux &amp; Python primer
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/01-Linux.html">
+   01 - A very short introduction to Linux
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/02-Installation.html">
+   02 - Installing Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/03-Getting-Started.html">
+   03 - Getting started with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/Assignment-01.html">
+   Assignment #01
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 02 - Python language fundamentals
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_02/01-Language-Fundamentals.html">
+   01 - Language fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_02/Assignment-02.html">
+   Assignment #02
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 03 - Variables scopes, modules, good practices
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/01-Import-Scopes.html">
+   01 - Modules, import mechanism, namespaces, scope(s)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/02-Tips-and-Tricks.html">
+   02 - Tips and tricks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/03-Good-practices.html">
+   03 - Good practices, programming style and conventions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/Assignment-03.html">
+   Assignment #03
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 04 - Floating point arithmetics, Numpy basics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_04/01-Why-Numpy.html">
+   01 - Introduction to numpy: why does numpy exist?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_04/02-Numbers.html">
+   02 - Number representation in computers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_04/Assignment-04.html">
+   Assignment #04
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 05 - Scientific Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/01-Numpy-ndarrays.html">
+   01 - Arrays in numpy: indexing, ufuncs, broadcasting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/02-Scientific-Python.html">
+   02 - The scientific python stack
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/Assignment-05.html">
+   Assignment #05
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 06 - Revision
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_06/01-Revision.html">
+   Revision
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 07 - Testing
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_07/01-Exceptions.html">
+   01 - Errors, Exceptions and Warnings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_07/02-Testing.html">
+   02 - Testing your code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_07/Assignment-06.html">
+   Assignment #06: exceptions and testing
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 08 - Python Packages and ClimVis project
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_08/01-Package-structure.html">
+   01 - Structure of a python package
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_08/02-ClimVis.html">
+   Project #1: the ClimVis package
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 09 - Good to know
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_09/01-Documentation.html">
+   01 - Documenting your code
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Week 10 - Object Oriented Programming
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   01 - Object Oriented Programming: introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assignment-07.html">
+   Assignment #07: a file writer class
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/week_10/01-OOP-Part-1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/fmaussion/scientific_programming"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_10/01-OOP-Part-1.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_10/01-OOP-Part-1.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_10/01-OOP-Part-1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classes-and-objects">
+   Classes and objects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#class-instance-attributes">
+   Class/instance attributes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instance-methods">
+   Instance Methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extending-attributes-the-property-decorator">
+   Extending attributes: the @property decorator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#digging-deeper-into-property-setters">
+   Digging deeper into @property: setters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#private-attributes-and-methods">
+   Private attributes and methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#our-final-class">
+   Our final class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#take-home-points">
+   Take home points
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="object-oriented-programming-introduction">
+<h1>01 - Object Oriented Programming: introduction<a class="headerlink" href="#object-oriented-programming-introduction" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-oriented programming</a> (OOP) is a standard feature of many modern programming languages. Learning OOP “properly” would require one entire semester at least, and we won’t try to cover all the details here. The specific objectives of these three OOP units are:</p>
+<ul class="simple">
+<li><p>to learn the basic OOP concepts syntax so that you are able to understand OOP code and can use libraries making use of OOP concepts (i.e.: almost all python libraries)</p></li>
+<li><p>to become familiar with certain semantics associated with OOP: classes, objects, attributes, methods, inheritance</p></li>
+<li><p>to introduce simple examples where OOP is a useful paradigm, and try to raise your interest in its usage so that you can learn it by yourself when needed</p></li>
+</ul>
+<p>Today’s OOP unit introduces the concept of “objects” in the Python language and shows you how to create new kind of objects on your own. Next week we will learn the concept of class inheritance. Finally, we will learn in which circumstances objects can be useful, and when not.</p>
+<p><em>Copyright notice: this chapter is vaguely inspired from <a class="reference external" href="https://realpython.com/python3-object-oriented-programming/">RealPython’s beginner tutorial</a> on OOP.</em></p>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>As stated in the <a class="reference external" href="https://en.wikipedia.org/wiki/Object-oriented_programming">OOP wikipedia page</a>, OOP is a “paradigm” which might or might not be supported by a specific programming language. Although Python is an OOP language at its core, <strong>it does not enforce its usage</strong>. Matlab or R follow the same philosophy: they support OOP but do not force their users to use it. In fact, many of you will finish your master thesis without having to write any OOP specific code. You have, however, already made heavy use of Python objects (<em>everything</em> is an object in Python, remember?) and I argue that it is very important that you are able to understand the basics of OOP in order to make better use of Python.</p>
+<p>In short, <strong>OOP is simply another way to structure your programs</strong>. Until now, you have written modules consisting of functions, sometimes with a short <code class="docutils literal notranslate"><span class="pre">__main__</span></code> script which was itself calling one or more functions. OOP will add a new tool to your repertoire by allowing you to <strong>bundle data and behaviors into individual objects</strong>, possibly helping you to organize your code in a way that feels more natural and clearer.</p>
+<p>Let’s get started with some examples and new semantics! We will talk about the advantages and disadvantages of OOP in a following unit, once you are more familiar with its syntax.</p>
+</div>
+<div class="section" id="classes-and-objects">
+<h2>Classes and objects<a class="headerlink" href="#classes-and-objects" title="Permalink to this headline">¶</a></h2>
+<p><strong>Classes</strong> are used to create new user-defined structures that contain information about something. These “things” come with “services”, as you already know. Let’s define a new class called <code class="docutils literal notranslate"><span class="pre">Cat</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+    <span class="c1"># Initializer</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What are the new things in this code snippet?</p>
+<ul class="simple">
+<li><p>first, the class name definition (<code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Cat</span></code>). As per <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#class-names">pep8</a>, class names in Python should use “CapWords” per convention</p></li>
+<li><p>the class contains a “function” called <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, which indeed looks very much like a normal function. Here the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function has three positional arguments: <code class="docutils literal notranslate"><span class="pre">self</span></code> (which has a special meaning as we are going to see), <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">weight</span></code>. These arguments are used to initialize the <strong>attributes</strong> of the same name. We’ll go back to this in the next section.</p></li>
+</ul>
+<p>A class provides a new structure definition. It’s a “blueprint” for how something should be defined, but it doesn’t actually provide any real data content itself. To actually use the functionalities defined by the <strong>class</strong> you’ll need to create a new <strong>instance</strong> of that class. <strong>Instantiating</strong> is a fancy term for creating a new, unique realization of a class (an <strong>object</strong>). Let’s go for it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Cat at 0x7fe010c6d040&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We just created a new instance of the class <code class="docutils literal notranslate"><span class="pre">Cat</span></code> and assigned it to the variable <code class="docutils literal notranslate"><span class="pre">a</span></code>. An instance of a class is commonly called an <strong>object</strong> (this can be used as synonym for “instance”). The variable <code class="docutils literal notranslate"><span class="pre">a</span></code> stores an instance of the class <code class="docutils literal notranslate"><span class="pre">Cat</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ask if a is an instance of Cat or not</span>
+<span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">Cat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>In fact, we just created a <strong>new datatype</strong>, called <code class="docutils literal notranslate"><span class="pre">Cat</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>__main__.Cat
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Every new instance of a class is unique</strong>, regardless of the values used to initialize it. Let’s create a new Cat with the same name and weight:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">Cat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is still a unique instance and is not a copy of <code class="docutils literal notranslate"><span class="pre">a</span></code> in any way:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="ow">is</span> <span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="class-instance-attributes">
+<h2>Class/instance attributes<a class="headerlink" href="#class-instance-attributes" title="Permalink to this headline">¶</a></h2>
+<p>The cat’s name and weight are called <strong>instance attributes</strong> and can be accessed with the dot syntax:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Grumpy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">weight</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>A common synonym for the term “attribute” is “<strong>property</strong>”. The two terms are very close and you might find one or the other term depending on who writes about them. Properties in python are a special kind of attributes, but the difference is subtle and not relevant here.</p>
+<p><strong>Instance attributes</strong> are specific to the created object. They are often defined at instantiation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Tiger&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">b</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Tiger&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Classes can also define <strong>class attributes</strong>, which are tied to a class but not to a specific instance:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+    <span class="c1"># Class attributes are defined at the class level</span>
+    <span class="n">speak</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
+    
+    <span class="c1"># Initializer</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="c1"># Instance attributes only make sense at instanciation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Cat</span><span class="o">.</span><span class="n">speak</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Meow&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">speak</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Meow&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Careful!</strong> Both class and instance attributes are <strong>mutable</strong>. They can be changed from outside the class:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Roncheux&#39;</span>
+<span class="n">a</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="s1">&#39;Miaou&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Roncheux&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">speak</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Miaou&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>These changes are specific to the instance, and the class attributes remains unchanged:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Cat</span><span class="o">.</span><span class="n">speak</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Meow&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>In comparison to other OO languages, python is very “liberal” regarding attributes: some languages like Java would not allow to change attributes this way. In practice, attributes should not be changed by the users of a class. Unless they are documented as being “changeable”, and in this case they become “properties”. More on this later.</p>
+</div>
+<div class="section" id="instance-methods">
+<h2>Instance Methods<a class="headerlink" href="#instance-methods" title="Permalink to this headline">¶</a></h2>
+<p>If a class only had attributes, it would merely be a structure for data storage. Classes become useful when they add “services” to the data they store. These services are called <strong>methods</strong>, and their syntax has similarities with a function definition:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+    <span class="c1"># Class attribute</span>
+    <span class="n">speak</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
+    
+    <span class="c1"># Initializer</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        
+    <span class="c1"># Method</span>
+    <span class="k">def</span> <span class="nf">say_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">speak</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The biggest difference between methods and functions is that <strong>a method is tied to a class instance</strong>: this is made clear by the <code class="docutils literal notranslate"><span class="pre">self</span></code> argument, present in the method definition but not used when calling the method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Kitty&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Meow, Kitty!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">b</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Meow, Grumpy!
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">self</span></code> variable is implicit in the call above, and refers to the instance of the class which is calling the method. It might sound a little complicated at first, but you’ll get used to it: <code class="docutils literal notranslate"><span class="pre">self</span></code> is used to read and write instance attributes, and is the first argument to virtually any method defined in the class (there is one exception to this rule, and we will ignore it for today).</p>
+<p>At this point, you may have noticed similarities between the objects you used commonly in the climate lecture and the objects we just defined here. Let’s make the analogy:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;my data variable&#39;</span><span class="p">)</span>  <span class="c1"># instantiating a class</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">)</span>  <span class="c1"># a is an instance of the DataArray class</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>  <span class="c1"># xarray.core.dataarray.DataArray is the datatype</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># name is an instance attribute</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>  <span class="c1"># mean is an instance method</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;xarray.core.dataarray.DataArray&#39;&gt;
+my data variable
+&lt;xarray.DataArray &#39;my data variable&#39; ()&gt;
+array(2.)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Are you confident about the meaning of all these terms? If not, I might have explained it in a way which is not the right one for you: you can use your google-skills to look for other tutorials. There are plenty of good tutorials on the web!</p>
+</div>
+<div class="section" id="extending-attributes-the-property-decorator">
+<h2>Extending attributes: the &#64;property decorator<a class="headerlink" href="#extending-attributes-the-property-decorator" title="Permalink to this headline">¶</a></h2>
+<p>We learned that “attributes” are data that describe some aspects of a class instance. Very often, instance methods will initialize and/or update these attributes at run time. Consider the following example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+    
+    <span class="c1"># Initializer</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        
+    <span class="c1"># Method</span>
+    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Weight before eating: </span><span class="si">{}</span><span class="s1"> kg&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">weight</span><span class="p">))</span>
+<span class="n">a</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Weight after eating: </span><span class="si">{}</span><span class="s1"> kg&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">weight</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Weight before eating: 4 kg
+Weight after eating: 4.2 kg
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is a simplified but very typical use for instance attributes: they will change in an object’s lifetime according to specific events. Now let’s suppose that you are working with scientists from the USA, and they’d like to know the cat’s weight in pounds. One way to do so would be to compute it at instantiation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+    
+    <span class="c1"># Initializer</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight_lbs</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="mf">0.45359237</span>
+        
+    <span class="c1"># Method</span>
+    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.818490487395103
+</pre></div>
+</div>
+</div>
+</div>
+<p>There is an obvious drawback to this method however: what if the cat eats food? Its weight in lbs won’t be updated!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span>  <span class="c1"># this is a problem</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.818490487395103
+</pre></div>
+</div>
+</div>
+</div>
+<p>A possible way to deal with the issue would be to compute the pound weight <em>on demand</em>, i.e. write a method to compute it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+    
+    <span class="c1"># Initializer</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        
+    <span class="c1"># Method</span>
+    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
+        
+    <span class="k">def</span> <span class="nf">get_weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">/</span> <span class="mf">0.45359237</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">get_weight_lbs</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.259415011764858
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is already much better (and accurate), but it is somehow hiding the fact that the weight of a cat really is an attribute, no matter the unit. It should not be accessed with a <code class="docutils literal notranslate"><span class="pre">get_</span></code> method. This is where a new syntax comes in handy:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+
+    <span class="c1"># Initializer</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        
+    <span class="c1"># Method</span>
+    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">/</span> <span class="mf">0.45359237</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">weight_lbs</span></code> looks like a method (it computes something), but only in the class definition. For the user of the objects, the computation is hidden in an attribute call:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span>  <span class="c1"># weight_lbs is an attribute!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.259415011764858
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is a very useful pattern, and it is frequently used in python. The <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> syntax defines a “decorator”, and you might learn about decorators in a more advanced python class.</p>
+</div>
+<div class="section" id="digging-deeper-into-property-setters">
+<h2>Digging deeper into &#64;property: setters<a class="headerlink" href="#digging-deeper-into-property-setters" title="Permalink to this headline">¶</a></h2>
+<p>Now, your colleagues from the USA can finally read the weight of the cat in pounds, and you programmed this without compromising the consistency of the cat’s weight, regardless of the unit used. However, your colleagues are still unhappy: they would like to be able to set the weight of the cat in pounds as well (these Americans really hate SI units). This is causing you trouble, because when they try to set it they get an error:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span> <span class="o">=</span> <span class="mi">9</span>  <span class="c1"># this generates an attribute error</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">32</span><span class="o">-</span><span class="mi">7313</span><span class="n">ef98de06</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span> <span class="o">=</span> <span class="mi">9</span>  <span class="c1"># this generates an attribute error</span>
+
+<span class="ne">AttributeError</span>: can&#39;t set attribute
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is expected, because nothing in the class definition above can set an attribute named <code class="docutils literal notranslate"><span class="pre">weight_lbs</span></code>: it is a passive, “read only” property. Here again, your creative mind came up with an elegant solution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+
+    <span class="c1"># Initializer</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;kg&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;kg&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="k">elif</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;lbs&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_weight_lbs</span><span class="p">(</span><span class="n">weight</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unit not understood: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">unit</span><span class="p">))</span>
+        
+    <span class="c1"># Method</span>
+    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">/</span> <span class="mf">0.45359237</span>
+    
+    <span class="c1"># Set a new value for the weight!</span>
+    <span class="k">def</span> <span class="nf">set_weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_weight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="mf">0.45359237</span> <span class="o">*</span> <span class="n">new_weight</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With this new method, we are now able to consistently switch between units:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.2 9.259415011764858
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">set_weight_lbs</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.9895160700000005 11.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>This solution works, but is suboptimal. Here again, your USA colleagues have to use a method (<code class="docutils literal notranslate"><span class="pre">obj.set_xxx()</span></code>) where you can use a more intuitive attribute syntax (<code class="docutils literal notranslate"><span class="pre">obj.xxx</span> <span class="pre">=</span> <span class="pre">new_value</span></code>). For this reason, Python introduced a <strong>setter</strong> decorator, with a syntax inspired from <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;kg&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;kg&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="k">elif</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;lbs&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">weight_lbs</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unit not understood: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">unit</span><span class="p">))</span>
+        
+    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food_kg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food_kg</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">/</span> <span class="mf">0.45359237</span>
+    
+    <span class="c1"># This is new!</span>
+    <span class="nd">@weight_lbs</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_weight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="mf">0.45359237</span> <span class="o">*</span> <span class="n">new_weight</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With this new syntax, the USA colleagues won’t see a difference between the “true attribute” (in SI units) and theirs:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span><span class="p">)</span>  <span class="c1"># read OK</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.2 9.259415011764858
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span> <span class="o">=</span> <span class="mi">11</span>  <span class="c1"># set OK</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span><span class="p">)</span>  <span class="c1"># updated: nice!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.9895160700000005 11.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="private-attributes-and-methods">
+<h2>Private attributes and methods<a class="headerlink" href="#private-attributes-and-methods" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes it can be useful to define and use attributes or methods within a class, <em>without</em> providing them to users of the class: in some OO languages like Java or C++, they are called <a class="reference external" href="https://en.wikipedia.org/wiki/Private_class_data_pattern">private</a> (e.g. a <strong>private attribute</strong> or a <strong>private method</strong>). In Python, there is no specific syntax or language specification for this pattern: in other words, all class attribute and methods are <strong>public</strong>, visible and usable by anyone.</p>
+<p>To allow the definition of private elements, however, the community agreed on a convention: all attributes or method starting with an underscore (<code class="docutils literal notranslate"><span class="pre">_</span></code>) are meant to be private and do not belong to the public facing (documented interface) of a class.</p>
+<p>There are plenty of uses for private attributes or methods, but I’ll illustrate one of them below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+    
+    <span class="c1"># Initializer</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">):</span>
+        
+        <span class="c1"># Name of the cat: an instance attribute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+          
+        <span class="c1"># The cats language</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># we don&#39;t know yet what the cat speaks</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_language</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># This is a private attribute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">language</span> <span class="o">=</span> <span class="n">language</span>
+        
+    <span class="c1"># Methods</span>
+    <span class="k">def</span> <span class="nf">say_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">speak</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+        
+    <span class="k">def</span> <span class="nf">_decide_speech</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="c1"># This is a private method</span>
+        <span class="c1"># We use it to structure our code within the class</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;en&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
+        <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;fr&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="s1">&#39;Miaou&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Language not understood: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+        
+    <span class="c1"># Property getter</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">language</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_language</span>
+        
+    <span class="c1"># Property setter</span>
+    <span class="nd">@language</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">language</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_language</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_decide_speech</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The design of this class comes from the addition of a new functionality: users can now set the language of their cat, and the cat’s speech will change accordingly. See the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>  <span class="c1"># the default language is english</span>
+<span class="n">a</span><span class="o">.</span><span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;fr&#39;</span>  <span class="c1"># we set it to french</span>
+<span class="n">a</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>  <span class="c1"># now our cat speaks french!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Meow, Grumpy!
+Miaou, Grumpy!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Line 3 in the code snippet above motivates the use of a <code class="docutils literal notranslate"><span class="pre">&#64;setter</span></code>: when <code class="docutils literal notranslate"><span class="pre">language</span></code> is updated, we want the <code class="docutils literal notranslate"><span class="pre">speak</span></code> attribute to be updated too: we need a dedicated method (<code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">language(self,</span> <span class="pre">value)</span></code>) that we hide behind an attribute. This comes with a drawback: where to store the <code class="docutils literal notranslate"><span class="pre">language</span></code> value? We have to use a new container for it: the private attribute <code class="docutils literal notranslate"><span class="pre">_language</span></code> (by convention).</p>
+</div>
+<div class="section" id="our-final-class">
+<h2>Our final class<a class="headerlink" href="#our-final-class" title="Permalink to this headline">¶</a></h2>
+<p>I attempt to summarize all the concepts we learned above into a single class. Please read through it carefully:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+    <span class="c1"># Class attributes</span>
+    <span class="n">purr</span> <span class="o">=</span> <span class="s1">&#39;RRRrrrRRRrrr&#39;</span>  <span class="c1"># same for all cats, regardless of their language</span>
+     
+    <span class="c1"># Initializer</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;kg&#39;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">):</span>
+        
+        <span class="c1"># Name of the cat: an instance attribute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        
+        <span class="c1"># The cat&#39;s weight in two possible units</span>
+        <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;kg&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="k">elif</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;lbs&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">weight_lbs</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unit not understood: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">unit</span><span class="p">))</span>
+        
+        <span class="c1"># The cat&#39;s language</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># we don&#39;t know yet what the cat speaks</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_language</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># private attribute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">language</span> <span class="o">=</span> <span class="n">language</span>
+        
+    <span class="c1"># Methods</span>
+    <span class="k">def</span> <span class="nf">say_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">speak</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+        
+    <span class="k">def</span> <span class="nf">eat_food</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;kg&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;lbs&#39;</span><span class="p">:</span>
+            <span class="c1"># convert to kg</span>
+            <span class="n">food</span> <span class="o">=</span> <span class="mf">0.45359237</span> <span class="o">*</span> <span class="n">food</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+=</span> <span class="n">food</span>
+    
+    <span class="c1"># Private method</span>
+    <span class="k">def</span> <span class="nf">_decide_speech</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;en&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="s1">&#39;Meow&#39;</span>
+        <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;fr&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="s1">&#39;Miaou&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Language not understood: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+    
+    <span class="c1"># Property getter</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">/</span> <span class="mf">0.45359237</span>
+    
+     <span class="c1"># Property setter</span>
+    <span class="nd">@weight_lbs</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">weight_lbs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_weight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="mf">0.45359237</span> <span class="o">*</span> <span class="n">new_weight</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">language</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_language</span>
+        
+   
+    <span class="nd">@language</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">language</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_language</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_decide_speech</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instantiating an object from the class &quot;Cat&quot;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;Grumpy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calling an instance method</span>
+<span class="n">a</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Meow, Grumpy!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Changing an attribute also changes the behavior of the object</span>
+<span class="n">a</span><span class="o">.</span><span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;fr&#39;</span>
+<span class="n">a</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Miaou, Grumpy!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Class attributes are available for anyone to read</span>
+<span class="n">a</span><span class="o">.</span><span class="n">purr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;RRRrrrRRRrrr&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># An action on an object might change its instance attributes</span>
+<span class="n">a</span><span class="o">.</span><span class="n">eat_food</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;lbs&#39;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">weight</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.136077711
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Some attributes are passive and computed only when needed.</span>
+<span class="c1"># The user doesn&#39;t see the difference:</span>
+<span class="n">a</span><span class="o">.</span><span class="n">weight_lbs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.118490487395103
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="take-home-points">
+<h2>Take home points<a class="headerlink" href="#take-home-points" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Python is an object oriented programming language but does not enforce the definition of classes in your own programs. However, a basic understanding of the core concepts of OOP is a strong asset and allows to make better use of Python’s capabilities.</p></li>
+<li><p>We defined a lot of new concepts today: classes, objects, instances, instance methods, instance attributes, class attributes, the &#64;property decorator, and the &#64;property.setter decorator. They are all important! You will have to revise these concepts calmly and step by step, possibly by making use of external resources. The web has plenty of good beginner-level OOP tutorials, I recommend to have a look at at least one of them.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./week_10"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../week_09/01-Documentation.html" title="previous page">01 - Documenting your code</a>
+    <a class='right-next' id="next-link" href="Assignment-07.html" title="next page">Assignment #07: a file writer class</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Fabien Maussion<br/>
+        
+          <div class="extra_footer">
+            <p>
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+  <img align="right" class="margin" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg" width="88px">
+</a>
+These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International (CC BY 4.0) license</a>.
+<br>
+&copy; Copyright 2018-2020.
+</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-88391345-1', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

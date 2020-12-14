@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>02 - Tips and tricks &#8212; Scientific Programming</title>
+    <title>Assignment #07: a file writer class &#8212; Scientific Programming</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -58,8 +58,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="03 - Good practices, programming style and conventions" href="03-Good-practices.html" />
-    <link rel="prev" title="01 - Modules, import mechanism, namespaces, scope(s)" href="01-Import-Scopes.html" />
+    <link rel="prev" title="01 - Object Oriented Programming: introduction" href="01-OOP-Part-1.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -167,24 +166,24 @@
   Week 03 - Variables scopes, modules, good practices
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="01-Import-Scopes.html">
+  <a class="reference internal" href="../week_03/01-Import-Scopes.html">
    01 - Modules, import mechanism, namespaces, scope(s)
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/02-Tips-and-Tricks.html">
    02 - Tips and tricks
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03-Good-practices.html">
+  <a class="reference internal" href="../week_03/03-Good-practices.html">
    03 - Good practices, programming style and conventions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Assignment-03.html">
+  <a class="reference internal" href="../week_03/Assignment-03.html">
    Assignment #03
   </a>
  </li>
@@ -301,14 +300,14 @@
   Week 10 - Object Oriented Programming
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../week_10/01-OOP-Part-1.html">
+  <a class="reference internal" href="01-OOP-Part-1.html">
    01 - Object Oriented Programming: introduction
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_10/Assignment-07.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Assignment #07: a file writer class
   </a>
  </li>
@@ -352,7 +351,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/week_03/02-Tips-and-Tricks.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/week_10/Assignment-07.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -372,10 +371,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_03/02-Tips-and-Tricks.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_10/Assignment-07.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_03/02-Tips-and-Tricks.ipynb"><button
+        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_10/Assignment-07.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -395,7 +394,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_03/02-Tips-and-Tricks.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_10/Assignment-07.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -418,40 +417,13 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#batteries-included">
-   Batteries included
+  <a class="reference internal nav-link" href="#assignment-07-01-an-html-writer">
+   Assignment #07-01: an HTML writer
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#getting-help">
-   Getting help
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#online-resources">
-     Online resources
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ask-questions-the-smart-way">
-     Ask questions the smart way
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#getting-help-vs-learning">
-     Getting help VS learning
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-ides">
-   Python IDEs
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#debugging-code">
-   Debugging code
+  <a class="reference internal nav-link" href="#assignment-07-02-optional-change-the-header">
+   Assignment #07-02 (optional): change the header
   </a>
  </li>
 </ul>
@@ -466,77 +438,77 @@
         
               <div>
                 
-  <div class="section" id="tips-and-tricks">
-<h1>02 - Tips and tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline">¶</a></h1>
-<p>It is very early in the lecture, but you are now already well equipped to write more complex scripts and algorithms: you know (almost ;)) everything you need to know about the syntax, but you might be a little lost in all the possibilities that the python language is now offering to you. <em>Which tool should I use to do this and that? How was this function signature again?</em> are very common interrogations, and it is normal to feel a bit overwhelmed.</p>
-<p>This chapter will give you some brief tips to help you during your assignments.</p>
-<div class="section" id="batteries-included">
-<h2>Batteries included<a class="headerlink" href="#batteries-included" title="Permalink to this headline">¶</a></h2>
-<p>You may have read this expression (“batteries included”) during your research about the Python language. It is widely used to indicate that if you choose python, it’s not only for its syntax: it’s for all the tools that come with it. And there are PLENTY. Spend a minute or two to scroll through the list of tools available in the <a class="reference external" href="https://docs.python.org/3/library/index.html">standard library</a>. The <strong>standard library</strong> is available per default with any python installation. It is very robust and provides the core functionality of the language.</p>
-<p>As you will see, there is not much for us scientists in this list though (no plotting library for example). This is why <strong>third party packages</strong> were developed. And there are so many of them that one can easily be overwhelmed: for this week’s assignment we will continue to use the standard library only, but starting next week we will use external packages as well.</p>
+  <div class="section" id="assignment-07-a-file-writer-class">
+<h1>Assignment #07: a file writer class<a class="headerlink" href="#assignment-07-a-file-writer-class" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="assignment-07-01-an-html-writer">
+<h2>Assignment #07-01: an HTML writer<a class="headerlink" href="#assignment-07-01-an-html-writer" title="Permalink to this headline">¶</a></h2>
+<p>HTML files have a relatively simple structure. Here is an example:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Tab title<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>A large title<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>A smaller title<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+A paragraph with more or less text. Rather less.
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+ 
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Image not found&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/path/to/some/image.png&quot;</span><span class="p">&gt;</span>
+
+
+<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Another smaller title<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+Another paragraph with more or less text. It depends on your mood.
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
 </div>
-<div class="section" id="getting-help">
-<h2>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
-<p>In order to become a good programmer, <strong>nothing is more important than being able to find help</strong>, either online or with your friends and colleagues.</p>
-<div class="section" id="online-resources">
-<h3>Online resources<a class="headerlink" href="#online-resources" title="Permalink to this headline">¶</a></h3>
-<p>Fortunately, getting help has become quite easy nowadays. Here are some resources to get you started:</p>
+<p>Your task is to write an <code class="docutils literal notranslate"><span class="pre">HTMLFile</span></code> class, which will help you to write such files in python. At instantiation, the <code class="docutils literal notranslate"><span class="pre">HTMLFile</span></code> class must accept a positional and a keyword argument:</p>
 <ul class="simple">
-<li><p>the <a class="reference external" href="https://docs.python.org/3/">official python documentation</a> is definitely the best place to look for everything related to the standard library. It is also THE reference, and as such can sometimes be too detailed or complex. If this fails, then you’ll have to refer to</p></li>
-<li><p><strong>your favorite search engine</strong>. Ask your question as precisely as possible! With some experience you’ll learn to detect the sources you can trust, and learn to filter out outdated information (e.g. related to the old python 2 language). Very often your web search will lead you to</p></li>
-<li><p><a class="reference external" href="https://stackoverflow.com/">Stackoverflow</a>. In recent years, the Stack Exchange community of sites has emerged as a major resource for answering technical and other questions and is even the preferred forum for many open-source projects. Their system of rewards for well formulated questions and correct answers clearly makes finding the right solution easier than in many other forums.</p></li>
+<li><p>the positional argument <code class="docutils literal notranslate"><span class="pre">file_path</span></code>: a path to a file which will be created or overwritten by the object. The path must be ending with <code class="docutils literal notranslate"><span class="pre">.html</span></code>, otherwise the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method should raise an error.</p></li>
+<li><p>the keyword argument <code class="docutils literal notranslate"><span class="pre">header_title</span></code> which defaults to <code class="docutils literal notranslate"><span class="pre">'Tab</span> <span class="pre">title'</span></code>.</p></li>
 </ul>
-<p>Here is a general rule. When you encounter a problem, ask yourself the following question: <strong>is it likely that someone else had this problem before me?</strong> In a large majority of the cases, the answer will be “yes” (believe me on this one). The trick is to find the answer to your question: use as few words as possible, but put in all the keywords, that makes your question unambiguous. Here is the example outcome of two google searches:</p>
+<p>The class must define the following instance methods:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.google.at/search?q=how+to+download+a+file+python">how to download a file python</a></p></li>
-<li><p><a class="reference external" href="https://www.google.at/search?q=how+to+download+a+file+python3">how to download a file python3</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">add_body_title</span></code>, which adds an html title in the file. The size of the title (h1, h2, …) must be specified with a keyword argument.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">add_paragraph</span></code>, which add a paragraph to the file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">add_image</span></code>, which adds an image command to the file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">end_file</span></code>, which writes the closing lines of the file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">display_html</span></code>, which opens the file in your browser.</p></li>
 </ul>
-<p>The latter is the one you want and will lead you to the right answer. With time, you are going to get used to using the search engine more efficiently, but if everything else fails, then you might have to ask a question yourself:</p>
+<p>The class should define a new property, <code class="docutils literal notranslate"><span class="pre">n_lines</span></code>, which returns the number of lines of the html file.</p>
+<p>For example, the following code should write the template above and print the total number of lines:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="n">HTMLFile</span><span class="p">(</span><span class="s1">&#39;my_template.html&#39;</span><span class="p">,</span> <span class="n">header_title</span><span class="o">=</span><span class="s1">&#39;Tab title&#39;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">add_body_title</span><span class="p">(</span><span class="s1">&#39;A large title&#39;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">add_body_title</span><span class="p">(</span><span class="s1">&#39;A smaller title&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span><span class="s1">&#39;A paragraph with more or less text. Rather less.&#39;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="s1">&#39;/path/to/some/image.png&#39;</span><span class="p">,</span> <span class="n">alt</span><span class="o">=</span><span class="s1">&#39;Image not found&#39;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">add_body_title</span><span class="p">(</span><span class="s1">&#39;Another smaller title&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span><span class="s1">&#39;Another paragraph with more or less text. It depends on your mood.&#39;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">end_file</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">n_lines</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="ask-questions-the-smart-way">
-<h3>Ask questions the smart way<a class="headerlink" href="#ask-questions-the-smart-way" title="Permalink to this headline">¶</a></h3>
-<p>If you want to ask a question on stackoverflow or somewhere else (e.g. by sending an email to your teacher), please spend some time reading <a class="reference external" href="http://www.catb.org/esr/faqs/smart-questions.html">this resource</a>. Believe me, this will help you to get better answers!</p>
+<p><em>Tip: you can decide to open and close the text file at each function call (ideally by using a <code class="docutils literal notranslate"><span class="pre">with</span></code> context manager). However, you can also decide to store the commands in an instance attribute (a string) and write the string all at once when the <code class="docutils literal notranslate"><span class="pre">end_file()</span></code> method is called. It’s up to you, but the second method is easier for exercise #09-02!</em></p>
 </div>
-<div class="section" id="getting-help-vs-learning">
-<h3>Getting help VS learning<a class="headerlink" href="#getting-help-vs-learning" title="Permalink to this headline">¶</a></h3>
-<p>I’ll be honest: without an internet connection, I am a very bad python programmer. I don’t expect you to learn all the python commands by heart for the exam (yes, you will have an internet access during the exam). Similarly, I encourage you to use the internet to find help to solve the weekly exercises.</p>
-<p>However, there is a difference between “getting help to find how to realize a specific task” and “asking for someone to do my homework for me”. The border line between the two might be subtle, but I’m sure you’ll know when you cross it: at the moment you stopped using your brain and simply copy/pasted code from one site to your assignment script, you crossed it.</p>
+<div class="section" id="assignment-07-02-optional-change-the-header">
+<h2>Assignment #07-02 (optional): change the header<a class="headerlink" href="#assignment-07-02-optional-change-the-header" title="Permalink to this headline">¶</a></h2>
+<p>For some reason, your clients are not happy with the current software design and made a request: they would like to be able to change the header at wish, <em>after</em> the class instantiation. That is, the following code should work:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="n">HTMLFile</span><span class="p">(</span><span class="s1">&#39;my_template.html&#39;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">header_title</span> <span class="o">=</span> <span class="s1">&#39;A new tab title&#39;</span>
+</pre></div>
 </div>
-</div>
-<div class="section" id="python-ides">
-<h2>Python IDEs<a class="headerlink" href="#python-ides" title="Permalink to this headline">¶</a></h2>
-<p><a id='python_ides'></a></p>
-<p>While it is possible to write python programs using a basic text editor, the majority of you will find it useful to use an <a class="reference external" href="https://en.wikipedia.org/wiki/Integrated_development_environment">integrated development environment</a> (short: IDE) instead. The advantages of IDEs is that they ship with tools that make your life easier when programming.</p>
-<p>Here is a non-exhaustive (and subjective) list of the tools a good IDE should have:</p>
-<ul class="simple">
-<li><p><a href="https://en.wikipedia.org/wiki/Lint_(software)">linter</a>: automatic detection of syntax errors and style violations</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Debugger">debugger</a>: helping you find where the errors in your program come from</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Intelligent_code_completion">intelligent code completion</a>: automatic <code class="docutils literal notranslate"><span class="pre">TAB</span></code> completion, module recognition, etc.</p></li>
-<li><p>project explorer and code exploration tools</p></li>
-<li><p>for interactive languages: a command line and variable explorer</p></li>
-<li><p>appealing colors and graphics</p></li>
-<li><p>…</p></li>
-</ul>
-<p>For more advanced uses, you will also look for version control tools and automated build and testing tools.</p>
-<p>There are many Python IDEs around, but here are some of the ones that come up most often as recommendations on forums or blogposts (they are all free):</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.spyder-ide.org">Spyder</a>: the IDE made by and for scientists. It resembles the Matlab IDE and has many nice features such as variable exploration and an integrated ipython console. It is very easy to install with conda, and is therefore available on linux at the university (<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">spyder</span> <span class="pre">&amp;</span></code>). <strong>It is my recommended IDE for this semester’s course</strong>.</p></li>
-<li><p><a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a>: this is my current personal favorite. It is however quite heavyweight and can be confusing for beginners. The community version is free.</p></li>
-<li><p><a class="reference external" href="https://atom.io/">Atom</a>: a modern, very nice looking editor. Useful if you program in more than one language, but you must install additional packages to transform it in a real IDE</p></li>
-<li><p><a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a> (from Microsoft) is one of the newest “cool kids” around. I have not tested it myself, but people seem to be very happy with it. Like Atom, you’ll have to install plugins for it to become a true python IDE.</p></li>
-<li><p><a class="reference external" href="https://www.vim.org/">vim</a> or <a class="reference external" href="https://www.gnu.org/software/emacs/">emacs</a>: for people allergic to the mouse. Not recommended for most of us, but the people who learned to use them are (allegedly) the fastest programmers ever.</p></li>
-</ul>
-</div>
-<div class="section" id="debugging-code">
-<h2>Debugging code<a class="headerlink" href="#debugging-code" title="Permalink to this headline">¶</a></h2>
-<p><strong>It is impossible to write bug free code in one go</strong> (just accept it and get used to it). There will always be mistakes. Syntax errors and other obvious problems (e.g. <code class="docutils literal notranslate"><span class="pre">NameError</span></code>) will most often be picked up by your IDE’s linter. The other “easier ones” (e.g. <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>) are also likely to be corrected after a first couple of test runs of your code. But then, sometimes, the error is not obvious: the code runs, but doesn’t produce the expected output. What to do in these cases?</p>
-<ul class="simple">
-<li><p>use <code class="docutils literal notranslate"><span class="pre">print</span></code> statements (bad): with this method, you can inspect variables at run time by printing their values. It is a quick and dirty way to debug, and should not be used too often because error prone (indeed, by adding print statements you modify your code, might forget about them afterwards, and they are often not very useful). If you need more than 3 or 4 print statements to track the source of an issue, it’s time for opening a debugger.</p></li>
-<li><p><strong>use a debugger</strong> (good): a <a class="reference external" href="https://en.wikipedia.org/wiki/Debugger">debugger</a> will allow to interrupt a program’s execution and <em>give you access to the program’s state</em> at a predefined location (called a <strong>break point</strong>). It is extremely more useful than <code class="docutils literal notranslate"><span class="pre">print</span></code>, because it allows you to explore many variables at once. Spyder comes with a debugger <a class="reference external" href="https://docs.spyder-ide.org/debugging.html">included</a>, and we will make a short demo in class.</p></li>
-<li><p>go for a walk (very good): think about something else for a while and come back with a fresh, open mind</p></li>
-<li><p>talk to your colleagues about your problem (very good): they might see the issue (or typo) from a different angle and detect the problem easily</p></li>
-<li><p>if you have no one around to talk to, <a class="reference external" href="https://en.m.wikipedia.org/wiki/Rubber_duck_debugging">talk to a duck</a> (very good)</p></li>
-</ul>
+<p><strong>Implement this new functionality to your class!</strong></p>
 </div>
 </div>
 
@@ -553,7 +525,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./week_03"
+            path: "./week_10"
         },
         predefinedOutput: true
     }
@@ -565,8 +537,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="01-Import-Scopes.html" title="previous page">01 - Modules, import mechanism, namespaces, scope(s)</a>
-    <a class='right-next' id="next-link" href="03-Good-practices.html" title="next page">03 - Good practices, programming style and conventions</a>
+    <a class='left-prev' id="prev-link" href="01-OOP-Part-1.html" title="previous page">01 - Object Oriented Programming: introduction</a>
 
         </div>
         
