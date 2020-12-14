@@ -58,3 +58,8 @@
 - part: Week 09 - Good to know
   chapters:
     - file: week_09/01-Documentation
+    
+- part: Week 10 - Object Oriented Programming
+  chapters:
+    - file: week_10/01-OOP-Part-1
+    - file: week_10/Assignment-07
