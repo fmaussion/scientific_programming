@@ -478,16 +478,16 @@
 <h1>01 - Object Oriented Programming: introduction<a class="headerlink" href="#object-oriented-programming-introduction" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-oriented programming</a> (OOP) is a standard feature of many modern programming languages. Learning OOP “properly” would require one entire semester at least, and we won’t try to cover all the details here. The specific objectives of these three OOP units are:</p>
 <ul class="simple">
-<li><p>to learn the basic OOP concepts syntax so that you are able to understand OOP code and can use libraries making use of OOP concepts (i.e.: almost all python libraries)</p></li>
+<li><p>to learn the basic OOP concepts and syntax so that you are able to understand OOP code and can use libraries making use of OOP concepts (i.e.: almost all python libraries)</p></li>
 <li><p>to become familiar with certain semantics associated with OOP: classes, objects, attributes, methods, inheritance</p></li>
 <li><p>to introduce simple examples where OOP is a useful paradigm, and try to raise your interest in its usage so that you can learn it by yourself when needed</p></li>
 </ul>
-<p>Today’s OOP unit introduces the concept of “objects” in the Python language and shows you how to create new kind of objects on your own. Next week we will learn the concept of class inheritance. Finally, we will learn in which circumstances objects can be useful, and when not.</p>
+<p>Today’s OOP unit introduces the concept of “objects” in the Python language and shows how to create new kind of objects on your own. Next week we will learn the concept of class inheritance. Finally, we will learn in which circumstances objects can be useful, and when not.</p>
 <p><em>Copyright notice: this chapter is vaguely inspired from <a class="reference external" href="https://realpython.com/python3-object-oriented-programming/">RealPython’s beginner tutorial</a> on OOP.</em></p>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>As stated in the <a class="reference external" href="https://en.wikipedia.org/wiki/Object-oriented_programming">OOP wikipedia page</a>, OOP is a “paradigm” which might or might not be supported by a specific programming language. Although Python is an OOP language at its core, <strong>it does not enforce its usage</strong>. Matlab or R follow the same philosophy: they support OOP but do not force their users to use it. In fact, many of you will finish your master thesis without having to write any OOP specific code. You have, however, already made heavy use of Python objects (<em>everything</em> is an object in Python, remember?) and I argue that it is very important that you are able to understand the basics of OOP in order to make better use of Python.</p>
-<p>In short, <strong>OOP is simply another way to structure your programs</strong>. Until now, you have written modules consisting of functions, sometimes with a short <code class="docutils literal notranslate"><span class="pre">__main__</span></code> script which was itself calling one or more functions. OOP will add a new tool to your repertoire by allowing you to <strong>bundle data and behaviors into individual objects</strong>, possibly helping you to organize your code in a way that feels more natural and clearer.</p>
+<p>In short, <strong>OOP is simply another way to structure your programs</strong>. Until now, you have written modules consisting of functions, sometimes with a short <code class="docutils literal notranslate"><span class="pre">__main__</span></code> script which was itself calling one or more functions. OOP will add a new tool to your repertoire by allowing you to <strong>bundle data and behaviors into individual objects</strong>, possibly helping you to organize your code in a way that feels more natural and clear.</p>
 <p>Let’s get started with some examples and new semantics! We will talk about the advantages and disadvantages of OOP in a following unit, once you are more familiar with its syntax.</p>
 </div>
 <div class="section" id="classes-and-objects">
@@ -518,7 +518,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Cat at 0x7fe010c6d040&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Cat at 0x7f35285c5b50&gt;
 </pre></div>
 </div>
 </div>
@@ -560,7 +560,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">Cat</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">Cat</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1090,7 +1090,7 @@ Weight after eating: 4.2 kg
 <div class="section" id="private-attributes-and-methods">
 <h2>Private attributes and methods<a class="headerlink" href="#private-attributes-and-methods" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes it can be useful to define and use attributes or methods within a class, <em>without</em> providing them to users of the class: in some OO languages like Java or C++, they are called <a class="reference external" href="https://en.wikipedia.org/wiki/Private_class_data_pattern">private</a> (e.g. a <strong>private attribute</strong> or a <strong>private method</strong>). In Python, there is no specific syntax or language specification for this pattern: in other words, all class attribute and methods are <strong>public</strong>, visible and usable by anyone.</p>
-<p>To allow the definition of private elements, however, the community agreed on a convention: all attributes or method starting with an underscore (<code class="docutils literal notranslate"><span class="pre">_</span></code>) are meant to be private and do not belong to the public facing (documented interface) of a class.</p>
+<p>To allow the definition of private elements, however, the community agreed on a convention: all attributes and methods starting with an underscore (<code class="docutils literal notranslate"><span class="pre">_</span></code>) are meant to be private and do not belong to the public facing (documented interface) of a class.</p>
 <p>There are plenty of uses for private attributes or methods, but I’ll illustrate one of them below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
