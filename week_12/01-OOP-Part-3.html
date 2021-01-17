@@ -567,7 +567,7 @@
 <div class="section" id="encapsulation">
 <h2>Encapsulation<a class="headerlink" href="#encapsulation" title="Permalink to this headline">¶</a></h2>
 <p><strong>Encapsulation</strong> is tied to the concept of abstraction. By hiding the internal implementation of a class behind a defined interface, users of the class do not need to know details about the internals of the class to use it. The implementation of the class can be changed (or internal data can be modified) without having to change the code of the users of the class.</p>
-<p>In python, encapsulation is more difficult to achieve than in other languages like Java. Indeed, Java implements the concept of <strong>private methods and attributes</strong>, which are hidden from the user per definition. In python, <em>nothing</em> is hidden from the user: however, developers make use of important <strong>conventions</strong> to inform the users that a method or attribute is not meant to be used by the class alone, not by users. Let’s take an xarray DataArray as an example:</p>
+<p>In python, encapsulation is more difficult to achieve than in other languages like Java. Indeed, Java implements the concept of <strong>private methods and attributes</strong>, which are hidden from the user per definition. In python, <em>nothing</em> is hidden from the user: however, developers make use of important <strong>conventions</strong> to inform the users that a method or attribute is not meant to be used by the class alone. Let’s take an xarray DataArray as an example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
@@ -616,7 +616,7 @@
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">_in_memory</span></code> is an attribute which is meant for internal use in the class (it is called <strong>private</strong>). Setting it to another value might have unpredictable consequences, and relying on it for your own code is not recommended: the xarray developers might rename it or change it without notice.</p>
-<p>The methods having <strong>two trailing and leading underscores have a special meaning in Python and are part of the language specifications</strong>. We already encountered <code class="docutils literal notranslate"><span class="pre">__init__</span></code> for our class instantiation, and we will talk about some others later in this chapter.</p>
+<p>The methods having <strong>two leading and trailing underscores have a special meaning in Python and are part of the language specifications</strong>. We already encountered <code class="docutils literal notranslate"><span class="pre">__init__</span></code> for our class instantiation, and we will talk about some others later in this chapter.</p>
 </div>
 <div class="section" id="modularity">
 <h2>Modularity<a class="headerlink" href="#modularity" title="Permalink to this headline">¶</a></h2>
@@ -897,7 +897,7 @@
 </div>
 <div class="section" id="concluding-remarks">
 <h2>Concluding remarks<a class="headerlink" href="#concluding-remarks" title="Permalink to this headline">¶</a></h2>
-<p>A “true” OOP lecture could occupy a full semester: as an engineering student, I had a full semester lecture of functional programming in C, then a full semester of OOP programming in Java. Here, we only scratched the surface of a complex topic, and if you want to dig deeper in the programming world you will have to learn these skills yourself or with more advanced lectures. Fortunately, programming is one of the easiest skill to train online, and I hope that my introduction  will help you to get started.</p>
+<p>A “true” OOP lecture could occupy a full semester: as an engineering student, I had a full semester lecture of functional programming in C, then a full semester of OOP programming in Java. Here, we only scratched the surface of a complex topic, and if you want to dig deeper in the programming world you will have to learn these skills yourself or with more advanced lectures. Fortunately, programming is one of the easiest skills to train online, and I hope that my introduction  will help you to get started.</p>
 </div>
 </div>
 

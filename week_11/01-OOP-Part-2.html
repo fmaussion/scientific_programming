@@ -577,7 +577,7 @@
 </div>
 </div>
 </div>
-<p>There is a pretty straightforward rule for the behavior of child classes instances: <strong>when the called method or attribute is available at the child class level, it will be used</strong> (even if also available at the parent class level: this is called <strong>overriding</strong>, and will be explained in the next unit); <strong>if not, use the parent class implementation</strong>.</p>
+<p>There is a pretty straightforward rule for the behavior of child class instances: <strong>when the called method or attribute is available at the child class level, it will be used</strong> (even if also available at the parent class level: this is called <strong>overriding</strong>, and will be explained in the next unit); <strong>if not, use the parent class implementation</strong>.</p>
 <p>This is exactly what happens in the code above: <code class="docutils literal notranslate"><span class="pre">eat_food</span></code> and <code class="docutils literal notranslate"><span class="pre">weight</span></code> are defined in the <code class="docutils literal notranslate"><span class="pre">Pet</span></code> class but are available for both <code class="docutils literal notranslate"><span class="pre">Cat</span></code> and <code class="docutils literal notranslate"><span class="pre">Dog</span></code> instances. <code class="docutils literal notranslate"><span class="pre">say_name</span></code>, however, is a child class instance method and can’t be used by <code class="docutils literal notranslate"><span class="pre">Pet</span></code> instances.</p>
 <p>This relationship between parent and child classes can be formalized as following:</p>
 <div class="cell docutils container">
@@ -782,7 +782,7 @@ Or a Cat? False
 <ul class="simple">
 <li><p>class inheritance allows to share code and functionality between classes which share one or more common functionalities</p></li>
 <li><p>methods and attributes available at the parent class level are also available at the child class level, but not the other way around</p></li>
-<li><p>parent classes can be used at “interfaces”, i.e. define protocols that child classes have to implement</p></li>
+<li><p>parent classes can be used as “interfaces”, i.e. define protocols that child classes have to implement</p></li>
 </ul>
 <p>This was only a (very) brief introduction to the concept of inheritance. In the next session we will discuss concrete (and more advanced) use cases for inheritance and OOP in general.</p>
 </div>
