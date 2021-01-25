@@ -72,3 +72,7 @@
 - part: Week 12 - Object Oriented Programming III
   chapters:
     - file: week_12/01-OOP-Part-3
+    
+- part: Week 13 - Data workflow
+  chapters:
+    - file: week_13/01-DataWorkflow
