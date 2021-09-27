@@ -7,14 +7,21 @@
 # Book settings
 title: Scientific Programming  # The title of the book. Will be placed in the left navbar.
 author: Fabien Maussion  # The author of the book
-copyright: "2018-2020"  # Copyright year to be placed in the footer
+copyright: "2018-2021"  # Copyright year to be placed in the footer
 logo: img/logo.png  # A path to the book logo
-parse:
-  myst_extended_syntax: true
 repository:
   url: https://github.com/fmaussion/scientific_programming
   path_to_book: book 
   branch: master
+parse:
+  myst_enable_extensions:
+    # don't forget to list any other extensions you want enabled,
+    # including those that are enabled by default!
+    - dollarmath
+    - linkify
+    - substitution
+    - colon_fence
+    - html_image
 launch_buttons:
   notebook_interface: "jupyterlab"
   binderhub_url: "https://mybinder.org"
@@ -23,6 +30,7 @@ html:
   use_issues_button: true
   use_edit_page_button: true
   google_analytics_id: UA-88391345-1
+  toc_title: "On this page"
   extra_footer: |
     <p>
     <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">

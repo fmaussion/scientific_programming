@@ -1,78 +1,11 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 
-- file: welcome
-
-- part: Introduction
-  chapters:
+format: jb-book
+root: welcome
+parts:
+  - caption: Introduction
+    chapters:
     - file: faq
     - file: references
     - file: slides
-    
-- part: Week 01 - Linux & Python primer
-  chapters:
-    - file: week_01/01-Linux
-    - file: week_01/02-Installation
-    - file: week_01/03-Getting-Started
-    - file: week_01/Assignment-01
-    
-- part: Week 02 - Python language fundamentals
-  chapters:
-    - file: week_02/01-Language-Fundamentals
-    - file: week_02/Assignment-02
-    
-- part: Week 03 - Variables scopes, modules, good practices
-  chapters:
-    - file: week_03/01-Import-Scopes
-    - file: week_03/02-Tips-and-Tricks
-    - file: week_03/03-Good-practices
-    - file: week_03/Assignment-03
-    
-- part: Week 04 - Floating point arithmetics, Numpy basics
-  chapters:
-    - file: week_04/01-Why-Numpy
-    - file: week_04/02-Numbers
-    - file: week_04/Assignment-04
-    
-- part: Week 05 - Scientific Python
-  chapters:
-    - file: week_05/01-Numpy-ndarrays
-    - file: week_05/02-Scientific-Python
-    - file: week_05/Assignment-05
-    
-- part: Week 06 - Revision
-  chapters:
-    - file: week_06/01-Revision
-    
-- part: Week 07 - Testing
-  chapters:
-    - file: week_07/01-Exceptions
-    - file: week_07/02-Testing
-    - file: week_07/Assignment-06
-    
-- part: Week 08 - Python Packages and ClimVis project
-  chapters:
-    - file: week_08/01-Package-structure
-    - file: week_08/02-ClimVis
-    
-- part: Week 09 - Good to know
-  chapters:
-    - file: week_09/01-Documentation
-    
-- part: Week 10 - Object Oriented Programming I
-  chapters:
-    - file: week_10/01-OOP-Part-1
-    - file: week_10/Assignment-07
-    
-- part: Week 11 - Object Oriented Programming II
-  chapters:
-    - file: week_11/01-OOP-Part-2
-    - file: week_11/Assignment-08
-    
-- part: Week 12 - Object Oriented Programming III
-  chapters:
-    - file: week_12/01-OOP-Part-3
-    
-- part: Week 13 - Data workflow
-  chapters:
-    - file: week_13/01-DataWorkflow
