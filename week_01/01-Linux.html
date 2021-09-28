@@ -1,0 +1,947 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01 - A very short introduction to Linux &#8212; Scientific Programming</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="02 - Installing Python" href="02-Installation.html" />
+    <link rel="prev" title="Presentation slides" href="../slides.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Scientific Programming</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../welcome.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../faq.html">
+   Frequently Asked  Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   External resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../slides.html">
+   Presentation slides
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 01 - Linux &amp; Python primer
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   01 - A very short introduction to Linux
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-Installation.html">
+   02 - Installing Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Getting-Started.html">
+   03 - Getting started with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assignment-01.html">
+   Assignment #01
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/week_01/01-Linux.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/fmaussion/scientific_programming"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_01/01-Linux.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_01/01-Linux.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_01/01-Linux.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-linux">
+   What is Linux?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#should-i-use-it">
+   Should I use it?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trying-linux">
+   Trying Linux
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#today-s-task-try-the-command-line-online">
+   Today’s task: try the command line online
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-mybinder-or-any-other-linux-system">
+     Open MyBinder (or any other linux system)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-the-terminal-on-mybinder">
+     Open the terminal on MyBinder
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#listing-files-and-directories">
+     Listing files and directories
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-directory-structure">
+     The directory structure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#making-directories">
+     Making Directories
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#changing-to-a-different-directory">
+     Changing to a different directory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-directories-and">
+     The directories . and ..
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#copying-files">
+     Copying files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-tab">
+     Using [TAB]
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#moving-files">
+     Moving files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#removing-files-and-directories">
+     Removing files and directories
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#displaying-the-contents-of-a-file-on-the-screen">
+     Displaying the contents of a file on the screen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#searching-the-contents-of-a-file">
+     Searching the contents of a file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#take-home-points-the-command-line">
+     Take home points: the command line
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#executable-scripts">
+   Executable scripts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-simple-script">
+     A simple script
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#make-a-file-executable">
+     Make a file executable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#take-home-points-bash-scripts">
+     Take home points: bash scripts
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-linux-path">
+   The linux PATH
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#locate-linux-programs">
+     Locate linux programs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-path-variable">
+     The PATH variable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#take-home-points-the-linux-path">
+     Take home points: the linux PATH
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="a-very-short-introduction-to-linux">
+<h1>01 - A very short introduction to Linux<a class="headerlink" href="#a-very-short-introduction-to-linux" title="Permalink to this headline">¶</a></h1>
+<p>This lecture is about programming with Python, and we can do that on all major operating systems (Windows, Mac OS, Linux). Linux (and Mac) operating systems are sometimes preferred over Windows by scientists and programmers, for a number of reasons: therefore <strong>every student in (geo-)sciences should know about the existence of Linux and be familiar with the basics of it</strong>. Atmospheric Sciences students in particular will have to use it sooner or later, since most of the tools and data they are using are running or have been created on Linux systems.</p>
+<div class="section" id="what-is-linux">
+<h2>What is Linux?<a class="headerlink" href="#what-is-linux" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://www.google.co.uk/search?q=What+is+Linux">web</a> is going to give a better answer than me to this question.</p>
+</div>
+<div class="section" id="should-i-use-it">
+<h2>Should I use it?<a class="headerlink" href="#should-i-use-it" title="Permalink to this headline">¶</a></h2>
+<p>My very personal answer is a clear: <strong>yes</strong>! I can’t force you to it though, and all of the exercises of this lecture can be done on a Windows computer. If you are running Mac OS X then you have access to a linux terminal anyway and you can ignore my recommendation.</p>
+<p>Linux has always been an environment for programmers and has the reputation of being “geeky” and “overly complicated”. This is much less true today, with many Linux distributions becoming mainstream and easy to use (my personal favorite is <a class="reference external" href="http://linuxmint.com">Linux Mint</a>, but you probably mostly heard of <a class="reference external" href="http://ubuntugnome.org/">Ubuntu</a>, which I also recommend).</p>
+<p>I believe that Linux is more user-friendly than Windows: once some of the particularities of Linux are understood (which can be frustrating in the beginning since it works <em>very</em> differently than windows), it appears that there is much less “hidden” in Linux than in Windows (especially when it comes to installing/deinstalling software, using the command line, or protecting yourself from viruses and intruders).</p>
+<p><strong>As a scientist and programmer</strong> there are many reasons to prefer Linux (or Mac OS X) to Windows. Let me list some reasons here:</p>
+<ul class="simple">
+<li><p><strong>Linux comes with many tools for scientists and programmers</strong> (“batteries included”). For historical reasons, Linux and its command line tools have been used by scientists and programmers since decades. It is not a surprise then that Linux comes with many (many) useful utilities to make programming and working with data easier.</p></li>
+<li><p><strong>Linux is fast and reliable</strong>. Linux is extremely stable and more lightweight than Windows. I’ve never seen a Linux machine becoming <em>slower</em> with time, as I was used to see in my time using Windows (I have to admit: it was more than 10 years ago).</p></li>
+<li><p><strong>Linux is the operating system of the huge majority of the super computers and web servers worldwide</strong>. Because of its efficiency, security, and multiple user management tools, Linux has taken over the web: <a class="reference external" href="https://en.wikipedia.org/wiki/Linux_adoption#Supercomputers">99.4%</a> of the super computers and <a class="reference external" href="https://en.wikipedia.org/wiki/Linux_adoption#Servers">67.5%</a> of the web servers run Linux, while <a class="reference external" href="https://en.wikipedia.org/wiki/Linux_adoption#Mobile_devices">79.3%</a> of the mobile devices run Linux via Android.</p></li>
+<li><p><strong>Linux is at the heart of the open-source philosophy</strong>. Linux is free and open-source, and it is not surprising that people who embraced the open-source philosophy also prefer Linux to Windows or Mac.</p></li>
+</ul>
+<p>There are also some reasons <strong>not</strong> to use Linux of course. For one, Linux can be confusing at first and you’ll need some time to get used to it. Also, it doesn’t come pre-installed on most computers and you’ll have to do it yourself (however, several retailers are already selling cheaper Ubuntu laptops to students). It is possible (but unlikely) that some of your hardware will not be compatible with Linux. Finally, some programs simply aren’t available on Linux: Microsoft Office, the Adobe Suite, and computer games are the most prominent examples. The free and open-source alternatives (LibreOffice and GIMP) are good, but not <em>as</em> good as their commercial counterpart. I used Linux exclusively for more than 10 years now, and I never regretted it. Recently I had to install Windows in a virtual machine in order to use the MS Office software provided by the University, and it works perfectly. Another option is to use <a class="reference external" href="https://www.winehq.org/">wine</a>.</p>
+</div>
+<div class="section" id="trying-linux">
+<h2>Trying Linux<a class="headerlink" href="#trying-linux" title="Permalink to this headline">¶</a></h2>
+<p>There are many ways to try Linux and make an idea by yourself:</p>
+<ul class="simple">
+<li><p><strong>At the University of Innsbruck</strong>: In order to use Linux in the computer room you have to register for an account <a class="reference external" href="http://orawww.uibk.ac.at/public_prod/owa/uvw%24web%2410.p001">here</a>. After an hour or so you will be able to connect to any computer using your username and password. The Linux distribution used at the university is <a class="reference external" href="https://www.centos.org/">CentOS</a> (not my favorite, unfortunately). If you are a student of another university, it is likely that you have access to Linux environments, too.</p></li>
+<li><p><strong>On an online, interactive MyBinder environment</strong>: my recommendation for this chapter and in times of global pandemic.</p></li>
+<li><p><strong>On your laptop with Windows 10, with <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux</a></strong>: recommended if you want to stay on Windows while still enjoying the powerful Linux command line.</p></li>
+<li><p><strong>On your laptop, with a live USB</strong>: this is the <a class="reference external" href="https://tutorials.ubuntu.com/tutorial/try-ubuntu-before-you-install">best way to try it at no risk</a> and get a feeling for the general usage of a linux distribution. This is not permanent though.</p></li>
+<li><p><strong>On your laptop, in a virtual machine</strong>: This is a relatively easy and non-destructive way to try Linux. There are tons of tutorials online, <a class="reference external" href="https://helpdeskgeek.com/linux-tips/how-to-install-ubuntu-in-virtualbox/">this one</a> seems OK. The problem with virtual machines is that they need a lot of resources (about double) to run both OS at the same time.</p></li>
+<li><p><strong>On your laptop, alongside Windows (dual boot)</strong>: this is a bit more engaged, but the best way if you want to use both operating systems at full capacity. See <a class="reference external" href="https://help.ubuntu.com/community/WindowsDualBoot">here</a> for the official instructions. Be careful however: it is possible that things get a bit complicated going this way: secure your data first, and be prepared for some unexpected events.</p></li>
+<li><p><strong>On your laptop, without Windows</strong>: Congratulations, this is the best solution! Please check that your hardware is <a class="reference external" href="https://certification.ubuntu.com/desktop/">compatible</a> first, and follow the install instructions of your chosen OS. If you want to use Windows afterwards you can still re-install it or install it in a virtual machine.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Using Linux (or WSL) is a big step into something new: be prepared to be confused at first. Linux works very differently than Windows. Things that are simple on Windows now seem harder in Linux. I get it. You can compare learning Linux to learning a new language: it is frustrating at first, and you can’t do as many things as you did before. However, on the long run it is rewarding because you understand something new and feel more “in command” of your own computer. Maybe you’ll have the patience for it, maybe not.</p>
+<p>Let’s be honest, we all can live very happily without speaking chinese or french: so I really don’t mind if you prefer <em>not</em> to learn Linux. If you decide to learn it I’ll try to help you (within my possibilities ;-). But be prepared to spend the time on it, read online and test things in order to understand how this new “language” works.</p>
+</div>
+</div>
+<div class="section" id="today-s-task-try-the-command-line-online">
+<h2>Today’s task: try the command line online<a class="headerlink" href="#today-s-task-try-the-command-line-online" title="Permalink to this headline">¶</a></h2>
+<p><em>Copyright notice: this section was largely inspired from the first parts of Michael Stonebank’s <a class="reference external" href="http://www.ee.surrey.ac.uk/Teaching/Unix/index.html">UNIX tutorial</a></em></p>
+<div class="section" id="open-mybinder-or-any-other-linux-system">
+<h3>Open MyBinder (or any other linux system)<a class="headerlink" href="#open-mybinder-or-any-other-linux-system" title="Permalink to this headline">¶</a></h3>
+<p>For today’s practicals, you need access to a linux terminal. There are several ways to do this:</p>
+<ul class="simple">
+<li><p><strong>from anywhere on MyBinder</strong>, by clicking on the “Launch Binder” button on the top-right of this page (the little rocket).</p></li>
+<li><p><strong>at the university’s computer room</strong>: simply launch one of the computer terminals and choose the linux operating system (don’t forget to register for an account <a class="reference external" href="http://orawww.uibk.ac.at/public_prod/owa/uvw%24web%2410.p001">here</a>)</p></li>
+<li><p><strong>on your own laptop</strong>, either with a linux installation or live USB (see above) or on Windows with WSL2.</p></li>
+</ul>
+</div>
+<div class="section" id="open-the-terminal-on-mybinder">
+<h3>Open the terminal on MyBinder<a class="headerlink" href="#open-the-terminal-on-mybinder" title="Permalink to this headline">¶</a></h3>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Open a terminal window on MyBinder</p>
+<img alt="lauch-gif" src="../_images/lauch_terminal.gif" />
+</div>
+<p>Open the terminal window. A terminal line starts with a <code class="docutils literal notranslate"><span class="pre">$</span></code> prompt, waiting for you to start entering commands. The command line has a very important role in linux (as compared to windows where nobody uses it), since many tasks can be done much more efficiently with simple commands.</p>
+</div>
+<div class="section" id="listing-files-and-directories">
+<h3>Listing files and directories<a class="headerlink" href="#listing-files-and-directories" title="Permalink to this headline">¶</a></h3>
+<p><strong>ls (list)</strong></p>
+<p>When you first login, your current working directory is your home directory. Your home directory has the same name as your username, for example, c7071047, and it is where your personal files and subdirectories are saved.</p>
+<p>To find out what is in your home directory, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">ls</span></code> command lists the contents of your current working directory.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span></code> does not, in fact, cause all the files in your home directory to be listed, but only those ones whose name does not begin with a dot (.) Files beginning with a dot (.) are known as hidden files and usually contain important program configuration information. They are hidden because you should not change them unless you know what you do.</p>
+<p>To list all files in your home directory including those whose names begin with a dot, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -a
+</pre></div>
+</div>
+<p>As you can see, <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code> lists files that are normally hidden.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span></code> is an example of a command which can take options: <code class="docutils literal notranslate"><span class="pre">-a</span></code> is an example of an option. The options change the behaviour of the command. There are online manual pages that tell you which options a particular command can take, and how each option modifies the behaviour of the command. <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-lh</span></code> is another way to call <code class="docutils literal notranslate"><span class="pre">ls</span></code> with two options, <code class="docutils literal notranslate"><span class="pre">l</span></code> for “listing format” and <code class="docutils literal notranslate"><span class="pre">h</span></code> for “human readable”.</p>
+<p><strong>Note:</strong> linux file names and commands are <em>case sensitive</em>, i.e. <code class="docutils literal notranslate"><span class="pre">Test.txt</span></code> is different from <code class="docutils literal notranslate"><span class="pre">test.txt</span></code>, and both names could coexist in the same directory.</p>
+</div>
+<div class="section" id="the-directory-structure">
+<h3>The directory structure<a class="headerlink" href="#the-directory-structure" title="Permalink to this headline">¶</a></h3>
+<p>All the files are grouped together in the directory structure. The file-system is arranged in a hierarchical structure, like an inverted tree. The top of the hierarchy is traditionally called root (written as a slash <code class="docutils literal notranslate"><span class="pre">/</span></code> )</p>
+<img alt="unix-tree" src="../_images/unix-tree.png" />
+<p>When loging in we are automatically located in our personal <code class="docutils literal notranslate"><span class="pre">home</span></code> directory, which is aptly named because:</p>
+<ul class="simple">
+<li><p>we won’t need to leave <code class="docutils literal notranslate"><span class="pre">home</span></code> during our exercises</p></li>
+<li><p>we are allowed to do whatever we want in our <code class="docutils literal notranslate"><span class="pre">home</span></code>, while we are not allowed to write, delete or change things in the other directories.</p></li>
+</ul>
+<p>To know where we are in the directory structure, there is a useful command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pwd
+</pre></div>
+</div>
+<p>which prints the path of the current working directory.</p>
+</div>
+<div class="section" id="making-directories">
+<h3>Making Directories<a class="headerlink" href="#making-directories" title="Permalink to this headline">¶</a></h3>
+<p><strong>mkdir (make directory)</strong></p>
+<p>We will now make a subdirectory in your home directory to hold the files you will be creating and using in the course of this tutorial. To make a subdirectory called <code class="docutils literal notranslate"><span class="pre">unixstuff</span></code> in your current working directory type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir unixstuff 
+</pre></div>
+</div>
+<p>To see the directory you have just created, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls
+</pre></div>
+</div>
+</div>
+<div class="section" id="changing-to-a-different-directory">
+<h3>Changing to a different directory<a class="headerlink" href="#changing-to-a-different-directory" title="Permalink to this headline">¶</a></h3>
+<p><strong>cd (change directory)</strong></p>
+<p>The command <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">directory</span></code> means change the current working directory to “directory”. The current working directory may be thought of as the directory you are in, i.e. your current position in the file-system tree.</p>
+<p>To change to the directory you have just made, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd unixstuff
+</pre></div>
+</div>
+<p>Type <code class="docutils literal notranslate"><span class="pre">ls</span></code> to see the contents (which should be empty)</p>
+<div class="exercise admonition" id="week_01/01-Linux-exercise-0">
+<p class="admonition-title"><span class="caption-number">Exercise 1 </span></p>
+<div class="section" id="exercise-content">
+<p>Make a directory called <code class="docutils literal notranslate"><span class="pre">backup</span></code> located in the <code class="docutils literal notranslate"><span class="pre">unixstuff</span></code> directory</p>
+</div>
+</div>
+</div>
+<div class="section" id="the-directories-and">
+<h3>The directories . and ..<a class="headerlink" href="#the-directories-and" title="Permalink to this headline">¶</a></h3>
+<p>Still in the <code class="docutils literal notranslate"><span class="pre">unixstuff</span></code> directory, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -a
+</pre></div>
+</div>
+<p>As you can see, in the unixstuff directory (and in all other directories), there are two special directories called (.) and (..)</p>
+<p><strong>The current directory (.)</strong></p>
+<p>In linux, (.) means the current directory, so typing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd .
+</pre></div>
+</div>
+<p>means “stay where you are” (the unixstuff directory).</p>
+<p>This may not seem very useful at first, but using (.) as the name of the current directory will save a lot of typing, as we shall see.</p>
+<p><strong>The parent directory (..)</strong></p>
+<p>(..) means the parent of the current directory, so typing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ..
+</pre></div>
+</div>
+<p>will take you one directory up the hierarchy (back to your home directory). Try it now.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Typing <code class="docutils literal notranslate"><span class="pre">cd</span></code> with no argument always returns you to your home directory. This is very useful if you are lost in the file system.</p>
+</div>
+<p><strong>~ (your home directory)</strong></p>
+<p>Home directories can also be referred to by the tilde <code class="docutils literal notranslate"><span class="pre">~</span></code> character. It can be used to specify paths starting at your home directory. So typing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  $ ls ~/unixstuff
+</pre></div>
+</div>
+<p>will list the contents of your unixstuff directory, no matter where you currently are in the file system.</p>
+</div>
+<div class="section" id="copying-files">
+<h3>Copying files<a class="headerlink" href="#copying-files" title="Permalink to this headline">¶</a></h3>
+<p><strong>cp (copy)</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">file1</span> <span class="pre">file2</span></code> is the command which makes a copy of <code class="docutils literal notranslate"><span class="pre">file1</span></code> in the current working directory and calls it <code class="docutils literal notranslate"><span class="pre">file2</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Directories can also be copied with the <code class="docutils literal notranslate"><span class="pre">-r</span></code> option added to <code class="docutils literal notranslate"><span class="pre">cp</span></code>.</p>
+</div>
+<p>What we are going to do now, is to take a file stored in an open access area of the file system, and use the <code class="docutils literal notranslate"><span class="pre">cp</span></code> command to copy it to your unixstuff directory.</p>
+<p>First, <code class="docutils literal notranslate"><span class="pre">cd</span></code> to your unixstuff directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ~/unixstuff
+</pre></div>
+</div>
+<p>Then type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ wget http://www.ee.surrey.ac.uk/Teaching/Unix/science.txt
+</pre></div>
+</div>
+<p>Can you check in the terminal (or online) what <code class="docutils literal notranslate"><span class="pre">wget</span></code> does?</p>
+<div class="exercise admonition" id="week_01/01-Linux-exercise-1">
+<p class="admonition-title"><span class="caption-number">Exercise 2 </span></p>
+<div class="section" id="exercise-content">
+<p>Create a backup of your <code class="docutils literal notranslate"><span class="pre">science.txt</span></code> file by copying it to a file called <code class="docutils literal notranslate"><span class="pre">science.bak</span></code></p>
+</div>
+</div>
+</div>
+<div class="section" id="using-tab">
+<h3>Using [TAB]<a class="headerlink" href="#using-tab" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">[TAB]</span></code> is very useful in the Linux (and other) command line: it uses an automated completion algorithm to complete the commands you are typing. For example, try to type <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">~/uni</span></code> and then <code class="docutils literal notranslate"><span class="pre">TAB</span></code>. This is also going to make suggestions in case of multiple choices, or for commands.</p>
+</div>
+<div class="section" id="moving-files">
+<h3>Moving files<a class="headerlink" href="#moving-files" title="Permalink to this headline">¶</a></h3>
+<p><strong>mv (move)</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">file1</span> <span class="pre">file2</span></code> moves (or renames) <code class="docutils literal notranslate"><span class="pre">file1</span></code> to <code class="docutils literal notranslate"><span class="pre">file2</span></code></p>
+<p>To move a file from one place to another, use the <code class="docutils literal notranslate"><span class="pre">mv</span></code> command. This has the effect of moving rather than copying the file, so you end up with only one file rather than two.</p>
+<p>It can also be used to rename a file, by moving the file to the same directory, but giving it a different name.</p>
+<p>We are now going to move the file <code class="docutils literal notranslate"><span class="pre">science.bak</span></code> to your <code class="docutils literal notranslate"><span class="pre">backup</span></code> directory.</p>
+<p>First, change directories to your <code class="docutils literal notranslate"><span class="pre">unixstuff</span></code> directory. Then type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mv science.bak backup/
+</pre></div>
+</div>
+<p>Type <code class="docutils literal notranslate"><span class="pre">ls</span></code> and <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">backup</span></code> to see if it has worked.</p>
+</div>
+<div class="section" id="removing-files-and-directories">
+<h3>Removing files and directories<a class="headerlink" href="#removing-files-and-directories" title="Permalink to this headline">¶</a></h3>
+<p><strong>rm (remove), rmdir (remove directory)</strong></p>
+<p>To delete (remove) a file, use the <code class="docutils literal notranslate"><span class="pre">rm</span></code> command. As an example, we are going to create a copy of the <code class="docutils literal notranslate"><span class="pre">science.txt</span></code> file and then delete it.</p>
+<p>Inside your <code class="docutils literal notranslate"><span class="pre">unixstuff</span></code> directory, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cp science.txt tempfile.txt 
+$ ls
+$ rm tempfile.txt
+$ ls
+</pre></div>
+</div>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">rmdir</span></code> command to remove a directory (make sure it is empty first). Try to remove the <code class="docutils literal notranslate"><span class="pre">backup</span></code> directory. You will not be able to since linux will not let you remove a non-empty directory. To delete a non-empty directory with all its subdirectories you can use the option <code class="docutils literal notranslate"><span class="pre">-r</span></code> (r for recursive):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rm -r /path/to/some/directory
+</pre></div>
+</div>
+<p>This command will then ask you confirmation for certain files judged important. If you are very sure of what you do, you can add a <code class="docutils literal notranslate"><span class="pre">-f</span></code> to the command (f for force):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rm -rf /path/to/some/directory/that/i/am/very/sure/to/delete
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Directories deleted with <code class="docutils literal notranslate"><span class="pre">rm</span></code> are lost <em>forever</em>. They don’t go to the trash, they are directly deleted.</p>
+</div>
+</div>
+<div class="section" id="displaying-the-contents-of-a-file-on-the-screen">
+<h3>Displaying the contents of a file on the screen<a class="headerlink" href="#displaying-the-contents-of-a-file-on-the-screen" title="Permalink to this headline">¶</a></h3>
+<p><strong>clear (clear screen)</strong></p>
+<p>Before you start the next section, you may like to clear the terminal window of the previous commands so the output of the following commands can be clearly understood.</p>
+<p>At the prompt, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ clear
+</pre></div>
+</div>
+<p>This will clear all text and leave you with the <code class="docutils literal notranslate"><span class="pre">$</span></code> prompt at the top of the window.</p>
+<p><strong>less</strong></p>
+<p>The command <code class="docutils literal notranslate"><span class="pre">less</span></code> writes the contents of a file onto the screen a page at a time. Type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ less science.txt
+</pre></div>
+</div>
+<p>Press the <code class="docutils literal notranslate"><span class="pre">[space-bar]</span></code> if you want to see another page, and type <code class="docutils literal notranslate"><span class="pre">[q]</span></code> if you want to quit reading. As you can see, <code class="docutils literal notranslate"><span class="pre">less</span></code> is used in preference to <code class="docutils literal notranslate"><span class="pre">cat</span></code> for long files.</p>
+<p><strong>head</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">head</span></code> command writes the first ten lines of a file to the screen.</p>
+<p>First clear the screen then type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ head science.txt
+</pre></div>
+</div>
+<p>Then type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ head -5 science.txt
+</pre></div>
+</div>
+<p>What difference did the <code class="docutils literal notranslate"><span class="pre">-5</span></code> do to the head command?</p>
+<p><strong>tail</strong></p>
+<p>The tail command writes the last ten lines of a file to the screen.</p>
+<p>Clear the screen and type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tail science.txt
+</pre></div>
+</div>
+<div class="exercise admonition" id="week_01/01-Linux-exercise-2">
+<p class="admonition-title"><span class="caption-number">Exercise 3 </span></p>
+<div class="section" id="exercise-content">
+<p>How can you view the last 15 lines of the file?</p>
+</div>
+</div>
+</div>
+<div class="section" id="searching-the-contents-of-a-file">
+<h3>Searching the contents of a file<a class="headerlink" href="#searching-the-contents-of-a-file" title="Permalink to this headline">¶</a></h3>
+<p><strong>Simple searching using <code class="docutils literal notranslate"><span class="pre">less</span></code></strong></p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">less</span></code>, you can search through a text file for a keyword (pattern). For example, to search through <code class="docutils literal notranslate"><span class="pre">science.txt</span></code> for the word “science”, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ less science.txt
+</pre></div>
+</div>
+<p>then, still in <code class="docutils literal notranslate"><span class="pre">less</span></code>, type a forward slash <code class="docutils literal notranslate"><span class="pre">[/]</span></code> followed by the word to search:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">science</span>
+</pre></div>
+</div>
+<p>And tape <code class="docutils literal notranslate"><span class="pre">[enter]</span></code>. Type <code class="docutils literal notranslate"><span class="pre">[n]</span></code> to search for the next occurrence of the word.</p>
+<p><strong>grep</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">grep</span></code> is one of many standard linux utilities. It searches files for specified words or patterns. First clear the screen, then type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep science science.txt
+</pre></div>
+</div>
+<p>As you can see, <code class="docutils literal notranslate"><span class="pre">grep</span></code> has printed out each line containg the word science.</p>
+<p>Or has it ????</p>
+<p>Try typing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep Science science.txt
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">grep</span></code> command is case sensitive; it distinguishes between Science and science.</p>
+<p>To ignore upper/lower case distinctions, use the <code class="docutils literal notranslate"><span class="pre">-i</span></code> option, i.e. type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -i science science.txt
+</pre></div>
+</div>
+<p>To search for a phrase or pattern, you must enclose it in single quotes (the apostrophe symbol). For example to search for spinning top, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -i &#39;spinning top&#39; science.txt
+</pre></div>
+</div>
+<p>Some of the other options of <code class="docutils literal notranslate"><span class="pre">grep</span></code> are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-v</span></code> display those lines that do NOT match</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-n</span></code> precede each matching line with the line number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-c</span></code> print only the total count of matched lines</p></li>
+</ul>
+<p>Try some of them and see the different results. Don’t forget, you can use more than one option at a time. For example, the number of lines without the words science or Science is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -ivc science science.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="take-home-points-the-command-line">
+<h3>Take home points: the command line<a class="headerlink" href="#take-home-points-the-command-line" title="Permalink to this headline">¶</a></h3>
+<p>The linux command line is very powerful. So powerful that linux systems (without graphical interface, i.e. only using the command line) are running the vast majority of the world’s servers and super computers.</p>
+<p>We have shown some examples of how to navigate in the linux directory structure and use some simple commands. This is by far not sufficient to demonstrate its usefulness: the <code class="docutils literal notranslate"><span class="pre">grep</span></code> command for example is extremely powerful to help you find files that you thought you had lost, and <code class="docutils literal notranslate"><span class="pre">wget</span></code> a file to a current directory is often much faster than downloading it in firefox and copy it afterwards. For the time being, this short tutorial should help get you started.</p>
+<div class="tip admonition">
+<p class="admonition-title">To go further</p>
+<p>I recommend to follow <a class="reference external" href="https://ryanstutorials.net/linuxtutorial/">Ryan’s linux tutorials</a>, they are excellent!</p>
+</div>
+</div>
+</div>
+<div class="section" id="executable-scripts">
+<h2>Executable scripts<a class="headerlink" href="#executable-scripts" title="Permalink to this headline">¶</a></h2>
+<p>Now that you are familiar with the command line, you must have noticed that linux commands have some similarities with the <strong>statements</strong> you used in your bachelor programming course: by typing them in, the computer does things for you and gives you information back (often printed on screen, but not always). When you want to <strong>automate</strong> a series of commands you just typed in (for example renaming and moving files), a natural thing would be to write a <strong>script</strong> to do so.</p>
+<p>Scripts are the simplest type of program one can write, and this can be seen as your first programming experience in this course. We are going to write a <strong>bash script</strong> and execute it: why we want to do this in a python scientific programming course may be not clear right now, but it will make more sense later I promise.</p>
+<div class="section" id="a-simple-script">
+<h3>A simple script<a class="headerlink" href="#a-simple-script" title="Permalink to this headline">¶</a></h3>
+<p>In your <code class="docutils literal notranslate"><span class="pre">unixstuff</span></code> directory, create a new file name <code class="docutils literal notranslate"><span class="pre">myscript.sh</span></code>. You can do this using the default (graphical) text editor in MyBinder.</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Open a new text file on MyBinder</p>
+<img alt="lauch-gif" src="../_images/open_editor.gif" />
+</div>
+<p>Just type one simple line in the file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo Hello World!
+
+</pre></div>
+</div>
+<p>Go back to the command line again. You can execute your script with the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ bash myscript.sh
+</pre></div>
+</div>
+<p><strong>Bash</strong> is a so-called “interpreter”. It reads your file and understands how to execute the commands in it.</p>
+</div>
+<div class="section" id="make-a-file-executable">
+<h3>Make a file executable<a class="headerlink" href="#make-a-file-executable" title="Permalink to this headline">¶</a></h3>
+<p>List the files in your directory, but whith the option <code class="docutils literal notranslate"><span class="pre">-l</span></code> for more information. Here is how it looks like on MyBinder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -l
+total 12
+-rw-r--r-- 1 jovyan root   18 Sep 28 10:56 myscript.sh
+-rw-r--r-- 1 jovyan root 7767 Sep  1  2000 science.txt
+</pre></div>
+</div>
+<p>The first list of characters indicate the file’s <strong>permissions</strong>. Now read the first section of <a class="reference external" href="https://ryanstutorials.net/linuxtutorial/permissions.php">Ryan’s tutorial about permissions</a>. So what do we learn from the above? That the file’s owner (myself) is allowed to read and write the <code class="docutils literal notranslate"><span class="pre">myscript.sh</span></code> file, but not to execute it. Let’s change this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ chmod a+x myscript.sh
+</pre></div>
+</div>
+<p>Now everybody (including me) is allowed to execute this file. It is a quite harmless script, so I’m not too worried. Now we can execute it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./myscript.sh
+</pre></div>
+</div>
+<p>Nice! We could add much more commands to our script (possibly making it more useful), but this was enough to illustrate the point I wanted to make: files can be executable in Linux, and a whole new world opens to us.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Most often, it is recommended to add a specific first line to your script, called a <strong>shebang</strong>. This line tells the computer which interpreter should be used to run the file. In our case it is the default interpreter (bash), but this may not always be the case. To be entirely explicit, we recommend to always add a shebang to your script. In this case, we should add <code class="docutils literal notranslate"><span class="pre">#!/bin/bash</span></code> to our script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+# Maybe some comment line about the purpose of this script
+
+echo Hello World!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="take-home-points-bash-scripts">
+<h3>Take home points: bash scripts<a class="headerlink" href="#take-home-points-bash-scripts" title="Permalink to this headline">¶</a></h3>
+<p>It is possible to write simple programs in linux called <strong>scripts</strong>. These scripts can be executed by the default interpreter, and be made <strong>executable</strong> by changing their <strong>file permissions</strong>.</p>
+<div class="tip admonition">
+<p class="admonition-title">To go further</p>
+<p>If you want to know more about bash scripts, read <a class="reference external" href="https://ryanstutorials.net/bash-scripting-tutorial/">Ryan’s tutorial about the subject</a>!</p>
+</div>
+</div>
+</div>
+<div class="section" id="the-linux-path">
+<h2>The linux PATH<a class="headerlink" href="#the-linux-path" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="locate-linux-programs">
+<h3>Locate linux programs<a class="headerlink" href="#locate-linux-programs" title="Permalink to this headline">¶</a></h3>
+<p>You may have asked yourself: how does the linux command line know about the commands we are using? Where do I find them? A nice program helping us to find out is <strong>which</strong>. Let’s use it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ which less
+/usr/bin/less
+</pre></div>
+</div>
+<p>Now we can use another command, <strong>whatis</strong>, to tell us what we just did:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ whatis which
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">which</span></code> command tells us that the <code class="docutils literal notranslate"><span class="pre">less</span></code> program is located in <code class="docutils literal notranslate"><span class="pre">/usr/bin</span></code>. We can also ask <code class="docutils literal notranslate"><span class="pre">which</span></code> where to find <code class="docutils literal notranslate"><span class="pre">which</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ which which
+/usr/bin/which
+$ ls -l /usr/bin/which
+lrwxrwxrwx 1 root root 10 Nov 19 14:42 /usr/bin/which -&gt; /bin/which
+</pre></div>
+</div>
+<p>As expected, <code class="docutils literal notranslate"><span class="pre">which</span></code> is an executable file. Some executables are binary files (i.e. not human readable), but in this case <code class="docutils literal notranslate"><span class="pre">which</span></code> is actually a script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ less /usr/bin/which
+</pre></div>
+</div>
+<div class="exercise admonition" id="week_01/01-Linux-exercise-3">
+<p class="admonition-title"><span class="caption-number">Exercise 4 </span></p>
+<div class="section" id="exercise-content">
+<p>Scroll through the script. Can you locate the shebang line? How does the code look like to you: easily understandable, or rather cryptic?</p>
+</div>
+</div>
+</div>
+<div class="section" id="the-path-variable">
+<h3>The PATH variable<a class="headerlink" href="#the-path-variable" title="Permalink to this headline">¶</a></h3>
+<p>The linux command line knows so-called <strong>environmental variables</strong>. The <code class="docutils literal notranslate"><span class="pre">echo</span></code> command can display their value:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo $PATH
+</pre></div>
+</div>
+<p>(the <code class="docutils literal notranslate"><span class="pre">$</span></code> tells echo to display the value of the variable PATH rather than its name). The <a class="reference external" href="http://www.linfo.org/path_env_var.html">PATH</a> variable contains a list of paths, separated by semicolons. It is an extremely important variable: it tells linux <em>where</em> to look for executables and programs. Each time you type a command, linux will look in the PATH and see if it finds it. This is an extremely flexible and powerful system, as we are going to see in the next chapter (Installing Python).</p>
+<p>The PATH can be extended to contain any other directory you find useful to add. Let’s do it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir ~/myprograms
+$ export PATH=$PATH:~/myprograms
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">export</span></code> creates a new variable called PATH (in this case, it overwrites the existing PATH).</p>
+<div class="exercise admonition" id="week_01/01-Linux-exercise-4">
+<p class="admonition-title"><span class="caption-number">Exercise 5 </span></p>
+<div class="section" id="exercise-content">
+<p>Now move your executable script <code class="docutils literal notranslate"><span class="pre">myscript.sh</span></code> in the <code class="docutils literal notranslate"><span class="pre">myprograms</span></code> directory. Verify that you can now execute the <code class="docutils literal notranslate"><span class="pre">myscript.sh</span></code> program from any directory.</p>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We have extended the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> variable in <em>this session</em> only. If you close and reopen the terminal the changes will be lost. There are ways to make these changes permanent, we will learn them in the next chapter.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If a program is listed in several path directories, linux takes the first instance. Directories can be prepended and appended, as we will see in the next chapter.</p>
+</div>
+</div>
+<div class="section" id="take-home-points-the-linux-path">
+<h3>Take home points: the linux PATH<a class="headerlink" href="#take-home-points-the-linux-path" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">PATH</span></code> variable tells linux where to look for programs and scripts. This is a very simple and powerful way to customize linux with your own scripts and programs. We are going to use this feature to install Python in the next chapter.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./week_01"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../slides.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Presentation slides</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="02-Installation.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">02 - Installing Python</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Fabien Maussion<br/>
+        
+          <div class="extra_footer">
+            <p>
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+  <img align="right" class="margin" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg" width="88px">
+</a>
+These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International (CC BY 4.0) license</a>.
+<br>
+&copy; Copyright 2018-2020.
+</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-88391345-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>
