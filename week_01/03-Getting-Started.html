@@ -361,17 +361,13 @@
 <div class="section" id="the-standard-command-line-interpreter">
 <h2>The standard command-line interpreter<a class="headerlink" href="#the-standard-command-line-interpreter" title="Permalink to this headline">¶</a></h2>
 <p>Let’s open a python interpreter and type in some commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python
-Python 3.8.3 (default, May 19 2020, 18:47:26) 
-[GCC 7.3.0] :: Anaconda, Inc. on linux
-Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
-&gt;&gt;&gt; a = 2
-&gt;&gt;&gt; b = 3
-&gt;&gt;&gt; print(a+b)
-5
-&gt;&gt;&gt; a*b
-6
-&gt;&gt;&gt; a**3
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+<span class="go">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">*</span><span class="n">b</span>
+<span class="go">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">**</span><span class="mi">3</span>
 </pre></div>
 </div>
 <p>This should look quite familiar to you, whatever language you learned before. We defined variables, and did some arithmetics with them. On line 3 we used the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function to display the output of our computations, but as it turns out it is not necessary: the command line shell will print the output anyway. This functionality is called <a class="reference external" href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">REPL</a>, and it is a feature of modern interpreted languages. We’ll come back to this later.</p>
@@ -379,25 +375,20 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 </div>
 <div class="section" id="ipython-interactive-python">
 <h2>ipython: interactive python<a class="headerlink" href="#ipython-interactive-python" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://ipython.readthedocs.io/en/stable/index.html">ipython</a> is a standard command-line interpreter, but enhanced with many interactive features. Let’s open it:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ipython
-Python 3.6.4 | packaged by conda-forge | (default, Dec 23 2017, 16:31:06) 
-Type &#39;copyright&#39;, &#39;credits&#39; or &#39;license&#39; for more information
-IPython 6.2.1 -- An enhanced Interactive Python. Type &#39;?&#39; for help.
+<p><a class="reference external" href="http://ipython.readthedocs.io/en/stable/index.html">ipython</a> is a standard command-line interpreter, but enhanced with many interactive features. Let’s open it (<code class="docutils literal notranslate"><span class="pre">ipython</span></code> command) and type in some commands:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
 
-In [1]: a = 2
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
 
-In [2]: b = 3
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+<span class="mi">5</span>
 
-In [3]: print(a + b)
-5
-
-In [4]: a*b
-Out[4]: 6
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="mi">6</span>
 </pre></div>
 </div>
 <p>What are the differences? The <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> prompt has been replaced by <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[1]:</span></code>. Now there <em>is</em> a slight difference between a line with or without <code class="docutils literal notranslate"><span class="pre">print()</span></code> (can you find it?). At first sight the differences are small, but it’s in the everyday interactive coding that <code class="docutils literal notranslate"><span class="pre">ipython</span></code> becomes useful.</p>
-<p><strong>From now on, we will always use the ipython command-line interpreter.</strong> Here is a small sample of its most useful functionalities:</p>
+<p><strong>From now on, we will always use the ipython command-line interpreter.</strong> I will now describe a small sample of its most useful capabilities.</p>
 <div class="section" id="automatic-code-completion">
 <h3>Automatic code completion<a class="headerlink" href="#automatic-code-completion" title="Permalink to this headline">¶</a></h3>
 <p>In ipython, type <code class="docutils literal notranslate"><span class="pre">s</span></code> and then <code class="docutils literal notranslate"><span class="pre">[TAB]</span></code>. The tool will give you a list of suggestions to choose from (useful when you forgot how a function was called exactly!). Now type <code class="docutils literal notranslate"><span class="pre">so</span></code> and <code class="docutils literal notranslate"><span class="pre">[TAB]</span></code>. Here the only solution will be selected automatically.</p>

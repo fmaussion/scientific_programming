@@ -440,12 +440,11 @@ same on all platforms.</p>
 <div class="section" id="install-miniconda">
 <h3>Install Miniconda<a class="headerlink" href="#install-miniconda" title="Permalink to this headline">¶</a></h3>
 <p>Go to the miniconda <a class="reference external" href="http://conda.pydata.org/miniconda.html">website</a> and
-download the latest <strong>python 3.8</strong> installer for your platform (be careful to
-check whether you need a 64- or 32-bit version).</p>
+download the latest installer for your platform (be careful to
+check whether you need a 64- or 32-bit version - most probably 64).</p>
 <p>The installation is really easy and described
 <a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/install/index.html">here</a>.
-If you are installing conda on WSL2, <a class="reference external" href="https://github.com/kapsakcj/win10-linux-conda-how-to">this page</a> is a really helpful resource. Choose an
-installation directory where you have enough space available
+Choose an installation directory where you have enough space available
 (conda installations can quickly grow larger than a few GB).</p>
 <p>To see if everything worked well, open a terminal window (on Windows, the
 <a class="reference external" href="https://docs.anaconda.com/anaconda/user-guide/getting-started/#open-prompt-win">anaconda prompt</a>)
@@ -477,10 +476,10 @@ to <a class="reference external" href="#packs">Install the packages</a>.</p>
 <p>If you want to try environments already (you’ll thank me later), please have a short look at the conda introduction
 <a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/concepts/environments.html">here</a> before going on.</p>
 <p>In the terminal, type:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda create -n scipro python=3.8
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda create -n scipro
 </pre></div>
 </div>
-<p>This created a new environment called “scipro” which has python version 3.8 as
+<p>This created a new environment called “scipro” which has the latest python version as
 default interpreter. This environment can be activated with one command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">scipro</span>
 </pre></div>
@@ -544,7 +543,7 @@ start <code class="docutils literal notranslate"><span class="pre">ipython</span
 <li><p>the system python is useful for scripting or for simple tasks, but for real-world applications you want to install python (and related packages) on your own.</p></li>
 <li><p>the best tool to install a custom python and selected packages is <a class="reference external" href="https://conda.io/docs/">conda</a>, installed via <a class="reference external" href="https://conda.io/miniconda.html">miniconda</a></p></li>
 <li><p>on linux, a python “installation” is simply a link to a python executable file - on Windows, it’s more complicated</p></li>
-<li><p>on Windows, I recommend to use Windows Subsystem for Linux</p></li>
+<li><p>Windows excels at hiding details to the users: this can be good sometimes (for example when you want to play games or run microsoft word), but as a scientist I recommend you start to think and learn about how things work on the system you use everyday. In short: stick to Windows if you like it, but <strong>learn how to use it properly</strong> and learn <strong>how it works from the inside</strong>.</p></li>
 </ul>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
