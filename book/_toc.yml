@@ -9,3 +9,10 @@ parts:
     - file: faq
     - file: references
     - file: slides
+  - caption: Week 01 - Linux & Python primer
+    chapters:
+    - file: week_01/01-Linux
+    - file: week_01/02-Installation
+    - file: week_01/03-Getting-Started
+    - file: week_01/Assignment-01
+    
