@@ -453,10 +453,10 @@
 <div class="section" id="today-s-learning-task-try-the-linux-command-line">
 <h2>Today’s learning task: try the linux command line<a class="headerlink" href="#today-s-learning-task-try-the-linux-command-line" title="Permalink to this headline">¶</a></h2>
 <p>The linux command line is a powerful tool to access and explore the file system on your computer. On super computers, it is the only tool available to move file around and execute scripts. The command line is also the first terminal to use before opening a more scientific environment, say for example the python or ipython interpreters. “Thinking command line” is thinking in terms of programming, and learning some command line tools is unavoidable for programmers.</p>
-<div class="important admonition">
+<div class="dropdown note admonition">
 <p class="admonition-title">Note for Windows users</p>
 <p>On windows, the default command line is called the “command prompt” or <a class="reference external" href="https://en.wikipedia.org/wiki/Cmd.exe">cmd.exe</a>. It is also a command line, but somewhat less useful than the linux command line. You will have to use it during this course, e.g. to run python.</p>
-<p>For those of you running Windows without WSL (i.e. the majority of you), I strongly recommend to use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code>. <a class="reference external" href="https://gitforwindows.org/">git bash</a> is a side product of another very useful tool (<code class="docutils literal notranslate"><span class="pre">git</span></code>, which we won’t use in this course), which provides a “linux feel” to the windows command line. Once installed, you can run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code> from anywhere in your files, and you can also make your python installation usable from within this command line (see next chapter for more information). You can even do today’s linux tutorial on <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code>, which will help you to learn a few new things about your system.</p>
+<p>For those of you running Windows without WSL (i.e. the majority of you), I recommend to use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code>. <a class="reference external" href="https://gitforwindows.org/">git bash</a> is a side product of another very useful tool (<code class="docutils literal notranslate"><span class="pre">git</span></code>, which we won’t use in this course), which provides a “linux feel” to the windows command line. Once installed, you can run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code> from anywhere in your file explorer (right click -&gt; “git bash here”), and you can also make your python installation usable from within this command line (see next chapter for more information). You can even run today’s linux tutorial on <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code>.</p>
 <p>To install <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code>, download it <a class="reference external" href="https://gitforwindows.org/">from their website</a>  and follow the instructions (keep all options to their default).</p>
 </div>
 <div class="section" id="open-a-linux-terminal">
@@ -468,7 +468,8 @@
 <li><p><strong>on your own laptop</strong>, either via:</p>
 <ul>
 <li><p>a linux installation or live USB (see above)</p></li>
-<li><p>on Windows with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code> (recommended for windows users) - not all commands are available here, e.g. <code class="docutils literal notranslate"><span class="pre">wget</span></code> isn’t (but you can easily replace it with a manual download of the file).</p></li>
+<li><p>the <a class="reference external" href="https://en.wikipedia.org/wiki/Terminal_(macOS)">Mac OS terminal</a> if you are on Mac OSX</p></li>
+<li><p>on Windows with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code> (recommended for windows users) - not all linux commands are available though</p></li>
 <li><p>on Windows with WSL2 (recommended for more advanced windows + linux users)</p></li>
 </ul>
 </li>
@@ -512,6 +513,10 @@
 </pre></div>
 </div>
 <p>which prints the path of the current working directory.</p>
+<div class="dropdown note admonition">
+<p class="admonition-title">Note for windows or mac os users</p>
+<p>The directory structure of course is different for you than it is for me. Windows in particular uses a system of “disks” or partitions with a single upper case letter to start with. On <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code>, the directory structure often looks like <code class="docutils literal notranslate"><span class="pre">/C/User/</span></code> etc.</p>
+</div>
 </div>
 <div class="section" id="making-directories">
 <h3>Making Directories<a class="headerlink" href="#making-directories" title="Permalink to this headline">¶</a></h3>
@@ -590,6 +595,13 @@
 </pre></div>
 </div>
 <p>Can you check in the terminal (or online) what <code class="docutils literal notranslate"><span class="pre">wget</span></code> does?</p>
+<div class="dropdown note admonition">
+<p class="admonition-title">Windows or Mac OS users: use curl</p>
+<p><code class="docutils literal notranslate"><span class="pre">wget</span></code> is not available on mac or windows (although some <code class="docutils literal notranslate"><span class="pre">wget</span></code> emulators exist and can be installed). To download the file on <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code>, you can use:</p>
+<p><code class="docutils literal notranslate"><span class="pre">curl.exe</span> <span class="pre">--output</span> <span class="pre">science.txt</span> <span class="pre">--url</span> <span class="pre">http://www.ee.surrey.ac.uk/Teaching/Unix/science.txt</span></code></p>
+<p>And on Mac OS:</p>
+<p><code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">http://www.ee.surrey.ac.uk/Teaching/Unix/science.txt</span> <span class="pre">-o</span> <span class="pre">science.txt</span></code></p>
+</div>
 <div class="exercise admonition" id="week_01/01-Linux-exercise-1">
 <p class="admonition-title"><span class="caption-number">Exercise 2 </span></p>
 <div class="section" id="exercise-content">
@@ -851,7 +863,7 @@ $ export PATH=$PATH:~/myprograms
 </div>
 <div class="section" id="take-home-points-the-linux-path">
 <h3>Take home points: the linux PATH<a class="headerlink" href="#take-home-points-the-linux-path" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">PATH</span></code> variable tells linux where to look for programs and scripts. This is a very simple and powerful way to customize linux with your own scripts and programs. We are going to use this feature to install Python in the next chapter.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">PATH</span></code> variable tells linux where to look for programs and scripts. This is a very simple and powerful way to customize linux with your own scripts and programs. We are going to use this feature to install Python at the university computers.</p>
 </div>
 </div>
 </div>
