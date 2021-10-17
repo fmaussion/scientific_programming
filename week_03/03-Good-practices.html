@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment #01 &#8212; Scientific Programming</title>
+    <title>03 - Good practices, programming style and conventions &#8212; Scientific Programming</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -52,8 +52,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="01 - Language fundamentals" href="../week_02/01-Language-Fundamentals.html" />
-    <link rel="prev" title="03 - Getting started with Python" href="03-Getting-Started.html" />
+    <link rel="next" title="Assignment #03" href="Assignment-03.html" />
+    <link rel="prev" title="02 - Tips and tricks" href="02-Tips-and-Tricks.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -121,24 +121,24 @@
   Week 01 - Linux &amp; Python primer
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="01-Linux.html">
+  <a class="reference internal" href="../week_01/01-Linux.html">
    01 - A very short introduction to Linux
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02-Installation.html">
+  <a class="reference internal" href="../week_01/02-Installation.html">
    02 - Installing Python
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03-Getting-Started.html">
+  <a class="reference internal" href="../week_01/03-Getting-Started.html">
    03 - Getting started with Python
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/Assignment-01.html">
    Assignment #01
   </a>
  </li>
@@ -165,24 +165,24 @@
   Week 03 - Variables scopes, modules, good practices
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../week_03/01-Import-Scopes.html">
+  <a class="reference internal" href="01-Import-Scopes.html">
    01 - Modules, import mechanism, namespaces, scope(s)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../week_03/02-Tips-and-Tricks.html">
+  <a class="reference internal" href="02-Tips-and-Tricks.html">
    02 - Tips and tricks
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_03/03-Good-practices.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    03 - Good practices, programming style and conventions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../week_03/Assignment-03.html">
+  <a class="reference internal" href="Assignment-03.html">
    Assignment #03
   </a>
  </li>
@@ -227,7 +227,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/week_01/Assignment-01.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/week_03/03-Good-practices.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -247,10 +247,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_01/Assignment-01.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_03/03-Good-practices.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_01/Assignment-01.ipynb"><button
+        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_03/03-Good-practices.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -270,7 +270,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_01/Assignment-01.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_03/03-Good-practices.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -293,23 +293,28 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-01-01-linux-tutorial">
-   Exercise #01-01: linux tutorial
+  <a class="reference internal nav-link" href="#use-pep-8">
+   Use PEP 8
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-01-02a-optional-during-pandemics-install-python-on-your-university-account">
-   Exercise #01-02a (optional during pandemics): install python on your university account
+  <a class="reference internal nav-link" href="#give-meaningful-names-to-variables-and-functions">
+   Give meaningful names to variables and functions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-01-02b-install-python-on-your-laptop">
-   Exercise #01-02b: install python on your laptop
+  <a class="reference internal nav-link" href="#prefer-writing-many-small-functions-instead-of-monolithic-code-blocks">
+   Prefer writing many small functions instead of monolithic code blocks
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-01-03-python-script-instead-of-bash">
-   Exercise #01-03: python script instead of bash
+  <a class="reference internal nav-link" href="#document-your-code">
+   Document your code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-zen-of-python">
+   The Zen of Python
   </a>
  </li>
 </ul>
@@ -323,28 +328,90 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-01">
-<h1>Assignment #01<a class="headerlink" href="#assignment-01" title="Permalink to this headline">¶</a></h1>
-<p>This week’s assignment is about getting you more comfortable with linux and able to use python on your computer before doing more complicated things.</p>
-<div class="section" id="exercise-01-01-linux-tutorial">
-<h2>Exercise #01-01: linux tutorial<a class="headerlink" href="#exercise-01-01-linux-tutorial" title="Permalink to this headline">¶</a></h2>
-<p>Follow the linux tutorial from <a class="reference internal" href="01-Linux.html"><span class="doc">01 - A very short introduction to Linux</span></a> (on MyBinder or your laptop).</p>
-</div>
-<div class="section" id="exercise-01-02a-optional-during-pandemics-install-python-on-your-university-account">
-<h2>Exercise #01-02a (optional during pandemics): install python on your university account<a class="headerlink" href="#exercise-01-02a-optional-during-pandemics-install-python-on-your-university-account" title="Permalink to this headline">¶</a></h2>
-<p>Follow the instructions from <a class="reference internal" href="02-Installation.html#installation-uni"><span class="std std-ref">Installation at the University of Innsbruck (optional)</span></a> to install python on your linux account at the university.</p>
-</div>
-<div class="section" id="exercise-01-02b-install-python-on-your-laptop">
-<h2>Exercise #01-02b: install python on your laptop<a class="headerlink" href="#exercise-01-02b-install-python-on-your-laptop" title="Permalink to this headline">¶</a></h2>
-<p>Follow the instructions from <a class="reference internal" href="02-Installation.html#installation-pc"><span class="std std-ref">Installing Python on your PC</span></a> to install python on your laptop.</p>
-<div class="note admonition">
-<p class="admonition-title">Online learning</p>
-<p>In previous years, I would make the installation on the University lab mandatory and optional on your laptop - this would be enough for the entire semester. This year is different though, and working in the computer lab is not as easy as before. For this week, you can use MyBinder - but starting from next week I recommend to have a working python on your PC as well.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="good-practices-programming-style-and-conventions">
+<h1>03 - Good practices, programming style and conventions<a class="headerlink" href="#good-practices-programming-style-and-conventions" title="Permalink to this headline">¶</a></h1>
+<p>Python is a very versatile programming language, and it has a very flexible syntax. Therefore, it is also very easy to write <em>ugly code</em> in python. This chapter reviews a number of guidelines and conventions widely accepted by the community. At this stage of the lecture we won’t go in depth for each of these points, but try to keep them in mind while writing your assignments and also while checking my suggested solution to the assignments.</p>
+<div class="section" id="use-pep-8">
+<h2>Use PEP 8<a class="headerlink" href="#use-pep-8" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a> is a style guide for python code. It introduces new rules where the syntax leaves them open. As an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Syntax OK but not PEP8 compliant </span>
+<span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">x</span><span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="o">-</span><span class="mi">1</span>
+<span class="c1"># Syntax OK *and* PEP8 compliant</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
 </div>
 </div>
-<div class="section" id="exercise-01-03-python-script-instead-of-bash">
-<h2>Exercise #01-03: python script instead of bash<a class="headerlink" href="#exercise-01-03-python-script-instead-of-bash" title="Permalink to this headline">¶</a></h2>
-<p>Use linux on MyBinder for this exercise. Write a python script called <code class="docutils literal notranslate"><span class="pre">my_cli_test.py</span></code>. The script can be as simple as you wish, but it should produce one printed output (a simple “Hello world!” would suffice!). Put this script in a new directory in your <code class="docutils literal notranslate"><span class="pre">HOME</span></code>, called <code class="docutils literal notranslate"><span class="pre">bin</span></code>. Using your knowledge from the Linux tutorial, make this script callable from everywhere (not just from the <code class="docutils literal notranslate"><span class="pre">bin</span></code> directory) with a call to <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">my_cli_test.py</span></code>. If not on MyBinder, make this change “permanent” for your <code class="docutils literal notranslate"><span class="pre">HOME</span></code> environment (on MyBinder it is possible to do it as well, but it will be forgotten next time you open a session anyway).</p>
+</div>
+<p>PEP8 gives <em>guidelines</em>, not strict rules. It is your choice to comply with them or not. As a matter of fact however, many open source projects have adopted PEP8 and require to use it if you want to contribute. If you want to use it too, a good choice is to turn on PEP8 checking in your favorite IDE (in Spyder: <code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">-&gt;</span> <span class="pre">Preferences</span> <span class="pre">-&gt;</span> <span class="pre">Completion</span> <span class="pre">and</span> <span class="pre">linting</span> <span class="pre">-&gt;</span> <span class="pre">Code</span> <span class="pre">style</span> <span class="pre">-&gt;</span> </code> Tick <code class="docutils literal notranslate"><span class="pre">Enable</span> <span class="pre">code</span> <span class="pre">style</span> <span class="pre">linting</span></code> for PEP8 style analysis).</p>
+</div>
+<div class="section" id="give-meaningful-names-to-variables-and-functions">
+<h2>Give meaningful names to variables and functions<a class="headerlink" href="#give-meaningful-names-to-variables-and-functions" title="Permalink to this headline">¶</a></h2>
+<p>The text space that code is taking is less important than your time. Give meaningful name to your variables and functions, even if it makes them quite long! For example, prefer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fahrenheit_to_celsius</span><span class="p">(</span><span class="n">temp_fahrenheit</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>to the shorter but less explicit:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>The same rule applies for variables. Prefer <code class="docutils literal notranslate"><span class="pre">language</span></code> over <code class="docutils literal notranslate"><span class="pre">l</span></code> and <code class="docutils literal notranslate"><span class="pre">area</span></code> over <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+</div>
+<div class="section" id="prefer-writing-many-small-functions-instead-of-monolithic-code-blocks">
+<h2>Prefer writing many small functions instead of monolithic code blocks<a class="headerlink" href="#prefer-writing-many-small-functions-instead-of-monolithic-code-blocks" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Separation_of_concerns">Separation of concerns</a> is an important design principle for separating a computer program into distinct sections, such that each section addresses a separate concern. This increases the code readability and facilitates unit testing (as we will see).</p>
+<p>For example, a scientific script can often be organized in well defined steps:</p>
+<ul class="simple">
+<li><p>data input (read a file)</p></li>
+<li><p>data pre-processing (filtering missing data, discarding useless variables)</p></li>
+<li><p>data processing (actual computation)</p></li>
+<li><p>output (writing the processed data to a file for later use)</p></li>
+<li><p>data visualization (producing a plot)</p></li>
+</ul>
+<p>Each of these steps and sub-steps should be separated in different functions, maybe even in different scripts. When discussing your assignment solutions, we will always discuss how your code is organized for readability and testing.</p>
+</div>
+<div class="section" id="document-your-code">
+<h2>Document your code<a class="headerlink" href="#document-your-code" title="Permalink to this headline">¶</a></h2>
+<p>Write comments in your code, and document the functions with docstrings. We will have a full lecture about it, but it’s good to start early. Here again, there are <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard">some conventions</a> that I recommend to follow.</p>
+<p>Note that this is useful even if you don’t plan to share your code. At the very last there is at least one person reading your code: yourself! And it’s always a good idea to be nice to yourself! (see the related <a class="reference external" href="http://abstrusegoose.com/432">Abstruse Goose comic</a>)</p>
+</div>
+<div class="section" id="the-zen-of-python">
+<h2>The Zen of Python<a class="headerlink" href="#the-zen-of-python" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">this</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren&#39;t special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you&#39;re Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it&#39;s a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let&#39;s do more of those!
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -361,7 +428,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./week_01"
+            path: "./week_03"
         },
         predefinedOutput: true
     }
@@ -378,19 +445,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="03-Getting-Started.html" title="previous page">
+        <a class="left-prev" href="02-Tips-and-Tricks.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">03 - Getting started with Python</p>
+                <p class="prevnext-title">02 - Tips and tricks</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../week_02/01-Language-Fundamentals.html" title="next page">
+        <a class="right-next" href="Assignment-03.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">01 - Language fundamentals</p>
+                <p class="prevnext-title">Assignment #03</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

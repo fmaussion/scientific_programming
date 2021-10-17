@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,39 +34,17 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -116,7 +94,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Introduction
  </span>
@@ -138,7 +116,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 01 - Linux &amp; Python primer
  </span>
@@ -165,7 +143,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Week 02 - Python language fundamentals
  </span>
@@ -179,6 +157,33 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../week_02/Assignment-02.html">
    Assignment #02
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 03 - Variables scopes, modules, good practices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/01-Import-Scopes.html">
+   01 - Modules, import mechanism, namespaces, scope(s)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/02-Tips-and-Tricks.html">
+   02 - Tips and tricks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/03-Good-practices.html">
+   03 - Good practices, programming style and conventions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/Assignment-03.html">
+   Assignment #03
   </a>
  </li>
 </ul>
@@ -429,7 +434,7 @@
         
               <div>
                 
-  <div class="section" id="a-very-short-introduction-to-linux">
+  <div class="tex2jax_ignore mathjax_ignore section" id="a-very-short-introduction-to-linux">
 <h1>01 - A very short introduction to Linux<a class="headerlink" href="#a-very-short-introduction-to-linux" title="Permalink to this headline">¶</a></h1>
 <p>This lecture is about programming with Python, and we can do that on all major operating systems (Windows, Mac OS, Linux). Linux (and Mac) operating systems are sometimes preferred over Windows by scientists and programmers, for a number of reasons: therefore <strong>every student in (geo-)sciences should know about the existence of Linux and be familiar with the basics of it</strong>. Atmospheric Sciences students in particular will have to use it sooner or later, since most of the tools and data they are using are running or have been created on Linux systems.</p>
 <div class="section" id="what-is-linux">
@@ -561,8 +566,7 @@
 <div class="section" id="exercise-content">
 <p>Make a directory called <code class="docutils literal notranslate"><span class="pre">backup</span></code> located in the <code class="docutils literal notranslate"><span class="pre">unixstuff</span></code> directory</p>
 </div>
-</div>
-</div>
+</div></div>
 <div class="section" id="the-directories-and">
 <h3>The directories . and ..<a class="headerlink" href="#the-directories-and" title="Permalink to this headline">¶</a></h3>
 <p>Still in the <code class="docutils literal notranslate"><span class="pre">unixstuff</span></code> directory, type:</p>
@@ -624,8 +628,7 @@
 <div class="section" id="exercise-content">
 <p>Create a backup of your <code class="docutils literal notranslate"><span class="pre">science.txt</span></code> file by copying it to a file called <code class="docutils literal notranslate"><span class="pre">science.bak</span></code></p>
 </div>
-</div>
-</div>
+</div></div>
 <div class="section" id="using-tab">
 <h3>Using [TAB]<a class="headerlink" href="#using-tab" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">[TAB]</span></code> is very useful in the Linux (and other) command line: it uses an automated completion algorithm to complete the commands you are typing. For example, try to type <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">~/uni</span></code> and then <code class="docutils literal notranslate"><span class="pre">TAB</span></code>. This is also going to make suggestions in case of multiple choices, or for commands.</p>
@@ -704,8 +707,7 @@ $ ls
 <div class="section" id="exercise-content">
 <p>How can you view the last 15 lines of the file?</p>
 </div>
-</div>
-</div>
+</div></div>
 <div class="section" id="searching-the-contents-of-a-file">
 <h3>Searching the contents of a file<a class="headerlink" href="#searching-the-contents-of-a-file" title="Permalink to this headline">¶</a></h3>
 <p><strong>Simple searching using <code class="docutils literal notranslate"><span class="pre">less</span></code></strong></p>
@@ -848,8 +850,7 @@ lrwxrwxrwx 1 root root 10 Nov 19 14:42 /usr/bin/which -&gt; /bin/which
 <div class="section" id="exercise-content">
 <p>Scroll through the script. Can you locate the shebang line? How does the code look like to you: easily understandable, or rather cryptic?</p>
 </div>
-</div>
-</div>
+</div></div>
 <div class="section" id="the-path-variable">
 <h3>The PATH variable<a class="headerlink" href="#the-path-variable" title="Permalink to this headline">¶</a></h3>
 <p>The linux command line knows so-called <strong>environmental variables</strong>. The <code class="docutils literal notranslate"><span class="pre">echo</span></code> command can display their value:</p>
@@ -868,8 +869,7 @@ $ export PATH=$PATH:~/myprograms
 <div class="section" id="exercise-content">
 <p>Now move your executable script <code class="docutils literal notranslate"><span class="pre">myscript.sh</span></code> in the <code class="docutils literal notranslate"><span class="pre">myprograms</span></code> directory. Verify that you can now execute the <code class="docutils literal notranslate"><span class="pre">myscript.sh</span></code> program from any directory.</p>
 </div>
-</div>
-<div class="admonition note">
+</div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>We have extended the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> variable in <em>this session</em> only. If you close and reopen the terminal the changes will be lost. There are ways to make these changes permanent, we will learn them in the next chapter.</p>
 </div>
