@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>03 - Good practices, programming style and conventions &#8212; Scientific Programming</title>
+    <title>04 - Good practices, programming style and conventions &#8212; Scientific Programming</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,7 +53,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Assignment #03" href="Assignment-03.html" />
-    <link rel="prev" title="02 - Tips and tricks" href="02-Tips-and-Tricks.html" />
+    <link rel="prev" title="03 - Tips and tricks" href="03-Tips-and-Tricks.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -162,7 +162,7 @@
 </ul>
 <p class="caption" role="heading">
  <span class="caption-text">
-  Week 03 - Variables scopes, modules, good practices
+  Week 03 - Variables scopes, modules, strings, good practices
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -172,13 +172,18 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02-Tips-and-Tricks.html">
-   02 - Tips and tricks
+  <a class="reference internal" href="02-Strings-Paths.html">
+   02 - String formatting and file paths
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Tips-and-Tricks.html">
+   03 - Tips and tricks
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   03 - Good practices, programming style and conventions
+   04 - Good practices, programming style and conventions
   </a>
  </li>
  <li class="toctree-l1">
@@ -227,7 +232,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/week_03/03-Good-practices.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/week_03/04-Good-practices.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -247,10 +252,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_03/03-Good-practices.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_03/04-Good-practices.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_03/03-Good-practices.ipynb"><button
+        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_03/04-Good-practices.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -270,7 +275,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_03/03-Good-practices.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_03/04-Good-practices.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -329,7 +334,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="good-practices-programming-style-and-conventions">
-<h1>03 - Good practices, programming style and conventions<a class="headerlink" href="#good-practices-programming-style-and-conventions" title="Permalink to this headline">¶</a></h1>
+<h1>04 - Good practices, programming style and conventions<a class="headerlink" href="#good-practices-programming-style-and-conventions" title="Permalink to this headline">¶</a></h1>
 <p>Python is a very versatile programming language, and it has a very flexible syntax. Therefore, it is also very easy to write <em>ugly code</em> in python. This chapter reviews a number of guidelines and conventions widely accepted by the community. At this stage of the lecture we won’t go in depth for each of these points, but try to keep them in mind while writing your assignments and also while checking my suggested solution to the assignments.</p>
 <div class="section" id="use-pep-8">
 <h2>Use PEP 8<a class="headerlink" href="#use-pep-8" title="Permalink to this headline">¶</a></h2>
@@ -445,11 +450,11 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="02-Tips-and-Tricks.html" title="previous page">
+        <a class="left-prev" href="03-Tips-and-Tricks.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">02 - Tips and tricks</p>
+                <p class="prevnext-title">03 - Tips and tricks</p>
             </div>
         </a>
     </div>

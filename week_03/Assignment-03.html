@@ -54,7 +54,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="03 - Good practices, programming style and conventions" href="03-Good-practices.html" />
+    <link rel="prev" title="04 - Good practices, programming style and conventions" href="04-Good-practices.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -163,7 +163,7 @@
 </ul>
 <p class="caption" role="heading">
  <span class="caption-text">
-  Week 03 - Variables scopes, modules, good practices
+  Week 03 - Variables scopes, modules, strings, good practices
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -173,13 +173,18 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02-Tips-and-Tricks.html">
-   02 - Tips and tricks
+  <a class="reference internal" href="02-Strings-Paths.html">
+   02 - String formatting and file paths
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03-Good-practices.html">
-   03 - Good practices, programming style and conventions
+  <a class="reference internal" href="03-Tips-and-Tricks.html">
+   03 - Tips and tricks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-Good-practices.html">
+   04 - Good practices, programming style and conventions
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -345,7 +350,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">--output-dir</span> <span class="pre">/path/to/a/dir</span></code> should <strong>write the file (and check for its existence) in the directory given as argument</strong></p></li>
 <li><p>if the target directory does not exist, print a message to the screen indicating that you can’t continue and exit the script</p></li>
 </ul>
-<p><strong>D4.</strong> (optional: rasterio package installation and issues on Windows likely!) <strong>if the user asks for a plot, write a plot to disk</strong> (alongside the DEM file) with the file name <code class="docutils literal notranslate"><span class="pre">srtm_39_04.png</span></code> (if the tile 39, 4 was asked for). The user may ask for a plot by adding a <code class="docutils literal notranslate"><span class="pre">--plot</span></code> to the list of arguments. I.e. <code class="docutils literal notranslate"><span class="pre">%run</span> <span class="pre">download_srtm.py</span> <span class="pre">9</span> <span class="pre">44</span> <span class="pre">18</span> <span class="pre">47</span> <span class="pre">--plot</span></code> would write 6 plots in the user-chosen default directory.</p>
+<p><strong>D4.</strong> (optional: see the warning about windows below) <strong>if the user asks for a plot, write a plot to disk</strong> (alongside the DEM file) with the file name <code class="docutils literal notranslate"><span class="pre">srtm_39_04.png</span></code> (if the tile 39, 4 was asked for). The user may ask for a plot by adding a <code class="docutils literal notranslate"><span class="pre">--plot</span></code> to the list of arguments. I.e. <code class="docutils literal notranslate"><span class="pre">%run</span> <span class="pre">download_srtm.py</span> <span class="pre">9</span> <span class="pre">44</span> <span class="pre">18</span> <span class="pre">47</span> <span class="pre">--plot</span></code> would write 6 plots in the user-chosen default directory.</p>
 <p>Here is a template for your plotting function:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
@@ -362,7 +367,10 @@
 </pre></div>
 </div>
 <p>No need to add more features to the plot than that: we haven’t talked about these libraries yet! Just make sure that the filename is set to the correct value.</p>
-<p><em>Note: you’ll need the matplotlib, xarray and rasterio libraries installed for this to work (on your laptop: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">matplotlib</span> <span class="pre">xarray</span> <span class="pre">rasterio</span></code>). Careful! I’m not sure if this is going to work on Windows because of the rasterio package.</em></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You’ll need the matplotlib, xarray and rasterio libraries installed for this to work. Careful! I’m not sure this will work on Windows because of the rasterio package, which has caused trouble in the past. On your laptop, install xarray and matplotlib first: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">matplotlib</span> <span class="pre">xarray</span></code> (this should be pretty safe and is needed for climate anyway). Then follow the <a class="reference internal" href="../week_01/02-Installation.html#conda-clone"><span class="std std-ref">instructions to clone your environment</span></a> before trying to install rasterio with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">rasterio</span></code>.</p>
+</div>
 </div>
 </div>
 
@@ -396,11 +404,11 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="03-Good-practices.html" title="previous page">
+        <a class="left-prev" href="04-Good-practices.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">03 - Good practices, programming style and conventions</p>
+                <p class="prevnext-title">04 - Good practices, programming style and conventions</p>
             </div>
         </a>
     </div>

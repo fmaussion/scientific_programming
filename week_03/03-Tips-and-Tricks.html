@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>02 - Tips and tricks &#8212; Scientific Programming</title>
+    <title>03 - Tips and tricks &#8212; Scientific Programming</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -52,8 +52,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="03 - Good practices, programming style and conventions" href="03-Good-practices.html" />
-    <link rel="prev" title="01 - Modules, import mechanism, namespaces, scope(s)" href="01-Import-Scopes.html" />
+    <link rel="next" title="04 - Good practices, programming style and conventions" href="04-Good-practices.html" />
+    <link rel="prev" title="02 - String formatting and file paths" href="02-Strings-Paths.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -162,7 +162,7 @@
 </ul>
 <p class="caption" role="heading">
  <span class="caption-text">
-  Week 03 - Variables scopes, modules, good practices
+  Week 03 - Variables scopes, modules, strings, good practices
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -171,14 +171,19 @@
    01 - Modules, import mechanism, namespaces, scope(s)
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-Strings-Paths.html">
+   02 - String formatting and file paths
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   02 - Tips and tricks
+   03 - Tips and tricks
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03-Good-practices.html">
-   03 - Good practices, programming style and conventions
+  <a class="reference internal" href="04-Good-practices.html">
+   04 - Good practices, programming style and conventions
   </a>
  </li>
  <li class="toctree-l1">
@@ -227,7 +232,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/week_03/02-Tips-and-Tricks.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/week_03/03-Tips-and-Tricks.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -247,10 +252,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_03/02-Tips-and-Tricks.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_03/03-Tips-and-Tricks.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_03/02-Tips-and-Tricks.ipynb"><button
+        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_03/03-Tips-and-Tricks.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -270,7 +275,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_03/02-Tips-and-Tricks.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_03/03-Tips-and-Tricks.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -341,7 +346,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="tips-and-tricks">
-<h1>02 - Tips and tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline">¶</a></h1>
+<h1>03 - Tips and tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline">¶</a></h1>
 <p>It is very early in the lecture, but you are now already well equipped to write more complex scripts and algorithms: you know (almost ;)) everything you need to know about the syntax, but you might be a little lost in all the possibilities that the python language is now offering to you. <em>Which tool should I use to do this and that? How was this function signature again?</em> are very common interrogations, and it is normal to feel a bit overwhelmed.</p>
 <p>This chapter will give you some brief tips to help you during your assignments.</p>
 <div class="section" id="batteries-included">
@@ -444,19 +449,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="01-Import-Scopes.html" title="previous page">
+        <a class="left-prev" href="02-Strings-Paths.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">01 - Modules, import mechanism, namespaces, scope(s)</p>
+                <p class="prevnext-title">02 - String formatting and file paths</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="03-Good-practices.html" title="next page">
+        <a class="right-next" href="04-Good-practices.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">03 - Good practices, programming style and conventions</p>
+                <p class="prevnext-title">04 - Good practices, programming style and conventions</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
