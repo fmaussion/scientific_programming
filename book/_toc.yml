@@ -26,3 +26,9 @@ parts:
     - file: week_03/03-Tips-and-Tricks
     - file: week_03/04-Good-practices
     - file: week_03/Assignment-03
+  - caption: Week 04 - Floating point arithmetics, Numpy basics
+    chapters:
+    - file: week_04/01-Why-Numpy
+    - file: week_04/02-Numbers
+    - file: week_04/Assignment-04
+    
