@@ -1,0 +1,1159 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02 - Number representation in computers &#8212; Scientific Programming</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignment #04" href="Assignment-04.html" />
+    <link rel="prev" title="01 - Introduction to numpy: why does numpy exist?" href="01-Why-Numpy.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Scientific Programming</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../welcome.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../faq.html">
+   Frequently Asked  Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   External resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../slides.html">
+   Presentation slides
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 01 - Linux &amp; Python primer
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/01-Linux.html">
+   01 - A very short introduction to Linux
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/02-Installation.html">
+   02 - Installing Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/03-Getting-Started.html">
+   03 - Getting started with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/Assignment-01.html">
+   Assignment #01
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 02 - Python language fundamentals
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_02/01-Language-Fundamentals.html">
+   01 - Language fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_02/Assignment-02.html">
+   Assignment #02
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 03 - Variables scopes, modules, strings, good practices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/01-Import-Scopes.html">
+   01 - Modules, import mechanism, namespaces, scope(s)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/02-Strings-Paths.html">
+   02 - String formatting and file paths
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/03-Tips-and-Tricks.html">
+   03 - Tips and tricks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/04-Good-practices.html">
+   04 - Good practices, programming style and conventions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/Assignment-03.html">
+   Assignment #03
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 04 - Floating point arithmetics, Numpy basics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-Why-Numpy.html">
+   01 - Introduction to numpy: why does numpy exist?
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   02 - Number representation in computers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assignment-04.html">
+   Assignment #04
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/week_04/02-Numbers.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/fmaussion/scientific_programming"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_04/02-Numbers.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_04/02-Numbers.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_04/02-Numbers.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#binary-representation-of-integers">
+   Binary representation of integers
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basics">
+     Basics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overflow">
+     Overflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extending-the-binary-representation-to-non-integers-fixed-point-notation">
+     Extending the binary representation to non-integers: fixed-point notation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#floating-point-numbers">
+   Floating point numbers
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduction">
+     Introduction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scientific-exponential-notation-in-base-b">
+     Scientific (exponential) notation in base b
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#floating-point-representation-simplified">
+     Floating point representation (simplified)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ieee-754">
+     IEEE 754
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#consequences">
+     Consequences
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Overflow
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-to-do-from-here">
+   What to do from here?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alternative-data-types">
+     Alternative data types
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#symbolic-computations">
+     Symbolic computations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deal-with-it">
+     Deal with it
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#awareness">
+       Awareness
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#error-propagation">
+       Error propagation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#safer-tests">
+       Safer tests
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#take-home-points">
+   Take home points
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-reading">
+   Further reading
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="number-representation-in-computers">
+<h1>02 - Number representation in computers<a class="headerlink" href="#number-representation-in-computers" title="Permalink to this headline">¶</a></h1>
+<p>In this chapter we are going to give elements of understanding of how numbers are represented in today’s computers. We won’t go too much into the details (which are perhaps not so relevant here), however it is extremely important for scientists to understand the pitfalls of the so-called “floating-point arithmetics”. At the end of this lecture, you should understand what these pitfalls are and when they occur, since <strong>sooner or later one of these pitfalls will hit you</strong> (believe me on that one).</p>
+<div class="section" id="binary-representation-of-integers">
+<h2>Binary representation of integers<a class="headerlink" href="#binary-representation-of-integers" title="Permalink to this headline">¶</a></h2>
+<p>Traditional arithmetics and mathematics rely on the <strong>decimal</strong> system. Every number can be decomposed in a sum of products such as: <span class="math notranslate nohighlight">\(908.2 = 9\times10^2 + 0\times10^1 + 8\times10^{0} + 2\times10^{-1}\)</span>. This system is called decimal because the factors can take the values <span class="math notranslate nohighlight">\([0 - 9]\)</span> while the <strong>fixed base</strong> (the number which is scaled by an exponent) is 10.</p>
+<p>Nearly all modern processors however represent numbers in binary form, with each digit being represented by a two-valued physical quantity such as a “low” or “high” voltage: 0s and 1s. These binary digits are called <strong>bits</strong>, and are the basis of the <strong>binary representation of numbers</strong>.</p>
+<div class="section" id="basics">
+<h3>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h3>
+<p>With only 0s and 1s available the most efficient way to represent numbers is as a sum of 2s to the power of i, with i going from 0 to N-1. It is best shown with an example, here with N=4 digits:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0101
+</pre></div>
+</div>
+<p>To convert our number to a decimal representation we compute <span class="math notranslate nohighlight">\(0\times2^3 + 1\times2^2 + 0\times2^1 + 1\times2^0 = 5\)</span>. In this convention, the leftmost digit is called the <strong>most significant bit</strong> and the rightmost the <strong>least significant bit</strong>. If all the elements from the left are zeros, the convention is to omit them when writing. This is for example what the built-in <a class="reference external" href="https://docs.python.org/3/library/functions.html#bin">bin</a> function chooses to do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bin</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0b101&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>which converts an integer number to a binary string prefixed with <code class="docutils literal notranslate"><span class="pre">0b</span></code>. Now it appears quite clear that the number of different integers that a computer can represent with this system depends on the size N of the binary sequence. A <em>positive</em> integer represented with a <strong>byte</strong> (8 bits are called a <strong>byte</strong>) can thus be as large as:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">([</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)])</span>  <span class="c1"># do you understand what this line does?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>255
+</pre></div>
+</div>
+</div>
+</div>
+<p>but not larger. Unless specified otherwise, the first bit is often used to give the <em>sign</em> of the integer it represents. Therefore, the actual range of numbers that a byte can represent is <span class="math notranslate nohighlight">\([-2^7; 2^7-1]= [-128; 127]\)</span> (the reason for this asymmetry is a matter of definition, as we will see later). If you are sure that you only want to do arithmetics with positive numbers you can spare one bit and specify your binary number as being of <strong>unsigned integer type</strong>.</p>
+<p>So how many bits does our computer use to represent integers? Well, it depends on the platform and programming language you are using. Many older languages (including old python versions) made the distinction between short (32 bits) and long (64 bits) integers.</p>
+<div class="exercise admonition" id="week_04/02-Numbers-exercise-0">
+<p class="admonition-title"><span class="caption-number">Exercise 14 </span></p>
+<div class="section" id="exercise-content">
+<p>What is the largest number that a 64-bit integer can represent? The smallest? And a 32-bit unsigned integer?</p>
+</div>
+</div><p>Now, what is the default length of binary integers in python 3? Let’s try to find out:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">getsizeof</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">getsizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28
+</pre></div>
+</div>
+</div>
+</div>
+<p>So 28 bytes? That’s a lot of bits for the number 10. This is because the <a class="reference external" href="https://docs.python.org/3/library/sys.html#sys.getsizeof">getsizeof</a> function returns the <strong>memory consumption</strong> of the <em>object</em> <code class="docutils literal notranslate"><span class="pre">int(10)</span></code>. What does that mean? Well, in python numbers are not only numbers, they are also “things” (<strong>objects</strong>). And these things come with services, like for example the <code class="docutils literal notranslate"><span class="pre">bit_length</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">bit_length</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition" id="week_04/02-Numbers-exercise-1">
+<p class="admonition-title"><span class="caption-number">Exercise 15 </span></p>
+<div class="section" id="exercise-content">
+<p>What does <code class="docutils literal notranslate"><span class="pre">bit_length()</span></code> do? What is the bit length of 5? of 127?</p>
+</div>
+</div><p>These services have a memory cost (an “overhead”), and are required no matter how big our number is:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">size_int</span> <span class="o">=</span> <span class="n">getsizeof</span><span class="p">(</span><span class="nb">int</span><span class="p">())</span>
+<span class="n">size_int</span>  <span class="c1"># size of an empty integer object</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_int_bitsize</span><span class="p">(</span><span class="n">integer</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns the true memory consumption of an integer (in bits) without the object overhead.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">integer</span><span class="p">)</span> <span class="o">-</span> <span class="n">getsizeof</span><span class="p">(</span><span class="nb">int</span><span class="p">()))</span> <span class="o">*</span> <span class="mi">8</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_int_bitsize</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ha! This looks more reasonable. So python uses 32 bits to store integers? But then, the largest number it can manipulate must be very small? Let’s see if we can create a number larger than <code class="docutils literal notranslate"><span class="pre">2**32-1</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="mi">68</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>295147905179352825856
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_int_bitsize</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">18</span><span class="p">),</span> <span class="n">get_int_bitsize</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">68</span><span class="p">),</span> <span class="n">get_int_bitsize</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">100000</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(32, 96, 106688)
+</pre></div>
+</div>
+</div>
+</div>
+<p>As shown above, it turns out that modern python versions have <strong>no limitations</strong> on the size of integers (other than the total memory available on your computer). The memory slot used to store your number simply depends on how large it is.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_int_bitsize</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">100000</span><span class="p">)</span> <span class="o">/</span> <span class="mi">8</span> <span class="o">/</span> <span class="mi">1024</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.0234375
+</pre></div>
+</div>
+</div>
+</div>
+<p>So the <code class="docutils literal notranslate"><span class="pre">2**100000</span></code> number requires about 13 KB (<strong>Kilobytes</strong>) of memory.</p>
+<div class="exercise admonition" id="week_04/02-Numbers-exercise-2">
+<p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
+<div class="section" id="exercise-content">
+<p>Print <code class="docutils literal notranslate"><span class="pre">2**100000</span></code> on screen, “just for fun”.</p>
+</div>
+</div></div>
+<div class="section" id="overflow">
+<h3>Overflow<a class="headerlink" href="#overflow" title="Permalink to this headline">¶</a></h3>
+<p>This dynamic resizing of integers in python means that they cannot <strong>overflow</strong>. <strong>Overflow</strong> is a common pitfall of many numerical operations, and to illustrate what it is we can either use floats (unlike python integers, python floats can overflow), or numpy, which uses integer types of fixed length:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">(</span><span class="mi">127</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">dtype</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dtype(&#39;int8&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>127
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-13-e373a0d8b488&gt;:1: RuntimeWarning: overflow encountered in byte_scalars
+  a + np.int8(1)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-128
+</pre></div>
+</div>
+</div>
+</div>
+<p>What happened here? To understand this we need to understand how binary numbers are added together first. Please read the <a class="reference external" href="https://en.wikipedia.org/wiki/Binary_number#Addition">addition chapter</a> of the Wikipedia article on binary numbers before going on.</p>
+<p>Basically, we added 1 (binary <code class="docutils literal notranslate"><span class="pre">00000001</span></code>) to 127 (binary <code class="docutils literal notranslate"><span class="pre">01111111</span></code>) which gives us the binary number <code class="docutils literal notranslate"><span class="pre">10000000</span></code>, i.e. -128 in <a class="reference external" href="https://en.wikipedia.org/wiki/Two%27s_complement">two’s complement</a> representation, which is the most common method of representing signed integers on computers. At least, python warned us that we are doing something wrong here. But be aware that this is not always the case:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="mi">2147483648</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-2147483648
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">18</span><span class="p">])</span>
+<span class="n">a</span><span class="o">**</span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-497033925936021504])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These are examples of <strong>silent</strong> overflows. Silent means that they do not warn you about the probable mistake and could happen in your code without you noticing that this happens.</p>
+</div>
+</div>
+<div class="section" id="extending-the-binary-representation-to-non-integers-fixed-point-notation">
+<h3>Extending the binary representation to non-integers: fixed-point notation<a class="headerlink" href="#extending-the-binary-representation-to-non-integers-fixed-point-notation" title="Permalink to this headline">¶</a></h3>
+<p>A more general definition of the binary representation for integers is to use negative exponents as well. With negative exponents, any rational number a can be approximated by:</p>
+<div class="math notranslate nohighlight">
+\[a = \pm \sum_{i=-j}^{k} z_i b^i\]</div>
+<p>with <span class="math notranslate nohighlight">\(b &gt; 1\)</span> (base) and <span class="math notranslate nohighlight">\(0 \le z_i \le b-1\)</span>, <span class="math notranslate nohighlight">\(j\)</span> and <span class="math notranslate nohighlight">\(k\)</span> all positive integers. The precision depends on the size of <span class="math notranslate nohighlight">\(j\)</span> while the maximum range depends on the size of <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<p>In the notation, a fixed point separates digits of positive powers of the base, from those of negative powers. In <strong>base 2</strong> (binary), the number <span class="math notranslate nohighlight">\(10000.1_2\)</span> is equal to <span class="math notranslate nohighlight">\(16.5_{10}\)</span> in base 10.</p>
+<p>Indeed:</p>
+<div class="math notranslate nohighlight">
+\[1\times2^4 + 0\times2^3 + 0\times2^2 + 0\times2^1 + 0\times2^0 + 1\times2^{-1} = 16.5_{10}\]</div>
+<p>Although this representation is convenient, the representable value range is heavily limited by the number of bits available to represent the number (see this week’s assignments). Therefore, most computers today are relying on the <strong>floating point notation</strong> to represent real numbers.</p>
+</div>
+</div>
+<div class="section" id="floating-point-numbers">
+<h2>Floating point numbers<a class="headerlink" href="#floating-point-numbers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
+<p>Because computers have a <em>finite</em> number of storage units available, they can only represent a <em>finite</em> number of distinguishable values. In fact, a memory slot with <span class="math notranslate nohighlight">\(N\)</span> available bits cannot represent more than <span class="math notranslate nohighlight">\(2^N\)</span> distinguishable values. The range of real (or complex) numbers is of course infinite, and therefore it becomes clear that in the computer representation of numbers <strong>there will always be a trade-off between the range of numbers one would like to represent and their relative accuracy</strong> (i.e. the absolute difference between two consecutive representable numbers).</p>
+<p>Taking the <strong>decimal representation</strong> of the number 1/3 as an example: it can be written as <code class="docutils literal notranslate"><span class="pre">0.33</span></code>, <code class="docutils literal notranslate"><span class="pre">0.333</span></code>, <code class="docutils literal notranslate"><span class="pre">0.3333</span></code>, etc. Depending on the numbers of digits available, the precision of the number will increase but never reach the exact value, at least in the decimal representation.</p>
+<p>This fundamental limitation is the explanation for unexpected results of certain arithmetic operations. For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span>  <span class="c1"># so far so good</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.2</span>  <span class="c1"># wtf?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.30000000000000004
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is a typical <strong>rounding error</strong>, happening because most computers do not represent numbers as decimal fractions, but as binary. Without going too much into details (which can be tricky), this chapter will give you some elements of understanding in order to prepare you for the most common pitfalls of floating point arithmetics.</p>
+</div>
+<div class="section" id="scientific-exponential-notation-in-base-b">
+<h3>Scientific (exponential) notation in base b<a class="headerlink" href="#scientific-exponential-notation-in-base-b" title="Permalink to this headline">¶</a></h3>
+<p>In the exponential notation (used by <a class="reference external" href="https://en.wikipedia.org/wiki/Floating-point_arithmetic">floating point</a> numbers), a number is approximated with a fixed number of significant digits (the significand) and scaled using an exponent in some fixed base; the base for the scaling is normally two, ten, or sixteen. A number that can be represented exactly is of the following form:</p>
+<p><span class="math notranslate nohighlight">\(\mathrm{number} = \mathrm{significand} \times \mathrm{base} ^{\mathrm{exponent}}\)</span></p>
+<p>For example, in base 10:</p>
+<div class="math notranslate nohighlight">
+\[1.234 = 1234 \times 10^{-3}\]</div>
+<p>The number <code class="docutils literal notranslate"><span class="pre">1.234</span></code> can easily be represented exactly in base 10, but the number 1/3 cannot. However, in base 3 (which is just used here as an example) 1/3 can be represented exactly by <span class="math notranslate nohighlight">\(1 \times 3^{-1}\)</span>.</p>
+<p>To approximate a number in base 10, the rule of “the more bits you have, the more precise you are” continues to hold true: <span class="math notranslate nohighlight">\(33 \times 10^{-2}\)</span> and <span class="math notranslate nohighlight">\(33333333333333 \times 10^{-14}\)</span> are two ways to approximate the number, the later being more expensive in terms of storage requirements but more accurate.</p>
+<p>The exponential notation is the most common way to represent real numbers in computers and is the basis of the floating-point number representation.</p>
+</div>
+<div class="section" id="floating-point-representation-simplified">
+<h3>Floating point representation (simplified)<a class="headerlink" href="#floating-point-representation-simplified" title="Permalink to this headline">¶</a></h3>
+<p>A floating point number in any base will store three numbers:</p>
+<ul class="simple">
+<li><p>the sign (one bit)</p></li>
+<li><p>the significand (<span class="math notranslate nohighlight">\(N_s\)</span> bits)</p></li>
+<li><p>the exponent (<span class="math notranslate nohighlight">\(N_e\)</span> bits)</p></li>
+</ul>
+<p>The numbers <span class="math notranslate nohighlight">\(N_s\)</span> and <span class="math notranslate nohighlight">\(N_e\)</span> are usually fixed beforehand, in the format specification. The base also needs to be specified of course: computers usually work in base 2, but other bases have been experimented with as well) e.g. 16, or hexadecimal). Now remember:</p>
+<ul class="simple">
+<li><p><strong>the significand determines the precision of the representation</strong> (significant digits)</p></li>
+<li><p><strong>the exponent determines the magnitude of the represented number</strong></p></li>
+</ul>
+<p>Let’s make an example to illustrate this concept. We will work in base 10 for simplicity, and assume that we have 8 “memory slots” (the equivalent of bits) available, each memory slot capable of storing a number from 0 to 9 or the sign (+ or -). We attribute <span class="math notranslate nohighlight">\(N_s=6\)</span> slots to the significand (including its sign) and <span class="math notranslate nohighlight">\(N_e=2\)</span> slots to the exponent (including its sign).</p>
+<p>Now, what is the smallest positive number we can represent? And the biggest? Let’s try it:</p>
+<ul class="simple">
+<li><p>smallest: <span class="math notranslate nohighlight">\(+00001 \times 10^{-9}\)</span></p></li>
+<li><p>second smallest: <span class="math notranslate nohighlight">\(+00002 \times 10^{-9}\)</span></p></li>
+<li><p>biggest: <span class="math notranslate nohighlight">\(+99999 \times 10^{+9}\)</span></p></li>
+<li><p>second biggest: <span class="math notranslate nohighlight">\(+99998 \times 10^{+9}\)</span></p></li>
+</ul>
+<p>From these examples it becomes apparent that the precision (the distance between two consecutive numbers) is better for small numbers than for large numbers. Although our example is simplified, the principle is exactly the same for “real” floating point numbers in most computers, which follow the IEEE754 convention.</p>
+</div>
+<div class="section" id="ieee-754">
+<h3>IEEE 754<a class="headerlink" href="#ieee-754" title="Permalink to this headline">¶</a></h3>
+<p>From the example above, we can see that with a fixed number of memory slots, we have a trade-off between the maximum precision of a number and its size.</p>
+<p>This precision/size trade-off raises many challenges: memory and electronics must be optimized so that computations are fast while still allowing programs to realize computations on a <em>wide</em> range of numbers in the same program. For example, atmospheric models realize computations on specific humidity values (<span class="math notranslate nohighlight">\(\mathrm{kg}\,\mathrm{kg}^{-1}\)</span>) with typical values of 10<span class="math notranslate nohighlight">\(^{-5}\)</span> and on the geopotential with values up to several order of magnitude larger. Using different standards for each variable would be impracticable. This led to the development of the <a class="reference external" href="https://en.wikipedia.org/wiki/IEEE_754">IEEE Standard for Floating-Point Arithmetic (IEEE 754)</a>.</p>
+<p>The standard defines five basic formats that are named for their numeric base and the number of bits used in their encoding, as listed in <a class="reference external" href="https://en.wikipedia.org/wiki/IEEE_754#Basic_and_interchange_formats">this table</a>. For example, <code class="docutils literal notranslate"><span class="pre">binary64</span></code> is the famous “double precision” format, called <code class="docutils literal notranslate"><span class="pre">float64</span></code> in numpy and simply <code class="docutils literal notranslate"><span class="pre">float</span></code> in the python standard library. In this format, <span class="math notranslate nohighlight">\(N_s=53\)</span> bits are used for the significand, and the remaining <span class="math notranslate nohighlight">\(N_e=11\)</span> for the exponent.</p>
+<p>It is possible to compute the approximate precision of IEEE754 floating point numbers according to their value (see also the exercises):</p>
+<p><img alt="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/IEEE754.png/550px-IEEE754.png" />
+Source: <a class="reference external" href="https://en.wikipedia.org/wiki/IEEE_754">wikipedia</a></p>
+</div>
+<div class="section" id="consequences">
+<h3>Consequences<a class="headerlink" href="#consequences" title="Permalink to this headline">¶</a></h3>
+<p>With the floating point format, <strong>small numbers have a larger absolute precision than large numbers</strong>. See these examples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="mi">99</span> <span class="o">==</span> <span class="o">.</span><span class="mi">98</span>  <span class="c1"># so far so good</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">999999999999999.99</span> <span class="o">==</span> <span class="mf">999999999999999.98</span>  <span class="c1"># wtf?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">999999999999999.99</span>  <span class="c1"># wtf?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000000000000000.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>A further direct consequence is that <strong>when summing two numbers, precision is lost to match the size of the outcome</strong>.</p>
+</div>
+<div class="section" id="id1">
+<h3>Overflow<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Like numpy integers, floating point numbers can overflow:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">(</span><span class="mi">65510</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-21-63b9e4330206&gt;:1: RuntimeWarning: overflow encountered in half_scalars
+  np.float16(65510) + np.float16(20)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>inf
+</pre></div>
+</div>
+</div>
+</div>
+<p>Fortunately, the IEEE 754 standard defines two new numbers (-inf and +inf) which are more informative (and less dangerous) than the negative reset of overflowing integer numbers. IEEE 754 also defines “Not A Number” (abbreviated NaN), which propagates through computations:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">NaN</span> <span class="o">*</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nan
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="what-to-do-from-here">
+<h2>What to do from here?<a class="headerlink" href="#what-to-do-from-here" title="Permalink to this headline">¶</a></h2>
+<p>As we’ve learned, errors in floating-point numbers are unavoidable. Even if these errors are very small, simple calculations on approximated numbers can contain pitfalls that increase the error in the result way beyond just having the individual errors “add up”. Here we discuss some possible ways to deal with the pitfalls of floating point arithmetics.</p>
+<div class="section" id="alternative-data-types">
+<h3>Alternative data types<a class="headerlink" href="#alternative-data-types" title="Permalink to this headline">¶</a></h3>
+<p>In certain cases where perfect decimal accuracy is needed (for example when dealing with currencies and money), it is possible to use a decimal floating point representation instead of the default binary one:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">/</span><span class="mi">10</span><span class="o">*</span><span class="mi">3</span>  <span class="c1"># not precise</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.30000000000000004
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span>
+<span class="n">Decimal</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">Decimal</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span>  <span class="c1"># precise</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Decimal(&#39;0.3&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>With limited-precision decimals there are no unexpected rounding errors. In practice, however, such alternative datatypes are used rarely because the precision gain comes with a performance overhead: computers work best with 0s and 1s, not with numbers humans can read.</p>
+</div>
+<div class="section" id="symbolic-computations">
+<h3>Symbolic computations<a class="headerlink" href="#symbolic-computations" title="Permalink to this headline">¶</a></h3>
+<p>Symbolic computations are realized <em>literally</em> (like in mathematics), not approximately. <a class="reference external" href="http://www.sympy.org">SymPy</a> is a popular python library for symbolic mathematics:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">sympify</span><span class="p">(</span><span class="s1">&#39;1 / 3&#39;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">+</span> <span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{2}{3}\]</div>
+</div>
+</div>
+<p>Seams like the perfect solution, right? It probably is if you are a mathematician, but for actual numerical computations SymPy will be way too slow to use. Symbolic mathematics can only be used for problems where analytical solutions are known. Unfortunately, this is not always the case (take numerical models of the atmosphere for example).</p>
+</div>
+<div class="section" id="deal-with-it">
+<h3>Deal with it<a class="headerlink" href="#deal-with-it" title="Permalink to this headline">¶</a></h3>
+<p>There are no simple answers to numerical rounding errors. Therfore: <strong>be aware that they occur and try to mitigate their effect</strong>.</p>
+<div class="section" id="awareness">
+<h4>Awareness<a class="headerlink" href="#awareness" title="Permalink to this headline">¶</a></h4>
+<p><em>Awareness</em> is mostly hindered by the string representation of floating point numbers. In practice:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">format</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;.16g&#39;</span><span class="p">)</span>  <span class="c1"># give 16 significant digits</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0.1&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">format</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;.30g&#39;</span><span class="p">)</span>  <span class="c1"># give 30 significant digits</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0.100000000000000005551115123126&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The default <code class="docutils literal notranslate"><span class="pre">0.1</span></code> print is therefore a “lie”, but it is a useful one: in most cases you don’t want to know about these insignificant digits at the end. The <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.finfo.html">numpy.finfo</a> is a useful function informing you about the machine limits for floating point types:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+<span class="n">info</span><span class="o">.</span><span class="n">bits</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">precision</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">max</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-29-f10aead1199f&gt;:1: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  info = np.finfo(np.float)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(64, 15, 1.7976931348623157e+308)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="error-propagation">
+<h4>Error propagation<a class="headerlink" href="#error-propagation" title="Permalink to this headline">¶</a></h4>
+<p>Preventing rounding errors to happen is not possible, but there are a few general rules:</p>
+<ul class="simple">
+<li><p>Multiplication and division are “safer” operations</p></li>
+<li><p>Addition and subtraction are dangerous, because when numbers of different magnitudes are involved, digits of the smaller-magnitude number are lost.</p></li>
+<li><p>This loss of digits can be inevitable and benign (when the lost digits are also insignificant for the final result) or catastrophic (when the loss is magnified and distorts the result strongly).</p></li>
+<li><p>The more calculations are done (especially when they form an iterative algorithm) the more important is it to consider this kind of problem.</p></li>
+<li><p>A method of calculation can be stable (meaning that it tends to reduce rounding errors) or unstable (meaning that rounding errors are magnified). Very often, there are both stable and unstable solutions for a problem.</p></li>
+</ul>
+<p>(list taken from <a class="reference external" href="http://floating-point-gui.de/errors/propagation/">the floating point guide</a>)</p>
+<p>As illustration for the difference between addition and multiplication, see the following example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="mf">0.1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span>
+<span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1.0, 0.9999999999999999)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Realize <strong>safer computing</strong> therefore involves asking yourself at which stage the most precision is going to be lost: this is most often the case when adding numbers of very different magnitudes. When building numerical models, this should always be something you consider: is a formula leading to dangerous additions, then reformulate it and/or use other units for your variables (e.g. <span class="math notranslate nohighlight">\(\mathrm{g}\,\mathrm{kg}^{-1}\)</span> instead of <span class="math notranslate nohighlight">\(\mathrm{kg}\,\mathrm{kg}^{-1}\)</span> for specific humidity). Consider the following example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">1e-16</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="n">c</span> <span class="o">*</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">==</span> <span class="n">c2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">*</span> <span class="pre">(a</span> <span class="pre">+</span> <span class="pre">b)</span></code> and <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">*</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">c</span> <span class="pre">*</span> <span class="pre">b</span></code> are mathematically equivalent, and the first is computationally less expensive (two operations instead of three). However, the second is less prone to rounding errors!</p>
+</div>
+<div class="section" id="safer-tests">
+<h4>Safer tests<a class="headerlink" href="#safer-tests" title="Permalink to this headline">¶</a></h4>
+<p>Fortunately, rounding errors often remain unnoticed, meaning that your computations are probably OK! In our field in particular, we often do not care if the post-processed temperature forecast is numerically precise at 0.001° since the forecast accuracy is much lower anyway. However, this can still lead to surprises when comparing arrays for equality (e.g. when testing that a temperature is equal to zero, or for matching coordinates like longitude or latitude). In these cases, prefer to use numpy’s specialized functions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">)</span>  <span class="c1"># OK if you don&#39;t care about small numerical errors</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="take-home-points">
+<h2>Take home points<a class="headerlink" href="#take-home-points" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>computers can only represent a finite number of distinguishable values.</p></li>
+<li><p>the range of representable numbers depends on the size of memory allocated to store it. There is practically no limit to the size of integers in python, but there is a limit for floats. Numpy implements several types of variables named after their size in bits (e.g. <code class="docutils literal notranslate"><span class="pre">np.float32</span></code>, <code class="docutils literal notranslate"><span class="pre">np.float64</span></code>, <code class="docutils literal notranslate"><span class="pre">np.float128</span></code>).</p></li>
+<li><p>there are many different ways to represent numbers on computers, all with different strengths and weaknesses. The vast majority of systems use the <a class="reference external" href="https://en.wikipedia.org/wiki/IEEE_754">IEEE 754</a> standard for floating points, which is a good compromise between range and accuracy. Most systems are binary (base 2) per default, but there are other bases available: base 10 (decimal) and base 16 (hexadecimal) are frequent as well.</p></li>
+<li><p>rounding errors happen because of these limitations. They always happen, even for the simplest arithmetics, and you <strong>shall not ignore them</strong>.</p></li>
+<li><p>the fact that a number is printed “correctly” on screen does not mean that its internal binary representation is perfect. In fact, it is statistically much more probable (<em>inifinitely</em> more probable) that a number is not represented exactly by the floating-point format</p></li>
+<li><p>however, there are ways to mitigate the impact of these rounding errors. This includes the use of more precise datatypes (e.g. float64 instead of float32), alternative representations (decimal instead of binary), and the use of more conservative operations (e.g. multiplication before addition when dealing with numbers of different magnitude)</p></li>
+<li><p>floating point errors can have dramatic consequences in chaotic systems. A scary example is given in <a class="reference external" href="https://journals.ametsoc.org/doi/pdf/10.1175/MWR-D-12-00352.1">this paper</a> about the influence of floating point computations on numerical weather forecasts.</p></li>
+</ul>
+</div>
+<div class="section" id="further-reading">
+<h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+<p>Because of the importance of floating point computations you will find many resources online. I <strong>highly recommend</strong> to go through the short <a class="reference external" href="http://floating-point-gui.de/">floating point guide</a> website, which explains the problem to non specialists. It will give you another point of view on the topic.</p>
+<p>Other resources:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/floatingpoint.html">Python’s documentation</a> on floating point arithmetic</p></li>
+<li><p><a class="reference external" href="https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html">What Every Computer Scientist Should Know About Floating-Point Arithmetic</a>: kind of heavy, but a reference text</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./week_04"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="01-Why-Numpy.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">01 - Introduction to numpy: why does numpy exist?</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Assignment-04.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Assignment #04</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Fabien Maussion<br/>
+        
+          <div class="extra_footer">
+            <p>
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+  <img align="right" class="margin" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg" width="88px">
+</a>
+These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International (CC BY 4.0) license</a>.
+<br>
+&copy; Copyright 2018-2020.
+</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-88391345-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>
