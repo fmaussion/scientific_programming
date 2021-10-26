@@ -372,27 +372,35 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#for-windows-users-add-miniconda-to-git-bash">
-     For windows users: add
+    <a class="reference internal nav-link" href="#go-safe-clone-your-working-environments-before-installing-new-packages">
+     Go safe: clone your working environments before installing new packages
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#advanced-python-installation-instructions-and-troubleshooting">
+   Advanced python installation instructions and troubleshooting
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solve-the-performance-problem-mamba">
+     Solve the performance problem:
      <code class="docutils literal notranslate">
       <span class="pre">
-       miniconda
-      </span>
-     </code>
-     to
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       git
-      </span>
-      <span class="pre">
-       bash
+       mamba
       </span>
      </code>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#go-safe-clone-your-working-environments-before-installing-new-packages">
-     Go safe: clone your working environments before installing new packages
+    <a class="reference internal nav-link" href="#solve-the-package-availability-problem-use-conda-forge">
+     Solve the package availability problem: use
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       conda-forge
+      </span>
+     </code>
     </a>
    </li>
   </ul>
@@ -501,7 +509,7 @@ same on all platforms.</p>
 <div class="warning admonition">
 <p class="admonition-title">For Windows users</p>
 <p>Windows is not a very friendly environment for software development and science<a class="footnote-reference brackets" href="#foot-windows" id="id1">1</a>. Things tend to work, but they are often more complicated and slower than on linux or mac. Furthermore, since the majority of the scientific software developers and teachers (including me) do not work on Windows, bugs or problems are sometimes left unnoticed.</p>
-<p>All of my past students managed to get python to work on Windows. It should work OK for you as well.</p>
+<p>That being said: if you are not comfortable with computers or the command line, it is very much OK to stay with Windows. All of my past students managed to get python to work on Windows. It should work OK for you as well.</p>
 </div>
 <div class="section" id="install-miniconda">
 <h3>Install Miniconda<a class="headerlink" href="#install-miniconda" title="Permalink to this headline">¶</a></h3>
@@ -530,6 +538,12 @@ Choose an installation directory where you have enough space available
 </pre></div>
 </div>
 <p>You can type <code class="docutils literal notranslate"><span class="pre">exit()</span></code> or <code class="docutils literal notranslate"><span class="pre">[CTRL+D]</span></code> to get out of the python prompt.</p>
+<div class="important admonition">
+<p class="admonition-title">For Windows users</p>
+<p>To have access to conda commands and to manage your environments and packages, the
+<a class="reference external" href="https://docs.anaconda.com/anaconda/user-guide/getting-started/#open-prompt-win">anaconda prompt</a> is what you want to use.</p>
+<p>You may have installed and tried <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code> in the previous lecture. If you like it and want to use it further instead of the anaconda prompt, you can add your <code class="docutils literal notranslate"><span class="pre">conda</span></code> commands to it by following these <a class="reference external" href="https://discuss.codecademy.com/t/setting-up-conda-in-git-bash/534473">instructions</a>.</p>
+</div>
 </div>
 <div class="section" id="recommended-make-a-new-environment-called-scipro">
 <h3>Recommended: make a new environment called “scipro”<a class="headerlink" href="#recommended-make-a-new-environment-called-scipro" title="Permalink to this headline">¶</a></h3>
@@ -600,10 +614,6 @@ start <code class="docutils literal notranslate"><span class="pre">ipython</span
 </pre></div>
 </div>
 </div>
-<div class="section" id="for-windows-users-add-miniconda-to-git-bash">
-<h3>For windows users: add <code class="docutils literal notranslate"><span class="pre">miniconda</span></code> to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code><a class="headerlink" href="#for-windows-users-add-miniconda-to-git-bash" title="Permalink to this headline">¶</a></h3>
-<p>You may have installed and tried <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code> in the previous lecture. If you like it and want to use it further instead of <code class="docutils literal notranslate"><span class="pre">cmd.exe</span></code> (good idea!), you can add your <code class="docutils literal notranslate"><span class="pre">conda</span></code> commands to it by following these <a class="reference external" href="https://discuss.codecademy.com/t/setting-up-conda-in-git-bash/534473">very easy instructions</a>.</p>
-</div>
 <div class="section" id="go-safe-clone-your-working-environments-before-installing-new-packages">
 <span id="conda-clone"></span><h3>Go safe: clone your working environments before installing new packages<a class="headerlink" href="#go-safe-clone-your-working-environments-before-installing-new-packages" title="Permalink to this headline">¶</a></h3>
 <p>“Never change a winning team” (also known as “if it ain’t broke, don’t fix it”) is a true programming wisdom. In the course of your studies, you might have to install new packages to a perfectly fine, working environment. I’ve said often in class that conda environments are nothing to be afraid of (they are just files on your computer), but still: if your setup currently works, keeping it working is generally a good idea.</p>
@@ -614,6 +624,54 @@ start <code class="docutils literal notranslate"><span class="pre">ipython</span
 <p>Once this is done, you can now try wild things in the <code class="docutils literal notranslate"><span class="pre">scipro</span></code> environment, knowing that you can always delete it if things go wrong and clone it back from the original anytime…</p>
 </div>
 </div>
+<div class="section" id="advanced-python-installation-instructions-and-troubleshooting">
+<h2>Advanced python installation instructions and troubleshooting<a class="headerlink" href="#advanced-python-installation-instructions-and-troubleshooting" title="Permalink to this headline">¶</a></h2>
+<p>Sooner or later, you will encounter issues when installing a package. For me (on my Windows machine that I installed just for you, my dear students!), it started at <a class="reference internal" href="../week_03/Assignment-03.html"><span class="doc std std-doc">Assignment 03</span></a>, when I wanted to install <code class="docutils literal notranslate"><span class="pre">rasterio</span></code> on my <code class="docutils literal notranslate"><span class="pre">scipro</span></code> environment. I was welcomed with the message that <code class="docutils literal notranslate"><span class="pre">rasterio</span></code> was not available for my python version (v3.9) in the default channels. Similar problems may also occur on Linux or MacOS, by the way.</p>
+<p>Fortunately, I was able to solve this problem and install rasterio on Windows without hassle. I will now provide you with the tools that can help you to do that. *<em>Please use these tools only after having tried the default instructions on this page, and after you have understood the basic concepts of environments as explained above. These tools work very well, but I recommend to understand some conda basics before using them.</em></p>
+<p>Now, we will address two main problems of the default conda installation:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span></code> commands are very slow. They become much slower as the number of packages you have installed increases. There is a <a class="reference external" href="https://www.anaconda.com/blog/understanding-and-improving-condas-performance">bunch of information on the web about that</a>, and I won’t detail them here. <strong>One solution to this problem is <a class="reference external" href="https://github.com/mamba-org/mamba">mamba</a>.</strong></p></li>
+<li><p>the anaconda default channels (the online repositories delivering the packages you installed if you followed the instructions above) are not always up-to-date to the latest developments (this is why <code class="docutils literal notranslate"><span class="pre">rasterio</span></code> was not yet available with python 3.9 when I tried it). <strong>The solution to this problem is <a class="reference external" href="https://conda-forge.org">conda-forge</a>.</strong></p></li>
+</ul>
+<div class="section" id="solve-the-performance-problem-mamba">
+<h3>Solve the performance problem: <code class="docutils literal notranslate"><span class="pre">mamba</span></code><a class="headerlink" href="#solve-the-performance-problem-mamba" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/mamba-org/mamba">mamba</a> is an “in-place” replacement for conda. This means that all conda commands you know about can be replaced by mamba commands and will work just the same (but quite faster). Using mamba is quite safe - I recommend to avoid mixing mamba commands with conda commands though: once you have started using mamba, use only that.</p>
+<p>To use mamba, install mamba in your <code class="docutils literal notranslate"><span class="pre">(base)</span></code> environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda install mamba -n base -c conda-forge
+</pre></div>
+</div>
+<p>Once installed, you can use <code class="docutils literal notranslate"><span class="pre">mamba</span></code> in place of the typical <code class="docutils literal notranslate"><span class="pre">conda</span></code> commands to install packages (see below).</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title">For git bash users</p>
+<p>If you use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code> instead of the anaconda prompt to start spyder, you will have to add mamba to it as well. Edit your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> file to add a link to <code class="docutils literal notranslate"><span class="pre">mamba</span></code> as well. Here is how mine looks like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span> <span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">c7071047</span><span class="o">/</span><span class="n">Miniconda3</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">profile</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">conda</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">mamba</span><span class="p">()</span> <span class="p">{</span> <span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">c7071047</span><span class="o">/</span><span class="n">Miniconda3</span><span class="o">/</span><span class="n">condabin</span><span class="o">/</span><span class="n">mamba</span><span class="o">.</span><span class="n">bat</span> <span class="s2">&quot;$@&quot;</span> <span class="p">;}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="solve-the-package-availability-problem-use-conda-forge">
+<h3>Solve the package availability problem: use <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code><a class="headerlink" href="#solve-the-package-availability-problem-use-conda-forge" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://conda-forge.org">conda-forge</a> is a collection of packages maintained by a large community of volunteers and the package maintainers themselves. It is usually more up-to-date than the default conda channels. To use <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>, we will <a class="reference external" href="https://conda-forge.org/docs/user/introduction.html#how-can-i-install-packages-from-conda-forge">follow the instructions on their documentation</a>.</p>
+<p>We start by adding <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> to our channels and set it as the default channel:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda config --add channels conda-forge
+$ conda config --set channel_priority strict
+
+</pre></div>
+</div>
+<p>Then, we create a new environment (just to be sure):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda create --name scipro_forge
+$ conda activate scipro_forge
+</pre></div>
+</div>
+<p>And finally, we install the packages we need:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda install numpy scipy matplotlib ipython jupyter spyder matplotlib xarray 
+$ conda install rasterio  (if you want!)
+</pre></div>
+</div>
+<p>That’s as simple as that!</p>
+</div>
+</div>
 <div class="section" id="take-home-points">
 <h2>Take home points<a class="headerlink" href="#take-home-points" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -621,6 +679,7 @@ start <code class="docutils literal notranslate"><span class="pre">ipython</span
 <li><p>it is not available per default on windows, but it can be installed</p></li>
 <li><p>the system python is useful for scripting or for simple tasks, but for real-world applications you want to install python (and related packages) on your own.</p></li>
 <li><p>the best tool to install a custom python and selected packages is <a class="reference external" href="https://conda.io/docs/">conda</a>, installed via <a class="reference external" href="https://conda.io/miniconda.html">miniconda</a></p></li>
+<li><p><strong>conda-forge</strong> and <strong>mamba</strong> are drop-in replacements for the default anaconda channels and conda install commands, respectively. They are useful for more advanced use cases</p></li>
 <li><p>on linux, a python “installation” is simply a link to a python executable file - on Windows, it’s more complicated</p></li>
 <li><p>Windows excels at hiding details to the users: this can be good sometimes (for example when you want to play games or run microsoft word), but as a scientist I recommend you start to think and learn about how things work on the system you use everyday. In short: stick to Windows if you like it, but <strong>learn how to use it properly</strong> and learn <strong>how it works from the inside</strong>.</p></li>
 </ul>
