@@ -214,6 +214,28 @@
   </a>
  </li>
 </ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Week 05 - Scientific Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/01-Numpy-ndarrays.html">
+   01 - Arrays in numpy: indexing, ufuncs, broadcasting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/02-Scientific-Python.html">
+   02 - The scientific python stack
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/Assignment-05.html">
+   Assignment #05
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -433,7 +455,7 @@
 <p><strong>It is impossible to write bug free code in one go</strong> (just accept it and get used to it). There will always be mistakes. Syntax errors and other obvious problems (e.g. <code class="docutils literal notranslate"><span class="pre">NameError</span></code>) will most often be picked up by your IDE’s linter. The other “easier ones” (e.g. <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>) are also likely to be corrected after a first couple of test runs of your code. But then, sometimes, the error is not obvious: the code runs, but doesn’t produce the expected output. What to do in these cases?</p>
 <ul class="simple">
 <li><p>use <code class="docutils literal notranslate"><span class="pre">print</span></code> statements (bad): with this method, you can inspect variables at run time by printing their values. It is a quick and dirty way to debug, and should not be used too often because error prone (indeed, by adding print statements you modify your code, might forget about them afterwards, and they are often not very useful). If you need more than 3 or 4 print statements to track the source of an issue, it’s time for opening a debugger.</p></li>
-<li><p><strong>use a debugger</strong> (good): a <a class="reference external" href="https://en.wikipedia.org/wiki/Debugger">debugger</a> will allow to interrupt a program’s execution and <em>give you access to the program’s state</em> at a predefined location (called a <strong>break point</strong>). It is extremely more useful than <code class="docutils literal notranslate"><span class="pre">print</span></code>, because it allows you to explore many variables at once. Spyder comes with a debugger <a class="reference external" href="https://docs.spyder-ide.org/debugging.html">included</a>, and we will make a short demo in class.</p></li>
+<li><p><strong>use a debugger</strong> (good): a <a class="reference external" href="https://en.wikipedia.org/wiki/Debugger">debugger</a> will allow to interrupt a program’s execution and <em>give you access to the program’s state</em> at a predefined location (called a <strong>break point</strong>). It is extremely more useful than <code class="docutils literal notranslate"><span class="pre">print</span></code>, because it allows you to explore many variables at once. Spyder comes with a debugger <a class="reference external" href="https://docs.spyder-ide.org/5/panes/debugging.html">included</a>, and we will make a short demo in class.</p></li>
 <li><p>go for a walk (very good): think about something else for a while and come back with a fresh, open mind</p></li>
 <li><p>talk to your colleagues about your problem (very good): they might see the issue (or typo) from a different angle and detect the problem easily</p></li>
 <li><p>if you have no one around to talk to, <a class="reference external" href="https://en.m.wikipedia.org/wiki/Rubber_duck_debugging">talk to a duck</a> (very good)</p></li>
