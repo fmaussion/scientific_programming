@@ -36,3 +36,9 @@ parts:
     - file: week_05/01-Numpy-ndarrays
     - file: week_05/02-Scientific-Python
     - file: week_05/Assignment-05
+  - caption: Week 06 - Testing
+    chapters:
+    - file: week_06/01-Exceptions
+    - file: week_06/02-Testing
+    - file: week_06/Assignment-06
+    
