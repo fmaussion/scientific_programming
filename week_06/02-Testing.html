@@ -448,6 +448,11 @@
      Assertions in pytest
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-pytest-from-ipython">
+     Running pytest from ipython
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -628,10 +633,10 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_46223</span><span class="o">/</span><span class="mf">150720634.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_113483</span><span class="o">/</span><span class="mf">150720634.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">f2c</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">)</span>
 
-<span class="nn">/tmp/ipykernel_46223/619383388.py</span> in <span class="ni">f2c</span><span class="nt">(tf)</span>
+<span class="nn">/tmp/ipykernel_113483/619383388.py</span> in <span class="ni">f2c</span><span class="nt">(tf)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">tf</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="o">/</span><span class="mi">9</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="c1"># Check that we provide physically reasonable results</span>
 <span class="ne">----&gt; </span><span class="mi">5</span>     <span class="k">assert</span> <span class="n">r</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mf">273.15</span>
@@ -713,6 +718,33 @@
 <p>Make a test fail, either by altering the original function, or by writing a wrong assert statement. Verify that the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> log is giving you information about <em>why</em> the test is now failing.</p>
 </div>
 </div></div>
+<div class="section" id="running-pytest-from-ipython">
+<h3>Running pytest from ipython<a class="headerlink" href="#running-pytest-from-ipython" title="Permalink to this headline">¶</a></h3>
+<p>It is not necessary to open a terminal to run pytest. You can do so from the ipython interpreter with:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pytest
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">=========================================================================================== test session starts ============================================================================================</span>
+platform linux -- Python 3.8.5, pytest-6.2.5, py-1.11.0, pluggy-1.0.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matplotlib: 3.4.3
+Freetype: 2.6.1
+rootdir: /home/mowglie/disk/Dropbox/HomeDocs/git/scientific_programming/book/week_06
+plugins: anyio-3.3.4, mpl-0.130
+<span class=" -Color -Color-Bold">collecting ... </span>
+<span class=" -Color -Color-Bold">collected 0 items                                                                                                                                                                                          </span>
+
+<span class=" -Color -Color-Yellow">========================================================================================== no tests ran in 0.47s ===========================================================================================</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="software-testing-methods">
 <h2>Software testing methods<a class="headerlink" href="#software-testing-methods" title="Permalink to this headline">¶</a></h2>
@@ -776,10 +808,11 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
+
 <span class="c1"># Make f2c numpy friendly</span>
 <span class="k">def</span> <span class="nf">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Converts degrees Fahrenheit to degrees Celsius.</span>
-<span class="sd">    </span>
+
 <span class="sd">    Works with numpy arrays as well as with scalars.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">tf</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">459.67</span><span class="p">):</span>
@@ -828,7 +861,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Arrange</span>
 <span class="n">tf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">32</span><span class="p">,</span> <span class="mi">212</span><span class="p">,</span> <span class="mi">9941</span><span class="p">])</span>
-<span class="c1"># Act </span>
+<span class="c1"># Act</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">)</span>
 <span class="c1"># Assert</span>
 <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">tf</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -836,7 +869,7 @@
 
 <span class="c1"># Arrange</span>
 <span class="n">tf</span> <span class="o">=</span> <span class="mf">32.</span>
-<span class="c1"># Act </span>
+<span class="c1"># Act</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">)</span>
 <span class="c1"># Assert</span>
 <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">tf</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
