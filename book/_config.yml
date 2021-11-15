@@ -48,3 +48,4 @@ sphinx:
 execute:
   execute_notebooks: auto
   allow_errors: true
+only_build_toc_files: true
