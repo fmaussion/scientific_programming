@@ -633,10 +633,10 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_113483</span><span class="o">/</span><span class="mf">150720634.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_21642</span><span class="o">/</span><span class="mf">150720634.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">f2c</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">)</span>
 
-<span class="nn">/tmp/ipykernel_113483/619383388.py</span> in <span class="ni">f2c</span><span class="nt">(tf)</span>
+<span class="nn">/tmp/ipykernel_21642/619383388.py</span> in <span class="ni">f2c</span><span class="nt">(tf)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">tf</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="o">/</span><span class="mi">9</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="c1"># Check that we provide physically reasonable results</span>
 <span class="ne">----&gt; </span><span class="mi">5</span>     <span class="k">assert</span> <span class="n">r</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mf">273.15</span>
@@ -686,7 +686,7 @@
 <div class="exercise admonition" id="week_06/02-Testing-exercise-0">
 <p class="admonition-title"><span class="caption-number">Exercise 18 </span></p>
 <div class="section" id="exercise-content">
-<p><strong>Install the pytest package</strong> (i.e. <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">pytest</span></code>). In your working directory, create a new <code class="docutils literal notranslate"><span class="pre">metutils.py</span></code> module, which provides the <code class="docutils literal notranslate"><span class="pre">f2c</span></code> function. In the same directory, create a new <code class="docutils literal notranslate"><span class="pre">test_metutils.py</span></code> module, which contains a <code class="docutils literal notranslate"><span class="pre">test_f2c</span></code> function. This function must implement the tests we described above (<em>note: don’t forget to import metutils in the test module!</em>). Now, <strong>in a command line environment</strong> (not in python!), type:</p>
+<p><strong>Install the pytest package</strong> (i.e. <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">pytest</span></code>). In your working directory (<em>see the warning about directories below</em>), create a new <code class="docutils literal notranslate"><span class="pre">metutils.py</span></code> module, which provides the <code class="docutils literal notranslate"><span class="pre">f2c</span></code> function. In the same directory, create a new <code class="docutils literal notranslate"><span class="pre">test_metutils.py</span></code> module, which contains a <code class="docutils literal notranslate"><span class="pre">test_f2c</span></code> function. This function must implement the tests we described above (<em>note: don’t forget to import metutils in the test module!</em>). Now, <strong>in a command line environment</strong> (not in python!), type:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pytest
 </pre></div>
 </div>
@@ -702,7 +702,11 @@
 </pre></div>
 </div>
 </div>
-</div><p>What did <code class="docutils literal notranslate"><span class="pre">pytest</span></code> just do? It searched the working directory for certain patterns (files and functions starting with <code class="docutils literal notranslate"><span class="pre">test_*</span></code>) and executed them.</p>
+</div><p>What did <code class="docutils literal notranslate"><span class="pre">pytest</span></code> just do? It scanned the working directory searching for certain patterns (files and functions starting with <code class="docutils literal notranslate"><span class="pre">test_*</span></code>) and executed them.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Pytest does a <strong>recursive search</strong> of all files and folders in the directory you start the script from. <strong>Do not start pytest from your home directory or any directory full of non relevant files!</strong> Otherwise it might take a lot of time and reach folders where it should not go, etc.</p>
+</div>
 <div class="exercise admonition" id="week_06/02-Testing-exercise-1">
 <p class="admonition-title"><span class="caption-number">Exercise 19 </span></p>
 <div class="section" id="exercise-content">
@@ -728,7 +732,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">=========================================================================================== test session starts ============================================================================================</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">================================================================================================ test session starts ================================================================================================</span>
 platform linux -- Python 3.8.5, pytest-6.2.5, py-1.11.0, pluggy-1.0.0
 </pre></div>
 </div>
@@ -737,9 +741,9 @@ Freetype: 2.6.1
 rootdir: /home/mowglie/disk/Dropbox/HomeDocs/git/scientific_programming/book/week_06
 plugins: anyio-3.3.4, mpl-0.130
 <span class=" -Color -Color-Bold">collecting ... </span>
-<span class=" -Color -Color-Bold">collected 0 items                                                                                                                                                                                          </span>
+<span class=" -Color -Color-Bold">collected 0 items                                                                                                                                                                                                   </span>
 
-<span class=" -Color -Color-Yellow">========================================================================================== no tests ran in 0.47s ===========================================================================================</span>
+<span class=" -Color -Color-Yellow">=============================================================================================== no tests ran in 0.19s ===============================================================================================</span>
 </pre></div>
 </div>
 </div>
