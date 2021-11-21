@@ -1,0 +1,54 @@
+week_02/Assignment-02.ipynb:40002: [redirected permanently] http://en.wikipedia.org/wiki/Caesar_cipher to https://en.wikipedia.org/wiki/Caesar_cipher
+week_04/02-Numbers.ipynb:1080002: [redirected permanently] http://floating-point-gui.de/ to https://floating-point-gui.de/
+week_04/02-Numbers.ipynb:930009: [redirected permanently] http://floating-point-gui.de/errors/propagation/ to https://floating-point-gui.de/errors/propagation/
+welcome.ipynb:140002: [redirected permanently] http://fabienmaussion.info/ to https://fabienmaussion.info/
+week_03/04-Good-practices.ipynb:160004: [redirected with Found] http://abstrusegoose.com/432 to https://abstrusegoose.com/432
+week_05/02-Scientific-Python.ipynb:110022: [redirected with Found] http://docs.dask.org/en/latest/ to https://docs.dask.org/en/latest/
+week_01/01-Linux.ipynb:60004: [redirected permanently] http://linuxmint.com to https://linuxmint.com/
+week_06/02-Testing.ipynb:70004: [redirected permanently] http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.0030158 to https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.0030158
+week_01/02-Installation.ipynb:240002: [redirected permanently] http://matplotlib.org to https://matplotlib.org/
+week_01/03-Getting-Started.ipynb:70002: [redirected with Found] http://ipython.readthedocs.io/en/stable/index.html to https://ipython.readthedocs.io/en/stable/index.html
+week_04/01-Why-Numpy.ipynb:20004: [redirected permanently] http://numpy.org to https://numpy.org/
+week_01/01-Linux.ipynb:80004: [redirected permanently] http://orawww.uibk.ac.at/public_prod/owa/uvw%24web%2410.p001 to https://orawww.uibk.ac.at/public_prod/owa/uvw$web$10.p001
+week_05/02-Scientific-Python.ipynb:110009: [redirected with Found] http://geopandas.org/ to https://geopandas.org/en/stable/
+week_01/02-Installation.ipynb:170002: [redirected with Found] http://conda.pydata.org/miniconda.html to https://docs.conda.io/en/latest/miniconda.html
+week_05/02-Scientific-Python.ipynb:90003: [redirected permanently] http://pandas.pydata.org/pandas-docs/stable/ to https://pandas.pydata.org/pandas-docs/stable/
+week_01/02-Installation.ipynb:3: [redirected permanently] http://python3statement.org/ to https://python3statement.org/
+week_04/01-Why-Numpy.ipynb:520010: [redirected permanently] http://pytorch.org/ to https://pytorch.org/
+week_05/02-Scientific-Python.ipynb:110015: [redirected permanently] http://scikit-learn.org/ to https://scikit-learn.org/
+week_01/01-Linux.ipynb:60004: [redirected permanently] http://ubuntugnome.org/ to https://ubuntugnome.org/
+week_07/01-Package-structure.ipynb:270002: [redirected permanently] http://sebastianraschka.com/Articles/2014_python_scope_and_namespaces.html#scope-resolution-for-variable-names-via-the-legb-rule to https://sebastianraschka.com/Articles/2014_python_scope_and_namespaces.html#scope-resolution-for-variable-names-via-the-legb-rule
+week_03/Assignment-03.ipynb:40007: [redirected permanently] http://srtm.csi.cgiar.org/wp-content/uploads/files/srtm_5x5/TIFF/srtm_39_04.zip to https://srtm.csi.cgiar.org/wp-content/uploads/files/srtm_5x5/TIFF/srtm_39_04.zip
+week_03/Assignment-03.ipynb:40002: [redirected permanently] http://srtm.csi.cgiar.org/srtmdata/ to https://srtm.csi.cgiar.org/srtmdata/
+week_04/02-Numbers.ipynb:800002: [redirected permanently] http://www.sympy.org to https://www.sympy.org/
+references.ipynb:20027: [redirected permanently] http://www.labri.fr/perso/nrougier/from-python-to-numpy/ to https://www.labri.fr/perso/nrougier/from-python-to-numpy/
+week_01/02-Installation.ipynb:240002: [redirected permanently] http://www.numpy.org/ to https://numpy.org/
+week_06/02-Testing.ipynb:70004: [redirected permanently] http://science.sciencemag.org/content/314/5807/1856 to https://www.science.org/doi/10.1126/science.314.5807.1856
+week_05/02-Scientific-Python.ipynb:90004: [redirected with Found] http://xarray.pydata.org to http://xarray.pydata.org/en/stable/
+week_05/02-Scientific-Python.ipynb:110021: [redirected permanently] https://bokeh.pydata.org/en/latest/ to https://docs.bokeh.org/en/latest/
+week_07/02-ClimVis.ipynb:120012: [redirected permanently] https://bokeh.pydata.org to https://docs.bokeh.org/en/latest/
+references.ipynb:20044: [redirected with Found] http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/ to https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/
+week_01/01-Linux.ipynb:80009: [redirected with Found] https://certification.ubuntu.com/desktop/ to https://ubuntu.com/certified?category=Desktop&category=Laptop
+week_01/02-Installation.ipynb:360005: [redirected with Found] https://conda.io/docs/ to https://conda.io/en/latest/
+week_01/01-Linux.ipynb:80005: [redirected permanently] https://docs.microsoft.com/en-us/windows/wsl/install-win10 to https://docs.microsoft.com/en-us/windows/wsl/install
+references.ipynb:20016: [redirected with Found] https://docs.python.org to https://docs.python.org/3/
+week_01/02-Installation.ipynb:360005: [redirected with Found] https://conda.io/miniconda.html to https://docs.conda.io/en/latest/miniconda.html
+week_05/01-Numpy-ndarrays.ipynb:60002: [redirected permanently] https://docs.scipy.org/doc/numpy/_images/threefundamental.png to https://numpy.org/doc/stable/_images/threefundamental.png
+week_05/01-Numpy-ndarrays.ipynb:1670002: [redirected permanently] https://docs.scipy.org/doc/numpy/reference/ to https://numpy.org/doc/stable/reference/
+week_05/01-Numpy-ndarrays.ipynb:40002: [redirected permanently] https://docs.scipy.org/doc/numpy/reference/arrays.html to https://numpy.org/doc/stable/reference/arrays.html
+week_05/01-Numpy-ndarrays.ipynb:50002: [redirected permanently] https://docs.scipy.org/doc/numpy/reference/arrays.ndarray.html#arrays-ndarray to https://numpy.org/doc/stable/reference/arrays.ndarray.html#arrays-ndarray
+week_04/02-Numbers.ipynb:900002: [redirected permanently] https://docs.scipy.org/doc/numpy/reference/generated/numpy.finfo.html to https://numpy.org/doc/stable/reference/generated/numpy.finfo.html
+references.ipynb:20028: [redirected permanently] https://docs.scipy.org/doc/numpy/reference/index.html to https://numpy.org/doc/stable/reference/index.html
+week_05/01-Numpy-ndarrays.ipynb:320002: [redirected permanently] https://docs.scipy.org/doc/numpy/reference/routines.array-creation.html#array-creation-routines to https://numpy.org/doc/stable/reference/routines.array-creation.html#array-creation-routines
+week_05/01-Numpy-ndarrays.ipynb:1670002: [redirected permanently] https://docs.scipy.org/doc/numpy/user/ to https://numpy.org/doc/stable/user/
+week_07/02-ClimVis.ipynb:40004: [redirected with Found] https://github.com/fmaussion/climvis/archive/master.zip to https://codeload.github.com/fmaussion/climvis/zip/master
+week_07/01-Package-structure.ipynb:340007: [redirected permanently] https://help.github.com/articles/licensing-a-repository/ to https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository
+week_04/01-Why-Numpy.ipynb:520010: [redirected permanently] https://labs.spotify.com/2013/03/20/how-we-use-python-at-spotify/ to https://engineering.atspotify.com/2013/03/20/how-we-use-python-at-spotify/
+welcome.ipynb:70006: [redirected with Found] https://jupyter-notebook.readthedocs.io to https://jupyter-notebook.readthedocs.io/en/stable/
+week_04/02-Numbers.ipynb:1060008: [redirected permanently] https://journals.ametsoc.org/doi/pdf/10.1175/MWR-D-12-00352.1 to https://journals.ametsoc.org:443/view/journals/mwre/141/11/mwr-d-12-00352.1.xml
+welcome.ipynb:120011: [redirected with Found] https://stackoverflow.com/help/mcve to https://stackoverflow.com/help/minimal-reproducible-example
+week_01/01-Linux.ipynb:80006: [redirected with Found] https://tutorials.ubuntu.com/tutorial/try-ubuntu-before-you-install to https://ubuntu.com/tutorials/try-ubuntu-before-you-install
+week_05/Assignment-05.ipynb:230002: [redirected permanently] https://www.ecmwf.int/en/forecasts/datasets/archive-datasets/reanalysis-datasets/era-interim to https://www.ecmwf.int/en/forecasts/datasets/reanalysis-datasets/era-interim
+references.ipynb:20006: [redirected permanently] https://www.edx.org/course/programming-for-everybody-getting-started-with-python to https://www.edx.org/course/programming-for-everybody-getting-started-with-pyt
+week_06/02-Testing.ipynb:70004: [redirected permanently] https://www.vice.com/en_us/article/zmjwda/a-code-glitch-may-have-caused-errors-in-more-than-100-published-studies to https://www.vice.com/en/article/zmjwda/a-code-glitch-may-have-caused-errors-in-more-than-100-published-studies
+week_01/02-Installation.ipynb:240002: [redirected permanently] https://www.scipy.org/ to https://scipy.org/
