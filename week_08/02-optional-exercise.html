@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment #03 &#8212; Scientific Programming</title>
+    <title>Optional exercise &#8212; Scientific Programming</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -54,8 +54,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="01 - Introduction to numpy: why does numpy exist?" href="../week_04/01-Why-Numpy.html" />
-    <link rel="prev" title="04 - Good practices, programming style and conventions" href="04-Good-practices.html" />
+    <link rel="prev" title="01 - Revisions" href="01-revisions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -180,29 +179,29 @@
   Week 03 - Variables scopes, modules, strings, good practices
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="01-Import-Scopes.html">
+  <a class="reference internal" href="../week_03/01-Import-Scopes.html">
    01 - Modules, import mechanism, namespaces, scope(s)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02-Strings-Paths.html">
+  <a class="reference internal" href="../week_03/02-Strings-Paths.html">
    02 - String formatting and file paths
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03-Tips-and-Tricks.html">
+  <a class="reference internal" href="../week_03/03-Tips-and-Tricks.html">
    03 - Tips and tricks
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="04-Good-practices.html">
+  <a class="reference internal" href="../week_03/04-Good-practices.html">
    04 - Good practices, programming style and conventions
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/Assignment-03.html">
    Assignment #03
   </a>
  </li>
@@ -295,14 +294,14 @@
   Week 08 - Revisions
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../week_08/01-revisions.html">
+  <a class="reference internal" href="01-revisions.html">
    01 - Revisions
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_08/02-optional-exercise.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Optional exercise
   </a>
  </li>
@@ -347,7 +346,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/week_03/Assignment-03.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/week_08/02-optional-exercise.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -367,10 +366,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_03/Assignment-03.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_08/02-optional-exercise.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_03/Assignment-03.ipynb"><button
+        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_08/02-optional-exercise.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -390,7 +389,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_03/Assignment-03.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_08/02-optional-exercise.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -413,8 +412,18 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-03-01-automated-data-download">
-   Exercise #03-01: automated data download
+  <a class="reference internal nav-link" href="#bayes-theorem">
+   Bayes theorem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#difference-between-the-2020-and-2021-autumn-covid-waves-in-austria">
+   Difference between the 2020 and 2021 autumn COVID waves in Austria
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exponential-curve-explained-to-our-neighbors">
+   Exponential curve explained to our neighbors
   </a>
  </li>
 </ul>
@@ -428,63 +437,24 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-03">
-<h1>Assignment #03<a class="headerlink" href="#assignment-03" title="Permalink to this headline">¶</a></h1>
-<p>Today’s exercises have to be done with help of the python standard library alone! No external module can be used (except for the <code class="docutils literal notranslate"><span class="pre">--plot</span></code> option where you can use the helper packages).</p>
-<div class="section" id="exercise-03-01-automated-data-download">
-<h2>Exercise #03-01: automated data download<a class="headerlink" href="#exercise-03-01-automated-data-download" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission">SRTM</a> is a digital elevation model (DEM) at ~90 m resolution covering almost the entire globe (up to <span class="math notranslate nohighlight">\(\pm\)</span> 60° latitude). The data is organized in 5°x5° tiles. To see a map of the tiles have a look at <a class="reference external" href="http://srtm.csi.cgiar.org/srtmdata/">this download page</a>. This tool is nice to use if you know which tile you want, but not very useful if you want more than one tile at different places of the globe.</p>
-<p>Fortunately, the entire dataset is available on this server: <code class="docutils literal notranslate"><span class="pre">srtm.csi.cgiar.org/wp-content/uploads/files/srtm_5x5/TIFF/</span></code></p>
-<p>In order to protect from disruptive “download all” behavior, the files stored here cannot be listed (i.e. automated data scraping won’t work). Fortunately for us, the file naming convention is very simple:</p>
-<ul class="simple">
-<li><p>example file: <a class="reference external" href="http://srtm.csi.cgiar.org/wp-content/uploads/files/srtm_5x5/TIFF/srtm_39_04.zip">http://srtm.csi.cgiar.org/wp-content/uploads/files/srtm_5x5/TIFF/srtm_39_04.zip</a></p></li>
-<li><p>the first two digits give the location of the tile in the longitudes (starting at 180° West)</p></li>
-<li><p>the last two digits give the location of the tile in the latitudes (starting at 60° North and going southwards)</p></li>
-</ul>
-<p>Here are some examples of locations and their associated tile:</p>
-<ul class="simple">
-<li><p>(-179, 59) -&gt; ‘srtm_01_01.zip’</p></li>
-<li><p>(-179, 51) -&gt; ‘srtm_01_02.zip’</p></li>
-<li><p>(-174, 54) -&gt; ‘srtm_02_02.zip’</p></li>
-<li><p>(-180, 60) -&gt; ‘srtm_01_01.zip’ (upper-left corner case)</p></li>
-</ul>
-<p>And so forth.</p>
-<p><strong>A. Write a script which, given a longitude and a latitude as arguments, downloads the corresponding file</strong> in the current directory. The tool should print an error message when the given location is not valid and exit the script.</p>
-<p><em>Hint A1: define “valid” locations first: some are easy to catch, some cannot be caught automatically. Do we really have to deal with those?</em></p>
-<p><em>Hint A2: unlike last week where we asked for user input, here I’m asking for a script with <a class="reference external" href="https://docs.python.org/3/tutorial/stdlib.html?highlight=sys%20argv#command-line-arguments">command line arguments</a>. The command <code class="docutils literal notranslate"><span class="pre">%run</span> <span class="pre">download_srtm.py</span> <span class="pre">9</span> <span class="pre">44</span></code> (in an ipython interpreter) should download the file at the location 9°W, 44°N.</em></p>
-<p><em>Hint A3: although I agree with the python documentation that <code class="docutils literal notranslate"><span class="pre">argparse</span></code> is more robust (and much better) than parsing <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> yourself, for the purpose of learning I would like you to use <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> today and handle the command line arguments yourselves.</em></p>
-<p><strong>B.</strong> Extend this script to be a bit more clever: <strong>download the data file only if the file isn’t already available in the current directory</strong>. This is particularly useful because the server is not very fast.</p>
-<p><strong>C.</strong> Extend this script to be even more clever: <strong>given a range of longitudes and latitudes, it should download all the files covering this area</strong>. For example, the range 9°W to 18°W and 44°N to 47°N would download 6 files. <strong>In order to avoid manual mistakes, warn the user by announcing the number of files that the command is going to download, and ask for confirmation before going on</strong> (by using the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function).</p>
-<p><em>Hint C1: the command should now be <code class="docutils literal notranslate"><span class="pre">%run</span> <span class="pre">download_srtm.py</span> <span class="pre">9</span> <span class="pre">44</span> <span class="pre">18</span> <span class="pre">47</span></code>.</em></p>
-<p><strong>D.</strong> Let’s add even more functionality to our script:</p>
-<p><strong>D1.</strong> <strong>print a message to the user announcing if the file was downloaded or was already on disk</strong></p>
-<p><strong>D2.</strong> <strong>print the size of the file after download</strong> - choose <a class="reference external" href="https://wiki.ubuntu.com/UnitsPolicy">an appropriate unit</a> for the text</p>
-<p><strong>D3.</strong> let’s assume that the user actually wants to download the files in a specific folder instead of the current directory (i.e. a folder where she stores all her DEMs). Let’s give this opportunity to her by adding two options to the script:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">--output-dir</span> <span class="pre">/path/to/a/dir</span></code> should <strong>write the file (and check for its existence) in the directory given as argument</strong></p></li>
-<li><p>if the target directory does not exist, print a message to the screen indicating that you can’t continue and exit the script</p></li>
-</ul>
-<p><strong>D4.</strong> (optional: see the warning about windows below) <strong>if the user asks for a plot, write a plot to disk</strong> (alongside the DEM file) with the file name <code class="docutils literal notranslate"><span class="pre">srtm_39_04.png</span></code> (if the tile 39, 4 was asked for). The user may ask for a plot by adding a <code class="docutils literal notranslate"><span class="pre">--plot</span></code> to the list of arguments. I.e. <code class="docutils literal notranslate"><span class="pre">%run</span> <span class="pre">download_srtm.py</span> <span class="pre">9</span> <span class="pre">44</span> <span class="pre">18</span> <span class="pre">47</span> <span class="pre">--plot</span></code> would write 6 plots in the user-chosen default directory.</p>
-<p>Here is a template for your plotting function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-
-<span class="c1"># This is some real magic: we open the file from within the zip</span>
-<span class="n">f</span> <span class="o">=</span> <span class="s1">&#39;zip://srtm_39_04.zip!srtm_39_04.tif&#39;</span>
-
-<span class="c1"># Read the data and plot</span>
-<span class="k">with</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">as</span> <span class="n">da</span><span class="p">:</span>
-    <span class="n">da</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">band</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;terrain&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Lat (°)&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Lon (°)&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;srtm_39_04&#39;</span><span class="p">);</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;srtm_39_04.png&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="optional-exercise">
+<h1>Optional exercise<a class="headerlink" href="#optional-exercise" title="Permalink to this headline">¶</a></h1>
+<p>This is just some simple statistics and data wrangling based on current events. Purely optional!</p>
+<div class="section" id="bayes-theorem">
+<h2>Bayes theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this headline">¶</a></h2>
+<p>The following graphic was shown by a German talk show presenter on November 10, 2021:</p>
+<img alt="https://pbs.twimg.com/media/FELYFI8XsAoouxu?format=png&amp;name=small" src="https://pbs.twimg.com/media/FELYFI8XsAoouxu?format=png&amp;name=small" />
+<p>It was implied that the graph shows that “the vaccine is not as efficient as previously thought” for people over 60. Using (relatively) basic statistics (and maybe one line of python code), show that the vaccine <em>does</em> have a very high efficacy at preventing getting the disease, hospitalisation, and death. You can do this by comparing the probability of getting the decease while vaccinated <span class="math notranslate nohighlight">\(P(D|V)\)</span> to the probability of getting the decease while non-vaccinated <span class="math notranslate nohighlight">\(P(D|NV)\)</span>.</p>
 </div>
-<p>No need to add more features to the plot than that: we haven’t talked about these libraries yet! Just make sure that the filename is set to the correct value.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>You’ll need the matplotlib, xarray and rasterio libraries installed for this to work. Careful! I’m not sure this will work on Windows because of the rasterio package, which has caused trouble in the past. On your laptop, install xarray and matplotlib first: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">matplotlib</span> <span class="pre">xarray</span></code> (this should be pretty safe and is needed for climate anyway). Then follow the <a class="reference internal" href="../week_01/02-Installation.html#conda-clone"><span class="std std-ref">instructions to clone your environment</span></a> before trying to install rasterio with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">rasterio</span></code>.</p>
+<div class="section" id="difference-between-the-2020-and-2021-autumn-covid-waves-in-austria">
+<h2>Difference between the 2020 and 2021 autumn COVID waves in Austria<a class="headerlink" href="#difference-between-the-2020-and-2021-autumn-covid-waves-in-austria" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://ourworldindata.org">Our World in Data</a> is a website from the University of Oxford providing all kinds of statistics, from climate change to pandemics to meat consumption per capita. Based on current events, let’s use the data they provide to draw the following plot: “Incidence in Austria since October 1st, in 2020 and 2021” (two curves). Repeat with Hospitalisations and Deaths.</p>
+<p>Here is a link to the data: <a class="reference external" href="https://covid.ourworldindata.org/data/owid-covid-data.csv">https://covid.ourworldindata.org/data/owid-covid-data.csv</a></p>
 </div>
+<div class="section" id="exponential-curve-explained-to-our-neighbors">
+<h2>Exponential curve explained to our neighbors<a class="headerlink" href="#exponential-curve-explained-to-our-neighbors" title="Permalink to this headline">¶</a></h2>
+<p>Use the same data to draw the incidence curves in Austria, Germany, and Switzerland (the three countries <a class="reference external" href="https://www.ft.com/content/f04ac67b-92e4-4bab-8c23-817cc0483df5">with the lowest vaccination rate in Western Europe</a>) since October 1st. This plot hides an important difference: the waves have started later in Germany and Switzerland than they have in Austria. Therefore, plot instead the incidence curves as a function of “days since the incidence reached 180” to compare the waves in each country.</p>
+<p>Reminder, the “incidence” is the number of positive cases per 100k inhabitants over 7 days. In the table, it is computed by multiplying <code class="docutils literal notranslate"><span class="pre">new_cases_smoothed_per_million</span></code> with <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">/</span> <span class="pre">10</span></code>.</p>
 </div>
 </div>
 
@@ -501,7 +471,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./week_03"
+            path: "./week_08"
         },
         predefinedOutput: true
     }
@@ -513,19 +483,12 @@
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="04-Good-practices.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="01-revisions.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">04 - Good practices, programming style and conventions</p>
+            <p class="prev-next-title">01 - Revisions</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="../week_04/01-Why-Numpy.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">01 - Introduction to numpy: why does numpy exist?</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
         
