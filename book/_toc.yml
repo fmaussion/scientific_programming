@@ -45,4 +45,9 @@ parts:
     chapters:
     - file: week_07/01-Package-structure
     - file: week_07/02-ClimVis
+  - caption: Week 08 - Revisions
+    chapters:
+    - file: week_08/01-revisions
+    - file: week_08/02-optional-exercise
+  
     
