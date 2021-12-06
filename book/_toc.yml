@@ -49,5 +49,6 @@ parts:
     chapters:
     - file: week_08/01-revisions
     - file: week_08/02-optional-exercise
-  
-    
+  - caption: Week 09 - Code documentation
+    chapters:
+    - file: week_09/01-Documentation
