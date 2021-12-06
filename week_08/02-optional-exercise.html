@@ -54,6 +54,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="01 - Documenting your code" href="../week_09/01-Documentation.html" />
     <link rel="prev" title="01 - Revisions" href="01-revisions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -306,6 +307,18 @@
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 09 - Code documentation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_09/01-Documentation.html">
+   01 - Documenting your code
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -445,16 +458,130 @@
 <p>The following graphic was shown by a German talk show presenter on November 10, 2021:</p>
 <img alt="https://pbs.twimg.com/media/FELYFI8XsAoouxu?format=png&amp;name=small" src="https://pbs.twimg.com/media/FELYFI8XsAoouxu?format=png&amp;name=small" />
 <p>It was implied that the graph shows that “the vaccine is not as efficient as previously thought” for people over 60. Using (relatively) basic statistics (and maybe one line of python code), show that the vaccine <em>does</em> have a very high efficacy at preventing getting the disease, hospitalisation, and death. You can do this by comparing the probability of getting the decease while vaccinated <span class="math notranslate nohighlight">\(P(D|V)\)</span> to the probability of getting the decease while non-vaccinated <span class="math notranslate nohighlight">\(P(D|NV)\)</span>.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="mi">91</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">43</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;V&#39;</span><span class="p">],</span> 
+                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;All&#39;</span><span class="p">,</span> <span class="s1">&#39;Infections&#39;</span><span class="p">,</span> <span class="s1">&#39;Hospitalization&#39;</span><span class="p">,</span> <span class="s1">&#39;ICU&#39;</span><span class="p">,</span> <span class="s1">&#39;Death&#39;</span><span class="p">])</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;NV&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;V&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Chance of getting X while non-vaccinated over being vaccinated:&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;NV&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;V&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">V</span> <span class="o">/</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">NV</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Chance of getting X while non-vaccinated over being vaccinated:
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All                 1.000000
+Infections          6.740741
+Hospitalization    12.358025
+ICU                19.627451
+Death              13.403101
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="difference-between-the-2020-and-2021-autumn-covid-waves-in-austria">
 <h2>Difference between the 2020 and 2021 autumn COVID waves in Austria<a class="headerlink" href="#difference-between-the-2020-and-2021-autumn-covid-waves-in-austria" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://ourworldindata.org">Our World in Data</a> is a website from the University of Oxford providing all kinds of statistics, from climate change to pandemics to meat consumption per capita. Based on current events, let’s use the data they provide to draw the following plot: “Incidence in Austria since October 1st, in 2020 and 2021” (two curves). Repeat with Hospitalisations and Deaths.</p>
 <p>Here is a link to the data: <a class="reference external" href="https://covid.ourworldindata.org/data/owid-covid-data.csv">https://covid.ourworldindata.org/data/owid-covid-data.csv</a></p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.dates</span> <span class="k">as</span> <span class="nn">mdates</span>
+<span class="kn">from</span> <span class="nn">matplotlib.dates</span> <span class="kn">import</span> <span class="n">DateFormatter</span>
+<span class="c1"># Just to make the plots look different</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s1">&#39;talk&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+
+<span class="c1"># Read the data</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://covid.ourworldindata.org/data/owid-covid-data.csv&#39;</span>
+<span class="n">odf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Select country and parse day of year for time axis</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">odf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">odf</span><span class="o">.</span><span class="n">location</span> <span class="o">==</span> <span class="s1">&#39;Austria&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;doy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">dayofyear</span>
+
+<span class="c1"># Plot</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">14</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;new_cases_smoothed_per_million&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;hosp_patients_per_million&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;new_deaths_smoothed_per_million&#39;</span><span class="p">]</span>
+<span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Incidence&#39;</span><span class="p">,</span> <span class="s1">&#39;Hospitalisations&#39;</span><span class="p">,</span> <span class="s1">&#39;Deaths&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axs</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">titles</span><span class="p">):</span>
+
+    <span class="c1"># Som pandas magic</span>
+    <span class="n">cases</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;doy&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">cases</span> <span class="o">=</span> <span class="n">cases</span> <span class="o">*</span> <span class="mi">7</span> <span class="o">/</span> <span class="mi">10</span>  <span class="c1"># inzidenz</span>
+    <span class="c1"># Naive date and plot</span>
+    <span class="n">cases</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">cases</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;%j&#39;</span><span class="p">)</span>
+    <span class="n">cases</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">270</span><span class="p">:]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="n">ax</span> <span class="ow">is</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="c1"># Replace day of year with real date</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">date_form</span> <span class="o">=</span> <span class="n">DateFormatter</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">.%m&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">date_form</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">mdates</span><span class="o">.</span><span class="n">WeekdayLocator</span><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;7d sum, per 100k&#39;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-optional-exercise_7_0.png" src="../_images/02-optional-exercise_7_0.png" />
+</div>
+</div>
 </div>
 <div class="section" id="exponential-curve-explained-to-our-neighbors">
 <h2>Exponential curve explained to our neighbors<a class="headerlink" href="#exponential-curve-explained-to-our-neighbors" title="Permalink to this headline">¶</a></h2>
 <p>Use the same data to draw the incidence curves in Austria, Germany, and Switzerland (the three countries <a class="reference external" href="https://www.ft.com/content/f04ac67b-92e4-4bab-8c23-817cc0483df5">with the lowest vaccination rate in Western Europe</a>) since October 1st. This plot hides an important difference: the waves have started later in Germany and Switzerland than they have in Austria. Therefore, plot instead the incidence curves as a function of “days since the incidence reached 180” to compare the waves in each country.</p>
 <p>Reminder, the “incidence” is the number of positive cases per 100k inhabitants over 7 days. In the table, it is computed by multiplying <code class="docutils literal notranslate"><span class="pre">new_cases_smoothed_per_million</span></code> with <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">/</span> <span class="pre">10</span></code>.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">odf</span> <span class="o">=</span> <span class="n">odf</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Some pandas magic here</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">odf</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">])[</span><span class="s1">&#39;new_cases_smoothed_per_million&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">rename_axis</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">7</span> <span class="o">/</span> <span class="mi">10</span>
+
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2021/10&#39;</span><span class="p">:][[</span><span class="s1">&#39;Austria&#39;</span><span class="p">,</span> <span class="s1">&#39;Germany&#39;</span><span class="p">,</span> <span class="s1">&#39;Switzerland&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;7d incidence (per 100k)&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;COVID cases since October&#39;</span><span class="p">);</span>
+
+<span class="n">ids</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2021/10&#39;</span><span class="p">:][[</span><span class="s1">&#39;Austria&#39;</span><span class="p">,</span> <span class="s1">&#39;Germany&#39;</span><span class="p">,</span> <span class="s1">&#39;Switzerland&#39;</span><span class="p">]]</span> <span class="o">&gt;=</span> <span class="mi">180</span><span class="p">)</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+
+<span class="n">tdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">ids</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">tdf</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="n">d</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39; (%Y-%m-</span><span class="si">%d</span><span class="s1">)&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">d</span><span class="p">:]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">tdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Days since incidence &gt; 180&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;7d incidence (per 100k)&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;COVID cases since 7d incidence &gt; 180&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Austria 2021-10-19 00:00:00
+Germany 2021-11-04 00:00:00
+Switzerland 2021-11-08 00:00:00
+</pre></div>
+</div>
+<img alt="../_images/02-optional-exercise_10_1.png" src="../_images/02-optional-exercise_10_1.png" />
+<img alt="../_images/02-optional-exercise_10_2.png" src="../_images/02-optional-exercise_10_2.png" />
+</div>
+</div>
 </div>
 </div>
 
@@ -489,6 +616,13 @@
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">01 - Revisions</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="../week_09/01-Documentation.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">01 - Documenting your code</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
         
