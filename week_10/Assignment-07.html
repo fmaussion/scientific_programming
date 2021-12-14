@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment #02 &#8212; Scientific Programming</title>
+    <title>Assignment #07: Pydemic &#8212; Scientific Programming</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,8 +52,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="01 - Modules, import mechanism, namespaces, scope(s)" href="../week_03/01-Import-Scopes.html" />
-    <link rel="prev" title="01 - Language fundamentals" href="01-Language-Fundamentals.html" />
+    <link rel="prev" title="01 - Object Oriented Programming: introduction" href="01-OOP-Part-1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -161,14 +160,14 @@
   Week 02 - Python language fundamentals
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="01-Language-Fundamentals.html">
+  <a class="reference internal" href="../week_02/01-Language-Fundamentals.html">
    01 - Language fundamentals
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_02/Assignment-02.html">
    Assignment #02
   </a>
  </li>
@@ -322,14 +321,14 @@
   Week 10 - Object Oriented Programming I
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../week_10/01-OOP-Part-1.html">
+  <a class="reference internal" href="01-OOP-Part-1.html">
    01 - Object Oriented Programming: introduction
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_10/Assignment-07.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Assignment #07: Pydemic
   </a>
  </li>
@@ -374,7 +373,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/week_02/Assignment-02.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/week_10/Assignment-07.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -394,10 +393,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_02/Assignment-02.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_10/Assignment-07.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_02/Assignment-02.ipynb"><button
+        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_10/Assignment-07.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -417,7 +416,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_02/Assignment-02.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_10/Assignment-07.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -434,24 +433,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-02-01-cryptography-for-roman-emperors">
-   Exercise #02-01: cryptography for Roman Emperors
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-02-02-the-substitution-cipher">
-   Exercise #02-02: the substitution cipher
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -460,67 +441,22 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-02">
-<h1>Assignment #02<a class="headerlink" href="#assignment-02" title="Permalink to this headline">¶</a></h1>
-<p>Today’s exercises have to be done with help of the python <strong>standard library</strong> alone! <strong>No external module can be used</strong>.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Can you remember what the “standard library” is? <a class="reference external" href="https://docs.python.org/3/library/">Here</a> is a list of all the modules and built-ins it provides: so quite a lot!</p>
-</div>
-<div class="section" id="exercise-02-01-cryptography-for-roman-emperors">
-<h2>Exercise #02-01: cryptography for Roman Emperors<a class="headerlink" href="#exercise-02-01-cryptography-for-roman-emperors" title="Permalink to this headline">¶</a></h2>
-<p>A very simple encryption technique is called the <a class="reference external" href="http://en.wikipedia.org/wiki/Caesar_cipher">Caesar cipher</a>. The basic idea is that each letter is replaced by a letter that is a certain number of letters away, so for example if the shift was 2, then A would become C, B would become D, and Z will become B.</p>
-<p><strong>A. Write a function that given a string and a shift, will produce the encrypted string for that shift</strong>. The rules are:</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-07-pydemic">
+<h1>Assignment #07: Pydemic<a class="headerlink" href="#assignment-07-pydemic" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fmaussion/pydemic">Pydemic</a> is a simple <a class="reference external" href="https://en.wikipedia.org/wiki/Agent-based_model">agent-based model</a> of a pandemic.</p>
+<p>Agents are perfect to teach the basics of object-oriented programming. Note that I wrote the program with this goal in mind, <em>not</em> for performance or accuracy. I also just wrote the program in a few hours, so there is room for improvement. You are welcome to help me out!</p>
+<p>Start by getting an overview of the model structure.</p>
+<p><strong>Sensitivity analyses</strong>: starting from the default parameter values, vary one parameter at a time and study the consequences for the temporal trajectory of the pandemic. Of particular relevance are the following: (i) agent density (number of agents per pixel), (ii) initial number of infected agents (is it possible to start a pandemic with a single infected individual? What are the settings that favor this?), (iii) agent mobility, (iv) probability of infection, (v) time until recover.</p>
+<p><strong>Add at least one functionality to the model.</strong> Ideas:</p>
 <ul class="simple">
-<li><p>you should accept lowercase and uppercase letters, and return letters of the same case</p></li>
-<li><p>spaces or other punctuation characters should not be changed.</p></li>
+<li><p>add a timer for immunity loss (this can be complexified by computing the probability of infection as a function of time since infection / vaccination)</p></li>
+<li><p>add vaccination as a way to gain immunity</p></li>
+<li><p>add a new agent status: hospitalized. When an agent is hospitalized it is out of the domain and may die.</p></li>
+<li><p>add a healthcare threshold, above which the hospitalized patients are more likely to die.</p></li>
+<li><p>add politics: when a certain threshold is reached, impose a lockdown.</p></li>
+<li><p>etc.</p></li>
 </ul>
-<p>There are several ways to reach this result. Just pick the one which makes more sense to you. Then, decrypt the following message, which was encrypted with a shift of 13:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Pbatenghyngvbaf, lbh unir fhpprrqrq va qrpelcgvat gur fgevat.
-</pre></div>
-</div>
-<p><strong>B. Now write a decoding script</strong> <code class="docutils literal notranslate"><span class="pre">caesar.py</span></code> which, when run in the command line, prints the decoded phrase after asking the user to enter a phrase and a shift with which it was encrypted. Test your script on the sentence above.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Make use of python’s <a class="reference external" href="https://docs.python.org/3/library/functions.html#input">input()</a> function</p>
-</div>
-<p><strong>C. Now try to decrypt this sentence, for which the shift is unknown</strong>:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Gwc uivioml bw nqvl bpm zqopb apqnb.
-</pre></div>
-</div>
-<p>One way to solve this problem involves human decision, but another way can be fully automated (and implies more work). Pick the one you want! You can also add the decryption option to your script if you want.</p>
-</div>
-<div class="section" id="exercise-02-02-the-substitution-cipher">
-<h2>Exercise #02-02: the substitution cipher<a class="headerlink" href="#exercise-02-02-the-substitution-cipher" title="Permalink to this headline">¶</a></h2>
-<p>Since we managed to crack the code above so easily, maybe we should use a better cryptographic algorithm from now on.</p>
-<p>The Caesar cipher is a special case of the more general <a class="reference external" href="https://en.wikipedia.org/wiki/Substitution_cipher">substitution cipher</a>. In this cipher, any new combined alphabet (or sequence of bits, characters, numbers…) can be used in place of the regular alphabet.</p>
-<p>To simplify things a bit, we will use python’s <code class="docutils literal notranslate"><span class="pre">random</span></code> module and in particular it’s <a class="reference external" href="https://docs.python.org/3/library/random.html#random.shuffle">shuffle</a> function to do the job. To generate a random (but predictable) substitution table we can use the mechanism of “seeds”, which can be seen as a secret key that you’ll have to (privately) give to your forbidden lover for him/her to decipher your message. This works as following:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alphabet</span> <span class="o">=</span> <span class="s1">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span>
-<span class="n">seed</span> <span class="o">=</span> <span class="mi">42</span>  <span class="c1"># the secret key known by both parties </span>
-
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
-
-<span class="n">new_alphabet</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">alphabet</span><span class="p">)</span>
-<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">new_alphabet</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">new_alphabet</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;q&#39;, &#39;m&#39;, &#39;j&#39;, &#39;z&#39;, &#39;t&#39;, &#39;g&#39;, &#39;f&#39;, &#39;k&#39;, &#39;p&#39;, &#39;w&#39;, &#39;l&#39;, &#39;s&#39;, &#39;b&#39;, &#39;o&#39;, &#39;x&#39;, &#39;n&#39;, &#39;c&#39;, &#39;r&#39;, &#39;y&#39;, &#39;e&#39;, &#39;v&#39;, &#39;h&#39;, &#39;i&#39;, &#39;a&#39;, &#39;d&#39;, &#39;u&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>A. Building upon the template from the previous exercise, create a script <code class="docutils literal notranslate"><span class="pre">substitute.py</span></code> which now asks:</strong>
-1. for a phrase to encrypt or decrypt
-2. whether the script should Encrypt (E) or Decrypt (D) the phrase
-3. which seed should be used (it should always be an integer, but can be any integer)</p>
-<p><strong>B. Since your cipher still preserves the location of punctuation (space, points, exclamation marks, etc.), it is easier to crack. Can you think of a very simple way to substitute these characters as well for better encoding?</strong> (minimal change in code)</p>
-</div>
+<p>You don’t have to add too many of those (unless you have a lot of fun). Pydemic will keep us busy for the next couple of weeks, so take it easy!</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -536,7 +472,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./week_02"
+            path: "./week_10"
         },
         predefinedOutput: true
     }
@@ -548,19 +484,12 @@
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="01-Language-Fundamentals.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="01-OOP-Part-1.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">01 - Language fundamentals</p>
+            <p class="prev-next-title">01 - Object Oriented Programming: introduction</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="../week_03/01-Import-Scopes.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">01 - Modules, import mechanism, namespaces, scope(s)</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
         
