@@ -52,3 +52,7 @@ parts:
   - caption: Week 09 - Code documentation
     chapters:
     - file: week_09/01-Documentation
+  - caption: Week 10 - Object Oriented Programming I
+    chapters:
+    - file: week_10/01-OOP-Part-1
+    - file: week_10/Assignment-07
