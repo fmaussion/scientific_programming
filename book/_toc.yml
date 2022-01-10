@@ -56,3 +56,7 @@ parts:
     chapters:
     - file: week_10/01-OOP-Part-1
     - file: week_10/Assignment-07
+  - caption: Week 11 - Object Oriented Programming II
+    chapters:
+    - file: week_11/01-OOP-Part-2
+    - file: week_11/Assignment-08
