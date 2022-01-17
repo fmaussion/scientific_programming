@@ -1,0 +1,989 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Oriented Programming: why? &#8212; Scientific Programming</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Assignment #08: Pydemic - second wave" href="../week_11/Assignment-08.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-88391345-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Scientific Programming</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../welcome.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../faq.html">
+   Frequently Asked  Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   External resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../slides.html">
+   Presentation slides
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 01 - Linux &amp; Python primer
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/01-Linux.html">
+   01 - A very short introduction to Linux
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/02-Installation.html">
+   02 - Installing Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/03-Getting-Started.html">
+   03 - Getting started with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/Assignment-01.html">
+   Assignment #01
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 02 - Python language fundamentals
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_02/01-Language-Fundamentals.html">
+   01 - Language fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_02/Assignment-02.html">
+   Assignment #02
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 03 - Variables scopes, modules, strings, good practices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/01-Import-Scopes.html">
+   01 - Modules, import mechanism, namespaces, scope(s)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/02-Strings-Paths.html">
+   02 - String formatting and file paths
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/03-Tips-and-Tricks.html">
+   03 - Tips and tricks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/04-Good-practices.html">
+   04 - Good practices, programming style and conventions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_03/Assignment-03.html">
+   Assignment #03
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 04 - Floating point arithmetics, Numpy basics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_04/01-Why-Numpy.html">
+   01 - Introduction to numpy: why does numpy exist?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_04/02-Numbers.html">
+   02 - Number representation in computers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_04/Assignment-04.html">
+   Assignment #04
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 05 - Scientific Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/01-Numpy-ndarrays.html">
+   01 - Arrays in numpy: indexing, ufuncs, broadcasting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/02-Scientific-Python.html">
+   02 - The scientific python stack
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/Assignment-05.html">
+   Assignment #05
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 06 - Testing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_06/01-Exceptions.html">
+   01 - Errors, Exceptions and Warnings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_06/02-Testing.html">
+   02 - Testing your code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_06/Assignment-06.html">
+   Assignment #06: exceptions and testing
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 07 - Python Packages and ClimVis project
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_07/01-Package-structure.html">
+   01 - Structure of a python package
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_07/02-ClimVis.html">
+   Term project: the ClimVis package
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 08 - Revisions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_08/01-revisions.html">
+   01 - Revisions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_08/02-optional-exercise.html">
+   Optional exercise
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 09 - Code documentation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_09/01-Documentation.html">
+   01 - Documenting your code
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 10 - Object Oriented Programming I
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_10/01-OOP-Part-1.html">
+   01 - Object Oriented Programming: introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_10/Assignment-07.html">
+   Assignment #07: Pydemic
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 11 - Object Oriented Programming II
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_11/01-OOP-Part-2.html">
+   01 - Object Oriented Programming: inheritance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_11/Assignment-08.html">
+   Assignment #08: Pydemic - second wave
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 12 - Object Oriented Programming III
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Object Oriented Programming: why?
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/week_12/01-OOP-Part-3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/fmaussion/scientific_programming"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_12/01-OOP-Part-3.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_12/01-OOP-Part-3.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_12/01-OOP-Part-3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#abstraction">
+   Abstraction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#encapsulation">
+   Encapsulation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modularity">
+   Modularity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#polymorphism">
+   Polymorphism
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inheritance">
+   Inheritance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#take-home-points">
+   Take home points
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concluding-remarks">
+   Concluding remarks
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="object-oriented-programming-why">
+<h1>Object Oriented Programming: why?<a class="headerlink" href="#object-oriented-programming-why" title="Permalink to this headline">¶</a></h1>
+<p>In the first two OOP units you learned the basic semantics of OOP in python. In this unit we will attempt to provide concrete examples of the use of objects in python (and other OOP languages) and provide some arguments in favor of the use of OOP in your everyday programming tasks.</p>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>OOP is a tool that, when used wisely, can help you to structure your programs in a way which might be more readable, easier to <a class="reference external" href="https://en.wikipedia.org/wiki/Software_maintenance">maintain</a> and more flexible than purely procedural programs. But why is that so? In this lecture, we will discuss five core concepts of OOP:</p>
+<ul class="simple">
+<li><p>abstraction</p></li>
+<li><p>encapsulation</p></li>
+<li><p>modularity</p></li>
+<li><p>polymorphism</p></li>
+<li><p>inheritance</p></li>
+</ul>
+</div>
+<div class="section" id="abstraction">
+<h2>Abstraction<a class="headerlink" href="#abstraction" title="Permalink to this headline">¶</a></h2>
+<p><strong>Data abstraction</strong> refers to the separation between the abstract properties of an object and its internal representation.  By giving a name to things and hiding unnecessary details from the user, objects provide an intuitive interface to concepts which might be very complex internally.</p>
+<p>Going back to our examples from the last two units: we used the term “objects” in programming as surrogate for actual objects in the real world: a cat, a pen, a car… These objects have a state (in OOP: <code class="docutils literal notranslate"><span class="pre">attributes</span></code>) and realize actions (in OOP: <code class="docutils literal notranslate"><span class="pre">methods</span></code>). For a pen, the states (attributes) could be: <code class="docutils literal notranslate"><span class="pre">ink_color</span></code>, <code class="docutils literal notranslate"><span class="pre">ink_volume</span></code>, <code class="docutils literal notranslate"><span class="pre">point_size</span></code>, etc. The actions (methods) could be: <code class="docutils literal notranslate"><span class="pre">write()</span></code>, <code class="docutils literal notranslate"><span class="pre">fill_ink()</span></code>, etc.</p>
+<p>OOP allows you to write programs which feel more natural and intuitive than functions and procedures. If a concept in your program is easily describable in terms of “state” and “actions”, it might be a good candidate for writing a python class.</p>
+<p>Let’s make an example based on a widely used object in Python, with an instance of the class <code class="docutils literal notranslate"><span class="pre">string</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;hello!&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The state of our object is relatively simple to describe: it is the sentence (list of characters) stored in the object. We have access to this state (we can print its values) but the way these values are stored in memory is abstracted away. We don’t care about the details, we just want a string. Now, a string provides many actions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="o">.</span><span class="n">istitle</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;l&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;he&#39;, &#39;&#39;, &#39;o!&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Abstractions should be as simple and well defined as possible. Sometimes there is more than one possible way to provide an abstraction to the user, and it becomes a debate among the developers of a project whether these abstractions are useful or not.</p>
+<p>Well defined abstractions can be composed together. A good example is provided by the <a class="reference external" href="http://xarray.pydata.org">xarray</a> library that you are using in the climate lecture: an <code class="docutils literal notranslate"><span class="pre">xarray.DataSet</span></code> is composed of several <code class="docutils literal notranslate"><span class="pre">xarray.DataArray</span></code> objects. These <code class="docutils literal notranslate"><span class="pre">xarray.DataArray</span></code> objects have the function to store data (a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> object) together with coordinates (other <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> objects) and attributes (units, name, etc.). The <code class="docutils literal notranslate"><span class="pre">xarray.DataArray</span></code> objects have the task to store<code class="docutils literal notranslate"><span class="pre">xarray.DataArray</span></code>s. This chain of abstractions is possible only if each of these concepts has a clearly defined role: xarray does not mess around with numbers in arrays: numpy does the numerical job behind the scenes. Inversely, numpy does not care whether an array has coordinates or not: xarray does the job of tracking variable descriptions and units.</p>
+</div>
+<div class="section" id="encapsulation">
+<h2>Encapsulation<a class="headerlink" href="#encapsulation" title="Permalink to this headline">¶</a></h2>
+<p><strong>Encapsulation</strong> is tied to the concept of abstraction. By hiding the internal implementation of a class behind a defined interface, users of the class do not need to know details about the internals of the class to use it. The implementation of the class can be changed (or internal data can be modified) without having to change the code of the users of the class.</p>
+<p>In python, encapsulation is more difficult to achieve than in other languages like Java. Indeed, Java implements the concept of <strong>private methods and attributes</strong>, which are hidden from the user per definition. In python, <em>nothing</em> is hidden from the user: however, developers make use of important <strong>conventions</strong> to inform the users that a method or attribute is not meant to be used by the class alone. Let’s take an xarray DataArray as an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">da</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">da</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;T&#39;, &#39;_HANDLED_TYPES&#39;, &#39;__abs__&#39;, &#39;__add__&#39;, &#39;__and__&#39;, &#39;__annotations__&#39;, &#39;__array__&#39;, &#39;__array_priority__&#39;, &#39;__array_ufunc__&#39;, &#39;__array_wrap__&#39;, &#39;__bool__&#39;, &#39;__class__&#39;, &#39;__complex__&#39;, &#39;__contains__&#39;, &#39;__copy__&#39;, &#39;__dask_graph__&#39;, &#39;__dask_keys__&#39;, &#39;__dask_layers__&#39;, &#39;__dask_optimize__&#39;, &#39;__dask_postcompute__&#39;, &#39;__dask_postpersist__&#39;, &#39;__dask_scheduler__&#39;, &#39;__dask_tokenize__&#39;, &#39;__deepcopy__&#39;, &#39;__delattr__&#39;, &#39;__delitem__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;, &#39;__enter__&#39;, &#39;__eq__&#39;, &#39;__exit__&#39;, &#39;__float__&#39;, &#39;__floordiv__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattr__&#39;, &#39;__getattribute__&#39;, &#39;__getitem__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__iadd__&#39;, &#39;__iand__&#39;, &#39;__ifloordiv__&#39;, &#39;__imod__&#39;, &#39;__imul__&#39;, &#39;__init__&#39;, &#39;__init_subclass__&#39;, &#39;__int__&#39;, &#39;__invert__&#39;, &#39;__ior__&#39;, &#39;__ipow__&#39;, &#39;__isub__&#39;, &#39;__iter__&#39;, &#39;__itruediv__&#39;, &#39;__ixor__&#39;, &#39;__le__&#39;, &#39;__len__&#39;, &#39;__lt__&#39;, &#39;__matmul__&#39;, &#39;__mod__&#39;, &#39;__module__&#39;, &#39;__mul__&#39;, &#39;__ne__&#39;, &#39;__neg__&#39;, &#39;__new__&#39;, &#39;__or__&#39;, &#39;__pos__&#39;, &#39;__pow__&#39;, &#39;__radd__&#39;, &#39;__rand__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__rfloordiv__&#39;, &#39;__rmatmul__&#39;, &#39;__rmod__&#39;, &#39;__rmul__&#39;, &#39;__ror__&#39;, &#39;__rpow__&#39;, &#39;__rsub__&#39;, &#39;__rtruediv__&#39;, &#39;__rxor__&#39;, &#39;__setattr__&#39;, &#39;__setitem__&#39;, &#39;__sizeof__&#39;, &#39;__slots__&#39;, &#39;__str__&#39;, &#39;__sub__&#39;, &#39;__subclasshook__&#39;, &#39;__truediv__&#39;, &#39;__weakref__&#39;, &#39;__xor__&#39;, &#39;_all_compat&#39;, &#39;_attr_sources&#39;, &#39;_binary_op&#39;, &#39;_cache&#39;, &#39;_calc_assign_results&#39;, &#39;_close&#39;, &#39;_coarsen_cls&#39;, &#39;_coords&#39;, &#39;_copy_attrs_from&#39;, &#39;_cum_extra_args_docstring&#39;, &#39;_dask_finalize&#39;, &#39;_from_temp_dataset&#39;, &#39;_get_axis_num&#39;, &#39;_getitem_coord&#39;, &#39;_groupby_cls&#39;, &#39;_in_memory&#39;, &#39;_indexes&#39;, &#39;_inplace_binary_op&#39;, &#39;_ipython_key_completions_&#39;, &#39;_item_key_to_dict&#39;, &#39;_item_sources&#39;, &#39;_iter&#39;, &#39;_level_coords&#39;, &#39;_name&#39;, &#39;_overwrite_indexes&#39;, &#39;_reduce_extra_args_docstring&#39;, &#39;_reduce_method&#39;, &#39;_replace&#39;, &#39;_replace_maybe_drop_dims&#39;, &#39;_repr_html_&#39;, &#39;_resample_cls&#39;, &#39;_result_name&#39;, &#39;_rolling_cls&#39;, &#39;_setattr_dict&#39;, &#39;_title_for_slice&#39;, &#39;_to_dataset_split&#39;, &#39;_to_dataset_whole&#39;, &#39;_to_temp_dataset&#39;, &#39;_unary_op&#39;, &#39;_variable&#39;, &#39;_weighted_cls&#39;, &#39;all&#39;, &#39;any&#39;, &#39;argmax&#39;, &#39;argmin&#39;, &#39;argsort&#39;, &#39;as_numpy&#39;, &#39;assign_attrs&#39;, &#39;assign_coords&#39;, &#39;astype&#39;, &#39;attrs&#39;, &#39;bfill&#39;, &#39;broadcast_equals&#39;, &#39;broadcast_like&#39;, &#39;chunk&#39;, &#39;chunks&#39;, &#39;chunksizes&#39;, &#39;clip&#39;, &#39;close&#39;, &#39;coarsen&#39;, &#39;combine_first&#39;, &#39;compute&#39;, &#39;conj&#39;, &#39;conjugate&#39;, &#39;coords&#39;, &#39;copy&#39;, &#39;count&#39;, &#39;cumprod&#39;, &#39;cumsum&#39;, &#39;cumulative_integrate&#39;, &#39;curvefit&#39;, &#39;data&#39;, &#39;diff&#39;, &#39;differentiate&#39;, &#39;dim_0&#39;, &#39;dims&#39;, &#39;dot&#39;, &#39;drop&#39;, &#39;drop_duplicates&#39;, &#39;drop_isel&#39;, &#39;drop_sel&#39;, &#39;drop_vars&#39;, &#39;dropna&#39;, &#39;dt&#39;, &#39;dtype&#39;, &#39;encoding&#39;, &#39;equals&#39;, &#39;expand_dims&#39;, &#39;ffill&#39;, &#39;fillna&#39;, &#39;from_cdms2&#39;, &#39;from_dict&#39;, &#39;from_iris&#39;, &#39;from_series&#39;, &#39;get_axis_num&#39;, &#39;get_index&#39;, &#39;groupby&#39;, &#39;groupby_bins&#39;, &#39;head&#39;, &#39;identical&#39;, &#39;idxmax&#39;, &#39;idxmin&#39;, &#39;imag&#39;, &#39;indexes&#39;, &#39;integrate&#39;, &#39;interp&#39;, &#39;interp_like&#39;, &#39;interpolate_na&#39;, &#39;isel&#39;, &#39;isin&#39;, &#39;isnull&#39;, &#39;item&#39;, &#39;load&#39;, &#39;loc&#39;, &#39;map_blocks&#39;, &#39;max&#39;, &#39;mean&#39;, &#39;median&#39;, &#39;min&#39;, &#39;name&#39;, &#39;nbytes&#39;, &#39;ndim&#39;, &#39;notnull&#39;, &#39;pad&#39;, &#39;persist&#39;, &#39;pipe&#39;, &#39;plot&#39;, &#39;polyfit&#39;, &#39;prod&#39;, &#39;quantile&#39;, &#39;query&#39;, &#39;rank&#39;, &#39;real&#39;, &#39;reduce&#39;, &#39;reindex&#39;, &#39;reindex_like&#39;, &#39;rename&#39;, &#39;reorder_levels&#39;, &#39;resample&#39;, &#39;reset_coords&#39;, &#39;reset_index&#39;, &#39;roll&#39;, &#39;rolling&#39;, &#39;rolling_exp&#39;, &#39;round&#39;, &#39;searchsorted&#39;, &#39;sel&#39;, &#39;set_close&#39;, &#39;set_index&#39;, &#39;shape&#39;, &#39;shift&#39;, &#39;size&#39;, &#39;sizes&#39;, &#39;sortby&#39;, &#39;squeeze&#39;, &#39;stack&#39;, &#39;std&#39;, &#39;str&#39;, &#39;sum&#39;, &#39;swap_dims&#39;, &#39;tail&#39;, &#39;thin&#39;, &#39;to_cdms2&#39;, &#39;to_dataframe&#39;, &#39;to_dataset&#39;, &#39;to_dict&#39;, &#39;to_index&#39;, &#39;to_iris&#39;, &#39;to_masked_array&#39;, &#39;to_netcdf&#39;, &#39;to_numpy&#39;, &#39;to_pandas&#39;, &#39;to_series&#39;, &#39;to_unstacked_dataset&#39;, &#39;transpose&#39;, &#39;unify_chunks&#39;, &#39;unstack&#39;, &#39;values&#39;, &#39;var&#39;, &#39;variable&#39;, &#39;weighted&#39;, &#39;where&#39;, &#39;xindexes&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this (very) long list of methods and attributes, some of them are available and documented. For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">da</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Other methods/attributes start with <strong>one underscore</strong>. This underscore has no special meaning in the Python language other than being a warning to the users, saying as much as: “Don’t use this method or attribute. If you do, do it at your own risk”. For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">da</span><span class="o">.</span><span class="n">_in_memory</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">_in_memory</span></code> is an attribute which is meant for internal use in the class (it is called <strong>private</strong>). Setting it to another value might have unpredictable consequences, and relying on it for your own code is not recommended: the xarray developers might rename it or change it without notice.</p>
+<p>The methods having <strong>two leading and trailing underscores have a special meaning in Python and are part of the language specifications</strong>. We already encountered <code class="docutils literal notranslate"><span class="pre">__init__</span></code> for our class instantiation, and we will talk about some others later in this chapter.</p>
+</div>
+<div class="section" id="modularity">
+<h2>Modularity<a class="headerlink" href="#modularity" title="Permalink to this headline">¶</a></h2>
+<p><strong>Modularity</strong> is a technique to separate different portions of the program (modules) based on some logical boundary. Modularity is a general principle in programming, although object-oriented programming typically makes it more explicit by giving meaningful names and actions to the program’s tools.</p>
+<p>Taking the example of <code class="docutils literal notranslate"><span class="pre">xarray.DataArray</span></code> and <code class="docutils literal notranslate"><span class="pre">numpy.Array</span></code> again: both classes have very clear domains of functionality. The latter shines at doing fast numerical computations on arrays, the former provides an intuitive abstraction to the internal arrays by giving names and coordinates to its axes. Modularity is achieved thanks to the naming and documentation of each object’s tasks and purpose.</p>
+</div>
+<div class="section" id="polymorphism">
+<h2>Polymorphism<a class="headerlink" href="#polymorphism" title="Permalink to this headline">¶</a></h2>
+<p><strong>Polymorphism</strong> is the name given to the technique of creating multiple classes that obey the same <strong>interface</strong>. The “interface” of an object is the set of public attributes and methods it defines.</p>
+<p><strong>Objects from different classes can be mixed at runtime if they obey the same interface</strong>. In other words, polymorphism originates from the fact that a certain action can have well defined but different meanings depending on the objects they apply to.</p>
+<p>An example of polymorphism is provided by the addition operation in python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mf">1.2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4, 6])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Each of these addition operations are performing a different action <em>depending on the object they are applied to</em>.</p>
+<p>OOP relies on polymorphism to provide higher levels of abstraction. In our <code class="docutils literal notranslate"><span class="pre">Cat</span></code> and <code class="docutils literal notranslate"><span class="pre">Dog</span></code> example from last week, both classes provided a <code class="docutils literal notranslate"><span class="pre">say_name()</span></code> method: the internal implementation, however, was different in each case.</p>
+<p>Many OOP languages (including Python) provide powerful tools for the purpose of polymorphism. One of them is <strong>operator overloading</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ArrayList</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Do NOT do this at home!&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s1">&#39;ArrayList(&#39;</span> <span class="o">+</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Do NOT do this at home!&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What did we just do? The class definition (<code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ArrayList(list)</span></code>) indicates that we created a subclass of the parent class <code class="docutils literal notranslate"><span class="pre">list</span></code>, a well known data type in python. Our child class has all the attributes and methods of the original parent class:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">ArrayList</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ArrayList([1, 2, 3])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we defined a method <code class="docutils literal notranslate"><span class="pre">__add__</span></code>, which allows us to do some python magic: <code class="docutils literal notranslate"><span class="pre">__add__</span></code> is the method which is actually called when two objects are added together. This means that the two statements below are totally equivalent:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="fm">__add__</span><span class="p">([</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># the functional version of the literal above</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, what does that mean for the addition on our <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> class? Let’s try and find out:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[12, 14, 16]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We just defined a new way to realize additions on lists! How did this happen? Well, exactly like the example above: the python interpreter understood that it has to apply the literal operator <code class="docutils literal notranslate"><span class="pre">+</span></code> on the two objects <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">[11,</span> <span class="pre">12,</span> <span class="pre">13]</span></code>, which translates to a call to <code class="docutils literal notranslate"><span class="pre">a.__add__([11,</span> <span class="pre">12,</span> <span class="pre">13])</span></code>, which calls our own implementation of the list addition.</p>
+<p>This is a very powerful mechanism: a prominent example is provided by numpy: by implementing the <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method on ndarray objects, they provide a new functionality which is hidden from the user but intuitive at the same time. Numpy arrays not only implement <code class="docutils literal notranslate"><span class="pre">__add__</span></code>, they also implement <code class="docutils literal notranslate"><span class="pre">__mul__</span></code>, <code class="docutils literal notranslate"><span class="pre">__div__</span></code>, <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>, etc.</p>
+<div class="exercise admonition" id="week_12/01-OOP-Part-3-exercise-0">
+<p class="admonition-title"><span class="caption-number">Exercise 23 </span></p>
+<div class="section" id="exercise-content">
+<p>What does the <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> operator do? Can you implement one for our <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> class? For example, it could make clear that the <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> is that of an <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code>, not of a <code class="docutils literal notranslate"><span class="pre">list</span></code> (like numpy arrays).</p>
+</div>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ArrayList([1, 2, 3])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 4, 6]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Operator overloading should be used with care and can be considered an advanced use case of python classes, in particular when used with inheritance as in the example above. People used to <code class="docutils literal notranslate"><span class="pre">lists</span></code> in python won’t be happy with your new behavior, i.e. you have to be careful to document what you are doing.</p>
+<p>For example, our class above is not finished yet. Indeed, see what happens here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[11, 12, 13, 1, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Huh? This did not work as expected! The difference with above is that our custom list <code class="docutils literal notranslate"><span class="pre">a</span></code> is now on the right-hand side of the operator. For this behavior there is a class interface as well, called <code class="docutils literal notranslate"><span class="pre">__radd__</span></code> (for “right-hand side addition”). Let’s define this operator to do the same as on the left-hand side (this makes sense, because addition is commutative anyway):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ArrayList</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Do NOT do this at home!&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)]</span>
+
+    <span class="fm">__radd__</span> <span class="o">=</span> <span class="fm">__add__</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">ArrayList</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[12, 14, 16]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This looks better now! But this example illustrates the complexity of the topic, and recommends due caution with operator overloading.</p>
+</div>
+<div class="section" id="inheritance">
+<h2>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">¶</a></h2>
+<p><strong>Inheritance</strong> is a core OOP mechanism which is very useful to provide abstraction, encapsulation, modularity, and polymorphism to python objects. Let’s take the concrete example of the <code class="docutils literal notranslate"><span class="pre">Pet</span></code>, <code class="docutils literal notranslate"><span class="pre">Cat</span></code> and <code class="docutils literal notranslate"><span class="pre">Dog</span></code> classes from last week. Inheritance provides:</p>
+<ul class="simple">
+<li><p><em>abstraction</em> by giving clear names and actions to the concepts of “pet” and their real-world realizations “cats” and “dogs”</p></li>
+<li><p><em>encapsulation</em> by keeping track of a pet’s weight each time they eat, so that the user does not have to take care of the weight computation or how it is done</p></li>
+<li><p><em>modularity</em> by merging common code in the pet class while allowing class-specific code in each pet implementation</p></li>
+<li><p><em>polymorphism</em> by defining a common interface: each pet can “say its name loudly” (<code class="docutils literal notranslate"><span class="pre">.say_name_loudly()</span></code>), but the actual outcome depends on the class of the caller (cat or dog)</p></li>
+</ul>
+<p>Now, how does the concept of class inheritance apply to real-world scientific applications? There are several examples from the scientific libraries you are using yourself:</p>
+<ul class="simple">
+<li><p>xarray uses object inheritance to provide a single consistent interface to the various data files it can open: netCDF4, HDF5, geotiffs, images… All these file readers comply to common interfaces (parent classes) called <code class="docutils literal notranslate"><span class="pre">WritableCFDataStore</span></code> or <code class="docutils literal notranslate"><span class="pre">BackendArray</span></code>.</p></li>
+<li><p>matplotlib’s <code class="docutils literal notranslate"><span class="pre">YAxis</span></code> and <code class="docutils literal notranslate"><span class="pre">XAxis</span></code> classes inherit from the general <code class="docutils literal notranslate"><span class="pre">Axis</span></code> class, which itself inherits from the base <code class="docutils literal notranslate"><span class="pre">Artist</span></code> class, which is responsible of drawing all kind of things. Such relationships are sometimes visually summarized in a class diagram like <a class="reference external" href="https://matplotlib.org/api/artist_api.html#matplotlib.artist.Artist">this one</a>.</p></li>
+<li><p>cartopy’s <code class="docutils literal notranslate"><span class="pre">PlateCarree</span></code> projection is one realization of the more general <code class="docutils literal notranslate"><span class="pre">Projection</span></code> parent class, which has <a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/crs/projections.html">many subclasses</a>.</p></li>
+</ul>
+<p>Inheritance can also be useful for numerical models. In the <a class="reference external" href="https://oggm.org/">glacier model</a> we are developing, we are using inheritance to provide different ways to compute the surface mass-balance of glaciers. Some mass-balance models are very simple (e.g. <a class="reference external" href="https://github.com/OGGM/oggm/blob/3d4206ac335c7f11b3430cdec5aa58b520e8350a/oggm/core/massbalance.py#L160">LinearMassBalance</a>) and others are more complex (e.g. <a class="reference external" href="https://github.com/OGGM/oggm/blob/3d4206ac335c7f11b3430cdec5aa58b520e8350a/oggm/core/massbalance.py#L212">PastMassBalance</a>), but all models inherit from a common <a class="reference external" href="https://github.com/OGGM/oggm/blob/3d4206ac335c7f11b3430cdec5aa58b520e8350a/oggm/core/massbalance.py#L16">MassBalanceModel</a> class which defines their interface, i.e. how their methods should be called and the units of the data they compute. This is very useful in the model structure, because the actual user of the mass-balance models (in our case, a glacier dynamics model) then doesn’t have to care at all about which mass-balance model is actually providing the data: it just needs the mass-balance, not the details about how it’s computed.</p>
+</div>
+<div class="section" id="take-home-points">
+<h2>Take home points<a class="headerlink" href="#take-home-points" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Object-oriented programming (OOP) is more of a “paradigm” than a true necessity: it is possible to write very powerful software without OOP. In practice, however, the OOP paradigm and its flexibility are in wide use in the scientific computing world. If you possibly won’t write OOP programs yourself, you will definitely <em>use</em> OOP programs for your own work.</p></li>
+<li><p>The OOP concepts listed above help to formalize the role of OOP in a program’s structure. I would like you to remember that these terms exist and maybe remember examples of their application.</p></li>
+<li><p>In this lecture we only talked about the <em>advantages</em> of OOP. There are also <em>disadvantages</em> in using OOP, but I decided not to cover this topic here because it requires a certain experience with OOP first. In practice, the disadvantages often summarize to one point: OOP is sometimes “over-used” and tends to over-complexify things which could be kept simple in functional programming. I recommend you to make your own experiences with OOP and come back to reading about these pitfalls later on.</p></li>
+</ul>
+</div>
+<div class="section" id="concluding-remarks">
+<h2>Concluding remarks<a class="headerlink" href="#concluding-remarks" title="Permalink to this headline">¶</a></h2>
+<p>A “true” OOP lecture could occupy a full semester: as an engineering student, I had a full semester lecture of functional programming in C, then a full semester of OOP programming in Java. Here, we only scratched the surface of a complex topic, and if you want to dig deeper in the programming world you will have to learn these skills yourself or with more advanced lectures. Fortunately, programming is one of the easiest skills to train online, and I hope that my introduction  will help you to get started.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./week_12"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../week_11/Assignment-08.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Assignment #08: Pydemic - second wave</p>
+        </div>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Fabien Maussion<br/>
+        
+          <div class="extra_footer">
+            <p>
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+  <img align="right" class="margin" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg" width="88px">
+</a>
+These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International (CC BY 4.0) license</a>.
+<br>
+&copy; Copyright 2018-2020.
+</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

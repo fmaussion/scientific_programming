@@ -353,6 +353,18 @@
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 12 - Object Oriented Programming III
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_12/01-OOP-Part-3.html">
+   Object Oriented Programming: why?
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -537,6 +549,9 @@ dtype: float64
 <span class="c1"># Read the data</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://covid.ourworldindata.org/data/owid-covid-data.csv&#39;</span>
 <span class="n">odf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Pick only the data till 2022</span>
+<span class="n">odf</span> <span class="o">=</span> <span class="n">odf</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="s1">&#39;2021&#39;</span><span class="p">]</span>
 
 <span class="c1"># Select country and parse day of year for time axis</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">odf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">odf</span><span class="o">.</span><span class="n">location</span> <span class="o">==</span> <span class="s1">&#39;Austria&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
