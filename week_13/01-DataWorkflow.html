@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment #07: Pydemic &#8212; Scientific Programming</title>
+    <title>The scientific data analysis workflow &#8212; Scientific Programming</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,8 +52,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Object Oriented Programming: inheritance" href="../week_11/01-OOP-Part-2.html" />
-    <link rel="prev" title="Object Oriented Programming: introduction" href="01-OOP-Part-1.html" />
+    <link rel="prev" title="Object Oriented Programming: why?" href="../week_12/01-OOP-Part-3.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -322,14 +321,14 @@
   Week 10 - Object Oriented Programming I
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="01-OOP-Part-1.html">
+  <a class="reference internal" href="../week_10/01-OOP-Part-1.html">
    Object Oriented Programming: introduction
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_10/Assignment-07.html">
    Assignment #07: Pydemic
   </a>
  </li>
@@ -368,9 +367,9 @@
   Week 13 - Data workflow
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_13/01-DataWorkflow.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    The scientific data analysis workflow
   </a>
  </li>
@@ -415,7 +414,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/week_10/Assignment-07.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/week_13/01-DataWorkflow.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -435,10 +434,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_10/Assignment-07.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_13/01-DataWorkflow.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_10/Assignment-07.ipynb"><button
+        <a class="edit-button" href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_13/01-DataWorkflow.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -458,7 +457,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_10/Assignment-07.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_13/01-DataWorkflow.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -475,6 +474,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-typical-workflow">
+   A typical workflow
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-recommendations">
+   Some recommendations
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -482,33 +499,65 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Assignment #07: Pydemic</h1>
+                <h1>The scientific data analysis workflow</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-typical-workflow">
+   A typical workflow
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-recommendations">
+   Some recommendations
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-07-pydemic">
-<h1>Assignment #07: Pydemic<a class="headerlink" href="#assignment-07-pydemic" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/fmaussion/pydemic">Pydemic</a> is a simple <a class="reference external" href="https://en.wikipedia.org/wiki/Agent-based_model">agent-based model</a> of a pandemic.</p>
-<p>Agents are perfect to teach the basics of object-oriented programming. Note that I wrote the program with this goal in mind, <em>not</em> for performance or accuracy. I also just wrote the program in a few hours, so there is room for improvement. You are welcome to help me out!</p>
-<p>Start by getting an overview of the model structure.</p>
-<p><strong>Sensitivity analyses</strong>: starting from the default parameter values, vary one parameter at a time and study the consequences for the temporal trajectory of the pandemic. Of particular relevance are the following: (i) agent density (number of agents per pixel), (ii) initial number of infected agents (is it possible to start a pandemic with a single infected individual? What are the settings that favor this?), (iii) agent mobility, (iv) probability of infection, (v) time until recover.</p>
-<p><strong>Add at least one functionality to the model.</strong> Ideas:</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="the-scientific-data-analysis-workflow">
+<h1>The scientific data analysis workflow<a class="headerlink" href="#the-scientific-data-analysis-workflow" title="Permalink to this headline">¶</a></h1>
+<p>In this final (and very short) unit I wrote down some basic principles which might come handy when analyzing data of any kind in your thesis or any class project. I’ll keep it short, but try to remember some of my tips when you’ll do some “real” programming work in the future!</p>
+<p>If you haven’t done so already, visit <a class="reference internal" href="../week_05/02-Scientific-Python.html"><span class="doc std std-doc">The scientific python stack</span></a> for an overview of several scientific python packages that you will find useful in your studies and future career.</p>
+<div class="section" id="a-typical-workflow">
+<h2>A typical workflow<a class="headerlink" href="#a-typical-workflow" title="Permalink to this headline">¶</a></h2>
+<p>Almost <strong>all data analysis workflows follow the same structure</strong>:</p>
+<ol class="simple">
+<li><p><strong>Read the data</strong>: typically from a file, e.g. a text file, some NetCDF or Geotiff, or from domain specifi formats.</p></li>
+<li><p><strong>Cleanse it</strong>: remove missing data, delete useless variables, select a time period, remove outliers…</p></li>
+<li><p><strong>Process and add value to the data</strong>: compute additional diagnostic variables out of the raw data, merge several datasets into one frame (e.g. on a map projection or to the same time coordinates)</p></li>
+<li><p><strong>Reduce the data</strong>: this is a statistical term, meaning that in order to be understood by a human the data must be “simplified”: e.g. temporal averages, smoothing, data classification, histograms…</p></li>
+<li><p><strong>Plot or output to table</strong>: this is the final step and the only reason is to make the data understandable by humans.</p></li>
+<li><p><strong>Evaluation of the final result</strong>: Happy? Stop. Not happy? Repeat.</p></li>
+</ol>
+</div>
+<div class="section" id="some-recommendations">
+<h2>Some recommendations<a class="headerlink" href="#some-recommendations" title="Permalink to this headline">¶</a></h2>
+<p>With almost no exception, all your scientific workflows will follow a similar structure (the most notable exception is modeling work, which is another story…). Sometimes a step is very short (e.g. when the data is very “clean” or already averaged), but in general each of these steps has to be applied at least once.</p>
+<p>Here are some general recommendations:</p>
 <ul class="simple">
-<li><p>add a timer for immunity loss (this can be complexified by computing the probability of infection as a function of time since infection / vaccination)</p></li>
-<li><p>add vaccination as a way to gain immunity</p></li>
-<li><p>add a new agent status: hospitalized. When an agent is hospitalized it is out of the domain and may die.</p></li>
-<li><p>add a healthcare threshold, above which the hospitalized patients are more likely to die.</p></li>
-<li><p>add politics: when a certain threshold is reached, impose a lockdown.</p></li>
-<li><p>etc.</p></li>
+<li><p><strong>resist the temptation to put one step before the other</strong>: for example, it can be appealing to reduce the data before processing it. If this is not strictly necessary (i.e. for data management and storage issues), don’t do it: if you find out later that you still need high-resolution data, you’ll regret it.</p></li>
+<li><p><strong>store the output of the individual steps in well-documented intermediate files</strong>. In particular if your data is messy, storing it in clean intermediate files will spare you a lot of trouble when you’ll go back to your code after the week-end. This is particularly true for <strong>data intensive workflows</strong>, where repeating each step can take hours or days</p></li>
+<li><p><strong>use conventions for metadata, and use popular data formats to store your data</strong>: CSV files are okay but not great (<em>“what’s the unit of the variable WS_200 again?”</em>). NetCDF is much better. All kind of proprietary data formats (or obscure domain specific formats) are usually bad.</p></li>
+<li><p><strong>organize your code around each step above</strong> (maybe one file per step, or one Jupyter Notebook section) and  <strong>write formal tests</strong> using asserts in code (okay) or pytest <code class="docutils literal notranslate"><span class="pre">test_</span></code> modules (better)</p></li>
+<li><p><strong>store your code and data in some place safe</strong> (<a class="reference external" href="https://github.com/">github</a> or <a class="reference external" href="https://about.gitlab.com/">gitlab</a> are a good idea for code, not so good for data) and in a structure which will remind you what was done when you go back to your code in 6 months from now. For example, use a directory structure following each step: <code class="docutils literal notranslate"><span class="pre">0_RAW_DATA</span></code>, <code class="docutils literal notranslate"><span class="pre">1_FILTERED_DATA</span></code>, <code class="docutils literal notranslate"><span class="pre">2_PROCESSED</span></code>, etc.).</p></li>
+<li><p><strong>have someone look at your code</strong>, or <strong>use code that works</strong>: always ask yourself the same question: <em>“Am I the first person facing this problem? Where could I find someone who has done that already?”</em>. If you find yourself implementing a function to compute relative humidy out of water vapor pressure, you may have searched not long enough.</p></li>
+<li><p><strong>write tests</strong>: I did say that already, but I’m saying it again: <strong>write tests</strong></p></li>
 </ul>
-<p>You don’t have to add too many of those (unless you have a lot of fun). Pydemic will keep us busy for the next couple of weeks, so take it easy!</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -524,7 +573,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./week_10"
+            path: "./week_13"
         },
         predefinedOutput: true
     }
@@ -536,19 +585,12 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="01-OOP-Part-1.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../week_12/01-OOP-Part-3.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Object Oriented Programming: introduction</p>
+            <p class="prev-next-title">Object Oriented Programming: why?</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="../week_11/01-OOP-Part-2.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Object Oriented Programming: inheritance</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
