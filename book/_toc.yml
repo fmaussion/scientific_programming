@@ -63,3 +63,7 @@ parts:
   - caption: Week 12 - Object Oriented Programming III
     chapters:
     - file: week_12/01-OOP-Part-3
+  - caption: Week 13 - Data workflow
+    chapters:
+    - file: week_13/01-DataWorkflow
+
