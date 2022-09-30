@@ -6,64 +6,21 @@ root: welcome
 parts:
   - caption: Introduction
     chapters:
+    - file: syllabus
     - file: faq
     - file: references
-    - file: slides
-  - caption: Week 01 - Linux & Python primer
+    - file: help
+  - caption: Week 01 - Terminal & Python primer
     chapters:
-    - file: week_01/01-Linux
-    - file: week_01/02-Installation
-    - file: week_01/03-Getting-Started
+    - file: week_01/01-Installation
+      sections:
+      - file: week_01/01a-Details-Windows
+      - file: week_01/01b-Details-Linux
+    - file: week_01/02-Terminal
+      sections:
+      - file: week_01/02a-Windows
+      - file: week_01/02b-Linux
+    - file: week_01/03-Installation-uni
+    - file: week_01/04-Getting-Started
     - file: week_01/Assignment-01
-  - caption: Week 02 - Python language fundamentals
-    chapters:
-    - file: week_02/01-Language-Fundamentals
-    - file: week_02/Assignment-02
-  - caption: Week 03 - Variables scopes, modules, strings, good practices
-    chapters:
-    - file: week_03/01-Import-Scopes
-    - file: week_03/02-Strings-Paths
-    - file: week_03/03-Tips-and-Tricks
-    - file: week_03/04-Good-practices
-    - file: week_03/Assignment-03
-  - caption: Week 04 - Floating point arithmetics, Numpy basics
-    chapters:
-    - file: week_04/01-Why-Numpy
-    - file: week_04/02-Numbers
-    - file: week_04/Assignment-04
-  - caption: Week 05 - Scientific Python
-    chapters:
-    - file: week_05/01-Numpy-ndarrays
-    - file: week_05/02-Scientific-Python
-    - file: week_05/Assignment-05
-  - caption: Week 06 - Testing
-    chapters:
-    - file: week_06/01-Exceptions
-    - file: week_06/02-Testing
-    - file: week_06/Assignment-06
-  - caption: Week 07 - Python Packages and ClimVis project
-    chapters:
-    - file: week_07/01-Package-structure
-    - file: week_07/02-ClimVis
-  - caption: Week 08 - Revisions
-    chapters:
-    - file: week_08/01-revisions
-    - file: week_08/02-optional-exercise
-  - caption: Week 09 - Code documentation
-    chapters:
-    - file: week_09/01-Documentation
-  - caption: Week 10 - Object Oriented Programming I
-    chapters:
-    - file: week_10/01-OOP-Part-1
-    - file: week_10/Assignment-07
-  - caption: Week 11 - Object Oriented Programming II
-    chapters:
-    - file: week_11/01-OOP-Part-2
-    - file: week_11/Assignment-08
-  - caption: Week 12 - Object Oriented Programming III
-    chapters:
-    - file: week_12/01-OOP-Part-3
-  - caption: Week 13 - Data workflow
-    chapters:
-    - file: week_13/01-DataWorkflow
-
+ 
