@@ -44,8 +44,8 @@ This class follows the [flipped classroom](https://en.wikipedia.org/wiki/Flipped
 
 The semester is 15 weeks long. **Each week will always be organised as such**:
 - On Fridays, you will receive instructions for the week to come (which materials to read/watch, and one homework assignment). You study them at home during the week.
-- On Mondays (08h15-09h00), we meet to discuss the assignment solutions from the previous week (assignments are mandatory but not graded, see "Grading" below)
-- On Tuesdays (08h15-10h00), we meet in class. We will start the hour with a short, individual online assessment, for you to check if you understood the new materials correctly. Based on your own assessment, you pick the topics and questions you would like to discuss in class. We work on the assignments together.
+- On Mondays (11:00-11:54), we meet to discuss the assignment solutions from the previous week (assignments are mandatory but not graded, see "Grading" below)
+- On Tuesdays (10:15-11:45), we meet in class. We will start the hour with a short, individual online assessment, for you to check if you understood the new materials correctly. Based on your own assessment, you pick the topics and questions you would like to discuss in class. We work on the assignments together.
 - On Fridays: start again!
 
 During the semester, you can work either on your own computer (laptop) or on the working stations in the computer room.
@@ -65,8 +65,8 @@ At the end of each lesson, there is a "learning checklist": go over it at the en
 
 Combined: mid-term exam (20%), end-term exam (50%), participation to practicals (0%), programming project (30%). A positive evaluation of the sum of both exams, the practicals and the project is necessary to pass the class.
 
-1. The mid-term exam (open-book exam, 0H45, combinaison of muliple choice, essay and programming type of questions) will take place on **Tuesday 22.11.2022** from 08.15 to 09:00.
-2. The end-term exam (open-book exam, 1H30, combinaison of muliple choice, essay and programming type of questions) will take place on **Tuesday 07.02.2023** from 08.15 to 10:00.
+1. The mid-term exam (open-book exam, 0H45, combinaison of muliple choice, essay and programming type of questions) will take place on **Tuesday 22.11.2022** from 10:15 to 11:00.
+2. The end-term exam (open-book exam, 1H30, combinaison of muliple choice, essay and programming type of questions) will take place on **Tuesday 07.02.2023** from 10:15 to 12:00.
 3. The practicals take place every other Monday. Participation and one group presentation (non graded) is required to pass the class.
 4. The projects start in November (date pending) and will have to be returned before the Christmas holidays.
 
