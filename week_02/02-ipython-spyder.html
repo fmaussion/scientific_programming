@@ -1,0 +1,840 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Scientific development environment: ipython and spyder &#8212; Scientific Programming</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Language fundamentals" href="03-Language-Fundamentals.html" />
+    <link rel="prev" title="Installing python packages" href="01-install-packages.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-88391345-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Scientific Programming</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../welcome.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../faq.html">
+   Frequently Asked  Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   External resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../help.html">
+   Getting help
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 01 - Terminal &amp; Python primer
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../week_01/01-Installation.html">
+   Installing Python on your computer
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week_01/01a-Details-Windows.html">
+     For windows users: the difference between the command prompt, the miniforge prompt, and the python interpreter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week_01/01b-Details-Linux.html">
+     For linux/mac users: what did
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       mambaforge
+      </span>
+     </code>
+     do to your terminal?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../week_01/02-Terminal.html">
+   Basic terminal commands and navigation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week_01/02a-Windows.html">
+     A Windows command prompt primer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week_01/02b-Linux.html">
+     An introduction to the Linux terminal
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/03-Installation-uni.html">
+   Installing Python at the University of Innsbruck
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/04-Getting-Started.html">
+   Getting started with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/Assignment-01.html">
+   Assignment #01
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 02 - Python language fundamentals
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-install-packages.html">
+   Installing python packages
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Scientific development environment: ipython and spyder
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Language-Fundamentals.html">
+   Language fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assignment-02.html">
+   Assignment #02
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_02/02-ipython-spyder.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/fmaussion/scientific_programming"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_02/02-ipython-spyder.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_02/02-ipython-spyder.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/week_02/02-ipython-spyder.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reminder-the-standard-python-interpreter">
+   Reminder: the “standard” python interpreter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ipython-interactive-python">
+   ipython: interactive python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#automatic-code-completion">
+     Automatic code completion
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-help">
+     Getting help
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#copy-paste">
+     Copy paste
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-scripts">
+   Running scripts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reminder-running-a-python-script-from-the-terminal">
+     Reminder: running a python script from the terminal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-a-python-script-from-the-ipython-interpreter">
+     Running a python script from the ipython interpreter
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing-a-python-file">
+     Importing a python file
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spyder">
+   Spyder
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-checklist">
+   Learning checklist
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Scientific development environment: ipython and spyder</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reminder-the-standard-python-interpreter">
+   Reminder: the “standard” python interpreter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ipython-interactive-python">
+   ipython: interactive python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#automatic-code-completion">
+     Automatic code completion
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-help">
+     Getting help
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#copy-paste">
+     Copy paste
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-scripts">
+   Running scripts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reminder-running-a-python-script-from-the-terminal">
+     Reminder: running a python script from the terminal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-a-python-script-from-the-ipython-interpreter">
+     Running a python script from the ipython interpreter
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing-a-python-file">
+     Importing a python file
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spyder">
+   Spyder
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-checklist">
+   Learning checklist
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="scientific-development-environment-ipython-and-spyder">
+<h1>Scientific development environment: ipython and spyder<a class="headerlink" href="#scientific-development-environment-ipython-and-spyder" title="Permalink to this headline">#</a></h1>
+<section id="reminder-the-standard-python-interpreter">
+<h2>Reminder: the “standard” python interpreter<a class="headerlink" href="#reminder-the-standard-python-interpreter" title="Permalink to this headline">#</a></h2>
+<p>Let’s open a python interpreter and type in some commands:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+<span class="go">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">*</span><span class="n">b</span>
+<span class="go">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">**</span><span class="mi">3</span>
+</pre></div>
+</div>
+<p>As it turns out, you will rarely use the python interpreter, but actually used a “more advanced” one: <code class="docutils literal notranslate"><span class="pre">ipython</span></code></p>
+</section>
+<section id="ipython-interactive-python">
+<h2>ipython: interactive python<a class="headerlink" href="#ipython-interactive-python" title="Permalink to this headline">#</a></h2>
+<p>The default command-line interpreter comes with some functionality (for example, if you use the up and down arrows you can navigate in your previous commands) but this functionality is very sparse. Some important functionalities are missing: some are cosmetic (like colors), some are very useful (like <strong>automatic code completion</strong> with <code class="docutils literal notranslate"><span class="pre">[TAB]</span></code> or the possibility to paste several lines of code at once). For all these reasons, the default python command-line interpreter is only used for very small tasks like testing a command or two. Scientists need more interactivity when analyzing their data: this is why <code class="docutils literal notranslate"><span class="pre">ipython</span></code> was created.</p>
+<p><a class="reference external" href="http://ipython.readthedocs.io/en/stable/index.html">ipython</a> is a standard command-line interpreter, but enhanced with many interactive features. Let’s open it (<code class="docutils literal notranslate"><span class="pre">ipython</span></code> command) and type in some commands:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+<span class="mi">5</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="mi">6</span>
+</pre></div>
+</div>
+<p>What are the differences? The <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> prompt has been replaced by <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[1]:</span></code>. Now there <em>is</em> a slight difference between a line with or without <code class="docutils literal notranslate"><span class="pre">print()</span></code> (can you find it?). At first sight the differences are small, but it’s in the everyday interactive coding that <code class="docutils literal notranslate"><span class="pre">ipython</span></code> becomes useful.</p>
+<p><strong>From now on, we will always use the ipython command-line interpreter.</strong> I will now describe a small sample of its most useful capabilities.</p>
+<section id="automatic-code-completion">
+<h3>Automatic code completion<a class="headerlink" href="#automatic-code-completion" title="Permalink to this headline">#</a></h3>
+<p>In ipython, type <code class="docutils literal notranslate"><span class="pre">s</span></code> and then <code class="docutils literal notranslate"><span class="pre">[TAB]</span></code>. The tool will give you a list of suggestions to choose from (useful when you forgot how a function was called exactly!). Now type <code class="docutils literal notranslate"><span class="pre">so</span></code> and <code class="docutils literal notranslate"><span class="pre">[TAB]</span></code>. Here the only solution will be selected automatically.</p>
+</section>
+<section id="getting-help">
+<h3>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this headline">#</a></h3>
+<p>Type <code class="docutils literal notranslate"><span class="pre">sorted?</span></code>. A text help should be printed, telling you what this function is about.</p>
+</section>
+<section id="copy-paste">
+<h3>Copy paste<a class="headerlink" href="#copy-paste" title="Permalink to this headline">#</a></h3>
+<p>Copy the following lines and paste them in your ipython interpreter:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;the jungle book&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">l</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="n">l</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(note that <code class="docutils literal notranslate"><span class="pre">[CTRL-V]</span></code> doesn’t work in a linux terminal: you’ll have to use <code class="docutils literal notranslate"><span class="pre">[CTRL-SHIFT-V]</span></code>, the mouse with <code class="docutils literal notranslate"><span class="pre">right</span> <span class="pre">click</span> <span class="pre">-&gt;</span> <span class="pre">paste</span></code>, or - even better - the magical linux middle mouse button)</p>
+</section>
+</section>
+<section id="running-scripts">
+<h2>Running scripts<a class="headerlink" href="#running-scripts" title="Permalink to this headline">#</a></h2>
+<section id="reminder-running-a-python-script-from-the-terminal">
+<h3>Reminder: running a python script from the terminal<a class="headerlink" href="#reminder-running-a-python-script-from-the-terminal" title="Permalink to this headline">#</a></h3>
+<p>Python scripts are simple text files. Per convention we like to give them a suffix: <code class="docutils literal notranslate"><span class="pre">.py</span></code>. You can run python scripts by calling python in a terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python my_python_script.py
+</pre></div>
+</div>
+</section>
+<section id="running-a-python-script-from-the-ipython-interpreter">
+<h3>Running a python script from the ipython interpreter<a class="headerlink" href="#running-a-python-script-from-the-ipython-interpreter" title="Permalink to this headline">#</a></h3>
+<p>Running a script from the ipython interpreter is as easy as:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> my_python_script.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The product of 3 and 6 is 18
+</pre></div>
+</div>
+</div>
+</div>
+<p>(remember the <code class="docutils literal notranslate"><span class="pre">[TAB]</span></code> functionality in ipython? You can use it on files as well). Running a script this way is different from running a script in the terminal. Indeed, after running the script, the variables defined in it are still available in the current session. Try computing <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code> to check it out:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="importing-a-python-file">
+<h3>Importing a python file<a class="headerlink" href="#importing-a-python-file" title="Permalink to this headline">#</a></h3>
+<p>Another way to “run” a script in a python interpreter is via the <code class="docutils literal notranslate"><span class="pre">import</span></code> mechanism:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">my_python_script</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The product of 3 and 6 is 18
+</pre></div>
+</div>
+</div>
+</div>
+<p>Although both <code class="docutils literal notranslate"><span class="pre">%run</span></code> and <code class="docutils literal notranslate"><span class="pre">import</span></code> execute the script (the output is printed on screen), the two mechanisms are different. As we are going to see, the <code class="docutils literal notranslate"><span class="pre">import</span></code> mechanism is an important feature of the python language (also something which you might not be used to from other languages). <code class="docutils literal notranslate"><span class="pre">import</span></code> is usually <em>not</em> used as a replacement for <code class="docutils literal notranslate"><span class="pre">%run</span></code>. The biggest difference with <code class="docutils literal notranslate"><span class="pre">%run</span></code> is that the variables defined in the script are <em>not</em> available at the command line directly. Instead, they can now be addressed as following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_python_script</span><span class="o">.</span><span class="n">a</span> <span class="o">*</span> <span class="n">my_python_script</span><span class="o">.</span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18
+</pre></div>
+</div>
+</div>
+</div>
+<p>… but this is already going too far: more on this in the next lesson.</p>
+</section>
+</section>
+<section id="spyder">
+<h2>Spyder<a class="headerlink" href="#spyder" title="Permalink to this headline">#</a></h2>
+<img alt="https://www.spyder-ide.org/spyder_website_banner.png" src="https://www.spyder-ide.org/spyder_website_banner.png" />
+<p><a class="reference external" href="https://www.spyder-ide.org">Spyder</a> is an open-source integrated development environment (<a class="reference external" href="https://www.spyder-ide.org/">IDE</a>) for scientific pythom, and it is the best for beginners. To open spyder, simply open your conda environment and type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">spyder</span>
+</pre></div>
+</div>
+<p>This should open a window like the above.</p>
+<p>I think that you will learn spyder fast enough while coding, but if you want some tips to get started, the <a class="reference external" href="https://docs.spyder-ide.org/current/videos/first-steps-with-spyder.html">official documentation</a> is a good place to go first!</p>
+</section>
+<section id="learning-checklist">
+<h2>Learning checklist<a class="headerlink" href="#learning-checklist" title="Permalink to this headline">#</a></h2>
+<p><label><input type="checkbox" id="week03_01" class="box"> I understand that <code class="docutils literal notranslate"><span class="pre">ipython</span></code> is short for “interactive python”. It’s basically the same thing as the default <strong>interpreter</strong>, but with more features.</input></label>
+<label><input type="checkbox" id="week03_02" class="box"> I understand that the <strong>import mechanism</strong> also “runs” a file, but the way it does so is fundamentally different. We are going to explain the <code class="docutils literal notranslate"><span class="pre">import</span></code> mechanism in more detail soon.</input></label><br />
+<label><input type="checkbox" id="week03_03" class="box"> I am able to start spyder from the command line.</input></label></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./week_02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="01-install-packages.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Installing python packages</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="03-Language-Fundamentals.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Language fundamentals</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Fabien Maussion<br/>
+  
+    <div class="extra_footer">
+      <p>
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+  <img align="right" class="margin" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg" width="88px">
+</a>
+These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International (CC BY 4.0) license</a>.
+<br>
+&copy; Copyright 2018-2022.
+</p>
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

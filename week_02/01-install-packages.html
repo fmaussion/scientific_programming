@@ -1,0 +1,824 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Installing python packages &#8212; Scientific Programming</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Scientific development environment: ipython and spyder" href="02-ipython-spyder.html" />
+    <link rel="prev" title="Assignment #01" href="../week_01/Assignment-01.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-88391345-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Scientific Programming</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../welcome.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../faq.html">
+   Frequently Asked  Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   External resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../help.html">
+   Getting help
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 01 - Terminal &amp; Python primer
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../week_01/01-Installation.html">
+   Installing Python on your computer
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week_01/01a-Details-Windows.html">
+     For windows users: the difference between the command prompt, the miniforge prompt, and the python interpreter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week_01/01b-Details-Linux.html">
+     For linux/mac users: what did
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       mambaforge
+      </span>
+     </code>
+     do to your terminal?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../week_01/02-Terminal.html">
+   Basic terminal commands and navigation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week_01/02a-Windows.html">
+     A Windows command prompt primer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../week_01/02b-Linux.html">
+     An introduction to the Linux terminal
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/03-Installation-uni.html">
+   Installing Python at the University of Innsbruck
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/04-Getting-Started.html">
+   Getting started with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_01/Assignment-01.html">
+   Assignment #01
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 02 - Python language fundamentals
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Installing python packages
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-ipython-spyder.html">
+   Scientific development environment: ipython and spyder
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Language-Fundamentals.html">
+   Language fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assignment-02.html">
+   Assignment #02
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/fmaussion/scientific_programming"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_02/01-install-packages.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_02/01-install-packages.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/week_02/01-install-packages.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#context-the-conda-base-environment">
+   Context: the conda (base) environment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-ipython-jupyterlab-and-spyder-in-the-base-environment">
+   Install ipython, jupyterlab and spyder in the (base) environment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-other-packages-and-managing-environments">
+   Install other packages and managing environments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-an-environment-called-scipro">
+     Create an environment called “scipro”
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-additional-python-packages-in-the-active-environment">
+     Installing additional python packages in the active environment
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-checklist">
+   Learning checklist
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Installing python packages</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#context-the-conda-base-environment">
+   Context: the conda (base) environment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-ipython-jupyterlab-and-spyder-in-the-base-environment">
+   Install ipython, jupyterlab and spyder in the (base) environment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-other-packages-and-managing-environments">
+   Install other packages and managing environments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-an-environment-called-scipro">
+     Create an environment called “scipro”
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-additional-python-packages-in-the-active-environment">
+     Installing additional python packages in the active environment
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-checklist">
+   Learning checklist
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="installing-python-packages">
+<h1>Installing python packages<a class="headerlink" href="#installing-python-packages" title="Permalink to this headline">#</a></h1>
+<p>This chapter contains instructions about how to install
+additional packages useful for scientific programming, such as:</p>
+<ul class="simple">
+<li><p>ipython and spyder for development</p></li>
+<li><p>jupyterlab for interactive notebooks (e.g. for the climate class)</p></li>
+<li><p>other packages of the scientific ecosystem, such as numpy, xarray, matplotlib…</p></li>
+</ul>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>you have a working python installation based on mambaforge (<a class="reference internal" href="../week_01/01-Installation.html"><span class="doc std std-doc">Week 01</span></a>) or conda</p></li>
+<li><p>you understood the differences between the <strong>windows prompt</strong>, the <strong>miniforge prompt</strong> and the <strong>python
+interpreter</strong></p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you still have doubts about all these terms, don’t hesitate to revisit the installation instructions in
+week <a class="reference internal" href="../week_01/01-Installation.html"><span class="doc std std-doc">01</span></a>.</p>
+</div>
+</section>
+<section id="context-the-conda-base-environment">
+<h2>Context: the conda (base) environment<a class="headerlink" href="#context-the-conda-base-environment" title="Permalink to this headline">#</a></h2>
+<p>When you open the <strong>miniforge prompt</strong> (a <strong>terminal</strong> in linux/mac), you are opening a windows prompt with new tools available:
+for one, <code class="docutils literal notranslate"><span class="pre">python</span></code> is installed and can be run. Similarly, <code class="docutils literal notranslate"><span class="pre">conda</span></code> and <code class="docutils literal notranslate"><span class="pre">mamba</span></code> commands are only available from the miniforge
+prompt, and not from the standard prompt.
+This is possible thanks to <a class="reference external" href="https://docs.conda.io">conda</a>, which is a package management system for python.
+Conda gives you access to a very large number of python packages <em>for free</em> (the only thing you’ll need is an
+internet connection, to connect to the package servers).</p>
+<div class="dropdown note admonition">
+<p class="admonition-title">More details on miniforge and mamba</p>
+<p>I asked you to insall miniforge instead of “plain” conda for two main reasons:</p>
+<ul class="simple">
+<li><p>miniforge is giving you access to the packages available from the <a class="reference external" href="https://conda-forge.org">conda-forge</a>, which is a more complete and more up-to-date repository for python packages.</p></li>
+<li><p>miniforge has <code class="docutils literal notranslate"><span class="pre">mamba</span></code> installed per default. <code class="docutils literal notranslate"><span class="pre">mamba</span></code> is a “drop-in” replacement for <code class="docutils literal notranslate"><span class="pre">conda</span></code>, and is significantly faster. You don’t need to know why at this stage: just follow my instructions and you will be fine.</p></li>
+</ul>
+</div>
+<p>You will recognize that you are using conda thanks to the following indices:</p>
+<ul class="simple">
+<li><p>when opening the miniforge prompt or terminal, a <code class="docutils literal notranslate"><span class="pre">(base)</span></code> text appears in front of the current path. For the user Jane, a
+typical miniforge prompt looks like: <code class="docutils literal notranslate"><span class="pre">(base)</span> <span class="pre">C:\Users\Jane&gt;</span></code></p></li>
+<li><p>when Jane asks her computer where to find python, conda is indicating the <code class="docutils literal notranslate"><span class="pre">python.exe</span></code> that came with the conda installation.</p></li>
+</ul>
+<p>You can ask for the location of a specific prompt command with the command <code class="docutils literal notranslate"><span class="pre">where</span></code>.
+For Jane, the miniforge prompt gives the following indications about the location of <code class="docutils literal notranslate"><span class="pre">python</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(base) C:\Users\Jane&gt; where python 
+C:\Users\Jane\mambaforge\python.exe
+C:\Users\Jane\AppData\Local\Microsoft\WindowsApps\python.exe
+
+(base) C:\Users\Jane&gt; 
+</pre></div>
+</div>
+<p>The first <code class="docutils literal notranslate"><span class="pre">python.exe</span></code> on the list is the one that will be used if you type <code class="docutils literal notranslate"><span class="pre">python</span></code> in the prompt.
+This is precisely why conda is useful: <strong>it clearly separates your python installation from all other contents
+on your computer</strong>.</p>
+</section>
+<section id="install-ipython-jupyterlab-and-spyder-in-the-base-environment">
+<h2>Install ipython, jupyterlab and spyder in the (base) environment<a class="headerlink" href="#install-ipython-jupyterlab-and-spyder-in-the-base-environment" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://ipython.org">ipython</a> and <a class="reference external" href="https://jupyter.org">jupyter</a> are fundamental tools of a scientific python installation. We will use them a LOT during the semester and your studies. I will make a demonstration in class, but first you have to install it! <strong>From the miniforge prompt</strong>, type:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mamba install ipython jupyterlab spyder 
+</pre></div>
+</div>
+<p>This will install ipython, jupyterlab and spyder at the same time. To check if it worked, type:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ipython
+</pre></div>
+</div>
+<p>Which should display something like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python 3.9.7 | packaged by conda-forge | (default, Sep 29 2021, 19:15:42) [MSC v.1916 64 bit (AMD64)]
+Type &#39;copyright&#39;, &#39;credits&#39; or &#39;license&#39; for more information
+IPython 8.1.1 -- An enhanced Interactive Python. Type &#39;?&#39; for help.
+
+In [1]:
+</pre></div>
+</div>
+<p>The only <em>visual</em> difference between the <code class="docutils literal notranslate"><span class="pre">ipython</span></code> and <code class="docutils literal notranslate"><span class="pre">python</span></code> interpreters is that <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> has been replaced by <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[1]:</span></code>. More on this later.</p>
+<p>Exit <code class="docutils literal notranslate"><span class="pre">ipython</span></code> (remember how? Use <code class="docutils literal notranslate"><span class="pre">exit()</span></code>), and then type:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>spyder
+</pre></div>
+</div>
+<p>This should open a development environment called spyder. If all of this worked properly, you are good to go.</p>
+<div class="exercise admonition" id="week_02/01-install-packages-exercise-0">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6 </span></p>
+<section id="exercise-content">
+<p>Open a miniforge prompt and ask windows where to find your current python installation. Compare yours with Jane’s.
+What about the location of <code class="docutils literal notranslate"><span class="pre">ipython</span></code>? And of <code class="docutils literal notranslate"><span class="pre">jupyterlab</span></code>?</p>
+</section>
+</div>
+</section>
+<section id="install-other-packages-and-managing-environments">
+<h2>Install other packages and managing environments<a class="headerlink" href="#install-other-packages-and-managing-environments" title="Permalink to this headline">#</a></h2>
+<p>These instructions are useful for later in the class (when I’ll ask you to install more packages) or for the climate class (where you’ll have to install packages right away).</p>
+<section id="create-an-environment-called-scipro">
+<h3>Create an environment called “scipro”<a class="headerlink" href="#create-an-environment-called-scipro" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">(base)</span></code> is the name of the base (default) environment for conda. Installing further packages in <code class="docutils literal notranslate"><span class="pre">(base)</span></code> is fine,
+but I recommend against it. I recommend to keep <code class="docutils literal notranslate"><span class="pre">(base)</span></code> as simple as possible, with few or no packages installed,
+and use named environments for further usages. I’ll explain you why a bit later.</p>
+<p>First, open the miniforge prompt (in <code class="docutils literal notranslate"><span class="pre">base</span></code>) and type the following command:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mamba create -n scipro --clone base
+</pre></div>
+</div>
+<p>If asked to confirm, type “yes”.</p>
+<p>What did we just do? We created a new conda environment called “<code class="docutils literal notranslate"><span class="pre">scipro</span></code>” (this is the
+purpose of the option <code class="docutils literal notranslate"><span class="pre">-n</span></code>) which clones all packages available in <code class="docutils literal notranslate"><span class="pre">base</span></code> with the option <code class="docutils literal notranslate"><span class="pre">--clone</span> <span class="pre">base</span></code>
+(this last part is optional: if you omit it, your new environment will be completely empty and you’ll have to reinstall jupyter to be able to
+use it).</p>
+<p>You can now activate your new environment with <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">activate</span> <span class="pre">scipro</span></code>.</p>
+<div class="exercise admonition" id="week_02/01-install-packages-exercise-1">
+
+<p class="admonition-title"><span class="caption-number">Exercise 7 </span></p>
+<section id="exercise-content">
+<p>Activate the new environment. What changed in comparison to <code class="docutils literal notranslate"><span class="pre">(base)</span></code>? Now ask the prompt again about where to find the commands
+<code class="docutils literal notranslate"><span class="pre">ipython</span></code> and <code class="docutils literal notranslate"><span class="pre">jupyter-lab</span></code>. Can you see the difference to <code class="docutils literal notranslate"><span class="pre">base</span></code>?</p>
+</section>
+</div>
+<p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/environments.html">Conda environments</a> are a very simple
+and elegant way to manage different installations of python packages. They allow to clearly separate different installations
+and, more importantly, <strong>conda environments allow us to make mistakes</strong>.</p>
+<p>Since “environments” are nothing else than folders on your computer, they allow setups such as:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">(base)</span></code>: python v3.10, jupyter-lab, ipython</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(scipro)</span></code>: same as <code class="docutils literal notranslate"><span class="pre">(base)</span></code> + numpy, scipy, matplotlib, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(test)</span></code>: python 3.11</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(complex)</span></code>: same as <code class="docutils literal notranslate"><span class="pre">(base)</span></code> + numpy “beta version” + complicated package</p></li>
+<li><p>etc.</p></li>
+</ul>
+<p>You can switch between environments with <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">activate</span> <span class="pre">env_name</span></code> and leave the current environment with <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">deactivate</span></code>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>When an environment is active, you can see it with the <code class="docutils literal notranslate"><span class="pre">(base)</span></code> or <code class="docutils literal notranslate"><span class="pre">(scipro)</span></code> indicator in front of the prompt. <strong>In the
+active environment, ALL mamba commands refer to this specific environment</strong>.</p>
+<p>For example, to list the packages available in <code class="docutils literal notranslate"><span class="pre">scipro</span></code>, you need to activate it first (<code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">activate</span> <span class="pre">scipro</span></code>) and
+<em>then</em> list the packages with <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">list</span></code>.</p>
+<p>To open jupyterlab and have access the packages installed in <code class="docutils literal notranslate"><span class="pre">scipro</span></code>, activate the environment first and <em>then</em> start <code class="docutils literal notranslate"><span class="pre">jupyter-lab</span></code>.</p>
+</div>
+<p>When one of your environments becomes “broken” or obsolete, you can simply delete it with  <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">remove</span> <span class="pre">-n</span> <span class="pre">ENVNAME</span> <span class="pre">--all</span></code>.
+This will delete the corresponding folder and all packages in it. Creating, activating and deleting environments is super
+easy, and this is why I recommend their use.</p>
+<div class="note admonition">
+<p class="admonition-title">Mamba/conda cheat sheet:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">scipro</span> <span class="pre">--clone</span> <span class="pre">base</span></code> : create an environment called “<code class="docutils literal notranslate"><span class="pre">scipro</span></code>” with the same packages in it as <code class="docutils literal notranslate"><span class="pre">base</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">scipro</span></code> : same as above, but empty</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">activate</span> <span class="pre">scipro</span></code> : activate the <code class="docutils literal notranslate"><span class="pre">scipro</span></code> environment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">deactivate</span></code> : leave the current environment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">info</span> <span class="pre">--envs</span></code> : get a list of all environments</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">list</span></code> : list the currently installed packages in a specific environment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">remove</span> <span class="pre">-n</span> <span class="pre">scipro</span> <span class="pre">--all</span></code> : delete the scipro environment and all packages in it.</p></li>
+</ul>
+</div>
+<p>Visit the <a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/getting-started.html#managing-environments">conda documentation</a> for more commands
+(just replace all “<code class="docutils literal notranslate"><span class="pre">conda</span></code>” commands with “<code class="docutils literal notranslate"><span class="pre">mamba</span></code>”).</p>
+</section>
+<section id="installing-additional-python-packages-in-the-active-environment">
+<h3>Installing additional python packages in the active environment<a class="headerlink" href="#installing-additional-python-packages-in-the-active-environment" title="Permalink to this headline">#</a></h3>
+<p>In the course of your studies, you will be lead to install many (many) python packages, for example <a class="reference external" href="https://docs.xarray.dev">xarray</a> for gridded data analysis or <a class="reference external" href="https://unidata.github.io/MetPy">MetPy</a> for meteorology.</p>
+<p>Almost always, the install procedure will be:</p>
+<ol class="simple">
+<li><p>open the miniforge prompt</p></li>
+<li><p>(optional but recommended) activate the environment where you want to install the package</p></li>
+<li><p>install the package with <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">install</span></code></p></li>
+</ol>
+<p>For now, I ask you to install the following python packages:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://numpy.org">numpy</a>, the fundamental package for scientific computing with Python</p></li>
+<li><p><a class="reference external" href="https://scipy.org">scipy</a>, fundamental algorithms for scientific computing in Python</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org">matplotlib</a>, data visualization with Python</p></li>
+</ul>
+<p>To install these, activate the <code class="docutils literal notranslate"><span class="pre">scipro</span></code> environment (recommended) or use <code class="docutils literal notranslate"><span class="pre">base</span></code>, and type:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mamba install numpy scipy matplotlib
+</pre></div>
+</div>
+<p>Answer “yes” to confirm the installation. Note that <code class="docutils literal notranslate"><span class="pre">mamba</span></code> will install several additional packages. These
+automatically installed packages are called “<strong>dependencies</strong>”: they are required for the other packages
+to function properly.</p>
+<p>To test if the installation worked properly, open an ipython interpreter and type:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The output should be:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Congratulations! You are ready for the rest of the lecture.</p>
+</section>
+</section>
+<section id="learning-checklist">
+<h2>Learning checklist<a class="headerlink" href="#learning-checklist" title="Permalink to this headline">#</a></h2>
+<p><label><input type="checkbox" id="week05_01" class="box"> I understand that a <strong>miniforge prompt</strong> is a windows prompt with conda and python commands available</input></label>
+<label><input type="checkbox" id="week05_02" class="box"> I understand that miniforge creates a folder (and sub-folders) at the location I indicated at the installation, and this is where all my python packages are installed.</input></label><br />
+<label><input type="checkbox" id="week05_03" class="box"> I am able to create new conda environments, activate them, and switch between them.</input></label>
+<label><input type="checkbox" id="week05_04" class="box"> I understand that packages installed with <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">install</span> <span class="pre">...</span></code> are always installed in the environment which is currently active. <code class="docutils literal notranslate"><span class="pre">(base)</span></code> is like any other environment: it is simply the default one. </input></label>
+<label><input type="checkbox" id="week05_05" class="box"> I understand that using environments is beneficial on the long term, because it allows me to experiment with additional packages, without being afraid of breaking anything: <strong>environments are just folders on my computer</strong>!</input></label>
+<label><input type="checkbox" id="week05_06" class="box"> I am ab;e install new packages using <code class="docutils literal notranslate"><span class="pre">mamba</span></code>. I have installed numpy, scipy, and matplotlib.</input></label></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./week_02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../week_01/Assignment-01.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Assignment #01</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="02-ipython-spyder.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Scientific development environment: ipython and spyder</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Fabien Maussion<br/>
+  
+    <div class="extra_footer">
+      <p>
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+  <img align="right" class="margin" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg" width="88px">
+</a>
+These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International (CC BY 4.0) license</a>.
+<br>
+&copy; Copyright 2018-2022.
+</p>
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
