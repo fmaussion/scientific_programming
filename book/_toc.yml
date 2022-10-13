@@ -29,4 +29,11 @@ parts:
     - file: week_02/02-ipython-spyder
     - file: week_02/03-Language-Fundamentals
     - file: week_02/Assignment-02
+  - caption: Week 03 - Variables scopes, modules, strings, good practices
+    chapters:
+    - file: week_03/01-Import-Scopes
+    - file: week_03/02-Strings-Paths
+    - file: week_03/03-Tips-and-Tricks
+    - file: week_03/04-Good-practices
+    - file: week_03/Assignment-03
     
