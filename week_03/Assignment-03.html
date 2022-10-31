@@ -306,6 +306,28 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 05 - Scientific Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/01-Numpy-ndarrays.html">
+   Arrays in numpy: indexing, ufuncs, broadcasting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/02-Scientific-Python.html">
+   The scientific python stack
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_05/Assignment-05.html">
+   Assignment #05
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav></div>
@@ -590,10 +612,10 @@ title="Print to PDF"
 <p>And so forth.</p>
 <p><strong>A. Write a script which, given a longitude and a latitude as arguments, downloads the corresponding file</strong> in the current directory. The tool should print an error message when the given location is not valid and exit the script.</p>
 <p><em>Hint A1: define “valid” locations first: some are easy to catch, some cannot be caught automatically. Do we really have to deal with those?</em></p>
-<p><em>Hint A2: unlike last week where we asked for user input, here I’m asking for a script with <a class="reference external" href="https://docs.python.org/3/tutorial/stdlib.html?highlight=sys%20argv#command-line-arguments">command line arguments</a>. The command <code class="docutils literal notranslate"><span class="pre">%run</span> <span class="pre">download_srtm.py</span> <span class="pre">9</span> <span class="pre">44</span></code> (in an ipython interpreter) should download the file at the location 9°W, 44°N.</em></p>
+<p><em>Hint A2: unlike last week where we asked for user input, here I’m asking for a script with <a class="reference external" href="https://docs.python.org/3/tutorial/stdlib.html?highlight=sys%20argv#command-line-arguments">command line arguments</a>. The command <code class="docutils literal notranslate"><span class="pre">%run</span> <span class="pre">download_srtm.py</span> <span class="pre">9</span> <span class="pre">44</span></code> (in an ipython interpreter) should download the file at the location 9°E, 44°N.</em></p>
 <p><em>Hint A3: although I agree with the python documentation that <code class="docutils literal notranslate"><span class="pre">argparse</span></code> is more robust (and much better) than parsing <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> yourself, for the purpose of learning I would like you to use <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> today and handle the command line arguments yourselves.</em></p>
 <p><strong>B.</strong> Extend this script to be a bit more clever: <strong>download the data file only if the file isn’t already available in the current directory</strong>. This is particularly useful because the server is not very fast.</p>
-<p><strong>C.</strong> Extend this script to be even more clever: <strong>given a range of longitudes and latitudes, it should download all the files covering this area</strong>. For example, the range 9°W to 18°W and 44°N to 47°N would download 6 files. <strong>In order to avoid manual mistakes, warn the user by announcing the number of files that the command is going to download, and ask for confirmation before going on</strong> (by using the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function).</p>
+<p><strong>C.</strong> Extend this script to be even more clever: <strong>given a range of longitudes and latitudes, it should download all the files covering this area</strong>. For example, the range 9°E to 18°E and 44°N to 47°N would download 6 files. <strong>In order to avoid manual mistakes, warn the user by announcing the number of files that the command is going to download, and ask for confirmation before going on</strong> (by using the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function).</p>
 <p><em>Hint C1: the command should now be <code class="docutils literal notranslate"><span class="pre">%run</span> <span class="pre">download_srtm.py</span> <span class="pre">9</span> <span class="pre">44</span> <span class="pre">18</span> <span class="pre">47</span></code>.</em></p>
 <p><strong>D.</strong> Let’s add even more functionality to our script:</p>
 <p><strong>D1.</strong> <strong>print a message to the user announcing if the file was downloaded or was already on disk</strong></p>
