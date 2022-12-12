@@ -58,3 +58,6 @@ parts:
     chapters:
     - file: week_07/01-Package-structure
     - file: week_07/02-ClimVis
+  - caption: Week 08 - Code documentation
+    chapters:
+    - file: week_08/01-Documentation
