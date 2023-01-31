@@ -423,6 +423,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 11 - Object Oriented Programming III
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week_11/01-OOP-Part-3.html">
+   Object Oriented Programming: why?
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav></div>
@@ -855,11 +867,11 @@ Or a Cat? False
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_50035/349804252.py</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="nn">/tmp/ipykernel_16995/349804252.py</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Pet</span><span class="p">(</span><span class="s1">&#39;PetName&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">p</span><span class="o">.</span><span class="n">say_name_loudly</span><span class="p">()</span>  <span class="c1"># this raises an AttributeError</span>
 
-<span class="nn">/tmp/ipykernel_50035/1337416500.py</span> in <span class="ni">say_name_loudly</span><span class="nt">(self)</span>
+<span class="nn">/tmp/ipykernel_16995/1337416500.py</span> in <span class="ni">say_name_loudly</span><span class="nt">(self)</span>
 <span class="g g-Whitespace">     </span><span class="mi">14</span> 
 <span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="k">def</span> <span class="nf">say_name_loudly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">16</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
@@ -934,18 +946,18 @@ Or a Cat? False
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NotImplementedError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_50035/1884487588.py</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="nn">/tmp/ipykernel_16995/1884487588.py</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Pet</span><span class="p">(</span><span class="s1">&#39;PetName&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">p</span><span class="o">.</span><span class="n">say_name_loudly</span><span class="p">()</span>  <span class="c1"># this now raises a NotImplementedError</span>
 
-<span class="nn">/tmp/ipykernel_50035/1690547947.py</span> in <span class="ni">say_name_loudly</span><span class="nt">(self)</span>
+<span class="nn">/tmp/ipykernel_16995/1690547947.py</span> in <span class="ni">say_name_loudly</span><span class="nt">(self)</span>
 <span class="g g-Whitespace">     </span><span class="mi">20</span> 
 <span class="g g-Whitespace">     </span><span class="mi">21</span>     <span class="k">def</span> <span class="nf">say_name_loudly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">22</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 <span class="g g-Whitespace">     </span><span class="mi">23</span> 
 <span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="k">def</span> <span class="nf">do_trick_n_times</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">treats</span><span class="p">):</span>
 
-<span class="nn">/tmp/ipykernel_50035/1690547947.py</span> in <span class="ni">say_name</span><span class="nt">(self)</span>
+<span class="nn">/tmp/ipykernel_16995/1690547947.py</span> in <span class="ni">say_name</span><span class="nt">(self)</span>
 <span class="g g-Whitespace">     </span><span class="mi">14</span> 
 <span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="k">def</span> <span class="nf">say_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">16</span>         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;This method should be implemented by subclasses of Pet&#39;</span><span class="p">)</span>
