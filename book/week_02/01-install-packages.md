@@ -218,4 +218,4 @@ Congratulations! You are ready for the rest of the lecture.
 <label><input type="checkbox" id="week05_03" class="box"> I am able to create new conda environments, activate them, and switch between them.</input></label> 
 <label><input type="checkbox" id="week05_04" class="box"> I understand that packages installed with `mamba install ...` are always installed in the environment which is currently active. `(base)` is like any other environment: it is simply the default one. </input></label> 
 <label><input type="checkbox" id="week05_05" class="box"> I understand that using environments is beneficial on the long term, because it allows me to experiment with additional packages, without being afraid of breaking anything: **environments are just folders on my computer**!</input></label> 
-<label><input type="checkbox" id="week05_06" class="box"> I am ab;e to install new packages using `mamba`. I have installed numpy, scipy, and matplotlib.</input></label>    
+<label><input type="checkbox" id="week05_06" class="box"> I am able to install new packages using `mamba`. I have installed numpy, scipy, and matplotlib.</input></label>    
