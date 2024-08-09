@@ -722,18 +722,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">add_arrays</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -742,12 +730,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">add_arrays</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
-
-<span class="ne">NameError</span>: name &#39;add_arrays&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5, 7, 9])
 </pre></div>
 </div>
 </div>
@@ -761,18 +744,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;np&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -781,37 +752,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;timeit&#39;</span><span class="p">,</span> <span class="s1">&#39;add_lists(A, B)&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~/.mambaforge/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2480,</span> in <span class="ni">InteractiveShell.run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2478</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2479</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2480</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2482</span> <span class="c1"># The code below prevents the output from being displayed</span>
-<span class="g g-Whitespace">   </span><span class="mi">2483</span> <span class="c1"># when using magics with decorator @output_can_be_silenced</span>
-<span class="g g-Whitespace">   </span><span class="mi">2484</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2485</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
-
-<span class="nn">File ~/.mambaforge/lib/python3.10/site-packages/IPython/core/magics/execution.py:1185,</span> in <span class="ni">ExecutionMagics.timeit</span><span class="nt">(self, line, cell, local_ns)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1183</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1184</span>     <span class="n">number</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="n">index</span>
-<span class="ne">-&gt; </span><span class="mi">1185</span>     <span class="n">time_number</span> <span class="o">=</span> <span class="n">timer</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1186</span>     <span class="k">if</span> <span class="n">time_number</span> <span class="o">&gt;=</span> <span class="mf">0.2</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1187</span>         <span class="k">break</span>
-
-<span class="nn">File ~/.mambaforge/lib/python3.10/site-packages/IPython/core/magics/execution.py:173,</span> in <span class="ni">Timer.timeit</span><span class="nt">(self, number)</span>
-<span class="g g-Whitespace">    </span><span class="mi">171</span> <span class="n">gc</span><span class="o">.</span><span class="n">disable</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">172</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">173</span>     <span class="n">timing</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inner</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">timer</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span> <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>     <span class="k">if</span> <span class="n">gcold</span><span class="p">:</span>
-
-<span class="nn">File &lt;magic-timeit&gt;:1,</span> in <span class="ni">inner</span><span class="nt">(_it, _timer)</span>
-
-<span class="ne">NameError</span>: name &#39;A&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.33 μs ± 13.5 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -823,37 +764,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;timeit&#39;</span><span class="p">,</span> <span class="s1">&#39;add_arrays(A, B)&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~/.mambaforge/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2480,</span> in <span class="ni">InteractiveShell.run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2478</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2479</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2480</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2482</span> <span class="c1"># The code below prevents the output from being displayed</span>
-<span class="g g-Whitespace">   </span><span class="mi">2483</span> <span class="c1"># when using magics with decorator @output_can_be_silenced</span>
-<span class="g g-Whitespace">   </span><span class="mi">2484</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2485</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
-
-<span class="nn">File ~/.mambaforge/lib/python3.10/site-packages/IPython/core/magics/execution.py:1185,</span> in <span class="ni">ExecutionMagics.timeit</span><span class="nt">(self, line, cell, local_ns)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1183</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1184</span>     <span class="n">number</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="n">index</span>
-<span class="ne">-&gt; </span><span class="mi">1185</span>     <span class="n">time_number</span> <span class="o">=</span> <span class="n">timer</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1186</span>     <span class="k">if</span> <span class="n">time_number</span> <span class="o">&gt;=</span> <span class="mf">0.2</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1187</span>         <span class="k">break</span>
-
-<span class="nn">File ~/.mambaforge/lib/python3.10/site-packages/IPython/core/magics/execution.py:173,</span> in <span class="ni">Timer.timeit</span><span class="nt">(self, number)</span>
-<span class="g g-Whitespace">    </span><span class="mi">171</span> <span class="n">gc</span><span class="o">.</span><span class="n">disable</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">172</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">173</span>     <span class="n">timing</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inner</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">timer</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span> <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>     <span class="k">if</span> <span class="n">gcold</span><span class="p">:</span>
-
-<span class="nn">File &lt;magic-timeit&gt;:1,</span> in <span class="ni">inner</span><span class="nt">(_it, _timer)</span>
-
-<span class="ne">NameError</span>: name &#39;add_arrays&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>422 ns ± 1.56 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -900,11 +811,15 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">UFuncTypeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">add_arrays</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">])</span>  <span class="c1"># raises a TypeError</span>
 
-<span class="ne">NameError</span>: name &#39;add_arrays&#39; is not defined
+<span class="nn">Cell In[11], line 4,</span> in <span class="ni">add_arrays</span><span class="nt">(A, B)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">add_arrays</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">4</span>     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+
+<span class="ne">UFuncTypeError</span>: ufunc &#39;add&#39; did not contain a loop with signature matching types (dtype(&#39;&lt;U21&#39;), dtype(&#39;&lt;U21&#39;)) -&gt; None
 </pre></div>
 </div>
 </div>

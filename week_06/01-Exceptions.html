@@ -860,14 +860,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">a</span> <span class="o">/</span> <span class="n">a</span>  <span class="c1"># issues a warning</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/29/f4w56zjd1c1b_gdh_b7bjs3c0000gq/T/ipykernel_11081/2968769965.py:4: RuntimeWarning: invalid value encountered in divide
+  a / a  # issues a warning
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([nan,  1.,  1.,  1.,  1.,  1.,  1.,  1.,  1.,  1.])
 </pre></div>
 </div>
 </div>
@@ -889,15 +886,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">a</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">b</span>
-
-<span class="ne">NameError</span>: name &#39;a&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([nan,  1.,  1.,  1.,  1.,  1.,  1.,  1.,  1.,  1.])
 </pre></div>
 </div>
 </div>
@@ -918,13 +907,13 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">RuntimeWarning</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">5</span>     <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">a</span>
 
-<span class="ne">NameError</span>: name &#39;a&#39; is not defined
+<span class="ne">RuntimeWarning</span>: invalid value encountered in divide
 </pre></div>
 </div>
 </div>
@@ -946,12 +935,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.</span><span class="o">**</span><span class="mi">100</span><span class="p">])</span><span class="o">**</span><span class="mi">100</span>
-
-<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/29/f4w56zjd1c1b_gdh_b7bjs3c0000gq/T/ipykernel_11081/3776166511.py:1: RuntimeWarning: overflow encountered in power
+  np.array([2.**100])**100
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([inf])
 </pre></div>
 </div>
 </div>
@@ -968,16 +956,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="s2">&quot;invalid value encountered&quot;</span><span class="p">,</span> <span class="ne">RuntimeWarning</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Divide by zero is ignored</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">a</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># But overflow is not</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.</span><span class="o">**</span><span class="mi">100</span><span class="p">])</span><span class="o">**</span><span class="mi">100</span>
-
-<span class="ne">NameError</span>: name &#39;a&#39; is not defined
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/29/f4w56zjd1c1b_gdh_b7bjs3c0000gq/T/ipykernel_11081/3074648172.py:6: RuntimeWarning: overflow encountered in power
+  np.array([2.**100])**100
 </pre></div>
 </div>
 </div>

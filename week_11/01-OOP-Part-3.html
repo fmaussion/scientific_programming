@@ -602,18 +602,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">da</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;xarray&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -622,12 +610,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">da</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;da&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;T&#39;, &#39;_HANDLED_TYPES&#39;, &#39;__abs__&#39;, &#39;__add__&#39;, &#39;__and__&#39;, &#39;__annotations__&#39;, &#39;__array__&#39;, &#39;__array_priority__&#39;, &#39;__array_ufunc__&#39;, &#39;__array_wrap__&#39;, &#39;__bool__&#39;, &#39;__class__&#39;, &#39;__complex__&#39;, &#39;__contains__&#39;, &#39;__copy__&#39;, &#39;__dask_graph__&#39;, &#39;__dask_keys__&#39;, &#39;__dask_layers__&#39;, &#39;__dask_optimize__&#39;, &#39;__dask_postcompute__&#39;, &#39;__dask_postpersist__&#39;, &#39;__dask_scheduler__&#39;, &#39;__dask_tokenize__&#39;, &#39;__deepcopy__&#39;, &#39;__delattr__&#39;, &#39;__delitem__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;, &#39;__enter__&#39;, &#39;__eq__&#39;, &#39;__exit__&#39;, &#39;__float__&#39;, &#39;__floordiv__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattr__&#39;, &#39;__getattribute__&#39;, &#39;__getitem__&#39;, &#39;__getstate__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__iadd__&#39;, &#39;__iand__&#39;, &#39;__ifloordiv__&#39;, &#39;__ilshift__&#39;, &#39;__imod__&#39;, &#39;__imul__&#39;, &#39;__init__&#39;, &#39;__init_subclass__&#39;, &#39;__int__&#39;, &#39;__invert__&#39;, &#39;__ior__&#39;, &#39;__ipow__&#39;, &#39;__irshift__&#39;, &#39;__isub__&#39;, &#39;__iter__&#39;, &#39;__itruediv__&#39;, &#39;__ixor__&#39;, &#39;__le__&#39;, &#39;__len__&#39;, &#39;__lshift__&#39;, &#39;__lt__&#39;, &#39;__matmul__&#39;, &#39;__mod__&#39;, &#39;__module__&#39;, &#39;__mul__&#39;, &#39;__ne__&#39;, &#39;__neg__&#39;, &#39;__new__&#39;, &#39;__or__&#39;, &#39;__pos__&#39;, &#39;__pow__&#39;, &#39;__radd__&#39;, &#39;__rand__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__rfloordiv__&#39;, &#39;__rmatmul__&#39;, &#39;__rmod__&#39;, &#39;__rmul__&#39;, &#39;__ror__&#39;, &#39;__rpow__&#39;, &#39;__rshift__&#39;, &#39;__rsub__&#39;, &#39;__rtruediv__&#39;, &#39;__rxor__&#39;, &#39;__setattr__&#39;, &#39;__setitem__&#39;, &#39;__sizeof__&#39;, &#39;__slots__&#39;, &#39;__str__&#39;, &#39;__sub__&#39;, &#39;__subclasshook__&#39;, &#39;__truediv__&#39;, &#39;__weakref__&#39;, &#39;__xor__&#39;, &#39;_all_compat&#39;, &#39;_attr_sources&#39;, &#39;_binary_op&#39;, &#39;_cache&#39;, &#39;_calc_assign_results&#39;, &#39;_close&#39;, &#39;_construct_direct&#39;, &#39;_coords&#39;, &#39;_copy&#39;, &#39;_copy_attrs_from&#39;, &#39;_cum_extra_args_docstring&#39;, &#39;_dask_finalize&#39;, &#39;_from_temp_dataset&#39;, &#39;_get_axis_num&#39;, &#39;_getitem_coord&#39;, &#39;_in_memory&#39;, &#39;_indexes&#39;, &#39;_inplace_binary_op&#39;, &#39;_ipython_key_completions_&#39;, &#39;_item_key_to_dict&#39;, &#39;_item_sources&#39;, &#39;_iter&#39;, &#39;_name&#39;, &#39;_overwrite_indexes&#39;, &#39;_reduce_extra_args_docstring&#39;, &#39;_reduce_method&#39;, &#39;_reindex_callback&#39;, &#39;_replace&#39;, &#39;_replace_maybe_drop_dims&#39;, &#39;_repr_html_&#39;, &#39;_resample&#39;, &#39;_result_name&#39;, &#39;_setattr_dict&#39;, &#39;_title_for_slice&#39;, &#39;_to_dataset_split&#39;, &#39;_to_dataset_whole&#39;, &#39;_to_index&#39;, &#39;_to_temp_dataset&#39;, &#39;_unary_op&#39;, &#39;_variable&#39;, &#39;all&#39;, &#39;any&#39;, &#39;argmax&#39;, &#39;argmin&#39;, &#39;argsort&#39;, &#39;as_numpy&#39;, &#39;assign_attrs&#39;, &#39;assign_coords&#39;, &#39;astype&#39;, &#39;attrs&#39;, &#39;bfill&#39;, &#39;broadcast_equals&#39;, &#39;broadcast_like&#39;, &#39;chunk&#39;, &#39;chunks&#39;, &#39;chunksizes&#39;, &#39;clip&#39;, &#39;close&#39;, &#39;coarsen&#39;, &#39;combine_first&#39;, &#39;compute&#39;, &#39;conj&#39;, &#39;conjugate&#39;, &#39;convert_calendar&#39;, &#39;coords&#39;, &#39;copy&#39;, &#39;count&#39;, &#39;cumprod&#39;, &#39;cumsum&#39;, &#39;cumulative&#39;, &#39;cumulative_integrate&#39;, &#39;curvefit&#39;, &#39;data&#39;, &#39;diff&#39;, &#39;differentiate&#39;, &#39;dim_0&#39;, &#39;dims&#39;, &#39;dot&#39;, &#39;drop&#39;, &#39;drop_duplicates&#39;, &#39;drop_encoding&#39;, &#39;drop_indexes&#39;, &#39;drop_isel&#39;, &#39;drop_sel&#39;, &#39;drop_vars&#39;, &#39;dropna&#39;, &#39;dt&#39;, &#39;dtype&#39;, &#39;encoding&#39;, &#39;equals&#39;, &#39;expand_dims&#39;, &#39;ffill&#39;, &#39;fillna&#39;, &#39;from_dict&#39;, &#39;from_iris&#39;, &#39;from_series&#39;, &#39;get_axis_num&#39;, &#39;get_index&#39;, &#39;groupby&#39;, &#39;groupby_bins&#39;, &#39;head&#39;, &#39;identical&#39;, &#39;idxmax&#39;, &#39;idxmin&#39;, &#39;imag&#39;, &#39;indexes&#39;, &#39;integrate&#39;, &#39;interp&#39;, &#39;interp_calendar&#39;, &#39;interp_like&#39;, &#39;interpolate_na&#39;, &#39;isel&#39;, &#39;isin&#39;, &#39;isnull&#39;, &#39;item&#39;, &#39;load&#39;, &#39;loc&#39;, &#39;map_blocks&#39;, &#39;max&#39;, &#39;mean&#39;, &#39;median&#39;, &#39;min&#39;, &#39;name&#39;, &#39;nbytes&#39;, &#39;ndim&#39;, &#39;notnull&#39;, &#39;pad&#39;, &#39;persist&#39;, &#39;pipe&#39;, &#39;plot&#39;, &#39;polyfit&#39;, &#39;prod&#39;, &#39;quantile&#39;, &#39;query&#39;, &#39;rank&#39;, &#39;real&#39;, &#39;reduce&#39;, &#39;reindex&#39;, &#39;reindex_like&#39;, &#39;rename&#39;, &#39;reorder_levels&#39;, &#39;resample&#39;, &#39;reset_coords&#39;, &#39;reset_encoding&#39;, &#39;reset_index&#39;, &#39;roll&#39;, &#39;rolling&#39;, &#39;rolling_exp&#39;, &#39;round&#39;, &#39;searchsorted&#39;, &#39;sel&#39;, &#39;set_close&#39;, &#39;set_index&#39;, &#39;set_xindex&#39;, &#39;shape&#39;, &#39;shift&#39;, &#39;size&#39;, &#39;sizes&#39;, &#39;sortby&#39;, &#39;squeeze&#39;, &#39;stack&#39;, &#39;std&#39;, &#39;str&#39;, &#39;sum&#39;, &#39;swap_dims&#39;, &#39;tail&#39;, &#39;thin&#39;, &#39;to_dask_dataframe&#39;, &#39;to_dataframe&#39;, &#39;to_dataset&#39;, &#39;to_dict&#39;, &#39;to_index&#39;, &#39;to_iris&#39;, &#39;to_masked_array&#39;, &#39;to_netcdf&#39;, &#39;to_numpy&#39;, &#39;to_pandas&#39;, &#39;to_series&#39;, &#39;to_unstacked_dataset&#39;, &#39;to_zarr&#39;, &#39;transpose&#39;, &#39;unify_chunks&#39;, &#39;unstack&#39;, &#39;values&#39;, &#39;var&#39;, &#39;variable&#39;, &#39;weighted&#39;, &#39;where&#39;, &#39;xindexes&#39;]
 </pre></div>
 </div>
 </div>
@@ -640,12 +623,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">da</span><span class="o">.</span><span class="n">values</span>
-
-<span class="ne">NameError</span>: name &#39;da&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3])
 </pre></div>
 </div>
 </div>
@@ -658,12 +636,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">da</span><span class="o">.</span><span class="n">_in_memory</span>
-
-<span class="ne">NameError</span>: name &#39;da&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -724,12 +697,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4, 6])
 </pre></div>
 </div>
 </div>
@@ -810,12 +778,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-
-<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3])
 </pre></div>
 </div>
 </div>

@@ -617,7 +617,7 @@ document.write(`
 <span class="nn">----&gt; 2     print(&#39;The number N</span> in <span class="ni">the function is: {}&#39;.format</span><span class="nt">(N))</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">N</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="ne">UnboundLocalError</span>: local variable &#39;N&#39; referenced before assignment
+<span class="ne">UnboundLocalError</span>: cannot access local variable &#39;N&#39; where it is not associated with a value
 </pre></div>
 </div>
 </div>
@@ -672,14 +672,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.123456789</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.12345679]
+[1.1235]
 </pre></div>
 </div>
 </div>
@@ -725,14 +719,35 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793 from the math module
+3.141592653589793 from the numpy package
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">math</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">scipy</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="nn">File ~/.mambaforge/envs/oggm_env/lib/python3.12/site-packages/scipy/__init__.py:137,</span> in <span class="ni">__getattr__</span><span class="nt">(name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">137</span>     <span class="k">return</span> <span class="nb">globals</span><span class="p">()[</span><span class="n">name</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span> <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+<span class="ne">KeyError</span>: &#39;pi&#39;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="s1">&#39;from the math module&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="s1">&#39;from the numpy package&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="nb">print</span><span class="p">(</span><span class="n">scipy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="s1">&#39;from the scipy package&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/.mambaforge/envs/oggm_env/lib/python3.12/site-packages/scipy/__init__.py:139,</span> in <span class="ni">__getattr__</span><span class="nt">(name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span>     <span class="k">return</span> <span class="nb">globals</span><span class="p">()[</span><span class="n">name</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span> <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">139</span>     <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span>         <span class="sa">f</span><span class="s2">&quot;Module &#39;scipy&#39; has no attribute &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span>     <span class="p">)</span>
+
+<span class="ne">AttributeError</span>: Module &#39;scipy&#39; has no attribute &#39;pi&#39;
 </pre></div>
 </div>
 </div>
@@ -790,13 +805,7 @@ detected by pytest.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">numpy</span><span class="o">.</span><span class="vm">__file__</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/uu23343/.mambaforge/envs/oggm_env/lib/python3.12/site-packages/numpy/__init__.py&#39;
 </pre></div>
 </div>
 </div>

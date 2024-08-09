@@ -750,7 +750,18 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zsh:1: command not found: pytest
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">============================= test session starts ==============================</span>
+platform darwin -- Python 3.12.4, pytest-8.2.2, pluggy-1.5.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matplotlib: 3.8.4
+Freetype: 2.12.1
+rootdir: /Users/uu23343/Library/CloudStorage/Dropbox/HomeDocs/git/scientific_programming/book/week_06
+plugins: mpl-0.17.0, anyio-4.4.0
+<span class=" -Color -Color-Bold">collecting ... </span>
+<span class=" -Color -Color-Bold">collected 0 items                                                              </span>
+
+<span class=" -Color -Color-Yellow">============================ no tests ran in 0.18s =============================</span>
 </pre></div>
 </div>
 </div>
@@ -833,18 +844,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Make f2c numpy friendly</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">):</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>And now the test:</p>
 <div class="cell docutils container">
@@ -856,19 +855,6 @@ document.write(`
 <span class="n">result</span> <span class="o">=</span> <span class="n">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">)</span>
 <span class="c1"># Assert</span>
 <span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_allclose</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">expected</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Arrange</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">tf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">32</span><span class="p">,</span> <span class="mi">212</span><span class="p">,</span> <span class="mi">9941</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">expected</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">5505</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Act</span>
-
-<span class="ne">NameError</span>: name &#39;np&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -885,19 +871,6 @@ document.write(`
 <span class="n">result</span> <span class="o">=</span> <span class="n">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">)</span>
 <span class="c1"># Assert</span>
 <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Arrange</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">tf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">32</span><span class="p">,</span> <span class="mi">212</span><span class="p">,</span> <span class="mi">9941</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Act</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">result</span> <span class="o">=</span> <span class="n">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;np&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -925,19 +898,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Arrange</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">tf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">32</span><span class="p">,</span> <span class="mi">212</span><span class="p">,</span> <span class="mi">9941</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Act</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">result</span> <span class="o">=</span> <span class="n">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;np&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="testing-that-a-function-raises-exceptions">
@@ -951,35 +911,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pytest</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">f2c</span><span class="p">(</span><span class="o">-</span><span class="mi">3000</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pytest&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Or, even more precise:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">match</span><span class="o">=</span><span class="s2">&quot;Input temperature below absolute zero&quot;</span><span class="p">):</span>
     <span class="n">f2c</span><span class="p">(</span><span class="o">-</span><span class="mi">3000</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">match</span><span class="o">=</span><span class="s2">&quot;Input temperature below absolute zero&quot;</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">f2c</span><span class="p">(</span><span class="o">-</span><span class="mi">3000</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;pytest&#39; is not defined
 </pre></div>
 </div>
 </div>
