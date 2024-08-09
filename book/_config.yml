@@ -26,12 +26,12 @@ launch_buttons:
   notebook_interface: "jupyterlab"
   binderhub_url: "https://mybinder.org"
 html:
-  use_repository_button: true
-  use_issues_button: true
-  use_edit_page_button: true
   analytics:
     google_analytics_id: G-5BGML8VW02
     plausible_analytics_domain: fabienmaussion.info
+  use_repository_button: true
+  use_issues_button: true
+  use_edit_page_button: true
   toc_title: "On this page"
   extra_footer: |
     <p>
@@ -45,6 +45,9 @@ html:
 sphinx:
   config:
     html_show_copyright: false
+    html_last_updated_fmt: '%b %d, %Y'
+    html_js_files:
+    - ['https://plausible.io/js/script.js', {'defer': 'defer', 'data-domain': 'fabienmaussion.info'}]
   extra_extensions:
     - sphinx_exercise
 execute:
