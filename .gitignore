@@ -2,6 +2,7 @@
 html/index.html
 .idea
 book/_build/
+.DS_Store
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

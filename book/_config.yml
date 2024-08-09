@@ -7,7 +7,7 @@
 # Book settings
 title: Scientific Programming  # The title of the book. Will be placed in the left navbar.
 author: Fabien Maussion  # The author of the book
-copyright: "2018-2022"  # Copyright year to be placed in the footer
+copyright: "2018-2024"  # Copyright year to be placed in the footer
 logo: img/logo.png  # A path to the book logo
 repository:
   url: https://github.com/fmaussion/scientific_programming
@@ -29,7 +29,9 @@ html:
   use_repository_button: true
   use_issues_button: true
   use_edit_page_button: true
-  google_analytics_id: UA-88391345-1
+  analytics:
+    google_analytics_id: G-5BGML8VW02
+    plausible_analytics_domain: fabienmaussion.info
   toc_title: "On this page"
   extra_footer: |
     <p>
@@ -38,7 +40,7 @@ html:
     </a>
     These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International (CC BY 4.0) license</a>.
     <br>
-    &copy; Copyright 2018-2022.
+    &copy; Copyright 2018-2024.
     </p>
 sphinx:
   config:
@@ -46,6 +48,6 @@ sphinx:
   extra_extensions:
     - sphinx_exercise
 execute:
-  execute_notebooks: auto
+  execute_notebooks: force
   allow_errors: true
 only_build_toc_files: true
