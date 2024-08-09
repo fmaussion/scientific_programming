@@ -1,121 +1,177 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Testing your code &#8212; Scientific Programming</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'week_06/02-Testing';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Assignment #06: exceptions and testing" href="Assignment-06.html" />
     <link rel="prev" title="Errors, Exceptions and Warnings" href="01-Exceptions.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-88391345-1', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../welcome.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Scientific Programming</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Scientific Programming - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Scientific Programming - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -124,879 +180,384 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Introduction
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../syllabus.html">
-   Syllabus
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../faq.html">
-   Frequently Asked  Questions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../references.html">
-   External resources
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../help.html">
-   Getting help
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked  Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">External resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help.html">Getting help</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 01 - Terminal &amp; Python primer
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 01 - Terminal &amp; Python primer</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../week_01/01-Installation.html">
-   Installing Python on your computer
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../week_01/01a-Details-Windows.html">
-     For windows users: the difference between the command prompt, the miniforge prompt, and the python interpreter
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../week_01/01b-Details-Linux.html">
-     For linux/mac users: what did
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       mambaforge
-      </span>
-     </code>
-     do to your terminal?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../week_01/02-Terminal.html">
-   Basic terminal commands and navigation
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../week_01/02a-Windows.html">
-     A Windows command prompt primer
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../week_01/02b-Linux.html">
-     An introduction to the Linux terminal
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_01/03-Installation-uni.html">
-   Installing Python at the University of Innsbruck
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_01/04-Getting-Started.html">
-   Getting started with Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_01/Assignment-01.html">
-   Assignment #01
-  </a>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_01/01-Installation.html">Installing Python on your computer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week_01/01a-Details-Windows.html">For windows users: the difference between the command prompt, the miniforge prompt, and the python interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_01/01b-Details-Linux.html">For linux/mac users: what did <code class="docutils literal notranslate"><span class="pre">mambaforge</span></code> do to your terminal?</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 02 - Python language fundamentals
- </span>
-</p>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_01/02-Terminal.html">Basic terminal commands and navigation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week_01/02a-Windows.html">A Windows command prompt primer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_01/02b-Linux.html">An introduction to the Linux terminal</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_01/03-Installation-uni.html">Installing Python at the University of Innsbruck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_01/04-Getting-Started.html">Getting started with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_01/Assignment-01.html">Assignment #01</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 02 - Python language fundamentals</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_02/01-install-packages.html">
-   Installing python packages
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_02/02-ipython-spyder.html">
-   Scientific development environment: ipython and spyder
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_02/03-Language-Fundamentals.html">
-   Language fundamentals
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_02/Assignment-02.html">
-   Assignment #02
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_02/01-install-packages.html">Installing python packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_02/02-ipython-spyder.html">Scientific development environment: ipython and spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_02/03-Language-Fundamentals.html">Language fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_02/Assignment-02.html">Assignment #02</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 03 - Variables scopes, modules, strings, good practices
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 03 - Variables scopes, modules, strings, good practices</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_03/01-Import-Scopes.html">
-   Modules, import mechanism, namespaces, scope(s)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_03/02-Strings-Paths.html">
-   String formatting and file paths
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_03/03-Tips-and-Tricks.html">
-   Tips and tricks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_03/04-Good-practices.html">
-   Good practices, programming style and conventions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_03/Assignment-03.html">
-   Assignment #03
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_03/01-Import-Scopes.html">Modules, import mechanism, namespaces, scope(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_03/02-Strings-Paths.html">String formatting and file paths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_03/03-Tips-and-Tricks.html">Tips and tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_03/04-Good-practices.html">Good practices, programming style and conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_03/Assignment-03.html">Assignment #03</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 04 - Floating point arithmetics, Numpy basics
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 04 - Floating point arithmetics, Numpy basics</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_04/01-Why-Numpy.html">
-   Introduction to numpy: why does numpy exist?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_04/02-Numbers.html">
-   Number representation in computers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_04/Assignment-04.html">
-   Assignment #04
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_04/01-Why-Numpy.html">Introduction to numpy: why does numpy exist?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_04/02-Numbers.html">Number representation in computers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_04/Assignment-04.html">Assignment #04</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 05 - Scientific Python
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 05 - Scientific Python</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_05/01-Numpy-ndarrays.html">
-   Arrays in numpy: indexing, ufuncs, broadcasting
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_05/02-Scientific-Python.html">
-   The scientific python stack
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_05/Assignment-05.html">
-   Assignment #05
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_05/01-Numpy-ndarrays.html">Arrays in numpy: indexing, ufuncs, broadcasting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_05/02-Scientific-Python.html">The scientific python stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_05/Assignment-05.html">Assignment #05</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Midterm exam
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Midterm exam</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../midterm.html">
-   Midterm exam
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../midterm.html">Midterm exam</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 06 - Testing
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 06 - Testing</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="01-Exceptions.html">
-   Errors, Exceptions and Warnings
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Testing your code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Assignment-06.html">
-   Assignment #06: exceptions and testing
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="01-Exceptions.html">Errors, Exceptions and Warnings</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Testing your code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Assignment-06.html">Assignment #06: exceptions and testing</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 07 - Python Packages and ClimVis project
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 07 - Python Packages and ClimVis project</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_07/01-Package-structure.html">
-   Structure of a python package
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_07/02-ClimVis.html">
-   Term project: the ClimVis package
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_07/01-Package-structure.html">Structure of a python package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_07/02-ClimVis.html">Term project: the ClimVis package</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 08 - Code documentation
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 08 - Code documentation</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_08/01-Documentation.html">
-   Documenting your code
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_08/01-Documentation.html">Documenting your code</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 09 - Object Oriented Programming I
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 09 - Object Oriented Programming I</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_09/01-OOP-Part-1.html">
-   Object Oriented Programming: introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_09/Assignment-07.html">
-   Assignment #07: Pydemic
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_09/01-OOP-Part-1.html">Object Oriented Programming: introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_09/Assignment-07.html">Assignment #07: Pydemic</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 10 - Object Oriented Programming II
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 10 - Object Oriented Programming II</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_10/01-OOP-Part-2.html">
-   Object Oriented Programming: inheritance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_10/Assignment-08.html">
-   Assignment #08: Pydemic - second wave
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_10/01-OOP-Part-2.html">Object Oriented Programming: inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_10/Assignment-08.html">Assignment #08: Pydemic - second wave</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 11 - Object Oriented Programming III
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 11 - Object Oriented Programming III</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_11/01-OOP-Part-3.html">
-   Object Oriented Programming: why?
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_11/01-OOP-Part-3.html">Object Oriented Programming: why?</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_06/02-Testing.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_06/02-Testing.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/fmaussion/scientific_programming" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_06/02-Testing.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_06/02-Testing.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/week_06/02-Testing.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/fmaussion/scientific_programming"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_06/02-Testing.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_06/02-Testing.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/week_06/02-Testing.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </button>
-
-      </li>
+</div></div>
       
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
+    </div>
   
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-testing">
-   Why testing?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#scientific-code-is-used-to-take-important-decisions">
-     Scientific code is used to take important decisions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#trial-and-error-development-practices-hide-important-bugs">
-     “Trial and error” development practices hide important bugs
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#code-that-worked-once-might-not-work-a-year-later">
-     Code that worked once might not work a year later
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#untested-s-science-s-code-is-bad-s-science-s-code">
-     Untested
-     <s>
-      science
-     </s>
-     code is “bad
-     <s>
-      science
-     </s>
-     code”
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#writing-tests-a-first-example">
-   Writing tests: a first example
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#assertions-and-exceptions">
-     Assertions and exceptions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-first-independent-test">
-     A first independent test
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pytest">
-   Pytest
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#usage">
-     Usage
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#assertions-in-pytest">
-     Assertions in pytest
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#running-pytest-from-ipython">
-     Running pytest from ipython
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#software-testing-methods">
-   Software testing methods
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#unit-tests">
-     Unit tests
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#integration-tests">
-     Integration tests
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#verification-tests">
-     Verification tests
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#and-so-on">
-     And so on…
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#designing-and-writing-tests">
-   Designing and writing tests
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-aaa-concept">
-     The “AAA”  concept
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#testing-for-equality">
-     Testing for equality
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#testing-for-numpy-arrays">
-     Testing for numpy arrays
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#testing-the-validity-of-the-output">
-     Testing the validity of the output
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#testing-the-interface-of-a-function">
-     Testing the interface of a function
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#testing-that-a-function-raises-exceptions">
-     Testing that a function raises exceptions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#final-remarks">
-   Final remarks
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#take-home-points">
-   Take home points
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Testing your code</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-testing">
-   Why testing?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#scientific-code-is-used-to-take-important-decisions">
-     Scientific code is used to take important decisions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#trial-and-error-development-practices-hide-important-bugs">
-     “Trial and error” development practices hide important bugs
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#code-that-worked-once-might-not-work-a-year-later">
-     Code that worked once might not work a year later
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#untested-s-science-s-code-is-bad-s-science-s-code">
-     Untested
-     <s>
-      science
-     </s>
-     code is “bad
-     <s>
-      science
-     </s>
-     code”
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#writing-tests-a-first-example">
-   Writing tests: a first example
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#assertions-and-exceptions">
-     Assertions and exceptions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-first-independent-test">
-     A first independent test
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pytest">
-   Pytest
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#usage">
-     Usage
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#assertions-in-pytest">
-     Assertions in pytest
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#running-pytest-from-ipython">
-     Running pytest from ipython
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#software-testing-methods">
-   Software testing methods
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#unit-tests">
-     Unit tests
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#integration-tests">
-     Integration tests
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#verification-tests">
-     Verification tests
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#and-so-on">
-     And so on…
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#designing-and-writing-tests">
-   Designing and writing tests
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-aaa-concept">
-     The “AAA”  concept
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#testing-for-equality">
-     Testing for equality
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#testing-for-numpy-arrays">
-     Testing for numpy arrays
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#testing-the-validity-of-the-output">
-     Testing the validity of the output
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#testing-the-interface-of-a-function">
-     Testing the interface of a function
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#testing-that-a-function-raises-exceptions">
-     Testing that a function raises exceptions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#final-remarks">
-   Final remarks
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#take-home-points">
-   Take home points
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Testing your code</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-testing">Why testing?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-code-is-used-to-take-important-decisions">Scientific code is used to take important decisions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trial-and-error-development-practices-hide-important-bugs">“Trial and error” development practices hide important bugs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-that-worked-once-might-not-work-a-year-later">Code that worked once might not work a year later</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#untested-science-code-is-bad-science-code">Untested <s>science</s> code is “bad <s>science</s> code”</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-tests-a-first-example">Writing tests: a first example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assertions-and-exceptions">Assertions and exceptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-independent-test">A first independent test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pytest">Pytest</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assertions-in-pytest">Assertions in pytest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-pytest-from-ipython">Running pytest from ipython</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-testing-methods">Software testing methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-tests">Unit tests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-tests">Integration tests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verification-tests">Verification tests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and-so-on">And so on…</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#designing-and-writing-tests">Designing and writing tests</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-aaa-concept">The “AAA”  concept</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-equality">Testing for equality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-numpy-arrays">Testing for numpy arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-the-validity-of-the-output">Testing the validity of the output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-the-interface-of-a-function">Testing the interface of a function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-that-a-function-raises-exceptions">Testing that a function raises exceptions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-remarks">Final remarks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-home-points">Take home points</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="testing-your-code">
-<h1>Testing your code<a class="headerlink" href="#testing-your-code" title="Permalink to this headline">#</a></h1>
+<h1>Testing your code<a class="headerlink" href="#testing-your-code" title="Link to this heading">#</a></h1>
 <p>In this chapter we are going to learn how to check that the code you write is working as expected. This will be achieved with the introduction of testing tools which will help you to formalize and organize your tests, as well as with the definition of new concepts: unit testing and test driven development.</p>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>Nobody can write bug-free code on the first try. Believe me on that one, <strong>nobody</strong> can. Therefore, every programmer constantly needs to test that newly written code is working as expected. Very often, scientists without formal training in computer sciences and programming will test their code “ad-hoc”, i.e. with trial-and-error approaches on an interactive console or with print statements throughout the code. While this is a quick way to get the job done at first sight, it is in fact a dangerous, non-scientific practice. Today and throughout the lecture I will often remind you of a simple rule:</p>
 <p><strong>Always write tests for your code.</strong></p>
 <p>Oh, sorry, I actually meant to say this louder:</p>
@@ -1011,9 +572,9 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="why-testing">
-<h2>Why testing?<a class="headerlink" href="#why-testing" title="Permalink to this headline">#</a></h2>
+<h2>Why testing?<a class="headerlink" href="#why-testing" title="Link to this heading">#</a></h2>
 <section id="scientific-code-is-used-to-take-important-decisions">
-<h3>Scientific code is used to take important decisions<a class="headerlink" href="#scientific-code-is-used-to-take-important-decisions" title="Permalink to this headline">#</a></h3>
+<h3>Scientific code is used to take important decisions<a class="headerlink" href="#scientific-code-is-used-to-take-important-decisions" title="Link to this heading">#</a></h3>
 <p>Scientists are writing highly influencial code. Our climate and weather models are guiding political decisions, and, more recently, epidemiological models were <a class="reference external" href="https://www.nature.com/articles/d41586-020-01003-6">at the core of the decision making process that drove us into lockdown</a>.</p>
 <p>As scientists, we always have to provide results which are correct <em>to the best of our knowledge</em>. In recent years, erroneous software code led to several “scandals” in the scientific world. For example, in 2006 scientists <a class="reference external" href="http://science.sciencemag.org/content/314/5807/1856">had to retract five of their papers</a> after discovering that their results were based on erroneous computations. “As a result of a bug in a Perl script”, other authors <a class="reference external" href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.0030158">retracted a paper in PLoS</a>. In <a class="reference external" href="https://www.vice.com/en_us/article/zmjwda/a-code-glitch-may-have-caused-errors-in-more-than-100-published-studies">this article</a> from October 2019, Vice reports how a short script that produces different results on different operating systems may have caused widespread errors in peer-reviewed studies.</p>
 <p>All these examples tell us an important message: the challenge of <a class="reference external" href="https://www.nature.com/collections/prbfkwmwvz/">(ir)reproducible research</a> can only be tackled with <strong>openly tested scientific software</strong>.</p>
@@ -1021,7 +582,7 @@ title="Print to PDF"
 <a class="reference internal image-reference" href="../_images/10_errors_in_science.png"><img alt="../_images/10_errors_in_science.png" src="../_images/10_errors_in_science.png" style="width: 50%;" /></a>
 </section>
 <section id="trial-and-error-development-practices-hide-important-bugs">
-<h3>“Trial and error” development practices hide important bugs<a class="headerlink" href="#trial-and-error-development-practices-hide-important-bugs" title="Permalink to this headline">#</a></h3>
+<h3>“Trial and error” development practices hide important bugs<a class="headerlink" href="#trial-and-error-development-practices-hide-important-bugs" title="Link to this heading">#</a></h3>
 <p>Checking that “the curve looks okay” or that “the relative humidity values seem realistic” is not a quantitative test: it is error prone and possibly wrong. Testing must be achieved in a formal and quantitative way:</p>
 <ul class="simple">
 <li><p>are the results of my code providing correct results as provided by an external source or an independent computation?</p></li>
@@ -1031,7 +592,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="code-that-worked-once-might-not-work-a-year-later">
-<h3>Code that worked once might not work a year later<a class="headerlink" href="#code-that-worked-once-might-not-work-a-year-later" title="Permalink to this headline">#</a></h3>
+<h3>Code that worked once might not work a year later<a class="headerlink" href="#code-that-worked-once-might-not-work-a-year-later" title="Link to this heading">#</a></h3>
 <p>This is a problem often overseen by scientists: once written and tested “ad-hoc”, a script will be used and sometimes shared with colleagues. However, the same code might provide different results at a later time, as shown in these examples:</p>
 <ul class="simple">
 <li><p>a change of computer leads to numerical accuracy errors which didn’t happen before</p></li>
@@ -1042,21 +603,20 @@ title="Print to PDF"
 </ul>
 <p>In all these cases, formal tests would have helped to isolate the problems at an early stage and avoid late and tedious debugging. Therefore, tests are sometimes called “regression tests”: once a test is written and works, it serves the purpose to make sure that future changes won’t break things. Tests should be re-run each time something is changed in the code or when third-party packages are updated.</p>
 </section>
-<section id="untested-s-science-s-code-is-bad-s-science-s-code">
-<h3>Untested <s>science</s> code is “bad <s>science</s> code”<a class="headerlink" href="#untested-s-science-s-code-is-bad-s-science-s-code" title="Permalink to this headline">#</a></h3>
+<section id="untested-science-code-is-bad-science-code">
+<h3>Untested <s>science</s> code is “bad <s>science</s> code”<a class="headerlink" href="#untested-science-code-is-bad-science-code" title="Link to this heading">#</a></h3>
 <p>You would never use data from an uncalibrated temperature sensor, would you? <strong>Scientific code is no different: never trust untested code</strong>. Don’t trust tested code either (!), but untested code is much worse. When using new scripts/packages for your work, always check that these come with good tests for the functionality you are using.</p>
 </section>
 </section>
 <section id="writing-tests-a-first-example">
-<h2>Writing tests: a first example<a class="headerlink" href="#writing-tests-a-first-example" title="Permalink to this headline">#</a></h2>
+<h2>Writing tests: a first example<a class="headerlink" href="#writing-tests-a-first-example" title="Link to this heading">#</a></h2>
 <section id="assertions-and-exceptions">
-<h3>Assertions and exceptions<a class="headerlink" href="#assertions-and-exceptions" title="Permalink to this headline">#</a></h3>
-<p><a id='asserts'></a></p>
+<span id="asserts"></span><h3>Assertions and exceptions<a class="headerlink" href="#assertions-and-exceptions" title="Link to this heading">#</a></h3>
 <p>One way to test your code is to write <strong>assertions</strong> <em>within</em> your scripts and functions. Let’s say we would like to write a function converting degrees Fahrenheit to degrees Celsius:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Converts degrees Fahrenheit to degrees Celsius&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Converts degrees Fahrenheit to degrees Celsius&quot;&quot;&quot;</span>
     <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">tf</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="o">/</span><span class="mi">9</span>
     <span class="c1"># Check that we provide physically reasonable results</span>
     <span class="k">assert</span> <span class="n">r</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mf">273.15</span>
@@ -1085,14 +645,14 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_16808/150720634.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">f2c</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">)</span>
 
-<span class="nn">/tmp/ipykernel_16808/619383388.py</span> in <span class="ni">f2c</span><span class="nt">(tf)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">tf</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="o">/</span><span class="mi">9</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="c1"># Check that we provide physically reasonable results</span>
-<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="k">assert</span> <span class="n">r</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mf">273.15</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="k">return</span> <span class="n">r</span>
+<span class="nn">Cell In[1], line 5,</span> in <span class="ni">f2c</span><span class="nt">(tf)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">tf</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="o">/</span><span class="mi">9</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Check that we provide physically reasonable results</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="k">assert</span> <span class="n">r</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mf">273.15</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">return</span> <span class="n">r</span>
 
 <span class="ne">AssertionError</span>: 
 </pre></div>
@@ -1103,7 +663,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Converts degrees Fahrenheit to degrees Celsius&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Converts degrees Fahrenheit to degrees Celsius&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">tf</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">459.67</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Input temperature below absolute zero!&#39;</span><span class="p">)</span>
     <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">tf</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="o">/</span><span class="mi">9</span>
@@ -1115,7 +675,7 @@ title="Print to PDF"
 <p>Assertions in code are similar to debug <code class="docutils literal notranslate"><span class="pre">print()</span></code> statements filling a script: they help to debug or understand an algorithm, but they are not sustainable and should not replace real, independent tests.</p>
 </section>
 <section id="a-first-independent-test">
-<h3>A first independent test<a class="headerlink" href="#a-first-independent-test" title="Permalink to this headline">#</a></h3>
+<h3>A first independent test<a class="headerlink" href="#a-first-independent-test" title="Link to this heading">#</a></h3>
 <p>Now, how should we test our <code class="docutils literal notranslate"><span class="pre">f2c</span></code> function appropriatly? Well, this should happen in a dedicated script or module testing that the function behaves like expected. A good start is to look for <a class="reference external" href="https://en.wikipedia.org/wiki/Conversion_of_units_of_temperature#Comparison_of_temperature_scales">typical conversion table values</a> and see if our function returns the expected values:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1126,14 +686,14 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>If the assertions fail it would let us know that something is wrong in our function. These tests, however, are still considered “ad-hoc”: if you type them in the interpreter at the moment you write the function (“trial and error development”) but don’t store them for later, you might brake your code later on without noticing. This is why <strong>test automation</strong> is needed.</p>
+<p>If the assertions fail it would let us know that something is wrong in our function. These tests, however, are still considered “ad-hoc”: if you type them in the interpreter at the moment you write the function (“trial and error development”) but don’t store them for later, you might break your code later on without noticing. This is why <strong>test automation</strong> is needed.</p>
 </section>
 </section>
 <section id="pytest">
-<h2>Pytest<a class="headerlink" href="#pytest" title="Permalink to this headline">#</a></h2>
+<h2>Pytest<a class="headerlink" href="#pytest" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://docs.pytest.org/en/latest/contents.html">pytest</a> is a python package helping you to formalize and run your tests efficiently. It is a command line program recognizing and executing tests on demand as well as a python library providing useful modules helping programmers to write better tests.</p>
 <section id="usage">
-<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h3>
+<h3>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h3>
 <p>Let’s start with an example:</p>
 <div class="exercise admonition" id="week_06/02-Testing-exercise-0">
 
@@ -1170,8 +730,8 @@ title="Print to PDF"
 </div>
 </section>
 <section id="assertions-in-pytest">
-<h3>Assertions in pytest<a class="headerlink" href="#assertions-in-pytest" title="Permalink to this headline">#</a></h3>
-<p>If you have read carefully you probably noticed that in <a class="reference external" href="#asserts">this section</a> I recommended <em>against</em> heavy use of <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements in your code. So what about all these assertions in our tests? Well, <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements in tests executed by <code class="docutils literal notranslate"><span class="pre">pytest</span></code> are very different: they provide enriched information provided by the pytest package itself.</p>
+<h3>Assertions in pytest<a class="headerlink" href="#assertions-in-pytest" title="Link to this heading">#</a></h3>
+<p>If you have read carefully you probably noticed that in <a class="reference internal" href="#asserts"><span class="std std-ref">this section</span></a> I recommended <em>against</em> heavy use of <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements in your code. So what about all these assertions in our tests? Well, <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements in tests executed by <code class="docutils literal notranslate"><span class="pre">pytest</span></code> are very different: they provide enriched information provided by the pytest package itself.</p>
 <div class="exercise admonition" id="week_06/02-Testing-exercise-2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 22 </span></p>
@@ -1181,7 +741,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="running-pytest-from-ipython">
-<h3>Running pytest from ipython<a class="headerlink" href="#running-pytest-from-ipython" title="Permalink to this headline">#</a></h3>
+<h3>Running pytest from ipython<a class="headerlink" href="#running-pytest-from-ipython" title="Link to this heading">#</a></h3>
 <p>It is not necessary to open a terminal to run pytest. You can do so from the ipython interpreter with:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1190,18 +750,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">====================================================================================================================== test session starts =======================================================================================================================</span>
-platform linux -- Python 3.10.8, pytest-7.1.3, pluggy-1.0.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matplotlib: 3.5.3
-Freetype: 2.12.1
-rootdir: /home/mowglie/disk/Dropbox/HomeDocs/git/scientific_programming/book/week_06
-plugins: anyio-3.6.1, mpl-0.150.0
-<span class=" -Color -Color-Bold">collecting ... </span>
-<span class=" -Color -Color-Bold">collected 0 items                                                                                                                                                                                                                                                </span>
-
-<span class=" -Color -Color-Yellow">===================================================================================================================== no tests ran in 0.16s ======================================================================================================================</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zsh:1: command not found: pytest
 </pre></div>
 </div>
 </div>
@@ -1209,36 +758,36 @@ plugins: anyio-3.6.1, mpl-0.150.0
 </section>
 </section>
 <section id="software-testing-methods">
-<h2>Software testing methods<a class="headerlink" href="#software-testing-methods" title="Permalink to this headline">#</a></h2>
+<h2>Software testing methods<a class="headerlink" href="#software-testing-methods" title="Link to this heading">#</a></h2>
 <p>You might be surprised to learn that <a class="reference external" href="https://www.google.at/search?q=software+testing+books">there is a broad literature</a> dedicated to software testing only. Authors and researchers agreed upon certain semantics and standards, and we are going to introduce a few of these concepts here.</p>
 <section id="unit-tests">
-<h3>Unit tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">#</a></h3>
+<h3>Unit tests<a class="headerlink" href="#unit-tests" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Unit_testing">Unit tests</a> have the purpose to test the smallest possible units of source code, i.e. single <em>functions</em> in python. Unit tests have the advantage to be highly specialized and are often written together or before the actual function from which they are testing the functionality.</p>
 <p>Unit tests are useful because they encourage programmers to write small “code units” (functions) instead of monolithic code. Let’s make an example: say you’d like to write a function which computes the <a class="reference external" href="https://en.wikipedia.org/wiki/Dew_point#Calculating_the_dew_point">dewpoint temperature</a> from temperatures (in Fahrenheit) and relative humidity (in %). This function will first convert °F to °C (a first code unit), then the dewpoint temperature in °C (another unit), and convert back to °F (a third unit). A good way to write this tool would be to write the three smallest functions first and test them independently.</p>
 </section>
 <section id="integration-tests">
-<h3>Integration tests<a class="headerlink" href="#integration-tests" title="Permalink to this headline">#</a></h3>
+<h3>Integration tests<a class="headerlink" href="#integration-tests" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Integration_testing">Integration tests</a> check that the units are working as a group. To keep the dewpoint example from above, an integration test would be a test that checks that the entire computation chain works as expected.</p>
-<img alt="https://i.stack.imgur.com/yHGn1.gif" src="https://i.stack.imgur.com/yHGn1.gif" />
+<img alt="https://i.sstatic.net/yHGn1.gif" src="https://i.sstatic.net/yHGn1.gif" />
 </section>
 <section id="verification-tests">
-<h3>Verification tests<a class="headerlink" href="#verification-tests" title="Permalink to this headline">#</a></h3>
+<h3>Verification tests<a class="headerlink" href="#verification-tests" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Software_verification_and_validation">Verification</a> is the process of checking that a software system meets the <strong>specifications</strong>. Software specification is an important concept in engineering and commercial applications, where software is built to meet the customer’s needs.</p>
 <p>In science, the verification tests would check that a function really meets the documented features. For example: does my function really work with arrays of any dimension (as announced in the documentation) or only with scalars? Does my function really fail for relative humidity values below 0%?</p>
 </section>
 <section id="and-so-on">
-<h3>And so on…<a class="headerlink" href="#and-so-on" title="Permalink to this headline">#</a></h3>
+<h3>And so on…<a class="headerlink" href="#and-so-on" title="Link to this heading">#</a></h3>
 <p>If you spend some time on the wikipedia articles linked above you will see that there is a large variety of concepts behind software testing practices. For us scientists these concepts are only partly applicable because often we do not have to meet customer requirements the same way software developers do. For now we will stick with these three concepts and try to apply them as thoroughly as possible.</p>
 </section>
 </section>
 <section id="designing-and-writing-tests">
-<h2>Designing and writing tests<a class="headerlink" href="#designing-and-writing-tests" title="Permalink to this headline">#</a></h2>
+<h2>Designing and writing tests<a class="headerlink" href="#designing-and-writing-tests" title="Link to this heading">#</a></h2>
 <p>At the beginning you will probably find writing tests hard and confusing. “What should I test and how?” are the questions you will have to ask yourself very often.</p>
 <p>In the course of the semester this task will become easier and easier thanks to an influential testing philosophy: <a class="reference external" href="https://en.wikipedia.org/wiki/Test-driven_development">test-driven development</a> (TDD). In TDD, one writes the test <em>before</em> coding the actual feature one would like to implement. Together with the function’s documentation, this encourages to thoroughly think about the <strong>design of a function’s interface</strong> before writing it.</p>
 <a class="reference internal image-reference" href="../_images/10_tdd.png"><img alt="../_images/10_tdd.png" src="../_images/10_tdd.png" style="width: 40%;" /></a>
 <p><small> Chart by <a class="reference external" href="https://docplayer.net/10394130-Writing-robust-scientific-code-with-testing-and-python-pietro-berkes-enthought-uk.html">Pietro Berkes</a> </small></p>
 <section id="the-aaa-concept">
-<h3>The “AAA”  concept<a class="headerlink" href="#the-aaa-concept" title="Permalink to this headline">#</a></h3>
+<h3>The “AAA”  concept<a class="headerlink" href="#the-aaa-concept" title="Link to this heading">#</a></h3>
 <p>In principle all unit tests follow a very similar structure, the Arrange-Act-Assert workflow:</p>
 <ul class="simple">
 <li><p><strong>Arrange</strong>: preparation of the data and objects needed for the test. For example, for the <code class="docutils literal notranslate"><span class="pre">f2c</span></code> test we needed to gather the data in °F (to be converted) and °C (to be compared to). This step is the most complicated and can sometimes occupy most of the test function</p></li>
@@ -1247,7 +796,7 @@ plugins: anyio-3.6.1, mpl-0.150.0
 </ul>
 </section>
 <section id="testing-for-equality">
-<h3>Testing for equality<a class="headerlink" href="#testing-for-equality" title="Permalink to this headline">#</a></h3>
+<h3>Testing for equality<a class="headerlink" href="#testing-for-equality" title="Link to this heading">#</a></h3>
 <p>This is the most obvious kind of test and the one we used above. Following the AAA structure:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1264,7 +813,7 @@ plugins: anyio-3.6.1, mpl-0.150.0
 </div>
 </section>
 <section id="testing-for-numpy-arrays">
-<h3>Testing for numpy arrays<a class="headerlink" href="#testing-for-numpy-arrays" title="Permalink to this headline">#</a></h3>
+<h3>Testing for numpy arrays<a class="headerlink" href="#testing-for-numpy-arrays" title="Link to this heading">#</a></h3>
 <p>In most scientific applications, <em>exact</em> solutions cannot be guaranteed (one reason is floating point accuracy as we will learn later in the course). Therefore, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> comes with several handy <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.testing.html">testing functions</a>. We first need to make our function a little more flexible:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1273,7 +822,7 @@ plugins: anyio-3.6.1, mpl-0.150.0
 
 <span class="c1"># Make f2c numpy friendly</span>
 <span class="k">def</span> <span class="nf">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Converts degrees Fahrenheit to degrees Celsius.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Converts degrees Fahrenheit to degrees Celsius.</span>
 
 <span class="sd">    Works with numpy arrays as well as with scalars.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -1281,6 +830,18 @@ plugins: anyio-3.6.1, mpl-0.150.0
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Input temperature below absolute zero!&#39;</span><span class="p">)</span>
     <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">tf</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="o">/</span><span class="mi">9</span>
     <span class="k">return</span> <span class="n">r</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Make f2c numpy friendly</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">):</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
 </pre></div>
 </div>
 </div>
@@ -1298,11 +859,24 @@ plugins: anyio-3.6.1, mpl-0.150.0
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Arrange</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">tf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">32</span><span class="p">,</span> <span class="mi">212</span><span class="p">,</span> <span class="mi">9941</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">expected</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">5505</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Act</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <p>Other very useful assert functions are listed in the <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.testing.html">numpy documentation</a>.</p>
 </section>
 <section id="testing-the-validity-of-the-output">
-<h3>Testing the validity of the output<a class="headerlink" href="#testing-the-validity-of-the-output" title="Permalink to this headline">#</a></h3>
+<h3>Testing the validity of the output<a class="headerlink" href="#testing-the-validity-of-the-output" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Arrange</span>
@@ -1314,10 +888,23 @@ plugins: anyio-3.6.1, mpl-0.150.0
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Arrange</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">tf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">32</span><span class="p">,</span> <span class="mi">212</span><span class="p">,</span> <span class="mi">9941</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Act</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">result</span> <span class="o">=</span> <span class="n">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="testing-the-interface-of-a-function">
-<h3>Testing the interface of a function<a class="headerlink" href="#testing-the-interface-of-a-function" title="Permalink to this headline">#</a></h3>
+<h3>Testing the interface of a function<a class="headerlink" href="#testing-the-interface-of-a-function" title="Link to this heading">#</a></h3>
 <p>These kind of tests verify that a function complies with the documentation. The focus is not necessarily the result, but also the type of the result:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1338,16 +925,41 @@ plugins: anyio-3.6.1, mpl-0.150.0
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Arrange</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">tf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">32</span><span class="p">,</span> <span class="mi">212</span><span class="p">,</span> <span class="mi">9941</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Act</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">result</span> <span class="o">=</span> <span class="n">f2c</span><span class="p">(</span><span class="n">tf</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="testing-that-a-function-raises-exceptions">
-<h3>Testing that a function raises exceptions<a class="headerlink" href="#testing-that-a-function-raises-exceptions" title="Permalink to this headline">#</a></h3>
+<h3>Testing that a function raises exceptions<a class="headerlink" href="#testing-that-a-function-raises-exceptions" title="Link to this heading">#</a></h3>
 <p>These tests are also testing the behavior of a function rather than its input. They are extremely important for libraries like numpy or matplotlib:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
 <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
     <span class="n">f2c</span><span class="p">(</span><span class="o">-</span><span class="mi">3000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pytest</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">f2c</span><span class="p">(</span><span class="o">-</span><span class="mi">3000</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pytest&#39;
 </pre></div>
 </div>
 </div>
@@ -1360,11 +972,22 @@ plugins: anyio-3.6.1, mpl-0.150.0
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">match</span><span class="o">=</span><span class="s2">&quot;Input temperature below absolute zero&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">f2c</span><span class="p">(</span><span class="o">-</span><span class="mi">3000</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;pytest&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
 <section id="final-remarks">
-<h2>Final remarks<a class="headerlink" href="#final-remarks" title="Permalink to this headline">#</a></h2>
+<h2>Final remarks<a class="headerlink" href="#final-remarks" title="Link to this heading">#</a></h2>
 <p>Writing tests is hard. Programmers often spend as much time writing tests as writing actual code. Scientists cannot spend that much time writing tests of course, but I strongly believe that learning to write tests is a very good investment in the long term.</p>
 <p>I often hear the question: “In science we are programming new models and equations, we can’t test for that”. This is only partly true, and should not refrain you from writing unit tests. In particular, automated tests that check that data types are conserved, that a function returns valid values, or that a function simply <em>runs</em> are already much better than no test at all.</p>
 <p>Some parts of the code are really hard to test. For example:</p>
@@ -1376,7 +999,7 @@ plugins: anyio-3.6.1, mpl-0.150.0
 <p>For these cases (and other issues such as automated testing and continuous integration) we might get back to the topic in a second testing chapter at the end of the semester (if time permits).</p>
 </section>
 <section id="take-home-points">
-<h2>Take home points<a class="headerlink" href="#take-home-points" title="Permalink to this headline">#</a></h2>
+<h2>Take home points<a class="headerlink" href="#take-home-points" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>write tests!</strong></p></li>
 <li><p>tests are a safeguard against scientific mistakes and future bugs</p></li>
@@ -1401,7 +1024,7 @@ plugins: anyio-3.6.1, mpl-0.150.0
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./week_06"
         },
         predefinedOutput: true
@@ -1409,60 +1032,143 @@ plugins: anyio-3.6.1, mpl-0.150.0
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="01-Exceptions.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Errors, Exceptions and Warnings</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="01-Exceptions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Errors, Exceptions and Warnings</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="Assignment-06.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="Assignment-06.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Assignment #06: exceptions and testing</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-testing">Why testing?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-code-is-used-to-take-important-decisions">Scientific code is used to take important decisions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trial-and-error-development-practices-hide-important-bugs">“Trial and error” development practices hide important bugs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-that-worked-once-might-not-work-a-year-later">Code that worked once might not work a year later</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#untested-science-code-is-bad-science-code">Untested <s>science</s> code is “bad <s>science</s> code”</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-tests-a-first-example">Writing tests: a first example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assertions-and-exceptions">Assertions and exceptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-independent-test">A first independent test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pytest">Pytest</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assertions-in-pytest">Assertions in pytest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-pytest-from-ipython">Running pytest from ipython</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-testing-methods">Software testing methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-tests">Unit tests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-tests">Integration tests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verification-tests">Verification tests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and-so-on">And so on…</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#designing-and-writing-tests">Designing and writing tests</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-aaa-concept">The “AAA”  concept</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-equality">Testing for equality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-numpy-arrays">Testing for numpy arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-the-validity-of-the-output">Testing the validity of the output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-the-interface-of-a-function">Testing the interface of a function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-that-a-function-raises-exceptions">Testing that a function raises exceptions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-remarks">Final remarks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-home-points">Take home points</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Fabien Maussion<br/>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Fabien Maussion
+</p>
+
+  </div>
   
-    <div class="extra_footer">
-      <p>
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
   <img align="right" class="margin" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg" width="88px">
 </a>
 These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International (CC BY 4.0) license</a>.
 <br>
-&copy; Copyright 2018-2022.
+&copy; Copyright 2018-2024.
 </p>
 
-    </div>
-</p>
-        </footer>
-    </div>
-    
 </div>
+  </div>
+  
+</div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

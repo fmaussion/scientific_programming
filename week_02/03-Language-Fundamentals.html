@@ -1,121 +1,177 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Language fundamentals &#8212; Scientific Programming</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'week_02/03-Language-Fundamentals';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Assignment #02" href="Assignment-02.html" />
     <link rel="prev" title="Scientific development environment: ipython and spyder" href="02-ipython-spyder.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-88391345-1', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../welcome.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Scientific Programming</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Scientific Programming - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Scientific Programming - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -124,857 +180,377 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Introduction
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../syllabus.html">
-   Syllabus
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../faq.html">
-   Frequently Asked  Questions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../references.html">
-   External resources
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../help.html">
-   Getting help
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked  Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">External resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help.html">Getting help</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 01 - Terminal &amp; Python primer
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 01 - Terminal &amp; Python primer</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../week_01/01-Installation.html">
-   Installing Python on your computer
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../week_01/01a-Details-Windows.html">
-     For windows users: the difference between the command prompt, the miniforge prompt, and the python interpreter
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../week_01/01b-Details-Linux.html">
-     For linux/mac users: what did
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       mambaforge
-      </span>
-     </code>
-     do to your terminal?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../week_01/02-Terminal.html">
-   Basic terminal commands and navigation
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../week_01/02a-Windows.html">
-     A Windows command prompt primer
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../week_01/02b-Linux.html">
-     An introduction to the Linux terminal
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_01/03-Installation-uni.html">
-   Installing Python at the University of Innsbruck
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_01/04-Getting-Started.html">
-   Getting started with Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_01/Assignment-01.html">
-   Assignment #01
-  </a>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_01/01-Installation.html">Installing Python on your computer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week_01/01a-Details-Windows.html">For windows users: the difference between the command prompt, the miniforge prompt, and the python interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_01/01b-Details-Linux.html">For linux/mac users: what did <code class="docutils literal notranslate"><span class="pre">mambaforge</span></code> do to your terminal?</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 02 - Python language fundamentals
- </span>
-</p>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_01/02-Terminal.html">Basic terminal commands and navigation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week_01/02a-Windows.html">A Windows command prompt primer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_01/02b-Linux.html">An introduction to the Linux terminal</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_01/03-Installation-uni.html">Installing Python at the University of Innsbruck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_01/04-Getting-Started.html">Getting started with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_01/Assignment-01.html">Assignment #01</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 02 - Python language fundamentals</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="01-install-packages.html">
-   Installing python packages
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02-ipython-spyder.html">
-   Scientific development environment: ipython and spyder
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Language fundamentals
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Assignment-02.html">
-   Assignment #02
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="01-install-packages.html">Installing python packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-ipython-spyder.html">Scientific development environment: ipython and spyder</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Language fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Assignment-02.html">Assignment #02</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 03 - Variables scopes, modules, strings, good practices
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 03 - Variables scopes, modules, strings, good practices</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_03/01-Import-Scopes.html">
-   Modules, import mechanism, namespaces, scope(s)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_03/02-Strings-Paths.html">
-   String formatting and file paths
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_03/03-Tips-and-Tricks.html">
-   Tips and tricks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_03/04-Good-practices.html">
-   Good practices, programming style and conventions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_03/Assignment-03.html">
-   Assignment #03
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_03/01-Import-Scopes.html">Modules, import mechanism, namespaces, scope(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_03/02-Strings-Paths.html">String formatting and file paths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_03/03-Tips-and-Tricks.html">Tips and tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_03/04-Good-practices.html">Good practices, programming style and conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_03/Assignment-03.html">Assignment #03</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 04 - Floating point arithmetics, Numpy basics
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 04 - Floating point arithmetics, Numpy basics</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_04/01-Why-Numpy.html">
-   Introduction to numpy: why does numpy exist?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_04/02-Numbers.html">
-   Number representation in computers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_04/Assignment-04.html">
-   Assignment #04
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_04/01-Why-Numpy.html">Introduction to numpy: why does numpy exist?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_04/02-Numbers.html">Number representation in computers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_04/Assignment-04.html">Assignment #04</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 05 - Scientific Python
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 05 - Scientific Python</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_05/01-Numpy-ndarrays.html">
-   Arrays in numpy: indexing, ufuncs, broadcasting
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_05/02-Scientific-Python.html">
-   The scientific python stack
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_05/Assignment-05.html">
-   Assignment #05
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_05/01-Numpy-ndarrays.html">Arrays in numpy: indexing, ufuncs, broadcasting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_05/02-Scientific-Python.html">The scientific python stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_05/Assignment-05.html">Assignment #05</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Midterm exam
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Midterm exam</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../midterm.html">
-   Midterm exam
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../midterm.html">Midterm exam</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 06 - Testing
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 06 - Testing</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_06/01-Exceptions.html">
-   Errors, Exceptions and Warnings
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_06/02-Testing.html">
-   Testing your code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_06/Assignment-06.html">
-   Assignment #06: exceptions and testing
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_06/01-Exceptions.html">Errors, Exceptions and Warnings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_06/02-Testing.html">Testing your code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_06/Assignment-06.html">Assignment #06: exceptions and testing</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 07 - Python Packages and ClimVis project
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 07 - Python Packages and ClimVis project</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_07/01-Package-structure.html">
-   Structure of a python package
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_07/02-ClimVis.html">
-   Term project: the ClimVis package
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_07/01-Package-structure.html">Structure of a python package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_07/02-ClimVis.html">Term project: the ClimVis package</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 08 - Code documentation
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 08 - Code documentation</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_08/01-Documentation.html">
-   Documenting your code
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_08/01-Documentation.html">Documenting your code</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 09 - Object Oriented Programming I
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 09 - Object Oriented Programming I</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_09/01-OOP-Part-1.html">
-   Object Oriented Programming: introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_09/Assignment-07.html">
-   Assignment #07: Pydemic
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_09/01-OOP-Part-1.html">Object Oriented Programming: introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_09/Assignment-07.html">Assignment #07: Pydemic</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 10 - Object Oriented Programming II
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 10 - Object Oriented Programming II</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_10/01-OOP-Part-2.html">
-   Object Oriented Programming: inheritance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_10/Assignment-08.html">
-   Assignment #08: Pydemic - second wave
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_10/01-OOP-Part-2.html">Object Oriented Programming: inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_10/Assignment-08.html">Assignment #08: Pydemic - second wave</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 11 - Object Oriented Programming III
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 11 - Object Oriented Programming III</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_11/01-OOP-Part-3.html">
-   Object Oriented Programming: why?
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_11/01-OOP-Part-3.html">Object Oriented Programming: why?</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_02/03-Language-Fundamentals.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_02/03-Language-Fundamentals.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/fmaussion/scientific_programming" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_02/03-Language-Fundamentals.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_02/03-Language-Fundamentals.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/week_02/03-Language-Fundamentals.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/fmaussion/scientific_programming"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_02/03-Language-Fundamentals.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_02/03-Language-Fundamentals.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/week_02/03-Language-Fundamentals.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </button>
-
-      </li>
+</div></div>
       
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
+    </div>
   
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#an-entry-level-tutorial">
-   An entry level tutorial
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#python-as-a-calculator">
-     Python as a Calculator
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#strings">
-     Strings
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basic-data-types">
-   Basic data types
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#asking-for-the-type-of-an-object">
-     Asking for the type of an object
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numeric-types">
-     Numeric types
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#booleans">
-     Booleans
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#text">
-     Text
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sequence-types-list-tuple-range">
-     Sequence types - list, tuple, range
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sets">
-     Sets
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mapping-types-dictionaries">
-     Mapping types - dictionaries
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#semantics-parenthesis-literals">
-     Semantics parenthesis: “literals”
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#control-flow">
-   Control flow
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#first-steps-towards-programming">
-     First steps towards programming
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-if-statement">
-     The
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       if
-      </span>
-     </code>
-     statement
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-for-statement">
-     The
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     statement
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-break-and-continue-statements">
-     The
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       break
-      </span>
-     </code>
-     and
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       continue
-      </span>
-     </code>
-     statements
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#defining-functions">
-   Defining  functions
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-first-example">
-     A first example
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#positional-and-keyword-arguments">
-     Positional and keyword arguments
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#importing-modules-and-functions">
-   Importing modules and functions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#take-home-points">
-   Take home points
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Language fundamentals</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#an-entry-level-tutorial">
-   An entry level tutorial
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#python-as-a-calculator">
-     Python as a Calculator
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#strings">
-     Strings
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basic-data-types">
-   Basic data types
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#asking-for-the-type-of-an-object">
-     Asking for the type of an object
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numeric-types">
-     Numeric types
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#booleans">
-     Booleans
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#text">
-     Text
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sequence-types-list-tuple-range">
-     Sequence types - list, tuple, range
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sets">
-     Sets
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mapping-types-dictionaries">
-     Mapping types - dictionaries
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#semantics-parenthesis-literals">
-     Semantics parenthesis: “literals”
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#control-flow">
-   Control flow
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#first-steps-towards-programming">
-     First steps towards programming
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-if-statement">
-     The
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       if
-      </span>
-     </code>
-     statement
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-for-statement">
-     The
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     statement
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-break-and-continue-statements">
-     The
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       break
-      </span>
-     </code>
-     and
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       continue
-      </span>
-     </code>
-     statements
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#defining-functions">
-   Defining  functions
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-first-example">
-     A first example
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#positional-and-keyword-arguments">
-     Positional and keyword arguments
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#importing-modules-and-functions">
-   Importing modules and functions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#take-home-points">
-   Take home points
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Language fundamentals</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-entry-level-tutorial">An entry level tutorial</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-as-a-calculator">Python as a Calculator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data-types">Basic data types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asking-for-the-type-of-an-object">Asking for the type of an object</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-types">Numeric types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans">Booleans</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text">Text</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-types-list-tuple-range">Sequence types - list, tuple, range</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sets">Sets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-types-dictionaries">Mapping types - dictionaries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#semantics-parenthesis-literals">Semantics parenthesis: “literals”</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-flow">Control flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-steps-towards-programming">First steps towards programming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-if-statement">The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-for-statement">The <code class="docutils literal notranslate"><span class="pre">for</span></code> statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-break-and-continue-statements">The <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> statements</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-functions">Defining  functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-example">A first example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positional-and-keyword-arguments">Positional and keyword arguments</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-modules-and-functions">Importing modules and functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-home-points">Take home points</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="language-fundamentals">
-<h1>Language fundamentals<a class="headerlink" href="#language-fundamentals" title="Permalink to this headline">#</a></h1>
+<h1>Language fundamentals<a class="headerlink" href="#language-fundamentals" title="Link to this heading">#</a></h1>
 <p>This chapter will start with a short tutorial to familiarize you with the Python language. You will quickly see the similarities with the programming language you learned in your bachelors. Remember, our goal here is to formalize and name the programming constructs (<strong>semantics</strong>). As we discussed last week, using clear semantics is primordial to understand software documentation and to “ask questions the right way” in search engines.</p>
 <section id="an-entry-level-tutorial">
-<h2>An entry level tutorial<a class="headerlink" href="#an-entry-level-tutorial" title="Permalink to this headline">#</a></h2>
+<h2>An entry level tutorial<a class="headerlink" href="#an-entry-level-tutorial" title="Link to this heading">#</a></h2>
 <p>Let’s start by following a simple tutorial together.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -982,7 +558,7 @@ title="Print to PDF"
 </div>
 <p><strong>Copyright notice</strong>: many of these examples and explanations are copy-pasted from the <a class="reference external" href="https://docs.python.org/3/tutorial/">official python tutorial</a>.</p>
 <section id="python-as-a-calculator">
-<h3>Python as a Calculator<a class="headerlink" href="#python-as-a-calculator" title="Permalink to this headline">#</a></h3>
+<h3>Python as a Calculator<a class="headerlink" href="#python-as-a-calculator" title="Link to this heading">#</a></h3>
 <p>The interpreter acts as a simple calculator: you can type an expression at it and it will write the value. Expression syntax is straightforward: the operators <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">/</span></code> work just like in most other languages:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1087,7 +663,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_16510/1661493771.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">n</span>  <span class="c1"># trying to access an undefined variable raises an error</span>
 
 <span class="ne">NameError</span>: name &#39;n&#39; is not defined
@@ -1125,7 +701,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">_</span></code> should be treated as a read-only variable, to use in the interpreter only.</p>
 </section>
 <section id="strings">
-<h3>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">#</a></h3>
+<h3>Strings<a class="headerlink" href="#strings" title="Link to this heading">#</a></h3>
 <p>Besides numbers, Python can also manipulate strings, which can be expressed in several ways. They can be enclosed in single quotes (<code class="docutils literal notranslate"><span class="pre">'...'</span></code>) or double quotes (<code class="docutils literal notranslate"><span class="pre">&quot;...&quot;</span></code>) with the same result:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1319,7 +895,7 @@ ame
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_16510/3588560929.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">25</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">word</span><span class="p">[</span><span class="mi">42</span><span class="p">]</span>  <span class="c1"># the word only has 6 characters: this will raise an error</span>
 
 <span class="ne">IndexError</span>: string index out of range
@@ -1369,12 +945,12 @@ ame
 </section>
 </section>
 <section id="basic-data-types">
-<h2>Basic data types<a class="headerlink" href="#basic-data-types" title="Permalink to this headline">#</a></h2>
+<h2>Basic data types<a class="headerlink" href="#basic-data-types" title="Link to this heading">#</a></h2>
 <p>Now that you are more familiar with the basics, let’s start to name things “the right way”. For example: an informal way to describe a programming language is to say that it “does things with stuff”.</p>
 <p>These “stuff” are formally called “objects” in python. We will define objects more precisely towards the end of the lecture, but for now remember one important thing: <strong>in python, everything is an object</strong>. Yes, everything.</p>
 <p>Python objects have a <strong>type</strong> (synonym: <a class="reference external" href="https://en.wikipedia.org/wiki/Data_type">data type</a>). In the previous tutorial, you used exclusively <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html">built-in</a> types. <strong>Built-in data types</strong> are directly available in the interpreter, as opposed to other data types which maybe obtained either by importing them (e.g. <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">collections</span> <span class="pre">import</span> <span class="pre">OrderedDict</span></code>) or by creating new data types yourselves.</p>
 <section id="asking-for-the-type-of-an-object">
-<h3>Asking for the type of an object<a class="headerlink" href="#asking-for-the-type-of-an-object" title="Permalink to this headline">#</a></h3>
+<h3>Asking for the type of an object<a class="headerlink" href="#asking-for-the-type-of-an-object" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -1409,11 +985,11 @@ ame
 </div>
 </section>
 <section id="numeric-types">
-<h3>Numeric types<a class="headerlink" href="#numeric-types" title="Permalink to this headline">#</a></h3>
+<h3>Numeric types<a class="headerlink" href="#numeric-types" title="Link to this heading">#</a></h3>
 <p>There are three distinct numeric types: <strong>integers</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>), <strong>floating point numbers</strong> (<code class="docutils literal notranslate"><span class="pre">float</span></code>), and <strong>complex numbers</strong> (<code class="docutils literal notranslate"><span class="pre">complex</span></code>). We will talk about these in more detail in the numerics chapter.</p>
 </section>
 <section id="booleans">
-<h3>Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">#</a></h3>
+<h3>Booleans<a class="headerlink" href="#booleans" title="Link to this heading">#</a></h3>
 <p>There is a built-in boolean data type (<code class="docutils literal notranslate"><span class="pre">bool</span></code>) useful to test for truth value. Examples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1477,7 +1053,7 @@ ame
 <p>Refer to the <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#truth-value-testing">docs</a> for an exhaustive list of boolean operations and comparison operators.</p>
 </section>
 <section id="text">
-<h3>Text<a class="headerlink" href="#text" title="Permalink to this headline">#</a></h3>
+<h3>Text<a class="headerlink" href="#text" title="Link to this heading">#</a></h3>
 <p>In python (and many other languages) text sequences are named <strong>strings</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>), which can be of any length:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1523,7 +1099,7 @@ g &lt;class &#39;str&#39;&gt;
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_16510/3247962163.py</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">38</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;Python&#39;</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;J&#39;</span>
 
@@ -1559,7 +1135,7 @@ g &lt;class &#39;str&#39;&gt;
 </div>
 </section>
 <section id="sequence-types-list-tuple-range">
-<h3>Sequence types - list, tuple, range<a class="headerlink" href="#sequence-types-list-tuple-range" title="Permalink to this headline">#</a></h3>
+<h3>Sequence types - list, tuple, range<a class="headerlink" href="#sequence-types-list-tuple-range" title="Link to this heading">#</a></h3>
 <p>Python knows a number of sequence data types, used to group together other values. The most versatile is the list, which can be written as a list of comma-separated values (items) between square brackets. Lists might contain items of different types, but usually the items all have the same type.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1841,7 +1417,7 @@ g &lt;class &#39;str&#39;&gt;
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">OverflowError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_16510/3485074228.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">61</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">100</span><span class="p">))</span>  <span class="c1"># trying to make a list of values out of it results in an error</span>
 
 <span class="ne">OverflowError</span>: Python int too large to convert to C ssize_t
@@ -1873,7 +1449,7 @@ g &lt;class &#39;str&#39;&gt;
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_16510/2866505064.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">63</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;ha?&#39;</span>  <span class="c1"># But I cannot change an element of a tuple</span>
 
 <span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
@@ -1884,7 +1460,7 @@ g &lt;class &#39;str&#39;&gt;
 <p>It is their immutability which makes tuples useful, but for beginners this is not really obvious at the first sight. We will get back to tuples later in the lecture.</p>
 </section>
 <section id="sets">
-<h3>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">#</a></h3>
+<h3>Sets<a class="headerlink" href="#sets" title="Link to this heading">#</a></h3>
 <p>Sets are an unordered collection of <strong>distinct</strong> objects:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1916,7 +1492,7 @@ g &lt;class &#39;str&#39;&gt;
 <p>Sets are useful for operations such as intersection, union, difference, and symmetric difference between sequences. You won’t see much use for them in this semester, but remember that they exist.</p>
 </section>
 <section id="mapping-types-dictionaries">
-<h3>Mapping types - dictionaries<a class="headerlink" href="#mapping-types-dictionaries" title="Permalink to this headline">#</a></h3>
+<h3>Mapping types - dictionaries<a class="headerlink" href="#mapping-types-dictionaries" title="Link to this heading">#</a></h3>
 <p>A <strong>mapping object</strong> maps values (<strong>keys</strong>) to arbitrary objects (<strong>values</strong>): the most frequently used mapping object is called a <strong>dictionary</strong>. It is a collection of (key, value) pairs:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2012,7 +1588,7 @@ g &lt;class &#39;str&#39;&gt;
 </div>
 </section>
 <section id="semantics-parenthesis-literals">
-<h3>Semantics parenthesis: “literals”<a class="headerlink" href="#semantics-parenthesis-literals" title="Permalink to this headline">#</a></h3>
+<h3>Semantics parenthesis: “literals”<a class="headerlink" href="#semantics-parenthesis-literals" title="Link to this heading">#</a></h3>
 <p><strong>Literals</strong> are the fixed values of a programming language (“notations”). Some of them are pretty universal, like numbers or strings (<code class="docutils literal notranslate"><span class="pre">9</span></code>, <code class="docutils literal notranslate"><span class="pre">3.14</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Hi!&quot;</span></code>, all literals) some are more language specific and belong to the language’s syntax. Curly brackets <code class="docutils literal notranslate"><span class="pre">{}</span></code> for example are the literal representation of a <code class="docutils literal notranslate"><span class="pre">dict</span></code>. The literal syntax has been added for convenience only:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2032,9 +1608,9 @@ g &lt;class &#39;str&#39;&gt;
 </section>
 </section>
 <section id="control-flow">
-<h2>Control flow<a class="headerlink" href="#control-flow" title="Permalink to this headline">#</a></h2>
+<h2>Control flow<a class="headerlink" href="#control-flow" title="Link to this heading">#</a></h2>
 <section id="first-steps-towards-programming">
-<h3>First steps towards programming<a class="headerlink" href="#first-steps-towards-programming" title="Permalink to this headline">#</a></h3>
+<h3>First steps towards programming<a class="headerlink" href="#first-steps-towards-programming" title="Link to this heading">#</a></h3>
 <p>Of course, we can use Python for more complicated tasks than adding two and two together. For instance, we can write an initial sub-sequence of the <a class="reference external" href="https://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci series</a> as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2097,7 +1673,7 @@ g &lt;class &#39;str&#39;&gt;
 </div>
 </section>
 <section id="the-if-statement">
-<h3>The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement<a class="headerlink" href="#the-if-statement" title="Permalink to this headline">#</a></h3>
+<h3>The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement<a class="headerlink" href="#the-if-statement" title="Link to this heading">#</a></h3>
 <p>Perhaps the most well-known statement type is the if statement:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2123,7 +1699,7 @@ g &lt;class &#39;str&#39;&gt;
 <p>There can be zero or more <code class="docutils literal notranslate"><span class="pre">elif</span></code> parts, and the <code class="docutils literal notranslate"><span class="pre">else</span></code> part is optional. The keyword <code class="docutils literal notranslate"><span class="pre">elif</span></code> is short for “else if”, and is useful to avoid excessive indentation.</p>
 </section>
 <section id="the-for-statement">
-<h3>The <code class="docutils literal notranslate"><span class="pre">for</span></code> statement<a class="headerlink" href="#the-for-statement" title="Permalink to this headline">#</a></h3>
+<h3>The <code class="docutils literal notranslate"><span class="pre">for</span></code> statement<a class="headerlink" href="#the-for-statement" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> loops in python can be quite different than in other languages: <strong>in python, one iterates over sequences, not indexes</strong>. This is a feature I very much like for its readability:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2201,7 +1777,7 @@ pythonic
 </div>
 </section>
 <section id="the-break-and-continue-statements">
-<h3>The <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> statements<a class="headerlink" href="#the-break-and-continue-statements" title="Permalink to this headline">#</a></h3>
+<h3>The <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> statements<a class="headerlink" href="#the-break-and-continue-statements" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">break</span></code> statement breaks out of the innermost enclosing for or while loop:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2247,13 +1823,13 @@ Found a number 9
 </section>
 </section>
 <section id="defining-functions">
-<h2>Defining  functions<a class="headerlink" href="#defining-functions" title="Permalink to this headline">#</a></h2>
+<h2>Defining  functions<a class="headerlink" href="#defining-functions" title="Link to this heading">#</a></h2>
 <section id="a-first-example">
-<h3>A first example<a class="headerlink" href="#a-first-example" title="Permalink to this headline">#</a></h3>
+<h3>A first example<a class="headerlink" href="#a-first-example" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Print a Fibonacci series up to n.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Print a Fibonacci series up to n.&quot;&quot;&quot;</span>
     <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
     <span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
@@ -2322,7 +1898,7 @@ Found a number 9
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>  <span class="c1"># return Fibonacci series up to n</span>
-    <span class="sd">&quot;&quot;&quot;Return a list containing the Fibonacci series up to n.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a list containing the Fibonacci series up to n.&quot;&quot;&quot;</span>
     <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
     <span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
@@ -2343,13 +1919,13 @@ Found a number 9
 </div>
 </section>
 <section id="positional-and-keyword-arguments">
-<h3>Positional and keyword arguments<a class="headerlink" href="#positional-and-keyword-arguments" title="Permalink to this headline">#</a></h3>
+<h3>Positional and keyword arguments<a class="headerlink" href="#positional-and-keyword-arguments" title="Link to this heading">#</a></h3>
 <p>Functions have two types of arguments: <strong>positional arguments</strong> and <strong>keyword arguments</strong>.</p>
 <p><strong>keyword arguments</strong> are preceded by an identifier (e.g. <code class="docutils literal notranslate"><span class="pre">name=</span></code>) and are attributed a default value. They are therefore <em>optional</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">kwarg1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">kwarg2</span><span class="o">=</span><span class="s1">&#39;Something&#39;</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Some function with arguments.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Some function with arguments.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">kwarg1</span><span class="p">,</span> <span class="n">kwarg2</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2413,7 +1989,7 @@ Found a number 9
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_16510/102273986.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">94</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">,</span> <span class="s1">&#39;No&#39;</span><span class="p">)</span>  <span class="c1"># This now raises an error</span>
 
 <span class="ne">TypeError</span>: f() takes 2 positional arguments but 4 were given
@@ -2431,7 +2007,7 @@ Found a number 9
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_16510/1567560659.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">95</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="ne">TypeError</span>: f() missing 1 required positional argument: &#39;arg2&#39;
@@ -2442,7 +2018,7 @@ Found a number 9
 </section>
 </section>
 <section id="importing-modules-and-functions">
-<h2>Importing modules and functions<a class="headerlink" href="#importing-modules-and-functions" title="Permalink to this headline">#</a></h2>
+<h2>Importing modules and functions<a class="headerlink" href="#importing-modules-and-functions" title="Link to this heading">#</a></h2>
 <p>Although python ships with some built-in functions available in the interpreter (e.g. <code class="docutils literal notranslate"><span class="pre">len()</span></code>, <code class="docutils literal notranslate"><span class="pre">print()</span></code>), it is by far not enough to do real world programming. Thankfully, python comes with a mechanism which allows us to access <em>much</em> more functionality:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2453,7 +2029,7 @@ Found a number 9
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;module &#39;math&#39; from &#39;/home/mowglie/.miniconda3/envs/py3/lib/python3.10/lib-dynload/math.cpython-310-x86_64-linux-gnu.so&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;module &#39;math&#39; from &#39;/Users/uu23343/.mambaforge/lib/python3.10/lib-dynload/math.cpython-310-darwin.so&#39;&gt;
 3.141592653589793
 </pre></div>
 </div>
@@ -2476,7 +2052,7 @@ Found a number 9
 <p>Modules often have a thematic grouping, i.e. <code class="docutils literal notranslate"><span class="pre">math</span></code>, <code class="docutils literal notranslate"><span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code>. You will learn more about them in the next lecture.</p>
 </section>
 <section id="take-home-points">
-<h2>Take home points<a class="headerlink" href="#take-home-points" title="Permalink to this headline">#</a></h2>
+<h2>Take home points<a class="headerlink" href="#take-home-points" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>in python, everything is an object - we’ll learn more about them later</p></li>
 <li><p>for now you can remember that python objects have methods (“services”) attached to them, such as <code class="docutils literal notranslate"><span class="pre">.split()</span></code> for strings or <code class="docutils literal notranslate"><span class="pre">.append()</span></code> for lists</p></li>
@@ -2508,7 +2084,7 @@ Found a number 9
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./week_02"
         },
         predefinedOutput: true
@@ -2516,60 +2092,136 @@ Found a number 9
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="02-ipython-spyder.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Scientific development environment: ipython and spyder</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02-ipython-spyder.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Scientific development environment: ipython and spyder</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="Assignment-02.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="Assignment-02.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Assignment #02</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-entry-level-tutorial">An entry level tutorial</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-as-a-calculator">Python as a Calculator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data-types">Basic data types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asking-for-the-type-of-an-object">Asking for the type of an object</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-types">Numeric types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans">Booleans</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text">Text</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-types-list-tuple-range">Sequence types - list, tuple, range</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sets">Sets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-types-dictionaries">Mapping types - dictionaries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#semantics-parenthesis-literals">Semantics parenthesis: “literals”</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-flow">Control flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-steps-towards-programming">First steps towards programming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-if-statement">The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-for-statement">The <code class="docutils literal notranslate"><span class="pre">for</span></code> statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-break-and-continue-statements">The <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> statements</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-functions">Defining  functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-example">A first example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positional-and-keyword-arguments">Positional and keyword arguments</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-modules-and-functions">Importing modules and functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-home-points">Take home points</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Fabien Maussion<br/>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Fabien Maussion
+</p>
+
+  </div>
   
-    <div class="extra_footer">
-      <p>
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
   <img align="right" class="margin" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg" width="88px">
 </a>
 These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International (CC BY 4.0) license</a>.
 <br>
-&copy; Copyright 2018-2022.
+&copy; Copyright 2018-2024.
 </p>
 
-    </div>
-</p>
-        </footer>
-    </div>
-    
 </div>
+  </div>
+  
+</div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

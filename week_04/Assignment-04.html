@@ -1,123 +1,179 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Assignment #04 &#8212; Scientific Programming</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'week_04/Assignment-04';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Arrays in numpy: indexing, ufuncs, broadcasting" href="../week_05/01-Numpy-ndarrays.html" />
     <link rel="prev" title="Number representation in computers" href="02-Numbers.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-88391345-1', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../welcome.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Scientific Programming</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Scientific Programming - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Scientific Programming - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -126,639 +182,371 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Introduction
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../syllabus.html">
-   Syllabus
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../faq.html">
-   Frequently Asked  Questions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../references.html">
-   External resources
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../help.html">
-   Getting help
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked  Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">External resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help.html">Getting help</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 01 - Terminal &amp; Python primer
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 01 - Terminal &amp; Python primer</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../week_01/01-Installation.html">
-   Installing Python on your computer
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../week_01/01a-Details-Windows.html">
-     For windows users: the difference between the command prompt, the miniforge prompt, and the python interpreter
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../week_01/01b-Details-Linux.html">
-     For linux/mac users: what did
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       mambaforge
-      </span>
-     </code>
-     do to your terminal?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../week_01/02-Terminal.html">
-   Basic terminal commands and navigation
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../week_01/02a-Windows.html">
-     A Windows command prompt primer
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../week_01/02b-Linux.html">
-     An introduction to the Linux terminal
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_01/03-Installation-uni.html">
-   Installing Python at the University of Innsbruck
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_01/04-Getting-Started.html">
-   Getting started with Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_01/Assignment-01.html">
-   Assignment #01
-  </a>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_01/01-Installation.html">Installing Python on your computer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week_01/01a-Details-Windows.html">For windows users: the difference between the command prompt, the miniforge prompt, and the python interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_01/01b-Details-Linux.html">For linux/mac users: what did <code class="docutils literal notranslate"><span class="pre">mambaforge</span></code> do to your terminal?</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 02 - Python language fundamentals
- </span>
-</p>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_01/02-Terminal.html">Basic terminal commands and navigation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week_01/02a-Windows.html">A Windows command prompt primer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_01/02b-Linux.html">An introduction to the Linux terminal</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_01/03-Installation-uni.html">Installing Python at the University of Innsbruck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_01/04-Getting-Started.html">Getting started with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_01/Assignment-01.html">Assignment #01</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 02 - Python language fundamentals</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_02/01-install-packages.html">
-   Installing python packages
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_02/02-ipython-spyder.html">
-   Scientific development environment: ipython and spyder
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_02/03-Language-Fundamentals.html">
-   Language fundamentals
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_02/Assignment-02.html">
-   Assignment #02
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_02/01-install-packages.html">Installing python packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_02/02-ipython-spyder.html">Scientific development environment: ipython and spyder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_02/03-Language-Fundamentals.html">Language fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_02/Assignment-02.html">Assignment #02</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 03 - Variables scopes, modules, strings, good practices
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 03 - Variables scopes, modules, strings, good practices</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_03/01-Import-Scopes.html">
-   Modules, import mechanism, namespaces, scope(s)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_03/02-Strings-Paths.html">
-   String formatting and file paths
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_03/03-Tips-and-Tricks.html">
-   Tips and tricks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_03/04-Good-practices.html">
-   Good practices, programming style and conventions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_03/Assignment-03.html">
-   Assignment #03
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_03/01-Import-Scopes.html">Modules, import mechanism, namespaces, scope(s)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_03/02-Strings-Paths.html">String formatting and file paths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_03/03-Tips-and-Tricks.html">Tips and tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_03/04-Good-practices.html">Good practices, programming style and conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_03/Assignment-03.html">Assignment #03</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 04 - Floating point arithmetics, Numpy basics
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 04 - Floating point arithmetics, Numpy basics</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="01-Why-Numpy.html">
-   Introduction to numpy: why does numpy exist?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02-Numbers.html">
-   Number representation in computers
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Assignment #04
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="01-Why-Numpy.html">Introduction to numpy: why does numpy exist?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-Numbers.html">Number representation in computers</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Assignment #04</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 05 - Scientific Python
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 05 - Scientific Python</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_05/01-Numpy-ndarrays.html">
-   Arrays in numpy: indexing, ufuncs, broadcasting
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_05/02-Scientific-Python.html">
-   The scientific python stack
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_05/Assignment-05.html">
-   Assignment #05
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_05/01-Numpy-ndarrays.html">Arrays in numpy: indexing, ufuncs, broadcasting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_05/02-Scientific-Python.html">The scientific python stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_05/Assignment-05.html">Assignment #05</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Midterm exam
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Midterm exam</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../midterm.html">
-   Midterm exam
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../midterm.html">Midterm exam</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 06 - Testing
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 06 - Testing</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_06/01-Exceptions.html">
-   Errors, Exceptions and Warnings
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_06/02-Testing.html">
-   Testing your code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_06/Assignment-06.html">
-   Assignment #06: exceptions and testing
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_06/01-Exceptions.html">Errors, Exceptions and Warnings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_06/02-Testing.html">Testing your code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_06/Assignment-06.html">Assignment #06: exceptions and testing</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 07 - Python Packages and ClimVis project
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 07 - Python Packages and ClimVis project</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_07/01-Package-structure.html">
-   Structure of a python package
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_07/02-ClimVis.html">
-   Term project: the ClimVis package
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_07/01-Package-structure.html">Structure of a python package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_07/02-ClimVis.html">Term project: the ClimVis package</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 08 - Code documentation
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 08 - Code documentation</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_08/01-Documentation.html">
-   Documenting your code
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_08/01-Documentation.html">Documenting your code</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 09 - Object Oriented Programming I
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 09 - Object Oriented Programming I</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_09/01-OOP-Part-1.html">
-   Object Oriented Programming: introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_09/Assignment-07.html">
-   Assignment #07: Pydemic
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_09/01-OOP-Part-1.html">Object Oriented Programming: introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_09/Assignment-07.html">Assignment #07: Pydemic</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 10 - Object Oriented Programming II
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 10 - Object Oriented Programming II</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_10/01-OOP-Part-2.html">
-   Object Oriented Programming: inheritance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_10/Assignment-08.html">
-   Assignment #08: Pydemic - second wave
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_10/01-OOP-Part-2.html">Object Oriented Programming: inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_10/Assignment-08.html">Assignment #08: Pydemic - second wave</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Week 11 - Object Oriented Programming III
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 11 - Object Oriented Programming III</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../week_11/01-OOP-Part-3.html">
-   Object Oriented Programming: why?
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../week_11/01-OOP-Part-3.html">Object Oriented Programming: why?</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_04/Assignment-04.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/fmaussion/scientific_programming/master?urlpath=lab/tree/book/week_04/Assignment-04.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/fmaussion/scientific_programming" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_04/Assignment-04.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_04/Assignment-04.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/week_04/Assignment-04.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/fmaussion/scientific_programming"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/fmaussion/scientific_programming/issues/new?title=Issue%20on%20page%20%2Fweek_04/Assignment-04.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/fmaussion/scientific_programming/edit/master/book/week_04/Assignment-04.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/week_04/Assignment-04.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </button>
-
-      </li>
+</div></div>
       
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
+    </div>
   
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-04-01-a-glimpse-in-the-c-language">
-   Exercise #04-01: a glimpse in the C language
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-04-02-monte-carlo-estimation-of-pi">
-   Exercise #04-02: Monte-Carlo estimation of
-   <span class="math notranslate nohighlight">
-    \(\pi\)
-   </span>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-04-03-a-new-format-based-on-fixed-point-binary-numbers">
-   Exercise #04-03: a new format based on fixed point binary numbers
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-04-04-exponential-error-growth">
-   Exercise #04-04: exponential error growth
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Assignment #04</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-04-01-a-glimpse-in-the-c-language">
-   Exercise #04-01: a glimpse in the C language
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-04-02-monte-carlo-estimation-of-pi">
-   Exercise #04-02: Monte-Carlo estimation of
-   <span class="math notranslate nohighlight">
-    \(\pi\)
-   </span>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-04-03-a-new-format-based-on-fixed-point-binary-numbers">
-   Exercise #04-03: a new format based on fixed point binary numbers
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-04-04-exponential-error-growth">
-   Exercise #04-04: exponential error growth
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Assignment #04</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-04-01-a-glimpse-in-the-c-language">Exercise #04-01: a glimpse in the C language</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-04-02-monte-carlo-estimation-of-pi">Exercise #04-02: Monte-Carlo estimation of <span class="math notranslate nohighlight">\(\pi\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-04-03-a-new-format-based-on-fixed-point-binary-numbers">Exercise #04-03: a new format based on fixed point binary numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-04-04-exponential-error-growth">Exercise #04-04: exponential error growth</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="assignment-04">
-<h1>Assignment #04<a class="headerlink" href="#assignment-04" title="Permalink to this headline">#</a></h1>
+<h1>Assignment #04<a class="headerlink" href="#assignment-04" title="Link to this heading">#</a></h1>
 <section id="exercise-04-01-a-glimpse-in-the-c-language">
-<h2>Exercise #04-01: a glimpse in the C language<a class="headerlink" href="#exercise-04-01-a-glimpse-in-the-c-language" title="Permalink to this headline">#</a></h2>
+<h2>Exercise #04-01: a glimpse in the C language<a class="headerlink" href="#exercise-04-01-a-glimpse-in-the-c-language" title="Link to this heading">#</a></h2>
 <p>This exercise can be done on a linux machine only!</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You can use MyBinder’s terminal if you don’t have Linux!</p>
 </div>
 <p>Here is the C code sample from the lecture:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1"> </span><span class="cp"></span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Sum of two numbers : %d </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1"> </span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Sum of two numbers : %d </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>Write this code in a C code file, compile and run it.</strong></p>
 <p><strong>Now, replace the line <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">3</span></code> with <code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">b[]</span> <span class="pre">=</span> <span class="pre">&quot;Hello&quot;;</span></code>. Compile and run the program again (ignore warnings at compilation). Does the output match your expectations? Can you explain what happens? Compare this behavior to python’s, and try to explain why this behavior can lead to faster execution times.</strong></p>
 </section>
 <section id="exercise-04-02-monte-carlo-estimation-of-pi">
-<span id="content-montecarlo"></span><h2>Exercise #04-02: Monte-Carlo estimation of <span class="math notranslate nohighlight">\(\pi\)</span><a class="headerlink" href="#exercise-04-02-monte-carlo-estimation-of-pi" title="Permalink to this headline">#</a></h2>
+<span id="content-montecarlo"></span><h2>Exercise #04-02: Monte-Carlo estimation of <span class="math notranslate nohighlight">\(\pi\)</span><a class="headerlink" href="#exercise-04-02-monte-carlo-estimation-of-pi" title="Link to this heading">#</a></h2>
 <p>A simple way to estimate <span class="math notranslate nohighlight">\(\pi\)</span> using a computer is based on a <a class="reference external" href="https://en.wikipedia.org/wiki/Monte_Carlo_method">Monte-Carlo</a> method. By drawing a sample of N points with random 2D coordinates (x, y) in the <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1[</span></code> range, the ratio of points that fall within the unit circle divided by the total number of points (N) gives an estimate of <span class="math notranslate nohighlight">\(\pi / 4\)</span>.</p>
 <p><strong>Provide two implementations of the monte-carlo estimation of <span class="math notranslate nohighlight">\(\pi\)</span>: a pure python version (standard library) and a vectorized version using numpy. Time their execution for N = [1e2, 1e3, …, 1e7]. Optional: plot the numpy speed-up as a function of N.</strong></p>
 <p><strong>Optional: try the numpy version with N=1e8 and above. Make conclusions about a new trade-off happening for large values of N.</strong></p>
@@ -768,7 +556,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="exercise-04-03-a-new-format-based-on-fixed-point-binary-numbers">
-<h2>Exercise #04-03: a new format based on fixed point binary numbers<a class="headerlink" href="#exercise-04-03-a-new-format-based-on-fixed-point-binary-numbers" title="Permalink to this headline">#</a></h2>
+<h2>Exercise #04-03: a new format based on fixed point binary numbers<a class="headerlink" href="#exercise-04-03-a-new-format-based-on-fixed-point-binary-numbers" title="Link to this heading">#</a></h2>
 <p>Write a function which converts binary strings to decimal numbers. The function should handle unsigned (positive) numbers only. Examples:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">'101010'</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">42</span></code></p></li>
@@ -798,7 +586,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="exercise-04-04-exponential-error-growth">
-<h2>Exercise #04-04: exponential error growth<a class="headerlink" href="#exercise-04-04-exponential-error-growth" title="Permalink to this headline">#</a></h2>
+<h2>Exercise #04-04: exponential error growth<a class="headerlink" href="#exercise-04-04-exponential-error-growth" title="Link to this heading">#</a></h2>
 <p>The number <code class="docutils literal notranslate"><span class="pre">e</span></code> can be defined as the sum of the infinite series:</p>
 <div class="math notranslate nohighlight">
 \[e = \sum_{n=0}^{\infty} \frac{1}{n!}\]</div>
@@ -871,7 +659,7 @@ title="Print to PDF"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./week_04"
         },
         predefinedOutput: true
@@ -879,60 +667,110 @@ title="Print to PDF"
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="02-Numbers.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Number representation in computers</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02-Numbers.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Number representation in computers</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../week_05/01-Numpy-ndarrays.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../week_05/01-Numpy-ndarrays.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Arrays in numpy: indexing, ufuncs, broadcasting</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-04-01-a-glimpse-in-the-c-language">Exercise #04-01: a glimpse in the C language</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-04-02-monte-carlo-estimation-of-pi">Exercise #04-02: Monte-Carlo estimation of <span class="math notranslate nohighlight">\(\pi\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-04-03-a-new-format-based-on-fixed-point-binary-numbers">Exercise #04-03: a new format based on fixed point binary numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-04-04-exponential-error-growth">Exercise #04-04: exponential error growth</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Fabien Maussion<br/>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Fabien Maussion
+</p>
+
+  </div>
   
-    <div class="extra_footer">
-      <p>
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
   <img align="right" class="margin" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg" width="88px">
 </a>
 These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International (CC BY 4.0) license</a>.
 <br>
-&copy; Copyright 2018-2022.
+&copy; Copyright 2018-2024.
 </p>
 
-    </div>
-</p>
-        </footer>
-    </div>
-    
 </div>
+  </div>
+  
+</div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
