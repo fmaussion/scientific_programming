@@ -47,10 +47,10 @@ sphinx:
     html_show_copyright: false
     html_last_updated_fmt: '%b %d, %Y'
     html_js_files:
-    - ['https://plausible.io/js/script.js', {'defer': '', 'data-domain': 'fabienmaussion.info'}]
+    - ['https://plausible.oggm.org/js/script.js', {'defer': 'defer', 'data-domain': 'fabienmaussion.info'}]
   extra_extensions:
     - sphinx_exercise
 execute:
-  execute_notebooks: auto
+  execute_notebooks: force
   allow_errors: true
 only_build_toc_files: true
