@@ -51,6 +51,6 @@ sphinx:
   extra_extensions:
     - sphinx_exercise
 execute:
-  execute_notebooks: force
+  execute_notebooks: auto
   allow_errors: true
 only_build_toc_files: true
